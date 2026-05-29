@@ -29,6 +29,20 @@ Domain knowledge lives in individual SKILL.md files.
 | `design shotgun`, `design variants`, `show me different design directions`, `give me design options` | `roles/design-shotgun/SKILL.md` |
 | `generate HTML`, `implement this design`, `write the HTML`, `code this design`, `design to HTML` | `roles/design-html/SKILL.md` |
 
+### Release + deploy
+
+| Trigger phrases | Role |
+|---|---|
+| `ship it`, `ship this`, `open the PR`, `ready to ship`, `ship pre-flight` | `roles/ship/SKILL.md` |
+| `land and deploy`, `merge and deploy`, `land it`, `deploy the PR`, `land this` | `roles/land-and-deploy/SKILL.md` |
+| `document this release`, `update the docs`, `documentation sweep`, `doc sync` | `roles/document-release/SKILL.md` |
+
+### Knowledge capture
+
+| Trigger phrases | Role |
+|---|---|
+| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | `roles/cbrain-entity-builder/SKILL.md` |
+
 ## Natural sequences
 
 The roles compose. Common flows:
