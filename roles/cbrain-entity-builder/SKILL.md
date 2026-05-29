@@ -11,7 +11,7 @@ triggers:
   - "event: a person, org, or project not yet in cbrain is named during a chat that is clearly about knowledge capture"
 dependencies: []
 owner: Charles
-updated: 2026-05-28
+updated: 2026-05-29
 ---
 
 # cbrain Entity Builder
