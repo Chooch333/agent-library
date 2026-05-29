@@ -124,4 +124,5 @@ No traces yet; pitfalls will populate as the skill runs in production.
 
 ## Changelog
 
+- **0.2.0** (2026-05-29) — Added SOP step 9 (declare relationships as graph tuples). The skill now proactively proposes a new predicate by name whenever a real, stated relationship doesn't fit a registered predicate, rather than burying it in prose — closing a gap where relationship modeling was happening only as prose. Extended the `should-distill` hook to treat an unmatched relationship as an explicit distill trigger. Added Example 4 (the `went_to_college_with` case). Renumbered prior steps 9→10, 10→11.
 - **0.1.0** (2026-05-28) — Initial draft. First cbrain-focused skill in the library. Enforces SCHEMA.md contract for the six entity types; surfaces follow-on entities; patches `related_to` on related entities post-commit; `should-distill` hook at close. Does not write to Project State, does not create new entity types, does not touch watcher-owned email-thread files.
