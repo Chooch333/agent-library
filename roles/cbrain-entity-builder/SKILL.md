@@ -106,6 +106,16 @@ Numbered SOP:
 - SCHEMA.md has no `event` type. STOP. Does not invent one.
 - Surfaces as Needs-from-you: a new type requires a SCHEMA.md change first. Offers the nearest supported fit (capture the recurring meeting as facts in the body of `projects/elanco-c92-2025.md` instead), and asks which Charles wants.
 
+### Example 4: A relationship surfaces with no fitting predicate
+
+**Input:** "Jared and I went to college together." (while capturing Jared, a new person)
+
+**Output:**
+- The relationship is real and stated, but the only registered predicate is `worked_with`, which means *delivered project work* — college friendship doesn't fit it.
+- Does NOT bury the relationship in prose only. Proactively proposes a new predicate by name: `went_to_college_with` (symmetric), as a Needs-from-you item, with the first tuple `charles-courtney → went_to_college_with → jared-natalino`.
+- On approval: adds the predicate to `PREDICATE_REGISTRY` in `services/lib/extract.ts` (one line, symmetry flag), then declares the tuple in the `relationships` field of both people's entities.
+- Keeps `worked_with` clean by giving the personal tie its own predicate rather than stretching the professional one.
+
 ## Pitfalls
 
 > Every pitfall must come from a real trace. No fabrications.
