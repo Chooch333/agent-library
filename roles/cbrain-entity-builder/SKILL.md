@@ -64,9 +64,15 @@ Numbered SOP:
 
 8. **Commit after approval.** On Charles's approval, commit via Custom GitHub MCP `create_or_update_file` (owner=Chooch333, repo=cbrain) to path `<type>/<slug>.md`. For an update (step 3), include the current blob `sha`.
 
-9. **Patch related entities.** After committing, check whether the new entity should appear in another entity's `related_to`. Example: a new person joining an existing org — that org's file should list the person. Propose each such update as its *own* artifact, get approval, then commit (with `sha`).
+9. **Declare relationships as graph tuples.** Distinct from `related_to` (which is an undirected "these are connected" link), the `relationships` frontmatter field holds typed, directed graph tuples — subject → predicate → object — extracted into the tuples table by `services/lib/extract.ts`. For each meaningful relationship the entity has to another entity:
+   - Check the predicate registry (the `PREDICATE_REGISTRY` in `services/lib/extract.ts`) for a predicate that fits. If one fits, declare it in the `relationships` field (e.g. `worked_with`, `went_to_college_with`).
+   - If a real, stated relationship does **not** fit any registered predicate, **proactively propose a new predicate by name** as a Needs-from-you item — do not silently bury the relationship in body prose only. This is required initiative, not optional: the moment a relationship has no home predicate, surfacing a candidate is part of the job. Likely examples as the network grows: `introduced_me_to`, `former_colleague_at`, `reports_to`, `referred_by`, `mentored_by`.
+   - Predicates are **demand-driven**: propose one whenever a genuine, stated relationship needs it, but never invent speculative predicates for relationships that aren't actually present. The test is "does a real relationship exist that no predicate captures?" — if yes, propose; if no, do nothing.
+   - Adding a predicate is a code edit (one line in `PREDICATE_REGISTRY`, with its symmetry flag) plus declaring the tuple in the `relationships` field of both entities. Only registered predicates are extracted; unknown ones are skipped with a warning, so the registry edit must land before the tuple is meaningful.
 
-10. **Hook check at close (`should-distill`).** Ask: did anything emerge worth capturing as a schema improvement, an alias/slug convention, or a workflow note? If yes, surface it as a Needs-from-you item. If no, do nothing — that's the correct outcome most of the time.
+10. **Patch related entities.** After committing, check whether the new entity should appear in another entity's `related_to`. Example: a new person joining an existing org — that org's file should list the person. Propose each such update as its *own* artifact, get approval, then commit (with `sha`).
+
+11. **Hook check at close (`should-distill`).** Ask: did anything emerge worth capturing as a schema improvement, an alias/slug convention, a **new relationship predicate**, or a workflow note? A relationship that surfaced during this capture and had no fitting predicate is an explicit distill trigger — flag it. If yes, surface it as a Needs-from-you item. If no, do nothing — that's the correct outcome most of the time.
 
 ## Examples
 
