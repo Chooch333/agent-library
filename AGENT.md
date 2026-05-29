@@ -79,5 +79,6 @@ Confirmation is behavioral, not UI-driven. Watch for: explicit role announcement
 
 ## Changelog
 
+- **2026-05-28** — Added `cbrain-entity-builder` (v0.1.0 draft) under new "Knowledge capture" section. First cbrain-focused role; writes entity files to the cbrain repo. Disambiguation rule added (cbrain = knowledge about things; Project State = work-state).
 - **2026-05-13** — Routing populated with 13 active roles across plan-mode (6), implementation (4), and release (3). Catalog imports updated with reshape status. Natural-sequence guidance added.
 - **2026-05-13** — Initial routing schema created. Imports populated.
