@@ -65,7 +65,7 @@ The roles compose. Common flows:
 - `design-reviewer` reviews a *plan's* design quality. `design-shotgun` generates *new* design directions. `design-html` writes the *code* for an approved design. `design-consultation` builds a *design system* from scratch.
 - `ceo-reviewer` is strategic; `eng-reviewer` is architectural; both can fire on the same plan. Use `autoplan` to chain them.
 - `ship` opens the PR; `land-and-deploy` merges and watches the deploy; `document-release` updates docs after shipping. Run in order.
-- `cbrain-entity-builder` writes durable knowledge about entities (people, orgs, projects) to the cbrain repo. It is NOT for work-state (decisions, next steps, status) — that's Project State. If the content is "what's true about a thing," it's cbrain; if it's "what we're doing or deciding," it's Project State.
+- **Knowledge capture (cbrain).** When the content is durable knowledge about an entity (people, orgs, projects), the chat path drafts a brief per `references/chat-capture.md`; Charles approves it in chat; the Archivist (`roles/archivist/SKILL.md`) is the single write-authority that files it. The chat never commits to cbrain directly. This is NOT for work-state (decisions, next steps, status) — that's Project State. If the content is "what's true about a thing," it's cbrain (→ draft a brief); if it's "what we're doing or deciding," it's Project State.
 - If unsure, ask before acting.
 
 ## Activation pattern (claude.ai chat)
