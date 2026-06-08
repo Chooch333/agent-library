@@ -41,7 +41,7 @@ Domain knowledge lives in individual SKILL.md files.
 
 | Trigger phrases | Role |
 |---|---|
-| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | `roles/cbrain-entity-builder/SKILL.md` |
+| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | Draft a brief per `references/chat-capture.md` → Charles approves → `roles/archivist/SKILL.md` files it |
 
 ## Natural sequences
 
