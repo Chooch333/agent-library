@@ -67,6 +67,7 @@ The roles compose. Common flows:
 - `ceo-reviewer` is strategic; `eng-reviewer` is architectural; both can fire on the same plan. Use `autoplan` to chain them.
 - `ship` opens the PR; `land-and-deploy` merges and watches the deploy; `document-release` updates docs after shipping. Run in order.
 - **Knowledge capture (cbrain).** When the content is durable knowledge about an entity (people, orgs, projects), the chat path drafts a brief per `references/chat-capture.md`; Charles approves it in chat; the Archivist (`roles/archivist/SKILL.md`) is the single write-authority that files it. The chat never commits to cbrain directly. This is NOT for work-state (decisions, next steps, status) — that's Project State. If the content is "what's true about a thing," it's cbrain (→ draft a brief); if it's "what we're doing or deciding," it's Project State.
+- **New TYPE vs new INSTANCE vs new FIELD (cbrain).** A new KIND of thing that no `type` in `SCHEMA.md` fits → `roles/entity-type-creator/SKILL.md` (it edits the schema; the watcher reads the schema at runtime, so the commit auto-deploys). A new INSTANCE of an existing type (a person, an org, a project) → chat-capture → Archivist, NOT the type creator. An existing type that just wants one more optional field → a small direct schema edit, not a new type. Test: is there no `type` value this thing could carry? Only then is it a new type.
 - If unsure, ask before acting.
 
 ## Activation pattern (claude.ai chat)
