@@ -8,6 +8,12 @@ Domain knowledge lives in individual SKILL.md files.
 
 ## Active roles
 
+### Design shaping
+
+| Trigger phrases | Role |
+|---|---|
+| `Design Assist` (exact phrase in prompt — the only trigger; do not auto-fire from adjacent phrases) | `roles/design-assist/SKILL.md` |
+
 ### Plan-mode reviews
 
 | Trigger phrases | Role |
