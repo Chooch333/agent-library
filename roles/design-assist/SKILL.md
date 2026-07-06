@@ -79,7 +79,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 **Aggregation rules:** agents never touch the Design State; only the conducting chat writes it. Distillation names where agents disagreed. The full output link is always provided so Charles can read the raw papers.
 
-*(Until the `agent_prompts` capability ships in the orchestrator, fall back to running the perspectives sequentially in-chat and say that's what happened. Do not silently skip fan-out.)*
+*(Capability shipped and verified live 2026-07-06 — a two-agent custom run completed end-to-end. If a fan-out run fails, diagnose per BRAINSTORM.md Step 6; do not silently skip fan-out.)*
 
 ## Examples
 
