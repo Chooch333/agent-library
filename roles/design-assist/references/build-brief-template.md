@@ -19,6 +19,7 @@
 | 8 | Assumptions contain only genuinely unverifiable items | ⬜ |
 | 9 | Return contract — receiving chat, Session Log expectation, Brief ID | ⬜ |
 | 10 | Pasteable prompt written | ⬜ |
+| 11 | All 11 decision domains Answered / Defaulted / N-A — none silent; domain status table in brief body (see `references/brief-completeness-framework.md`) | ⬜ |
 
 ---
 
