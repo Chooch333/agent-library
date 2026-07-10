@@ -5,7 +5,7 @@
 
 ## Completeness gate
 
-> **Status: DRAFT checklist.** Gate content is pending Charles's expanded framework (runtime, data storage & recall type, build purpose, users, and similar plan dimensions) — see Circle-back items in SKILL.md. Use as-is until then.
+> Gate content per `references/brief-completeness-framework.md` (the eleven decision domains + three-state rule). Fetch it alongside this template at intake.
 
 | # | Gate | Status |
 |---|------|--------|
