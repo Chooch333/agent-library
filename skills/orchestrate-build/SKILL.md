@@ -7,7 +7,7 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 1. **Get the brief.**
    - If the prompt names a plan ID: fetch that plan from Project State (`get_plan`).
    - If the prompt says "next" (or gives no ID): `list_plans` on the named project, take the **oldest plan with status `queued`**, and fetch it.
-   - Immediately flip the plan status to `in-progress` (`update_plan_status`).
+   - Immediately flip the plan status to `running` (`update_plan_status`).
 
 2. **Read the brief header.** The header declares required skills (e.g. `skills: orchestrate-build v1, <domain-skill>`). Fetch any skill you have not already loaded from `Chooch333/agent-library` at `skills/<name>/SKILL.md` and follow it alongside this one.
 
