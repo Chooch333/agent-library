@@ -121,9 +121,10 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Circle-back items
 
-- **Brief completeness framework, expanded (Charles, 2026-07-09).** The ten-gate checklist in `references/build-brief-template.md` is a draft. Charles envisions a richer plan framework covering runtime, data storage and recall type, build purpose, users, and similar dimensions. Deferred by choice this session; revisit before declaring the template stable.
+- None open.
 
 ## Changelog
 
+- **0.2.1** (2026-07-10) — Completeness framework shipped: `references/brief-completeness-framework.md` (11 decision domains, Answered/Defaulted/N-A three-state rule, orchestrator full autonomy with hard-gate-only escalation, mandatory fork log). Template gate 11 added. Circle-back item from 0.2.0 resolved. Decisions in the working appendix now carry decider markers ([Charles] / [Claude-per-doctrine]); Claude-decided items log with `judgment-call` provenance per the new PROTOCOL.md standing rule.
 - **0.2.0** (2026-07-09) — Proactive harness revision, dogfooded in-session. Added the Proactivity Doctrine (11 rules). Living artifact changed from Design State to draft Build Brief (brief-first), with working appendix; new `references/build-brief-template.md`. Step 8 changed from serial one-fork-at-a-time to batched forks with consequence trails (serial only for dependent forks). PROTOCOL.md engagement rule 4 reconciled: within DA, satisfied by batched forks + pre-applied recommendations. Completeness framework shipped as draft; expansion deferred (see Circle-back items).
 - **0.1.0** (2026-07-02) — Initial draft. Designed by dogfooding the process on itself. Four phases / ten steps, Design State artifact spec, phase-boundary snapshots via Project State plan tools, automated fan-out via orchestrator custom prompt sets (pending `agent_prompts` capability), hardware + software + hybrid spec formats. Explicitly decoupled from the office-hours → CEO/Eng review chain.
