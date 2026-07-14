@@ -86,7 +86,7 @@ The paragraph that lets the orchestrator answer forks the way Charles would — 
 ## Operational rules (carried from lessons, restated as gates)
 
 - **Fork log is mandatory.** The orchestrator records every fork encountered and the answer it gave (per orchestrate-build step 7). This log is Charles's review surface — he checks the completed build plus the fork log, instead of supervising the build live. A build closed without its fork log is not closed.
-- **Durable home:** the brief is committed to a repo (`chat-protocol/briefs/` or the target project's `docs/design/`) at authoring, and the queue entry / pasteable prompt carries the fetch path (E-280, E-282).
+- **Durable home:** the brief is committed to the target project's repo at `docs/design/` at authoring (`chat-protocol/briefs/` only when no target repo exists), AND written as a Project State plan on the target project with the git fetch path in its header (E-280 superseded 2026-07-14; E-282 fetch-path rule kept).
 - **Confidence labels throughout:** [verified] / [assumed] / [draft] on Inputs and Current State (existing rule, kept).
 - **Effort & cost tags:** every scoped component carries S/M/L and real-money cost (doctrine rule 8).
 
