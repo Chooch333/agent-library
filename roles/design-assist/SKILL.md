@@ -126,6 +126,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.2.4** (2026-07-14) — Handoff Reference block format locked: new `references/handoff-reference-template.md` is canonical (layout + pasteable-prompt structure, with worked example from BB-2026-07-14-attia-intake). Step 10 now points at it. Requested by Charles in the attia-intake scoping chat, 2026-07-14.
 - **0.2.3** (2026-07-14) — Step 10 now requires a mandatory Handoff Reference block on the shelving turn: Brief ID, Project State plan title/plan_id/project slug/status, git location, and pasteable prompt — so Charles can hand the brief to any other chat without hunting for identifiers. Requested by Charles in-session 2026-07-14.
 - **0.2.2** (2026-07-10) — Step 10 handoff now sets the finished brief's Project State plan to status `queued` (`update_plan_status`), aligning with the canonical work-queue lifecycle (draft → queued → running → succeeded/failed/blocked/abandoned) shipped in BB-2026-07-10-canonical-plan-lifecycle.
 - **0.2.1** (2026-07-10) — Completeness framework shipped: `references/brief-completeness-framework.md` (11 decision domains, Answered/Defaulted/N-A three-state rule, orchestrator full autonomy with hard-gate-only escalation, mandatory fork log). Template gate 11 added. Circle-back item from 0.2.0 resolved. Decisions in the working appendix now carry decider markers ([Charles] / [Claude-per-doctrine]); Claude-decided items log with `judgment-call` provenance per the new PROTOCOL.md standing rule.
