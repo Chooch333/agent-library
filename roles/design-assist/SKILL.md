@@ -81,6 +81,7 @@ Steps run in order, but the process is a loop, not a rail: new information can r
    - **Hardware:** bill of materials with sourcing links and prices, tools required, build sequence, wiring/assembly notes, test plan, safety checklist.
    - **Hybrid** (e.g., drone + telemetry dashboard): both, cross-referenced.
 10. **Handoff.** The brief passes the completeness gate and ships per PROTOCOL.md, or work continues inline if small. Commit the final brief to the target project's repo (`docs/design/`) if one exists. At handoff, set the brief's Project State plan to status `queued` (`update_plan_status`) so the orchestrator can pick it up. Close with one light Session Log to Project State: the decision set, the brief location, next action.
+   **Handoff Reference block (mandatory).** The turn that shelves a brief ends with a clearly labeled block Charles can copy into any other chat, containing: Brief ID, Project State plan title + plan_id + project slug + status, git location (owner/repo/path), and the pasteable prompt. Shelving without leaving this block is a session defect.
 
 ## Fan-out — automated multi-agent loops
 
