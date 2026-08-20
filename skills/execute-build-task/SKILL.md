@@ -8,6 +8,7 @@ This is the worker skill. A worker does exactly one assigned task, then dissolve
 3. **Report forks, never guess.** If you hit a real decision the task and brief excerpt don't answer, stop that thread, and return a report: what you completed, the decision needed, the options you see, and your recommendation. The orchestrator will answer and redispatch.
 4. **Return evidence, not claims.** Your completion report must include proof: the file path and a snippet of what you wrote, the query you ran and its result, the commit SHA, the URL that now responds. Work without evidence will be treated as not done.
 5. If something errors, report the exact error text — do not retry more than once on your own.
+6. **Flag loose ends, don't just silently note them.** If you notice something worth Charles's eyes later that isn't a fork (nothing to decide, no redispatch needed) — a workaround you took, something you noticed but didn't fix, a risk you accepted — say so plainly in your completion report. The orchestrator posts these to the disclosure channel at close; you don't post them yourself.
 
 ---
 
