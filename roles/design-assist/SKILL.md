@@ -1,12 +1,12 @@
 ---
 name: design-assist
-version: 0.2.6
+version: 0.2.7
 status: draft
 triggers:
   - "Design Assist"
 dependencies: []
 owner: Charles
-updated: 2026-08-20
+updated: 2026-08-21
 source: Original. Designed in-chat 2026-07-02 by Charles + Claude, dogfooding the process on itself. v0.2.0 proactive-harness revision designed in-chat 2026-07-09, again dogfooding. Absorbs the alternatives-generation idea from office-hours (Tan gstack lineage) into the convergence loop; otherwise independent of the office-hours → CEO/Eng review chain, which serves go-to-market interrogation, not hobby design.
 ---
 
@@ -59,7 +59,7 @@ Steps run in order, but the process is a loop, not a rail: new information can r
 
 ### Phase A — Orient
 
-1. **Intake.** Charles dumps the raw idea, however messy. Capture it verbatim into the artifact before shaping anything. Create the draft Build Brief now. Run the dependency hunt (doctrine rule 7). Also pull the Q-channel disclosure inbox for this project (`list_judgment_calls`, status `noted`) — the "Calls to review" list, separate from and never gating on blocking questions. For each: read the thread (`build_question_messages`), then `dispose_judgment_call` — `reviewed-agree` if it holds up as-is, or `reviewed-corrected` (log the correcting Decision first, pass its id as `linked_decision`) if it doesn't. Unreviewed items are fine to leave `noted`; nothing here blocks intake.
+1. **Intake.** Charles dumps the raw idea, however messy. Capture it verbatim into the artifact before shaping anything. Create the draft Build Brief now. Run the dependency hunt (doctrine rule 7). Also pull the Comms Table's disclosure inbox for this project (`list_judgment_calls`, status `noted`) — the "Calls to review" list, separate from and never gating on blocking questions. For each: read the thread (`build_question_messages`), then `dispose_judgment_call` — `reviewed-agree` if it holds up as-is, or `reviewed-corrected` (log the correcting Decision first, pass its id as `linked_decision`) if it doesn't. Unreviewed items are fine to leave `noted`; nothing here blocks intake.
 2. **Restate.** Say what Charles is really trying to do — including the goal behind the stated goal, and how it serves *his* use case specifically (his skills, his shop, his family, his stack). Iterate until he says it lands. Draft acceptance criteria now (doctrine rule 10).
 3. **Domains.** Name the disciplines and bodies of practice involved (e.g., for a mower: robotics, battery systems, blade safety, outdoor navigation, weatherproofing).
 4. **Concepts & vocabulary.** Explain the key ideas at a high level, plainly. This is also where Charles gets precision language — the words that let him say what he means in this territory.
@@ -132,6 +132,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.2.7** (2026-08-21) — Terminology: `build_questions` + `build_question_messages` (the Q-channel and the disclosure channel together) are now named **the Comms Table** throughout PROTOCOL.md and this skill, per Charles, so no chat has to infer what "the Comms Table" refers to. Step 1 wording updated from "the Q-channel disclosure inbox" to "the Comms Table's disclosure inbox" (a naming-accuracy fix as well — disclosures are a distinct lane from the Q-channel, both live on the Comms Table). No behavior change.
 - **0.2.6** (2026-08-20) — Step 1 (Intake) now also pulls the build-to-Charles disclosure inbox (`list_judgment_calls`, status `noted`) as a "Calls to review" list alongside the dependency hunt, and disposes each via `dispose_judgment_call` (`reviewed-agree` or `reviewed-corrected` with a linked Decision). Shipped with BB-2026-08-19-judgment-call-channel (the disclosure channel itself: `post_judgment_call`/`list_judgment_calls`/`dispose_judgment_call` on Project State MCP, parallel `-J-` display-id series, PROTOCOL.md Q-channel section extended, orchestrate-build/execute-build-task updated to post at close).
 - **0.2.5** (2026-08-19) — Committed-brief header convention locked: the `.md` file's own top-of-document header (distinct from the in-chat Handoff Reference block, which already carried plan_id) now carries the Project State plan UUID + project slug and drops any plan-status line, since a status copied into the file goes stale the moment the DB plan transitions and DB is truth. Step 10 updated with the exact header format. Found and corrected during BB-2026-08-19-review-corrections (world-graph), which reconciled against the three 2026-08-18 BB files whose headers carried a status line and no plan UUID (those three files are left as-is; only the convention going forward changes).
 - **0.2.4** (2026-07-14) — Handoff Reference block format locked: new `references/handoff-reference-template.md` is canonical (layout + pasteable-prompt structure, with worked example from BB-2026-07-14-attia-intake). Step 10 now points at it. Requested by Charles in the attia-intake scoping chat, 2026-07-14.
