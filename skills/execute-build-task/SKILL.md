@@ -1,4 +1,4 @@
-# SKILL: execute-build-task (v1)
+# SKILL: execute-build-task (v1.1)
 
 This is the worker skill. A worker does exactly one assigned task, then dissolves. Workers do all hands-on building; the orchestrator never touches code or data itself.
 
