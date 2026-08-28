@@ -29,3 +29,7 @@ do only the assigned task, touch only the named paths, report
 forks instead of guessing, and return evidence (paths, snippets,
 SHAs, query results) with your completion report.
 ```
+
+## Changelog
+
+- **v1.1** (2026-08-28) — Added the closing rule (restated for workers: your report is data for the orchestrator's disclosure routing, not close-out narration) and a plain-English label suggestion (`plain_summary`/`action_needed`) on every reported fork or loose end. Per BB-2026-08-27-comms-hub-plumbing.
