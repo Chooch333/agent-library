@@ -27,6 +27,7 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 - If the Project State MCP is unreachable, stop immediately and report — do not build without the brief.
 - **The closing rule.** Your final chat message to Charles may only say the build is done. Every judgment call, fork you decided, loose end, or FYI — everything you'd otherwise narrate in a close-out message — goes to the Comms Table disclosure channel (step 7) with a `plain_summary` and `action_needed` flag, never into chat text.
 - **Plain labels at creation, always.** Any plan you write or amend (`write_plan`/`update_plan_content`) and every disclosure you post (`post_judgment_call`, step 7) carries its own best-shot `plain_title`/`plain_summary` (and `action_needed` for disclosures) from the moment you create it — never left blank for a later chat to fill in.
+- **Never certify your own build.** You do not call `review_plan` on the plan you executed, and you do not dispose (`dispose_judgment_call`) disclosures you or your subagents posted. Your disclosures close at status `noted` and your plan's review fields stay empty; an external DA/planning chat is the only party that reviews the plan and disposes its disclosures. Ending a build with its disclosures already `reviewed-agree` or its review fields already set is self-certification — a build defect, not a courtesy.
 
 ## Changelog
 
