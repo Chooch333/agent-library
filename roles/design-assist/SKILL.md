@@ -86,7 +86,7 @@ Steps run in order, but the process is a loop, not a rail: new information can r
     **Git home:** {owner/repo} · `{docs/design/BB-....md}`
     **Project State plan:** `{plan_id}` on `{project-slug}`
     ```
-    At handoff, set the brief's Project State plan to status `queued` (`update_plan_status`) so the orchestrator can pick it up. Close with one light Session Log to Project State: the decision set, the brief location, next action.
+    At handoff, set the brief's plain labels on the Project State plan — `plain_title`, `plain_summary`, `campaign` (slug), and `designed_in` (this session's name + today's date) — via `update_plan_content`, per PROTOCOL.md's naming rule. Then set the plan to status `queued` (`update_plan_status`) so the orchestrator can pick it up. Close with one light Session Log to Project State: the decision set, the brief location, next action.
    **Handoff Reference block (mandatory).** The turn that shelves a brief ends with a clearly labeled block Charles can copy into any other chat, containing: Brief ID, Project State plan title + plan_id + project slug + status, git location (owner/repo/path), and the pasteable prompt. The block's exact layout and prompt structure follow `references/handoff-reference-template.md` — fill placeholders, never restructure. Shelving without this block is a session defect.
 
 ## Fan-out — automated multi-agent loops
