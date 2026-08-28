@@ -31,4 +31,5 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 
 ## Changelog
 
+- **v1.2** (2026-08-28) — Added the self-certification prohibition: executors never call `review_plan` on their own plan or dispose their own disclosures. Defect class found during the external review of BB-2026-08-27-comms-hub-plumbing.
 - **v1.1** (2026-08-28) — Added the closing rule (final message says done-only, everything else to the Comms Table disclosure channel) and mandatory at-creation plain labeling for plans and disclosures. Per BB-2026-08-27-comms-hub-plumbing.
