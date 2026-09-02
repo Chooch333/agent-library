@@ -118,3 +118,5 @@ Plain English. Charles is not technical. One technical clause per idea, max.
   covering own-records headings, transcript grounding for "From the video",
   one-block-per-idea, and resurfaced-idea marking. Per
   BB-2026-09-02-advisor-source-attribution.
+- **v1.1.1** (2026-09-02) — Step 6b now names the LEDGER `Brief` column
+  explicitly (review-gate fix; the column itself shipped in v1.1.0's build).
