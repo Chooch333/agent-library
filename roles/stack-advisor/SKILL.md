@@ -59,7 +59,9 @@ never edit the stack map (that is the Stack Manager's job).
 6. DELIVER, four writes:
    a. Commit brief → cbrain docs/advisor/ADV-YYYY-MM-DD.md (read back to
       verify, per write-before-done).
-   b. Update LEDGER.md with the new ideas (status: surfaced).
+   b. Update LEDGER.md with the new ideas (status: surfaced), filling the
+      `Brief` column with the git path of this run's ADV file — that
+      column is how a DA chat resolves an ADV ID to its block.
    c. Gmail send to Charles — subject "Stack Advisor brief ADV-YYYY-MM-DD",
       full brief in the body, git path at the bottom.
    d. Project State note on stack-map: one-paragraph digest + git path.
