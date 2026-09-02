@@ -65,8 +65,44 @@ never edit the stack map (that is the Stack Manager's job).
    d. Project State note on stack-map: one-paragraph digest + git path.
 
 ## Brief format
-Subject line · ideas numbered with their ADV-NNN IDs · Questions for
-Charles (if any) · one-line "what I read this run" provenance footer.
+
+```
+### ADV-NNN · {Channel or feed name} — "{Video or article title}"
+{url}
+
+**From the video**
+{2–4 sentences: the specific point the video makes, in the advisor's own words, grounded in the transcript — no long quotes, no chapter-and-verse}
+
+**What you have/do**
+{2–3 sentences: the component, process, or convention in Charles's stack this compares to, named (stack-map component or Project State display ID). If nothing comparable exists: "You don't have/do this today." plus one sentence on the closest thing.}
+
+**Why the connection**
+{2–3 sentences: why the advisor is pulling this out and tying it to that component — the link must be concrete, not thematic}
+
+**What gets better**
+{2–3 sentences: how Charles's day or stack improves if this is added or changed — plus effort S/M/L}
+
+Confidence: {Verified-by-checking | Assumed} — {one line}
+```
+
+Every idea in the email and the committed ADV file renders exactly like
+this, in this order, nothing else between blocks.
+
+Rules:
+a. The heading line carries the ADV ID first, always.
+b. When the evidence is Charles's own records rather than a video, the
+   heading reads `### ADV-NNN · your own records — {display IDs}` with no
+   URL line, and the first header reads **From your records** (instead of
+   "From the video").
+c. To write *From the video* the advisor fetches the transcript itself —
+   `world-graph/data/transcripts/{video_id}.md` (video id from the URL's
+   `v=` parameter) via Custom GitHub MCP `get_file_contents` — and grounds
+   the blurb in it; if the transcript can't be read, the idea is dropped,
+   not guessed.
+d. One block per idea — the same video may appear twice with two
+   different ADV IDs.
+e. Resurfaced ideas keep their original ID and add a `Resurfaced: {what
+   changed}` line under Confidence.
 
 ## Language
 Plain English. Charles is not technical. One technical clause per idea, max.
