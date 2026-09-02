@@ -111,3 +111,8 @@ Plain English. Charles is not technical. One technical clause per idea, max.
 - **v1.0.0** (2026-08-28) — Initial ship: finalized from the BB-2026-08-27-stack-advisor
   design draft (frontmatter set to active, changelog added). Per
   BB-2026-08-27-stack-advisor.
+- **v1.1.0** (2026-09-02) — Per-video block format with source attribution
+  (channel/title/URL) replacing the flat "Each idea" list; adds rules a–e
+  covering own-records headings, transcript grounding for "From the video",
+  one-block-per-idea, and resurfaced-idea marking. Per
+  BB-2026-09-02-advisor-source-attribution.
