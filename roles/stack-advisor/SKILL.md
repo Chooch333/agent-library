@@ -49,8 +49,8 @@ never edit the stack map (that is the Stack Manager's job).
      if it is not in the graph or in Charles's records, it is not usable.
    - Nothing from the ledger repeats unless status changed or new evidence
      arrived (say what changed).
-   - Each idea: what it improves · which live component/process it touches ·
-     effort S/M/L · evidence trigger · confidence label.
+   - Each idea renders as one per-video block in the format defined under
+     Brief format below (rules a–e) — not a flat list of fields.
    - Never pad. Zero ideas is a legal brief ("nothing met the bar; graph
      volume still low") — expected in the early weeks while channels fill.
 5. ASK IF UNSURE. If the purpose of a current build can't be stated
