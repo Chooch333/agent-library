@@ -88,7 +88,15 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
      record of Charles's) repeats an idea already surfaced, the source is
      appended, evidence rises, and it may be resurfaced once with the
      `Resurfaced:` line (rule e, below) stating what's new. Recurrence
-     across videos is a signal of importance.
+     across videos is a signal of importance. Before resurfacing, read
+     the ledger row's `Response` column if one is present — a `building`
+     row can carry an intended response, an `addressed` row a confirmed
+     one (signal 4, below). If the Response already covers the new
+     angle, the theme is not genuinely new — don't resurface. If the new
+     evidence falls outside what the Response describes, resurfacing is
+     still warranted and the `Resurfaced:` line should say what the
+     existing Response missed. This is the check that would have kept
+     ADV-004 from resurfacing unaddressed.
    - **Already acted on — never again.** Before selecting, mark an idea
      `status: adopted` and exclude it forever when any of these is true:
      (1) the ledger row is `building` or `declined` from Charles's reply;
@@ -97,8 +105,11 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
      `ADV-NNN`); (3) the change the idea describes is already present in
      the live component it names (check the component before writing
      "What you have/do" — if the answer is "you already do this", the
-     idea is adopted, not sent). Adopted ideas can still gain sources in
-     the pool for the record, but never leave it.
+     idea is adopted, not sent); (4) the ledger row is `addressed` — the
+     authoritative, work-confirmed signal (the Build Chat that landed the
+     brief wrote the actual Response, not an inference from `building`)
+     and is never resurfaced, full stop. Adopted ideas can still gain
+     sources in the pool for the record, but never leave it.
    - **Merge:** before adding a candidate, compare `topic_key` and title
      against pooled/held/surfaced/adopted ideas; if it is the same idea
      from a new video, append to `sources` and re-score (evidence rises)
