@@ -1,7 +1,7 @@
 # Build Brief — BB-2026-09-04-advisor-response-loop
 
 **Git home:** Chooch333/agent-library · `docs/design/BB-2026-09-04-advisor-response-loop.md`
-**Project State plan:** `{PLAN_ID}` on `stack-map`
+**Project State plan:** `fec343d6-def7-41f5-95d1-921599aa7398` on `stack-map`
 
 **What this is:** Build the response-loop mechanism that gives every Stack Advisor idea a visible disposition plus a required response — written at scoping (the Build Brief / DA chat) and again at landing (the Build Chat) — so the advisor reads a real, closed answer instead of inferring adoption from a `building` status. ADV-010's build (BB #1) is this mechanism's first live test case.
 
