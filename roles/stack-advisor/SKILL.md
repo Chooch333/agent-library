@@ -226,3 +226,13 @@ Plain English. Charles is not technical. One technical clause per idea, max.
   `videos` section scoring every transcript ever read as source data
   (never deleted, tiered by contribution). Step 6b now also fills the
   LEDGER `Pool` column. Per BB-2026-09-03-advisor-idea-pool.
+- **v1.2.1** (2026-09-04) — Suppression signal (4) added: a ledger row of
+  `addressed` is the authoritative, work-confirmed adoption signal
+  (written by the Build Chat that landed the brief, not inferred from
+  `building`) and is never resurfaced. The same-theme resurface check now
+  reads the ledger row's `Response` column before resurfacing — if the
+  Response already covers the new angle, don't resurface; if it doesn't,
+  the `Resurfaced:` line says what the Response missed. Closes the gap
+  where all suppression signals were inferred rather than confirmed by
+  the work (ADV-004 resurfaced twice while still `surfaced`, no readable
+  response). Per BB-2026-09-04-advisor-response-loop.
