@@ -14,6 +14,12 @@ Domain knowledge lives in individual SKILL.md files.
 |---|---|
 | `this is a brainstorm chat` (case-insensitive, must be in the very first message — mentioning brainstorming mid-chat is not an invocation) | `BRAINSTORM.md` — **owner=Chooch333, repo=chat-protocol** (not agent-library — the only row in this table that points outside this repo) |
 
+### Build
+
+| Trigger phrases | Role |
+|---|---|
+| `this is a build chat` (case-insensitive, must be in the very first message — mentioning building mid-chat is not an invocation) | `PROTOCOL.md` itself — no additional SKILL.md; build-chat rules (Workflow, ticket types, How to engage during builds) are already specified in that document |
+
 ### Design shaping
 
 | Trigger phrases | Role |
