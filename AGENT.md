@@ -26,6 +26,12 @@ Domain knowledge lives in individual SKILL.md files.
 |---|---|
 | `Design Assist` (exact phrase in prompt — the only trigger; do not auto-fire from adjacent phrases) | `roles/design-assist/SKILL.md` |
 
+### Investment
+
+| Trigger phrases | Role |
+|---|---|
+| `this is an investment review` (case-insensitive, must be in the very first message — mentioning an investment review mid-chat is not an invocation) | `roles/investment-review/SKILL.md` |
+
 ### Plan-mode reviews
 
 | Trigger phrases | Role |
@@ -99,6 +105,7 @@ Confirmation is behavioral, not UI-driven. Watch for: explicit role announcement
 
 ## Changelog
 
+- **2026-09-11** — Added "Investment" section (new sub-section, placed under Active roles after "Design shaping") with a `this is an investment review` trigger row pointing to `roles/investment-review/SKILL.md`. New role: produces standardized Theme / Fund / Study investment-review outputs as HTML chat artifacts, applying Charles's six-sleeve book framework and standing rules. Per BB-2026-09-11-investment-review-role.
 - **2026-09-10** — Added "Build" trigger row (`this is a build chat`) under a new "Build" section, using the same explicit-trigger pattern as Brainstorming and Design Assist. Companion change to chat-protocol PROTOCOL.md's "Chat types" section, which removes the prior silent default ("no match → build chat"): a chat with no matching trigger — including no build-chat trigger — simply has no type; not every chat needs one, and none is asked for. Charles's direct instruction, 2026-09-10.
 - **2026-09-10** — Added "Brainstorming" section (new sub-section, placed first under Active roles) with a `this is a brainstorm chat` trigger row pointing to `chat-protocol/BRAINSTORM.md` — cross-repo, the only row here that doesn't point within agent-library, called out explicitly in the row for that reason. Part of BB-2026-09-09-one-front-door: unifies chat activation so every chat reads `PROTOCOL.md` first, which now routes here for role selection; brainstorm was previously fired by a block hardcoded in the project prompt (and echoed in PROTOCOL.md) instead of a table row like every other role. Reliability of the routed path (PROTOCOL.md → this table → BRAINSTORM.md) was checked before the old hardcoded route was retired — see chat-protocol Project State Decision C-065.
 
