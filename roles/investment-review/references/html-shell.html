@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Investment Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #131210;
+    --bg-elevated: #1b1916;
+    --border: #33302a;
+    --cream: #f2ece0;
+    --cream-dim: #b8b0a0;
+    --amber: #d9a441;
+    --amber-bright: #f0bd5e;
+    --verified: #5ba86b;
+    --interpretive: #4f9dd6;
+    --estimated: #d9a441;
+    --inferred: #b06b8f;
+    --new: #5ba86b;
+    --exited: #c85c5c;
+    --increased: #4f9dd6;
+    --decreased: #d98a41;
+    --unchanged: #7a7568;
+  }
+
+  html, body {
+    background: #131210 !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  .review-shell {
+    background: #131210 !important;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--cream);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h1 { font-size: 1.9rem; margin-bottom: 4px; }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2.2em;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    color: var(--amber-bright);
+  }
+  h3 { font-size: 1rem; color: var(--cream); }
+
+  .subhead {
+    color: var(--cream-dim);
+    font-size: 0.9rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    color: var(--cream-dim);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  tr.group-header td {
+    background: var(--bg-elevated);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    color: var(--amber-bright);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+  tr.subtotal td {
+    border-top: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+    color: var(--cream);
+  }
+  tr.status-new td.status-cell { color: var(--new); }
+  tr.status-exited td.status-cell { color: var(--exited); }
+  tr.status-increased td.status-cell { color: var(--increased); }
+  tr.status-decreased td.status-cell { color: var(--decreased); }
+  tr.status-unchanged td.status-cell { color: var(--unchanged); }
+
+  .badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+  }
+  .badge-verified    { color: var(--verified); }
+  .badge-interpretive{ color: var(--interpretive); }
+  .badge-estimated   { color: var(--estimated); }
+  .badge-inferred    { color: var(--inferred); }
+
+  table.completeness td.state-answered { color: var(--verified); }
+  table.completeness td.state-na       { color: var(--cream-dim); }
+  table.completeness td.state-gated    { color: var(--decreased); }
+
+  .bottom-line {
+    background: var(--bg-elevated);
+    border-left: 3px solid var(--amber);
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 0.98rem;
+  }
+
+  ul.checkpoints { padding-left: 1.1em; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+  ul.checkpoints li { margin-bottom: 4px; }
+
+  footer.review-footer {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--border);
+    color: var(--cream-dim);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="review-shell" style="background:#131210!important;">
+
+  <!-- HEADER: T0 / F0 / S0 — type, subject, dates, source ladder, confidence legend -->
+  <header>
+    <h1><!-- Review title: Theme / Fund / Study + subject --></h1>
+    <p class="subhead"><!-- date · price as-of · prior review (if found) --></p>
+    <p class="subhead">
+      <span class="badge badge-verified">Verified</span>
+      <span class="badge badge-interpretive">Interpretive</span>
+      <span class="badge badge-estimated">Estimated</span>
+      <span class="badge badge-inferred">Inferred</span>
+    </p>
+  </header>
+
+  <!-- BOTTOM LINE: T1 / F1 / S1 -->
+  <section>
+    <div class="bottom-line"><!-- Bottom line verdict --></div>
+  </section>
+
+  <!-- BODY SECTIONS: T2-T9 / F2-F9 / S2-S11 go here, each as an <h2> + content -->
+  <section>
+    <!-- e.g. <h2>Summary Strip</h2> ... -->
+  </section>
+
+  <!-- BEFORE/AFTER or EXPRESSIONS or COMPARISON TABLE (status-grouped, subtotal rows) -->
+  <section>
+    <!--
+    <table>
+      <thead><tr><th>Ticker</th><th class="num">Before sh</th>...</tr></thead>
+      <tbody>
+        <tr class="group-header"><td colspan="9">New</td></tr>
+        <tr class="status-new"><td class="status-cell">...</td>...</tr>
+        <tr class="subtotal"><td>Subtotal — New</td>...</tr>
+      </tbody>
+    </table>
+    -->
+  </section>
+
+  <!-- BOOK IMPACT / RUBRIC / CHECKPOINTS — shared ending across all three output types -->
+  <section>
+    <!-- <h2>Book Impact</h2> -->
+  </section>
+  <section>
+    <!-- <h2>Rubric</h2> -->
+  </section>
+  <section>
+    <h2>Checkpoints</h2>
+    <ul class="checkpoints">
+      <!-- <li>YYYY-MM-DD — event</li> -->
+    </ul>
+  </section>
+
+  <!-- SOURCES + COMPLETENESS -->
+  <section>
+    <h2>Completeness</h2>
+    <table class="completeness">
+      <thead><tr><th>#</th><th>Domain</th><th>State</th><th>Where</th></tr></thead>
+      <tbody>
+        <!-- <tr><td>1</td><td>...</td><td class="state-answered">Answered</td><td>...</td></tr> -->
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="review-footer">
+    Analysis against Charles's own framework — not personalized financial advice. Broker screen governs prices; CPA governs tax.
+  </footer>
+
+</div>
+</body>
+</html>
