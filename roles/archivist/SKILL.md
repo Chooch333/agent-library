@@ -359,6 +359,7 @@ The Archivist appends to `i-001`'s `assertions` (the establishing entry is untou
 
 - **An empty brief is a success, not a problem.** `intents: []` is legal (E-177) — the brief is the record that an artifact was seen. Do not error, and do not go hunting through `observations` for something to file. Observations are never actions (E-162).
 
+- **A `sources` collision is a surface case, not a merge to improvise (Build 8.3, C-J-108, 2026-09-13).** A `project` entity page can carry both the generic `sources` list and the unrelated `lens_sources` mapping. If a future producer or a legacy caller ever hands the filer a `sources` back-reference for an entity whose `sources` field is currently a mapping (not a list), do not write a list item into it — that produces invalid YAML. Leave the field untouched and surface the collision, exactly as with any other stop-and-surface case in this skill.
 - **A deprecated brief is not a broken brief.** A v0.4.0 producer still emits `confidence: high|medium|low` and still emits the `implied-pm-item` flag. Both are legal until the producers migrate. File it unchanged. "Fixing" a legacy brief at filing time is an edit to approved content — the one thing the Archivist structurally must not do.
 
 ## Changelog
