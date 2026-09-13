@@ -1,6 +1,6 @@
 ---
 name: stack-advisor
-version: 1.2.1
+version: 1.3.0
 status: active
 triggers: ["Stack Advisor run"]
 owner: Charles
@@ -47,17 +47,22 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    questions shaped by the current shelf. Wait for runs to finish; read the
    new files in answers/. Graph answers are grounded-only; treat "the graph
    doesn't know" as a real answer.
-3b. INTAKE NEW VIDEOS. Read `world-graph/data/ingest_log.json`; for every
-    `outcome: ingested` record with `ingested_at > meta.last_intake_at`
-    (from `cbrain/docs/advisor/pool.json`), read the transcript file
-    (`world-graph/data/transcripts/{video_id}.md`) and write 0–3 candidate
-    ideas into the pool. A video with nothing relevant yields zero
-    candidates — that's normal. Each candidate must name at least one
-    `connects_to` item from Charles's own records (a stack-map component,
-    a queued/running plan, an open decision); if it can't, it is not an
-    idea, it's trivia — don't pool it. Set `meta.last_intake_at` to the
-    newest `ingested_at` processed. Cap 12 transcripts per run; leftover
-    transcripts wait for the next run (they stay "new" by timestamp).
+3b. INTAKE NEW SOURCES (videos + articles). Read
+    `world-graph/data/ingest_log.json` and
+    `world-graph/data/article_ingest_log.json`; for every `outcome:
+    ingested` record in either log with `ingested_at >
+    meta.last_intake_at` (from `cbrain/docs/advisor/pool.json`), read the
+    source file — `world-graph/data/transcripts/{video_id}.md` for a
+    video, `world-graph/data/articles/{article_id}.md` for an article —
+    and write 0–3 candidate ideas into the pool. A source with nothing
+    relevant yields zero candidates — that's normal. Each candidate must
+    name at least one `connects_to` item from Charles's own records (a
+    stack-map component, a queued/running plan, an open decision); if it
+    can't, it is not an idea, it's trivia — don't pool it. Set
+    `meta.last_intake_at` to the newest `ingested_at` processed across
+    both logs. Cap 12 items per run, combined across videos and articles
+    (not 12 each); leftover items wait for the next run (they stay "new"
+    by timestamp).
 4. SCORE AND SELECT. Score every non-archived pool idea, then select what
    goes in this run's brief:
    - **Rubric (0–100):** *connection* 0–40 (names a queued/running plan, an
@@ -124,16 +129,23 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    - Ideas from Charles's own records (no video) still enter the pool and
      follow the same rubric; they cannot be high-conviction on records
      alone.
-   - **Videos as scored source data.** `pool.json`'s `videos` section gets
-     one record per transcript ever read — `{video_id, channel, title,
-     url, first_read, ideas_pooled, ideas_surfaced, ideas_adopted,
-     source_score, tier}`. `source_score` = 10 × ideas_surfaced + 25 ×
-     ideas_adopted + 2 × ideas_pooled, minus 3 per run it has contributed
-     nothing new (floor 0). Tiers: `active` (≥ 20), `low` (5–19), `dormant`
-     (< 5). Nothing is ever deleted — a dormant video still counts as a
-     matching source for the theme-recurrence rule and can climb back.
-     Tier only affects effort: re-read `active` videos when looking for
-     corroboration; skip `dormant` ones. Write per-channel rollups (mean
+   - **Sources as scored source data.** `pool.json`'s `videos` section is
+     renamed `sources`: one record per video or article ever read —
+     `{kind, id, channel_or_feed, title, url, first_read, ideas_pooled,
+     ideas_surfaced, ideas_adopted, source_score, tier}`, where `kind` is
+     `video` or `article`, `id` is the `video_id` or `article_id`, and
+     `channel_or_feed` is the YouTube channel name or the RSS/Atom
+     source's name (from `feeds.json`). Existing `videos` rows are valid
+     unchanged under the new shape (read as `kind: video`, `id:
+     video_id`, `channel_or_feed: channel`) — no backfill or rewrite of
+     rows already on disk is required. `source_score` = 10 ×
+     ideas_surfaced + 25 × ideas_adopted + 2 × ideas_pooled, minus 3 per
+     run it has contributed nothing new (floor 0). Tiers: `active`
+     (≥ 20), `low` (5–19), `dormant` (< 5). Nothing is ever deleted — a
+     dormant source still counts as a matching source for the
+     theme-recurrence rule and can climb back. Tier only affects effort:
+     re-read `active` sources when looking for corroboration; skip
+     `dormant` ones. Write per-channel/per-feed rollups (mean
      `source_score`) to `meta.channel_scores` for the advisor's own use —
      not emailed.
    - Selected ideas are written back to `pool.json` immediately: assign
@@ -164,8 +176,8 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
 ### ADV-NNN · {Channel or feed name} — "{Video or article title}"
 {url}
 
-**From the video**
-{2–4 sentences: the specific point the video makes, in the advisor's own words, grounded in the transcript — no long quotes, no chapter-and-verse}
+**From the source**
+{2–4 sentences: the specific point the source makes, in the advisor's own words, grounded in the transcript or article — no long quotes, no chapter-and-verse}
 
 **What you have/do**
 {2–3 sentences: the component, process, or convention in Charles's stack this compares to, named (stack-map component or Project State display ID). If nothing comparable exists: "You don't have/do this today." plus one sentence on the closest thing.}
@@ -184,17 +196,21 @@ this, in this order, nothing else between blocks.
 
 Rules:
 a. The heading line carries the ADV ID first, always.
-b. When the evidence is Charles's own records rather than a video, the
-   heading reads `### ADV-NNN · your own records — {display IDs}` with no
-   URL line, and the first header reads **From your records** (instead of
-   "From the video").
-c. To write *From the video* the advisor fetches the transcript itself —
-   `world-graph/data/transcripts/{video_id}.md` (video id from the URL's
-   `v=` parameter) via Custom GitHub MCP `get_file_contents` — and grounds
-   the blurb in it; if the transcript can't be read, the idea is dropped,
-   not guessed.
-d. One block per idea — the same video may appear twice with two
-   different ADV IDs.
+b. When the evidence is Charles's own records rather than a video or
+   article, the heading reads `### ADV-NNN · your own records —
+   {display IDs}` with no URL line, and the first header reads **From
+   your records** (instead of "From the source").
+c. To write *From the source* the advisor fetches the source file itself
+   — `world-graph/data/transcripts/{video_id}.md` (video id from the
+   URL's `v=` parameter) for a video, or
+   `world-graph/data/articles/{article_id}.md` (article id: the first 12
+   hex characters of SHA-256 of the canonical URL, matching
+   `pipeline/article_store.py`'s `compute_article_id()`) for an article
+   — via Custom GitHub MCP `get_file_contents`, and grounds the blurb in
+   it; if the source file can't be read, the idea is dropped, not
+   guessed.
+d. One block per idea — the same video or article may appear twice with
+   two different ADV IDs.
 e. Resurfaced ideas keep their original ID and add a `Resurfaced: {what
    changed}` line under Confidence.
 
@@ -236,3 +252,19 @@ Plain English. Charles is not technical. One technical clause per idea, max.
   where all suppression signals were inferred rather than confirmed by
   the work (ADV-004 resurfaced twice while still `surfaced`, no readable
   response). Per BB-2026-09-04-advisor-response-loop.
+- **v1.3.0** (2026-09-13) — Generalizes intake from videos-only to videos
+  + RSS/Atom articles, matching world-graph's new article-persistence
+  parity (BB-2026-09-13-feed-parity-with-transcripts). Step 3b (renamed
+  INTAKE NEW SOURCES) now also reads
+  `world-graph/data/article_ingest_log.json` and
+  `world-graph/data/articles/{article_id}.md`, advancing
+  `meta.last_intake_at` across both logs and capping at 12 items/run
+  combined across videos and articles (not 12 each). `pool.json`'s
+  `videos` section is renamed `sources` and gains a `kind: video |
+  article` field plus a generalized `channel_or_feed` label — existing
+  rows are valid unchanged under the new shape, no backfill required.
+  "From the video" is renamed "From the source" throughout the brief
+  format (rule b likewise); rule c gains
+  `world-graph/data/articles/{article_id}.md` as a second grounding
+  location alongside the transcript path. Per
+  BB-2026-09-13-feed-parity-with-transcripts.
