@@ -1,12 +1,12 @@
 ---
 name: design-assist
-version: 0.2.12
+version: 0.2.13
 status: draft
 triggers:
   - "Design Assist"
 dependencies: []
 owner: Charles
-updated: 2026-09-09
+updated: 2026-09-14
 source: Original. Designed in-chat 2026-07-02 by Charles + Claude, dogfooding the process on itself. v0.2.0 proactive-harness revision designed in-chat 2026-07-09, again dogfooding. Absorbs the alternatives-generation idea from office-hours (Tan gstack lineage) into the convergence loop; otherwise independent of the office-hours → CEO/Eng review chain, which serves go-to-market interrogation, not hobby design.
 ---
 
@@ -40,7 +40,7 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 8. **Cost and effort stated unasked.** Every scoped component carries a rough effort/size tag (S/M/L) and any real-money cost, so trade-offs are visible without prompting. When a brief attaches a new input source to an existing API-billed component, it restates projected cost per item and per week and re-asks the real-money gate.
 9. **Every turn advances the gate.** Each turn ends with a one-line completeness report: which gate items are green, which turned green this turn, and the single thing that closes the biggest remaining gap. A turn that moves nothing toward the gate is a defect.
 10. **Acceptance criteria drafted early.** "What proves this worked" is drafted in the brief by end of Phase A, not at exit — it sharpens every downstream fork.
-11. **Confidence labeled.** Verified-by-checking vs. assumed vs. drafted-unreviewed are visibly distinct in the artifact.
+11. **Confidence labeled.** Verified-by-checking vs. assumed vs. drafted-unreviewed are visibly distinct in the artifact — rendered per `references/brief-artifact-style.md`'s pill/finding system (verified / assumed / drafted / correction), not just worded differently.
 
 ## The living artifact — draft Build Brief
 
@@ -49,6 +49,7 @@ Created from `references/build-brief-template.md` at intake. Rules carried over 
 - **Current state only.** Superseded ideas are dropped, not archived. Decision *reasons* stay (one line each) so settled questions don't get relitigated.
 - **Rewritten after every decision or material turn.** The header carries date, turn count, and the live completeness checklist.
 - **Language balance.** Plain English first. Jargon defined inline on first use. One technical clause per idea, max. Charles is not technical; the artifact must communicate the design shape to him and to a future technical executor at the same time.
+- **Presentation.** Every turn that shows the artifact to Charles in chat renders it as a published HTML artifact per `references/brief-artifact-style.md` — pill-badged confidence, the completeness-gate table, `.brief` cards for build-ready content — not a plain chat/markdown dump. Redeploy the same artifact across a session rather than publishing a fresh one each turn; Charles should have one artifact per design thread that updates in place.
 - **Working appendix** carries: Decisions Made / Forks (open) / Gated items / Assumptions (genuinely unverifiable only) / Out of Scope. Each decision carries a decider marker — **[Charles]** or **[Claude-per-doctrine]** — and at exit, Claude-decided items are logged as Decisions with `judgment-call` provenance per PROTOCOL.md. When the brief goes build-ready, Forks and Gated are empty by definition and the appendix collapses into the brief's Scope and Inputs sections.
 
 **Snapshot rule:** save the full artifact text to Project State at every **phase boundary** (end of Orient, end of Constrain, convergence milestones, exit) and whenever Charles says "save state" — not every turn. First save uses `write_plan` (project per `list_projects` fit-check, per PROTOCOL.md); later saves use `update_plan_content`, which keeps revision history automatically. This is storage, not ceremony — no Session Log per save.
@@ -138,6 +139,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.2.13** (2026-09-14) — New `references/brief-artifact-style.md`: the visual system every DA artifact turn now renders through (IBM Plex type, confidence-pill CSS for verified / assumed / drafted / correction, the completeness-gate table, `.brief` cards mapped to `build-brief-template.md`'s ● fields, inline-SVG mechanism diagrams per `artifact-diagramming`). Doctrine rule 11 and the living-artifact section now point to it. Generalizes the styling from a world-graph feed-reader design session the same day, which Charles reacted well to — that specific artifact was original work, not drafted from any existing template; this file is what makes the pattern reusable and canonical going forward.
 - **0.2.12** (2026-09-09) — Step 1's plan audit gained the **walkthrough visibility rule** (CB-228 on cbrain): the turn that calls `review_plan` also flips the walkthrough's header in `docs/review/walkthrough-log.md` from PENDING to READY and adds one open next move on the project — "Charles: walk Walkthrough N — checks Build X …, Script: <GitHub link>, Start at: <preview URL>" — tagged `walkthrough` / `charles` / `build-X`, completed by the DA when Charles reports. Prompted by Charles on 2026-09-09: walkthrough scripts lived only in git and inside plan text, and he could not find them from Project State. Two live traces behind it: Walkthroughs 8 and 9 were both prepared ahead of their builds and still read "not merged" after the builds had landed and been reviewed.
 - **0.2.11** (2026-09-04) — Step 10's advisor-origin provenance rule now also requires writing a one-line **intended response** into the LEDGER's `Response` column when flipping a row to `building` — one of four worked shapes (adopting as asked / adopting narrower / already covered / declining) so wording is copied, not reinvented. Pairs with a new landing-side hook in PROTOCOL.md (the Build Chat writes the *actual* response and flips the row to `addressed`) and a new `addressed` terminal state + `Response` column in `cbrain/docs/advisor/LEDGER.md`. Closes the gap where suppression was inferred rather than confirmed by the work — ADV-004 resurfaced twice while still showing `surfaced` with no readable response. Per BB-2026-09-04-advisor-response-loop.
 - **0.2.10** (2026-09-03) — Doctrine rule 8 (Cost and effort stated unasked) gained one sentence: when a brief attaches a new input source to an existing API-billed component, it restates projected cost per item and per week and re-asks the real-money gate. Prompted by the YouTube transcript-ingestion go-live brief never re-running the cost math when the workload changed roughly 50x (~1 channel's worth of manual pilot videos to full RSS-discovered volume). Per BB-2026-09-03-yt-ingest-cost-and-sweep.
