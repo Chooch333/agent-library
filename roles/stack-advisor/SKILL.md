@@ -198,6 +198,51 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    c. Gmail send to Charles — subject "Stack Advisor brief ADV-YYYY-MM-DD",
       full brief in the body, git path at the bottom.
    d. Project State note on stack-map: one-paragraph digest + git path.
+   e. Supabase copy for the cbrain-ui Stack screen (project
+      `lpeswznkxzeeyiqaewma`). This is the same data as a–b, stored as
+      rows so the screen can read it directly instead of parsing git.
+      Git stays the record; these rows copy it.
+      - Upsert one `advisor_runs` row keyed on `run_id` = this run's ADV
+        file name without `.md` (e.g. `ADV-2026-09-16`): `run_date`;
+        `preamble` = the brief's opening paragraphs (everything before
+        the first idea block); `sources_read` = JSON list of the sources
+        read in 3b, each `{kind, id, channel_or_feed, title, url}`;
+        `queue_depth` = sources still waiting for intake after this
+        run's 12-item cap (0 if none); `graph_answered` = true if any
+        step 3 query came back with a grounded answer, false if the
+        graph didn't know; `questions` = JSON list of this brief's
+        "Questions for Charles" (empty list if none); `brief_path` = the
+        git path from 6a.
+      - Upsert one `advisor_ideas` row per idea in this brief, keyed on
+        `adv_id`: `title` = the ledger `Idea` text; `plain_title` = a
+        short plain-English name (10 words or fewer); `body` = JSON of
+        the block exactly as written in 6a — `{from_source,
+        what_you_have, why_connection, what_gets_better, confidence,
+        resurfaced}` ("From your records" also goes in `from_source`;
+        `resurfaced` is null unless rule e applies); `effort` = S/M/L;
+        `high_conviction`; `component_ids` = the stack-map component
+        ids the idea connects to, from the pool entry's `connects_to`
+        (for a plan or decision, the component it is about; write an id
+        even if the map doesn't list it yet — the screen shows it as
+        Unmapped); `source` = `{kind, name, title, url}` from the block
+        heading (`kind: records`, `name` = the display IDs, `url` null
+        for own-records ideas); `first_seen`; `status` and `response` =
+        the ledger's Status and Response; `brief_ref` = the ledger
+        `Brief` cell; `pool_ref` = the ledger `Pool` cell. A new idea
+        gets `first_run_id` = `latest_run_id` = this run and
+        `resurface_count` 0. A resurfaced idea keeps `first_run_id`,
+        sets `latest_run_id` to this run, and adds 1 to
+        `resurface_count`.
+      - Then sync every other ledger row that is missing from
+        `advisor_ideas`, or whose Status or Response differs from its
+        row, the same way (read the idea's block from its `Brief` file
+        if the row is missing). This brings step 1's changes, and the
+        DA/Build chats' flips to `building`/`addressed`, onto the
+        screen. The advisor is the only writer of
+        `advisor_ideas.status`; the app never sets it.
+      - Read back with a SELECT: the run row, plus a count of this run's
+        idea rows. If this write fails, a–d still stand. Name the error
+        in the 6d note; the next run's sync repairs the gap.
 
 ## Brief format
 
