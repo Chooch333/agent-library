@@ -186,7 +186,7 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
 5. ASK IF UNSURE. If the purpose of a current build can't be stated
    confidently in one sentence, add a "Questions for Charles" section —
    max 3, closed choices with a recommendation each. Never block on them.
-6. DELIVER, four writes:
+6. DELIVER, five writes:
    a. Commit brief → cbrain docs/advisor/ADV-YYYY-MM-DD.md (read back to
       verify, per write-before-done).
    b. Update LEDGER.md with the new ideas (status: surfaced), filling the
