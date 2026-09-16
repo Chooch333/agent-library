@@ -342,3 +342,22 @@ Plain English. Charles is not technical. One technical clause per idea, max.
   `world-graph/data/articles/{article_id}.md` as a second grounding
   location alongside the transcript path. Per
   BB-2026-09-13-feed-parity-with-transcripts.
+- **v1.4.0** (2026-09-16) — Closes the feedback loop through the new
+  cbrain-ui Stack screen (CB-291). Step 1 (FEEDBACK FIRST) gains a second
+  source alongside the Gmail reply (a union, not a replacement — the step
+  still works when either is empty): unconsumed `advisor_dispositions`
+  rows on `lpeswznkxzeeyiqaewma` are folded into LEDGER.md as an email
+  reply would be. `interested` → `interested`; `declined` → `declined`,
+  with the note written to `Response` as "declining because {note}";
+  `scoping` → `interested`, with "scope requested" added to the `Idea`
+  cell, because `building` stays the DA chat's flip at scoping. The
+  latest answer wins; `addressed` rows are never changed, and `building`
+  rows are never moved back. Each row gets `consumed_at` only after the
+  ledger commit reads back. Step 6 (DELIVER) goes from four writes to
+  five: new 6e upserts this run's `advisor_runs` row and its
+  `advisor_ideas` rows (body sections, effort, conviction,
+  `component_ids` from `connects_to`, source, status/response,
+  brief/pool refs, run ids and resurface count), then syncs any ledger
+  row that is missing or out of date, so the screen reads rows instead
+  of parsing git. Git stays the record, and a failed 6e never blocks
+  6a–d. Per BB-2026-09-16-stack-screen.
