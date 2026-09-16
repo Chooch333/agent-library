@@ -29,10 +29,39 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
   DA chat, which produces a Build Brief. The advisor never queues plans.
 
 ## Each run, in order
-1. FEEDBACK FIRST. Gmail: find Charles's reply to the most recent advisor
-   brief email (subject prefix "Stack Advisor brief"). Record each
-   disposition in cbrain docs/advisor/LEDGER.md (statuses: surfaced /
-   interested / building / declined). Commit. No reply = no change.
+1. FEEDBACK FIRST. Two sources, always read both — a union, not a
+   replacement; either one may be empty and the step still works.
+   a. Gmail: find Charles's reply to the most recent advisor
+      brief email (subject prefix "Stack Advisor brief"). Record each
+      disposition in cbrain docs/advisor/LEDGER.md (statuses: surfaced /
+      interested / building / declined). No reply = no change.
+   b. Stack screen: on the cbrain Supabase project
+      (`lpeswznkxzeeyiqaewma`), read `advisor_dispositions` where
+      `consumed_at is null`, oldest `created_at` first. Each row is an
+      answer Charles gave on the cbrain-ui Stack screen; fold it into
+      LEDGER.md exactly as the same answer in an email reply would be
+      folded, matching the row's `adv_id` to the ledger `ID`:
+      - `interested` → Status `interested`.
+      - `declined` → Status `declined`. The row's `note` is Charles's
+        reason and goes in the `Response` column as "declining because
+        {note}", the same way a reason given in an email reply would.
+      - `scoping` ("Scope it") → Status `interested`, and append
+        " — scope requested YYYY-MM-DD (Stack screen)" to the row's
+        `Idea` cell. Charles is taking the idea to a DA chat; no Build
+        Brief exists yet, so `building` stays the DA chat's flip at
+        scoping (with its intended Response), per the ledger contract.
+      Several rows for one ID: apply them in order, so the latest wins.
+      If an email reply and a row disagree, the later of the two wins.
+      Never change an `addressed` row, and never move a `building` row
+      back to `interested` — skip that disposition (it is still
+      consumed) and say so in the brief's opening paragraph. A row whose
+      `adv_id` matches no ledger row is left unconsumed and named in the
+      brief.
+   c. Commit LEDGER.md once for both sources and read it back. Only
+      after the read-back shows the change, set `consumed_at = now()`
+      on every row folded or skipped in 1b — so no row is processed
+      twice, and none is lost if the commit fails. No reply and no
+      unconsumed rows = no change.
 2. ORIENT — read live, keep nothing cached:
    a. Project State plan 31fdcb9b (Master Roadmap) — the five-layer map
       and open decision queue.
