@@ -138,7 +138,7 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
      `plans.provenance/tags` and `decisions.provenance/tags` for
      `ADV-NNN`); (3) the change the idea describes is already present in
      the live component it names (check the component before writing
-     "What you have/do" — if the answer is "you already do this", the
+     "What you have today" — if the answer is "you already do this", the
      idea is adopted, not sent); (4) the ledger row is `addressed` — the
      authoritative, work-confirmed signal (the Build Chat that landed the
      brief wrote the actual Response, not an inference from `building`)
