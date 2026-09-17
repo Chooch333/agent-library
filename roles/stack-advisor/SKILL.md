@@ -412,3 +412,15 @@ system's files.
   idea not in that run's own brief — only touches `status`/`response` on
   existing rows, building missing rows fresh. Per
   BB-2026-09-16-stack-plain-language (Build 11.1).
+- **v1.5.1** (2026-09-17) — Closes three doctrine references the v1.5.0
+  plain-language rewrite left pointing at old wording. Step 4's
+  same-theme-new-video bullet now names the `Raised again because:`
+  line instead of the retired `Resurfaced:` line. The already-acted-on
+  check (signal 3) now checks the component before writing "What you
+  have today" instead of the retired "What you have/do" header. Rule b
+  (own-records evidence) now matches the current heading shape: the
+  heading is still `### ADV-NNN · {plain title, rule 6}`, followed by a
+  `Source: your own records — {what the records are, in plain words,
+  with codes in parentheses}` line with no URL, and the first header
+  still reads **What your records show**. Per
+  BB-2026-09-17-stack-plain-language-fixes.
