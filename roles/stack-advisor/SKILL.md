@@ -214,31 +214,37 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
         "Questions for Charles" (empty list if none); `brief_path` = the
         git path from 6a.
       - Upsert one `advisor_ideas` row per idea in this brief, keyed on
-        `adv_id`: `title` = the ledger `Idea` text; `plain_title` = a
-        short plain-English name (10 words or fewer); `body` = JSON of
-        the block exactly as written in 6a — `{from_source,
-        what_you_have, why_connection, what_gets_better, confidence,
-        resurfaced}` ("From your records" also goes in `from_source`;
-        `resurfaced` is null unless rule e applies); `effort` = S/M/L;
-        `high_conviction`; `component_ids` = the stack-map component
-        ids the idea connects to, from the pool entry's `connects_to`
-        (for a plan or decision, the component it is about; write an id
-        even if the map doesn't list it yet — the screen shows it as
-        Unmapped); `source` = `{kind, name, title, url}` from the block
-        heading (`kind: records`, `name` = the display IDs, `url` null
-        for own-records ideas); `first_seen`; `status` and `response` =
-        the ledger's Status and Response; `brief_ref` = the ledger
-        `Brief` cell; `pool_ref` = the ledger `Pool` cell. A new idea
-        gets `first_run_id` = `latest_run_id` = this run and
+        `adv_id`: `title` = the ledger `Idea` text; `plain_title` = the
+        heading's plain title (rule 6, 10 words or fewer, no bare
+        codes, no outside company/product names); `body` = JSON of the
+        block exactly as written in 6a — `{from_source, what_you_have,
+        why_the_connection, what_gets_better, confidence,
+        resurfaced_note}` plus a new `in_plain_terms` key holding the
+        "In plain terms:" sentence ("What your records show" also goes
+        in `from_source` for own-records ideas; `resurfaced_note` is
+        null unless rule e applies); `effort` = S/M/L; `high_conviction`;
+        `component_ids` = the stack-map component ids the idea connects
+        to, from the pool entry's `connects_to` (for a plan or decision,
+        the component it is about; write an id even if the map doesn't
+        list it yet — the screen shows it as Unmapped); `source` =
+        `{kind, name, title, url}` from the block heading (`kind:
+        records`, `name` = the display IDs, `url` null for own-records
+        ideas); `first_seen`; `status` and `response` = the ledger's
+        Status and Response; `brief_ref` = the ledger `Brief` cell;
+        `pool_ref` = the ledger `Pool` cell. A new idea gets
+        `first_run_id` = `latest_run_id` = this run and
         `resurface_count` 0. A resurfaced idea keeps `first_run_id`,
         sets `latest_run_id` to this run, and adds 1 to
         `resurface_count`.
-      - Then sync every other ledger row that is missing from
-        `advisor_ideas`, or whose Status or Response differs from its
-        row, the same way (read the idea's block from its `Brief` file
-        if the row is missing). This brings step 1's changes, and the
-        DA/Build chats' flips to `building`/`addressed`, onto the
-        screen. The advisor is the only writer of
+      - Then sync every other ledger row that already has an
+        `advisor_ideas` row: touch **only** `status` and `response`.
+        Never rewrite `title`, `plain_title` or `body` for an idea that
+        isn't in this run's brief. Only a ledger row with **no**
+        `advisor_ideas` row yet is built fresh from its `Brief` file —
+        and written straight to this run's standard (rule 1a, "Writing
+        for Charles") as it's created. This brings step 1's changes,
+        and the DA/Build chats' flips to `building`/`addressed`, onto
+        the screen. The advisor is the only writer of
         `advisor_ideas.status`; the app never sets it.
       - Read back with a SELECT: the run row, plus a count of this run's
         idea rows. If this write fails, a–d still stand. Name the error
