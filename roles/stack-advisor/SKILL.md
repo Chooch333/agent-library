@@ -121,7 +121,7 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    - **Same theme, new video — may return.** If a *new* video (or a new
      record of Charles's) repeats an idea already surfaced, the source is
      appended, evidence rises, and it may be resurfaced once with the
-     `Resurfaced:` line (rule e, below) stating what's new. Recurrence
+     `Raised again because:` line (rule e, below) stating what's new. Recurrence
      across videos is a signal of importance. Before resurfacing, read
      the ledger row's `Response` column if one is present — a `building`
      row can carry an intended response, an `addressed` row a confirmed
