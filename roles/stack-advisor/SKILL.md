@@ -288,8 +288,36 @@ d. One block per idea — the same video or article may appear twice with
 e. Resurfaced ideas keep their original ID and add a `Resurfaced: {what
    changed}` line under Confidence.
 
-## Language
-Plain English. Charles is not technical. One technical clause per idea, max.
+## Writing for Charles
+Charles is not technical and reads these cold, often days later. Every
+sentence must make sense to a smart person who has never seen this
+system's files.
+
+1. **Lead with one plain sentence.** Every idea opens with "In plain
+   terms:" — what to change and what Charles gets.
+2. **No bare codes.** Record codes (D6, CB-138, SM-027, P-0010, BB-…)
+   never stand alone. Say what the thing is first; the code can follow
+   in parentheses.
+3. **Introduce every outside source.** Who they are in a few words, the
+   first time: "Y Combinator's in-house engineering team," not "YC's QM
+   team."
+4. **Name parts of the system by what they do.** "The step that pulls
+   facts out of videos (intake-extractors)."
+5. **No jargon without a translation.** If a word wouldn't come up in a
+   construction-firm meeting, replace it with what it does. Always
+   translate: harness, zero-trust, event log, object storage,
+   cell-level security, access tier, caller, context window, rubric,
+   hook, trace, observability, orchestrator, idempotent, saga, and "the
+   X pattern."
+6. **Titles:** 10 words max, no record codes, no outside company or
+   product names, say the change. (Charles's own system names — cbrain,
+   Stack screen — are fine.)
+7. **Short opening.** At most three sentences: how many ideas, and
+   whether anything needs an answer. Run mechanics (what was read,
+   queries sent, reply checks, queue counts) go in a short "How this run
+   worked" section at the bottom of the brief.
+8. **Reread as Charles before sending.** A sentence that needs a
+   glossary gets rewritten, not footnoted.
 
 ## Changelog
 - **v1.0.0** (2026-08-28) — Initial ship: finalized from the BB-2026-08-27-stack-advisor
