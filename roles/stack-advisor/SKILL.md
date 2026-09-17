@@ -128,7 +128,7 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
      one (signal 4, below). If the Response already covers the new
      angle, the theme is not genuinely new — don't resurface. If the new
      evidence falls outside what the Response describes, resurfacing is
-     still warranted and the `Resurfaced:` line should say what the
+     still warranted and the `Raised again because:` line should say what the
      existing Response missed. This is the check that would have kept
      ADV-004 from resurfacing unaddressed.
    - **Already acted on — never again.** Before selecting, mark an idea
