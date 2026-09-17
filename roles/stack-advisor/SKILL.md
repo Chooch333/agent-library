@@ -247,22 +247,24 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
 ## Brief format
 
 ```
-### ADV-NNN · {Channel or feed name} — "{Video or article title}"
-{url}
+### ADV-NNN · {plain title, rule 6}
+Source: {who they are, in a few words} — "{video or article title}" · {url}
 
-**From the source**
-{2–4 sentences: the specific point the source makes, in the advisor's own words, grounded in the transcript or article — no long quotes, no chapter-and-verse}
+**In plain terms:** {one sentence}
 
-**What you have/do**
-{2–3 sentences: the component, process, or convention in Charles's stack this compares to, named (stack-map component or Project State display ID). If nothing comparable exists: "You don't have/do this today." plus one sentence on the closest thing.}
+**What they found**
+{2–4 sentences}
 
-**Why the connection**
+**What you have today**
+{2–3 sentences: the component, process, or convention in Charles's stack this compares to, named by what it does, never a bare code (rules 2 and 4). If nothing comparable exists: "You don't have this today." plus one sentence on the closest thing.}
+
+**Why it matters here**
 {2–3 sentences: why the advisor is pulling this out and tying it to that component — the link must be concrete, not thematic}
 
-**What gets better**
-{2–3 sentences: how Charles's day or stack improves if this is added or changed — plus effort S/M/L}
+**What you'd gain**
+{2–3 sentences: how Charles's day or stack improves if this is added or changed — plus "Effort: small | medium | large"}
 
-Confidence: {Verified-by-checking | Assumed} — {one line}
+{Checked | Assumed} — {one line}
 ```
 
 Every idea in the email and the committed ADV file renders exactly like
@@ -272,9 +274,9 @@ Rules:
 a. The heading line carries the ADV ID first, always.
 b. When the evidence is Charles's own records rather than a video or
    article, the heading reads `### ADV-NNN · your own records —
-   {display IDs}` with no URL line, and the first header reads **From
-   your records** (instead of "From the source").
-c. To write *From the source* the advisor fetches the source file itself
+   {display IDs}` with no URL line, and the first header reads **What
+   your records show** (instead of "What they found").
+c. To write *What they found* the advisor fetches the source file itself
    — `world-graph/data/transcripts/{video_id}.md` (video id from the
    URL's `v=` parameter) for a video, or
    `world-graph/data/articles/{article_id}.md` (article id: the first 12
@@ -285,8 +287,8 @@ c. To write *From the source* the advisor fetches the source file itself
    guessed.
 d. One block per idea — the same video or article may appear twice with
    two different ADV IDs.
-e. Resurfaced ideas keep their original ID and add a `Resurfaced: {what
-   changed}` line under Confidence.
+e. Resurfaced ideas keep their original ID and add a `Raised again
+   because: {what changed}` line under Confidence.
 
 ## Writing for Charles
 Charles is not technical and reads these cold, often days later. Every
