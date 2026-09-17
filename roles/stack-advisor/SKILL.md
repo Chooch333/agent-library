@@ -279,9 +279,11 @@ this, in this order, nothing else between blocks.
 Rules:
 a. The heading line carries the ADV ID first, always.
 b. When the evidence is Charles's own records rather than a video or
-   article, the heading reads `### ADV-NNN · your own records —
-   {display IDs}` with no URL line, and the first header reads **What
-   your records show** (instead of "What they found").
+   article, the heading is still `### ADV-NNN · {plain title, rule 6}`;
+   the next line reads `Source: your own records — {what the records
+   are, in plain words, with codes in parentheses}` with no URL; and
+   the first header reads **What your records show** (instead of "What
+   they found").
 c. To write *What they found* the advisor fetches the source file itself
    — `world-graph/data/transcripts/{video_id}.md` (video id from the
    URL's `v=` parameter) for a video, or
