@@ -397,3 +397,16 @@ system's files.
   row that is missing or out of date, so the screen reads rows instead
   of parsing git. Git stays the record, and a failed 6e never blocks
   6a–d. Per BB-2026-09-16-stack-screen.
+- **v1.5.0** (2026-09-16) — Replaces the one-line `## Language` rule with
+  "Writing for Charles": eight concrete rules (plain-terms opener, no
+  bare codes, introduce outside sources, name system parts by function,
+  translate jargon, 10-word titles, short opening with run mechanics
+  moved to a footer, reread-as-Charles). The brief format is rewritten
+  to match (What they found / What you have today / Why it matters here
+  / What you'd gain / Checked-or-Assumed, own-records variant "What your
+  records show", `Raised again because:` replacing `Resurfaced:`). Step
+  6e's `advisor_ideas` write adds `in_plain_terms` and tightens the sync
+  bullet so a run never rewrites `title`/`plain_title`/`body` for an
+  idea not in that run's own brief — only touches `status`/`response` on
+  existing rows, building missing rows fresh. Per
+  BB-2026-09-16-stack-plain-language (Build 11.1).
