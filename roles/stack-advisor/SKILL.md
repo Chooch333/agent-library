@@ -81,22 +81,36 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    questions shaped by the current shelf. Wait for runs to finish; read the
    new files in answers/. Graph answers are grounded-only; treat "the graph
    doesn't know" as a real answer.
-3b. INTAKE NEW SOURCES (videos + articles). Read
-    `world-graph/data/ingest_log.json` and
-    `world-graph/data/article_ingest_log.json`; for every `outcome:
-    ingested` record in either log with `ingested_at >
-    meta.last_intake_at` (from `cbrain/docs/advisor/pool.json`), read the
-    source file — `world-graph/data/transcripts/{video_id}.md` for a
-    video, `world-graph/data/articles/{article_id}.md` for an article —
-    and write 0–3 candidate ideas into the pool. A source with nothing
-    relevant yields zero candidates — that's normal. Each candidate must
-    name at least one `connects_to` item from Charles's own records (a
-    stack-map component, a queued/running plan, an open decision); if it
-    can't, it is not an idea, it's trivia — don't pool it. Set
-    `meta.last_intake_at` to the newest `ingested_at` processed across
-    both logs. Cap 12 items per run, combined across videos and articles
-    (not 12 each); leftover items wait for the next run (they stay "new"
-    by timestamp).
+3b. INTAKE NEW SOURCES (videos + articles). The advisor reads only its
+    marked sources; everything else is collected for the graph but not
+    read here.
+    Videos: the advisor's video sources are the channels listed in
+    `Chooch333/yt-relay/channels.json` (the channels Charles follows).
+    Every `outcome: ingested` record in
+    `world-graph/data/ingest_log.json` with `ingested_at >
+    meta.last_intake_at` is a candidate; open
+    `world-graph/data/transcripts/{video_id}.md` and keep it only if its
+    header `channel:` matches a `name` in channels.json. Videos shared
+    from Charles's phone from any other channel are not read.
+    `meta.last_intake_at` now governs videos only.
+    Articles: the advisor's article sources are exactly the entries in
+    `world-graph/feeds.json` with `"stack_advisor": true`. No other feed
+    is read. An article is new when its `article_id` is not yet in
+    pool.json `sources` (kind `article`), whatever its `outcome`
+    (`queued` and `ingested` both count — the advisor reads the saved
+    file itself and does not wait for the graph) and whatever its date.
+    Find each article's feed from the Sources data row (one query:
+    `sources_state` id='rss' on lpeswznkxzeeyiqaewma → feeds with
+    `stack_advisor` true → their `article_id`s); if that row is missing
+    or its `synced_at` is older than 36 hours, fall back to the
+    `source:` line of `world-graph/data/articles/{article_id}.md`. An
+    article from an unmarked feed is skipped and NOT added to `sources`,
+    so marking that feed later brings its backlog in.
+    For each new item, read the source file and write 0–3 candidate
+    ideas into the pool (rules unchanged: each must name a `connects_to`
+    item from Charles's own records, or it is trivia and is not pooled).
+    Cap 12 items per run, videos and articles combined, newest first;
+    leftovers wait for the next run.
 4. SCORE AND SELECT. Score every non-archived pool idea, then select what
    goes in this run's brief:
    - **Rubric (0–100):** *connection* 0–40 (names a queued/running plan, an
