@@ -453,3 +453,10 @@ system's files.
   folding is unchanged (latest still wins). Companion to cbrain-ui
   Build 11.5, which now takes passed ideas off the Stack map as soon
   as they are saved. Per BB-2026-09-19-stack-passed-off-map.
+- **v1.6.0** (2026-09-20) — The advisor reads an explicit source list:
+  videos from the channels in yt-relay/channels.json (phone-shared
+  videos from other channels are no longer read) and articles only
+  from feeds.json entries marked "stack_advisor": true. Articles are
+  read as soon as they are saved (queued or ingested), and "new" means
+  "not yet in pool.json sources," so the backlog stranded at "queued"
+  since 09-13 is caught up. Per BB-2026-09-20-advisor-sources.
