@@ -51,6 +51,11 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
         Brief exists yet, so `building` stays the DA chat's flip at
         scoping (with its intended Response), per the ledger contract.
       Several rows for one ID: apply them in order, so the latest wins.
+      One exception, for the note only: when the winning row is
+      `declined` and this run folds more than one `declined` row for
+      that ID, `Response` joins all their notes, oldest first, separated
+      by " / " ("declining because {note 1} / {note 2}") — so a
+      follow-up note never erases the first reason.
       If an email reply and a row disagree, the later of the two wins.
       Never change an `addressed` row, and never move a `building` row
       back to `interested` — skip that disposition (it is still
