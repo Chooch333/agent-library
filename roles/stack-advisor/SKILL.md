@@ -429,3 +429,13 @@ system's files.
   with codes in parentheses}` line with no URL, and the first header
   still reads **What your records show**. Per
   BB-2026-09-17-stack-plain-language-fixes.
+- **v1.5.2** (2026-09-19) — Step 1b: when the winning Stack-screen
+  answer for an idea is `declined` and the run folds more than one
+  `declined` row for it, `Response` joins every note, oldest first,
+  separated by " / ", instead of keeping only the latest. Prompted by
+  ADV-020, passed twice on 2026-09-19 — first with the reason, then
+  with a follow-up ("Can you remove this to an archive state?") that
+  "latest wins" would otherwise have recorded as the reason. Status
+  folding is unchanged (latest still wins). Companion to cbrain-ui
+  Build 11.5, which now takes passed ideas off the Stack map as soon
+  as they are saved. Per BB-2026-09-19-stack-passed-off-map.
