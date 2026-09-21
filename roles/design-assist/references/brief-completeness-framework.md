@@ -76,6 +76,7 @@ The order of work and what must exist first.
 
 ### 10. Assumptions & risks
 - Assumptions: genuinely unverifiable items only, each with what would eventually confirm it. A checkable claim here is a defect (doctrine rule 2).
+- **Outside-service premises: test from where the fix will run, and test fresh.** If the build depends on how an outside service behaves ("the feed works from a home connection," "the API still returns X"), the brief is not done until someone has actually tried it from the same place the build will run (same host or network — GitHub Actions, the home PC, Vercel) and recently, with a few repeat tries if the service could be intermittent. Evidence from a different place, from days ago, or that a link is merely advertised is an assumption, not a check — label it as one. A ten-minute test at brief-writing beats a build resting on a wrong premise. (Lesson WG-063, world-graph; adopted from ADV-009, 2026-09-21.)
 - Known failure modes and the intended response (retry / degrade / notify).
 
 ### 11. Design intent narrative
