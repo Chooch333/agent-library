@@ -29,7 +29,7 @@ wiring:
 
 ## What
 
-Systematic root-cause debugging. The Iron Law is: **no fixes without root cause investigation first.** Symptoms-only fixes create whack-a-mole bugs that compound. This role forces a disciplined sequence — gather context, form a hypothesis, test it, then fix — and produces a structured debug report at the end.
+Systematic root-cause debugging. The Iron Law is: **no fixes without root cause investigation first.** Symptoms-only fixes create whack-a-mole bugs that compound. This skill forces a disciplined sequence — gather context, form a hypothesis, test it, then fix — and produces a structured debug report at the end.
 
 ## When
 
