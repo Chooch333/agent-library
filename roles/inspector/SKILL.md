@@ -103,3 +103,4 @@ A single lesson mentions a Vercel deploy taking longer than expected. One record
 ## Changelog
 
 - **0.1.0** (2026-09-22) — Initial draft, written per BB-2026-09-21-inspector-repairer Phase 2, incorporating Amendment 1 (decision A-077: held/failed/needs-brief handling in step 2b). `status: draft` pending the first live walk (Phase 2 acceptance runs, next session).
+- **0.1.0** (2026-09-22) — Amendment 2 (decision A-080): step 2's Recovery clause no longer calls `set_punch_status held` on a 404'd target (`held` is Repairer-only under A-077) — it now leaves the status unchanged with an explanatory `add_punch_note`, and uses `refused` only when the target is permanently gone. Per BB-2026-09-21-inspector-repairer step 12a.
