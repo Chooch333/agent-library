@@ -12,6 +12,15 @@ dependencies: [pr-reviewer]
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /ship (https://github.com/garrytan/gstack/blob/main/ship/SKILL.md). Tan's original is a 3,000-line orchestration covering tests, version bump, CHANGELOG, TODOS, commits, push, doc sync, PR creation, persisted metrics. Most of that depends on Claude Code's local file system and git. This reshape keeps the *order of operations* and *gates*, adapted to Charles's stack — tests run locally by Charles, while review, version bump, CHANGELOG, commits, and PR creation flow through Custom GitHub MCP.
+wiring:
+  runs: with-you
+  starts: "\"ship it\""
+  runs_in: claude-chat
+  reads: [pr-diff]
+  writes: [changelog, pr]
+  stack: []
+  origin: imported
+  label: Ship
 ---
 
 # Ship
