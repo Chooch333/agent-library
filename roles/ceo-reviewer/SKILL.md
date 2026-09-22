@@ -14,6 +14,15 @@ dependencies: []
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /plan-ceo-review (https://github.com/garrytan/gstack/blob/main/plan-ceo-review/SKILL.md). Runtime-specific bash, telemetry, and file-system operations stripped. Kept: the judgment frame.
+wiring:
+  runs: with-you
+  starts: "\"CEO review\""
+  runs_in: claude-chat
+  reads: [plan]
+  writes: []
+  stack: []
+  origin: imported
+  label: CEO review
 ---
 
 # CEO Reviewer
