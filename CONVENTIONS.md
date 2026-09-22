@@ -74,12 +74,11 @@ wiring:
 - Pitfalls must reference a real trace. Fabricated pitfalls fail validation.
 - Imports stay in `imports/`. Reshape into `roles/` when actually adopted.
 
-## The Hook protocol
+## Keeping the rules current
 
-- Every task ends with a `should-distill` check: "did anything happen worth capturing?"
-- Hook cannot be silently removed.
-- If yes → Distill writes a new or updated SKILL.md.
-- If no → nothing happens. That's the correct outcome most of the time.
+- The per-task `should-distill` hook this section used to describe was never built (the "Distill" meta-skill it depended on never shipped) and is retired.
+- In its place: the Inspector's weekly walk (`roles/inspector/SKILL.md`) is what checks whether the system's own rules, skills, and stack-map need a fix — on a schedule, not per-task. It files what it finds on the Punch List; the Repairer (`roles/repairer/SKILL.md`) applies the safe ones.
+- This is a coarser cadence than the old per-task hook by design (BB-2026-09-21-inspector-repairer, design intent: "when in doubt, hold back — a missed fix costs a week; a wrong rule change costs every chat").
 
 ## Validation
 
