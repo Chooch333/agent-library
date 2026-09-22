@@ -7,6 +7,15 @@ triggers:
 owner: Charles
 updated: 2026-09-11
 source: Designed in a Design Assist chat 2026-09-11 (BB-2026-09-11-investment-review-role).
+wiring:
+  runs: with-you
+  starts: "\"this is an investment review\""
+  runs_in: claude-chat
+  reads: []
+  writes: []
+  stack: []
+  origin: yours
+  label: Investment review
 ---
 
 # Investment Review
