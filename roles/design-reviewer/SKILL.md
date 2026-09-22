@@ -12,6 +12,15 @@ dependencies: []
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /plan-design-review (https://github.com/garrytan/gstack/blob/main/plan-design-review/SKILL.md). Stripped: gstack runtime bash, gstack designer binary (visual mockup generation requires DESIGN_READY binary), telemetry, ~/.gstack/projects/ filesystem ops, browser preview commands. Kept: design philosophy, design principles, cognitive patterns, UX principles (Krug), 0-10 rating system, 7-pass review structure, AI slop blacklist, hard rejection criteria.
+wiring:
+  runs: with-you
+  starts: "\"design review\""
+  runs_in: claude-chat
+  reads: [design-doc]
+  writes: []
+  stack: []
+  origin: imported
+  label: Design review
 ---
 
 # Design Reviewer
