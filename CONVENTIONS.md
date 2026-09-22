@@ -51,6 +51,22 @@ updated: <YYYY-MM-DD>
 5. **Pitfalls** — every pitfall must come from a real trace (no fabrications)
 6. **Changelog** — versioned notes
 
+## Optional wiring block
+
+Any SKILL.md (and the new `external/` pointer files) may carry an optional `wiring:` map inside its YAML front-matter, consumed by cbrain-ui's Skills tab:
+
+```yaml
+wiring:
+  runs: on-its-own        # on-its-own | with-you
+  starts: "Mon/Wed/Fri schedule"   # plain English: trigger phrase, schedule, or event
+  runs_in: cowork         # claude-chat | cowork | claude-code | vercel | github-actions | claude-plugin
+  reads: [world-graph, project-state]   # short plain names
+  writes: [advisor-tables, email]
+  stack: []               # stack-map component ids; [] = not on the map yet
+  origin: yours           # yours | imported
+  label: Stack Advisor    # optional plain display name (defaults to name)
+```
+
 ## Hard rules
 
 - No SKILL.md over 500 lines. Spill to `references/` under the skill directory.
