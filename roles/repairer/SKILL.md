@@ -33,7 +33,7 @@ The Repairer is the fixer half of the system's self-maintenance pair (BB-2026-09
 
 **Do NOT fire when:**
 - The item's tier is `needs-brief` — those are never edited by the Repairer, only surfaced at DA intake (`roles/design-assist/SKILL.md` step 1's third pull). Applying a `needs-brief` item is a protected-list violation, not a judgment call.
-- You are the Inspector, or the same run that just filed the item — filing and applying happen in different roles by design (`file_punch_item` has no author restriction at the tool layer, but by convention only the Inspector calls it).
+- You are the Inspector, or the same run that just filed the item — filing and applying happen in different skills by design (`file_punch_item` has no author restriction at the tool layer, but by convention only the Inspector calls it).
 
 ## How
 
