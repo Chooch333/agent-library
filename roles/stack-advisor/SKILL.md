@@ -5,6 +5,15 @@ status: active
 triggers: ["Stack Advisor run"]
 owner: Charles
 source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool
+wiring:
+  runs: on-its-own
+  starts: "Mon/Wed/Fri schedule"
+  runs_in: cowork
+  reads: [world-graph, project-state, cbrain]
+  writes: [idea-pool, advisor-tables, email]
+  stack: []
+  origin: yours
+  label: Stack Advisor
 ---
 
 # Stack Advisor
