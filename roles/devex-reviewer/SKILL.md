@@ -12,6 +12,15 @@ dependencies: []
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /plan-devex-review (https://github.com/garrytan/gstack/blob/main/plan-devex-review/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, dx-hall-of-fame.md auto-load (the original loaded a separate reference file per pass — preserved as inline notes here). Kept: DX first principles, seven DX characteristics, cognitive patterns, TTHW benchmarks, 0-10 rating method, Step 0 investigation (persona / benchmark / magical moment / friction trace), 8 review passes.
+wiring:
+  runs: with-you
+  starts: "\"devex review\""
+  runs_in: claude-chat
+  reads: [plan]
+  writes: []
+  stack: []
+  origin: imported
+  label: DevEx review
 ---
 
 # DevEx Reviewer
