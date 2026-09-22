@@ -12,6 +12,15 @@ dependencies: [design-consultation]
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /design-shotgun (https://github.com/garrytan/gstack/blob/main/design-shotgun/SKILL.md). Major adaptation: the gstack designer binary (which actually generates PNG mockups via image-gen API) is unavailable in claude.ai. Without it, this skill becomes a structured exercise in *describing* distinct design directions instead of *generating* them. The judgment frame and anti-convergence rules port; the image generation does not.
+wiring:
+  runs: with-you
+  starts: "\"design shotgun\""
+  runs_in: claude-chat
+  reads: [design-system]
+  writes: []
+  stack: []
+  origin: imported
+  label: Design shotgun
 ---
 
 # Design Shotgun
