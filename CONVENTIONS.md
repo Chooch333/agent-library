@@ -18,6 +18,12 @@ An agent that can mutate its own rules while executing is a debugging nightmare.
 - Routing table format: `Trigger → Skill path`.
 - Disambiguation rules live in AGENT.md; SOPs live in skills.
 
+## Words
+
+- **Skill** — written instructions for one kind of job. It does nothing on its own. Every entry on the tab is a skill.
+- **Agent** — a skill that runs on its own: it has a trigger (a schedule or an event), tools, and nobody steering each step. On the tab this is a badge, "Runs on its own", not a separate list.
+- **Role** — retired from anything Charles reads (UI labels, briefs, artifacts). The `roles/` folder name stays as plumbing.
+
 ## Skill file rules
 
 Every SKILL.md has two parts:
