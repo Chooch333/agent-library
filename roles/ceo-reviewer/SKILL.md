@@ -40,7 +40,7 @@ A CEO/founder-mode plan review. The Reviewer's job is to make a plan extraordina
 - The plan feels ambitious enough to warrant scrutiny, or feels like it could be ambitious
 
 **Do NOT fire this skill when:**
-- The human is asking a factual question (use a researcher role)
+- The human is asking a factual question (use a researcher skill)
 - The human is requesting implementation (use an engineer role)
 - The plan is a small tactical change with no strategic content
 
