@@ -28,7 +28,7 @@ wiring:
 
 ## What
 
-Chains the four plan-mode review roles into a single sequential run: CEO Reviewer → Design Reviewer → Eng Reviewer → DevEx Reviewer. Auto-decides intermediate questions using six explicit principles, surfaces only the final approval gate to the user. Saves the user from having to walk through 30+ individual review questions when most of them have clear right answers.
+Chains the four plan-mode review skills into a single sequential run: CEO Reviewer → Design Reviewer → Eng Reviewer → DevEx Reviewer. Auto-decides intermediate questions using six explicit principles, surfaces only the final approval gate to the user. Saves the user from having to walk through 30+ individual review questions when most of them have clear right answers.
 
 This is a meta-role — it doesn't add new judgment; it sequences the other four roles efficiently.
 
