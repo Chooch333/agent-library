@@ -84,3 +84,7 @@ wiring:
 ## Validation
 
 A skill commit can be rejected mechanically if it violates the contract. Convention is not enough — the contract must be enforced.
+
+## Changelog
+
+- 2026-09-22 — Added the Words section (Skill/Agent/Role) and the optional `wiring` header block, for cbrain-ui's Skills tab (BB-2026-09-21-skills-tab).
