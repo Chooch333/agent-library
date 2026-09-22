@@ -13,6 +13,15 @@ dependencies: []
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /office-hours (https://github.com/garrytan/gstack/blob/main/office-hours/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, Codex CLI integration, design-doc auto-write to ~/.gstack/projects/. Kept: two modes (startup/builder), specificity rules, anti-sycophancy posture, six forcing questions, premise challenge, alternatives generation.
+wiring:
+  runs: with-you
+  starts: "\"office hours\""
+  runs_in: claude-chat
+  reads: []
+  writes: [design-doc]
+  stack: []
+  origin: imported
+  label: Office hours
 ---
 
 # Office Hours
