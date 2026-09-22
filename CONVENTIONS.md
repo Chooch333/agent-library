@@ -70,7 +70,10 @@ wiring:
   stack: []               # stack-map component ids; [] = not on the map yet
   origin: yours           # yours | imported
   label: Stack Advisor    # optional plain display name (defaults to name)
+  replaced_by: [inspector, repairer]  # optional: skill slugs shown as "replaced by ..." when status is deprecated/retired
 ```
+
+A skill whose `status` is `deprecated` or `retired` (case-insensitive) — regardless of what runs it or where — shows in the Skills tab's **Retired** lane instead of its platform lane, greyed out with its `replaced_by` labels (if set) shown as "replaced by ...". The skill file itself is not removed or hidden; only its tab placement changes.
 
 ## Hard rules
 
