@@ -51,6 +51,10 @@ updated: <YYYY-MM-DD>
 5. **Pitfalls** — every pitfall must come from a real trace (no fabrications)
 6. **Changelog** — versioned notes
 
+### Designing a new skill
+
+Before writing a new SKILL.md, answer the twelve questions in `references/skill-design-framework.md` — that document governs the skill's *design*; this file (with `SKILL_TEMPLATE.md`) governs its *format*. The answers travel in the Build Brief that creates the skill.
+
 ## Optional wiring block
 
 Any SKILL.md (and the new `external/` pointer files) may carry an optional `wiring:` map inside its YAML front-matter, consumed by cbrain-ui's Skills tab:
