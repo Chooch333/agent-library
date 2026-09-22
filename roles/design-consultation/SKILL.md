@@ -12,7 +12,8 @@ triggers:
 dependencies: []
 owner: Charles
 updated: 2026-05-13
-source: Adapted from Garry Tan's gstack /design-consultation (https://github.com/garrytan/gstack/blob/main/design-consultation/SKILL.md). Stripped: gstack runtime bash, gstack designer binary (visual mockup generation), browse binary (competitive research screenshots), taste profile persistence to ~/.gstack/, Phase 5 design preview page generation. Kept: Phase 1 product context + memorable-thing question, Phase 2 three-layer research synthesis, Phase 3 complete proposal with SAFE/RISK breakdown, design knowledge library, AI slop anti-patterns, coherence validation, Phase 6 DESIGN.md output.
+source: >-
+  Adapted from Garry Tan's gstack /design-consultation (https://github.com/garrytan/gstack/blob/main/design-consultation/SKILL.md). Stripped: gstack runtime bash, gstack designer binary (visual mockup generation), browse binary (competitive research screenshots), taste profile persistence to ~/.gstack/, Phase 5 design preview page generation. Kept: Phase 1 product context + memorable-thing question, Phase 2 three-layer research synthesis, Phase 3 complete proposal with SAFE/RISK breakdown, design knowledge library, AI slop anti-patterns, coherence validation, Phase 6 DESIGN.md output.
 wiring:
   runs: with-you
   starts: "\"design consultation\""
