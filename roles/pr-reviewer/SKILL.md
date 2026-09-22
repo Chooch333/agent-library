@@ -13,6 +13,15 @@ dependencies: []
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /review (https://github.com/garrytan/gstack/blob/main/review/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, Codex CLI cross-model challenge, gstack-diff-scope binary, Greptile integration, workspace-aware ship queue, Persist-Eng-Review-result file writes. Kept: critical pass categories, confidence calibration, fix-first pipeline structure, scope drift detection, adversarial review prompt, the framing that a 5-line auth change can be critical regardless of LOC.
+wiring:
+  runs: with-you
+  starts: "\"review this PR\""
+  runs_in: claude-chat
+  reads: [pr-diff]
+  writes: []
+  stack: []
+  origin: imported
+  label: PR review
 ---
 
 # PR Reviewer
