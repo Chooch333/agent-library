@@ -1,3 +1,22 @@
+---
+name: orchestrate-build
+version: 1.2
+status: active
+triggers: [a build brief is dispatched by name or "next"]
+dependencies: [execute-build-task]
+owner: Charles
+updated: 2026-09-22
+wiring:
+  runs: on-its-own
+  starts: "\"go build next\""
+  runs_in: claude-code
+  reads: [queued-plans]
+  writes: [plan-status, comms-table, session-log]
+  stack: [build-flywheel]
+  origin: yours
+  label: Build lead
+---
+
 # SKILL: orchestrate-build (v1.2)
 
 You are the lead session of a Claude Code build. Your job is to **manage** a build, not perform it. You never write or edit code, files, or database rows yourself. All hands-on work is done by subagents running the `execute-build-task` definition. You plan, dispatch, answer questions, verify, and log.
