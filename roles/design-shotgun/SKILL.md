@@ -30,7 +30,7 @@ wiring:
 
 Explore multiple distinct design directions for a screen, page, or component before committing to one. Forces deliberate variation — different fonts, colors, layouts — so the comparison reveals which direction fits the product, not which direction is the safest interpretation of a vague brief.
 
-**Important runtime note:** Tan's original generates actual PNG mockups via the gstack designer binary. In Charles's claude.ai environment, that runtime is unavailable. This reshape produces **detailed text descriptions** of variants — each with specific fonts, hex colors, layout grids, and motion choices — so Charles can imagine the directions concretely. If actual visual mockups are needed, this role hands off to an external tool (Figma, v0.dev, or a local designer).
+**Important runtime note:** Tan's original generates actual PNG mockups via the gstack designer binary. In Charles's claude.ai environment, that runtime is unavailable. This reshape produces **detailed text descriptions** of variants — each with specific fonts, hex colors, layout grids, and motion choices — so Charles can imagine the directions concretely. If actual visual mockups are needed, this skill hands off to an external tool (Figma, v0.dev, or a local designer).
 
 ## When
 
