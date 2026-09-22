@@ -6,6 +6,15 @@ triggers: ["define a new entity type", "new entity type", "add an entity type", 
 dependencies: [cbrain/contracts/SCHEMA.md]
 owner: Charles
 updated: 2026-06-09
+wiring:
+  runs: with-you
+  starts: "\"define a new entity type\""
+  runs_in: claude-chat
+  reads: [cbrain-schema]
+  writes: [cbrain-schema]
+  stack: [cbrain]
+  origin: yours
+  label: Entity-type creator
 ---
 
 # Entity-Type Creator
