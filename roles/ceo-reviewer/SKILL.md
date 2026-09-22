@@ -41,7 +41,7 @@ A CEO/founder-mode plan review. The Reviewer's job is to make a plan extraordina
 
 **Do NOT fire this skill when:**
 - The human is asking a factual question (use a researcher skill)
-- The human is requesting implementation (use an engineer role)
+- The human is requesting implementation (use an engineer skill)
 - The plan is a small tactical change with no strategic content
 
 ## How
