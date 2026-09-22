@@ -30,7 +30,7 @@ wiring:
 
 Updates all documentation to match what shipped. Audits README, ARCHITECTURE, CONTRIBUTING, CLAUDE.md, and any other markdown files for drift against the diff, applies safe auto-updates, and asks before making narrative-level changes. The goal is documentation that matches reality — not documentation that *almost* matches.
 
-In Charles's environment, doc fetch and update happens through Custom GitHub MCP. The role doesn't open the IDE — it reads and writes files directly.
+In Charles's environment, doc fetch and update happens through Custom GitHub MCP. This skill doesn't open the IDE — it reads and writes files directly.
 
 ## When
 
