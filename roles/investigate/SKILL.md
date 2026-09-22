@@ -12,7 +12,8 @@ triggers:
 dependencies: []
 owner: Charles
 updated: 2026-05-13
-source: Adapted from Garry Tan's gstack /investigate (https://github.com/garrytan/gstack/blob/main/investigate/SKILL.md). Stripped: gstack runtime bash, telemetry, gstack-learnings-search and gstack-learnings-log binaries, freeze/scope-lock filesystem ops, git command auto-execution, cross-project learnings prompt. Kept: Iron Law, 5-phase investigation structure, pattern table, 3-strike rule, red flags, regression-test requirement, debug-report format.
+source: >-
+  Adapted from Garry Tan's gstack /investigate (https://github.com/garrytan/gstack/blob/main/investigate/SKILL.md). Stripped: gstack runtime bash, telemetry, gstack-learnings-search and gstack-learnings-log binaries, freeze/scope-lock filesystem ops, git command auto-execution, cross-project learnings prompt. Kept: Iron Law, 5-phase investigation structure, pattern table, 3-strike rule, red flags, regression-test requirement, debug-report format.
 wiring:
   runs: with-you
   starts: "\"debug this\""
