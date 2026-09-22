@@ -27,7 +27,7 @@ wiring:
 
 ## What
 
-Pre-ship orchestration. Walks through the gates that prevent broken code from leaving the branch: review, version bump, CHANGELOG, commits, push, PR creation. The role does not run tests — Charles runs tests locally (Vercel preview, manual). The role handles everything else through Custom GitHub MCP.
+Pre-ship orchestration. Walks through the gates that prevent broken code from leaving the branch: review, version bump, CHANGELOG, commits, push, PR creation. This skill does not run tests — Charles runs tests locally (Vercel preview, manual). It handles everything else through Custom GitHub MCP.
 
 The discipline this enforces: never skip the gates. A PR opened without a CHANGELOG entry will be reviewed for the CHANGELOG, slowing the loop. The order is the point.
 
