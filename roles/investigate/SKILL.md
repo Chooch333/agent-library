@@ -40,7 +40,7 @@ Systematic root-cause debugging. The Iron Law is: **no fixes without root cause 
 - A previous fix didn't hold and the bug is back
 
 **Do NOT fire this skill when:**
-- The user wants to add a new feature (use a planning role)
+- The user wants to add a new feature (use a planning skill)
 - The fix is mechanical (typo, obvious one-character bug) — just fix it
 - The user is asking how something works (it's a question, not a bug)
 
