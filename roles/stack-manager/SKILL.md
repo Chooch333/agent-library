@@ -14,7 +14,8 @@ wiring:
   writes: []
   stack: [cbrain, project-state]
   origin: yours
-  label: Stack Manager (deprecated)
+  label: Stack Manager
+  replaced_by: [inspector, repairer]
 ---
 
 # Stack Manager (deprecated)
