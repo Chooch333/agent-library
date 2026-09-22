@@ -31,7 +31,7 @@ wiring:
 
 Pre-PR / pre-merge code review. Reads the diff between the current branch and base, applies a structured critical pass (security, race conditions, LLM trust boundaries, enum completeness, shell injection, etc.), runs an adversarial pass to find what the structured review misses, and produces a fix-first report. Built to catch bugs that pass CI but break in production.
 
-In Charles's environment, this role uses Custom GitHub MCP to fetch the diff and PR metadata. It does not run git locally and does not auto-commit fixes — it produces a structured report Charles acts on.
+In Charles's environment, this skill uses Custom GitHub MCP to fetch the diff and PR metadata. It does not run git locally and does not auto-commit fixes — it produces a structured report Charles acts on.
 
 ## When
 
