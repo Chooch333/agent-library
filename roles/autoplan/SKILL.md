@@ -12,6 +12,15 @@ dependencies: [ceo-reviewer, design-reviewer, eng-reviewer, devex-reviewer]
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /autoplan (https://github.com/garrytan/gstack/blob/main/autoplan/SKILL.md). Stripped: gstack runtime bash, Codex CLI cross-model second opinion, telemetry, ~/.gstack/ filesystem ops. Kept: 6 decision principles, decision classification (Mechanical / Taste / User Challenge), sequential phase execution rule, two non-auto-decided exceptions.
+wiring:
+  runs: with-you
+  starts: "\"autoplan\""
+  runs_in: claude-chat
+  reads: [plan]
+  writes: []
+  stack: []
+  origin: imported
+  label: Autoplan
 ---
 
 # AutoPlan
