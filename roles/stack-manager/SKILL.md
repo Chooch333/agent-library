@@ -6,6 +6,15 @@ triggers: ["Stack Manager: review queue" (on-demand, invoked by name), open next
 dependencies: [stack-map, project-state, cbrain]
 owner: Charles
 updated: 2026-07-21
+wiring:
+  runs: with-you
+  starts: "\"Stack Manager: review queue\""
+  runs_in: claude-chat
+  reads: [stack-map-queue]
+  writes: [stack-map, decisions]
+  stack: [cbrain, project-state]
+  origin: yours
+  label: Stack Manager
 ---
 
 # Stack Manager
