@@ -9,7 +9,8 @@ updated: 2026-09-13
 wiring:
   runs: on-its-own
   starts: "a brief is sealed, or \"file this brief\""
-  runs_in: vercel  # manual chat path also exists via claude-chat
+  # manual chat path also exists via claude-chat
+  runs_in: vercel
   reads: [sealed-briefs]
   writes: [cbrain]
   stack: [cbrain]
