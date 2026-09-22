@@ -92,6 +92,12 @@ Answer forks autonomously with `judgment-call` tags per orchestrate-build; halt 
 
 ### Phase 2 — Agents
 
+0. **Amendment 1 — DA review of ABO-J-002 (decision A-077, 2026-09-22). Do this before step 4.**
+   - **Role enforcement in `set_punch_status`** (project-state-mcp `lib/handlers.ts`, `setPunchStatus`): accept `applied`, `held`, `failed` and `needs-brief` only from author `repairer`; `verified`, `regressed` and `open` (re-open) only from `inspector`; `refused` from either. Reject anything else before any write, with a plain error. Keep the existing `Status → applied` prefix scan as a secondary check. No schema change. Deploy and confirm READY. This changes an existing tool's behaviour, not its name, so it takes effect without a new session. Verify by calling `set_punch_status` on a test item with the wrong author and confirming the rejection, then clean up.
+   - **Inspector SOP additions** (step 5, walk step 2): also take items in `held` and `failed` — re-check the target and either re-open (`open`, fresh draft via `add_punch_note`) or close (`refused`, with reason). Close a `needs-brief` item as `verified` once the Build Brief named in its notes has reached `succeeded`.
+   - **DA intake** (step 10): a DA chat that briefs a `needs-brief` item adds a note (`add_punch_note`, author `da`) naming the BB id; it never changes the item's status.
+   - **Acceptance addition:** a `set_punch_status` call with the wrong author for its status is rejected (e.g. `inspector` → `applied`).
+
 4. **Skill Design Framework.** Re-read `references/skill-design-framework.md`; answer its twelve questions for each agent in the SKILL files' What/When sections. Amend the framework if a gap appears (judgment call).
 5. **Inspector** — `roles/inspector/SKILL.md` per SKILL_TEMPLATE + CONVENTIONS (seven front-matter fields, six sections, status `draft`), every SOP step with precondition / action / success evidence / recovery. Trigger phrase "Inspector: walk". SOP:
    1. Load the latest `punch_checkpoints` row for `inspector`; none → cover the last 30 days.
