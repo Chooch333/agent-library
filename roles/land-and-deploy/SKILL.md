@@ -29,7 +29,7 @@ wiring:
 
 Post-PR-approval orchestration. Merges the PR, watches the deploy, verifies production health, and produces a deploy report. The hand-off from `ship` — ship opens the PR, land-and-deploy closes it out.
 
-In Charles's environment, this role uses Custom GitHub MCP for merge operations and Vercel MCP for deploy status and runtime logs. It does not handle Fly.io, Render, or Netlify (Charles's stack is Vercel-only at present).
+In Charles's environment, this skill uses Custom GitHub MCP for merge operations and Vercel MCP for deploy status and runtime logs. It does not handle Fly.io, Render, or Netlify (Charles's stack is Vercel-only at present).
 
 ## When
 
