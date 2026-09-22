@@ -40,7 +40,7 @@ This is a meta-skill — it doesn't add new judgment; it sequences the other fou
 - The plan is substantive enough to warrant all four reviews
 
 **Do NOT fire this skill when:**
-- The user wants a specific single review (use that role directly)
+- The user wants a specific single review (use that skill directly)
 - The plan has no UI (design phase makes no sense)
 - The plan has no developer-facing surface (DX phase makes no sense)
 - The user explicitly wants to be in the loop on every question — they should use the individual roles
