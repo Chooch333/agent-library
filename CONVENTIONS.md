@@ -7,8 +7,8 @@ Rules for the agent-library. Adapted from hanyuancheung's `llm-skill` contract.
 | Meta-skill | Reads | Writes | Cannot |
 |---|---|---|---|
 | **Execute** | The schema + up to 3 SKILL.md files | Nothing in the skill system | Touch any skill file or schema |
-| **Distill** | Raw conversation traces, tool output, errors | Only SKILL.md files | Touch the schema |
-| **Guide** | Skill front-matter only | Only the schema's routing table + changelog | Put domain knowledge in the schema |
+| **Inspector** | Project State evidence, cbrain's stack-map, shipped repos (read-only) | Only Punch List rows (`punch_items`, `punch_item_notes`, `punch_checkpoints`) | Edit a target file directly, or write anywhere outside the Punch List |
+| **Repairer** | Punch List rows (`auto`-tier, `open` items), the live target it's about to edit | The target file/repo an item names, plus that item's Punch List write-back | File a Punch List item, or verify its own repair |
 
 An agent that can mutate its own rules while executing is a debugging nightmare. Keep the writes mutually exclusive so every change is traceable.
 
