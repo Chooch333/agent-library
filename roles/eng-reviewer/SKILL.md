@@ -13,7 +13,8 @@ triggers:
 dependencies: [ceo-reviewer]
 owner: Charles
 updated: 2026-05-13
-source: Adapted from Garry Tan's gstack /plan-eng-review (https://github.com/garrytan/gstack/blob/main/plan-eng-review/SKILL.md). Stripped: gstack runtime bash (telemetry, ~/.gstack/ filesystem ops, AskUserQuestion plumbing, plan-mode detection, design-doc check). Kept: engineering preferences, cognitive patterns, scope challenge, 4-section review (architecture / code quality / tests / performance), confidence calibration, required outputs.
+source: >-
+  Adapted from Garry Tan's gstack /plan-eng-review (https://github.com/garrytan/gstack/blob/main/plan-eng-review/SKILL.md). Stripped: gstack runtime bash (telemetry, ~/.gstack/ filesystem ops, AskUserQuestion plumbing, plan-mode detection, design-doc check). Kept: engineering preferences, cognitive patterns, scope challenge, 4-section review (architecture / code quality / tests / performance), confidence calibration, required outputs.
 wiring:
   runs: with-you
   starts: "\"eng review\""
