@@ -6,6 +6,15 @@ triggers: [an approved brief conforming to cbrain/contracts/BRIEF_SCHEMA.md, "fi
 dependencies: []
 owner: Charles
 updated: 2026-09-13
+wiring:
+  runs: on-its-own
+  starts: "a brief is sealed, or \"file this brief\""
+  runs_in: vercel  # manual chat path also exists via claude-chat
+  reads: [sealed-briefs]
+  writes: [cbrain]
+  stack: [cbrain]
+  origin: yours
+  label: Archivist
 ---
 
 # Archivist
