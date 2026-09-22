@@ -1,3 +1,22 @@
+---
+name: execute-build-task
+version: 1.1
+status: active
+triggers: [dispatched by the orchestrate-build lead]
+dependencies: []
+owner: Charles
+updated: 2026-09-22
+wiring:
+  runs: on-its-own
+  starts: "called by Build lead"
+  runs_in: claude-code
+  reads: [assigned-task]
+  writes: [named-files-only]
+  stack: [build-flywheel]
+  origin: yours
+  label: Build worker
+---
+
 # SKILL: execute-build-task (v1.1)
 
 This is the worker skill. A worker does exactly one assigned task, then dissolves. Workers do all hands-on building; the orchestrator never touches code or data itself.
