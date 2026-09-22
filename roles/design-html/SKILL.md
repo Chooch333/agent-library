@@ -13,6 +13,15 @@ dependencies: [design-consultation, design-shotgun]
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /design-html (https://github.com/garrytan/gstack/blob/main/design-html/SKILL.md). Major adaptation: Tan's original is Pretext-native (a custom layout engine he uses) and includes a Pretext API tier-routing step (prepare / prepareWithSegments / etc). Charles's stack uses Next.js + Tailwind, so the Pretext routing is replaced with standard React + Tailwind generation. The judgment frame, design analysis, and framework detection ports cleanly.
+wiring:
+  runs: with-you
+  starts: "\"implement this design\""
+  runs_in: claude-chat
+  reads: [design-system]
+  writes: [code]
+  stack: []
+  origin: imported
+  label: Design to HTML
 ---
 
 # Design HTML
