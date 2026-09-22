@@ -12,6 +12,15 @@ dependencies: [ship]
 owner: Charles
 updated: 2026-05-13
 source: Adapted from Garry Tan's gstack /land-and-deploy (https://github.com/garrytan/gstack/blob/main/land-and-deploy/SKILL.md). Tan's original handles git merge, CI wait, deploy strategy detection (Vercel/Fly/Render/Netlify), canary verification with browser, revert flow. This reshape uses Custom GitHub MCP for merge and Vercel MCP for deploy status — Charles's actual stack. Browser-based canary verification is dropped; Charles handles that manually.
+wiring:
+  runs: with-you
+  starts: "\"land it\""
+  runs_in: claude-chat
+  reads: [pr]
+  writes: [merge]
+  stack: []
+  origin: imported
+  label: Land and deploy
 ---
 
 # Land and Deploy
