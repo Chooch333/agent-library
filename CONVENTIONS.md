@@ -17,6 +17,7 @@ An agent that can mutate its own rules while executing is a debugging nightmare.
 - `AGENT.md` is routing only. No "how to" content.
 - Routing table format: `Trigger → Skill path`.
 - Disambiguation rules live in AGENT.md; SOPs live in skills.
+- A routing row is written by the build that registers the skill it points to (Amendment 2, decision A-080, per the Execute row above). Drift between a routing row and the skill it names — a stale trigger phrase, a moved path — is fixed by the Repairer under the same auto-tier rules as any other Punch List item, not by hand-editing during unrelated work.
 
 ## Words
 
