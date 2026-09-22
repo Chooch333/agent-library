@@ -11,7 +11,8 @@ triggers:
 dependencies: []
 owner: Charles
 updated: 2026-05-13
-source: Adapted from Garry Tan's gstack /document-release (https://github.com/garrytan/gstack/blob/main/document-release/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, automatic git diff via shell, doc-discovery via find. Kept: 9-step audit process, auto-update vs ask-user classification, never-auto-update list, file-type heuristics, voice polish for CHANGELOG.
+source: >-
+  Adapted from Garry Tan's gstack /document-release (https://github.com/garrytan/gstack/blob/main/document-release/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, automatic git diff via shell, doc-discovery via find. Kept: 9-step audit process, auto-update vs ask-user classification, never-auto-update list, file-type heuristics, voice polish for CHANGELOG.
 wiring:
   runs: with-you
   starts: "\"update the docs\""
