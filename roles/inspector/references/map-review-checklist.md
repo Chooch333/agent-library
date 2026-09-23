@@ -15,3 +15,7 @@
 ## The pitfall (verbatim)
 
 **A suggestion can be true and still get rejected**, if a more considered prior decision already covers the ground and the suggestion doesn't add a reason to revisit it. Accuracy is necessary, not sufficient — see step 3's duplicate/conflict checks before defaulting to accept.
+
+## Stack Flow (added 2026-09-23, BB-2026-09-23-stack-flow)
+
+- **Stack Flow (flow_nodes / flow_edges on the stack-map page).** Every skill whose wiring says `runs: on-its-own` has a flow dot (its `skill` field). Every flow edge still matches what the skill's wiring says it reads and writes, or what the component's job says it does. A new stack component that moves information has a dot and its edges. A dot's small text still says where it really runs. Color is decided by `role`, never by host. File any difference as a `map` Punch List item with the exact YAML edit drafted.
