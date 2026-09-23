@@ -55,7 +55,11 @@
 
 ## Acceptance criteria
 
-{concrete, testable "done well" statements — drafted by end of Phase A}
+{concrete, testable "done well" statements — drafted by end of Phase A. Number each criterion — the done-receipt's acceptance array references these numbers directly (criterion 1 → `{n: 1, ...}`, criterion 2 → `{n: 2, ...}`, etc.).}
+
+1. {criterion}
+2. {criterion}
+3. {…}
 
 ## ● Pasteable prompt
 
