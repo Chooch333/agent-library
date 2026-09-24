@@ -49,6 +49,8 @@
 
 {do X, return Y in format Z — prescriptive; each step names its MCP tool and parameters}
 
+> **Runtime default (software briefs).** Any step that creates or touches a Node project sets `"engines": {"node": "24.x"}` in its `package.json` — a pinned major, never `20.x` (Vercel stops building Node 20 on 2026-10-01) and never an open-ended `>=` range (it silently jumps to each new major) — and `node-version: 24` in any GitHub Actions workflow it adds or edits. Revisit when Node 24 nears end of life (April 2028). *(Charles, 2026-09-24.)*
+
 ## ● Inputs
 
 {files, links, DB entries, prior decisions — each marked [verified] or [gated: access needed]}
