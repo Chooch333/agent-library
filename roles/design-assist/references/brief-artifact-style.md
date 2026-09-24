@@ -28,7 +28,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
 - **Text floor: 14px as it appears on screen.** This covers body text, captions, sources, table cells, legends, and every label inside a diagram. Short badges such as pills may go down to 12px. Measure what the reader sees, not what the file says: a 16px label in a 1900px-wide SVG that is scaled into a 900px column is really about 7.5px.
 - **Any diagram too big to fit at the floor gets a zoom viewer.** It opens at readable size, not shrunk to fit. It has zoom-in and zoom-out buttons, a "Whole picture" (fit) button, a "Readable size" (100%) button, and full screen. Scrolling or pinching zooms toward the pointer, dragging pans, and arrow keys and +/− work too.
 - **Every diagram also ships as a download.** Render it to a standalone SVG plus a 2× PNG in the sandbox (headless Chromium is available), and present both files in chat alongside the artifact.
-- **Prefer hand-laid SVG over auto-layout for diagrams with more than about 12 nodes.** Mermaid's automatic layout lets subgraphs overlap and doesn't control label size. Draw the SVG at a fixed size with 15px or larger labels, then screenshot it and check it before publishing.
+- **Fix readability without changing the layout.** Once Charles has seen a diagram, its arrangement is his to change. Make it readable with the zoom viewer and the downloads, not by redrawing it. A different arrangement is a proposal: offer it and wait for his yes before replacing anything. (Charles, 2026-09-24, after a readability fix swapped his layout for a new one.)
 
 ## Section structure
 
