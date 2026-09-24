@@ -128,11 +128,11 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
   .finding .body{grid-column:2;}
   .finding .body p{margin:0 0 .4em; font-size:.95rem;}
   .finding .body p:last-child{margin-bottom:0;}
-  .finding .body .src{color:var(--ink-soft); font-size:.82rem;}
+  .finding .body .src{color:var(--ink-soft); font-size:.875rem;}
 
   figure{margin:1.8em 0; padding:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; box-shadow:var(--shadow);}
-  figure svg{max-width:100%; height:auto; display:block; margin:0 auto;}
-  figcaption{font-size:.85rem; color:var(--ink-soft); margin-top:.8em; text-align:center;}
+  figure svg{max-width:100%; height:auto; display:block; margin:0 auto;} /* only when labels stay >=14px at this width; otherwise use the zoom viewer (Readable size, above) */
+  figcaption{font-size:.9rem; color:var(--ink-soft); margin-top:.8em; text-align:center;}
 
   .brief{margin:1.6em 0; background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow); overflow:hidden;}
   .brief > .head{padding:16px 22px; background:var(--accent-soft); border-bottom:1px solid var(--border);}
