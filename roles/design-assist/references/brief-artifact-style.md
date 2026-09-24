@@ -150,7 +150,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
   .prompt{background:var(--mono-bg); border:1px solid var(--border); border-radius:8px; padding:14px 16px; font-family:'IBM Plex Mono',monospace; font-size:.875rem; line-height:1.55; white-space:pre-wrap; overflow-x:auto; color:var(--ink);}
 
   table{width:100%; border-collapse:collapse; font-size:.9rem; margin:.5em 0;}
-  th{text-align:left; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); padding:6px 10px; border-bottom:1px solid var(--border);}
+  th{text-align:left; font-size:.875rem; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-soft); padding:6px 10px; border-bottom:1px solid var(--border);}
   td{padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top;}
   tr:last-child td{border-bottom:none;}
   .num{font-variant-numeric:tabular-nums; text-align:right;}
