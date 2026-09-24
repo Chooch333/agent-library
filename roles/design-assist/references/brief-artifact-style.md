@@ -103,7 +103,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
   code{background:var(--mono-bg); padding:.12em .38em; border-radius:4px;}
   a{color:var(--accent-ink); text-decoration-color:var(--border);}
 
-  .meta{display:flex; flex-wrap:wrap; gap:.5em 1.4em; margin:1.2em 0 0; font-size:.86rem; color:var(--ink-soft);}
+  .meta{display:flex; flex-wrap:wrap; gap:.5em 1.4em; margin:1.2em 0 0; font-size:.9rem; color:var(--ink-soft);}
   .meta b{color:var(--ink); font-weight:600;}
 
   nav.toc{margin:2em 0; padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:10px; box-shadow:var(--shadow);}
