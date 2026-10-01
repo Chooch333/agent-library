@@ -64,6 +64,7 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 
 ## Changelog
 
+- **v1.4** (2026-10-01) — New standing rule: no browser tests. Builds verify code and data only; Charles tests the UI by hand from a "What to check" list. Decision CB-441, overriding lesson CB-148.
 - **v1.3** (2026-09-23) — Close-out (step 7) now produces a database-enforced done receipt: Session Log id plus a per-acceptance-criterion result (pass+evidence, or handed-off to a new draft follow-up plan). A Postgres trigger on `plans` refuses `succeeded` without one — "Write-before-done" is no longer just a convention. Per BB-2026-09-23-done-receipt.
 - **v1.2** (2026-08-28) — Added the self-certification prohibition: executors never call `review_plan` on their own plan or dispose their own disclosures. Defect class found during the external review of BB-2026-08-27-comms-hub-plumbing.
 - **v1.1** (2026-08-28) — Added the closing rule (final message says done-only, everything else to the Comms Table disclosure channel) and mandatory at-creation plain labeling for plans and disclosures. Per BB-2026-08-27-comms-hub-plumbing.
