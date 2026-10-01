@@ -43,7 +43,7 @@
 **Git copy:** `Chooch333/cbrain-ui` → `docs/design/BB-2026-09-20-advisor-sources.md`
 
 **Pasteable prompt:**
-> Build 11.6 — execute Build Brief BB-2026-09-20-advisor-sources. Pull the plan from Project State (plan_id 6435a615-f26e-44b5-8e46-76d5d547f718, project cbrain, status queued — set it to running when you claim it). Git copy at Chooch333/cbrain-ui/docs/design/BB-2026-09-20-advisor-sources.md (ref: review). Follow the brief's fork-handling rules: answer forks autonomously with judgment-call tags; escalate only at hard gates (none in this brief). Standing rules CB-185, CB-121, CB-103 and CB-148 apply.
+> Build 11.6 — execute Build Brief BB-2026-09-20-advisor-sources. Pull the plan from Project State (plan_id 6435a615-f26e-44b5-8e46-76d5d547f718, project cbrain, status queued — set it to running when you claim it). Git copy at Chooch333/cbrain-ui/docs/design/BB-2026-09-20-advisor-sources.md (ref: review). Follow the brief's fork-handling rules: answer forks autonomously with judgment-call tags; escalate only at hard gates (none in this brief). Standing rules CB-185, CB-121 and CB-103 apply. No browser test (CB-148 retired 2026-10-01): Charles tests by hand.
 
 ---
 
