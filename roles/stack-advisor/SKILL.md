@@ -59,6 +59,15 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
         `Idea` cell. Charles is taking the idea to a DA chat; no Build
         Brief exists yet, so `building` stays the DA chat's flip at
         scoping (with its intended Response), per the ledger contract.
+      - `done` ("Done") → Status `addressed`. `Response` = "done another
+        way — marked Done on the Stack screen YYYY-MM-DD", plus
+        " — {note}" if the row has a note. Done is the one answer that
+        may move a `building` row forward; when it does, keep the prior
+        intended response after " / was: ". It never changes an
+        already-`addressed` row. If any Project State plan whose tags or
+        provenance carry that ADV ID is `draft`, `queued` or `running`,
+        name it in the brief's opening paragraph so Charles can abandon
+        it — the advisor never touches plans.
       Several rows for one ID: apply them in order, so the latest wins.
       One exception, for the note only: when the winning row is
       `declined` and this run folds more than one `declined` row for
