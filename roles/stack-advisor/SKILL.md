@@ -547,3 +547,17 @@ blank lines between sections and the Stack screen URL written out.
   read as soon as they are saved (queued or ingested), and "new" means
   "not yet in pool.json sources," so the backlog stranded at "queued"
   since 09-13 is caught up. Per BB-2026-09-20-advisor-sources.
+- **v1.7.0** (2026-10-02) — The email becomes a short, formatted quick
+  hit; the full brief stays in the ADV file and on the Stack screen.
+  New "## Email format" section: sent as HTML (`htmlBody`, plain-text
+  `body` fallback) in a fixed 640px column; idea heading 20px and
+  section headings 16px, both bold and underlined; each section cut to
+  one sentence; "In plain terms" dropped from the email only; one small
+  Effort/Checked/Assumed line; a per-idea link to the Stack screen
+  (`?sel=advisor:ADV-NNN`, base URL held in one line for go-live). "How
+  this run worked" and the git path no longer go in the email (rule 7;
+  they stay in the ADV file). Rule 6: titles now start with a verb and
+  state the move directly. Step 6c updated to match. Root cause of the
+  wide, unstyled emails: they were sent as plain text with no width or
+  formatting. Designed and approved by Charles in a DA chat 2026-10-02
+  after a sample email in this format; edited inline, no Build Brief.
