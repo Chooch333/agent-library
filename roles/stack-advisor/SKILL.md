@@ -223,8 +223,12 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
       column is how a DA chat resolves an ADV ID to its block, the `Pool`
       column is how it resolves to the idea's full scoring history in
       `pool.json`.
-   c. Gmail send to Charles — subject "Stack Advisor brief ADV-YYYY-MM-DD",
-      full brief in the body, git path at the bottom.
+   c. Gmail send to Charles — subject "Stack Advisor brief ADV-YYYY-MM-DD".
+      The email is NOT the full brief: it is the short version defined in
+      "## Email format" below, sent with both `htmlBody` (the formatted
+      version) and `body` (the same text as a plain-text fallback). The
+      full brief lives in the committed ADV file and on the Stack screen;
+      each idea in the email links to it.
    d. Project State note on stack-map: one-paragraph digest + git path.
    e. Supabase copy for the cbrain-ui Stack screen (project
       `lpeswznkxzeeyiqaewma`). This is the same data as a–b, stored as
