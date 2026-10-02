@@ -571,3 +571,10 @@ blank lines between sections and the Stack screen URL written out.
   wide, unstyled emails: they were sent as plain text with no width or
   formatting. Designed and approved by Charles in a DA chat 2026-10-02
   after a sample email in this format; edited inline, no Build Brief.
+- **v1.8.0** (2026-10-02) — Step 1b folds the new `done` answer (Stack
+  screen Done button) to `addressed`, with `Response` "done another way
+  — marked Done on the Stack screen YYYY-MM-DD" (plus the note, if any).
+  Done may move a `building` row forward (keeping the prior intended
+  response after " / was: ") and names any open Build Brief for that
+  ADV ID in the brief's opening paragraph; the advisor never touches
+  plans. Per BB-2026-10-02-stack-done-and-idea-format.
