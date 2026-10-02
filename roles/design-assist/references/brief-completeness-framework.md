@@ -83,6 +83,8 @@ The order of work and what must exist first.
 ### 11. Design intent narrative
 The paragraph that lets the orchestrator answer forks the way Charles would — because the orchestrator **will** answer them; escalation is not an option outside hard gates. Plain English: why this shape was chosen over the obvious alternatives, which conventions matter, what "good" looks like here, and which qualities to protect when trade-offs appear (e.g., "prefer simple over fast," "never lose provenance"). A thin narrative doesn't stall the build — it just means the orchestrator decides with less of Charles's judgment in hand. Write it like instructions to a competent contractor who cannot call you.
 
+Ground the narrative in the brief's "Asked for" block (the originator's own words, frozen at intake — see `build-brief-template.md`). Where they disagree, the block (plus any dated change Charles made) wins — for the DA writing the brief and for the build lead deciding forks. (Adopted from ADV-033, 2026-10-02.)
+
 ---
 
 ## Operational rules (carried from lessons, restated as gates)
