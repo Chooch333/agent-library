@@ -43,7 +43,7 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
    a. Gmail: find Charles's reply to the most recent advisor
       brief email (subject prefix "Stack Advisor brief"). Record each
       disposition in cbrain docs/advisor/LEDGER.md (statuses: surfaced /
-      interested / building / declined). No reply = no change.
+      interested / building / addressed / declined). No reply = no change.
    b. Stack screen: on the cbrain Supabase project
       (`lpeswznkxzeeyiqaewma`), read `advisor_dispositions` where
       `consumed_at is null`, oldest `created_at` first. Each row is an
