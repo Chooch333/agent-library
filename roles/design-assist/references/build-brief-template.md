@@ -33,6 +33,15 @@
 
 ## ● Current state going in
 
+**Asked for — in {originator}'s words** *(frozen at intake; never reworded)*
+> "{the sentences where the originator states what they want}" — Charles, {date}
+
+For agent-raised work, quote the source's plain-terms line instead:
+> "{line}" — {Stack Advisor ADV-NNN | Inspector PL-NNN | build chat X-Q-NNN}, {date} · Charles: {his disposition}, {date}
+
+Changes are appended, never edited in:
+- {date} Charles changed this: "{his words}"
+
 {narrative — what this chat knows that matters. Confidence labels required: **[verified]** / **[assumed]** / **[draft]**}
 
 ## ● Receiving chat
