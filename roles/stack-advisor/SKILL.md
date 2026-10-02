@@ -76,7 +76,8 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
       follow-up note never erases the first reason.
       If an email reply and a row disagree, the later of the two wins.
       Never change an `addressed` row, and never move a `building` row
-      back to `interested` — skip that disposition (it is still
+      back to `interested` (the only answer that may change a `building`
+      row is `done`, above) — skip that disposition (it is still
       consumed) and say so in the brief's opening paragraph. A row whose
       `adv_id` matches no ledger row is left unconsumed and named in the
       brief.
