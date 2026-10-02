@@ -353,13 +353,19 @@ system's files.
    cell-level security, access tier, caller, context window, rubric,
    hook, trace, observability, orchestrator, idempotent, saga, and "the
    X pattern."
-6. **Titles:** 10 words max, no record codes, no outside company or
-   product names, say the change. (Charles's own system names — cbrain,
-   Stack screen — are fine.)
+6. **Titles say what we'd do.** Start with a verb and state the move
+   directly — the change itself, not a topic or a finding ("Retry the 38
+   videos the spending cap blocked," not "Spending-cap failures in video
+   intake"). Where it fits, name the concrete thing it touches or the
+   number involved. 10 words max, no record codes, no outside company or
+   product names. (Charles's own system names — cbrain, Stack screen —
+   are fine.) The same title is used in the ADV file, the email and the
+   Stack screen (`plain_title`).
 7. **Short opening.** At most three sentences: how many ideas, and
    whether anything needs an answer. Run mechanics (what was read,
    queries sent, reply checks, queue counts) go in a short "How this run
-   worked" section at the bottom of the brief.
+   worked" section at the bottom of the committed ADV file only — never
+   in the email.
 8. **Reread as Charles before sending.** A sentence that needs a
    glossary gets rewritten, not footnoted.
 
