@@ -179,7 +179,8 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
      "What you have today" — if the answer is "you already do this", the
      idea is adopted, not sent); (4) the ledger row is `addressed` — the
      authoritative, work-confirmed signal (the Build Chat that landed the
-     brief wrote the actual Response, not an inference from `building`)
+     brief wrote the actual Response, or Charles marked the idea Done on
+     the Stack screen — not an inference from `building`)
      and is never resurfaced, full stop. Adopted ideas can still gain
      sources in the pool for the record, but never leave it.
    - **Merge:** before adding a candidate, compare `topic_key` and title
