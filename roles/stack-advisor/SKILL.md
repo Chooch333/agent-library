@@ -305,8 +305,10 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 {Checked | Assumed} — {one line}
 ```
 
-Every idea in the email and the committed ADV file renders exactly like
-this, in this order, nothing else between blocks.
+Every idea in the committed ADV file (and the `advisor_ideas.body` copy
+the Stack screen reads) renders exactly like this, in this order, nothing
+else between blocks. The email uses its own short format — see
+"## Email format".
 
 Rules:
 a. The heading line carries the ADV ID first, always.
