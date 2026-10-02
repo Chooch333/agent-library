@@ -9,7 +9,7 @@
 
 | # | Gate | Status |
 |---|------|--------|
-| 1 | Goal restated (incl. goal behind the goal); Charles confirmed | ⬜ |
+| 1 | Goal restated (incl. goal behind the goal); Charles confirmed; "Asked for" block holds his words and is frozen | ⬜ |
 | 2 | Scope walls — in and out both populated; common forks pre-answered | ⬜ |
 | 3 | Zero open forks — answered or defaulted with logged rationale | ⬜ |
 | 4 | Inputs verified-by-checking, or explicitly gated with named access | ⬜ |
