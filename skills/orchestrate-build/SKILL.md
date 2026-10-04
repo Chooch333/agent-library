@@ -26,6 +26,8 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 1. **Get the brief.**
    - If the prompt names a plan ID: fetch that plan from Project State (`get_plan`).
    - If the prompt says "next" (or gives no ID): `list_plans` on the named project, take the **oldest plan with status `queued`**, and fetch it.
+   - Before claiming, confirm every `after` plan is landed (status succeeded, and its newest night_runs row is not deploy-red — `overnight_line` shows `waiting_on`, or check by SQL). If not, don't start — post a non-blocking disclosure (`post_judgment_call`, action_needed fyi) naming what it's waiting on and stop. Not a question for Charles.
+   - After 11 pm Indianapolis time, if the brief is tagged Overnight, leave it to the night runner unless you are the night runner.
    - Immediately flip the plan status to `running` (`update_plan_status`).
 
 2. **Read the brief header.** The header declares required skills (e.g. `skills: orchestrate-build v1, <domain-skill>`). Fetch any skill you have not already loaded from `Chooch333/agent-library` at `skills/<name>/SKILL.md` and follow it alongside this one.
