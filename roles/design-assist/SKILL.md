@@ -108,6 +108,7 @@ Steps run in order, but the process is a loop, not a rail: new information can r
    - **Software/system:** MCP-first per PROTOCOL.md — each step names the tool that executes it (Supabase MCP, GitHub MCP, Vercel MCP...), with parameters.
    - **Hardware:** bill of materials with sourcing links and prices, tools required, build sequence, wiring/assembly notes, test plan, safety checklist.
    - **Hybrid** (e.g., drone + telemetry dashboard): both, cross-referenced.
+   - **Overnight check.** Check every Overnight-tagged brief with the same `target_repo`. If they touch the same screens or data, link them with `after` so the order is explicit. If the new design changes what a tagged brief will build, edit that brief or untag it (`set_overnight false`) — before 11 pm Indianapolis time if possible.
 10. **Handoff.** The brief passes the completeness gate and ships per PROTOCOL.md, or work continues inline if small. Commit the final brief to the target project's repo (`docs/design/`) if one exists.
     **Committed-brief header convention (mandatory).** The header at the top of the committed `.md` file — immediately under the `# Build Brief — BB-...` title, before the `**What this is:**` line — carries the Project State plan UUID and project slug, and must NOT carry a plan-status line: status lives in the DB and a copy in the file goes stale the moment the plan transitions (DB is truth). Format:
     ```
