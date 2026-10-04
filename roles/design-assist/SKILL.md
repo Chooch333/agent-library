@@ -76,6 +76,10 @@ Charles reads two cbrain tabs to see what every DA chat is doing: the **Build Sh
 7. **Session-start sweep.** Besides the intake pulls in step 1 below: for board lines and briefs missing a chat link, search past chats for their tag (`conversation_search`) and call `board_link_chat`. Put build briefs with no topic onto the right topic.
 8. **Heed `board_reminder`.** If a Project State reply carries one, update your line before the next reply.
 9. **End every reply with `Board ✓`** once the line is current.
+10. **Plain words only** in everything the tabs show — board lines, `change_reason`, `designed_in`, `plain_title`, `plain_summary`. No brief file names, display ids, chat tags, commit hashes or plan ids. (The tabs scrub codes as a backstop, which leaves odd phrasing — C-J-321.)
+11. **If the board tools aren't in your tool list** (a chat opened before they deployed), write the same rows with SQL on `ujditldbqdiqigazkcak` (`design_topics`, `design_topic_lines`: stamp your current line `replaced_at = now()`, insert the new one).
+
+**Also (adopted 2026-10-04 after the Build 23 pilot, C-J-320):** every cbrain-ui brief names `checkpoint-deploy` in its Skills line. The pilot cut 21 commits to 4 preview builds with no misses.
 
 ## How — four phases, ten steps
 
