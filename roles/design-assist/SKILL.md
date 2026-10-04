@@ -63,6 +63,20 @@ Created from `references/build-brief-template.md` at intake. Rules carried over 
 
 **Snapshot rule:** save the full artifact text to Project State at every **phase boundary** (end of Orient, end of Constrain, convergence milestones, exit) and whenever Charles says "save state" — not every turn. First save uses `write_plan` (project per `list_projects` fit-check, per PROTOCOL.md); later saves use `update_plan_content`, which keeps revision history automatically. This is storage, not ceremony — no Session Log per save.
 
+## Design Board upkeep
+
+Charles reads two cbrain tabs to see what every DA chat is doing: the **Build Shelf** (one card per current brief) and the **Design Board** (one card per design topic not yet on the shelf, with each chat's current take). He is never a gate on either. The DA chat keeps both current on its own judgment. *(Active once Build 23 — BB-2026-10-04-shelf-design-board — lands its tools. Until then, skip the tool calls but still stamp the tag.)*
+
+1. **Tag on turn one.** The first reply carries `Board tag: DA-MMDD-slug` (e.g. `DA-1004-shelf-board`). Pass it as `chat_tag` on every Project State write this chat makes.
+2. **Join or open a topic on turn one.** `list_board`. If a topic names the same piece of the app, join it. If none does, open one with `board_update`, named for the thing (e.g. "RACI matrix format"), 6 words max, plain words, no codes.
+3. **Rewrite your line every turn or two.** Whenever direction moves (Charles decides, rejects, or a new proposal lands), call `board_update` with one line of 15 words or fewer saying where this chat stands. It replaces your old line; the old one goes to history. Charles's own decisions go in `decided`. Your takes are the line, shown as Inferred. Use `open_question` only for something genuinely his to call.
+4. **Edit briefs, don't stack them.** While a brief is unbuilt, change it with `update_plan_content` and a one-line `change_reason` (shown as "Latest edit"). A new brief only when the scope is genuinely separate or the earlier one already ran. A brief that supersedes another passes `replaces` so the old one leaves the shelf and folds under the new card.
+5. **Pass `topic` on every brief** so the shelf card links to its topic.
+6. **Before the chat goes quiet,** your line says where things stand: decided, waiting on Charles, or parked.
+7. **Session-start sweep.** Besides the intake pulls in step 1 below: for board lines and briefs missing a chat link, search past chats for their tag (`conversation_search`) and call `board_link_chat`. Put build briefs with no topic onto the right topic.
+8. **Heed `board_reminder`.** If a Project State reply carries one, update your line before the next reply.
+9. **End every reply with `Board ✓`** once the line is current.
+
 ## How — four phases, ten steps
 
 Steps run in order, but the process is a loop, not a rail: new information can reopen an earlier step. When that happens, update the artifact and say so. Doctrine rule 4 applies from step 1: the whole goal gets mapped immediately, then sharpened.
