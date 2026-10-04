@@ -1,6 +1,6 @@
 ---
 name: orchestrate-build
-version: 1.4
+version: 1.5
 status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task]
