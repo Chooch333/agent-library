@@ -1,6 +1,6 @@
 ---
 name: design-assist
-version: 0.2.17
+version: 0.2.18
 status: draft
 triggers:
   - "Design Assist"
