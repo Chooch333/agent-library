@@ -85,4 +85,6 @@ Revert the `ignoreCommand` line to its prior value. No other state to undo.
 
 ## Changelog
 
+- **v0.2** (2026-10-04) — Adopted for every cbrain-ui build (DA review of C-J-320). Build 23 pilot: 21 commits to review → 4 [deploy] READY, 17 [wip] skipped, 0 errors. Known cost: display problems only show at checkpoints (two extra fix rounds in Build 23). Not yet covered: project-state-mcp, which deploys to production on every push (28 deploys in Build 23).
+
 - **v0.1** (2026-09-28) — Pilot. Created from a Vercel bill review: Build CPU Minutes 4.57K vs 252 prior cycle, driven by one preview build per task commit. Overlay rather than edit, per "extend, never modify."
