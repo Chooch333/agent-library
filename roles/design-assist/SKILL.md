@@ -65,7 +65,7 @@ Created from `references/build-brief-template.md` at intake. Rules carried over 
 
 ## Design Board upkeep
 
-Charles reads two cbrain tabs to see what every DA chat is doing: the **Build Shelf** (one card per current brief) and the **Design Board** (one card per design topic not yet on the shelf, with each chat's current take). He is never a gate on either. The DA chat keeps both current on its own judgment. *(Active once Build 23 — BB-2026-10-04-shelf-design-board — lands its tools. Until then, skip the tool calls but still stamp the tag.)*
+Charles reads two cbrain tabs to see what every DA chat is doing: the **Build Shelf** (one card per current brief) and the **Design Board** (one card per design topic not yet on the shelf, with each chat's current take). He is never a gate on either. The DA chat keeps both current on its own judgment. *(Active — Build 23 succeeded 2026-10-04.)*
 
 1. **Tag on turn one.** The first reply carries `Board tag: DA-MMDD-slug` (e.g. `DA-1004-shelf-board`). Pass it as `chat_tag` on every Project State write this chat makes.
 2. **Join or open a topic on turn one.** `list_board`. If a topic names the same piece of the app, join it. If none does, open one with `board_update`, named for the thing (e.g. "RACI matrix format"), 6 words max, plain words, no codes.
