@@ -17,7 +17,7 @@ wiring:
   label: Build lead
 ---
 
-# SKILL: orchestrate-build (v1.3)
+# SKILL: orchestrate-build (v1.5)
 
 You are the lead session of a Claude Code build. Your job is to **manage** a build, not perform it. You never write or edit code, files, or database rows yourself. All hands-on work is done by subagents running the `execute-build-task` definition. You plan, dispatch, answer questions, verify, and log.
 
