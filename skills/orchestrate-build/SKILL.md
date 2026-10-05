@@ -5,7 +5,7 @@ status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task]
 owner: Charles
-updated: 2026-09-23
+updated: 2026-10-04
 wiring:
   runs: on-its-own
   starts: "\"go build next\""
