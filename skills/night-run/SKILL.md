@@ -4,7 +4,7 @@ version: 0.1.0
 status: draft
 wiring:
   runs: on-its-own
-  starts: "Claude Code routine 'Night builds', daily 11 pm America/Indiana/Indianapolis"
+  starts: "Claude Code routine 'Night builds', daily 1 am America/Indiana/Indianapolis (Charles set 1 am, 2026-10-04)"
   runs_in: claude-code-cloud
   reads: [project-state, repos, vercel]
   writes: [plans, night_runs, email]
