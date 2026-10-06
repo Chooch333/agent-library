@@ -36,6 +36,13 @@ pool — he sees at most 6 ideas, and only ideas that clear the bar.
   concepts/stack-map.md.
 - Accepted ideas leave through the normal door: Charles takes them to a
   DA chat, which produces a Build Brief. The advisor never queues plans.
+- **The brief is the only email.** Never email Charles that a run failed
+  (a connector missing, this file unreadable, a tool erroring, the graph
+  query timing out). A failing run stops and, if it can, leaves the 6d
+  Project State note on stack-map saying what failed. The Stack Advisor
+  dot's output check (`advisor_runs.run_date`, Mon/Wed/Fri) goes late
+  when runs stop, and the Stack Repairer picks it up and covers it in
+  its one evening recap (Build 27, BB-2026-10-05-stack-repairer).
 
 ## Each run, in order
 1. FEEDBACK FIRST. Two sources, always read both — a union, not a
