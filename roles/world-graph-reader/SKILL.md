@@ -192,7 +192,7 @@ closing deliverable (`docs/advisor/SETUP.md`-style card), delivered
 alongside this SKILL.md by BB-2026-09-13-world-graph-reader.
 
 ## Language
-Plain English in the digest email and Project State note. Charles is not
+Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
