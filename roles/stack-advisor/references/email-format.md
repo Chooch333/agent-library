@@ -13,7 +13,7 @@ as a plain-text fallback). Subject: "Stack Advisor brief ADV-YYYY-MM-DD".
 
 **Per idea, in this order:**
 1. Heading line: `ADV-NNN · {title, rule 6}` plus ` · HIGH CONVICTION`
-   when it applies.
+   or ` · FRONTIER` when it applies.
 2. One short source line: who or what it came from, in a few words,
    with the source link on the name. Own-records ideas say "From your
    own records — {what they are}" with no link.
