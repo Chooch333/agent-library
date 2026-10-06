@@ -58,7 +58,7 @@ against the API.
 
 2. LIST pending items: `data/queue/*.json` (GitHub MCP `get_file_contents` on
    the directory) with `status: "pending"`, oldest `published` first,
-   capped at 8/run. Zero pending items is a legal, boring run -- skip
+   capped at 16/run. Zero pending items is a legal, boring run -- skip
    straight to step 4.
 
 3. For each item, in order:
