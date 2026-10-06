@@ -164,10 +164,10 @@ idea for another section is still allowed.
      (the script merges and revives) or list it under `rescored`. Same idea,
      same source — never twice. Same theme, new source — may return once
      with `Raised again because:` unless the ledger Response already covers
-     it. Ledger `building`/`declined`/`addressed` ideas are excluded; a
-     `cut` idea returns only with a new source that answers the critic's
-     reason (its Response); so is any idea a plan or decision cites by ADV ID, or one already live
-     in its part (list it under `adopt`).
+     it. Excluded: ledger `building`/`declined`/`addressed` ideas, any idea
+     a plan or decision cites by ADV ID, and one already live in its part
+     (list it under `adopt`). A `cut` idea returns only with a new source
+     that answers the critic's reason (its Response).
    - Write the two Contract lines for every selected idea now.
    - Assign `adv_id`s from `next_adv_id` upward (a resurfaced idea keeps
      its own) and pool ids from `next_pool_id` upward.
