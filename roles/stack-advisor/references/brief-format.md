@@ -28,6 +28,9 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 **What you'd gain**
 {2–3 sentences: how Charles's day or stack improves if this is added or changed — plus "Effort: small | medium | large"}
 
+**Why this might be wrong**
+{1–2 sentences: the strongest honest reason this could fail, cost more than it gives, or already be covered. Never empty, never "no risks".}
+
 {Checked | Assumed} — {one line}
 ```
 
