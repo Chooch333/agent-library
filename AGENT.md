@@ -74,6 +74,7 @@ Domain knowledge lives in individual SKILL.md files.
 |---|---|
 | `Inspector: walk` | `roles/inspector/SKILL.md` |
 | `Repairer: run` | `roles/repairer/SKILL.md` |
+| `Stack Repairer: run` | `roles/stack-repairer/SKILL.md` |
 
 ## Natural sequences
 
