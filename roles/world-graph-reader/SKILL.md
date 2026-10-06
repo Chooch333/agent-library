@@ -196,6 +196,10 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.3.0** (2026-10-06) -- Step 2 cap doubled: 8 -> 16 pending items
+  per run. The 8 was a starting pick with no stated reason
+  (BB-2026-09-13-world-graph-reader) and the queue keeps growing. Nothing
+  else changes. Per BB-2026-10-05-advisor-reads-smarter (Build 28).
 - **v1.2.0** (2026-10-06) -- No more email. Step 5 (the daily digest
   email) is retired and replaced by a no-email rule that also covers
   failed runs: a failing run stops and leaves a Project State note,
