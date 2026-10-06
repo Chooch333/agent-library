@@ -102,3 +102,29 @@ system's files.
    in the email.
 8. **Reread as Charles before sending.** A sentence that needs a
    glossary gets rewritten, not footnoted.
+
+## Draft format (critic live)
+
+When `cbrain/docs/advisor/critic_live.json` exists the Advisor writes the
+brief to `cbrain/docs/advisor/drafts/ADV-YYYY-MM-DD.md` instead, for the
+Advisor Critic to judge. Same blocks and opening as above, plus:
+
+```
+---
+status: draft
+run_id: ADV-YYYY-MM-DD
+focus: intake | build-machine | app
+created_at: <ISO>
+frontier: ADV-NNN | none — {one-line reason}
+---
+```
+
+and, as the last lines of each idea block (the critic strips them when it
+publishes):
+
+```
+Critic notes — Pool: P-NNNN · Lane: fix | frontier · Score: {parts} = {total} · Connects to: {ids} · Source file: {repo:path, or "records: …"}
+```
+
+The critic sets `status: reviewed` and appends a "Critic verdicts" section
+(one line per idea: keep / sharpen / cut — reason) once it has ruled.
