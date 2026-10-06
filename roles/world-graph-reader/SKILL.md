@@ -196,6 +196,14 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.2.0** (2026-10-06) -- No more email. Step 5 (the daily digest
+  email) is retired and replaced by a no-email rule that also covers
+  failed runs: a failing run stops and leaves a Project State note,
+  never an email. Step 6's note gains a plain one-line summary at the
+  top, which the Stack Repairer lifts into its one evening recap. The
+  Collector dot's existing output check (`data/extracted` commits,
+  every 1d) is what turns the dot late when runs stop. Per
+  BB-2026-10-05-stack-repairer (Build 27).
 - **v1.1.0** (2026-09-19) -- Fixed queue path (`queue/` -> `data/queue/`,
   steps 2 and 3f) never corrected since WG-100. Step 3a: full-article
   rule -- no word limit, ignore stale `truncated_for_extraction` labels
