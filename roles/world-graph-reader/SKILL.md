@@ -24,7 +24,8 @@ the world-graph collector's queue, extract facts against the 8-type entity
 registry, self-audit each fact's faithfulness against its source text,
 dedupe against the live Supabase graph mirror, hand a mechanical loader
 (BB-2026-09-13-feed-reader-collector-and-loader) everything it needs to
-write to FalkorDB, and tell Charles what it found. Runs on Charles's Claude
+write to FalkorDB, and leave a short Project State note of what it found (no
+email -- the Stack Repairer's evening recap carries it). Runs on Charles's Claude
 subscription via a Cowork scheduled task, not the world-graph API key --
 this is the whole point (WG-088): RSS extraction/audit spend drops to $0
 against the API.
