@@ -34,7 +34,11 @@ the record; these rows copy it.
   `body` = JSON of the block exactly as written in 6a — `{from_source,
   what_you_have, why_the_connection, what_gets_better, confidence,
   resurfaced_note}` plus `in_plain_terms` holding the "In plain terms:"
-  sentence ("What your records show" also goes in `from_source` for
+  sentence, `whats_wrong_today` and `why_might_be_wrong` (the two honest
+  lines; also appended to the end of `what_you_have` as "What's wrong
+  today: …" and to the end of `what_gets_better` as "Why this might be
+  wrong: …" so the Stack screen shows them with no screen change), and
+  `lane` (`fix` or `frontier`) ("What your records show" also goes in `from_source` for
   own-records ideas; `resurfaced_note` is null unless rule e applies);
   `effort` = S/M/L; `high_conviction`; `component_ids` = the stack-map
   component ids the idea connects to, from its `connects_to` (for a plan
