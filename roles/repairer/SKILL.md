@@ -16,7 +16,7 @@ wiring:
   writes: [repos, punch-list]
   stack: []
   origin: yours
-  label: Repairer
+  label: Rules Repairer
 ---
 
 # Repairer
