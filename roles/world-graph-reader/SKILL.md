@@ -163,19 +163,25 @@ against the API.
       Cap this step at 10-15 edges per run; skip cleanly, log nothing
       alarming, the moment the run is out of time.
 
-5. Email Charles a plain-English digest of the run (Gmail MCP, subject
-   `world-graph-reader digest YYYY-MM-DD`): new items processed (counts:
-   extracted / facts verified / facts quarantined / failed), entities
-   reused vs. newly minted, backlog drained this run + backlog remaining,
-   and anything structurally odd (like the non-fetchable-source case in
-   4b, the first time it's seen). Plain English, one technical clause per
-   point max -- Charles is not technical.
+5. No email. This role does not email Charles -- not a digest, and not
+   when a run fails (Build 27, BB-2026-10-05-stack-repairer). The daily
+   digest email is retired: the Stack Repairer's one evening recap
+   carries a Reader line built from step 6's note. A run that fails --
+   a connector missing, this file unreadable, a tool erroring -- just
+   stops; it writes the step 6 note if it can (saying what failed) and
+   nothing else. The Collector dot on the Stack screen goes late when
+   `data/extracted` stops getting new commits, and the Stack Repairer
+   picks that up.
 
 6. Write one short Project State note on world-graph (`add_note`, tag
    `world-graph-reader`): counts (new items / facts verified / facts
    quarantined / backlog drained / backlog remaining) + the git paths of
-   every `data/extracted/*.json` this run touched. This is the "own prior
-   run digest" step 1b reads next time.
+   every `data/extracted/*.json` this run touched, and anything
+   structurally odd (like the non-fetchable-source case in 4b, the first
+   time it's seen). Open the note with one plain-English line the Stack
+   Repairer can lift into its recap, e.g. "Read 8 articles, 50 facts
+   checked (3 set aside)." This is the "own prior run digest" step 1b
+   reads next time.
 
 ## Setup (Cowork scheduled task)
 
