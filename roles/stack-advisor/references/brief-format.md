@@ -1,12 +1,14 @@
 # Stack Advisor — brief format and writing for Charles
 
 Read at DELIVER (step 6). Moved here unchanged from SKILL.md v1.8.1 by
-BB-2026-10-05-advisor-reads-smarter (Build 28).
+BB-2026-10-05-advisor-reads-smarter (Build 28). Build 28.1
+(BB-2026-10-05-advisor-thinks-bigger) added the two honest lines, the
+Frontier heading and the draft format (bottom).
 
 ## Brief format
 
 ```
-### ADV-NNN · {plain title, rule 6}
+### ADV-NNN · {plain title, rule 6}{ · FRONTIER}
 Source: {who they are, in a few words} — "{video or article title}" · {url}
 
 **In plain terms:** {one sentence}
