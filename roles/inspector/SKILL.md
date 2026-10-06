@@ -16,7 +16,7 @@ wiring:
   writes: [punch-list]
   stack: []
   origin: yours
-  label: Inspector
+  label: Rules Inspector
 ---
 
 # Inspector
