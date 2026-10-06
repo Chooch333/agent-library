@@ -19,6 +19,9 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 **What you have today**
 {2–3 sentences: the component, process, or convention in Charles's stack this compares to, named by what it does, never a bare code (rules 2 and 4). If nothing comparable exists: "You don't have this today." plus one sentence on the closest thing.}
 
+**What's wrong today**
+{1–2 sentences: the concrete gap in that part right now — its weak spot from the stack briefing or section file, or what Charles's records show. Never a guess dressed as fact.}
+
 **Why it matters here**
 {2–3 sentences: why the advisor is pulling this out and tying it to that component — the link must be concrete, not thematic}
 
