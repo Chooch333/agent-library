@@ -586,3 +586,9 @@ blank lines between sections and the Stack screen URL written out.
   response after " / was: ") and names any open Build Brief for that
   ADV ID in the brief's opening paragraph; the advisor never touches
   plans. Per BB-2026-10-02-stack-done-and-idea-format.
+- **v1.8.1** (2026-10-06) — Job boundary gains "The brief is the only
+  email": a failed run never emails Charles; it stops and leaves the 6d
+  note if it can. The Stack Advisor dot's existing output check turns
+  it late, and the Stack Repairer covers it in its evening recap. The
+  brief email itself is unchanged. Per BB-2026-10-05-stack-repairer
+  (Build 27).
