@@ -62,6 +62,8 @@ and quotes in all inserted text:
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
 <tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">What you'd gain</td></tr>
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
+<tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">Why this might be wrong</td></tr>
+<tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
 <tr><td style="padding:0 0 6px 0;font-size:13px;color:#555555;"><b>Effort:</b> {size} · <b>Checked:</b> {…} · <b>Assumed:</b> {…}</td></tr>
 <tr><td style="padding:0 0 10px 0;font-size:13px;color:#555555;"><b>Raised again because:</b> {…}</td></tr><!-- only if resurfaced -->
 <tr><td style="padding:0 0 28px 0;"><a href="{STACK_URL}?sel=advisor:ADV-NNN" style="color:#1a5fb4;font-weight:bold;">Open the full idea on the Stack screen →</a></td></tr>
