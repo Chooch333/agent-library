@@ -162,3 +162,19 @@ Newest last.
   format + Writing for Charles, email format, the Supabase copy (6e) and
   this changelog moved to `references/` (read at DELIVER); core skill
   under 12 KB. Per BB-2026-10-05-advisor-reads-smarter (Build 28).
+- **v2.0.0** (2026-10-06) — Thinks bigger (BB-2026-10-05-advisor-thinks-bigger,
+  Build 28.1). ORIENT reads exactly three files — `stack-briefing.md` (one
+  line per part + "Where Charles is headed" from the harness map), the
+  day's section file (Mon intake, Wed build-machine, Fri app; written
+  nightly by `tools/advisor/stack_briefing.py`) and `run_packet.json` — and
+  no longer the Master Roadmap, Build Map Skeleton or full stack map; the
+  shelf query moves into Fix scoring. Skim ratings and graph questions aim
+  at the day's section. Two lanes: Fix (the old rubric, 60) and Frontier
+  (capability 40, recency 20, evidence 25, plug-in point 15; threshold 65;
+  one slot; harness step/block ids allowed in `connects_to`; a one-line
+  reason when none clears). Every idea adds "What's wrong today" and "Why
+  this might be wrong". New Contract and Anti-patterns sections (gbrain
+  precedent). DELIVER gains the hand-off switch: when
+  `cbrain/docs/advisor/critic_live.json` exists the Advisor stops at a
+  draft (`docs/advisor/drafts/`, run_result `stage: draft`, no email) and
+  the Advisor Critic (`roles/advisor-critic`) judges, publishes and sends.
