@@ -17,10 +17,11 @@ as a plain-text fallback). Subject: "Stack Advisor brief ADV-YYYY-MM-DD".
 2. One short source line: who or what it came from, in a few words,
    with the source link on the name. Own-records ideas say "From your
    own records — {what they are}" with no link.
-3. Four sections, **one sentence each** (about 25 words max):
+3. Six sections, **one sentence each** (about 25 words max):
    "What they found" (or "What your records show"), "What you have
-   today", "Why it matters", "What you'd gain". No "In plain terms" —
-   the title does that job in the email.
+   today", "What's wrong today", "Why it matters", "What you'd gain",
+   "Why this might be wrong". No "In plain terms" — the title does that
+   job in the email.
 4. One small line: `Effort: {small|medium|large} · Checked: {what was
    verified, a few words} · Assumed: {what wasn't, a few words}` (drop
    the Assumed part if nothing was assumed).
