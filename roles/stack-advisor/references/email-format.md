@@ -56,6 +56,8 @@ and quotes in all inserted text:
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
 <tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">What you have today</td></tr>
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
+<tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">What's wrong today</td></tr>
+<tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
 <tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">Why it matters</td></tr>
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
 <tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">What you'd gain</td></tr>
