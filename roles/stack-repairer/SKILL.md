@@ -72,7 +72,7 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 - **Size up on still-red.** A dot whose newest `graded` row today is `still-red` moves up one size this run: rerun → urgent fix (or brief if not urgent) → brief built now → `needs-you`. At most 2 re-runs per dot per day, ever.
 
 **3. Diagnose.**
-- *Precondition:* a red/late dot from step 1 that has no action already in flight (a row from this run window with `outcome` null whose evidence hasn't moved).
+- *Precondition:* a red/late dot from step 1 that has no action already in flight (a row from this run window with no `graded` row yet whose evidence hasn't moved).
 - *Action:* read the evidence before acting — never act on the reason text alone.
   - **First, outage modes** (PROTOCOL.md, GitHub Actions rule). Check the `github-actions` allowance row and the run itself: a run that ended in 2–3 seconds with zero steps is a billing lock; HTTP 422 on dispatch is a disabled workflow; a push that never produced a run is a missed trigger. None of these is a code bug. A billing lock is a hard gate (money) → `needs-you`. A disabled workflow → `needs-you` ("re-enable <workflow> in <repo> Settings → Actions") unless a build log shows it was disabled on purpose and should be re-enabled (then re-enable is still Charles's click — log `needs-you`). A missed trigger → re-dispatch (step 4a).
   - **Workflow dots** (`detail.repo` + `detail.workflow`, or `detail.checks[]` for a list): `list_workflow_runs` (owner Chooch333, that repo, `workflow_file`, `per_page` 5), `get_workflow_run` on the newest failed run, `get_job_logs` with `search: "##[error]|Error|FAILED|Traceback"` on the failing job.
