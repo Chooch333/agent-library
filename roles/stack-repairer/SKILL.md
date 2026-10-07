@@ -51,8 +51,8 @@ The Stack Repairer fixes things that break while the stack is running, so Charle
 
 One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`, `action`, `detail` jsonb, `plan_id`, `commit_sha`, `outcome`.
 
-- `action` is one of `rerun`, `cleared`, `fixed`, `briefed`, `built`, `needs-you`, `watching`.
-- `outcome` is filled by a later run: `green` or `still-red`.
+- `action` is one of `rerun`, `cleared`, `fixed`, `briefed`, `built`, `needs-you`, `watching`, `graded`.
+- **Append-only — never UPDATE or DELETE a `stack_repairs` row.** Scheduled runs can't confirm edits to existing rows (first live run, 2026-10-07: both UPDATEs hung 3 minutes and saved nothing), so the log only ever grows. A grade is its own row: `action = 'graded'`, `dot_id` = the graded row's `dot_id`, `outcome` = `green` or `still-red`, `finding` = one line ("Re-run of world-graph worked — back to green"), `detail` = `{"grades": "<id of the graded row>", "evidence": "..."}`. An action row's own `outcome` column stays null; its grade is the newest `graded` row whose `detail->>'grades'` is its id.
 - Every run also writes exactly one **run marker** row: `dot_id = '_run'`, `action = 'watching'`, `finding` = a one-line count ("3 red, 1 late — 2 acted on, 2 watched"), `detail` = `{"window": "07:00|12:00|17:00", "red": [...ids], "late": [...ids], "recap_sent": true|false}`, `outcome` left null forever. The Stack Repairer's own dot on the stack map checks the newest `run_at`, so a quiet day still shows the Repairer alive. Never grade a `_run` row.
 - `detail` always carries `{ "evidence": "...", "size": "rerun|urgent-fix|brief|hard-gate|watch", "attempt": n }` plus whatever ids prove it (`run_id`, `deployment_id`, `workflow`, `ref`).
 
