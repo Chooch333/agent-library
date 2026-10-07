@@ -66,10 +66,10 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 
 **2. Grade earlier work.**
 - *Precondition:* step 1 done.
-- *Action:* for every `stack_repairs` row with `outcome is null` and `dot_id <> '_run'` (any day, oldest first), compare against the current `stack_status` row for that `dot_id`: state `ok` → `outcome = 'green'`; state `failing`/`late` → `outcome = 'still-red'`, but only if the dot's newest evidence is newer than the row's `run_at` (a re-run that hasn't finished yet is not still-red — leave it null). `briefed` rows stay null until their plan has `succeeded` and the dot has been checked since.
-- *Success evidence:* each graded row has an outcome; a re-SELECT shows it.
-- *Recovery:* a dot that no longer exists on the map → `outcome = 'green'`, `detail.graded_note = 'dot removed from map'`.
-- **Size up on still-red.** A dot whose last action today is `still-red` moves up one size this run: rerun → urgent fix (or brief if not urgent) → brief built now → `needs-you`. At most 2 re-runs per dot per day, ever.
+- *Action:* find every ungraded action row: `action not in ('graded','watching')`, `dot_id <> '_run'`, and no `graded` row exists with `detail->>'grades' = id` (any day, oldest first). Compare each against the current `stack_status` row for that `dot_id`: state `ok` → insert a `graded` row with `outcome = 'green'`; state `failing`/`late` → insert a `graded` row with `outcome = 'still-red'`, but only if the dot's newest evidence is newer than the action's `run_at` (a re-run that hasn't finished yet is not still-red — write nothing for it yet). `briefed` rows stay ungraded until their plan has `succeeded` and the dot has been checked since. Never UPDATE the action row itself (see "The `stack_repairs` log").
+- *Success evidence:* each newly graded action has a `graded` row pointing at it; a separate SELECT shows them.
+- *Recovery:* a dot that no longer exists on the map → `graded` row with `outcome = 'green'` and `detail.graded_note = 'dot removed from map'`.
+- **Size up on still-red.** A dot whose newest `graded` row today is `still-red` moves up one size this run: rerun → urgent fix (or brief if not urgent) → brief built now → `needs-you`. At most 2 re-runs per dot per day, ever.
 
 **3. Diagnose.**
 - *Precondition:* a red/late dot from step 1 that has no action already in flight (a row from this run window with `outcome` null whose evidence hasn't moved).
