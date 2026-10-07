@@ -160,4 +160,5 @@ The same workflow fails three times in a row with the same `KeyError` in one fil
 
 ## Changelog
 
+- **0.2.0** (2026-10-07) — Append-only log. The first live routine run (2026-10-07 09:36 Indianapolis) couldn't UPDATE `stack_repairs` rows — both tries hung 3 minutes and saved nothing, most likely an edit-confirmation prompt nobody can answer in a scheduled run. Grades are now their own `graded` rows pointing at the action they grade (`detail.grades`), and the 17:00 run marker is written after the recap so it never needs editing. `stack_repairs_action_check` now allows `graded` (migration `stack_repairs_allow_graded_action`). Charles's approval, Design Assist chat 2026-10-07.
 - **0.1.0** (2026-10-06) — Initial draft, written by Build 27 (BB-2026-10-05-stack-repairer). `status: draft` until the first live routine run. Judgment calls at build: `runs_in: claude-code` (not `claude-code-routine`) so the Skills tab files it in the Claude Code lane; a `_run` marker row every run so the Repairer's own stack-map dot can tell a quiet day from a dead routine.
