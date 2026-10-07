@@ -99,7 +99,7 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 - *Recovery:* insert fails → retry once, then note the action in the run marker's `detail.unlogged`.
 
 **6. Run marker.**
-- *Action:* insert the one `_run` row described above. Always, even when nothing was red.
+- *Action:* insert the one `_run` row described above. Always, even when nothing was red. On the 17:00 run, do step 7 first and write this marker after it, with `recap_sent`, `recap_message_id` (or the send error) already filled in — the marker is inserted once and never updated.
 
 **7. Daily recap (17:00 run only).**
 - *Precondition:* this run started at or after 17:00 America/Indiana/Indianapolis, and today's log has no `_run` row with `detail.recap_sent = true`.
