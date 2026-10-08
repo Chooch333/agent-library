@@ -20,10 +20,13 @@
 | 9 | Return contract — receiving chat, Session Log expectation, Brief ID | ⬜ |
 | 10 | Pasteable prompt written | ⬜ |
 | 11 | All 11 decision domains Answered / Defaulted / N-A — none silent; domain status table in brief body (see `references/brief-completeness-framework.md`) | ⬜ |
+| 12 | Stack Flow line filled — a brief that adds, removes, renames or re-routes a running part has a Directive step editing `concepts/stack-map.md` (dots, lines, side-panel text); otherwise "no change — {why}" (SKILL doctrine rule 12) | ⬜ |
 
 ---
 
 **● What this is:** {one-line summary of the task}
+
+**Stack Flow:** {what changes on the diagram — dots, lines, side-panel text} | no change — {why, one line}
 
 **● What I'll do:** {what the receiving chat is expected to produce}
 
