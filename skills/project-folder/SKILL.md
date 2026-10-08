@@ -1,11 +1,11 @@
 ---
 name: project-folder
-version: 0.1.0
+version: 0.2.0
 status: draft
 triggers: [used by builds and harness roles when a moonshot starts or resumes; no chat trigger]
 dependencies: []
 owner: Charles
-updated: 2026-10-07
+updated: 2026-10-08
 wiring:
   runs: inside-builds
   reads: [project repo]
@@ -43,7 +43,14 @@ Every moonshot lives in one standard folder so any session can pick it up from t
 2. Add one entry at the top of `progress.md`: did, checked, next, stops.
 3. Run `check_folder.py`; it must print OK. Commit with a plain message.
 
+## Waiting
+When the next step has to wait (a print, a delivery, a reply), park it with a wake line (agent-library `skills/wake/SKILL.md`): `do: resume Chooch333/<slug> per skills/project-folder`, `where: pc` if the next step needs the laptop. Set README Status to `stopped: waiting on <what>`. Then close the session.
+
 ## Rules
 - One feature at a time.
 - The builder does not grade itself when a checker is available (block 6); until then, evidence is required for every pass.
 - Money always stops. Safety rules in spec.md never relax.
+
+## Changelog
+- 0.2.0 — Waiting section (Build 30, wake-up set)
+- 0.1.0 — First version (Build 29, standard project folder)
