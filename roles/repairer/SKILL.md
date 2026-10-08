@@ -104,4 +104,6 @@ The same run fires again before the Inspector's next walk. `list_punch_items` fo
 
 ## Changelog
 
+- **0.2.0** (2026-10-08) — New step 8: every run, including one with nothing to apply, ends by writing one `punch_checkpoints` row (`agent = 'repairer'`, one-line counts summary), the same SQL path the Inspector uses for its walk checkpoint. Step 1's empty-queue recovery now goes to step 8 instead of writing nothing. Lets the stack checker see a quiet run via Project State's public heartbeat. Per Build 27.1 (BB-2026-10-07-stack-checks-claude-side).
+
 - **0.1.0** (2026-09-22) — Initial draft, written per BB-2026-09-21-inspector-repairer Phase 2, incorporating Amendment 1 (decision A-077: role enforcement in `set_punch_status`, so `applied`/`held`/`failed`/`needs-brief` are repairer-authored calls). `status: draft` pending the first live run (Phase 2 acceptance runs, next session).
