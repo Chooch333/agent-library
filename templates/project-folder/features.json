@@ -1,0 +1,14 @@
+{
+  "project": "{slug}",
+  "rules": "Work one feature at a time. Only change passes and evidence. Never edit or delete a feature; add new ones at the end.",
+  "features": [
+    {
+      "id": "F01",
+      "priority": 1,
+      "description": "{what is true when this is done}",
+      "check": ["{step a checker can follow}"],
+      "passes": false,
+      "evidence": ""
+    }
+  ]
+}
