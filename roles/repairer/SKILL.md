@@ -79,6 +79,12 @@ The Repairer is the fixer half of the system's self-maintenance pair (BB-2026-09
 - *Success evidence:* no `needs-brief` item ever appears in this run's write log.
 - *Recovery:* n/a.
 
+**8. Write the run marker (every run, including a quiet one).**
+- *Precondition:* steps 1–7 are done for this run — or step 1 found nothing. This step runs on EVERY run, even one that applied nothing, held nothing and saw nothing. A quiet week must still show the Repairer ran (Build 27.1, BB-2026-10-07-stack-checks-claude-side): the 15-minute stack checker reads the newest `agent = 'repairer'` checkpoint through Project State's public heartbeat (`https://project-state-mcp.vercel.app/api/heartbeat` → `rules_repairer.last_run`) and marks the Rules Repairer dot late after 14 days with no marker.
+- *Action:* insert one `punch_checkpoints` row the same way the Inspector writes its walk checkpoint (`roles/inspector/SKILL.md` step 7) — SQL on the Project State Supabase project (`ujditldbqdiqigazkcak`): `insert into punch_checkpoints (agent, walked_through, summary) values ('repairer', now(), '<N> seen, <N> applied, <N> held, <N> failed');` — e.g. `'0 seen, 0 applied, 0 held, 0 failed'` on a quiet run. One line, counts only.
+- *Success evidence:* a separate `select max(created_at) from punch_checkpoints where agent = 'repairer'` returns this run's time.
+- *Recovery:* the insert fails → retry once; if it still fails, say so plainly in the run report ("run marker not written — the stack map will show the Rules Repairer as late") rather than ending silently. Never skip this step because the run "did nothing".
+
 ## Examples
 
 ### Example 1: clean apply
