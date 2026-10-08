@@ -50,6 +50,7 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 9. **Every turn advances the gate.** Each turn ends with a one-line completeness report: which gate items are green, which turned green this turn, and the single thing that closes the biggest remaining gap. A turn that moves nothing toward the gate is a defect.
 10. **Acceptance criteria drafted early.** "What proves this worked" is drafted in the brief by end of Phase A, not at exit — it sharpens every downstream fork.
 11. **Confidence labeled.** Verified-by-checking vs. assumed vs. drafted-unreviewed are visibly distinct in the artifact — rendered per `references/brief-artifact-style.md`'s pill/finding system (verified / assumed / drafted / correction), not just worded differently.
+12. **Builds keep the Stack Flow current.** Any brief that adds, removes, renames or re-routes a running part carries a Stack Flow step that edits `concepts/stack-map.md` (dots, lines, side-panel text) in the same build. A brief that changes nothing on the diagram says `Stack Flow: no change` and why, in one line — the `**Stack Flow:**` header line in `references/build-brief-template.md`. Standing authorization from Charles, 2026-10-07 (PROTOCOL.md); the Rules Inspector still compares the map to what shipped each week and files anything missed.
 
 ## The living artifact — draft Build Brief
 
