@@ -41,7 +41,7 @@ The Repairer is the fixer half of the system's self-maintenance pair (BB-2026-09
 - *Precondition:* none — first step every run.
 - *Action:* `list_punch_items` with `status: ["open"]`, `tier: "auto"`. Items come back oldest-first already (tool default).
 - *Success evidence:* a list (possibly empty).
-- *Recovery:* empty list → clean no-op. Report zero seen, write nothing, end the run. Do not go looking for other work.
+- *Recovery:* empty list → clean no-op. Report zero seen, touch no item, and go straight to step 8 (the run marker) — that is the only write on a quiet run. Do not go looking for other work.
 
 **2. Receipt check.**
 - *Precondition:* an item from step 1.
