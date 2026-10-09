@@ -198,6 +198,10 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.4.0** (2026-10-09) -- Step 2 cap raised: 16 -> 30 pending items
+  per run, plus a stop-early rule if the run runs short on time. The
+  queue sat near 80 because ~13 articles arrive a day and 16 left; Charles
+  chose a bigger cap over a second daily run. Nothing else changes.
 - **v1.3.0** (2026-10-06) -- Step 2 cap doubled: 8 -> 16 pending items
   per run. The 8 was a starting pick with no stated reason
   (BB-2026-09-13-world-graph-reader) and the queue keeps growing. Nothing
