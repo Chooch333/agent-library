@@ -34,8 +34,8 @@ From any Claude session: `fire_trigger` the dispatcher ({DISPATCHER_TRIG}) with 
 From outside Claude: not yet set up (needs the API token; see the open next move tagged block-5).
 
 ## Tasks
-- Harness dispatcher — {DISPATCHER_TRIG} — cloud, hourly at :47.
-- Laptop runner — {LAPTOP_TRIG} — runs on Charles's laptop, fire-only.
+- Harness dispatcher — trig_01HZwjsrtqcioS3LNay8FNCk — cloud, hourly at :47.
+- Laptop runner — trig_01NB1BKFvfpMJQmDKqGLmNbg — runs on Charles's laptop (folder C:\Users\cecou\code), fire-only.
 
 ## Rules
 - Every wake leaves a trace: a note or a progress entry, and the next move completed with what happened.
