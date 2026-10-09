@@ -58,8 +58,10 @@ against the API.
 
 2. LIST pending items: `data/queue/*.json` (GitHub MCP `get_file_contents` on
    the directory) with `status: "pending"`, oldest `published` first,
-   capped at 16/run. Zero pending items is a legal, boring run -- skip
-   straight to step 4.
+   capped at 30/run. Zero pending items is a legal, boring run -- skip
+   straight to step 4. If the run is running short on time before the
+   cap is reached, finish the item in hand, stop taking new ones, and
+   leave the rest pending for tomorrow -- never half-write an item.
 
 3. For each item, in order:
    a. Read `data/articles/<article_id>.md` in full
