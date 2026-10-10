@@ -1,5 +1,5 @@
 ## Active speed runs
-- arch-renders · Speed run: arch renders · use-case card: "Arch renders (parked draft)" tab of https://claude.ai/code/artifact/2f4b7713-97d5-4712-bd10-d8f9709f9092 · until that card is confirmed, its requirements are the text below.
+- arch-renders · Speed run: arch renders · use-case card: Stage 1 of the Working Doc https://claude.ai/code/artifact/864ebc78-392a-4840-bf64-bca83b03f76c (drafted 2026-10-10, awaiting Charles's confirm; replaces the parked draft) · input is a standard plan set PDF, never a required DXF · style study: Build 33 · until the card is confirmed, its requirements are the text below.
 
 Each new speed run adds one line here pointing at its own use-case card. How speed runs work: "Speed-run framework" tab of the same doc.
 
