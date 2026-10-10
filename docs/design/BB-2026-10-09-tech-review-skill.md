@@ -94,7 +94,7 @@ Standing rules: CB-121 (commits authored as Chooch333). No browser tests.
 1. `roles/tech-review/SKILL.md` exists, parses, and shows on the Skills screen in the Claude chat lane with starts `Tech review:`.
 2. The skill's How section matches Appendix A word for word except the seven stated changes (including the Adopt now line with "AND I have seen the test output and said I would use it", the speed-run-<slug> handoff tag, THE SPEED RUN pointing at `lab/speed-run.md`, the requirements check in step 5, and "Requirements check" in the tech card sections), and has a "Where things live" block naming the three lab paths.
 3. `AGENT.md` has the new row and a changelog line; "tech review" no longer appears in Eng review's triggers in AGENT.md or `roles/eng-reviewer/SKILL.md` (now 0.1.1).
-4. `lab/` holds `README.md`, `speed-run.md` (opening with the "Active speed runs" block, then Appendix E), seven shelf files (each `draft: true` with one 2026-10-09 history line) and `cards/artcraft.md`, each read back.
+4. `lab/` holds `README.md`, `speed-run.md` (opening with the "Active speed runs" block, then Appendix F, then Appendix E), seven shelf files (each `draft: true` with one 2026-10-09 history line) and `cards/artcraft.md`, each read back.
 5. The Chats node in `concepts/stack-map.md` has a "Tech review" part and the file still parses.
 6. Session Log, disclosures and done receipt written.
 
