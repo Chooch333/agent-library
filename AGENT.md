@@ -44,7 +44,7 @@ Domain knowledge lives in individual SKILL.md files.
 |---|---|
 | `office hours`, `I have an idea`, `brainstorm this`, `let's design`, `rethink from the start`, `what should I build` | `roles/office-hours/SKILL.md` |
 | `review this plan`, `CEO review`, `think bigger`, `expand scope`, `is this ambitious enough`, `find the 10-star product`, `rethink this` | `roles/ceo-reviewer/SKILL.md` |
-| `eng review`, `engineering review`, `tech review`, `review architecture`, `lock in the plan`, `check the implementation plan` | `roles/eng-reviewer/SKILL.md` |
+| `eng review`, `engineering review`, `review architecture`, `lock in the plan`, `check the implementation plan` | `roles/eng-reviewer/SKILL.md` |
 | `design review`, `review the design`, `design plan review`, `rate this design`, `UI review` | `roles/design-reviewer/SKILL.md` |
 | `devex review`, `DX review`, `developer experience review`, `review the dev experience`, `TTHW review` | `roles/devex-reviewer/SKILL.md` |
 | `autoplan`, `run the full plan review`, `review chain`, `CEO design eng review` | `roles/autoplan/SKILL.md` |
