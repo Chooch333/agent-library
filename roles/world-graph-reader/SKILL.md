@@ -98,10 +98,29 @@ against the API.
    e. Write `data/extracted/<article_id>.json` via a GitHub MCP commit.
       Schema (defined by BB-2026-09-13-feed-reader-collector-and-loader,
       the sibling brief this role hands off to):
-      `{article_id, entities: [{uuid, name, type, summary, attributes}],
-      facts: [{uuid, source_uuid, target_uuid, fact, valid_at, verdict,
-      reasoning, invalidates}]}`. Read the commit back to verify it
-      landed (write-before-done) before flipping the queue entry.
+      `{article_id, summary, entities: [{uuid, name, type, summary,
+      attributes}], facts: [{uuid, source_uuid, target_uuid, fact,
+      valid_at, verdict, reasoning, invalidates}]}`. Read the commit back
+      to verify it landed (write-before-done) before flipping the queue
+      entry.
+
+      **Summary (v1.5.0).** The top-level `summary` is for the Reader on
+      cbrain's Stack screen, where Charles reads it beside the full
+      article. Shape: `{"lead": str, "paragraphs": [str, ...],
+      "key_points": [str, ...]}`.
+      - `lead`: 1-2 sentences -- what the piece is and its main point.
+      - `paragraphs`: 2-4 paragraphs, roughly 200-350 words in all, longer
+        for long pieces (up to ~500 for a 4,000-word article). Enough to
+        do the piece justice; never padded.
+      - `key_points`: 3-5 short plain lines -- what a reader would want to
+        remember.
+      Plain English. Written from the article text only: never add a fact,
+      number or opinion the article doesn't give, and attribute an
+      author's opinion or estimate to them. The loader ignores this key
+      (`pipeline/load_extracted.py` reads only `entities` and `facts`),
+      so it never changes what lands in the graph. If a summary can't be
+      written, leave the key out -- never write placeholder text, and
+      never call the API to write one.
    f. Flip `data/queue/<article_id>.json`'s `status` to `"done"` -- or
       `"failed"` with a `reason` field if the article couldn't be
       meaningfully read (fetch 404, empty body, no usable extraction).
