@@ -108,7 +108,7 @@ See the Handoff Reference block in the DA chat.
 
 ## Appendix A — Lab rules: source text for the skill (verbatim from the Lab Notebook)
 
-Five changes per Directive step 3: "Past verdicts", the first bullet under FILING, the Adopt now line under VERDICTS, the handoff tags under FILING, and THE SPEED RUN section. The text below is the Notebook's, unchanged; the build applies the changes.
+Seven changes per Directive step 3: "Past verdicts", the first bullet under FILING, the Adopt now line under VERDICTS, the handoff tags under FILING, THE SPEED RUN section, the requirements check in REVIEW step 5, and "Requirements check" in the TECH CARD sections. The text below is the Notebook's, unchanged; the build applies the changes.
 
 ````
 This space is a lab, not a project plan. Tech for the Total Harness gets reviewed in any order, as it appears. Each chat reviews one tech and ends with a verdict. The lab never builds permanent setup. The Total Harness project does that.
