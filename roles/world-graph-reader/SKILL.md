@@ -54,7 +54,7 @@ against the API.
       `world-graph` (tag `world-graph-reader`) -- the previous run's
       digest, so this run doesn't re-litigate settled facts or re-flag an
       already-known structural oddity (e.g. the non-fetchable-backlog
-      case in step 4b).
+      case in step 5b).
 
 2. LIST pending items: `data/queue/*.json` (GitHub MCP `get_file_contents` on
    the directory) with `status: "pending"`, oldest `published` first,
