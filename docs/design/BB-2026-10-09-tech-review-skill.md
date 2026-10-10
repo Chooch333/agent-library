@@ -50,7 +50,7 @@ New build chat.
 - `roles/eng-reviewer/SKILL.md`: remove `"tech review"` from `triggers`, version 0.1.1, changelog line.
 - `concepts/stack-map.md` in `Chooch333/cbrain`: the Chats part.
 
-**Out of scope:** any change to the lab's review steps, confidence marks or card sections, or to the verdict rules other than the one Adopt now change in Directive step 3; cbrain-ui code (Brief 2); the R&D project's instructions; judging or editing the seeded verdicts.
+**Out of scope:** any change to the lab's review steps, confidence marks or card sections, or to the verdict rules other than the changes in Directive step 3; cbrain-ui code (Brief 2); the R&D project's instructions; judging or editing the seeded verdicts.
 
 ## Directive
 
