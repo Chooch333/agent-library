@@ -26,6 +26,7 @@
 - 2026-10-09 Charles approved the lane (lab files in the agent library, read by the R&D tab) and said yes to: chats file into `lab/` after he approves the card, with no brief; the second tab is "Build map".
 - 2026-10-09 (amendment, before the build ran) Charles: "Amend Build 31 before it runs: in the Lab rules, Adopt now also requires that I have seen the test output and said I would use it."
 - 2026-10-09 (second amendment, before the build ran) Charles approved, in the Total Harness speed-run framework chat: a handoff that serves a speed run is tagged rd-handoff, speed-run and speed-run-<slug>; the lab judges tools against the requirements of the speed run they serve, listed per speed run in `lab/speed-run.md`, instead of one use case written into the rules. The framework that defines speed runs: Speed-run framework tab of https://claude.ai/code/artifact/2f4b7713-97d5-4712-bd10-d8f9709f9092.
+- 2026-10-09 (third amendment, before the build ran) Charles approved restoring the rest of his earlier lab amendment, which this brief had missed: a requirements check in the review steps, a "Requirements check" section on the tech card, and the standing requirements (Lab Notebook tab "Speed-run requirements") seeded into `lab/speed-run.md` as the arch-renders speed run's requirements (Appendix F).
 
 Labels: **[verified]** = checked 2026-10-09; **[assumed]**; **[draft]**.
 
