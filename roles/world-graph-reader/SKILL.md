@@ -240,6 +240,13 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.5.0** (2026-10-10) -- Summaries for the Reader. Step 3e writes a
+  top-level `summary` ({lead, paragraphs[], key_points[]}, ~200-350
+  words, from the article only) into the same extracted file. New step 4
+  backfills summaries for up to 10 already-read articles per run, newest
+  first, after new items and before the backlog drain (old steps 4-6 are
+  now 5-7). The loader ignores the key; nothing about facts changes. Per
+  BB-2026-10-09-intake-reader (Build 11.10).
 - **v1.4.0** (2026-10-09) -- Step 2 cap raised: 16 -> 30 pending items
   per run, plus a stop-early rule if the run runs short on time. The
   queue sat near 80 because ~13 articles arrive a day and 16 left; Charles
