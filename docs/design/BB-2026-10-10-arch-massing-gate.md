@@ -56,6 +56,7 @@ New build chat running orchestrate-build, in the daytime with Charles reachable 
 3. **The massing pipeline**, run in the cloud workspace on one sample, from both its PDF and its DXF:
    - Gate 1: sheet index (plans, elevations, sections, schedules), scale read from the scale note and checked against one dimension string.
    - Gate 2: walls, doors and windows traced; heights from elevations and sections; a white-box `.glb` with wall openings; the overlay image; a side view laid over one elevation.
+   - **Model parts (added 2026-10-10 for the materials gate):** every element is a separate, named part in the `.glb`, tagged by type in its name and extras: `exterior-wall`, `interior-wall`, `slab`, `roof`, `glazing`, `door`, `opening-frame`, plus the facade it faces (`north`, `south`, `east`, `west`) for exterior walls. The materials gate assigns finishes by these tags, so a single merged mesh fails this gate.
    - Self-checks before Charles sees it: traced walls within 2% of the sheet's overall dimensions; every exterior wall closes; every opening sits in a wall; side view lines up with the elevation.
    - A fresh checker subagent (one that has not seen the build) grades the overlay and the model against the plan sheets and lists flaws; the builder fixes up to two rounds.
 4. **One version-2 loop:** after Charles pins, Claude answers every pin (fix, or say why not), regenerates the assets as version 2, and marks each pin answered with that version.
