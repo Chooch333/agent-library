@@ -207,12 +207,12 @@ against the API.
       Cap this step at 10-15 edges per run; skip cleanly, log nothing
       alarming, the moment the run is out of time.
 
-5. No email. This role does not email Charles -- not a digest, and not
+6. No email. This role does not email Charles -- not a digest, and not
    when a run fails (Build 27, BB-2026-10-05-stack-repairer). The daily
    digest email is retired: the Stack Repairer's one evening recap
-   carries a Reader line built from step 6's note. A run that fails --
+   carries a Reader line built from step 7's note. A run that fails --
    a connector missing, this file unreadable, a tool erroring -- just
-   stops; it writes the step 6 note if it can (saying what failed) and
+   stops; it writes the step 7 note if it can (saying what failed) and
    nothing else. The Collector dot on the Stack screen goes late when
    `data/extracted` stops getting new commits, and the Stack Repairer
    picks that up.
