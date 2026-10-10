@@ -35,7 +35,7 @@ An engineering manager-mode plan review. Locks in the execution plan before code
 
 **Fire this skill when:**
 - A build plan, design doc, or spec is on the table and code is about to be written
-- The user asks to "review the architecture," "engineering review," "lock in the plan," or "tech review"
+- The user asks to "review the architecture," "engineering review," or "lock in the plan"
 - A plan crosses a complexity threshold (more than 8 files touched, 2+ new services, new infrastructure)
 
 **Do NOT fire this skill when:**
