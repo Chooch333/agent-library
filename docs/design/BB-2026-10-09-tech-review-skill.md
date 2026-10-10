@@ -24,6 +24,7 @@
 > "The R&D project's instructions are already final and point only at this skill. So the skill itself must say where the shelf, the tech cards and the speed-run brief live. I must never have to edit the project instructions when those move." — Charles, 2026-10-09
 > "Pick one lane and bring me something concrete to react to." — Charles, 2026-10-09
 - 2026-10-09 Charles approved the lane (lab files in the agent library, read by the R&D tab) and said yes to: chats file into `lab/` after he approves the card, with no brief; the second tab is "Build map".
+- 2026-10-09 (amendment, before the build ran) Charles: "Amend Build 31 before it runs: in the Lab rules, Adopt now also requires that I have seen the test output and said I would use it."
 
 Labels: **[verified]** = checked 2026-10-09; **[assumed]**; **[draft]**.
 
