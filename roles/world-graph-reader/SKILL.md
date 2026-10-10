@@ -217,11 +217,12 @@ against the API.
    `data/extracted` stops getting new commits, and the Stack Repairer
    picks that up.
 
-6. Write one short Project State note on world-graph (`add_note`, tag
+7. Write one short Project State note on world-graph (`add_note`, tag
    `world-graph-reader`): counts (new items / facts verified / facts
-   quarantined / backlog drained / backlog remaining) + the git paths of
+   quarantined / summaries backfilled / backlog drained / backlog
+   remaining) + the git paths of
    every `data/extracted/*.json` this run touched, and anything
-   structurally odd (like the non-fetchable-source case in 4b, the first
+   structurally odd (like the non-fetchable-source case in 5b, the first
    time it's seen). Open the note with one plain-English line the Stack
    Repairer can lift into its recap, e.g. "Read 8 articles, 50 facts
    checked (3 set aside)." This is the "own prior run digest" step 1b
