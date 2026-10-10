@@ -82,6 +82,7 @@ Standing rules: CB-121 (commits authored as Chooch333). No browser tests.
 
 - Appendices A to E in this file: the Lab Notebook text, read in full 2026-10-09 (R&D Lab Notebook: https://claude.ai/code/artifact/f3824046-d946-4da4-bffb-9e68146b619b). **[verified]**
 - `CONVENTIONS.md`, `AGENT.md`, `skills/wire-new-app/SKILL.md`, `roles/eng-reviewer/SKILL.md`, `concepts/stack-map.md`. **[verified]**
+- Speed-run framework (second amendment): https://claude.ai/code/artifact/2f4b7713-97d5-4712-bd10-d8f9709f9092, tab "Speed-run framework". **[verified]**
 - Research chats can write to the agent library. **[assumed]**
 
 ## Acceptance criteria
