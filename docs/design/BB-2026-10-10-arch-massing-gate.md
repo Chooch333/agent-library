@@ -96,7 +96,7 @@ New build chat running orchestrate-build, in the daytime with Charles reachable 
 2. The run view opens from the start page for a run; it shows the overlay, the model in an orbit viewer, assumptions, checks and pins; the deploy is READY and R&D, Build map and the start page work as before.
 3. A pin saved on the sheet and one on the model are stored with their positions and notes (SQL read-back); Pass moves the run to gate 3.
 4. A sample is in `arch-renders/samples/` with `SOURCE.md`; gate 1's sheet index and scale are recorded.
-5. Version 1 assets (overlay, model, side check) are stored and served by the asset route; the 2% check passed, or a diagnosis was posted and the build stopped.
+5. Version 1 assets (overlay, model, side check) are stored and served by the asset route; the model's parts are separate, named and typed (read back from the `.glb`); the 2% check passed, or a diagnosis was posted and the build stopped.
 6. Both routes ran; the footprint difference between PDF and DXF is recorded.
 7. Charles reviewed version 1 (pins or a pass), or this is handed off to Build 33.1.
 8. Every pin has an answer and version 2 exists, or Charles passed version 1 with no pins.
