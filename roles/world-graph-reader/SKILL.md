@@ -144,10 +144,32 @@ against the API.
       not started -- launch it: go build <plan_id> on world-graph",
       never "no action needed." Only `running` means it is in progress.
 
-4. If run budget/turns remain after the queue is drained (an empty queue
+4. SUMMARY BACKFILL (v1.5.0) -- after the new items, before the backlog
+   drain. Up to 10 articles per run that were read before summaries
+   existed, newest first.
+   a. Find them: query cbrain Supabase `lpeswznkxzeeyiqaewma`, table
+      `intake_items`: `kind = 'article' and summary is null and full_text
+      is not null and status in ('in_graph', 'read')`, ordered
+      `published_at desc nulls last`, limit 10. That table is the nightly
+      copy `pipeline/sources_export.py` writes, so it can be a day behind.
+      If it can't be read, list `data/extracted/` and pick the newest
+      files with no `summary` key instead. Skip any item with no
+      `data/articles/<id>.md` -- RSS items collected before 2026-09-13
+      have no stored text.
+   b. For each: read `data/articles/<id>.md` in full and the current
+      `data/extracted/<id>.json`. If the file already has a `summary`,
+      skip it. Otherwise write the summary by 3e's rules and commit the
+      same file with only the `summary` key added -- every other key
+      unchanged. Read it back.
+   c. Never touch the queue entry. This is not a re-read: the item stays
+      loaded and nothing new goes to the graph.
+   d. Stop after the item in hand the moment the run is short on time.
+      Fewer backfills is fine; a half-written file is not.
+
+5. If run budget/turns remain after the queue is drained (an empty queue
    in step 2 counts as budget remaining): drain backlog. Capped, strictly
-   lower priority than new items, skip cleanly if there's no time left
-   this run.
+   lower priority than new items and summary backfill, skip cleanly if
+   there's no time left this run.
    a. Query the Supabase mirror for the N oldest edges in `group_id =
       'world-knowledge'` still unaudited, joined to each edge's first
       episode (`episodes[1]`) for `source_url`. Find unaudited edges by
