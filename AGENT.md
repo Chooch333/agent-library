@@ -32,6 +32,12 @@ Domain knowledge lives in individual SKILL.md files.
 |---|---|
 | `this is an investment review` (case-insensitive, must be in the very first message — mentioning an investment review mid-chat is not an invocation) | `roles/investment-review/SKILL.md` |
 
+### R&D lab
+
+| Trigger phrases | Role |
+|---|---|
+| `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — mentioning a tech review mid-chat is not an invocation) | `roles/tech-review/SKILL.md` |
+
 ### Plan-mode reviews
 
 | Trigger phrases | Role |
