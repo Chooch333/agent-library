@@ -1,11 +1,10 @@
 ---
 name: eng-reviewer
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers:
   - "eng review"
   - "engineering review"
-  - "tech review"
   - "review architecture"
   - "review the architecture"
   - "lock in the plan"
