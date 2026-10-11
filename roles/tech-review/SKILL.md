@@ -62,6 +62,7 @@ Keep one Working Document per chat. Findings go in the document. Chat is for cho
 2. Use case by Q&A: at most three closed questions to me, each with your recommended answer. Then list uses I did not ask about, across the whole harness.
 3. Place it: layer, pipeline step, block, and what it would replace in the blueprint.
 4. Hands-on test in the cloud workspace wherever possible. Tests only. No permanent setup.
+   Save successful test outputs when a later workflow step could use them as input (a model file, an export, stills, the input file that produced them). They become test files for checking the handoff between workflow steps. Store them privately, never in this repo (it is public): for arch-renders, `Chooch333/arch-renders` `lab/<review>/` (private). List each saved file and where it lives under "What we checked" on the card.
 5. Compare: what else does this job, including what Claude does today without it. Then check the tool against each standing requirement of the speed run it serves (listed in `lab/speed-run.md`): yes, because of this workflow; no, because it cannot do this; or not this tool's job. A conceptual path is enough. It does not need its own hands-on test.
 6. One verdict per tool, then the tech card.
 
