@@ -98,8 +98,11 @@ A later review finds EffectCraft stalled. Charles approves the change. The chat 
 
 ## Pitfalls
 
-None yet. Pitfalls must come from real traces; this skill has not run yet.
+- **Test outputs not kept** (Pascal Editor review, 2026-10-11). The GLB export was checked inside the browser and never saved, so TH had no file for testing the Pascal-to-Blender handoff. Save outputs as step 4 says.
+- **Client material in this public repo** (same review). A script holding a client building's dimensions was committed to `lab/`, then deleted; it stays in git history. Test inputs and outputs from client drawings go to private storage only.
 
 ## Changelog
+
+- **0.1.1** (2026-10-11) — Review step 4: save successful test outputs privately for workflow handoff tests (Charles, R&D lab). Two pitfalls from the Pascal Editor review.
 
 - **0.1.0** (2026-10-10) — Initial draft. Build 31 (BB-2026-10-09-tech-review-skill). Lab rules copied from the R&D Lab Notebook with seven changes: past verdicts and filing now use `lab/` files; Adopt now also needs Charles to have seen the test output and said he would use it; handoff tags add speed-run-<slug>; THE SPEED RUN points at `lab/speed-run.md`; review step 5 adds a requirements check; the tech card adds a "Requirements check" section.
