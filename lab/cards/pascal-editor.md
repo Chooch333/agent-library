@@ -58,6 +58,7 @@ Terms:
   - It took about a minute to build.
   - Blender opens this format natively ✓, and Pascal also has a one-click "Send to Blender" for a Blender running on the same PC ✓.
   - Opening it in Blender itself was not tested. ~
+- **Test outputs saved: none.** The GLB was checked in the browser and not kept. The scene file can be rebuilt from the lab generator in the TH-Q-003 thread. TH should save the first Crider GLB as the test file for the Pascal-to-Blender step. ✓✓
 
 ## What else does this job
 **TH's own route: Build 33's tracer, plus Build 35's planned scene.**
