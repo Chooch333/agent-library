@@ -88,5 +88,23 @@ Grass instanced on a fixed rectangle (visible edge in the aerial; covered the wa
 ## Stop rule
 Three failed tries at the same check means stop, write down what was tried, and report. Never relax a check to pass.
 
+## The Pascal GLB route (Build 35, from the 2026-10-11 run)
+- The model now comes from **Pascal**: a scene file (`arch-renders/pipeline/pascal/generate.mjs`) exported to GLB by Pascal **on Charles's PC** (skill `pascal-editor`; the cloud export is broken). Blender 5.2.2 imports it with every wall, window and door as a named part (`wall_<id>`, `window_<id>`, `door_<id>`).
+- The renderer is `pipeline/pascal/render.py`. It reads cameras, sun, site kit, output and look from `workflows.conventions` **data**, and maps materials by **signature** (`sign_glb.mjs`, calibrated per Pascal version into `materials.pascal_signature`), never by name or image order.
+- Modes: `preview` (800×450, 16 samples), `idpass` (one flat colour per part, no anti-aliasing, plus a colour→part map so a pin on a preview names a part), `still` (1600×900, 64 samples).
+- Measured 2026-10-11 (two-storey commercial building, simpler near site): check renders 50–60 s each; stills 5.9–7.8 min each.
+
+## Fix rules (the four check-render fixes of 2026-10-11, now in render.py)
+1. The facade line comes from **wall parts only**: canopies and other blocks project past the walls and opened a lawn gap at the front.
+2. Drives are **always flat asphalt**: a textured drive read as stone pavers.
+3. Lawn brightness comes from the library (value 0.8), so the lawn is **not lighter than the grass blades**.
+4. Walk slabs **meet edge to edge, never overlap**: overlapping slabs rendered a black patch.
+Also: every site item not on the sheets (walks, curb, drive, trees, lawn) is listed on the run as `assumed`.
+
+## Gotchas
+- **Never name a bpy script `inspect.py`**: it shadows the stdlib module bpy imports and crashes Blender.
+- Blender adds `.001` to repeated names: strip it before matching a part or a signature.
+
 ## Changelog
+- 0.2.0 (2026-10-12) — Build 35 night run: Pascal GLB route, signature mapping, conventions as data, preview/id-pass/still modes, times, the four fix rules, the inspect.py gotcha. Draft until Build 35.1 renders by script.
 - 0.1.0 — First version, from the 2026-10-10 render lab (Total Harness chat).
