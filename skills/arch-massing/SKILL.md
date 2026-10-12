@@ -19,6 +19,12 @@ wiring:
 
 Turns a 2D plan set into a white-box 3D model Charles can check against the sheets. Gate 1 reads the sheet index and scale. Gate 2 builds the model, with openings, and every part named and typed.
 
+## Default reader: the takeoff (Build 35)
+- On the Pascal route (skill `arch-renders-run`) the sheets are read into a **takeoff**: `arch-renders/pipeline/pascal/takeoff.schema.json`. Every number is `{v, src}` with the sheet it came from, or `src: "assumed"`; finishes map to material library slugs with their sheet.
+- A fresh checker agent grades the takeoff against the sheets, at most two fix rounds. `generate.mjs` turns it into the Pascal scene.
+- **The tracer below (PDF and DXF routes) is the backup**: use it when the takeoff checker can't settle a dimension, or to cross-check overall sizes and wall counts.
+- The sheets stay on Drive; read them through the Google Drive connector and never commit them.
+
 This page records what actually worked on Build 33. The code is in `Chooch333/arch-renders/pipeline` (its README has run commands and file roles).
 
 ## Inputs
