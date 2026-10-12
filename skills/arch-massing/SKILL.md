@@ -159,4 +159,5 @@ If the PDF has no vector linework (scanned or raster pages):
 Three failures at the same step (a check, an upload, a route) means stop. Write what was tried and what failed, and report it. Do not keep retrying or relax a tolerance to get a pass.
 
 ## Changelog
+- 0.2.0 (2026-10-12) — Build 35: the takeoff is the default reader, the tracer is the backup. Draft until Build 35.1 reads a real set into a takeoff.
 - 0.1.0 — First version (Build 33, massing gate)
