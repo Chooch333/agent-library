@@ -1,11 +1,11 @@
 ---
 name: arch-render
-version: 0.1.0
+version: 0.2.0
 status: draft
 triggers: [used by builds when an arch-renders run reaches gate 3 (materials stills) or gate 4 (output stills and clip frames); no chat trigger]
-dependencies: [arch-massing, arch-materials]
+dependencies: [arch-massing, arch-materials, pascal-editor]
 owner: Charles
-updated: 2026-10-11
+updated: 2026-10-12
 wiring:
   runs: inside-builds
   reads: [gate-2 model.glb (typed parts), material assignment, site settings, cbrain workflows.conventions (cameras, look), asset kit]
