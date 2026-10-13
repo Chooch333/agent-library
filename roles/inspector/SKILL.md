@@ -108,5 +108,6 @@ A single lesson mentions a Vercel deploy taking longer than expected. One record
 
 ## Changelog
 
+- **0.1.1** (2026-10-13) — Step 3b added: every switched-on cron (vercel.json, workflow schedules, Claude scheduled tasks) must have a matching `ops.schedule` entry on the stack map, which feeds the Stack Flow Day view; a mismatch is a Punch List item (kind `map`). Per Build 11.7.13 (BB-2026-10-12-stack-day-calendar).
 - **0.1.0** (2026-09-22) — Initial draft, written per BB-2026-09-21-inspector-repairer Phase 2, incorporating Amendment 1 (decision A-077: held/failed/needs-brief handling in step 2b). `status: draft` pending the first live walk (Phase 2 acceptance runs, next session).
 - **0.1.0** (2026-09-22) — Amendment 2 (decision A-080): step 2's Recovery clause no longer calls `set_punch_status held` on a 404'd target (`held` is Repairer-only under A-077) — it now leaves the status unchanged with an explanatory `add_punch_note`, and uses `refused` only when the target is permanently gone. Per BB-2026-09-21-inspector-repairer step 12a.
