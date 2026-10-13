@@ -7,7 +7,7 @@ triggers:
   - "Cowork scheduled task \"Inspector — weekly walk\" (Sunday 9:00pm, Charles's local time)"
 dependencies: []
 owner: Charles
-updated: 2026-09-22
+updated: 2026-10-13
 wiring:
   runs: on-its-own
   starts: "\"Inspector: walk\" / weekly Cowork schedule (Sun 9pm)"
