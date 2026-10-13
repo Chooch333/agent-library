@@ -59,6 +59,12 @@ Precondition / Action / Success evidence / Recovery for every step (Skill Design
 - *Success evidence:* one `file_punch_item` (kind `map`) per real difference found, each with the exact edit drafted in `draft_text`.
 - *Recovery:* `get_entity('stack-map')` unreachable → hold the whole map-comparison sub-step for this walk, note it in the walk summary (step 7), and retry next walk — do not file speculative map items without reading the live entity.
 
+**3b. Timed jobs vs. map schedules** (Build 11.7.13, BB-2026-10-12-stack-day-calendar).
+- *Precondition:* step 3 read the live `stack-map` entity.
+- *Action:* collect every clock-timed job that is switched on: (i) `crons` in each `vercel.json` (cbrain `services/vercel.json`, email-watcher, subscription-content-mcp, cbrain-ui on its production branch only — Vercel crons don't run on previews), (ii) uncommented `on: schedule: - cron:` lines in `.github/workflows/*.yml` of cbrain, cbrain-ui, world-graph and yt-relay, (iii) `list_triggers` (recurring, enabled Claude scheduled tasks). For each, look for a matching entry in some dot's `flow_nodes[].ops.schedule` list — same cron (ignore a `CRON_TZ=` prefix; compare its zone with the entry's `tz`). Also flag the reverse: a schedule entry without `paused: true` whose cron no longer exists or is switched off, and a `paused: true` entry whose cron has been switched back on.
+- *Success evidence:* one `file_punch_item` (kind `map`, tier `auto`) per mismatch, `target_path` `concepts/stack-map.md`, with the exact `schedule` entry to add, remove or flip drafted in `draft_text` (`label`, `cron`, `tz`, `where`, plus `paused`/`assumed`/`acts_at` when they apply). These are verified defects, so one record is enough for the step 6 gate.
+- *Recovery:* a repo or `list_triggers` can't be read → skip that source for this walk and say so in the walk summary; never file a "missing" item from a source you couldn't read. A job that only a person can see (the PC's Task Scheduler) is never flagged — its entry carries `assumed: true`.
+
 **4. Gather evidence.**
 - *Precondition:* step 3 complete.
 - *Action:* since the checkpoint, pull: lessons, `noted` disclosures (read-only — the Inspector never disposes a disclosure, that's DA's job), failed/blocked plans, and next moves open more than 14 days with no owner. Cap 60 records total for this step.
