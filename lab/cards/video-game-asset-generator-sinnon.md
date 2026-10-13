@@ -18,6 +18,12 @@ This review asks whether we copy that method as the base for the family's own vi
 | Our copy: Claude + Blender asset generator | Shelf | Passed hands-on tests. Kids' games is not a listed speed run; the arch-renders use (equipment props) waits for TH-056. | Kids' games speed run is listed, or TH-056 starts |
 | SINNON Asset Generator | Never (as a harness tool) | A Windows desktop app Claude can't run unattended; closed source. Kept as the quality yardstick. ✓ | SINNON documents its local service or ships a command-line version |
 
+**Update 2026-10-12 evening:** Charles approved **Adopt now** for the full pipeline (Claude + Blender + Meshy). Shelf row updated; handoff filed to Total Harness for the kids' games speed run.
+
+Proven hands-on the same evening ✓✓: a kids' character picture (Super Sweets) → Meshy picture-to-3D (30 credits) → slimmed to 30,000 triangles, skeleton, four library moves (22 credits) → merged byte-for-byte into one 2.9 MB game file with idle, walk, run and jump (each 22–23 moving bone channels) → published on Vercel (family-arcade-test.vercel.app). Charles played it: "It works." Movement could be refined; look (back colour, heavy black outline) to be refined later by convention.
+
+Lessons ✓✓: a Blender re-import/re-export merge froze every move (0 moving channels) — merge at file level instead (`generator/merge_glb.py`); Meshy rigging caps at 300k faces, so remesh first; rigging the remesh task by id failed pose estimation, rigging the slim model by link worked; Vercel blocks deploys from commits not authored by the account owner.
+
 ## Where it fits
 
 Digital hands layer; pipeline step 6 (make it on screen). Block 7 (Geometry stack, which lists game art), a skill under block 16, a quality rubric under block 17. ✓ It replaces nothing: it is the factory that Blender scripts, Meshy (picture to 3D) and free art packs feed into.
