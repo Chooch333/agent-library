@@ -19,7 +19,8 @@ Written by `Tech discovery:` chats (`skills/tech-discovery/SKILL.md`, the first 
 | `verdict_note` | Short qualifier such as `as a trial`. May be empty. |
 | `come_back_when` | The one trigger for a shelf or never verdict. Empty for adopt-now. |
 | `blocks` | Total Harness block numbers it touches, such as `[16, 17, 19]`. May be empty. |
-| `card` | File name in `cards/` without `.md`. May be empty. |
+| `brief` | File name in `briefs/` without `.md`. May be empty (tools reviewed before 2026-10-14 have none). A test run finds the brief through this field. |
+| `card` | File name in `cards/` without `.md`. Empty until the tool has a test run. |
 | `reviewed` | Date of the latest review, `YYYY-MM-DD`. |
 | `draft` | `true` until Charles approves the card. Remove it or set `false` on approval. |
 
