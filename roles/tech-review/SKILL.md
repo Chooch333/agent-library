@@ -96,6 +96,7 @@ Output files keep stable names (`<output>_<engine>_<machine>.<ext>`, e.g. `clip_
 
 FILING (only after I approve the report)
 - Only after I approve the report, write `lab/cards/<review>.md` and one `lab/shelf/<tool>.md` per tool or variant with a verdict, using GitHub `create_or_update_file`.
+- The filed report is the whole report, word for word with the published page: every section, every result row and every evidence mark. Do not condense it. Write each result environment as its own `###` heading with its numbers as bold-labelled bullets, and give each clip an `anchor` in the front matter (the page's row id) so the R&D tab can link to it. Name the comparison image in `image`. Clips and images stay on the published page and in private storage, never in this repo. When the report is revised, edit the page and the filed copy together.
 - A changed verdict (after I approve it) edits the shelf file (`verdict`, `verdict_note`, `come_back_when`, `reviewed`) and adds one dated line at the top of its `## Verdict history`, for example `2026-11-02 · Shelf (was Adopt now) · <reason>`. Never edit or remove a history line.
 - Clear `draft` when the report is approved.
 - If the chat cannot write to the repo, file to the Lab Notebook as before (one row on its Shelf tab, the report as a tab beside it, https://claude.ai/code/artifact/f3824046-d946-4da4-bffb-9e68146b619b) and tell me.
