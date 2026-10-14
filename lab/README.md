@@ -28,8 +28,10 @@ Written by `Tech review:` chats (`roles/tech-review/SKILL.md`). Read by the R&D 
 
 Newest on top. A line is never edited or deleted. A change of verdict adds a line such as `Shelf (was Adopt now)`.
 
-## Card file
+## R&D Report file (in `cards/`)
 
-Front matter: `title`, `reviewed`, `tools` (shelf file names the card covers), `draft`. The body is the tech card: the sections named in the lab rules, as `##` headings in order. "Verdict by tool" is the verdict on the review date; the shelf file holds the current one.
+Since 2026-10-14 each review files an R&D Report, not a tech card. The folder keeps the name `cards/` so the R&D tab keeps reading it. Template: `templates/rd-report.html`. First report: `cards/flythrough-renderer-blender.md`.
 
-Every claim carries a mark: ✓ checked at a source today, ✓✓ run hands-on, ~ assumed.
+Front matter: `title`, `type: rd-report`, `reviewed`, `test_date`, `test_completed`, `status`, `tools` (shelf file names the report covers), `report_url` (the published page), `clips` (one `env` + `file` per test environment, `""` when none), `clips_home`, `draft`. The body follows the section order in the lab rules (`R&D REPORT`). The results table gives the verdict per environment on the review date; the shelf file holds the current one.
+
+Every claim carries one evidence mark: Tested (run hands-on), Published (from the maker's own documentation), Assumed (judgment). Older cards use ✓✓, ✓ and ~ for the same three.
