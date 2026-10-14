@@ -6,7 +6,7 @@ Written by `Tech discovery:` chats (`skills/tech-discovery/SKILL.md`, the first 
 
 - `shelf/<tool>.md` — one file per tool. The front matter is the shelf row. The body holds `## Verdict history`, newest line first.
 - `briefs/<tech>.md` — one file per discovery: the Discovery Brief. Kept apart from `cards/` so the two show separately. A brief is never edited by a test run.
-- `cards/<review>.md` — one file per test run: the R&D Report (older files are tech cards). A review of a suite covers several tools.
+- `reports/<review>.md` — one file per test run: the R&D Report (older files are tech cards). A review of a suite covers several tools. Replaces the old `cards/` folder; Build 32.1 moves the files and points the R&D tab here.
 - `speed-run.md` — the speed-run brief. Read at the start of each review. Not shown on the screen.
 
 ## Shelf file fields
