@@ -1,0 +1,340 @@
+<!-- R&D Report template. Copy this page for every tech review: keep the layout, styles and section order; replace the content.
+     First approved report: Flythrough Renderer - Blender (2026-10-14). Live page: https://claude.ai/artifact/YHCc81fEgUQPHVEfskYUEc
+     Rules for each section: roles/tech-review/SKILL.md, "R&D REPORT". Clip and image files sit beside the page with stable names. -->
+<title>Flythrough Renderer - Blender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: R&D Report — a title block like a drawing-set cover sheet, findings up top, then the experiment, the results table with one clip per test environment, and the supporting detail. */
+:root{
+  --bg:#f5f6f3; --paper:#ffffff; --ink:#1d2320; --muted:#5d6661; --rule:#d5dad5;
+  --accent:#2f6f5e; --accent-soft:#e3efe9; --warn:#9a5b12; --warn-soft:#f6ecdc; --bad:#9b2f2f; --bad-soft:#f5e3e1;
+  --display:"Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body:"Source Serif 4", Georgia, serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141816; --paper:#1b201d; --ink:#e4e9e5; --muted:#9aa49e; --rule:#2e3531;
+  --accent:#7cc3ad; --accent-soft:#1f3029; --warn:#e0a85c; --warn-soft:#33281a; --bad:#e58a84; --bad-soft:#3a2321; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141816; --paper:#1b201d; --ink:#e4e9e5; --muted:#9aa49e; --rule:#2e3531;
+  --accent:#7cc3ad; --accent-soft:#1f3029; --warn:#e0a85c; --warn-soft:#33281a; --bad:#e58a84; --bad-soft:#3a2321; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.6;padding-inline:16px;padding-block:28px 64px}
+.wrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:30px}
+.titleblock{background:var(--paper);border:1px solid var(--rule);display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,290px)}
+.titleblock .t{padding:22px 24px;min-width:0;display:flex;flex-direction:column;gap:4px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.1;margin:0;text-wrap:balance}
+h1.tech{color:var(--accent)}
+.problem{margin:10px 0 0;max-width:60ch}
+.stamp{border-left:1px solid var(--rule);padding:20px;display:flex;flex-direction:column;gap:10px;font-family:var(--mono);font-size:12.5px;color:var(--muted);min-width:0}
+.stamp b{color:var(--ink);font-weight:500}
+.stamp .row{display:flex;flex-direction:column;gap:2px}
+.stamp .row.status{margin-top:8px;padding-top:14px;border-top:1px solid var(--rule)}
+.stamp .k{text-transform:uppercase;letter-spacing:.07em;font-size:11px}
+.stamp ol{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:2px}
+@media (max-width:680px){.titleblock{grid-template-columns:1fr}.stamp{border-left:0;border-top:1px solid var(--rule)}}
+section{display:flex;flex-direction:column;gap:12px}
+h2{font-family:var(--display);font-weight:700;font-size:21px;margin:0;display:flex;gap:10px;align-items:baseline;text-wrap:balance}
+h2 .n{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:500}
+h3{font-family:var(--display);font-weight:700;font-size:16px;margin:6px 0 0}
+p{margin:0;max-width:68ch}
+ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;max-width:70ch}
+code{font-family:var(--mono);font-size:.86em}
+.ev{font-family:var(--mono);font-size:11px;letter-spacing:.03em;padding:1px 5px;border-radius:3px;white-space:nowrap;vertical-align:1px}
+.ev.t{background:var(--accent-soft);color:var(--accent)}
+.ev.p{background:var(--rule);color:var(--ink)}
+.ev.a{background:var(--warn-soft);color:var(--warn)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px;color:var(--muted)}
+.findings{background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--accent);padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.findings .lead{font-size:18px;line-height:1.55;max-width:none}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;border-block:1px solid var(--rule);padding-block:14px}
+.nums div{min-width:0}
+.nums .v{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.05;font-variant-numeric:tabular-nums}
+.nums .l{font-size:14px;color:var(--muted)}
+@media (max-width:560px){.nums{grid-template-columns:1fr}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two > div{min-width:0;display:flex;flex-direction:column;gap:6px}
+@media (max-width:640px){.two{grid-template-columns:1fr}}
+.params{display:grid;grid-template-columns:minmax(120px,190px) 1fr;border:1px solid var(--rule);background:var(--paper)}
+.params > div{padding:9px 12px;border-bottom:1px solid var(--rule);min-width:0}
+.params > div:nth-last-child(-n+2){border-bottom:0}
+.params .k{font-family:var(--display);font-weight:700;font-size:13.5px;color:var(--muted)}
+@media (max-width:520px){.params{grid-template-columns:1fr}.params .k{border-bottom:0;padding-bottom:0}}
+.results{display:flex;flex-direction:column;border:1px solid var(--rule);background:var(--paper)}
+.res{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;padding:16px;border-bottom:1px solid var(--rule)}
+.res:last-child{border-bottom:0}
+.res .env{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+.res .env h3{margin:0;font-size:17px}
+.res .env .sub{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.noclip{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;border:1px dashed var(--rule);color:var(--muted);font-size:15px;background:var(--bg)}
+.res video{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#000;aspect-ratio:16/9}
+.res .cap{font-size:13.5px;color:var(--muted);margin-top:4px}
+.res dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:15px;align-content:start}
+.res dt{font-family:var(--display);font-weight:700;font-size:13px;color:var(--muted);padding-top:2px}
+.res dd{margin:0;min-width:0}
+.res dd.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+@media (max-width:680px){.res{grid-template-columns:1fr}}
+.pill{display:inline-block;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:3px;white-space:nowrap}
+.p-adopt{background:var(--accent-soft);color:var(--accent)}
+.p-shelf{background:var(--warn-soft);color:var(--warn)}
+.p-never{background:var(--bad-soft);color:var(--bad)}
+.tbl{overflow-x:auto;border:1px solid var(--rule);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--display);font-size:13px;font-weight:700;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+figure{margin:0;display:flex;flex-direction:column;gap:6px}
+figure img{border:1px solid var(--rule);display:block;width:100%;height:auto}
+figcaption{font-size:14px;color:var(--muted)}
+a{color:var(--accent)}
+a:focus-visible,video:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.src li{font-size:14.5px}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+</style>
+
+<div class="wrap">
+
+<header class="titleblock">
+  <div class="t">
+    <h1>Flythrough Renderer</h1>
+    <h1 class="tech">Blender 4.5.14 (PC) · 5.2.2 (cloud)</h1>
+    <p class="problem">Study the output quality and speed of Blender for architectural flythroughs.</p>
+  </div>
+  <div class="stamp">
+    <div class="row"><span class="k">Test date</span><b>2026-10-13</b></div>
+    <div class="row"><span class="k">Test completion date</span><b>2026-10-13</b></div>
+    <div class="row"><span class="k">Rev history</span>
+      <ol start="0">
+        <li><b>2026-10-13</b> First draft (tech card format)</li>
+        <li><b>2026-10-13</b> Reformatted as R&amp;D Report; one clip per test environment</li>
+        <li><b>2026-10-14</b> Blender versions in title; Cycles on PC adopted</li>
+      </ol>
+    </div>
+    <div class="row status"><span class="k">Report&nbsp;&nbsp;status</span><b>Complete</b></div>
+  </div>
+</header>
+
+<div class="legend" aria-label="Evidence key">
+  <span><span class="ev t">Tested</span> we ran it and measured it</span>
+  <span><span class="ev p">Published</span> from the maker's own documentation</span>
+  <span><span class="ev a">Assumed</span> our judgment, not yet checked</span>
+</div>
+
+<section>
+  <h2><span class="n">01</span>Tech description</h2>
+  <p><b>Blender</b> is a free, open-source 3D program (GPL license, fine for company use) <span class="ev p">Published</span>. Claude drives it entirely by script, with no one clicking <span class="ev t">Tested</span>. It has two render engines:</p>
+  <ul>
+    <li><b>Cycles</b> traces real light. It's the photo-like look approved for the arch-renders stills on 2026-10-10.</li>
+    <li><b>EEVEE</b> draws like a video game engine. It's faster to set up and less true to light.</li>
+  </ul>
+  <p>A <b>flythrough</b> is the same 3D scene rendered as hundreds of still frames, 24 per second of video, with the camera moving a little each frame.</p>
+</section>
+
+<section class="findings" aria-labelledby="f-h">
+  <h2 id="f-h"><span class="n">02</span>Findings</h2>
+  <p class="lead">Blender Cycles on the graphics card in Charles's home PC makes a photo-like flythrough fast enough to use. A 20-second clip takes about <b>1.9 hours</b>, unattended, at no cost. The cloud workspace has no graphics card and needs about <b>13.4 hours</b> for the same clip, so it isn't practical. EEVEE is only slightly faster than Cycles on the PC (11.3 vs 14.1 seconds a frame) and looks clearly worse: blank windows and flatter light. In the cloud it couldn't render the scene at all: it ran out of memory. Cycles on the PC is the route to adopt.</p>
+  <div class="nums">
+    <div><div class="v">14.1 s</div><div class="l">per frame, Cycles on the PC graphics card <span class="ev t">Tested</span></div></div>
+    <div><div class="v">≈ 7×</div><div class="l">faster than Cycles in the cloud on the same frames <span class="ev t">Tested</span></div></div>
+    <div><div class="v">1.9 h</div><div class="l">for a 20 s clip (480 frames) on the PC, from the measured rate</div></div>
+  </div>
+  <div class="two">
+    <div>
+      <h3>Inputs the workflow must supply</h3>
+      <ul>
+        <li>A 3D model with materials assigned: the Pascal export, every wall, window and door a named part.</li>
+        <li>The site kit: textures, tree models and sky image, stored on the PC.</li>
+        <li>A camera move picked from a standard set, such as walk-up, orbit or rise to aerial.</li>
+        <li>A render preset: 1280×720, 16 samples, denoise on, Cycles on the graphics card.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Harness the Total Harness project needs to build</h3>
+      <ul>
+        <li>A <b>clip step</b> in the arch-renders run. It renders frames on the PC's card, joins them into an MP4, and hands the MP4 to the motion layer for titles and callouts.</li>
+        <li>A <b>standard camera-move set</b> kept as conventions data.</li>
+        <li>A <b>storyboard stop</b>: first, middle and last frame of each move (about 45 s) for review before the full clip.</li>
+        <li><b>Blender 5.2 on the PC</b>, so the distance haze renders.</li>
+        <li>A rule that keeps the PC awake for the roughly 2-hour job.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">03</span>Experiment parameters</h2>
+  <p>We created a 5-second flyby of the test model and compared it across Blender's environments to measure speed and quality. Every environment rendered the same scene, the same camera move and the same settings. Only the engine and the machine changed.</p>
+  <div class="params">
+    <div class="k">Test model</div><div>The render-lab house from 2026-10-10, the scene approved for stills. It has Poly Haven brick, stone, slate, siding and lawn textures; modeled windows, trim and gutters; 3D grass; about 150 trees; and an HDRI sky with an aimed sun.</div>
+    <div class="k">Camera move</div><div>Street eye level (1.6 m) rising and swinging out to the three-quarter aerial (6.5 m). The move is defined over 480 frames (20 s). The test renders every 4th frame, so the 5-second clip shows the whole move at 4× speed.</div>
+    <div class="k">Output</div><div>1280×720 at 24 frames per second. The PC clips are 120 frames (5 s). The cloud clips are 24 frames (the first 1 s), because a full 5 s cloud clip takes about 3.4 hours.</div>
+    <div class="k">Render settings</div><div>Cycles: 16 samples with adaptive sampling and denoising, and the same light bounces and color look as the approved stills. EEVEE: 32 samples, shadows and ray tracing on.</div>
+    <div class="k">Machines</div><div><b>PC:</b> Charles's laptop. Intel i7-10850H, NVIDIA Quadro T2000 (4 GB), Blender 4.5.14. Cycles used NVIDIA OptiX, the card's fast ray-tracing mode <span class="ev t">Tested</span>.<br><b>Cloud:</b> Claude's workspace. 2-core Intel Xeon, no graphics card, Blender 5.2.2.</div>
+    <div class="k">Blender versions</div><div>The first two numbers name the release series and the last is the bug-fix update: 4.5.14 is the 14th fix of the 4.5 series, and 5.2.2 is the 2nd fix of the 5.2 series. Both are LTS (long-term support) releases <span class="ev t">Tested</span>. The PC has 4.5 because that's what was installed for the SINNON test; the cloud uses 5.2. Rendering works the same in both. The one difference seen here is the distance haze, which the script builds a 5.x way and 4.5 skips. The PC's roughly 7× speed lead comes from its graphics card, not its version <span class="ev a">Assumed</span>. Installing 5.2.2 on the PC puts both machines on one version.</div>
+    <div class="k">What we measured</div><div>
+      <ul>
+        <li><b>Time:</b> seconds per frame from Blender's own timer, logged for every frame.</li>
+        <li><b>Flicker:</b> consecutive frames compared pixel by pixel on flat surfaces (roof, brick).</li>
+        <li><b>Memory:</b> peak graphics memory on the PC.</li>
+        <li><b>Quality:</b> the same frame (frame 93) compared side by side across all four environments.</li>
+        <li><b>Failures:</b> memory use tracked when a run stopped.</li>
+      </ul>
+    </div>
+    <div class="k">Side checks</div><div>
+      <ul>
+        <li><b>Higher quality:</b> 64 samples on the PC card took 38 s a frame <span class="ev t">Tested</span>.</li>
+        <li><b>Simpler scene</b> (boxes, glass, trees) at 64 samples: PC card 11.3 s, PC processor 41 s, cloud 126 s <span class="ev t">Tested</span>.</li>
+      </ul>
+    </div>
+    <div class="k">Saved test files</div><div>All on Charles's PC, private, in <code>Documents\flythrough-test\</code>:
+      <ul>
+        <li><code>house_anim.py</code>: the scene and timing script, built from the lab's <code>house.py</code> plus the camera move.</li>
+        <li><code>assets\</code>: the textures and tree models the script reads.</li>
+        <li><code>clip_frames\</code> and <code>clip_eevee\</code>: the PC clips as frame images.</li>
+        <li><code>house_out\</code>: comparison frames.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="n">04</span>Results by test environment</h2>
+  <div class="results">
+
+    <article class="res" id="cycles-pc">
+      <div class="env"><h3>Cycles on the PC graphics card</h3><span class="sub">NVIDIA Quadro T2000 · OptiX · 16 samples</span><span class="pill p-adopt">Adopt now</span></div>
+      <div>
+        <video src="clip_cycles_pc.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="cap">Clip: <code>clip_cycles_pc.mp4</code>, 5 s, 120 frames</div>
+      </div>
+      <dl>
+        <dt>Per frame</dt><dd class="num">14.1 s (13.3–19.0) <span class="ev t">Tested</span></dd>
+        <dt>This clip</dt><dd class="num">28.2 min</dd>
+        <dt>20 s clip</dt><dd class="num">≈ 1.9 h</dd>
+        <dt>Cost</dt><dd>$0. Runs on hardware already owned.</dd>
+        <dt>Quality</dt><dd>Photo-like and matches the approved stills. No speckle or flicker on flat surfaces <span class="ev t">Tested</span>. Missing the distance haze (Blender 4.5 on the PC). Leaves and grass should be judged by eye <span class="ev a">Assumed</span>.</dd>
+        <dt>Memory</dt><dd>Peak about 0.8 GB of the card's 4 GB <span class="ev t">Tested</span></dd>
+        <dt>Verdict note</dt><dd>Adopted 2026-10-14: Charles watched the clip and said he'd use it.</dd>
+      </dl>
+    </article>
+
+    <article class="res" id="cycles-cloud">
+      <div class="env"><h3>Cycles in the cloud</h3><span class="sub">2-core Xeon · no graphics card · 16 samples</span><span class="pill p-never">Never (for clips)</span></div>
+      <div>
+        <video src="clip_cycles_cloud.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="cap">Clip: <code>clip_cycles_cloud.mp4</code>, first 1 s, 24 frames</div>
+      </div>
+      <dl>
+        <dt>Per frame</dt><dd class="num">100.5 s (97.7–112.4) <span class="ev t">Tested</span></dd>
+        <dt>This clip</dt><dd class="num">40.2 min for 24 frames</dd>
+        <dt>20 s clip</dt><dd class="num">≈ 13.4 h (a 5 s clip ≈ 3.4 h)</dd>
+        <dt>Cost</dt><dd>$0</dd>
+        <dt>Quality</dt><dd>Same Cycles look as the PC. It includes the distance haze, because the cloud runs Blender 5.2.</dd>
+        <dt>Verdict note</dt><dd>Too slow for clips. Stills stay here as settled (TH-051). This would change if the cloud workspace gained a graphics card.</dd>
+      </dl>
+    </article>
+
+    <article class="res" id="eevee-pc">
+      <div class="env"><h3>EEVEE on the PC graphics card</h3><span class="sub">Quadro T2000 · 32 samples</span><span class="pill p-never">Never</span></div>
+      <div>
+        <video src="clip_eevee_pc.mp4" controls muted playsinline preload="metadata"></video>
+        <div class="cap">Clip: <code>clip_eevee_pc.mp4</code>, 5 s, 120 frames</div>
+      </div>
+      <dl>
+        <dt>Per frame</dt><dd class="num">11.3 s, after a 62 s warm-up on frame 1 <span class="ev t">Tested</span></dd>
+        <dt>This clip</dt><dd class="num">23.4 min</dd>
+        <dt>20 s clip</dt><dd class="num">≈ 1.5 h</dd>
+        <dt>Cost</dt><dd>$0</dd>
+        <dt>Quality</dt><dd>Game-like. Windows read as blank glass, and the light is flatter under the eaves and in the trees <span class="ev t">Tested</span>.</dd>
+        <dt>Verdict note</dt><dd>It saves only about 20% of the time over Cycles for a clearly weaker look. This would change if a much heavier real building makes Cycles far slower than EEVEE.</dd>
+      </dl>
+    </article>
+
+    <article class="res" id="eevee-cloud">
+      <div class="env"><h3>EEVEE in the cloud</h3><span class="sub">2-core Xeon · software graphics · 32 samples</span><span class="pill p-never">Never</span></div>
+      <div>
+        <div class="noclip" role="img" aria-label="No clip: the render failed">No clip. The render failed before frame 1.</div>
+        <div class="cap">Clip: none</div>
+      </div>
+      <dl>
+        <dt>Per frame</dt><dd>No frame finished <span class="ev t">Tested</span></dd>
+        <dt>This clip</dt><dd>Failed twice. Blender was shut down for running out of memory (over 5.5 GB of the workspace's 7 GB) while preparing frame 1.</dd>
+        <dt>20 s clip</dt><dd>Not possible on this scene</dd>
+        <dt>Cost</dt><dd>$0</dd>
+        <dt>Quality</dt><dd>Not measurable on the test house. On the simpler box scene it worked, at 37 s a frame <span class="ev t">Tested</span>.</dd>
+        <dt>Verdict note</dt><dd>With no graphics card, EEVEE has to imitate one in software, which is slow and memory-hungry. This would change if the cloud workspace gained a graphics card.</dd>
+      </dl>
+    </article>
+
+  </div>
+  <figure>
+    <img src="frame093_compare.png" alt="Frame 93 of the flyby rendered in all four environments, side by side">
+    <figcaption>The same frame (93) from each environment. The cloud Cycles frame shows the distance haze; the PC frames don't (Blender 4.5). EEVEE in the cloud produced no frame.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2><span class="n">05</span>Use cases</h2>
+  <h3>Now</h3>
+  <ul>
+    <li>True 3D camera moves for the 20–30 s piece: street walk-up rising to the aerial, orbit, entry approach. One move tested <span class="ev t">Tested</span>.</li>
+    <li>Storyboard frames before any motion. A key frame takes about 14 s, so a full storyboard costs minutes <span class="ev t">Tested</span>.</li>
+    <li>Faster still checks: a 64-sample 720p frame takes 38 s on the card, against 12–15 min for a full still in the cloud <span class="ev t">Tested</span>.</li>
+  </ul>
+  <h3>Later</h3>
+  <ul>
+    <li>Phasing, with building parts appearing over time, and finish swaps inside a camera move. Blender can keyframe both <span class="ev a">Assumed</span>.</li>
+    <li>Construction over time: Blender does the 3D and the motion layer adds the month tracker <span class="ev a">Assumed</span>.</li>
+    <li>Game trailers for the kids' games <span class="ev a">Assumed</span>.</li>
+  </ul>
+  <h3>Cannot</h3>
+  <ul>
+    <li>Render while the PC is asleep or off.</li>
+    <li>Titles, labels and month counters. That's the motion layer's job, not Blender's.</li>
+    <li>Very large scenes may not fit in the card's 4 GB <span class="ev a">Assumed</span>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">06</span>Requirements check (arch renders)</h2>
+  <div class="tbl"><table>
+    <tr><th>Requirement</th><th>Answer</th><th>Path</th></tr>
+    <tr><td>1. Conventions</td><td><span class="pill p-adopt">Yes</span></td><td>Camera moves are keyframes in a script, so a fixed set can live in the conventions data the render step already reads. One move tested <span class="ev t">Tested</span>; the set is not built yet.</td></tr>
+    <tr><td>2. Storyboard before motion</td><td><span class="pill p-adopt">Yes</span></td><td>Render each move's first, middle and last frames (about 45 s) for review before the full clip <span class="ev t">Tested</span> (timing).</td></tr>
+    <tr><td>3. Menu of motion pieces</td><td><span class="pill p-shelf">Partly</span></td><td>Phasing and finish swaps can be keyframed <span class="ev a">Assumed</span>. The month tracker and labels belong to the motion layer.</td></tr>
+    <tr><td>4. Graphics quality</td><td><span class="pill p-adopt">Yes</span></td><td>Same Cycles look as the approved stills. 16 samples on the card matches 16 samples in the cloud <span class="ev t">Tested</span>. Haze needs Blender 5.2 on the PC.</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2><span class="n">07</span>Risks and cover</h2>
+  <ul>
+    <li><b>The PC must stay awake</b> for about 2 hours a clip. Cover: run clips overnight or while away, with sleep turned off during the job.</li>
+    <li><b>Heat slowdown.</b> Frames slowed from 11 s in short runs to 14.1 s over the 28-minute clip <span class="ev t">Tested</span>. Cover: plan on 14 s a frame.</li>
+    <li><b>Real buildings are heavier</b> than the test house. Cover: time 10 frames of the first Pascal model before committing to a full clip.</li>
+    <li><b>The card's 4 GB memory.</b> Cover: cut tree count or texture size if a scene doesn't fit.</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="n">08</span>If adopted</h2>
+  <ul>
+    <li><b>What gets built:</b> the harness in Findings, built by the Total Harness project.</li>
+    <li><b>Dollars:</b> $0.</li>
+    <li><b>Charles's hours:</b> about 15 minutes, to approve the Blender 5.2 install and the no-sleep setting <span class="ev a">Assumed</span>.</li>
+    <li><b>Proof of done:</b> a 20 s clip of a real Pascal building, rendered unattended on the PC in under 2 hours, with no visible flicker, that Charles would use.</li>
+  </ul>
+</section>
+
+<hr>
+<section class="src">
+  <h2><span class="n">09</span>Sources</h2>
+  <ul>
+    <li>Test logs and frames: <code>Documents\flythrough-test\</code> on Charles's PC (the PC runs) and Claude's workspace (the cloud runs), 2026-10-13.</li>
+    <li>Baseline: arch-render skill 0.2.0 and decision TH-051 (2.8 min a frame for animation, 12–15 min a still in the cloud).</li>
+    <li><a href="https://www.blender.org/download/requirements/">Blender hardware requirements</a> · <a href="https://www.blender.org/about/license/">Blender license</a></li>
+    <li><a href="https://docs.blender.org/manual/en/latest/render/cycles/gpu_rendering.html">Blender manual: GPU rendering (OptiX)</a></li>
+  </ul>
+</section>
+
+</div>
