@@ -43,7 +43,7 @@ All in `Chooch333/agent-library`. Formats for every file are in `lab/README.md`.
 
 - Discovery Briefs: `lab/briefs/<tech>.md`, one file per tech.
 - Shelf rows: `lab/shelf/<tool>.md`, one file per tool or variant with a verdict.
-- R&D Reports (test runs, not written here): `lab/cards/<review>.md`.
+- R&D Reports (test runs, not written here): `lab/reports/<review>.md`.
 - The speed-run brief: `lab/speed-run.md`.
 
 This block is the only place these paths are set for this skill. In the rules below, "the speed run" means a speed run listed in `lab/speed-run.md`.
