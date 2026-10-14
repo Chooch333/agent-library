@@ -1,6 +1,6 @@
 ---
 name: tech-review
-version: 0.3.0
+version: 0.3.1
 status: draft
 triggers: ["Tech review:"]
 dependencies: []
@@ -44,7 +44,7 @@ All in `Chooch333/agent-library`. Formats for every file are in `lab/README.md`.
 
 - Shelf rows: `lab/shelf/<tool>.md`, one file per tool or variant with a verdict. A shelf row's `brief` field names its Discovery Brief.
 - Discovery Briefs (read here, written by tech-discovery): `lab/briefs/<tech>.md`.
-- R&D Reports: `lab/cards/<review>.md`, one file per review. (The folder keeps its old name so the R&D tab keeps reading it.)
+- R&D Reports: `lab/reports/<review>.md`, one file per review. (Older reports may still sit in the old `lab/cards/` folder until it is removed; read both.)
 - R&D Report template: `lab/templates/rd-report.html`, the approved layout, as a published page.
 - The speed-run brief: `lab/speed-run.md`, the active speed runs and their requirements.
 
@@ -57,7 +57,7 @@ This space is a lab, not a project plan. Tech for the Total Harness gets tested 
 AT THE START OF EVERY CHAT (my first message is only "Tech review: <name or link>"; pull everything else, do not ask me to paste it)
 - Read PROTOCOL.md and AGENT.md as usual.
 - Harness status: Project State project total-harness (list_plans, latest notes) and the map at Chooch333/cbrain concepts/harness-map.md. Project State is the record.
-- Past verdicts: read every `lab/shelf/*.md`, the list of `lab/cards/`, and `lab/speed-run.md`, so nothing is tested twice.
+- Past verdicts: read every `lab/shelf/*.md`, the list of `lab/reports/`, and `lab/speed-run.md`, so nothing is tested twice.
 - Find the Discovery Brief, without asking me: if I gave a brief name, use it. Otherwise match the tech to a shelf row and read its `brief` field. Otherwise search the file names and titles in `lab/briefs/` for the tech or its link. Say which brief you found, or that there is none.
 - The speed run: see the bottom of these instructions.
 
@@ -79,7 +79,7 @@ VERDICTS
 Only the speed run pulls a tool ahead of build order.
 
 R&D REPORT (plain words, no jargon; explain any term the first time it appears)
-Published as an artifact page and filed as `lab/cards/<review>.md`. The template is the first approved report: `lab/templates/rd-report.html` (layout and styling) and `lab/cards/flythrough-renderer-blender.md` (filed form). Copy its layout and change only the content.
+Published as an artifact page and filed as `lab/reports/<review>.md`. The template is the first approved report: `lab/templates/rd-report.html` (layout and styling) and `lab/reports/flythrough-renderer-blender.md` (filed form). Copy its layout and change only the content.
 - Title block. On the left:
   - the use studied, as the title (e.g. "Flythrough Renderer");
   - the tech and its version on a second line, same size (e.g. "Blender 4.5.14 (PC) · 5.2.2 (cloud)");
@@ -98,7 +98,7 @@ Published as an artifact page and filed as `lab/cards/<review>.md`. The template
 Output files keep stable names (`<output>_<engine>_<machine>.<ext>`, e.g. `clip_cycles_pc.mp4`). The filed report lists them in its front matter (`clips`, `report_url`) so the R&D tab can show them.
 
 FILING (only after I approve the report)
-- Only after I approve the report, write `lab/cards/<review>.md` and one `lab/shelf/<tool>.md` per tool or variant with a verdict, using GitHub `create_or_update_file`. Set the report's `brief` front matter to the brief's file name when there is one. On the shelf row, set `card` and keep `brief`.
+- Only after I approve the report, write `lab/reports/<review>.md` and one `lab/shelf/<tool>.md` per tool or variant with a verdict, using GitHub `create_or_update_file`. Set the report's `brief` front matter to the brief's file name when there is one. On the shelf row, set `report` and keep `brief`.
 - The filed report is the whole report, word for word with the published page: every section, every result row and every evidence mark. Do not condense it. Write each result environment as its own `###` heading with its numbers as bold-labelled bullets, and give each clip an `anchor` in the front matter (the page's row id) so the R&D tab can link to it. Name the comparison image in `image`. Clips and images stay on the published page and in private storage, never in this repo. When the report is revised, edit the page and the filed copy together.
 - Never edit the Discovery Brief. It records the first look; the report records the test.
 - A changed verdict (after I approve it) edits the shelf file (`verdict`, `verdict_note`, `come_back_when`, `reviewed`) and adds one dated line at the top of its `## Verdict history`, for example `2026-11-02 · Shelf (was Adopt now) · <reason>`. Never edit or remove a history line.
@@ -126,7 +126,7 @@ Design the experiment:
 
 Test each one: same camera move, one clip each. The cloud EEVEE run failed for lack of memory and kept its row.
 
-Requirements check → verdicts: Cycles on PC Adopt now; cloud Cycles Never for clips; EEVEE Never → R&D Report. Filed as `lab/cards/flythrough-renderer-blender.md` with two shelf rows.
+Requirements check → verdicts: Cycles on PC Adopt now; cloud Cycles Never for clips; EEVEE Never → R&D Report. Filed as `lab/reports/flythrough-renderer-blender.md` with two shelf rows.
 
 ### Example 2: picking up a brief without being told
 
@@ -143,6 +143,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 - **Mismatched versions across environments** (Blender review, 2026-10-14). The PC ran 4.5 and the cloud 5.2, so one effect (the distance haze) rendered in one place only. Put the same version in every environment, or name each version in the title and explain the difference under Experiment parameters.
 
 ## Changelog
+
+- **0.3.1** (2026-10-14) — "Cards" retired (Charles, R&D lab). Reports live in `lab/reports/`; the shelf field `card` is now `report`. Build 32.1 moves the files and points the R&D tab at the new folder.
 
 - **0.3.0** (2026-10-14) — Tech Review is now the test run only (Charles, R&D lab). Discovery moves to the new `skills/tech-discovery/SKILL.md` ("Tech discovery:"), which files Discovery Briefs in `lab/briefs/`. This skill finds the brief itself (shelf row `brief` field, then `lab/briefs/` by name), re-checks only version, price and licence, and starts the experiment from the brief's "Test run, if we do one". Reports and shelf rows carry `brief`. The brief is never edited here.
 
