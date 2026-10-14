@@ -1,11 +1,12 @@
 # lab/ — the R&D lab's record
 
-Written by `Tech review:` chats (`roles/tech-review/SKILL.md`). Read by the R&D tab on the Total Harness screen in cbrain-ui. Plain files. Nothing here is a cbrain page, and the Skills screen ignores this folder.
+Written by `Tech discovery:` chats (`skills/tech-discovery/SKILL.md`, the first look, no test) and `Tech review:` chats (`skills/tech-review/SKILL.md`, the test run). Read by the R&D tab on the Total Harness screen in cbrain-ui. Plain files. Nothing here is a cbrain page, and the Skills screen ignores this folder.
 
 ## Files
 
 - `shelf/<tool>.md` — one file per tool. The front matter is the shelf row. The body holds `## Verdict history`, newest line first.
-- `cards/<review>.md` — one file per review: the tech card. A review of a suite covers several tools.
+- `briefs/<tech>.md` — one file per discovery: the Discovery Brief. Kept apart from `cards/` so the two show separately. A brief is never edited by a test run.
+- `cards/<review>.md` — one file per test run: the R&D Report (older files are tech cards). A review of a suite covers several tools.
 - `speed-run.md` — the speed-run brief. Read at the start of each review. Not shown on the screen.
 
 ## Shelf file fields
