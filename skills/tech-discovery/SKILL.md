@@ -53,7 +53,7 @@ This block is the only place these paths are set for this skill. In the rules be
 AT THE START OF EVERY CHAT (my first message is only "Tech discovery: <name or link>"; pull everything else, do not ask me to paste it)
 - Read PROTOCOL.md and AGENT.md as usual.
 - Harness status: Project State project total-harness (list_plans, latest notes) and the map at Chooch333/cbrain concepts/harness-map.md.
-- Past work: read every `lab/shelf/*.md`, the list of `lab/briefs/` and `lab/cards/`, and `lab/speed-run.md`. If this tech already has a brief, say so and ask whether to update it or stop.
+- Past work: read every `lab/shelf/*.md`, the list of `lab/briefs/` and `lab/reports/`, and `lab/speed-run.md`. If this tech already has a brief, say so and ask whether to update it or stop.
 
 THE DISCOVERY, IN ORDER
 Keep one Working Document per chat. Findings go in the document. Chat is for choices only.
