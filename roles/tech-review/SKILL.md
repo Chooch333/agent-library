@@ -136,6 +136,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 
 ## Changelog
 
+- **0.2.1** (2026-10-14) — Filing: the filed report in `lab/cards/` is the whole report, word for word with the published page, with one `###` heading per result environment, clip `anchor`s and the comparison `image` in front matter (Charles, DA-1014-rd-reports). The Blender report was refiled this way the same day.
+
 - **0.2.0** (2026-10-14) — R&D Report replaces the tech card (Charles, R&D lab). The new format comes from the Flythrough Renderer - Blender review. Review steps 3–6 now design and run one experiment across the tech's own environments, with one output per environment. "Place it" and "What else does this job" move out to the separate overarching review. Template at `lab/templates/rd-report.html`. One new pitfall.
 
 - **0.1.1** (2026-10-11) — Review step 4: save successful test outputs privately for workflow handoff tests (Charles, R&D lab). Two pitfalls from the Pascal Editor review.
