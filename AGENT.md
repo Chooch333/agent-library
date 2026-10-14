@@ -120,6 +120,7 @@ Confirmation is behavioral, not UI-driven. Watch for: explicit role announcement
 
 ## Changelog
 
+- **2026-10-14** — R&D lab: added the `Tech discovery:` row → `skills/tech-discovery/SKILL.md` (new; placed in `skills/` ahead of Build 38). `Tech review:` is now the test run only (tech-review 0.3.0). Charles's instruction, R&D lab chat.
 - **2026-10-10** — Added "R&D lab" section (placed after "Investment" with the other first-message triggers) with a `Tech review:` row pointing to `roles/tech-review/SKILL.md`. Removed `tech review` from the Eng review row in Plan-mode reviews so the two no longer clash (`roles/eng-reviewer/SKILL.md` 0.1.1 drops it too). Per BB-2026-10-09-tech-review-skill (Build 31).
 - **2026-10-06** — Added `Stack Repairer: run` → `roles/stack-repairer/SKILL.md` to Self-maintenance. The Stack Repairer fixes things that break while running (reading the Stack Inspector's `stack_status`) and sends one daily recap; the existing Inspector/Repairer pair is now labelled Rules Inspector / Rules Repairer on screen (trigger phrases unchanged). Per BB-2026-10-05-stack-repairer (Build 27).
 - **2026-09-22** — Added "Self-maintenance" section (new sub-section, placed at the end of Active roles) with `Inspector: walk` and `Repairer: run` trigger rows, pointing to the two new self-maintenance roles. Stack Manager (`roles/stack-manager/SKILL.md`) never had an AGENT.md row and is now deprecated — nothing to remove here. Per BB-2026-09-21-inspector-repairer Phase 2.
