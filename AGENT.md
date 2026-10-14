@@ -36,7 +36,8 @@ Domain knowledge lives in individual SKILL.md files.
 
 | Trigger phrases | Role |
 |---|---|
-| `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — mentioning a tech review mid-chat is not an invocation) | `roles/tech-review/SKILL.md` |
+| `Tech discovery:` (the very first message must start with it, e.g. `Tech discovery: <name or link>` — the first look at a tech, no test; files a Discovery Brief) | `skills/tech-discovery/SKILL.md` |
+| `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — the test run of a tech, usually one that already has a Discovery Brief; files an R&D Report. Mentioning a tech review mid-chat is not an invocation) | `roles/tech-review/SKILL.md` |
 
 ### Plan-mode reviews
 
