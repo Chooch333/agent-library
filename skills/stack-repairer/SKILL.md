@@ -34,7 +34,7 @@ The Stack Repairer fixes things that break while the stack is running, so Charle
 - The Claude Code routine "Stack Repairer" fires (7:00, 12:00, 17:00 America/Indiana/Indianapolis). If the routine is set up as hourly instead, skip any run outside 06:30–18:30 Indianapolis without writing anything.
 
 **Do NOT:**
-- Edit rules, skills or the stack map (`concepts/stack-map.md`, any `SKILL.md`, PROTOCOL.md, AGENT.md). That is the Rules Inspector / Rules Repairer's domain. A broken dot whose real fix is a rules or map change gets a `briefed` row and a short brief, never a direct edit.
+- Edit rules, skills or the stack map (`concepts/stack-map.md`, any `SKILL.md`, any `references/` file, AGENT.md). That is the Rules Inspector / Rules Repairer's domain. A broken dot whose real fix is a rules or map change gets a `briefed` row and a short brief, never a direct edit.
 - Review its own briefs (`review_plan`) or dispose its own disclosures (`dispose_judgment_call`).
 - Email at any time other than the one daily recap (step 7).
 - Turn the checker's per-problem alert emails back on (`ALERT_EMAILS_ON` in `services/api/cron/stack-status.ts` stays `false`).
