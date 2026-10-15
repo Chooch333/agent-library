@@ -8,6 +8,7 @@ triggers:
 dependencies: []
 owner: Charles
 updated: 2026-10-08
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "\"Repairer: run\" / weekly Cowork schedule (Mon 7am)"
