@@ -143,7 +143,7 @@ Requirements check → verdicts: Cycles on PC Adopt now; cloud Cycles Never for 
 
 ### Example 2: picking up a brief without being told
 
-"Tech review: Pascal Editor" → `lab/shelf/pascal-editor.md` has `brief: pascal-editor` → read `lab/briefs/pascal-editor.md` → re-check version and licence only → its use case and "Test run, if we do one" become steps 2 and 3 → test → report with `brief: pascal-editor` in its front matter.
+"Tech review: Pascal Editor" → `lab/shelf/pascal-editor.md` has `brief: pascal-editor` → read `lab/briefs/pascal-editor.md` → re-check version and licence only → its use case and "Test run, if we do one" become steps 2 and 4 → step 3 fills only the gaps the brief left → test → report with `brief: pascal-editor` in its front matter.
 
 ### Example 3: a changed verdict
 
