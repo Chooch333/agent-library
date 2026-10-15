@@ -5,6 +5,7 @@ status: draft
 triggers: [used by builds, moonshots and the Harness dispatcher when work must wait; no chat trigger]
 owner: Charles
 updated: 2026-10-07
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "Harness dispatcher (hourly :47) and Laptop runner (fire-only)"
