@@ -1,6 +1,6 @@
 # chat-capture.md — Drafting a cbrain brief from chat
 
-**Status:** v0.1.0 — reference, not a skill. No write-authority.
+**Status:** v0.1.1 — reference, not a skill. No write-authority.
 **Owner:** Charles
 **Read this when:** Charles asks to capture a person / organization / project / framework / concept / place into cbrain *from chat* ("add to cbrain," "let's capture," "create an entity for," or names an entity not yet in cbrain during a clear knowledge-capture chat).
 
@@ -66,7 +66,7 @@ A chat capture has **no reasoning pass** — that is the Watcher's Layer-2 job o
    - If a real, stated relationship fits **no** registered predicate, **proactively propose a new predicate by name** as a Needs-from-you item — never bury it in prose. On Charles's approval, the intent carries `register_predicate: { name, meaning, symmetric }`; the **Archivist** performs the registry edit and tuple declaration at filing time. Drafting proposes the predicate; the Archivist registers it.
    - Predicates are **demand-driven**: propose one only when a genuine stated relationship needs it; never invent speculative predicates. Test: "does a real relationship exist that no predicate captures?" — if yes, propose; if no, do nothing.
 
-8. **Assemble the brief as an artifact.** One brief, all approved intents bundled, `intents` register only (no `observations`). Show the full brief — frontmatter and body — in plain English. Per PROTOCOL.md the artifact is the ticket; discussion stays in chat.
+8. **Assemble the brief as an artifact.** One brief, all approved intents bundled, `intents` register only (no `observations`). Show the full brief — frontmatter and body — in plain English. Per `references/project-state.md` ("Three ticket types") the artifact is the ticket; discussion stays in chat.
 
 9. **Prompt for approval / sealing.** Ask Charles to approve. On "approved," the brief is sealed (assigned `brief_id` + `sealed_at`, `status: approved`) and handed to the Archivist to file. A draft brief (no `brief_id`) is never filed.
 
@@ -102,6 +102,32 @@ A chat capture has **no reasoning pass** — that is the Watcher's Layer-2 job o
 
 ---
 
+## Capture during build and PM work
+
+During build or PM work, when a person, organization, project, or concrete relationship surfaces, propose it as a Needs-from-you item for cbrain capture; never auto-write; never infer a relationship that was not stated.
+
+---
+
+## cbrain predicate discovery
+
+In chats that touch cbrain (search_brain, get_entity, graph_query, or any mention of cbrain data), Claude watches for predicate candidates: recurring relationship patterns in content or queries that would benefit from graph traversal rather than prose search.
+
+Common triggers include: user asks a question that would benefit from graph traversal ("who is responsible for X?", "what blocks Y?", "what depends on Z?"); user describes a recurring relationship pattern in content; user adds a tag or frontmatter field that names a relationship Claude has not seen before; Claude finds itself doing prose search to answer a question that a single SQL JOIN against tuples would answer if a predicate existed.
+
+When perceived, Claude surfaces the candidate as a numbered Needs from you item with:
+
+- Proposed predicate name (slug-style, e.g., `responsible_for`)
+- Meaning (one sentence)
+- Example tuple from current context
+- Trigger that prompted the suggestion
+
+Charles approves or declines; on approval, the predicate enters cbrain's predicate registry and extractor (`services/lib/extract.ts`).
+
+**Cap surfacing to 3 candidates per chat.** Only surface when the trigger is concrete rather than speculative — if Claude isn't confident the pattern is real, skip it.
+
+---
+
 ## Changelog
 
+- **v0.1.1 (2026-10-15)** — Build 39 (BB-2026-10-14-protocol-retirement): added "Capture during build and PM work" (the relational-capture checkpoint) and "cbrain predicate discovery" (verbatim), both moved from the retired chat-protocol rulebook. Step 8's ticket pointer now names `references/project-state.md`.
 - **v0.1.0 (2026-06-08)** — Created from the retired `roles/cbrain-entity-builder/SKILL.md`. Converged the chat path onto the producer → approve → Archivist brief model (E-096): the chat path no longer commits to cbrain; it drafts an intents-only brief (no `observations` register — no reasoning pass on a chat capture) that Charles seals and the Archivist files. Preserved the entity-builder's interview content (type questions, slug rules, follow-on-entity logic, relationship/predicate proposal) as drafting guidance; dropped its commit/patch SOP steps (the Archivist owns writing). Corrected the entity-contract path to `cbrain/contracts/SCHEMA.md`.
