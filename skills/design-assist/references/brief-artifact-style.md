@@ -168,7 +168,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
 ## Mechanics
 
 - Write the body content to a file (no `<!DOCTYPE>`/`<html>`/`<head>`/`<body>` — just the `<style>` block and the `<div class="wrap">…</div>` content) and publish with the Artifact tool.
-- Title the artifact after the design goal in plain language (2–4 words) — not "Build Brief" and not a BB-code. Charles reads plain titles per PROTOCOL.md's naming rule; the same discipline applies to the artifact's own title.
+- Title the artifact after the design goal in plain language (2–4 words) — not "Build Brief" and not a BB-code. Charles reads plain titles per the naming rule in `agent-library/references/project-state.md`; the same discipline applies to the artifact's own title.
 - Redeploy (same file path / same artifact URL) rather than publishing a new one each turn within one DA session — Charles should have one artifact per design thread that updates in place, not a new card every phase boundary.
 - The artifact is presentation only. Nothing in it commits anything — git commits, `write_plan`/`update_plan_content`, and `update_plan_status` all happen only after Charles reviews and answers, per PROTOCOL.md's Review → Execute workflow.
 
