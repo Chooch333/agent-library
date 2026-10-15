@@ -93,7 +93,7 @@ Precondition / Action / Success evidence / Recovery for every step (Skill Design
 
 ### Example 1: known-answer first walk
 
-Untold, the first walk's evidence-gathering step (4) surfaces lessons E-080, E-085, CB-062/063, E-222, A-041, D-083 — all versions of "a freshly deployed MCP tool wasn't callable in the same session." Clustered (step 5) as one rule with 6 supporting records, well past the ≥2 threshold. The rubric gate (step 6) passes: named target (`chat-protocol/PROTOCOL.md`, a new standing-rule bullet), exact fix drafted, tier `auto`, not protected, not declined. Filed with `adv_id: ADV-008`. The Repairer applies it on its next run.
+Untold, the first walk's evidence-gathering step (4) surfaces lessons E-080, E-085, CB-062/063, E-222, A-041, D-083 — all versions of "a freshly deployed MCP tool wasn't callable in the same session." Clustered (step 5) as one rule with 6 supporting records, well past the ≥2 threshold. The rubric gate (step 6) passes: named target (`agent-library/references/gotchas.md`, a new bullet), exact fix drafted, tier `auto`, not protected, not declined. Filed with `adv_id: ADV-008`. The Repairer applies it on its next run.
 
 ### Example 2: hold-back
 
