@@ -89,7 +89,7 @@ The Repairer is the fixer half of the system's self-maintenance pair (BB-2026-09
 
 ### Example 1: clean apply
 
-`PL-002` (kind `doctrine`, tier `auto`, target `chat-protocol/PROTOCOL.md`) — fresh re-check confirms the anchor text is unchanged, applies via `replace_in_file`, commit `a1b2c3d`. Scope check: only that one bullet changed. `set_punch_status applied` with the commit. On the Inspector's next walk it re-reads the live file, confirms the bullet is present and nothing else changed, sets `verified`.
+`PL-002` (kind `doctrine`, tier `auto`, target `agent-library/references/gotchas.md`) — fresh re-check confirms the anchor text is unchanged, applies via `replace_in_file`, commit `a1b2c3d`. Scope check: only that one bullet changed. `set_punch_status applied` with the commit. On the Inspector's next walk it re-reads the live file, confirms the bullet is present and nothing else changed, sets `verified`.
 
 ### Example 2: idempotent second run
 
