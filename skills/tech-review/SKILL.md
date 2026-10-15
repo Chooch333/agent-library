@@ -7,6 +7,7 @@ dependencies: []
 owner: Charles
 updated: 2026-10-14
 source: "Lab rules from the R&D Lab Notebook (read 2026-10-09). Designed in DA chat DA-1009-rd-lab; built in Build 31 (BB-2026-10-09-tech-review-skill). R&D Report format set by Charles 2026-10-14 (Flythrough Renderer - Blender review). Discovery split into tech-discovery by Charles 2026-10-14."
+requires: [references/project-state.md]
 wiring:
   runs: with-you
   starts: "\"Tech review:\""
