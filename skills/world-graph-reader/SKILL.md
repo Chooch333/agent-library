@@ -5,6 +5,7 @@ status: active
 triggers: ["world-graph-reader run"]
 owner: Charles
 source: BB-2026-09-13-world-graph-reader (DA session 2026-09-13, feed-reader redesign); pattern copied from skills/stack-advisor/SKILL.md v1.3.0
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "daily ~13:00 UTC schedule"
