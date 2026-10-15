@@ -110,7 +110,7 @@ Auto-decide replaces the USER'S judgment with the 6 principles. It does NOT repl
 1. Announce which phases apply (skip Design if no UI; skip DX if no developer surface)
 2. **CEO phase**: load `skills/ceo-reviewer/SKILL.md`, run the full SOP, auto-decide all mechanical and taste questions using the 6 principles, escalate premises and User Challenges only
 3. **Design phase** (if applicable): load `skills/design-reviewer/SKILL.md`, same pattern
-4. **Eng phase**: load `roles/eng-reviewer/SKILL.md`, same pattern
+4. **Eng phase**: load `skills/eng-reviewer/SKILL.md`, same pattern
 5. **DevEx phase** (if applicable): load `roles/devex-reviewer/SKILL.md`, same pattern
 6. **Final gate**: present a consolidated review report — list all auto-decisions (Mechanical + Taste), all User Challenges surfaced, all unresolved premises. Ask the user to approve, override, or request a specific re-review.
 
