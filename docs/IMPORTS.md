@@ -4,7 +4,7 @@ This directory tracks material cloned from external agent stacks for study and r
 
 ## Why imports stay separate
 
-1. Imported skills often depend on runtimes you don't have (Claude Code local file system, Playwright, Postgres + pgvector). Marking them as imports keeps the working `roles/` directory clean of non-functional files.
+1. Imported skills often depend on runtimes you don't have (Claude Code local file system, Playwright, Postgres + pgvector). Marking them as imports keeps the working `skills/` directory clean of non-functional files.
 2. Attribution is clearer when the originals are preserved alongside your reshaped versions.
 3. You can diff your reshaped role against the source to track what changed.
 
