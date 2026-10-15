@@ -158,6 +158,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 
 ## Changelog
 
+- **0.4.1** (2026-10-15) — Charles approves every test plan before testing starts, because where a review picks up (strong, thin or no brief) takes judgment. The plan comes with one line saying where it picked up and what step 3 added (Charles, R&D lab).
+
 - **0.4.0** (2026-10-15) — Tests now start from a full picture of the tech (Charles, R&D lab). New step 3 maps what the tech can do and how it runs (where it runs, cost to run, subscription cost, how Claude controls it, licence), going deep when the brief is weak or missing. Step 4 builds the test plan from that map: every capability the use case leans on and every Assumed operating fact gets a test, or is named as untested with the reason. Step 5 drives the tech the way the workflow would. Report section 01 adds "How it runs"; section 03 lists capabilities tested and not tested. Steps renumbered (old 3–6 are now 4–7). One new pitfall.
 
 - **0.3.1** (2026-10-14) — "Cards" retired (Charles, R&D lab). Reports live in `lab/reports/`; the shelf field `card` is now `report`. Build 32.1 moves the files and points the R&D tab at the new folder.
