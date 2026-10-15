@@ -1,6 +1,6 @@
 # Theme Template
 
-Reference for `roles/investment-review/SKILL.md` — used when the output type is **Theme**: a structural shift and how to express it.
+Reference for `skills/investment-review/SKILL.md` — used when the output type is **Theme**: a structural shift and how to express it.
 
 | § | Section | Content rule |
 |---|---|---|
