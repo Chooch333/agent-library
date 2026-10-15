@@ -1,6 +1,6 @@
 # Brief artifact style
 
-*Referenced by `SKILL.md`'s "The living artifact" section and doctrine rule 11 (Confidence labeled). Governs how the draft or final Build Brief is rendered when shown to Charles in chat — not the brief's content, which stays governed by `build-brief-template.md` and PROTOCOL.md.*
+*Referenced by `SKILL.md`'s "The living artifact" section and doctrine rule 11 (Confidence labeled). Governs how the draft or final Build Brief is rendered when shown to Charles in chat — not the brief's content, which stays governed by `build-brief-template.md` and `agent-library/references/project-state.md`.*
 
 Charles reads DA output as a published HTML artifact, not a markdown wall in chat. This file is the one visual system every DA session reuses, so briefs look and feel the same across sessions — Charles should never have to re-learn how to read one.
 
