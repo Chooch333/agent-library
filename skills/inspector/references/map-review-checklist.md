@@ -1,6 +1,6 @@
 # Map review checklist
 
-*Copied verbatim from `roles/stack-manager/SKILL.md` v0.1.0 (step 3 and its related pitfall), per BB-2026-09-21-inspector-repairer step 5 — the Inspector's map-comparison job is the split-off half of what Stack Manager used to do alone. Stack Manager itself is now a deprecated pointer (`roles/stack-manager/SKILL.md`); this is the surviving copy of its reasoning checklist.*
+*Copied verbatim from `skills/stack-manager/SKILL.md` v0.1.0 (step 3 and its related pitfall), per BB-2026-09-21-inspector-repairer step 5 — the Inspector's map-comparison job is the split-off half of what Stack Manager used to do alone. Stack Manager itself is now a deprecated pointer (`skills/stack-manager/SKILL.md`); this is the surviving copy of its reasoning checklist.*
 
 ## The checklist (Stack Manager SKILL.md v0.1.0, step 3, verbatim)
 
