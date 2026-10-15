@@ -152,8 +152,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 ## Pitfalls
 
 - **Test outputs not kept** (Pascal Editor review, 2026-10-11). The GLB export was checked inside the browser and never saved, so TH had no file for testing the Pascal-to-Blender handoff. Save outputs as step 5 says.
-- **Testing only the obvious feature** (Charles, 2026-10-15). With a weak or missing brief, Claude tested the first feature that fit the use case and never worked out the rest of what the tech could do, where it runs, what it costs or how Claude would control it, so the verdict rested on half the picture. Map it first (step 3) and test from that map (step 4).
 - **Client material in this public repo** (same review). A script holding a client building's dimensions was committed to `lab/`, then deleted; it stays in git history. Test inputs and outputs from client drawings go to private storage only.
+- **Testing only the obvious feature** (Charles, 2026-10-15). With a weak or missing brief, Claude tested the first feature that fit the use case and never worked out the rest of what the tech could do, where it runs, what it costs or how Claude would control it, so the verdict rested on half the picture. Map it first (step 3) and test from that map (step 4).
 - **Mismatched versions across environments** (Blender review, 2026-10-14). The PC ran 4.5 and the cloud 5.2, so one effect (the distance haze) rendered in one place only. Put the same version in every environment, or name each version in the title and explain the difference under Experiment parameters.
 
 ## Changelog
