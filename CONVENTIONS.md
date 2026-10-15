@@ -80,7 +80,7 @@ A skill whose `status` is `deprecated` or `retired` (case-insensitive) — regar
 - No SKILL.md over 500 lines. Spill to `references/` under the skill directory.
 - Maximum 3 SKILL files loaded per task. Preserves lazy loading.
 - Pitfalls must reference a real trace. Fabricated pitfalls fail validation.
-- Imports stay in `imports/`. Reshape into `roles/` when actually adopted.
+- Imports stay in `imports/`. Reshape into `skills/` when actually adopted.
 
 ## Keeping the rules current
 
