@@ -5,7 +5,7 @@ verdict: never
 verdict_note: ""
 come_back_when: "Photography becomes a harness domain"
 blocks: []
-card: artcraft
+report: artcraft
 reviewed: 2026-10-09
 draft: true
 ---
