@@ -55,7 +55,7 @@ Precondition / Action / Success evidence / Recovery for every step (Skill Design
 
 **3. Map vs. shipped.**
 - *Precondition:* step 2 complete.
-- *Action:* read plans with status `succeeded` since the checkpoint (and their close-out snapshots), and compare against `get_entity('stack-map')` using the review checklist in `roles/inspector/references/map-review-checklist.md` (accurate against live state? duplicate? conflicts with a prior decision via `get_decision_chain`? best wording/layer?). **First walk only:** also use the 22 open MAP-EDIT next moves on the `stack-map` Project State project as leads, and apply SM-043's layer vocabulary (decision SM-044, Charles-approved).
+- *Action:* read plans with status `succeeded` since the checkpoint (and their close-out snapshots), and compare against `get_entity('stack-map')` using the review checklist in `skills/inspector/references/map-review-checklist.md` (accurate against live state? duplicate? conflicts with a prior decision via `get_decision_chain`? best wording/layer?). **First walk only:** also use the 22 open MAP-EDIT next moves on the `stack-map` Project State project as leads, and apply SM-043's layer vocabulary (decision SM-044, Charles-approved).
 - *Success evidence:* one `file_punch_item` (kind `map`) per real difference found, each with the exact edit drafted in `draft_text`.
 - *Recovery:* `get_entity('stack-map')` unreachable → hold the whole map-comparison sub-step for this walk, note it in the walk summary (step 7), and retry next walk — do not file speculative map items without reading the live entity.
 
