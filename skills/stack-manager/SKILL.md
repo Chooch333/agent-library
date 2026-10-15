@@ -22,7 +22,7 @@ wiring:
 
 **This role is deprecated as of 2026-09-22 (BB-2026-09-21-inspector-repairer).** It never disposed more than one suggestion (SM-002 → decision SM-003, 2026-07-21) in its two months live, and its scheduled trigger depended on the never-built heartbeat-orchestrator (SM-049). Its single job — judge stack-map drift and fix it — has been split into two roles, per the design intent that the fixer must never grade itself:
 
-- **Judging** (comparing the map to what shipped, deciding what's wrong) → `roles/inspector/SKILL.md`, whose map-comparison checklist is copied verbatim from this file's old step 3 and pitfall — see `roles/inspector/references/map-review-checklist.md`.
+- **Judging** (comparing the map to what shipped, deciding what's wrong) → `skills/inspector/SKILL.md`, whose map-comparison checklist is copied verbatim from this file's old step 3 and pitfall — see `skills/inspector/references/map-review-checklist.md`.
 - **Editing** (applying an accepted change to `concepts/stack-map.md`) → `roles/repairer/SKILL.md`, whose editing procedure is copied verbatim from this file's old steps 5 and 8, and Rules section — see `roles/repairer/references/stack-map-playbook.md`.
 
 The `MAP-EDIT` next-move suggestion queue this role was built to dispose of is also retired (chat-protocol PROTOCOL.md, "Stack-map upkeep" standing rule, 2026-09-22) — sessions no longer file suggestions; the Inspector compares the map to live state directly on its weekly walk instead.
