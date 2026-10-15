@@ -155,7 +155,7 @@ The same workflow fails three times in a row with the same `KeyError` in one fil
 ## Pitfalls
 
 - **Don't trust the reason text alone.** The checker's reason can flip between two checks of a list dot (Oct 5: Smoke tests read "failed 9 days ago" then "5 days ago"). Read the runs.
-- **A billing lock or a disabled workflow is not a code bug** (PROTOCOL.md, GitHub Actions rule). Re-running into a billing lock wastes nothing but proves nothing either.
+- **A billing lock or a disabled workflow is not a code bug** (`references/gotchas.md`, GitHub Actions rule). Re-running into a billing lock wastes nothing but proves nothing either.
 - **Push-triggered runs don't replay after an outage** (CB-438). Re-dispatch them.
 
 ## Changelog
