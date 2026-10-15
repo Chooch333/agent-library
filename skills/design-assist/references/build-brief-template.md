@@ -1,7 +1,7 @@
 # Build Brief (draft) — BB-{YYYY-MM-DD-slug}
 *Updated: {YYYY-MM-DD} · Turn {N} · Living artifact — rewritten each update, current state only.*
 
-> This is the Design Assist living-artifact form of the PROTOCOL.md Build Brief. It wraps the protocol's seven fields (unchanged, marked ●) and adds DA working sections that collapse away when the brief goes build-ready. A brief created here ships in standard PROTOCOL.md form.
+> This is the Design Assist living-artifact form of the Build Brief template in `agent-library/references/project-state.md`. It wraps that template's seven fields (unchanged, marked ●) and adds DA working sections that collapse away when the brief goes build-ready. A brief created here ships in that standard form.
 
 ## Completeness gate
 
