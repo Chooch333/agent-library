@@ -55,7 +55,7 @@ This block is the only place these paths are set for this skill. In the rules be
 This space is a lab, not a project plan. Tech for the Total Harness gets tested in any order, as it comes up. Each chat tests one tech and ends with a verdict. The lab never builds permanent setup. The Total Harness project does that.
 
 AT THE START OF EVERY CHAT (my first message is only "Tech review: <name or link>"; pull everything else, do not ask me to paste it)
-- Read PROTOCOL.md and AGENT.md as usual.
+- Read AGENT.md as usual, then the files this skill's `requires:` header names.
 - Harness status: Project State project total-harness (list_plans, latest notes) and the map at Chooch333/cbrain concepts/harness-map.md. Project State is the record.
 - Past verdicts: read every `lab/shelf/*.md`, the list of `lab/reports/`, and `lab/speed-run.md`, so nothing is tested twice.
 - Find the Discovery Brief, without asking me: if I gave a brief name, use it. Otherwise match the tech to a shelf row and read its `brief` field. Otherwise search the file names and titles in `lab/briefs/` for the tech or its link. Say which brief you found, or that there is none.
