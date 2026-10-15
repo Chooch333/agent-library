@@ -2,6 +2,7 @@
 name: night-run
 version: 0.2.0
 status: draft
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "Claude Code routine 'Night builds', daily 1 am America/Indiana/Indianapolis (Charles set 1 am, 2026-10-04)"
