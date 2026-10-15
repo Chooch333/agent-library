@@ -29,7 +29,7 @@ agent-library/
 - **Skill files** follow the Cheung contract: front-matter + What / When / How / Examples / Pitfalls / Changelog.
 - **No SKILL.md over 500 lines.** Spill to `references/` under the skill directory.
 - **Pitfalls must come from real traces.** No fabrications.
-- **Imports stay in `imports/`** as reference. Reshape into `roles/` when you actually use one.
+- **Imports stay in `imports/`** as reference. Reshape into `skills/` when you actually use one.
 
 ## Influences
 
