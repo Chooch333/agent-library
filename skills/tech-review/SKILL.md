@@ -81,8 +81,8 @@ Keep one Working Document per chat. Findings go in the document. Chat is for cho
    A capability that matters but cannot be tested now is named in the plan with the reason, and shows as untested in the report. Hold everything else fixed. Put the test plan in the Working Document before running; stop for my yes only if a test costs money or is hard to undo.
 5. Hands-on test in every environment wherever possible. Tests only. No permanent setup. Drive the tech the way Claude would in the real workflow (connector, API, script or browser), not by a shortcut the workflow could not use. Measure time, cost and quality the same way in each, and make one output per environment (a clip, a still, a file) so I can judge quality by looking. A failed environment still gets its row, with the reason.
    Save successful test outputs when a later workflow step could use them as input (a model file, an export, stills, the input file that produced them). They become test files for checking the handoff between workflow steps. Store them privately, never in this repo (it is public): for arch-renders, `Chooch333/arch-renders` `lab/<review>/` (private) or a folder on my PC. List each saved file and where it lives under "Experiment parameters".
-5. Requirements check: check the tech against each standing requirement of the speed run it serves (listed in `lab/speed-run.md`): yes, because of this workflow; no, because it cannot do this; or not this tool's job. Start from the brief's answers and mark which ones the test now proves.
-6. One verdict per test environment, then the R&D Report.
+6. Requirements check: check the tech against each standing requirement of the speed run it serves (listed in `lab/speed-run.md`): yes, because of this workflow; no, because it cannot do this; or not this tool's job. Start from the brief's answers and mark which ones the test now proves.
+7. One verdict per test environment, then the R&D Report.
 Comparing this tech with other tech ("what else does this job", "where it fits") is not part of a tech review. The brief holds the first look; the separate overarching review does the comparison.
 
 VERDICTS
