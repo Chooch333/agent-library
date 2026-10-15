@@ -25,7 +25,7 @@ wiring:
 - **Judging** (comparing the map to what shipped, deciding what's wrong) → `skills/inspector/SKILL.md`, whose map-comparison checklist is copied verbatim from this file's old step 3 and pitfall — see `skills/inspector/references/map-review-checklist.md`.
 - **Editing** (applying an accepted change to `concepts/stack-map.md`) → `skills/repairer/SKILL.md`, whose editing procedure is copied verbatim from this file's old steps 5 and 8, and Rules section — see `skills/repairer/references/stack-map-playbook.md`.
 
-The `MAP-EDIT` next-move suggestion queue this role was built to dispose of is also retired (chat-protocol PROTOCOL.md, "Stack-map upkeep" standing rule, 2026-09-22) — sessions no longer file suggestions; the Inspector compares the map to live state directly on its weekly walk instead.
+The `MAP-EDIT` next-move suggestion queue this role was built to dispose of is also retired ("Stack-map upkeep" standing rule, 2026-09-22; now "Builds keep the Stack Flow current" in `skills/build/SKILL.md`) — sessions no longer file suggestions; the Inspector compares the map to live state directly on its weekly walk instead.
 
 This file's full original content (v0.1.0, `status: draft`) is preserved in git history at the commit before this one. Do not invoke this role; it has no working trigger.
 
