@@ -85,7 +85,7 @@ A skill whose `status` is `deprecated` or `retired` (case-insensitive) — regar
 ## Keeping the rules current
 
 - The per-task `should-distill` hook this section used to describe was never built (the "Distill" meta-skill it depended on never shipped) and is retired.
-- In its place: the Inspector's weekly walk (`roles/inspector/SKILL.md`) is what checks whether the system's own rules, skills, and stack-map need a fix — on a schedule, not per-task. It files what it finds on the Punch List; the Repairer (`roles/repairer/SKILL.md`) applies the safe ones.
+- In its place: the Inspector's weekly walk (`skills/inspector/SKILL.md`) is what checks whether the system's own rules, skills, and stack-map need a fix — on a schedule, not per-task. It files what it finds on the Punch List; the Repairer (`skills/repairer/SKILL.md`) applies the safe ones.
 - This is a coarser cadence than the old per-task hook by design (BB-2026-09-21-inspector-repairer, design intent: "when in doubt, hold back — a missed fix costs a week; a wrong rule change costs every chat").
 
 ## Validation
