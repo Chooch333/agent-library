@@ -5,6 +5,7 @@ status: active
 triggers: ["Advisor Critic run"]
 owner: Charles
 source: BB-2026-10-05-advisor-thinks-bigger (Build 28.1, DA-1005-advisor-quality); reviewer-is-never-the-author precedent from garrytan/gbrain skills/cross-modal-review
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "Mon/Wed/Fri schedule, ~2 hours after the Stack Advisor"
