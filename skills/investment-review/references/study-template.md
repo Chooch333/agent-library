@@ -1,6 +1,6 @@
 # Study Template
 
-Reference for `roles/investment-review/SKILL.md` — used when the output type is **Study**: a focused question that ends in a position decision on specific names or a setup (single name, pair comparison, sleeve rubric check).
+Reference for `skills/investment-review/SKILL.md` — used when the output type is **Study**: a focused question that ends in a position decision on specific names or a setup (single name, pair comparison, sleeve rubric check).
 
 | § | Section | Content rule |
 |---|---|---|
