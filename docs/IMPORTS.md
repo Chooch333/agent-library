@@ -34,7 +34,7 @@ See `imports/tan-gbrain/_AGENTS.md` and `_RESOLVER.md` for the routing structure
 
 1. **Browse** the import directory to see what's available.
 2. **Pick** a skill that maps to a workflow you actually run.
-3. **Reshape** it: copy the SKILL.md, rewrite it against the Cheung contract template (`/SKILL_TEMPLATE.md`), strip out runtime-specific bits, save under `roles/<your-name>/SKILL.md`.
+3. **Reshape** it: copy the SKILL.md, rewrite it against the Cheung contract template (`/SKILL_TEMPLATE.md`), strip out runtime-specific bits, save under `skills/<your-name>/SKILL.md`.
 4. **Register** the new role in the top-level `AGENT.md` routing table.
 
 ## What's NOT imported
