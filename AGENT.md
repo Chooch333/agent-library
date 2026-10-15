@@ -6,86 +6,86 @@ Domain knowledge lives in individual SKILL.md files.
 > Rule: not one line of domain knowledge belongs in this file.
 > If you find yourself writing "how to do X" here, you're writing a skill, not routing.
 
-## Active roles
+## Active skills
 
 ### Brainstorming
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
 | `this is a brainstorm chat` (case-insensitive, must be in the very first message — mentioning brainstorming mid-chat is not an invocation) | `BRAINSTORM.md` — **owner=Chooch333, repo=chat-protocol** (not agent-library — the only row in this table that points outside this repo) |
 
 ### Build
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
 | `this is a build chat` (case-insensitive, must be in the very first message — mentioning building mid-chat is not an invocation) | `PROTOCOL.md` itself — no additional SKILL.md; build-chat rules (Workflow, ticket types, How to engage during builds) are already specified in that document |
 
 ### Design shaping
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `Design Assist` (exact phrase in prompt — the only trigger; do not auto-fire from adjacent phrases) | `roles/design-assist/SKILL.md` |
+| `Design Assist` (exact phrase in prompt — the only trigger; do not auto-fire from adjacent phrases) | `skills/design-assist/SKILL.md` |
 
 ### Investment
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `this is an investment review` (case-insensitive, must be in the very first message — mentioning an investment review mid-chat is not an invocation) | `roles/investment-review/SKILL.md` |
+| `this is an investment review` (case-insensitive, must be in the very first message — mentioning an investment review mid-chat is not an invocation) | `skills/investment-review/SKILL.md` |
 
 ### R&D lab
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
 | `Tech discovery:` (the very first message must start with it, e.g. `Tech discovery: <name or link>` — the first look at a tech, no test; files a Discovery Brief) | `skills/tech-discovery/SKILL.md` |
-| `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — the test run of a tech, usually one that already has a Discovery Brief; files an R&D Report. Mentioning a tech review mid-chat is not an invocation) | `roles/tech-review/SKILL.md` |
+| `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — the test run of a tech, usually one that already has a Discovery Brief; files an R&D Report. Mentioning a tech review mid-chat is not an invocation) | `skills/tech-review/SKILL.md` |
 
 ### Plan-mode reviews
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `office hours`, `I have an idea`, `brainstorm this`, `let's design`, `rethink from the start`, `what should I build` | `roles/office-hours/SKILL.md` |
-| `review this plan`, `CEO review`, `think bigger`, `expand scope`, `is this ambitious enough`, `find the 10-star product`, `rethink this` | `roles/ceo-reviewer/SKILL.md` |
-| `eng review`, `engineering review`, `review architecture`, `lock in the plan`, `check the implementation plan` | `roles/eng-reviewer/SKILL.md` |
-| `design review`, `review the design`, `design plan review`, `rate this design`, `UI review` | `roles/design-reviewer/SKILL.md` |
-| `devex review`, `DX review`, `developer experience review`, `review the dev experience`, `TTHW review` | `roles/devex-reviewer/SKILL.md` |
-| `autoplan`, `run the full plan review`, `review chain`, `CEO design eng review` | `roles/autoplan/SKILL.md` |
-| `design consultation`, `design the design system`, `create a DESIGN.md`, `what should this look like`, `design from scratch`, `design system kickoff` | `roles/design-consultation/SKILL.md` |
+| `office hours`, `I have an idea`, `brainstorm this`, `let's design`, `rethink from the start`, `what should I build` | `skills/office-hours/SKILL.md` |
+| `review this plan`, `CEO review`, `think bigger`, `expand scope`, `is this ambitious enough`, `find the 10-star product`, `rethink this` | `skills/ceo-reviewer/SKILL.md` |
+| `eng review`, `engineering review`, `review architecture`, `lock in the plan`, `check the implementation plan` | `skills/eng-reviewer/SKILL.md` |
+| `design review`, `review the design`, `design plan review`, `rate this design`, `UI review` | `skills/design-reviewer/SKILL.md` |
+| `devex review`, `DX review`, `developer experience review`, `review the dev experience`, `TTHW review` | `skills/devex-reviewer/SKILL.md` |
+| `autoplan`, `run the full plan review`, `review chain`, `CEO design eng review` | `skills/autoplan/SKILL.md` |
+| `design consultation`, `design the design system`, `create a DESIGN.md`, `what should this look like`, `design from scratch`, `design system kickoff` | `skills/design-consultation/SKILL.md` |
 
 ### Implementation + review
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `review this PR`, `review the diff`, `pre-PR review`, `review before merge`, `code review`, `ship review` | `roles/pr-reviewer/SKILL.md` |
-| `investigate this bug`, `debug this`, `find the root cause`, `why is this broken`, `what's causing`, `trace this issue` | `roles/investigate/SKILL.md` |
-| `design shotgun`, `design variants`, `show me different design directions`, `give me design options` | `roles/design-shotgun/SKILL.md` |
-| `generate HTML`, `implement this design`, `write the HTML`, `code this design`, `design to HTML` | `roles/design-html/SKILL.md` |
+| `review this PR`, `review the diff`, `pre-PR review`, `review before merge`, `code review`, `ship review` | `skills/pr-reviewer/SKILL.md` |
+| `investigate this bug`, `debug this`, `find the root cause`, `why is this broken`, `what's causing`, `trace this issue` | `skills/investigate/SKILL.md` |
+| `design shotgun`, `design variants`, `show me different design directions`, `give me design options` | `skills/design-shotgun/SKILL.md` |
+| `generate HTML`, `implement this design`, `write the HTML`, `code this design`, `design to HTML` | `skills/design-html/SKILL.md` |
 
 ### Release + deploy
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `ship it`, `ship this`, `open the PR`, `ready to ship`, `ship pre-flight` | `roles/ship/SKILL.md` |
-| `land and deploy`, `merge and deploy`, `land it`, `deploy the PR`, `land this` | `roles/land-and-deploy/SKILL.md` |
-| `document this release`, `update the docs`, `documentation sweep`, `doc sync` | `roles/document-release/SKILL.md` |
+| `ship it`, `ship this`, `open the PR`, `ready to ship`, `ship pre-flight` | `skills/ship/SKILL.md` |
+| `land and deploy`, `merge and deploy`, `land it`, `deploy the PR`, `land this` | `skills/land-and-deploy/SKILL.md` |
+| `document this release`, `update the docs`, `documentation sweep`, `doc sync` | `skills/document-release/SKILL.md` |
 
 ### Knowledge capture
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | Draft a brief per `references/chat-capture.md` → Charles approves → `roles/archivist/SKILL.md` files it |
-| `define a new entity type`, `new entity type`, `add a type to the schema`, `cbrain needs a type for`, or defining a new KIND of thing that has no `type` in `SCHEMA.md` yet | `roles/entity-type-creator/SKILL.md` (single-approval SCHEMA.md addition; auto-deploys to the watcher) |
+| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | Draft a brief per `references/chat-capture.md` → Charles approves → `skills/archivist/SKILL.md` files it |
+| `define a new entity type`, `new entity type`, `add a type to the schema`, `cbrain needs a type for`, or defining a new KIND of thing that has no `type` in `SCHEMA.md` yet | `skills/entity-type-creator/SKILL.md` (single-approval SCHEMA.md addition; auto-deploys to the watcher) |
 
 ### Self-maintenance
 
-| Trigger phrases | Role |
+| Trigger phrases | Skill |
 |---|---|
-| `Inspector: walk` | `roles/inspector/SKILL.md` |
-| `Repairer: run` | `roles/repairer/SKILL.md` |
-| `Stack Repairer: run` | `roles/stack-repairer/SKILL.md` |
+| `Inspector: walk` | `skills/inspector/SKILL.md` |
+| `Repairer: run` | `skills/repairer/SKILL.md` |
+| `Stack Repairer: run` | `skills/stack-repairer/SKILL.md` |
 
 ## Natural sequences
 
-The roles compose. Common flows:
+The skills compose. Common flows:
 
 - **From idea to plan:** `office-hours` → `ceo-reviewer` → `eng-reviewer` (+ `design-reviewer` if UI, + `devex-reviewer` if developer-facing) — or `autoplan` to chain all four
 - **From plan to design:** `design-consultation` (if no design system) → `design-shotgun` (if exploring) → `design-html` (when ready to implement)
@@ -101,30 +101,31 @@ The roles compose. Common flows:
 
 ## Disambiguation rules
 
-- When multiple roles could match, prefer the most specific. (`pr-reviewer` if reviewing a diff that exists; `eng-reviewer` if reviewing a plan with no diff yet.)
+- When multiple skills could match, prefer the most specific. (`pr-reviewer` if reviewing a diff that exists; `eng-reviewer` if reviewing a plan with no diff yet.)
 - `design-reviewer` reviews a *plan's* design quality. `design-shotgun` generates *new* design directions. `design-html` writes the *code* for an approved design. `design-consultation` builds a *design system* from scratch.
 - `ceo-reviewer` is strategic; `eng-reviewer` is architectural; both can fire on the same plan. Use `autoplan` to chain them.
 - `ship` opens the PR; `land-and-deploy` merges and watches the deploy; `document-release` updates docs after shipping. Run in order.
-- **Knowledge capture (cbrain).** When the content is durable knowledge about an entity (people, orgs, projects), the chat path drafts a brief per `references/chat-capture.md`; Charles approves it in chat; the Archivist (`roles/archivist/SKILL.md`) is the single write-authority that files it. The chat never commits to cbrain directly. This is NOT for work-state (decisions, next steps, status) — that's Project State. If the content is "what's true about a thing," it's cbrain (→ draft a brief); if it's "what we're doing or deciding," it's Project State.
-- **New TYPE vs new INSTANCE vs new FIELD (cbrain).** A new KIND of thing that no `type` in `SCHEMA.md` fits → `roles/entity-type-creator/SKILL.md` (it edits the schema; the watcher reads the schema at runtime, so the commit auto-deploys). A new INSTANCE of an existing type (a person, an org, a project) → chat-capture → Archivist, NOT the type creator. An existing type that just wants one more optional field → a small direct schema edit, not a new type. Test: is there no `type` value this thing could carry? Only then is it a new type.
+- **Knowledge capture (cbrain).** When the content is durable knowledge about an entity (people, orgs, projects), the chat path drafts a brief per `references/chat-capture.md`; Charles approves it in chat; the Archivist (`skills/archivist/SKILL.md`) is the single write-authority that files it. The chat never commits to cbrain directly. This is NOT for work-state (decisions, next steps, status) — that's Project State. If the content is "what's true about a thing," it's cbrain (→ draft a brief); if it's "what we're doing or deciding," it's Project State.
+- **New TYPE vs new INSTANCE vs new FIELD (cbrain).** A new KIND of thing that no `type` in `SCHEMA.md` fits → `skills/entity-type-creator/SKILL.md` (it edits the schema; the watcher reads the schema at runtime, so the commit auto-deploys). A new INSTANCE of an existing type (a person, an org, a project) → chat-capture → Archivist, NOT the type creator. An existing type that just wants one more optional field → a small direct schema edit, not a new type. Test: is there no `type` value this thing could carry? Only then is it a new type.
 - If unsure, ask before acting.
 
 ## Activation pattern (claude.ai chat)
 
-Claude.ai has no native slash command system. To activate a role:
-1. User names the role explicitly ("use CEO Reviewer on this plan") OR uses a trigger phrase from the table above
-2. Claude fetches the matching `roles/<name>/SKILL.md` via Custom GitHub MCP
-3. Claude announces the role ("Operating as the CEO Reviewer. First, picking a posture...") and follows its SOP
+Claude.ai has no native slash command system. To activate a skill:
+1. User names the skill explicitly ("use CEO Reviewer on this plan") OR uses a trigger phrase from the table above
+2. Claude fetches the matching `skills/<name>/SKILL.md` via Custom GitHub MCP
+3. Claude announces the skill ("Operating as the CEO Reviewer. First, picking a posture...") and follows its SOP
 
-Confirmation is behavioral, not UI-driven. Watch for: explicit role announcement in the first response, the role's characteristic vocabulary, SOP-following.
+Confirmation is behavioral, not UI-driven. Watch for: explicit skill announcement in the first response, the skill's characteristic vocabulary, SOP-following.
 
 ## Changelog
 
+- **2026-10-15** — Build 38 (BB-2026-10-14-skills-folder-merge): "role" stops naming a kind of file. Every former role folder moved into `skills/` unchanged, so every routing path above now points at `skills/<name>/SKILL.md`; "Active roles" is now "Active skills", each table's "Role" column is now "Skill", and the Natural sequences, Disambiguation rules and Activation pattern wording says "skill". Forwarding stubs stay at the old paths until 2026-11-14. Older changelog lines below keep their original wording; only their paths were updated.
 - **2026-10-14** — R&D lab: added the `Tech discovery:` row → `skills/tech-discovery/SKILL.md` (new; placed in `skills/` ahead of Build 38). `Tech review:` is now the test run only (tech-review 0.3.0). Charles's instruction, R&D lab chat.
-- **2026-10-10** — Added "R&D lab" section (placed after "Investment" with the other first-message triggers) with a `Tech review:` row pointing to `roles/tech-review/SKILL.md`. Removed `tech review` from the Eng review row in Plan-mode reviews so the two no longer clash (`roles/eng-reviewer/SKILL.md` 0.1.1 drops it too). Per BB-2026-10-09-tech-review-skill (Build 31).
-- **2026-10-06** — Added `Stack Repairer: run` → `roles/stack-repairer/SKILL.md` to Self-maintenance. The Stack Repairer fixes things that break while running (reading the Stack Inspector's `stack_status`) and sends one daily recap; the existing Inspector/Repairer pair is now labelled Rules Inspector / Rules Repairer on screen (trigger phrases unchanged). Per BB-2026-10-05-stack-repairer (Build 27).
-- **2026-09-22** — Added "Self-maintenance" section (new sub-section, placed at the end of Active roles) with `Inspector: walk` and `Repairer: run` trigger rows, pointing to the two new self-maintenance roles. Stack Manager (`roles/stack-manager/SKILL.md`) never had an AGENT.md row and is now deprecated — nothing to remove here. Per BB-2026-09-21-inspector-repairer Phase 2.
-- **2026-09-11** — Added "Investment" section (new sub-section, placed under Active roles after "Design shaping") with a `this is an investment review` trigger row pointing to `roles/investment-review/SKILL.md`. New role: produces standardized Theme / Fund / Study investment-review outputs as HTML chat artifacts, applying Charles's six-sleeve book framework and standing rules. Per BB-2026-09-11-investment-review-role.
+- **2026-10-10** — Added "R&D lab" section (placed after "Investment" with the other first-message triggers) with a `Tech review:` row pointing to `skills/tech-review/SKILL.md`. Removed `tech review` from the Eng review row in Plan-mode reviews so the two no longer clash (`skills/eng-reviewer/SKILL.md` 0.1.1 drops it too). Per BB-2026-10-09-tech-review-skill (Build 31).
+- **2026-10-06** — Added `Stack Repairer: run` → `skills/stack-repairer/SKILL.md` to Self-maintenance. The Stack Repairer fixes things that break while running (reading the Stack Inspector's `stack_status`) and sends one daily recap; the existing Inspector/Repairer pair is now labelled Rules Inspector / Rules Repairer on screen (trigger phrases unchanged). Per BB-2026-10-05-stack-repairer (Build 27).
+- **2026-09-22** — Added "Self-maintenance" section (new sub-section, placed at the end of Active roles) with `Inspector: walk` and `Repairer: run` trigger rows, pointing to the two new self-maintenance roles. Stack Manager (`skills/stack-manager/SKILL.md`) never had an AGENT.md row and is now deprecated — nothing to remove here. Per BB-2026-09-21-inspector-repairer Phase 2.
+- **2026-09-11** — Added "Investment" section (new sub-section, placed under Active roles after "Design shaping") with a `this is an investment review` trigger row pointing to `skills/investment-review/SKILL.md`. New role: produces standardized Theme / Fund / Study investment-review outputs as HTML chat artifacts, applying Charles's six-sleeve book framework and standing rules. Per BB-2026-09-11-investment-review-role.
 - **2026-09-10** — Added "Build" trigger row (`this is a build chat`) under a new "Build" section, using the same explicit-trigger pattern as Brainstorming and Design Assist. Companion change to chat-protocol PROTOCOL.md's "Chat types" section, which removes the prior silent default ("no match → build chat"): a chat with no matching trigger — including no build-chat trigger — simply has no type; not every chat needs one, and none is asked for. Charles's direct instruction, 2026-09-10.
 - **2026-09-10** — Added "Brainstorming" section (new sub-section, placed first under Active roles) with a `this is a brainstorm chat` trigger row pointing to `chat-protocol/BRAINSTORM.md` — cross-repo, the only row here that doesn't point within agent-library, called out explicitly in the row for that reason. Part of BB-2026-09-09-one-front-door: unifies chat activation so every chat reads `PROTOCOL.md` first, which now routes here for role selection; brainstorm was previously fired by a block hardcoded in the project prompt (and echoed in PROTOCOL.md) instead of a table row like every other role. Reliability of the routed path (PROTOCOL.md → this table → BRAINSTORM.md) was checked before the old hardcoded route was retired — see chat-protocol Project State Decision C-065.
 
