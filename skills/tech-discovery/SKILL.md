@@ -7,6 +7,7 @@ dependencies: []
 owner: Charles
 updated: 2026-10-14
 source: "Split out of tech-review 0.2.1 by Charles, 2026-10-14 (R&D lab chat). Steps and brief format are the tech-review 0.1.1 review and tech card, minus the hands-on test."
+requires: [references/project-state.md]
 wiring:
   runs: with-you
   starts: "\"Tech discovery:\""
