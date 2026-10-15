@@ -99,7 +99,7 @@ The same run fires again before the Inspector's next walk. `list_punch_items` fo
 
 > Every pitfall must come from a real trace.
 
-- **Edit the frontmatter entry and its table-row mirror together, and rebuild the index — verbatim from `roles/stack-manager/SKILL.md` v0.1.0, step 5:** "edit `concepts/stack-map.md` via `replace_in_file` (exact-anchor discipline — the old string must be unique in the file), touching both the frontmatter `components` entry and its mirror row in the `## Components` table so the two stay in sync. Then `rebuild_index` (incremental) on cbrain." See `roles/repairer/references/stack-map-playbook.md` for the full verbatim playbook — this applies whenever a Repairer-applied item's target is `concepts/stack-map.md`.
+- **Edit the frontmatter entry and its table-row mirror together, and rebuild the index — verbatim from `skills/stack-manager/SKILL.md` v0.1.0, step 5:** "edit `concepts/stack-map.md` via `replace_in_file` (exact-anchor discipline — the old string must be unique in the file), touching both the frontmatter `components` entry and its mirror row in the `## Components` table so the two stay in sync. Then `rebuild_index` (incremental) on cbrain." See `skills/repairer/references/stack-map-playbook.md` for the full verbatim playbook — this applies whenever a Repairer-applied item's target is `concepts/stack-map.md`.
 - **Never edit the map without a decision row / never dispose without completing the move — the Stack Manager Rules section, inherited verbatim.** The Repairer's equivalent: never apply without writing back (`set_punch_status applied` with the commit) — an applied-but-unrecorded edit breaks the same audit trail the old Stack Manager Rules protected.
 
 ## Changelog
