@@ -5,7 +5,7 @@ verdict: never
 verdict_note: "reference design to rebuild"
 come_back_when: "Crayon opens an API or connector"
 blocks: [7, 8, 16, 17]
-card: crayon
+report: crayon
 reviewed: 2026-10-11
 draft: false
 ---
