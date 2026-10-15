@@ -19,7 +19,7 @@ agent-library/
 ├── imports/               # Reference imports from other stacks
 │   ├── tan-gstack/        # Garry Tan's gstack (cloned for reference)
 │   └── tan-gbrain/        # Garry Tan's gbrain schema
-└── roles/                 # Charles's own role definitions
+└── skills/                # Charles's own skills
     └── (built over time)
 ```
 
