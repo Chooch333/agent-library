@@ -4,7 +4,7 @@ version: 0.2.0
 status: draft
 triggers: ["video-reader run"]
 owner: Charles
-source: BB-2026-10-06-video-reader (Build 17.1); pattern copied from roles/world-graph-reader v1.3.0
+source: BB-2026-10-06-video-reader (Build 17.1); pattern copied from skills/world-graph-reader v1.3.0
 wiring:
   runs: on-its-own
   starts: "daily 11 pm Indianapolis schedule"
