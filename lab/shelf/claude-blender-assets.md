@@ -5,7 +5,7 @@ verdict: adopt-now
 verdict_note: "for the kids' games speed run"
 come_back_when: ""
 blocks: [7, 16, 17]
-card: video-game-asset-generator-sinnon
+report: video-game-asset-generator-sinnon
 reviewed: 2026-10-12
 draft: false
 ---
