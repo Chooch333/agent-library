@@ -1,6 +1,6 @@
 # Fund Template
 
-Reference for `roles/investment-review/SKILL.md` — used when the output type is **Fund**: one 13F filer, current quarter vs prior quarter (or two quarters Charles names).
+Reference for `skills/investment-review/SKILL.md` — used when the output type is **Fund**: one 13F filer, current quarter vs prior quarter (or two quarters Charles names).
 
 | § | Section | Content rule |
 |---|---|---|
