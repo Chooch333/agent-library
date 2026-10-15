@@ -158,6 +158,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 
 ## Changelog
 
+- **0.4.0** (2026-10-15) — Tests now start from a full picture of the tech (Charles, R&D lab). New step 3 maps what the tech can do and how it runs (where it runs, cost to run, subscription cost, how Claude controls it, licence), going deep when the brief is weak or missing. Step 4 builds the test plan from that map: every capability the use case leans on and every Assumed operating fact gets a test, or is named as untested with the reason. Step 5 drives the tech the way the workflow would. Report section 01 adds "How it runs"; section 03 lists capabilities tested and not tested. Steps renumbered (old 3–6 are now 4–7). One new pitfall.
+
 - **0.3.1** (2026-10-14) — "Cards" retired (Charles, R&D lab). Reports live in `lab/reports/`; the shelf field `card` is now `report`. Build 32.1 moves the files and points the R&D tab at the new folder.
 
 - **0.3.0** (2026-10-14) — Tech Review is now the test run only (Charles, R&D lab). Discovery moves to the new `skills/tech-discovery/SKILL.md` ("Tech discovery:"), which files Discovery Briefs in `lab/briefs/`. This skill finds the brief itself (shelf row `brief` field, then `lab/briefs/` by name), re-checks only version, price and licence, and starts the experiment from the brief's "Test run, if we do one". Reports and shelf rows carry `brief`. The brief is never edited here.
