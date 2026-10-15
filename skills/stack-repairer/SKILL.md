@@ -25,7 +25,7 @@ wiring:
 
 The Stack Repairer fixes things that break while the stack is running, so Charles never gets a per-problem email and never has to kick off a fix. Three times a day it reads the red and late dots the Stack Inspector (the 15-minute checker, `services/api/cron/stack-status.ts` in cbrain, which writes `stack_status`) has found, works out why each one broke, and fixes it at the smallest size that works: a re-run, a one-file fix, a short brief queued for tonight, or a brief built right away when it's urgent. It logs every action in `stack_repairs`, and the evening run sends Charles one short recap of the whole day. Per BB-2026-10-05-stack-repairer (Build 27).
 
-**Two domains, one pair each.** The Rules Inspector / Rules Repairer (`roles/inspector`, `roles/repairer`) look after rules, skills and the stack map, weekly, through the Punch List. The Stack Inspector / Stack Repairer look after things running, daily. The Stack Inspector finds problems and grades fixes (by turning a dot green again); the Stack Repairer only diagnoses and fixes.
+**Two domains, one pair each.** The Rules Inspector / Rules Repairer (`skills/inspector`, `skills/repairer`) look after rules, skills and the stack map, weekly, through the Punch List. The Stack Inspector / Stack Repairer look after things running, daily. The Stack Inspector finds problems and grades fixes (by turning a dot green again); the Stack Repairer only diagnoses and fixes.
 
 ## When
 
