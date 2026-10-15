@@ -1,6 +1,6 @@
 # IMPORTS — Reference material from other stacks
 
-This directory tracks material cloned from external agent stacks for study and reference. Imported files are **not active roles**. They live under `imports/` until and unless you reshape them into your own `roles/`.
+This directory tracks material cloned from external agent stacks for study and reference. Imported files are **not active roles**. They live under `imports/` until and unless you reshape them into your own `skills/`.
 
 ## Why imports stay separate
 
