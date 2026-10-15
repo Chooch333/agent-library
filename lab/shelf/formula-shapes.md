@@ -5,7 +5,7 @@ verdict: shelf
 verdict_note: ""
 come_back_when: "Block 7, Geometry stack, is being built"
 blocks: [7, 16]
-card: formula-shapes
+report: formula-shapes
 reviewed: 2026-10-10
 draft: false
 ---
