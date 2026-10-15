@@ -5,7 +5,7 @@ verdict: shelf
 verdict_note: ""
 come_back_when: "It leaves early alpha, or a render needs touch-up Claude cannot do in code"
 blocks: [16]
-card: artcraft
+report: artcraft
 reviewed: 2026-10-09
 draft: true
 ---
