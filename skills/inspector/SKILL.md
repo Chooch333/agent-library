@@ -103,7 +103,7 @@ A single lesson mentions a Vercel deploy taking longer than expected. One record
 
 > Every pitfall must come from a real trace.
 
-- **A suggestion can be true and still get rejected**, if a more considered prior decision already covers the ground and the suggestion doesn't add a reason to revisit it. Accuracy is necessary, not sufficient — always check `get_decision_chain` on a related prior `stack-map` decision before filing a map item that would reverse it. (Verbatim from `roles/stack-manager/SKILL.md` v0.1.0, the skill the Inspector's map-comparison job was split from — see `roles/inspector/references/map-review-checklist.md`.)
+- **A suggestion can be true and still get rejected**, if a more considered prior decision already covers the ground and the suggestion doesn't add a reason to revisit it. Accuracy is necessary, not sufficient — always check `get_decision_chain` on a related prior `stack-map` decision before filing a map item that would reverse it. (Verbatim from `skills/stack-manager/SKILL.md` v0.1.0, the skill the Inspector's map-comparison job was split from — see `skills/inspector/references/map-review-checklist.md`.)
 - **Role enforcement was added after the first design pass** (decision A-077, ABO-J-002): the original `set_punch_status` let any author set any status, so "verifier ≠ applier" rested only on a text-convention scan. Don't assume a text convention is sufficient protection for a safety invariant — prefer enforcing it in the tool itself when the cost of a second migration is avoidable.
 
 ## Changelog
