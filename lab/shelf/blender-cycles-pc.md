@@ -5,7 +5,7 @@ verdict: adopt-now
 verdict_note: ""
 come_back_when: ""
 blocks: [16, 17]
-card: flythrough-renderer-blender
+report: flythrough-renderer-blender
 reviewed: 2026-10-14
 draft: false
 ---
