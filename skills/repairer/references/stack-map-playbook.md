@@ -1,6 +1,6 @@
 # Stack-map edit playbook
 
-*Copied verbatim from `roles/stack-manager/SKILL.md` v0.1.0 (steps 5 and 8, and the full Rules section), per BB-2026-09-21-inspector-repairer step 6 — the Repairer's target-editing job (when the target is the stack-map) is the split-off half of what Stack Manager used to do alone. Stack Manager itself is now a deprecated pointer (`roles/stack-manager/SKILL.md`); this is the surviving copy of its editing procedure and rules.*
+*Copied verbatim from `skills/stack-manager/SKILL.md` v0.1.0 (steps 5 and 8, and the full Rules section), per BB-2026-09-21-inspector-repairer step 6 — the Repairer's target-editing job (when the target is the stack-map) is the split-off half of what Stack Manager used to do alone. Stack Manager itself is now a deprecated pointer (`skills/stack-manager/SKILL.md`); this is the surviving copy of its editing procedure and rules.*
 
 ## Editing the map (step 5, verbatim)
 
