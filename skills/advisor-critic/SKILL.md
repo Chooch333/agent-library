@@ -65,7 +65,7 @@ Repos: owner `Chooch333`, read and write with the Custom GitHub connector
       `docs/advisor/sections/<focus>.md` (focus is in the draft's
       frontmatter).
    c. The Advisor's **Contract** and **Anti-patterns** sections in
-      `agent-library/roles/stack-advisor/SKILL.md` — those two sections
+      `agent-library/skills/stack-advisor/SKILL.md` — those two sections
       only; they are your grading sheet.
    d. Each idea's cited source, from its `Critic notes … Source file:`
       line (`world-graph:data/transcripts/<id>.md` or
