@@ -36,7 +36,7 @@ This skill writes ONLY to `SCHEMA.md`. It is not a write-authority for entity in
 
 **Do NOT fire it when:**
 
-- Charles wants to create a new INSTANCE of an existing type (a new person, org, project). That is the chat-capture → Archivist path (`references/chat-capture.md` → `roles/archivist/SKILL.md`). A new person is not a new type.
+- Charles wants to create a new INSTANCE of an existing type (a new person, org, project). That is the chat-capture → Archivist path (`references/chat-capture.md` → `skills/archivist/SKILL.md`). A new person is not a new type.
 - The thing fits an existing type with maybe a new optional FIELD. Adding a field to an existing type is a smaller schema edit, not a new type — do that directly, do not spin up a type.
 - Charles is only asking what types exist. Answer from `SCHEMA.md`; do not propose a change.
 
