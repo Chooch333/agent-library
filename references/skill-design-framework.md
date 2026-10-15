@@ -6,7 +6,7 @@
 
 - **Skill** — any written instruction file for one kind of job (every entry in agent-library).
 - **Agent** — a skill that runs on its own: a trigger, tools, and nobody steering. A badge on a skill, not a separate category.
-- "Role" is retired from Charles-facing text; the `roles/` folder name stays as plumbing.
+- "Role" is retired from Charles-facing text; the old role folder was folded into `skills/` (Build 38, 2026-10-15).
 
 ## How to use this
 
