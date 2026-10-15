@@ -5,6 +5,7 @@ status: draft
 triggers: ["video-reader run"]
 owner: Charles
 source: BB-2026-10-06-video-reader (Build 17.1); pattern copied from skills/world-graph-reader v1.3.0
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "daily 11 pm Indianapolis schedule"
