@@ -99,7 +99,7 @@ Published as an artifact page and filed as `lab/reports/<review>.md`. The templa
   - the test problem in one sentence ("Study the output quality and speed of …").
   On the right, behind a vertical line: Test date, Test completion date, Rev history (numbered from 0, each with a date and a few words), and Report status (Draft or Complete), set apart at the bottom.
 - Evidence key, one line: Tested (we ran it and measured it), Published (from the maker's own documentation), Assumed (our judgment, not yet checked). Mark every claim with one of these.
-- 01 Tech description. What it is, with no commentary.
+- 01 Tech description. What it is, with no commentary. Then a short "How it runs" list from step 3: where it runs, subscription cost, cost to run, how Claude controls it, and what it needs (hardware, accounts), each marked Tested, Published or Assumed.
 - 02 Findings. The gist in one paragraph that reads without scrolling: what works, how fast, at what cost, and the route to adopt. Then three key numbers. Then two lists: the inputs the workflow must supply, and the harness the Total Harness project needs to build.
 - 03 Experiment parameters. One sentence on what was tested and compared, then a table: test input, the test itself, output, settings, machines and versions, what was measured, side checks, saved test files.
 - 04 Results by test environment. One row per environment of the studied tech only. Each row puts its output (the clip or image, playable in the page) beside its numbers: time per output, time for the full deliverable, cost, quality, verdict pill and verdict note. Then one same-frame or same-view comparison image across all environments.
