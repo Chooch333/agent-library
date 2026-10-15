@@ -5,7 +5,7 @@ verdict: adopt-now
 verdict_note: ""
 come_back_when: ""
 blocks: [7, 8, 16, 19]
-card: pascal-editor
+report: pascal-editor
 reviewed: 2026-10-11
 draft: false
 ---
