@@ -276,7 +276,7 @@ technical. One technical clause per point, max.
   queued-vs-running wording so a launched-but-unrun fix isn't reported
   as "no action needed." Per BB-2026-09-18-release-notes-per-day.
 - **v1.0.0** (2026-09-14) -- Initial ship. Copies the Stack Advisor
-  pattern (`agent-library/roles/stack-advisor/SKILL.md` v1.3.0) --
+  pattern (`agent-library/skills/stack-advisor/SKILL.md` v1.3.0) --
   ORIENT / LIST / READ+DEDUPE / EXTRACT+AUDIT / WRITE / DRAIN / DELIVER --
   for a different job: fact extraction and faithfulness audit for the
   RSS/Atom channel, handing off to a mechanical loader instead of
