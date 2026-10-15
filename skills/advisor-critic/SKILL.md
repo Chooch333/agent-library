@@ -103,7 +103,7 @@ Repos: owner `Chooch333`, read and write with the Custom GitHub connector
    idea, write that line: "No Frontier idea this time — {reason}"). A cut
    high-conviction idea is not replaced; no other idea is promoted.
 4. **Publish** — the Advisor's old DELIVER step, for the kept and
-   sharpened ideas. Read `agent-library/roles/stack-advisor/references/
+   sharpened ideas. Read `agent-library/skills/stack-advisor/references/
    brief-format.md`, `email-format.md` and `deliver.md` first.
    a. **Brief** → `cbrain/docs/advisor/ADV-YYYY-MM-DD.md` (the draft's
       `run_id`): the opening rewritten for what survived (rule 7, at most
