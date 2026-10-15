@@ -4,7 +4,7 @@
 
 **Rules:**
 - Emit the block exactly in this layout, in chat, after shelving is verified (plan queued + git copy read back).
-- **The build number comes first** (PROTOCOL.md, "The build number leads the handoff", 2026-09-20): `**Build:** [N.N]` is the first line of the block, and the pasteable prompt opens with `Build [N.N] — execute Build Brief …`. If the work carries no number in a series, both read `unnumbered` rather than dropping the field. The authoring chat assigns the number; Charles never does.
+- **The build number comes first** (`agent-library/skills/build/SKILL.md`, "The build number leads the handoff", 2026-09-20): `**Build:** [N.N]` is the first line of the block, and the pasteable prompt opens with `Build [N.N] — execute Build Brief …`. If the work carries no number in a series, both read `unnumbered` rather than dropping the field. The authoring chat assigns the number; Charles never does.
 - `Revision` reflects the Project State plan's `current_revision` at shelving time.
 - The pasteable prompt is one blockquote paragraph. Keep the six elements in order: build number, execute instruction, Project State claim instruction (with plan_id / project / status transition), git location, dependency status line (only if the brief has upstream dependencies — state resolved or blocked), and the fork/hard-gate rules line.
 - Adapt only bracketed placeholders. Do not restructure, reorder, or drop fields.
