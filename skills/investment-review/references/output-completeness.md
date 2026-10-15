@@ -1,6 +1,6 @@
 # Output Completeness Framework
 
-Reference for `roles/investment-review/SKILL.md`. Every output marks each domain **Answered**, **N-A** (one-line reason), or **Gated** (data unavailable — name the source tried). Silence is a defect.
+Reference for `skills/investment-review/SKILL.md`. Every output marks each domain **Answered**, **N-A** (one-line reason), or **Gated** (data unavailable — name the source tried). Silence is a defect.
 
 | # | Domain | Theme | Fund | Study |
 |---|---|---|---|---|
