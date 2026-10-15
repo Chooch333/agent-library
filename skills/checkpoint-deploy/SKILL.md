@@ -6,6 +6,7 @@ triggers: [a Build Brief header lists checkpoint-deploy among its skills]
 dependencies: [orchestrate-build, execute-build-task]
 owner: Charles
 updated: 2026-09-28
+requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "loaded by Build lead when named in a brief header"
