@@ -7,6 +7,7 @@ triggers:
 owner: Charles
 updated: 2026-10-05
 source: Designed in DA chat DA-1005-faw-chat-input (2026-10-05). Uses the existing graph write door (world-graph docs/contracts/WRITE_PACKAGE.md); no new plumbing.
+requires: [references/project-state.md]
 wiring:
   runs: with-you
   starts: "\"add this\" / \"log this\" in a FAW chat"
