@@ -177,4 +177,4 @@ Newest last.
   precedent). DELIVER gains the hand-off switch: when
   `cbrain/docs/advisor/critic_live.json` exists the Advisor stops at a
   draft (`docs/advisor/drafts/`, run_result `stage: draft`, no email) and
-  the Advisor Critic (`roles/advisor-critic`) judges, publishes and sends.
+  the Advisor Critic (`skills/advisor-critic`) judges, publishes and sends.
