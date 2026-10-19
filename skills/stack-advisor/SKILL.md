@@ -182,8 +182,9 @@ idea for another section is still allowed.
    - **High conviction:** a Fix idea `total ≥ 85` with ≥ 2 independent
      sources. Exactly one per brief, leads the email, heading gets
      ` · HIGH CONVICTION`. Any other qualifier goes in `held`.
-   - **Cap:** at most 6 = 1 high-conviction + 1 Frontier + the rest Fix,
-     best score first. An empty slot goes to the next Fix idea. 0–2 ideas
+   - **Cap:** at most 6 = 1 high-conviction + 1 new-capability + the rest
+     Fix, best score first. An empty slot goes to the next Fix idea, or to
+     a second clearing new-capability idea. 0–2 ideas
      is fine. **Never send a below-threshold idea to fill a slot.**
    - **Slow day:** under 5 new eligible ideas → fill from live Fix ideas
      `≥ 60` never surfaced, oldest-high-score first.
