@@ -3,7 +3,9 @@
 Read at DELIVER (step 6). Moved here unchanged from SKILL.md v1.8.1 by
 BB-2026-10-05-advisor-reads-smarter (Build 28). Build 28.1
 (BB-2026-10-05-advisor-thinks-bigger) added the two honest lines, the
-Frontier heading and the draft format (bottom).
+one-slot lane's heading and the draft format (bottom). Build 41
+(BB-2026-10-19-advisor-new-capability) renamed that lane new-capability:
+its heading, its "What you could do afterward" line and the Cost line.
 
 ## Brief format
 
