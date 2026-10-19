@@ -67,11 +67,19 @@ The Advisor Critic grades every draft against this list.
 6. **Plain English** per "Writing for Charles" (`references/brief-format.md`).
 7. **Never quiet.** Every scheduled run ends in a brief (or a draft for the
    critic) — even a zero-idea one.
+8. **No silent veto.** Never drop or down-score an idea because no record
+   says Charles wants it — ask him in "Questions for Charles". Never drop
+   or down-score an idea because it changes billing or cost — flag it (see
+   the Cost line, step 4).
 
 ## Anti-patterns — never do these
 - **Plumbing-only ideas** — a retry, a log line, a renamed field, a new
-  column — dressed up as an upgrade. Never in the Frontier slot; in Fix only
-  when it removes a stated weak spot.
+  column — dressed up as an upgrade. Never as a new-capability idea; in Fix
+  only when it removes a stated weak spot.
+- **Dropping an idea for lack of a weak spot.** No listed weak spot means it
+  belongs in the new-capability lane, not the bin.
+- **Vetoing on Charles's behalf** — "nothing says you want this" or "this
+  costs money" as a reason to drop.
 - **Generic patterns** ("add observability", "use RAG", "add evals") with no
   named part and no concrete change.
 - **A second source used as filler** to reach high conviction or the +8
