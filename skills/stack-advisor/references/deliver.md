@@ -37,8 +37,12 @@ the record; these rows copy it.
   sentence, `whats_wrong_today` and `why_might_be_wrong` (the two honest
   lines; also appended to the end of `what_you_have` as "What's wrong
   today: …" and to the end of `what_gets_better` as "Why this might be
-  wrong: …" so the Stack screen shows them with no screen change), and
-  `lane` (`fix` or `frontier`) ("What your records show" also goes in `from_source` for
+  wrong: …" so the Stack screen shows them with no screen change; for a
+  new-capability idea the first line is "What you could do afterward",
+  stored in `whats_wrong_today` and appended as "What you could do
+  afterward: …"), `cost_change` (the Cost line's text, or null; also
+  appended to the end of `what_gets_better` as "Cost change: …"), and
+  `lane` (`fix` or `new-capability`; older rows may say `frontier`) ("What your records show" also goes in `from_source` for
   own-records ideas; `resurfaced_note` is null unless rule e applies);
   `effort` = S/M/L; `high_conviction`; `component_ids` = the stack-map
   component ids the idea connects to, from its `connects_to` (for a plan
