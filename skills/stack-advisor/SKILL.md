@@ -4,7 +4,7 @@ version: 2.1.0
 status: active
 triggers: ["Stack Advisor run"]
 owner: Charles
-source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool; run packet per BB-2026-10-05-advisor-reads-smarter; briefing, focus days, Frontier lane and critic hand-off per BB-2026-10-05-advisor-thinks-bigger
+source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool; run packet per BB-2026-10-05-advisor-reads-smarter; briefing, focus days, Frontier lane and critic hand-off per BB-2026-10-05-advisor-thinks-bigger; new-capability lane per BB-2026-10-19-advisor-new-capability
 requires: [references/project-state.md]
 wiring:
   runs: on-its-own
