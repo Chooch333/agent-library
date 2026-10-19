@@ -121,7 +121,7 @@ status: draft
 run_id: ADV-YYYY-MM-DD
 focus: intake | build-machine | app
 created_at: <ISO>
-frontier: ADV-NNN | none — {one-line reason}
+new_capability: ADV-NNN[, ADV-NNN] | none — {one-line reason}
 ---
 ```
 
