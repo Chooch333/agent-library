@@ -54,7 +54,7 @@ and quotes in all inserted text:
 <tr><td style="padding:0 0 18px 0;font-size:22px;font-weight:bold;">Stack Advisor — {Mon D}</td></tr>
 <tr><td style="padding:0 0 24px 0;">{opening}</td></tr>
 <!-- per idea: -->
-<tr><td style="padding:0 0 6px 0;font-size:20px;font-weight:bold;text-decoration:underline;">ADV-NNN · {title}{ · HIGH CONVICTION}</td></tr>
+<tr><td style="padding:0 0 6px 0;font-size:20px;font-weight:bold;text-decoration:underline;">ADV-NNN · {title}{ · HIGH CONVICTION | · NEW CAPABILITY}</td></tr>
 <tr><td style="padding:0 0 16px 0;font-size:13px;color:#666666;">{source line, link on the name}</td></tr>
 <tr><td style="padding:0 0 2px 0;font-size:16px;font-weight:bold;text-decoration:underline;">What they found</td></tr>
 <tr><td style="padding:0 0 14px 0;">{one sentence}</td></tr>
