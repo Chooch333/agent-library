@@ -238,7 +238,8 @@ idea for another section is still allowed.
    To turn the critic off, Charles deletes `critic_live.json`; the next run
    delivers directly again.
 
-Changelog: `references/changelog.md`. Latest: **v2.0.0** (2026-10-06) —
-stack briefing + focus section replace the roadmap and full map; Contract
-and Anti-patterns; Frontier lane; two honest lines per idea; hand-off switch
-to the Advisor Critic (BB-2026-10-05-advisor-thinks-bigger, Build 28.1).
+Changelog: `references/changelog.md`. Latest: **v2.1.0** (2026-10-19) —
+new-capability lane replaces the old one-slot lane: three-part gate (source read in full,
+named part, "afterward you could…" sentence), no weak spot needed, threshold
+50, a second idea may fill an empty Fix slot, no silent veto, Cost line
+(BB-2026-10-19-advisor-new-capability, Build 41).
