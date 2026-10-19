@@ -178,3 +178,19 @@ Newest last.
   `cbrain/docs/advisor/critic_live.json` exists the Advisor stops at a
   draft (`docs/advisor/drafts/`, run_result `stage: draft`, no email) and
   the Advisor Critic (`skills/advisor-critic`) judges, publishes and sends.
+- **v2.1.0** (2026-10-19) — New-capability lane (BB-2026-10-19-advisor-new-capability,
+  Build 41). The one-slot Frontier lane is renamed new-capability
+  everywhere, including the stored lane value (`"lane": "new-capability"`;
+  the script still reads old `frontier` ideas and migrates them, keeping
+  their totals). Its job: connect new or emerging tech and techniques to
+  how Charles is wired up today. Three-part gate — a source read in full,
+  `connects_to` naming the part it attaches to, and one "afterward you
+  could…" sentence; no weak spot needed. Score: capability 40, fit 20,
+  evidence 25, recency 15 (plug-in point retired into the gate);
+  threshold 65 → 50 (Charles: tune higher if swamped). One reserved slot;
+  a second clearing idea may take an empty Fix slot; cap stays 6. New
+  Contract rule 8 (no silent veto): "nothing says Charles wants this"
+  becomes a closed question naming the ADV ID, and a billing or cost
+  change becomes a `Cost change:` line — neither drops or down-scores an
+  idea. The briefing gains "How you're set up today" and per-part AI/pay
+  tags. Heading suffix ` · NEW CAPABILITY`.
