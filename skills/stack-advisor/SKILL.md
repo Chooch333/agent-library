@@ -60,7 +60,8 @@ The Advisor Critic grades every draft against this list.
    Never empty, never a formality.
 3. **Not already done.** Checked against the part's line in the briefing /
    section file, the packet's `index` and `ledger_status`.
-4. **One Frontier idea, or one line saying why none cleared 65.**
+4. **New-capability.** At least one new-capability idea, or one line saying
+   why none cleared 50.
 5. **Bar held.** At most 6 ideas; none below its lane's threshold. Zero
    ideas is legal, with one line saying why.
 6. **Plain English** per "Writing for Charles" (`references/brief-format.md`).
