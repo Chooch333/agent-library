@@ -221,8 +221,8 @@ idea for another section is still allowed.
       `last_run_id` = your `run_id` (if not after ~10 minutes, say so in 6d).
    c. Gmail send — subject "Stack Advisor brief ADV-YYYY-MM-DD".
    d. Project State note on stack-map: one-paragraph digest + git path,
-      focus section, packet bytes, items skimmed / deep-read, Frontier
-      result.
+      focus section, packet bytes, items skimmed / deep-read,
+      new-capability result.
    e. Supabase copy for the Stack screen, per `references/deliver.md`.
    **Present → stop at a draft** for the Advisor Critic:
    a. Commit the draft → `cbrain/docs/advisor/drafts/ADV-YYYY-MM-DD.md` in
