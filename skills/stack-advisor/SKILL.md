@@ -22,8 +22,9 @@ wiring:
 ## What
 Every scheduled run, know Charles's stack and where he is headed, read the
 newest sources, and deliver a brief of up to 6 concrete upgrade ideas:
-fixes for today's weak spots plus one Frontier idea that changes what the
-stack can do. Propose only — never build, never edit the stack map.
+fixes for today's weak spots, plus new-capability ideas: new or emerging
+tech and techniques connected to how Charles is wired up and running today.
+Propose only — never build, never edit the stack map.
 
 Code does the counting, you do the thinking. A nightly script
 (`cbrain/tools/advisor/`, workflow `advisor-packet.yml`) keeps the idea pool
