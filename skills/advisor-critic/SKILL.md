@@ -84,8 +84,12 @@ Repos: owner `Chooch333`, read and write with the Custom GitHub connector
      - *generic* — a pattern any stack could be told, with no named part
        and no concrete change;
      - *already done* — the live part already does it (say where);
-     - *plumbing-only in the Frontier slot* — a retry, log, rename or
+     - *plumbing-only as a new-capability idea* — a retry, log, rename or
        column presented as a capability change;
+     - *new-capability idea missing its part or its "afterward" sentence*
+       — no `connects_to` naming the part it attaches to, or no "What you
+       could do afterward" line (sharpen instead if the source supports
+       writing one);
      - *not grounded* — the cited source doesn't say what the idea claims,
        or the source can't be read;
      - *"Why this might be wrong" missing, empty or a formality* ("no real
