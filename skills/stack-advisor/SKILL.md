@@ -202,7 +202,10 @@ idea for another section is still allowed.
      its own) and pool ids from `next_pool_id` upward.
 5. ASK IF UNSURE. If a current build's purpose can't be stated in one
    sentence, add "Questions for Charles" — max 3, closed choices with a
-   recommendation each. Never block on them.
+   recommendation each. Never block on them. An idea Charles's records
+   don't show he'd want still ships; add a closed question naming its ADV
+   ID ("Do you want X? Recommend: yes/no because…"). Max 3 questions
+   total; idea questions first.
 6. DELIVER — the hand-off switch. First read `references/brief-format.md`,
    `references/email-format.md` and `references/deliver.md`. Then check
    whether `cbrain/docs/advisor/critic_live.json` exists
