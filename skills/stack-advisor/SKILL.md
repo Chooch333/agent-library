@@ -157,16 +157,28 @@ idea for another section is still allowed.
      shelf now = 15; roadmap-later = 5; neither = 0). Connection and
      timeliness need the shelf: one Supabase SQL on `ujditldbqdiqigazkcak`
      — plans queued or running, joined to projects (title, tags, project).
-   - **Frontier lane (0–100, threshold 65), one slot per brief:**
-     *capability* 0–40 (lets the stack do something it can't today — a
-     harness step's *stops me* gets smaller, or a new kind of work becomes
-     possible) · *recency* 0–20 (source ≤ 30 days old = full; older scales
-     down; > 90 days = 0) · *evidence* 0–25 (as Fix) · *plug-in point*
-     0–15 (names exactly where it attaches: a part, a step id `s01`–`s11`
-     or a block id `b01`–`b21`, which `connects_to` may carry). Score keys:
-     `capability`, `recency`, `evidence`, `plug_in`; set `"lane":
-     "frontier"`. Best clearing idea takes the slot; heading gets
-     ` · FRONTIER`. None clears → the brief's opening says why in one line.
+   - **New-capability lane (0–100, threshold 50).** Gate first — all
+     three or it isn't pooled: (a) a source read in full; (b)
+     `connects_to` names the part of the current stack it attaches to (a
+     part id from the briefing's "How you're set up today" or "The
+     stack", a step `s01`–`s11`, or a block `b01`–`b21`); (c) one plain
+     "afterward you could…" sentence naming something Charles can't do
+     today. **No weak spot needed.** Score: *capability* 0–40 (how much
+     new becomes possible — a new kind of work, a hand step removed; a
+     harness step's *stops me* shrinking is one way, not the only way) ·
+     *fit* 0–20 (attaches to what already runs: same platform and
+     accounts = high; needs a new platform or account = lower, never 0
+     for that alone) · *evidence* 0–25 (as Fix) · *recency* 0–15 (source
+     ≤ 30 days old = full; older scales down; > 90 days = 0). Score keys:
+     `capability`, `fit`, `evidence`, `recency`; set `"lane":
+     "new-capability"`. Heading gets ` · NEW CAPABILITY`. None clears →
+     the brief's opening says why in one line.
+   - **Slots:** one slot is reserved for the best new-capability idea; a
+     second clearing one may take any slot Fix leaves empty.
+   - **Cost line.** An idea that would move work off the Claude plan, add
+     a paid service, or change what anything costs carries a line under
+     its block: `Cost change: {what moves to what, rough cost if the
+     source says}`. No score penalty.
    - **High conviction:** a Fix idea `total ≥ 85` with ≥ 2 independent
      sources. Exactly one per brief, leads the email, heading gets
      ` · HIGH CONVICTION`. Any other qualifier goes in `held`.
