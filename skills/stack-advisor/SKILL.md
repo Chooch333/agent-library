@@ -50,12 +50,14 @@ whole.** Shapes: `cbrain/docs/advisor/README.md`.
 The Advisor Critic grades every draft against this list.
 1. **Grounded.** Every idea rests on a source you read in full (or Charles's
    own records) and names a real part in `connects_to`: a stack-map id, a
-   build-machine part, a harness step/block id (Frontier only), or a plan
-   or decision.
-2. **Two honest lines.** Every idea says *What's wrong today* (a concrete
-   gap in that part, from the briefing, section file or records — not a
-   guess) and *Why this might be wrong* (the strongest real reason the idea
-   could fail or not be worth it). Never empty, never a formality.
+   build-machine part, a harness step/block id, or a plan or decision.
+2. **Two honest lines.** Fix ideas say *What's wrong today* (a concrete gap
+   in that part, from the briefing, section file or records — not a guess)
+   and *Why this might be wrong*. New-capability ideas say *What you could
+   do afterward* (one plain sentence: something Charles can do after that
+   he can't today) and *Why this might be wrong*. *Why this might be wrong*
+   is the strongest real reason the idea could fail or not be worth it.
+   Never empty, never a formality.
 3. **Not already done.** Checked against the part's line in the briefing /
    section file, the packet's `index` and `ledger_status`.
 4. **One Frontier idea, or one line saying why none cleared 65.**
