@@ -103,9 +103,14 @@ Repos: owner `Chooch333`, read and write with the Custom GitHub connector
      staying inside what the source and the section file support. A
      sharper title becomes the idea's `title`/`ledger_idea`.
    - **Keep** when it meets the whole Contract as written.
-   Then check the brief as a whole: the Frontier slot is filled by a kept
-   idea or the opening says in one line why not (if you cut the Frontier
-   idea, write that line: "No Frontier idea this time — {reason}"). A cut
+   - **Never cut for "Charles hasn't asked for this" or for a cost
+     change** — those are a question and a Cost line (Contract rule 8). If
+     the draft is missing that question or Cost line, sharpen by adding
+     it.
+   Then check the brief as a whole: the new-capability slot is filled by a
+   kept idea or the opening says in one line why not (if you cut every
+   new-capability idea, write that line: "No new-capability idea this time
+   — {reason}"). A cut
    high-conviction idea is not replaced; no other idea is promoted.
 4. **Publish** — the Advisor's old DELIVER step, for the kept and
    sharpened ideas. Read `agent-library/skills/stack-advisor/references/
