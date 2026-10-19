@@ -27,8 +27,10 @@ as a plain-text fallback). Subject: "Stack Advisor brief ADV-YYYY-MM-DD".
 4. One small line: `Effort: {small|medium|large} · Checked: {what was
    verified, a few words} · Assumed: {what wasn't, a few words}` (drop
    the Assumed part if nothing was assumed).
-5. If resurfaced: one small line `Raised again because: {one clause}`.
-6. Link: `Open the full idea on the Stack screen →` pointing to
+5. If the idea has a Cost line: one small line `Cost change: {one
+   clause}`.
+6. If resurfaced: one small line `Raised again because: {one clause}`.
+7. Link: `Open the full idea on the Stack screen →` pointing to
    `{STACK_URL}?sel=advisor:ADV-NNN`.
 
 **Whole email:** title line "Stack Advisor — {Mon D}", then the opening
