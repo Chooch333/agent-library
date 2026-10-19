@@ -146,7 +146,7 @@ Repos: owner `Chooch333`, read and write with the Custom GitHub connector
       packet's `ledger_changed`. Never write a row whose LEDGER status is
       `draft` or `cut`.
    f. **Project State note** on `stack-map`: verdict counts (kept /
-      sharpened / cut), the Frontier outcome, the brief path, and any step
+      sharpened / cut), the new-capability outcome, the brief path, and any step
       that failed.
 
 ## Turning the critic off
