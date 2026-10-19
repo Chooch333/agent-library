@@ -114,8 +114,10 @@ idea for another section is still allowed.
    For a Done answer, name in the opening any draft/queued/running plan
    whose tags or provenance cite that ADV ID.
 2. ORIENT — read exactly three files from Chooch333/cbrain, live:
-   a. `docs/advisor/stack-briefing.md` — one line per part (what it does,
-      how it runs, what it feeds, its weak spot, last changed) and "Where
+   a. `docs/advisor/stack-briefing.md` — "How you're set up today" (where
+      things run, what thinks and how it's paid, the doors chats have), one
+      line per part (what it does, how it runs, what AI it uses and how
+      it's paid, what it feeds, its weak spot, last changed) and "Where
       Charles is headed" (every harness step's *stops me* and *today*).
    b. `docs/advisor/sections/<focus>.md` — full detail for today's section.
    c. `docs/advisor/run_packet.json` — live ideas, `index`,
