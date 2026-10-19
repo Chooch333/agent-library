@@ -2,7 +2,8 @@
 
 Read at DELIVER (step 6c). Moved here unchanged from SKILL.md v1.8.1 by
 BB-2026-10-05-advisor-reads-smarter (Build 28). Build 28.1 added the two
-honest lines and the FRONTIER tag. Once the critic is live, the Advisor
+honest lines and the lane tag (NEW CAPABILITY since Build 41). Once the
+critic is live, the Advisor
 Critic sends this email, not the Advisor.
 
 The email is a quick hit. Charles reads the full idea on the Stack
