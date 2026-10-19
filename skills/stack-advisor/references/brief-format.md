@@ -129,7 +129,7 @@ and, as the last lines of each idea block (the critic strips them when it
 publishes):
 
 ```
-Critic notes — Pool: P-NNNN · Lane: fix | frontier · Score: {parts} = {total} · Connects to: {ids} · Source file: {repo:path, or "records: …"}
+Critic notes — Pool: P-NNNN · Lane: fix | new-capability · Score: {parts} = {total} · Connects to: {ids} · Source file: {repo:path, or "records: …"}
 ```
 
 The critic sets `status: reviewed` and appends a "Critic verdicts" section
