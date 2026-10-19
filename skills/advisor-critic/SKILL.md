@@ -1,6 +1,6 @@
 ---
 name: advisor-critic
-version: 1.0.0
+version: 1.1.0
 status: active
 triggers: ["Advisor Critic run"]
 owner: Charles
