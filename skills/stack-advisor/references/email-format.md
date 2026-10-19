@@ -20,7 +20,8 @@ as a plain-text fallback). Subject: "Stack Advisor brief ADV-YYYY-MM-DD".
    own records — {what they are}" with no link.
 3. Six sections, **one sentence each** (about 25 words max):
    "What they found" (or "What your records show"), "What you have
-   today", "What's wrong today", "Why it matters", "What you'd gain",
+   today", "What's wrong today" (for a new-capability idea: "What you
+   could do afterward"), "Why it matters", "What you'd gain",
    "Why this might be wrong". No "In plain terms" — the title does that
    job in the email.
 4. One small line: `Effort: {small|medium|large} · Checked: {what was
