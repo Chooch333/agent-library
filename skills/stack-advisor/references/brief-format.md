@@ -10,7 +10,7 @@ its heading, its "What you could do afterward" line and the Cost line.
 ## Brief format
 
 ```
-### ADV-NNN · {plain title, rule 6}{ · FRONTIER}
+### ADV-NNN · {plain title, rule 6}{ · NEW CAPABILITY}
 Source: {who they are, in a few words} — "{video or article title}" · {url}
 
 **In plain terms:** {one sentence}
