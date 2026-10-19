@@ -23,6 +23,9 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 
 **What's wrong today**
 {1–2 sentences: the concrete gap in that part right now — its weak spot from the stack briefing or section file, or what Charles's records show. Never a guess dressed as fact.}
+— or, for a new-capability idea, in its place —
+**What you could do afterward**
+{1 sentence: something Charles can do after this that he can't today. No weak spot needed.}
 
 **Why it matters here**
 {2–3 sentences: why the advisor is pulling this out and tying it to that component — the link must be concrete, not thematic}
