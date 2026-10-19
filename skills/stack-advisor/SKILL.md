@@ -144,8 +144,9 @@ idea for another section is still allowed.
    c. Low = done. Medium = eligible once more next run. Unskimmed items wait.
    d. Video text is auto-captioned: names come out misspelled. Never quote
       a caption as a product name without checking it.
-   e. Each deep-read item yields 0–3 candidates, each naming its lane and
-      a `connects_to`, or it is trivia and is not pooled.
+   e. Each deep-read item yields 0–3 candidates, each naming its lane
+      (`fix` or `new-capability`) and a `connects_to`, or it is trivia and
+      is not pooled.
 4. SCORE AND SELECT. Two lanes. Score every candidate and every live idea
    that got new evidence.
    - **Fix lane (0–100, threshold 60):** *connection* 0–40 (names a
