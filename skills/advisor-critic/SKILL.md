@@ -156,3 +156,9 @@ your runs stop quietly at step 0. Setup and the task card:
   the Stack Advisor's Contract and Anti-patterns, publish + email + Stack
   screen copy once live, verdicts folded by `advisor-packet.yml` via
   `critic_result.json`. Per BB-2026-10-05-advisor-thinks-bigger (Build 28.1).
+- **v1.1.0** (2026-10-19) — Matches Stack Advisor v2.1.0's new-capability
+  lane (BB-2026-10-19-advisor-new-capability, Build 41): old lane wording
+  renamed; new cut reason for a new-capability idea missing its part or its
+  "afterward" sentence (sharpen if the source supports one); never cut for
+  "Charles hasn't asked for this" or for a cost change — those are a
+  question and a Cost line.
