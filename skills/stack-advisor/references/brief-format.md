@@ -36,6 +36,7 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 **Why this might be wrong**
 {1–2 sentences: the strongest honest reason this could fail, cost more than it gives, or already be covered. Never empty, never "no risks".}
 
+Cost change: {what moves to what, rough cost if the source says}   ← only when the idea moves work off the Claude plan, adds a paid service, or changes what anything costs
 {Checked | Assumed} — {one line}
 ```
 
