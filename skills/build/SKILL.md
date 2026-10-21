@@ -115,4 +115,5 @@ At the end of every turn, check in per `references/thread-checkin.md`: one Proje
 
 ## Changelog
 
+- **1.1.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `build-chat`); `close_thread` when the plan has succeeded and its needs-charles items are done. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - **1.0.0** (2026-10-15) — Created by Build 39 (BB-2026-10-14-protocol-retirement) from the build-chat sections of the retired chat-protocol rulebook: authority and hard gates, Build Brief defaults, shelving, review gate, workflow, tool-first execution, and the Response format. Shared Project State vocabulary moved to `references/project-state.md`; tool gotchas to `references/gotchas.md`.
