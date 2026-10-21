@@ -1,15 +1,15 @@
 ---
 name: build
 description: 'Use when the first message says "this is a build chat": work that produces deliverables, decisions or progress on a project, logged to Project State. Carries authority rules, Build Brief defaults, workflow and response format.'
-requires: [references/project-state.md, references/gotchas.md]
-version: 1.0.0
+requires: [references/project-state.md, references/gotchas.md, references/thread-checkin.md]
+version: 1.1.0
 status: active
 triggers: ["this is a build chat (case-insensitive, very first message only)"]
 owner: Charles
-updated: 2026-10-15
+updated: 2026-10-21
 ---
 
-# SKILL: build (v1.0.0)
+# SKILL: build (v1.1.0)
 
 A **build chat** is work that produces deliverables, decisions, or progress on a project. Fetch every file the `requires:` header names before the first Project State action.
 
