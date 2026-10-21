@@ -90,6 +90,10 @@ Pick one lane and name what you ruled out. Money always stops. Do not stack assu
 THE SPEED RUN
 Judge every tool against the requirements of the speed run it serves (`lab/speed-run.md`), and say which steps of that speed run it would serve. A tool that serves no listed speed run waits for its block.
 
+## Check in (Next steps list)
+
+At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `tech-discovery`, thread_key `tech-discovery:<tech slug>`, project_label = the speed run the tech serves ("Arch renders"), else "R&D lab", a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when the Discovery Brief is filed, call `close_thread` with closed_how "Discovery Brief filed". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+
 ## Examples
 
 ### Example 1: a discovery that ends at Shelf, test run next
