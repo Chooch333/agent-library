@@ -210,6 +210,10 @@ Builder-mode template is simpler: Problem / Coolest Version / Wedge / Premises /
 
 After the design doc lands, the natural next step is CEO Reviewer (strategic gate) and then Eng Reviewer (technical gate).
 
+## Check in (Next steps list)
+
+At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `plan-review`, thread_key `plan-review:<idea slug>`, project_label = the personal project in plain words, a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when Charles approves the design doc, call `close_thread` with closed_how "design doc approved". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+
 ## Examples
 
 ### Example 1: "Office hours — I want to build a property monitoring dashboard"
