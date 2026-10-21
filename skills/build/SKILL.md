@@ -91,6 +91,12 @@ Tickets have no "open items" field. If something is open, the ticket isn't done.
 
 ---
 
+## Check in (Next steps list)
+
+At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `build-chat`, thread_key `build-chat:<plan slug>`, project_label = the project in plain words ("cbrain", "Family arcade"), a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when the plan has succeeded and its needs-charles items are done, call `close_thread` with closed_how "plan done". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills. **Interactive chats only** (Charles present). Autonomous and overnight builds do not check in; the sweep reads their plans and night log.
+
+---
+
 ## Build execution — tool-first
 
 1. Build and planning chats are MCP- and tool-first: Claude takes over as many build tasks as available tools allow, rather than handing instructions to Charles.
