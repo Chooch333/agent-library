@@ -8,7 +8,7 @@ dependencies: []
 owner: Charles
 updated: 2026-10-21
 source: Original. Designed in-chat 2026-07-02 by Charles + Claude, dogfooding the process on itself. v0.2.0 proactive-harness revision designed in-chat 2026-07-09, again dogfooding. Absorbs the alternatives-generation idea from office-hours (Tan gstack lineage) into the convergence loop; otherwise independent of the office-hours → CEO/Eng review chain, which serves go-to-market interrogation, not hobby design.
-requires: [references/project-state.md]
+requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: with-you
   starts: "\"Design Assist\""
