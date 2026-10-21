@@ -59,5 +59,10 @@ Never touch any non-arcade cbrain table. Never use a paid tool (Meshy etc.) with
 After Launch, one Project State note on total-harness (`add_note`, tags `game-maker`, `family-arcade`): game, rounds,
 what the kids liked, what the live check caught, and any kit rule that should change (as a suggestion, not an edit).
 
+## Check in (Next steps list)
+
+At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `game-maker`, thread_key `game-maker:<game slug>`, project_label "Family arcade", a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when the game is Launched (live check passed), call `close_thread` with closed_how "launched". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+
 ## Changelog
+- 0.2.0 (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `game-maker`); `close_thread` when the game is Launched. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - 0.1.0 (2026-10-20) — First version, Build 42 (BB-2026-10-19-family-arcade-v1).
