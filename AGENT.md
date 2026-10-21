@@ -38,6 +38,12 @@ This file is the front door. Project instructions point here. It routes a first 
 | `Tech discovery:` (the very first message must start with it, e.g. `Tech discovery: <name or link>` — the first look at a tech, no test; files a Discovery Brief) | `skills/tech-discovery/SKILL.md` |
 | `Tech review:` (the very first message must start with it, e.g. `Tech review: <name or link>` — the test run of a tech, usually one that already has a Discovery Brief; files an R&D Report. Mentioning a tech review mid-chat is not an invocation) | `skills/tech-review/SKILL.md` |
 
+### Family arcade
+
+| Trigger phrases | Skill |
+|---|---|
+| `New game:` (a message that starts with it, e.g. `New game: squish things to earn coins`; in any chat, mid-chat included) and `Launch` said after a Game Maker game is on screen | `skills/game-maker/SKILL.md` |
+
 ### Plan-mode reviews
 
 | Trigger phrases | Skill |
