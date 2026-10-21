@@ -10,7 +10,8 @@ triggers:
   - "CEO design eng review"
 dependencies: [ceo-reviewer, design-reviewer, eng-reviewer, devex-reviewer]
 owner: Charles
-updated: 2026-05-13
+updated: 2026-10-21
+requires: [references/thread-checkin.md]
 source: >-
   Adapted from Garry Tan's gstack /autoplan (https://github.com/garrytan/gstack/blob/main/autoplan/SKILL.md). Stripped: gstack runtime bash, Codex CLI cross-model second opinion, telemetry, ~/.gstack/ filesystem ops. Kept: 6 decision principles, decision classification (Mechanical / Taste / User Challenge), sequential phase execution rule, two non-auto-decided exceptions.
 wiring:
