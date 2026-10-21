@@ -143,6 +143,10 @@ Auto-decide replaces the USER'S judgment with the 6 principles. It does NOT repl
 1. ...
 ```
 
+## Check in (Next steps list)
+
+At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `plan-review`, thread_key `plan-review:<plan slug>`, project_label = the personal project in plain words, a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when Charles approves the final review report, call `close_thread` with closed_how "review approved". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+
 ## Examples
 
 ### Example 1: "AutoPlan the watcher service plan"
