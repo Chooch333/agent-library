@@ -171,6 +171,8 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Board rule 12, Check in — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `design-assist`, thread_key = board tag); `close_thread` when the brief is shelved or Charles parks it. Feeds the Next steps list on cbrain's Dev tab. Board upkeep unchanged. New `requires` entry.
+
 - **0.4.1** (2026-10-15) — Build 39 (BB-2026-10-14-protocol-retirement): the chat-protocol rulebook is retired. Live pointers to it now name `skills/build/SKILL.md` (authority, shelving, return contract, tool-first, judgment-call provenance, Response format) or `references/project-state.md` (naming rule, project fit-check); the Punch List pointer names `skills/inspector/SKILL.md`. New `requires: [references/project-state.md]` header. Older changelog lines keep their original wording.
 - **0.4.0** (2026-10-08) — Build 11.7.12: builds keep the Stack Flow current. New doctrine rule 12: any brief that adds, removes, renames or re-routes a running part carries a Stack Flow step that edits `concepts/stack-map.md` in the same build, or says `Stack Flow: no change` and why. Step 9's Overnight check also adds a Stack Flow step to any unbuilt brief that's missing one. `references/build-brief-template.md` gains the `**Stack Flow:**` header line and a completeness-gate item. Standing authorization from Charles, 2026-10-07, replacing PROTOCOL.md's "sessions never edit the stack map" rule; the Rules Inspector stays as backstop. Per BB-2026-10-07-stack-flow-return-lines.
 
