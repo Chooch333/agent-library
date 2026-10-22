@@ -14,8 +14,9 @@ no skill does not check in on its own.
   2-5 plain words ("Next steps list", "Total Harness wake-ups", "Backyard
   compost subscription"). Many chats share one build: a design chat, its build
   chats and their follow-ups all name the same build. Reuse before you invent:
-  on your first turn, read the existing builds (`list_builds`) and take the one
-  this work belongs to; name a new build only when none fits. Never an id or
+  on your first turn, read the existing builds (`list_builds`; until that tool
+  exists, the build names on open cards from `list_open_threads`) and take the
+  one this work belongs to; name a new build only when none fits. Never an id or
   code. Until the `build` field exists on `checkin` (Build 46, next-steps
   panel), send the build name as `project_label`.
 - **project** and **campaign** — never set by a chat or job. Charles fills
