@@ -269,9 +269,9 @@ Verdict rules: **KILL** when there's no evidence anyone would pay, or the status
 
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: `plan-review`
-- project_label: the Claude project's name (e.g. "Idea vetting")
-- plain_name: the idea or product in 3-6 plain words (e.g. "Backyard compost subscription"), never "Office hours"
-- thread_key: `plan-review:<plain_name in lowercase, words joined by hyphens>`
+- build: the idea or product in 2-5 plain words (e.g. "Backyard compost subscription"). Reuse an existing build if this idea already has one (`list_builds`); the CEO Reviewer run on the same idea later names the same build.
+- plain_name: "Office hours vetting" (Business Concept run) or "Office hours design" (design run)
+- thread_key: `plan-review:<build in lowercase, words joined by hyphens>-office-hours`
 - Opens when: the end of the first turn, once the idea is named
 - Checks in: end of every turn. On the first turn, also find this chat's link with `recent_chats` and send it as `chat_url`. next_step says where the run stands and what Charles owes next (e.g. "Answer forcing question 3: what do people use today instead?").
 - Closes when: Charles approves the design doc (closed_how "design doc approved"), or, on a Business Concept run, the Vetting Report (closed_how "vetting report approved: <verdict>").
