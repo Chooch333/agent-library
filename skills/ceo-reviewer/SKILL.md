@@ -20,8 +20,8 @@ wiring:
   runs: with-you
   starts: "\"CEO review\""
   runs_in: claude-chat
-  reads: [plan]
-  writes: []
+  reads: [plan, vetting-report]
+  writes: [business-tech-plan]
   stack: []
   origin: imported
   label: CEO review
