@@ -295,5 +295,6 @@ At the end of every turn, check in per `references/thread-checkin.md`: one Proje
 
 ## Changelog
 
+- **0.3.0** (2026-10-22) — Business Concept run: new trigger "business concept" goes straight to Startup mode, adds Phase 2C market research (sourced, Verified/Assumed labels), and ends with the Phase 5B Vetting Report (interrogation, research, three riskiest assumptions with cheapest tests, KILL/PARK/PURSUE verdict) delivered as a doc artifact. Hands off to CEO Reviewer via "business plan".
 - **0.2.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `plan-review`); `close_thread` when the design doc is approved. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /office-hours. Stripped: gstack runtime bash, telemetry, Codex CLI cross-model second opinion, ~/.gstack/projects/ design-doc filesystem path. Kept: mode selection (startup/builder), specificity rules, anti-sycophancy posture, pushback patterns, six forcing questions, premise challenge, mandatory alternatives generation, design-doc templates.
