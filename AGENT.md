@@ -48,8 +48,8 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `office hours`, `I have an idea`, `brainstorm this`, `let's design`, `rethink from the start`, `what should I build` | `skills/office-hours/SKILL.md` |
-| `review this plan`, `CEO review`, `think bigger`, `expand scope`, `is this ambitious enough`, `find the 10-star product`, `rethink this` | `skills/ceo-reviewer/SKILL.md` |
+| `business concept` (Business Concept run: Startup mode + market research + Vetting Report), `office hours`, `I have an idea`, `brainstorm this`, `let's design`, `rethink from the start`, `what should I build` | `skills/office-hours/SKILL.md` |
+| `business plan` (Business Plan run: business review + Business & Tech Plan report), `review this plan`, `CEO review`, `think bigger`, `expand scope`, `is this ambitious enough`, `find the 10-star product`, `rethink this` | `skills/ceo-reviewer/SKILL.md` |
 | `eng review`, `engineering review`, `review architecture`, `lock in the plan`, `check the implementation plan` | `skills/eng-reviewer/SKILL.md` |
 | `design review`, `review the design`, `design plan review`, `rate this design`, `UI review` | `skills/design-reviewer/SKILL.md` |
 | `devex review`, `DX review`, `developer experience review`, `review the dev experience`, `TTHW review` | `skills/devex-reviewer/SKILL.md` |
