@@ -100,6 +100,12 @@ again.
 
 ## Changelog
 
+- 0.3.0 (2026-10-22) — **build** is the main grouping: the chat infers it, reuses
+  an existing one first, and many chats share it. project and campaign are
+  filled in by Charles on the Dev tab, never by a chat. plain_name now names
+  what this chat does within the build. Replaces 0.2.0's "project_label = the
+  Claude project's name", which grouped unrelated work together. Charles,
+  2026-10-22.
 - 0.2.0 (2026-10-22) — Naming convention (project_label defaults to the Claude
   project's name; plain_name names the specific thing; thread_key from kind +
   plain_name). The Progress tracking section every skill carries, with a "None"
