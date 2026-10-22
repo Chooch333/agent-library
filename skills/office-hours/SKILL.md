@@ -302,6 +302,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.4.1** (2026-10-22) — Progress tracking per thread-checkin 0.3.0: the build is the idea itself (shared with a later CEO Reviewer run); plain_name names the office hours run.
 - **0.4.0** (2026-10-22) — "Check in" section becomes the standard **Progress tracking** section (CONVENTIONS.md, thread-checkin 0.2.0): project_label is the Claude project's name, plain_name is the idea itself, chat link via `recent_chats` on the first turn, Business Concept close wording.
 - **0.3.0** (2026-10-22) — Business Concept run: new trigger "business concept" goes straight to Startup mode, adds Phase 2C market research (sourced, Verified/Assumed labels), and ends with the Phase 5B Vetting Report (interrogation, research, three riskiest assumptions with cheapest tests, KILL/PARK/PURSUE verdict) delivered as a doc artifact. Hands off to CEO Reviewer via "business plan".
 - **0.2.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `plan-review`); `close_thread` when the design doc is approved. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
