@@ -10,15 +10,19 @@ no skill does not check in on its own.
 
 ## Naming convention
 
-- **project_label** — the Claude project's name, as Charles named it ("Idea
-  vetting", "Total Harness", "Kids ed app", "Brainstorm & Design Assist"),
-  unless the skill's Progress tracking section names a fixed label. Jobs that
-  run outside a Claude project use the label in their section (e.g. "cbrain",
-  "Arch renders").
-- **plain_name** — 3-6 plain words naming the specific thing this thread is
-  about: the idea, the game, the build, the report ("Backyard compost
-  subscription", "Run Around the World game"). Never the skill's name alone
-  ("Office hours") and never an id or code.
+- **build** — the body of work this chat or job is part of, inferred by you,
+  2-5 plain words ("Next steps list", "Total Harness wake-ups", "Backyard
+  compost subscription"). Many chats share one build: a design chat, its build
+  chats and their follow-ups all name the same build. Reuse before you invent:
+  on your first turn, read the existing builds (`list_builds`) and take the one
+  this work belongs to; name a new build only when none fits. Never an id or
+  code. Until the `build` field exists on `checkin` (Build 46, next-steps
+  panel), send the build name as `project_label`.
+- **project** and **campaign** — never set by a chat or job. Charles fills
+  them in on cbrain's Dev tab.
+- **plain_name** — 3-6 plain words naming what THIS chat or job does within the
+  build ("Phone screens design", "Office hours vetting", "Run Around the World
+  game"). Never the skill's name alone and never an id or code.
 - **thread_key** — this chat's tag if it has one (DA-MMDD-slug); otherwise
   "<kind>:<plain_name in lowercase, words joined by hyphens>"
   (e.g. "plan-review:backyard-compost-subscription"). Jobs: "job:plan-<id>",
