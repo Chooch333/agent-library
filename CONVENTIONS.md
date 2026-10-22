@@ -95,6 +95,7 @@ A skill commit can be rejected mechanically if it violates the contract. Convent
 
 ## Changelog
 
+- 2026-10-22 — Body grows to seven sections: **Progress tracking** (after How) is required in every skill, per `references/thread-checkin.md` 0.2.0 and `SKILL_TEMPLATE.md`. Charles: "a section of each skill dedicated to this progress tracking rule … the skill creation template must make sure to include it."
 - 2026-09-22 — Added optional `wiring.replaced_by` and documented the `status: deprecated`/`retired` → Skills tab Retired lane rule. Per BB-2026-09-22-skills-lanes step 2.
 - 2026-09-22 — Amendment 2 (decision A-080): the Execute row now allows a build chat executing an approved Build Brief to create or edit exactly the skill files and AGENT.md routing rows that brief names; added a Schema rules bullet on routing-row authorship and Repairer-driven drift-repair. Per BB-2026-09-21-inspector-repairer step 12a.
 - 2026-09-22 — Replaced the Execute/Distill/Guide meta-skill table with Execute/Inspector/Repairer (Distill and its should-distill hook were never built; replaced by the Inspector's scheduled walk). Added a pointer to `references/skill-design-framework.md` under Skill file rules. Per BB-2026-09-21-inspector-repairer Phase 2.
