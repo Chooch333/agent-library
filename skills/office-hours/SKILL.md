@@ -38,6 +38,7 @@ This is the most upstream skill in the planning chain: Office Hours → CEO Revi
 ## When
 
 **Fire this skill when:**
+- The user says **"business concept"** — this is the Business Concept run: go straight to Startup mode (skip the Phase 2 mode question), run the Phase 2C market research, and end with the Vetting Report (Phase 5B) instead of the design doc
 - The user opens with "I have an idea," "let's design X," "office hours"
 - A new feature, product, or project is being scoped from a vague starting point
 - The user is at the "should I even build this" stage, not the "how do I build this" stage
