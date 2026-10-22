@@ -43,6 +43,20 @@ One paragraph describing what this skill does and why it exists.
 
 (Numbered SOP. Keep steps small and verifiable.)
 
+## Progress tracking
+
+Required in every skill (CONVENTIONS.md). Fill in one of the two forms from `references/thread-checkin.md`.
+
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: <kind from thread-checkin's table>
+- project_label: the Claude project's name   (or a fixed label, for jobs)
+- plain_name: <what names one thread of this skill, e.g. "the idea in 3-6 words">
+- Opens when: <the first moment work can be left unfinished>
+- Checks in: end of every turn   (jobs: when a run leaves something open)
+- Closes when: <this skill's stated finish>
+
+(Or, for a skill that never leaves work open: "None. This skill finishes in one run and leaves nothing open.")
+
 ## Examples
 
 ### Example 1: <descriptive name>
