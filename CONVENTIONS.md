@@ -43,14 +43,15 @@ updated: <YYYY-MM-DD>
 ---
 ```
 
-### Body (six fixed sections)
+### Body (seven fixed sections)
 
 1. **What** — one paragraph on what the skill does
 2. **When** — positive and negative examples of when to fire it
 3. **How** — numbered SOP
-4. **Examples** — concrete worked cases
-5. **Pitfalls** — every pitfall must come from a real trace (no fabrications)
-6. **Changelog** — versioned notes
+4. **Progress tracking** — how this skill reports open work to the Next steps list: kind, project_label, plain_name, opens / checks in / closes, per `references/thread-checkin.md`; or "None" for a skill that never leaves work open. Required in every skill.
+5. **Examples** — concrete worked cases
+6. **Pitfalls** — every pitfall must come from a real trace (no fabrications)
+7. **Changelog** — versioned notes
 
 ### Designing a new skill
 
