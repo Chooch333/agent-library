@@ -1,8 +1,9 @@
 ---
 name: office-hours
-version: 0.2.0
+version: 0.3.0
 status: draft
 triggers:
+  - "business concept"
   - "office hours"
   - "I have an idea"
   - "brainstorm this"
