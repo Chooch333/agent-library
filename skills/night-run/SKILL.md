@@ -25,6 +25,8 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order. Nobo
 - `list_deployments` (Vercel) — `projectId: cbrain-ui`, `teamId: team_8nMi0Bd6orQHGeTrMZYWCamm`, branch `review`.
 - Gmail `send_message` — the one finish email, to Charles himself.
 
+**Repos — no clone needed.** Every repo is reached through the Custom GitHub connector (`get_file_contents`, `create_or_update_file`, `replace_in_file`, `list_commits`, `list_workflow_runs`, `run_workflow`). This routine has no repos attached and needs none; Build 44 was built this way on 2026-10-21. Never skip a build for "no repos attached", "no git access" or "can't clone". Access check before each build: one `get_file_contents` on the plan's `target_repo` (its README, or the brief's git path). Only if that call fails twice, log `skipped` with the error text in plain words. Pass this paragraph to the helper in step 4.
+
 **Fallback.** If a step's Project State tool is not callable on the connector (new tools aren't visible until the connector is reconnected), use the equivalent SQL on Supabase project `ujditldbqdiqigazkcak`: read the line with `select * from overnight_line order by position`; log with `insert into night_runs (...)`. The start marker by SQL: `insert into night_runs (night, plan_id, result, line) values (<tonight's night date>, null, 'night-start', '<N> briefs on the line')` — the night date is the Indianapolis date, minus one day before noon. Confirm each insert with a separate SELECT.
 
 "Landed" = plan status `succeeded` AND its newest `night_runs` row is not `deploy-red`.
