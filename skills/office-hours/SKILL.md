@@ -125,6 +125,17 @@ Smart routing — not all six are needed every time. Pre-product → Q1, Q2, Q3.
 - What existing thing is closest, and how is yours different?
 - What would you add with unlimited time?
 
+### Phase 2C: Market research (Startup mode — required on a Business Concept run)
+
+After the forcing questions and before the premise challenge, research the market yourself. Do not ask Charles to look things up. Use web search (and TinyFish deep research for anything thin). Cover:
+
+1. **Competitors** — who already sells something close? Name them, what they charge, how big they look.
+2. **Status quo cost** — what the target user pays today (money or time) for the workaround.
+3. **Money in the space** — recent funding, acquisitions, or shutdowns of similar companies, and why the shutdowns died.
+4. **Demand signals** — public evidence people want this (forums, reviews of competitors complaining about the gap, job posts, search interest).
+
+Rules: cite a source for every claim. Label each finding **Verified** (read it in a source) or **Assumed** (inference). A finding that contradicts Charles's answers is surfaced plainly, not softened. Bring the findings back into the conversation as pushback before Phase 3.
+
 ### Phase 3: Premise challenge
 
 Before proposing solutions, challenge premises:
