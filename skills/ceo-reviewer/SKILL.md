@@ -36,6 +36,7 @@ A CEO/founder-mode plan review. The Reviewer's job is to make a plan extraordina
 ## When
 
 **Fire this skill when:**
+- The human says **"business plan"** — this is the Business Plan run: it turns a vetted concept into a business + tech plan. Start from the Office Hours Vetting Report if one exists in this chat (or ask Charles to paste it). Run Phases 1-5 in business terms, then the Business Plan Review (Phase 6B) instead of the 11-section engineering review, and end with the Business & Tech Plan report (Phase 7B)
 - The human pastes a build brief, project plan, or strategic decision and asks for review
 - The human asks "think bigger," "rethink this," "challenge my assumptions"
 - The plan feels ambitious enough to warrant scrutiny, or feels like it could be ambitious
