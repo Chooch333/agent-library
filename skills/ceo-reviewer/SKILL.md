@@ -13,7 +13,7 @@ triggers:
   - "rethink this"
 dependencies: []
 owner: Charles
-updated: 2026-05-13
+updated: 2026-10-22
 source: >-
   Adapted from Garry Tan's gstack /plan-ceo-review (https://github.com/garrytan/gstack/blob/main/plan-ceo-review/SKILL.md). Runtime-specific bash, telemetry, and file-system operations stripped. Kept: the judgment frame.
 wiring:
