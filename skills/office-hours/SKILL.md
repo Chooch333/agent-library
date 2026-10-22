@@ -21,7 +21,7 @@ wiring:
   starts: "\"office hours\""
   runs_in: claude-chat
   reads: []
-  writes: [design-doc]
+  writes: [design-doc, vetting-report]
   stack: []
   origin: imported
   label: Office hours
