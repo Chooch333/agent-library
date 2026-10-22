@@ -24,7 +24,7 @@ Same three-state rule as the brief-completeness framework: each question is **An
 
 4. **Trigger and runtime (Agent).** Must exist today: invoked by name, a Cowork scheduled task, or a GitHub Actions event. A trigger that depends on something not yet built is a defect (trace: SM-049 — Stack Manager waited two months on the never-built heartbeat-orchestrator).
 
-5. **Where it leaves and picks up work.** Use an existing place — the build shelf (queued plans), the Comms Table (build questions and disclosures), or the Punch List (fixes to the system itself). Never use a Project State project as a queue (trace: the `stack-map` project mixing a suggestion queue with decisions and to-dos).
+5. **Where it leaves and picks up work.** Use an existing place — the build shelf (queued plans), the Comms Table (build questions and disclosures), or the Punch List (fixes to the system itself). Never use a Project State project as a queue (trace: the `stack-map` project mixing a suggestion queue with decisions and to-dos). Also answer: when can this skill leave work unfinished, what names one thread of it, and what closes it? Those answers fill its required **Progress tracking** section (`references/thread-checkin.md`), so the Next steps list shows it.
 
 6. **Derived, never copied.** If the skill keeps a picture of something current, it checks the real thing rather than relying on others to report changes (trace: map suggestions — 22 filed, one ever applied, retired 2026-09-21).
 
