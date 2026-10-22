@@ -17,8 +17,8 @@ no skill does not check in on its own.
   on your first turn, read the existing builds (`list_builds`; until that tool
   exists, the build names on open cards from `list_open_threads`) and take the
   one this work belongs to; name a new build only when none fits. Never an id or
-  code. Until the `build` field exists on `checkin` (Build 46, next-steps
-  panel), send the build name as `project_label`.
+  code. Until the `build` field exists on `checkin` (the Next steps side
+  panel build), send the build name as `project_label`.
 - **project** and **campaign** — never set by a chat or job. Charles fills
   them in on cbrain's Dev tab.
 - **plain_name** — 3-6 plain words naming what THIS chat or job does within the
