@@ -1,6 +1,6 @@
 ---
 name: night-run
-version: 0.2.0
+version: 0.2.1
 status: draft
 requires: [references/project-state.md]
 wiring:
