@@ -25,8 +25,9 @@ no skill does not check in on its own.
   build ("Phone screens design", "Office hours vetting", "Run Around the World
   game"). Never the skill's name alone and never an id or code.
 - **thread_key** — this chat's tag if it has one (DA-MMDD-slug); otherwise
-  "<kind>:<plain_name in lowercase, words joined by hyphens>"
-  (e.g. "plan-review:backyard-compost-subscription"). Jobs: "job:plan-<id>",
+  "<kind>:<build>-<plain_name>", lowercase, words joined by hyphens
+  (e.g. "plan-review:backyard-compost-subscription-office-hours-vetting"), so
+  two chats doing the same kind of work on different builds never share a card. Jobs: "job:plan-<id>",
   "job:draft-<id>", "job:wake-<id>" or "job:<skill>-<slug>". Same key every
   turn.
 - **kind** — named in the skill's section.
