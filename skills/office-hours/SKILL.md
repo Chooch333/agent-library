@@ -265,9 +265,16 @@ Office hours · {date} · Verdict: {KILL | PARK | PURSUE}
 
 Verdict rules: **KILL** when there's no evidence anyone would pay, or the status quo is good enough. **PARK** when the idea is plausible but a riskiest assumption is untested and decisive. **PURSUE** only when demand evidence is real (money, behavior, or pain — not interest). Don't round up.
 
-## Check in (Next steps list)
+## Progress tracking
 
-At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `plan-review`, thread_key `plan-review:<idea slug>`, project_label = the personal project in plain words, a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when Charles approves the design doc (or, on a Business Concept run, the Vetting Report), call `close_thread` with closed_how "design doc approved" (or "vetting report approved"). Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: `plan-review`
+- project_label: the Claude project's name (e.g. "Idea vetting")
+- plain_name: the idea or product in 3-6 plain words (e.g. "Backyard compost subscription"), never "Office hours"
+- thread_key: `plan-review:<plain_name in lowercase, words joined by hyphens>`
+- Opens when: the end of the first turn, once the idea is named
+- Checks in: end of every turn. On the first turn, also find this chat's link with `recent_chats` and send it as `chat_url`. next_step says where the run stands and what Charles owes next (e.g. "Answer forcing question 3: what do people use today instead?").
+- Closes when: Charles approves the design doc (closed_how "design doc approved"), or, on a Business Concept run, the Vetting Report (closed_how "vetting report approved: <verdict>").
 
 ## Examples
 
