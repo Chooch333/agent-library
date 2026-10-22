@@ -92,6 +92,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 The skills compose. Common flows:
 
+- **Vetting a business idea:** `business concept` (office-hours → Vetting Report) → if PURSUE, `business plan` (ceo-reviewer → Business & Tech Plan) → if GO, `eng review` on the tech plan
 - **From idea to plan:** `office-hours` → `ceo-reviewer` → `eng-reviewer` (+ `design-reviewer` if UI, + `devex-reviewer` if developer-facing) — or `autoplan` to chain all four
 - **From plan to design:** `design-consultation` (if no design system) → `design-shotgun` (if exploring) → `design-html` (when ready to implement)
 - **From code to ship:** `pr-reviewer` → `ship` → `land-and-deploy` → `document-release`
