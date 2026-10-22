@@ -12,7 +12,7 @@ triggers:
   - "what should I build"
 dependencies: []
 owner: Charles
-updated: 2026-10-21
+updated: 2026-10-22
 requires: [references/thread-checkin.md]
 source: >-
   Adapted from Garry Tan's gstack /office-hours (https://github.com/garrytan/gstack/blob/main/office-hours/SKILL.md). Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, Codex CLI integration, design-doc auto-write to ~/.gstack/projects/. Kept: two modes (startup/builder), specificity rules, anti-sycophancy posture, six forcing questions, premise challenge, alternatives generation.
