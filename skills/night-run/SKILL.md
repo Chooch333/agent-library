@@ -53,5 +53,6 @@ If the run text says "dry run": read the line, report the order, what's ready an
 
 ## Changelog
 
+- **v0.2.1** (2026-10-22) — "Repos — no clone needed": repos are reached through the Custom GitHub connector; an access check is one `get_file_contents` on the target repo; never skip for "no repos attached". Night of 2026-10-21 skipped both builds on that mistaken reason.
 - **v0.2.0** (2026-10-08) — New loop step 0b: every night the runner starts it logs one `night_runs` row with `result = 'night-start'`, no `plan_id`, and `line` = how many briefs were on the line — even when none are queued — so a quiet night is not mistaken for a dead runner. Project State migration `build27_1_night_start_marker` lets `plan_id` be null (only for `night-start`) and adds `night-start` to the allowed results; `night_log` accepts it. Read by the stack map's Night builds dot through Project State's public heartbeat. Per Build 27.1 (BB-2026-10-07-stack-checks-claude-side).
 - **v0.1.0** (2026-10-04) — Created by Build 26 (BB-2026-10-04-night-builds): the overnight runner for Overnight-tagged briefs, reading `overnight_line` and logging to `night_runs` via `night_log`.
