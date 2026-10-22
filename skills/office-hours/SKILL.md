@@ -223,6 +223,48 @@ Builder-mode template is simpler: Problem / Coolest Version / Wedge / Premises /
 
 After the design doc lands, the natural next step is CEO Reviewer (strategic gate) and then Eng Reviewer (technical gate).
 
+### Phase 5B: Vetting Report (Business Concept run — replaces the design doc)
+
+On a Business Concept run, after the alternative is chosen, write the Vetting Report. Deliver it as a doc artifact Charles can keep and reopen (Docs type when available), not just chat text. Plain language — Charles is not technical.
+
+Template:
+```markdown
+# Vetting Report: {concept name}
+
+Office hours · {date} · Verdict: {KILL | PARK | PURSUE}
+
+## The concept in one paragraph
+{what it is, for whom, why now}
+
+## Verdict
+{KILL / PARK / PURSUE} — {2-3 sentences: the deciding reasons}
+
+## The interrogation
+{each forcing question asked, Charles's answer condensed, and the pushback — one short block per question}
+
+## Market research
+{competitors, status quo cost, money in the space, demand signals — every line labeled Verified or Assumed, with its source}
+
+## Premises
+{from Phase 3, with Charles's agree/disagree}
+
+## Directions considered
+{from Phase 4, short — and which one was chosen and why}
+
+## Three riskiest assumptions
+| # | Assumption | Why it could be wrong | Cheapest test this week |
+|---|---|---|---|
+
+## Open questions
+
+## Next step
+{If PURSUE: say "business plan" to run the CEO Reviewer on this concept. If PARK: what would change the verdict. If KILL: the one thing worth salvaging, if any.}
+
+## Sources
+```
+
+Verdict rules: **KILL** when there's no evidence anyone would pay, or the status quo is good enough. **PARK** when the idea is plausible but a riskiest assumption is untested and decisive. **PURSUE** only when demand evidence is real (money, behavior, or pain — not interest). Don't round up.
+
 ## Check in (Next steps list)
 
 At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `plan-review`, thread_key `plan-review:<idea slug>`, project_label = the personal project in plain words, a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when Charles approves the design doc, call `close_thread` with closed_how "design doc approved". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
