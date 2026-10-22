@@ -118,6 +118,55 @@ After scope is locked, run all 11 sections. Each section ends in STOP — presen
 10. **Long-term trajectory** — technical debt, reversibility (1-5), 1-year readability
 11. **Design & UX** — only if UI scope exists. Information architecture, state coverage map, journey coherence
 
+### Phase 6B: Business Plan Review (Business Plan run — replaces Phase 6)
+
+Run these eight sections in plain language (Charles is not technical). Research anything checkable yourself — web search, TinyFish deep research — rather than asking Charles. Label every claim **Verified** (with source) or **Assumed**. Each section ends in STOP: present findings, wait for Charles's response.
+
+1. **Customer & wedge** — the exact first customer, the smallest paid version, and why they buy now
+2. **Market & competition** — competitors, substitutes, the status quo; what makes this hard to copy
+3. **Business model** — who pays, how much, how often; rough unit economics (cost to serve one customer vs. what they pay)
+4. **Go-to-market** — how the first 10 customers find it, then the first 100; cost to acquire one
+5. **Tech plan** — what gets built for the first version, build vs. buy vs. off-the-shelf, what Charles's existing stack (Next.js, Vercel, Supabase, Claude) already covers, the hardest technical risk, rough build effort (S/M/L/XL)
+6. **Operations & people** — what Charles does himself, what needs help, what needs a specialist (legal, compliance, sales)
+7. **Money & milestones** — startup cost, monthly running cost, revenue needed to break even, 30/90/365-day milestones
+8. **Risks & kill criteria** — top risks, and the specific signal that would mean stop
+
+### Phase 7B: Business & Tech Plan report (Business Plan run — replaces Phase 7)
+
+Deliver as a doc artifact Charles can keep and reopen (Docs type when available), not just chat text.
+
+Template:
+```markdown
+# Business & Tech Plan: {concept name}
+
+CEO review · {date} · Posture: {mode} · Builds on: Vetting Report {date}
+
+## Summary
+{one paragraph: what, for whom, how it makes money, what gets built first}
+
+## Recommendation
+{GO / GO SMALLER / NOT YET} — {2-3 sentences}
+
+## Customer & wedge
+## Market & competition
+## Business model & unit economics
+## Go-to-market
+## Tech plan
+{first version scope · build vs. buy · what the existing stack covers · hardest technical risk · effort}
+## Operations & people
+## Money & milestones
+| Milestone | By | Signal it worked |
+|---|---|---|
+## Risks & kill criteria
+| Risk | Likelihood | What we'd see | Kill/pivot trigger |
+|---|---|---|---|
+## NOT in scope (yet)
+## Decisions Charles made during review
+## Next step
+{If GO: say "eng review" on the Tech plan section to lock the build. Otherwise: what to test first.}
+## Sources
+```
+
 ### Phase 7: Required outputs
 
 - "NOT in scope" — deferred work with one-line rationale
