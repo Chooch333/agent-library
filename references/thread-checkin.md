@@ -63,8 +63,8 @@ never leave it out. Skills that leave work open:
 ## Progress tracking
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: <kind from the table below>
-- project_label: the Claude project's name   (or a fixed label, for jobs)
-- plain_name: <what names one thread of this skill, e.g. "the idea in 3-6 words">
+- build: <how this skill infers the body of work it belongs to, e.g. "the idea's name"; reuse an existing build first>
+- plain_name: <what this chat or job does within the build, e.g. "Office hours vetting">
 - Opens when: <the first moment work can be left unfinished>
 - Checks in: end of every turn   (jobs: when a run leaves something open)
 - Closes when: <this skill's stated finish>
