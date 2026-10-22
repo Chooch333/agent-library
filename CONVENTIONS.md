@@ -48,7 +48,7 @@ updated: <YYYY-MM-DD>
 1. **What** — one paragraph on what the skill does
 2. **When** — positive and negative examples of when to fire it
 3. **How** — numbered SOP
-4. **Progress tracking** — how this skill reports open work to the Next steps list: kind, project_label, plain_name, opens / checks in / closes, per `references/thread-checkin.md`; or "None" for a skill that never leaves work open. Required in every skill.
+4. **Progress tracking** — how this skill reports open work to the Next steps list: kind, build (inferred, shared across chats), plain_name, opens / checks in / closes, per `references/thread-checkin.md`; or "None" for a skill that never leaves work open. Required in every skill.
 5. **Examples** — concrete worked cases
 6. **Pitfalls** — every pitfall must come from a real trace (no fabrications)
 7. **Changelog** — versioned notes
