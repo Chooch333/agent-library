@@ -254,4 +254,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /design-consultation. Stripped: gstack runtime bash, designer binary integration (visual mockup generation), browse binary (competitive screenshots), taste profile persistence (~/.gstack/projects/$SLUG/taste-profile.json), legacy approved.json migration, Phase 5 design-preview page generation. Kept: Phase 1 product context + memorable-thing forcing question, Phase 2 three-layer research synthesis with eureka check, Phase 3 complete proposal with SAFE/RISK, design knowledge library (aesthetics, fonts, colors), AI slop anti-patterns, anti-convergence directive, coherence validation, Phase 6 DESIGN.md output.
