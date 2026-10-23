@@ -73,6 +73,12 @@ This file is the front door. Project instructions point here. It routes a first 
 | `land and deploy`, `merge and deploy`, `land it`, `deploy the PR`, `land this` | `skills/land-and-deploy/SKILL.md` |
 | `document this release`, `update the docs`, `documentation sweep`, `doc sync` | `skills/document-release/SKILL.md` |
 
+### FAW jobs
+
+| Trigger phrases | Skill |
+|---|---|
+| `add this`, `log this`, `put this on the job` (or plainly the same ask) about an FA Wilhelm job's tasks, dates, milestones, meetings, team or decisions — mid-chat included; also a question about a job's current state (`what's open on <job>?`) | `skills/job-update/SKILL.md` (writes only on that ask; general construction/permitting talk is never logged) |
+
 ### Knowledge capture
 
 | Trigger phrases | Skill |
