@@ -1,6 +1,6 @@
 ---
 name: stack-advisor
-version: 2.1.0
+version: 2.1.1
 status: active
 triggers: ["Stack Advisor run"]
 owner: Charles
