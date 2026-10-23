@@ -1,6 +1,6 @@
 ---
 name: tech-review
-version: 0.5.0
+version: 0.5.1
 status: draft
 triggers: ["Tech review:"]
 dependencies: []
