@@ -244,6 +244,8 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.5.1** (2026-10-23) -- Progress tracking section ("None" form).
+  Per BB-2026-10-21-next-steps-panel.
 - **v1.5.0** (2026-10-10) -- Summaries for the Reader. Step 3e writes a
   top-level `summary` ({lead, paragraphs[], key_points[]}, ~200-350
   words, from the article only) into the same extracted file. New step 4
