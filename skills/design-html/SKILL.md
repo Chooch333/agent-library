@@ -120,6 +120,14 @@ Final output options:
 
 Include a short note on what's next: integrate into the app, write tests, run accessibility audit.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: design-assist
+- build: the screen or component + "markup", e.g. "Dashboard header markup" (thread_key "design-assist:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the implementation spec is gathered
+- Checks in: end of every turn
+- Closes when: the final output is handed off (Step 5) (`close_thread`, closed_how "markup handed off")
+
 ## Examples
 
 ### Example 1: "Generate HTML for the Property Analyzer dashboard header"
