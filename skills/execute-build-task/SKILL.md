@@ -30,6 +30,9 @@ This is the worker skill. A worker does exactly one assigned task, then dissolve
 6. **Flag loose ends, don't just silently note them.** If you notice something worth Charles's eyes later that isn't a fork (nothing to decide, no redispatch needed) — a workaround you took, something you noticed but didn't fix, a risk you accepted — say so plainly in your completion report. The orchestrator posts these to the disclosure channel on the Comms Table at close; you don't post them yourself. Suggest a plain-English one-liner (`plain_summary`) and whether it needs follow-up (`action_needed`) for each loose end or fork you report, so the orchestrator doesn't have to invent one from scratch when it posts the disclosure.
 7. **The closing rule.** You dissolve after one task and never address Charles directly — but the same doctrine holds end to end: nothing you report becomes narration in a build's final chat message. Everything beyond the plain fact of completion (judgment calls, loose ends, forks decided) is data for the orchestrator to route to the Comms Table disclosure channel, not prose for a close-out.
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open. (A worker dissolves after one task; anything left open is the build lead's card, per `skills/orchestrate-build` Progress tracking.)
+
 ---
 
 ## CC agent definition (install once)
