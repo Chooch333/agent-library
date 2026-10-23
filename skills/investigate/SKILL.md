@@ -138,6 +138,14 @@ Status:          DONE | DONE_WITH_CONCERNS | BLOCKED
 ════════════════════════════════════════
 ```
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: build-chat
+- build: the symptom in plain words + "bug", e.g. "Slideshow duplicate photo bug" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the symptom is named
+- Checks in: end of every turn
+- Closes when: the debug report says DONE (`close_thread`, closed_how "fixed"); a BLOCKED or DONE_WITH_CONCERNS report stays open with what's left in next_step
+
 ## Examples
 
 ### Example 1: "Investigate why the Family Trip App's slideshow keeps showing the same photo twice"
