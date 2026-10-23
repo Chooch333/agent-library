@@ -119,6 +119,8 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.2.1 (2026-10-23) -- Progress tracking section ("None" form). Per
+  BB-2026-10-21-next-steps-panel.
 - v0.2.0 (2026-10-10) -- Summaries for the Reader: step 3e writes a
   top-level summary ({lead, paragraphs[], key_points[]}, ~200-350 words,
   from the transcript only) into the same extracted file; new step 4
