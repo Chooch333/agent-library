@@ -169,6 +169,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 
 ## Changelog
 
+- **0.5.1** (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); one-line pointer in the lab rules. Per BB-2026-10-21-next-steps-panel.
+
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `tech-review`); `close_thread` when the R&D Report is filed (plus the handoff on Adopt now). Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 
 - **0.4.1** (2026-10-15) — Charles approves every test plan before testing starts, because where a review picks up (strong, thin or no brief) takes judgment. The plan comes with one line saying where it picked up and what step 3 added (Charles, R&D lab).
