@@ -1,7 +1,8 @@
 ---
 name: eng-reviewer
-version: 0.1.1
+version: 0.1.2
 status: draft
+requires: [references/thread-checkin.md]
 triggers:
   - "eng review"
   - "engineering review"
