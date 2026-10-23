@@ -85,5 +85,6 @@ None. This skill finishes in one run and leaves nothing open.
 
 ## Changelog
 
+- **0.2.0** (2026-10-23) — Milestone `kind` (meeting) and `basis: "steer"` rules, moved here from the Build 24.4 paste item C-J-403 (Charles: this belongs in skills, not project instructions). `create_milestone` / `set_milestone` op lists updated.
 - **0.1.1** (2026-10-23) — Progress tracking section ("None" form). Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-10-05) — Initial version. Write-on-request (Charles: FAW chats carry general construction/permitting talk that must not be dumped in cbrain). DA-1005-faw-chat-input.
