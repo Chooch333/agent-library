@@ -229,6 +229,9 @@ against the API.
    checked (3 set aside)." This is the "own prior run digest" step 1b
    reads next time.
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Setup (Cowork scheduled task)
 
 Runs as a Cowork scheduled task on Charles's subscription, not a GitHub
