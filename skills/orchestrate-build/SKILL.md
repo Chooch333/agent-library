@@ -1,9 +1,9 @@
 ---
 name: orchestrate-build
-version: 1.6
+version: 1.7
 status: active
 triggers: [a build brief is dispatched by name or "next"]
-dependencies: [execute-build-task]
+dependencies: [execute-build-task, checker]
 owner: Charles
 updated: 2026-10-23
 requires: [references/project-state.md, references/thread-checkin.md]
