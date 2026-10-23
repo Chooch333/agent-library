@@ -86,6 +86,14 @@ The Repairer is the fixer half of the system's self-maintenance pair (BB-2026-09
 - *Success evidence:* a separate `select max(created_at) from punch_checkpoints where agent = 'repairer'` returns this run's time.
 - *Recovery:* the insert fails → retry once; if it still fails, say so plainly in the run report ("run marker not written — the stack map will show the Rules Repairer as late") rather than ending silently. Never skip this step because the run "did nothing".
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: "Weekly rules repair run" (thread_key "job:repairer-weekly-run")
+- Opens when: a run ends with its run marker not written, or a `set_punch_status` call is rejected and the item is held with the rejection text. Ordinary held and failed items stay on the Punch List, not the Next steps list
+- Checks in: when a run leaves something open
+- Closes when: a later run writes its marker with no rejected calls (`close_thread`, closed_how "run completed"), or Charles clicks Done
+
 ## Examples
 
 ### Example 1: clean apply
