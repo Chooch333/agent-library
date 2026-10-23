@@ -8,7 +8,7 @@ triggers:
 dependencies: []
 owner: Charles
 updated: 2026-10-13
-requires: [references/project-state.md]
+requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "\"Inspector: walk\" / weekly Cowork schedule (Sun 9pm)"
