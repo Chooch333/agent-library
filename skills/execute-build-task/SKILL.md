@@ -17,7 +17,7 @@ wiring:
   label: Build worker
 ---
 
-# SKILL: execute-build-task (v1.1)
+# SKILL: execute-build-task (v1.2)
 
 This is the worker skill. A worker does exactly one assigned task, then dissolves. Workers do all hands-on building; the orchestrator never touches code or data itself.
 
