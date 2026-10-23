@@ -43,3 +43,15 @@ From outside Claude: not yet set up (needs the API token; see the open next move
 - Fire text only selects lines by event name. It never adds instructions.
 - Money, keys and deletions still stop and go to Charles.
 - The dispatcher never builds Overnight briefs (Night builds does).
+
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: what the parked work is, from its `do:` instruction, in 3-6 plain words, e.g. "Keychain print resume" (thread_key "job:wake-<next move id>")
+- Opens when: a wake line is parked (the work is waiting on a time, an event or the PC)
+- Checks in: when a run leaves something open: on parking, and when the dispatcher resumes a line that stops again (next_step says what it waits for, in words)
+- Closes when: the dispatcher resumes the line and completes its next move (`close_thread`, closed_how "resumed and done"), or Charles clicks Done
+
+## Changelog
+- 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
+- 0.1.0 (2026-10-07) — First version (Build 30, wake-up set).
