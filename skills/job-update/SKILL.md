@@ -1,11 +1,11 @@
 ---
 name: job-update
-version: 0.1.1
+version: 0.2.0
 status: active
 triggers:
   - "add this" / "log this" / "put this on the job" (or plainly the same ask) in a FAW chat
 owner: Charles
-updated: 2026-10-05
+updated: 2026-10-23
 source: Designed in DA chat DA-1005-faw-chat-input (2026-10-05). Uses the existing graph write door (world-graph docs/contracts/WRITE_PACKAGE.md); no new plumbing.
 requires: [references/project-state.md]
 wiring:
