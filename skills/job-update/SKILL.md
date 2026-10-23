@@ -1,6 +1,6 @@
 ---
 name: job-update
-version: 0.1.0
+version: 0.1.1
 status: active
 triggers:
   - "add this" / "log this" / "put this on the job" (or plainly the same ask) in a FAW chat
