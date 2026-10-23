@@ -128,6 +128,14 @@ Steps run in order, but the process is a loop, not a rail: new information can r
    **Handoff Reference block (mandatory).** The turn that shelves a brief ends with a clearly labeled block Charles can copy into any other chat, containing, in this order: the **build number** (`**Build:** 11.6`, or `unnumbered`), Brief ID, Project State plan title + plan_id + project slug + status, git location (owner/repo/path), and the pasteable prompt — whose first words are that same build number (`Build 11.6 — execute Build Brief BB-…`). The number is what Charles orients by; the ids are for the chats. It also leads the plan's `plain_title`. The block's exact layout and prompt structure follow `references/handoff-reference-template.md` — fill placeholders, never restructure. Shelving without this block is a session defect.
    **Overnight (mandatory).** Every brief is shelved. The approval question is **"Overnight: yes or no?"** (never "hold"). Record `after` and `target_repo` on every brief. The Handoff Reference block gains a line `**Overnight:** #N` or `**Overnight:** no`.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: design-assist
+- build: what this chat is designing, in 3-6 plain words, e.g. "Next steps side panel" (thread_key = the board tag, DA-MMDD-slug)
+- Opens when: the first turn (the board tag is stamped)
+- Checks in: end of every turn
+- Closes when: the brief is shelved, or Charles parks it (`close_thread`, closed_how "brief on the shelf" or "parked")
+
 ## Fan-out — automated multi-agent loops
 
 Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is told a fan-out is running and reads the distilled result; he does not assemble briefs or paste anything.
