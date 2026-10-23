@@ -179,6 +179,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.5.2** (2026-10-23) — Review gate removed at Charles's direction. Intake no longer pulls or audits succeeded builds and never calls `review_plan`. When Charles says a build is done, the DA chat disposes that build's notes, fixes a weak plain name if needed, and runs the walkthrough visibility rule (which now keys off that moment instead of the review).
 - **0.5.1** (2026-10-23) — Board rule 12's check-in moves into the new Progress tracking section (build = the chat's own name for its work; project is Charles's; no 5 am sweep). Per BB-2026-10-21-next-steps-panel.
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Board rule 12, Check in — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `design-assist`, thread_key = board tag); `close_thread` when the brief is shelved or Charles parks it. Feeds the Next steps list on cbrain's Dev tab. Board upkeep unchanged. New `requires` entry.
 
