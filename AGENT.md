@@ -23,7 +23,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `Design Assist` (exact phrase in prompt — the only trigger; do not auto-fire from adjacent phrases) | `skills/design-assist/SKILL.md` |
+| `Design Assist` or its synonym `DA chat` (either phrase in prompt, case-insensitive — e.g. `this is a DA chat`; these are the only triggers; do not auto-fire from adjacent phrases or a bare "DA") | `skills/design-assist/SKILL.md` |
 
 ### Investment
 
