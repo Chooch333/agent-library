@@ -54,4 +54,5 @@ SHAs, query results) with your completion report.
 
 ## Changelog
 
+- **v1.2** (2026-10-23) — Progress tracking section ("None" form: the worker dissolves after one task; the build lead checks in). Per BB-2026-10-21-next-steps-panel.
 - **v1.1** (2026-08-28) — Added the closing rule (restated for workers: your report is data for the orchestrator's disclosure routing, not close-out narration) and a plain-English label suggestion (`plain_summary`/`action_needed`) on every reported fork or loose end. Per BB-2026-08-27-comms-hub-plumbing.
