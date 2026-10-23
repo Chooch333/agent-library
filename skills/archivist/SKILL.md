@@ -141,6 +141,14 @@ The filing SOP. Read the approved brief's frontmatter, then process each entry i
 
 **9. Close.** Each filed write carries the `brief_id`. The brief itself is a **sealed record** in `_briefs/` — never edited by the Archivist, never indexed as a cbrain entity (BRIEF_SCHEMA.md). Report what was filed, what was skipped, every intent that was stopped-and-surfaced, and any logged write-back failure. Nothing is silent. (When the skill runs under the automated filing trigger, a filing failure additionally surfaces as a `FILING-ERROR-<brief_id>.md` sidecar in `_briefs/`, written by the trigger — a separate file alongside the sealed brief, never a modification of it.)
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: what the brief was about + "filing", e.g. "Elanco lab addition email filing"
+- Opens when: a filing run stops and surfaces an intent (a collision, a dangling enrich, a missing node, a missing seed) or logs a write-back failure
+- Checks in: when a run leaves something open (thread_key "job:archivist-<brief date and short id in words>"; next_step says what needs Charles's call, in words)
+- Closes when: every surfaced intent is settled by a new brief, or Charles clicks Done
+
 ## Examples
 
 **Worked case 1 — a `create_entity` intent (from the Item-1 GATE trace).**
