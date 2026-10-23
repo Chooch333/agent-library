@@ -238,7 +238,10 @@ idea for another section is still allowed.
    To turn the critic off, Charles deletes `critic_live.json`; the next run
    delivers directly again.
 
-Changelog: `references/changelog.md`. Latest: **v2.1.0** (2026-10-19) —
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
+Changelog: `references/changelog.md`. Latest: **v2.1.1** (2026-10-23) — Progress tracking section ("None" form; BB-2026-10-21-next-steps-panel). Before that, **v2.1.0** (2026-10-19) —
 new-capability lane replaces the old one-slot lane: three-part gate (source read in full,
 named part, "afterward you could…" sentence), no weak spot needed, threshold
 50, a second idea may fill an empty Fix slot, no silent veto, Cost line
