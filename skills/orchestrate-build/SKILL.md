@@ -77,6 +77,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.6** (2026-10-23) — Progress tracking section (kind job): a build that ends blocked or failed, or leaves something for Charles, checks in one Next steps card at close (step 7e). Per BB-2026-10-21-next-steps-panel.
 - **v1.5** (2026-10-04) — Step 1 gains two checks before claiming: every `after` plan must be landed (succeeded, newest night_runs row not deploy-red), else post an fyi disclosure and stop; and after 11 pm Indianapolis time an Overnight-tagged brief is left to the night runner (skill night-run). Per Build 26 (BB-2026-10-04-night-builds).
 - **v1.4** (2026-10-01) — New standing rule: no browser tests. Builds verify code and data only; Charles tests the UI by hand from a "What to check" list. Decision CB-441, overriding lesson CB-148.
 - **v1.3** (2026-09-23) — Close-out (step 7) now produces a database-enforced done receipt: Session Log id plus a per-acceptance-criterion result (pass+evidence, or handed-off to a new draft follow-up plan). A Postgres trigger on `plans` refuses `succeeded` without one — "Write-before-done" is no longer just a convention. Per BB-2026-09-23-done-receipt.
