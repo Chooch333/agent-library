@@ -189,6 +189,14 @@ Evaluate: instrumentation of TTHW, NPS/CSAT signals, error rate dashboards, deve
 
 STOP.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: plan-review
+- build: the tool or API + "DX review", e.g. "Custom GitHub server DX review" (thread_key "plan-review:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, at the Step 0 STOP
+- Checks in: end of every turn
+- Closes when: Charles approves the review after Pass 8 (`close_thread`, closed_how "review approved")
+
 ## Examples
 
 ### Example 1: "DevEx review on the Custom GitHub MCP"
