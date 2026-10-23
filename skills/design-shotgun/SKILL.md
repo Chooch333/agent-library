@@ -120,6 +120,14 @@ Feeling       | Calm/serious | Curated/print | Raw/direct
 
 Ask: "Which variant do you want to refine?" Then drill down: tweak fonts, adjust palette, refine spacing. Output the refined variant ready for handoff to design-html or to an external implementation tool.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: design-assist
+- build: the screen or product + "design directions", e.g. "Trip app hype slides design directions" (thread_key "design-assist:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the concepts are proposed
+- Checks in: end of every turn
+- Closes when: Charles picks a variant and the refined variant is handed off (`close_thread`, closed_how "direction picked")
+
 ## Examples
 
 ### Example 1: "Design shotgun for the Property Analyzer dashboard"
