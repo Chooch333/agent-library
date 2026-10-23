@@ -1,6 +1,7 @@
 {
   "project": "{slug}",
-  "rules": "Work one feature at a time. Only change passes and evidence. Never edit or delete a feature; add new ones at the end.",
+  "checker": true,
+  "rules": "Work one feature at a time. Only the checker (skills/checker) changes passes and evidence, from a verdict in checks/. Never edit or delete a feature; add new ones at the end.",
   "features": [
     {
       "id": "F01",
