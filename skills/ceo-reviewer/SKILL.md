@@ -211,5 +211,6 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.2.1** (2026-10-23) — Progress tracking section after How (kind plan-review). Business Plan path kept. Per BB-2026-10-21-next-steps-panel.
 - **0.2.0** (2026-10-22) — Business Plan run: new trigger "business plan" starts from the Office Hours Vetting Report, swaps the 11-section engineering review for an 8-section Business Plan Review (Phase 6B, incl. a plain-language tech plan), and ends with the Business & Tech Plan report (Phase 7B) as a doc artifact. Software plan reviews unchanged.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /plan-ceo-review. Stripped: gstack bash preamble, telemetry hooks, gbrain integration, plan-mode detection, ~/.gstack/ filesystem ops, AskUserQuestion-specific format requirements. Kept: posture selection, premise challenge, implementation alternatives, mode-specific review, 11-section review, required outputs.
