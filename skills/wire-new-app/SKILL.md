@@ -1,13 +1,13 @@
 ---
 name: wire-new-app
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers:
   - "wire up"
 owner: Charles
-updated: 2026-10-08
+updated: 2026-10-23
 source: Designed in DA chat DA-1007-wire-new-app (2026-10-07); built in Build 28 (BB-2026-10-07-wire-new-app). Key passing runs in Chooch333/cbrain .github/workflows/wire-new-app.yml.
-requires: [references/project-state.md]
+requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: with-you
   starts: "\"wire up <name>\""
