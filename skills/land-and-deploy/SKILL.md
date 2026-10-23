@@ -1,6 +1,6 @@
 ---
 name: land-and-deploy
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers:
   - "land and deploy"
