@@ -73,6 +73,14 @@ The SOP. One guided pass, one approval, one commit.
 
 **5. Note what auto-deploys, honestly (E-142).** Tell Charles the commit makes the type valid in the watcher on its next run (it reads `SCHEMA.md` fresh each run — no cache, no redeploy). State the honest status: the type is **wired** into the schema and will be **accepted** by the watcher, but it is **not verified** until a real email actually surfaces an entity of the new type and it appears correctly in a draft brief. Do not claim verified.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: build-chat
+- build: the new type's name in words + "entity type", e.g. "Project milestones entity type" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
+- Opens when: the bundle is presented for Charles's approval (step 3)
+- Checks in: end of every turn
+- Closes when: the `SCHEMA.md` commit lands and is verified (step 4), or Charles declines (`close_thread`, closed_how "type added" or "declined")
+
 ## Examples
 
 **Worked case — the PM family (the additions that motivated this skill).** On 2026-06-08 Charles added two new KINDS of thing: a project's contact roster and a project's milestone schedule. Neither fit `person`/`organization`/`project`/etc. Run through this skill, that is:
