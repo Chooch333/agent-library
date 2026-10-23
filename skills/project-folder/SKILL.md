@@ -1,11 +1,12 @@
 ---
 name: project-folder
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers: [used by builds and harness roles when a moonshot starts or resumes; no chat trigger]
 dependencies: []
 owner: Charles
-updated: 2026-10-08
+updated: 2026-10-23
+requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
   reads: [project repo]
