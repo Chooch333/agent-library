@@ -177,4 +177,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /land-and-deploy. Stripped: gstack runtime bash, telemetry, multi-platform deploy detection (Fly/Render/Netlify — kept only Vercel), workspace-aware ship queue (VERSION drift), browse-daemon canary verification, Codex challenge, ~/.gstack/ filesystem ops. Adapted: merge operations via Custom GitHub MCP, deploy status via Vercel MCP, runtime log fetch via Vercel MCP. Kept: pre-merge readiness gate, squash-vs-merge decision, deploy wait pattern, lightweight log-based health check, revert flow guidance, deploy report format.
