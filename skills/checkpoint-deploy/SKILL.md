@@ -1,6 +1,6 @@
 ---
 name: checkpoint-deploy
-version: 0.2
+version: 0.2.1
 status: adopted
 triggers: [a Build Brief header lists checkpoint-deploy among its skills]
 dependencies: [orchestrate-build, execute-build-task]
