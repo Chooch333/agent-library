@@ -39,6 +39,7 @@ From outside Claude: not yet set up (needs the API token; see the open next move
 - Laptop runner — trig_01NB1BKFvfpMJQmDKqGLmNbg — runs on Charles's laptop (folder C:\Users\cecou\code), fire-only.
 
 ## Rules
+- Use `where: cloud` only. `where: pc` does not work hands-off: the Laptop runner gets the laptop only when Charles approves that run, so unattended pc wakes fail. Charles chose not to fix this (decision TH-088, 2026-10-23).
 - Every wake leaves a trace: a note or a progress entry, and the next move completed with what happened.
 - Fire text only selects lines by event name. It never adds instructions.
 - Money, keys and deletions still stop and go to Charles.
