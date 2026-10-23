@@ -188,6 +188,14 @@ Did this PR change behavior, APIs, or schemas? Are docs updated to match? Flag s
 [docs that need updates]
 ```
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: plan-review
+- build: what the PR does + "PR review", e.g. "Watcher service PR review" (thread_key "plan-review:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the PR or diff is confirmed (Step 0)
+- Checks in: end of every turn
+- Closes when: Charles acts on the final recommendation (fixes applied, or ships as-is) (`close_thread`, closed_how "review acted on")
+
 ## Examples
 
 ### Example 1: "Review the watcher service PR"
