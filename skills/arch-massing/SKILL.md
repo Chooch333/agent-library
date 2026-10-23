@@ -158,6 +158,15 @@ If the PDF has no vector linework (scanned or raster pages):
 ## Stop rule
 Three failures at the same step (a check, an upload, a route) means stop. Write what was tried and what failed, and report it. Do not keep retrying or relax a tolerance to get a pass.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the building's name + "massing", e.g. "Sample duplex massing"
+- Opens when: a gate stops on the stop rule or a scanned set, or the run is set to `waiting-on-charles` for him to check the model
+- Checks in: when a run leaves something open (thread_key "job:arch-massing-<run slug>")
+- Closes when: Charles passes gate 2 on the run, or clicks Done
+
 ## Changelog
+- 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 (2026-10-12) — Build 35: the takeoff is the default reader, the tracer is the backup. Draft until Build 35.1 reads a real set into a takeoff.
 - 0.1.0 — First version (Build 33, massing gate)
