@@ -105,6 +105,15 @@ Also: every site item not on the sheets (walks, curb, drive, trees, lawn) is lis
 - **Never name a bpy script `inspect.py`**: it shadows the stdlib module bpy imports and crashes Blender.
 - Blender adds `.001` to repeated names: strip it before matching a part or a signature.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the building's name + "renders", e.g. "Sample duplex renders"
+- Opens when: a still set stops on the stop rule, or is posted for Charles's review (gate 3 or gate 4 under review)
+- Checks in: when a run leaves something open (thread_key "job:arch-render-<run slug>")
+- Closes when: Charles passes gate 4 on the run, or clicks Done
+
 ## Changelog
+- 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 (2026-10-12) — Build 35 night run: Pascal GLB route, signature mapping, conventions as data, preview/id-pass/still modes, times, the four fix rules, the inspect.py gotcha. Draft until Build 35.1 renders by script.
 - 0.1.0 — First version, from the 2026-10-10 render lab (Total Harness chat).
