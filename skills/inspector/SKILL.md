@@ -90,6 +90,14 @@ Precondition / Action / Success evidence / Recovery for every step (Skill Design
 - *Success evidence:* the new checkpoint row exists and is now the latest for `agent = 'inspector'`.
 - *Recovery:* the checkpoint write itself fails → do not silently end the walk; retry once, then report the walk as incomplete rather than claiming success with no checkpoint (a missing checkpoint would make the *next* walk re-scan everything).
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: "Weekly rules walk" (thread_key "job:inspector-weekly-walk")
+- Opens when: a walk ends incomplete (no checkpoint written) or skips a source it couldn't read. Findings themselves go on the Punch List, not the Next steps list
+- Checks in: when a run leaves something open
+- Closes when: a later walk completes with every source read and its checkpoint written (`close_thread`, closed_how "walk completed"), or Charles clicks Done
+
 ## Examples
 
 ### Example 1: known-answer first walk
