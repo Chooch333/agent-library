@@ -51,6 +51,15 @@ When the next step has to wait (a print, a delivery, a reply), park it with a wa
 - The builder does not grade itself when a checker is available (block 6); until then, evidence is required for every pass.
 - Money always stops. Safety rules in spec.md never relax.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the moonshot's name in words, e.g. "Backyard drone build" (thread_key "job:project-folder-<slug>")
+- Opens when: a session stops at a stop in spec.md (the concept stop first), or parks with a wake line (README Status `stopped: waiting on <what>`)
+- Checks in: at every session close that leaves the project stopped or waiting (next_step = the stop or the wait, in words)
+- Closes when: every feature in the folder passes and Charles accepts it, or Charles clicks Done
+
 ## Changelog
+- 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 — Waiting section (Build 30, wake-up set)
 - 0.1.0 — First version (Build 29, standard project folder)
