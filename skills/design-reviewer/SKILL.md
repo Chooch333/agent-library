@@ -211,6 +211,14 @@ Mobile nav pattern?              | Desktop nav hides behind hamburger
 
 Each decision = one question with recommendation + WHY + alternatives.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: plan-review
+- build: the screen or plan + "design review", e.g. "Trip Tour slideshow design review" (thread_key "plan-review:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, at the Step 0 STOP
+- Checks in: end of every turn
+- Closes when: Charles approves the review after Pass 7 (`close_thread`, closed_how "review approved")
+
 ## Examples
 
 ### Example 1: "Design review on the Family Trip App Trip Tour slideshow"
