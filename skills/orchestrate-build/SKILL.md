@@ -78,6 +78,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.7** (2026-10-23) — Step 6: on a build that works in a project folder, each feature's verification is a checker subagent (`skills/checker`) with only the checker inputs, never the lead reading the worker's report; brief acceptance checks stay lead-verified. Per Build 45 (BB-2026-10-21-checker-role; the brief named this 1.6, which the next-steps panel build had already used).
 - **v1.6** (2026-10-23) — Progress tracking section (kind job): a build that ends blocked or failed, or leaves something for Charles, checks in one Next steps card at close (step 7e). Per BB-2026-10-21-next-steps-panel.
 - **v1.5** (2026-10-04) — Step 1 gains two checks before claiming: every `after` plan must be landed (succeeded, newest night_runs row not deploy-red), else post an fyi disclosure and stop; and after 11 pm Indianapolis time an Overnight-tagged brief is left to the night runner (skill night-run). Per Build 26 (BB-2026-10-04-night-builds).
 - **v1.4** (2026-10-01) — New standing rule: no browser tests. Builds verify code and data only; Charles tests the UI by hand from a "What to check" list. Decision CB-441, overriding lesson CB-148.
