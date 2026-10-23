@@ -77,7 +77,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `add this`, `log this`, `put this on the job` (or plainly the same ask) about an FA Wilhelm job's tasks, dates, milestones, meetings, team or decisions — mid-chat included; also a question about a job's current state (`what's open on <job>?`) | `skills/job-update/SKILL.md` (writes only on that ask; general construction/permitting talk is never logged) |
+| An FA Wilhelm job comes up — its tasks, issues, dates, milestones, meetings, team, RACI or design decisions (e.g. `what's open on IMI?`, `add this`, `log this`, `put this on the job`) — mid-chat included; fetch once per chat | `skills/job-update/SKILL.md` (reads any time; writes only on Charles's ask; general construction/permitting talk is not a job and loads nothing) |
 
 ### Knowledge capture
 
