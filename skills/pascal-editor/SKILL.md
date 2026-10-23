@@ -1,11 +1,12 @@
 ---
 name: pascal-editor
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers: [used by arch-renders-run and builds that need a Pascal scene loaded or exported; no chat trigger]
 dependencies: []
 owner: Charles
-updated: 2026-10-12
+updated: 2026-10-23
+requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
   reads: [scene.vN.json, Charles's PC (browser pane, Downloads)]
