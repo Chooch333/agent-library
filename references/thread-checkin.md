@@ -1,4 +1,4 @@
-# Thread check-in — shared rule (0.3.0)
+# Thread check-in — shared rule (0.3.1)
 
 Every with-Charles chat that can be left mid-way, and every job that leaves
 something open, reports where it stands, so the Next steps list on cbrain's
