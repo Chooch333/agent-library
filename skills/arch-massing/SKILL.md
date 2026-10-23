@@ -1,11 +1,12 @@
 ---
 name: arch-massing
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers: [used by builds when an arch-renders run reaches gate 1 or gate 2 (plan set -> white-box massing model); no chat trigger]
 dependencies: [project-folder, execute-build-task]
 owner: Charles
-updated: 2026-10-10
+updated: 2026-10-23
+requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
   reads: [plan set (vector PDF + DXF), Chooch333/arch-renders pipeline, cbrain workflow_runs]
