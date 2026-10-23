@@ -52,5 +52,14 @@ Pascal (npm `@pascal-app/*`, MIT) is the 3D building editor the arch-renders rou
 ## Stop rule
 Three failed tries at one step (reach Pascal, load, export, counts): stop and write down what was tried. If the PC or Pascal can't be reached, the run waits ("waiting for your PC"); never guess and never fall back to a cloud export.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the building's name + "Pascal export", e.g. "Sample duplex Pascal export"
+- Opens when: the run waits for the PC ("waiting for your PC") or stops on the stop rule
+- Checks in: when a run leaves something open (thread_key "job:pascal-editor-<run slug>"; next_step says what Charles must do on the PC, in words)
+- Closes when: the export's counts check passes on a later run, or Charles clicks Done
+
 ## Changelog
+- 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-12) — First version, from the 2026-10-11 Crider lab run and Build 35's night build. The PC steps are written but not yet re-run by script (Build 35.1).
