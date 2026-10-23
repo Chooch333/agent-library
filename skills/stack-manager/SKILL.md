@@ -29,7 +29,11 @@ The `MAP-EDIT` next-move suggestion queue this role was built to dispose of is a
 
 This file's full original content (v0.1.0, `status: draft`) is preserved in git history at the commit before this one. Do not invoke this role; it has no working trigger.
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open. (Deprecated: it never runs. Its work checks in through `skills/inspector` and `skills/repairer`.)
+
 ## Changelog
 
+- **0.2.1** (2026-10-23) — Progress tracking section ("None" form, since the role is deprecated and never runs). Per BB-2026-10-21-next-steps-panel.
 - **0.2.0** (2026-09-22) — Reduced to a deprecated pointer. Split into Inspector (judging) and Repairer (editing/applying) per BB-2026-09-21-inspector-repairer, design intent "the fixer never grades itself."
 - **0.1.0** (2026-07-21) — Initial skill (BB-2026-07-20-stack-map, Directive 6). Superseded by the split above; see git history for full content.
