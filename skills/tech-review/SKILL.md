@@ -126,9 +126,16 @@ Pick one lane and name what you ruled out. Money always stops. Do not stack assu
 THE SPEED RUN
 Speed runs are listed in `lab/speed-run.md`, one entry per active speed run, each pointing to its use-case card. Judge every tool against the requirements of the speed run it serves, and say which steps of that speed run the tool serves. A tool that serves no listed speed run waits for its block. Speed runs themselves are designed in the Total Harness project, not in the lab.
 
-## Check in (Next steps list)
+CHECK IN
+Check in per Progress tracking.
 
-At the end of every turn, check in per `references/thread-checkin.md`: one Project State `checkin` call with kind `tech-review`, thread_key `tech-review:<tech slug>`, project_label = the speed run the tech serves ("Arch renders"), else "R&D lab", a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes). Same thread_key every turn; if nothing moved, send the same next_step. **Close:** when the R&D Report is filed (and, on Adopt now, the handoff question is filed too), call `close_thread` with closed_how "R&D Report filed". Nothing else closes it. If the check-in fails, carry on; the 5 am sweep backfills.
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: tech-review
+- build: the use studied + the tech + "test", e.g. "Flythrough renderer Blender test" (thread_key "tech-review:<tech slug>")
+- Opens when: the first turn, once the tech and its brief are found
+- Checks in: end of every turn
+- Closes when: the R&D Report is filed, and on Adopt now the handoff question is filed too (`close_thread`, closed_how "R&D Report filed")
 
 ## Examples
 
