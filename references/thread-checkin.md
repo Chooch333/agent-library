@@ -96,6 +96,10 @@ again.
 
 ## Changelog
 
+- 0.3.1 (2026-10-22) — Correction (Charles): the build is an identifier, not
+  a grouper. Each chat names its own build (it is the card's title); chats
+  don't match or reuse names. Grouping is by project, which only Charles sets,
+  on the Dev tab.
 - 0.3.0 (2026-10-22) — **build** is the main grouping: the chat infers it, reuses
   an existing one first, and many chats share it. project and campaign are
   filled in by Charles on the Dev tab, never by a chat. plain_name now names
