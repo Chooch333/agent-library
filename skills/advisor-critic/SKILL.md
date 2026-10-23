@@ -155,7 +155,11 @@ draft is reviewed). The Advisor's next run delivers directly again and
 your runs stop quietly at step 0. Setup and the task card:
 `cbrain/docs/advisor/SETUP.md` ("Advisor Critic").
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Changelog
+- **v1.1.1** (2026-10-23) — Progress tracking section ("None" form: each run finishes or leaves the draft for the next run to retry). Per BB-2026-10-21-next-steps-panel.
 - **v1.0.0** (2026-10-06) — First version: live marker on the first run,
   quiet stop with nothing to review, keep / sharpen / cut graded against
   the Stack Advisor's Contract and Anti-patterns, publish + email + Stack
