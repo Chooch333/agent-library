@@ -227,4 +227,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /plan-devex-review. Stripped: gstack runtime bash, telemetry, dx-hall-of-fame.md inline-load mechanism, ~/.gstack/ filesystem ops, persona-detection auto-detection scripts. Kept: 8 DX first principles, 7 DX characteristics, cognitive patterns, TTHW benchmarks, 0-10 scoring rubric, Step 0 (persona + empathy + benchmark + magical moment + journey + mode), 8 review passes.
