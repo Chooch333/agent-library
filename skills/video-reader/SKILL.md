@@ -108,6 +108,9 @@ the whole point (Build 17.1).
    waiting." Then counts (read / failed / facts verified / quarantined /
    summaries backfilled / still pending) and the paths written.
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Setup
 Cowork scheduled task on Charles's plan -- card at
 Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
