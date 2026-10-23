@@ -114,6 +114,7 @@ Auto-decide replaces the USER'S judgment with the 6 principles. It does NOT repl
 4. **Eng phase**: load `skills/eng-reviewer/SKILL.md`, same pattern
 5. **DevEx phase** (if applicable): load `skills/devex-reviewer/SKILL.md`, same pattern
 6. **Final gate**: present a consolidated review report — list all auto-decisions (Mechanical + Taste), all User Challenges surfaced, all unresolved premises. Ask the user to approve, override, or request a specific re-review.
+7. Check in per Progress tracking.
 
 ### Final report format
 
