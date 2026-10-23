@@ -10,24 +10,19 @@ no skill does not check in on its own.
 
 ## Naming convention
 
-- **build** — the body of work this chat or job is part of, inferred by you,
-  2-5 plain words ("Next steps list", "Total Harness wake-ups", "Backyard
-  compost subscription"). Many chats share one build: a design chat, its build
-  chats and their follow-ups all name the same build. Reuse before you invent:
-  on your first turn, read the existing builds (`list_builds`; until that tool
-  exists, the build names on open cards from `list_open_threads`) and take the
-  one this work belongs to; name a new build only when none fits. Never an id or
-  code. Until the `build` field exists on `checkin` (the Next steps side
-  panel build), send the build name as `project_label`.
-- **project** and **campaign** — never set by a chat or job. Charles fills
-  them in on cbrain's Dev tab.
-- **plain_name** — 3-6 plain words naming what THIS chat or job does within the
-  build ("Phone screens design", "Office hours vetting", "Run Around the World
-  game"). Never the skill's name alone and never an id or code.
+- **build** — this chat's or job's own name for the work it is doing, inferred
+  by you, 3-6 plain words ("Phone screens for cbrain", "Backyard compost
+  subscription vetting", "Run Around the World game"). It identifies this one
+  card; it is not a group, and other chats don't need to match it. It is the
+  card's title: send it as `plain_name`. Never the skill's name alone and never
+  an id or code.
+- **project** and **campaign** — never set by a chat or job. Charles groups
+  cards into projects himself on cbrain's Dev tab. Send `project_label` empty
+  (or leave the value you sent before); it is Charles's field.
 - **thread_key** — this chat's tag if it has one (DA-MMDD-slug); otherwise
-  "<kind>:<build>-<plain_name>", lowercase, words joined by hyphens
-  (e.g. "plan-review:backyard-compost-subscription-office-hours-vetting"), so
-  two chats doing the same kind of work on different builds never share a card. Jobs: "job:plan-<id>",
+  "<kind>:<build>", lowercase, words joined by hyphens
+  (e.g. "plan-review:backyard-compost-subscription-vetting"). Same key every
+  turn. Jobs: "job:plan-<id>",
   "job:draft-<id>", "job:wake-<id>" or "job:<skill>-<slug>". Same key every
   turn.
 - **kind** — named in the skill's section.
