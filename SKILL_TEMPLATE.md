@@ -49,8 +49,7 @@ Required in every skill (CONVENTIONS.md). Fill in one of the two forms from `ref
 
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: <kind from thread-checkin's table>
-- build: <how this skill infers the body of work it belongs to, e.g. "the idea's name"; reuse an existing build first>
-- plain_name: <what this chat or job does within the build, e.g. "Office hours vetting">
+- build: <how this skill names the work one chat or job does, e.g. "the idea's name + vetting">
 - Opens when: <the first moment work can be left unfinished>
 - Checks in: end of every turn   (jobs: when a run leaves something open)
 - Closes when: <this skill's stated finish>
