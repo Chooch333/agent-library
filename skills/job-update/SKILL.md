@@ -29,6 +29,8 @@ Lets a chat read a FAW job's current state and, **only when Charles asks**, writ
 - **Write only on request.** Charles says "add this", "log this", "put this on the job" or the same thing in other words. FAW chats are also used for general construction and permitting talk that must not land in cbrain — never write without the ask.
 - **Read any time** Charles asks about a job ("what's open on IMI?").
 - Not for app/build work. That's Project State, via a Design Assist chat.
+- **Job email:** Charles forwards job email to `claude.go.between+<job-slug>@gmail.com` (e.g. `+elanco-c92-2025`); the email reader files it to that job. Tell him the address if he asks how to get an email onto a job.
+- **New people:** if someone not yet in cbrain comes up in a job chat, mention it once at the end of a reply. Don't draft a cbrain brief unless he asks (then: `references/chat-capture.md`; FAW's canonical organization is `f-a-wilhelm-construction`).
 
 ## Read
 
