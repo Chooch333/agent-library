@@ -1,6 +1,6 @@
 ---
 name: investment-review
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers:
   - "this is an investment review"
