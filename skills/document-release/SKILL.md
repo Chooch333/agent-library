@@ -162,6 +162,9 @@ docs: update for [release version or description]
 
 Final output: summary of what was updated, what was asked, what was skipped. If there are any remaining doc gaps the role couldn't address (e.g., "Architecture diagram needs to be regenerated — too complex for auto-update"), flag them as follow-up TODOs.
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Examples
 
 ### Example 1: "Document the release for the cash-out refi calculator"
