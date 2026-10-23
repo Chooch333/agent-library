@@ -153,6 +153,14 @@ Example: `[P1] (confidence: 9/10) family-trip-app/src/api/trips/route.ts:42 — 
 5. **Critical gap flags** — any failure mode with no test + no error handling + silent to user
 6. **TODOs** — work surfaced but not adopted, with what / why / pros / cons / context / depends-on
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: plan-review
+- build: the plan's name + "eng review", e.g. "Watcher service eng review" (thread_key "plan-review:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, at the Step 0 findings
+- Checks in: end of every turn
+- Closes when: Charles approves the required outputs after Section 4 (`close_thread`, closed_how "review approved")
+
 ## Examples
 
 ### Example 1: "Lock in the plan for the watcher service"
