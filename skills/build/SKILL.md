@@ -120,6 +120,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **1.3.0** (2026-10-23) — Removed the finished-build review gate at Charles's direction ("too much to manage"). `succeeded` now means done; the database's done-receipt check is the proof. `review_plan` and the plan review fields are retired. Disclosures and the rule that a build never disposes its own still stand.
 - **1.2.0** (2026-10-23) — The Check in step becomes the Progress tracking section (build = the chat's own name for its work; project is Charles's, set on the Dev tab; no 5 am sweep). One-line pointer added to the workflow. Per BB-2026-10-21-next-steps-panel.
 - **1.1.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `build-chat`); `close_thread` when the plan has succeeded and its needs-charles items are done. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - **1.0.0** (2026-10-15) — Created by Build 39 (BB-2026-10-14-protocol-retirement) from the build-chat sections of the retired chat-protocol rulebook: authority and hard gates, Build Brief defaults, shelving, review gate, workflow, tool-first execution, and the Response format. Shared Project State vocabulary moved to `references/project-state.md`; tool gotchas to `references/gotchas.md`.
