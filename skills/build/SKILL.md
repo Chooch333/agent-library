@@ -2,7 +2,7 @@
 name: build
 description: 'Use when the first message says "this is a build chat": work that produces deliverables, decisions or progress on a project, logged to Project State. Carries authority rules, Build Brief defaults, workflow and response format.'
 requires: [references/project-state.md, references/gotchas.md, references/thread-checkin.md]
-version: 1.2.0
+version: 1.3.0
 status: active
 triggers: ["this is a build chat (case-insensitive, very first message only)"]
 owner: Charles
