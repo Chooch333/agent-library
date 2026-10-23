@@ -1,7 +1,8 @@
 ---
 name: design-consultation
-version: 0.1.0
+version: 0.1.1
 status: draft
+requires: [references/thread-checkin.md]
 triggers:
   - "design consultation"
   - "design the design system"
