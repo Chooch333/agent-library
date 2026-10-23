@@ -78,6 +78,7 @@ Every session that touches Project State follows this loop:
 3. **Review** — Charles reviews in chat. Edits wording, adjusts buckets, removes items, approves.
 4. **Execute** — Once approved, Claude runs the actual Project State commands (or ships the fix).
 5. **Close the ticket** — Claude updates the Result/Resolution section on the artifact with what actually happened.
+6. **Check in** per Progress tracking.
 
 ### Ticket closure rule
 
