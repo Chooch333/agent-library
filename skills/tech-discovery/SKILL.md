@@ -117,5 +117,6 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.2.1** (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); one-line pointer in the lab rules. Per BB-2026-10-21-next-steps-panel.
 - **0.2.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `tech-discovery`); `close_thread` when the Discovery Brief is filed. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - **0.1.0** (2026-10-14) — New skill (Charles, R&D lab). Discovery split out of tech-review: ground facts, use case Q&A, place it, what else does this job, requirements check, Shelf or Never. Output is a Discovery Brief filed in `lab/briefs/`, in the old tech card format plus a "Test run, if we do one" section. Tech Review is now the test run only.
