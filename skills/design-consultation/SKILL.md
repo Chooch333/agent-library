@@ -224,6 +224,14 @@ Status: APPROVED
 
 In Charles's environment, write DESIGN.md to the project's docs directory via Custom GitHub MCP.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: design-assist
+- build: the product's name + "design system", e.g. "Property Analyzer design system" (thread_key "design-assist:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the product is named
+- Checks in: end of every turn
+- Closes when: DESIGN.md is written with Status APPROVED (`close_thread`, closed_how "design system written")
+
 ## Examples
 
 ### Example 1: "Design consultation for the Property Analyzer"
