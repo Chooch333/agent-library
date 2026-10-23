@@ -86,6 +86,9 @@ Fire when the first message contains "this is an investment review"
 8. Footer: "Analysis against Charles's own framework — not personalized
    financial advice. Broker screen governs prices; CPA governs tax."
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Pitfalls
 - Aggregator staleness and disagreement (verified 2026-09-11 on Atreides).
 - 13F value units differ across filing eras — read the unit on each filing.
