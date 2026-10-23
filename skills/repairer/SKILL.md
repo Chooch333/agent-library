@@ -1,14 +1,14 @@
 ---
 name: repairer
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers:
   - "Repairer: run"
   - "Cowork scheduled task \"Repairer — weekly run\" (Monday 7:00am, Charles's local time)"
 dependencies: []
 owner: Charles
-updated: 2026-10-08
-requires: [references/project-state.md]
+updated: 2026-10-23
+requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "\"Repairer: run\" / weekly Cowork schedule (Mon 7am)"
