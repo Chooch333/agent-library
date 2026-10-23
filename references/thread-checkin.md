@@ -49,6 +49,11 @@ date. Never write "still waiting" or "no change".
 
 Close: when your skill's stated finish happens, call `close_thread` with
 closed_how in words ("report filed", "brief on the shelf"). Nothing else closes it.
+
+Reopen: automatic. If Charles comes back to a chat whose card is closed and
+keeps working, the chat's next check-in opens the card again (a chat only checks
+in when Charles is talking to it). Nothing to remember or ask for. Jobs send
+`source: "job"` and never reopen a card.
 If the check-in fails, carry on; the night runner re-checks open cards.
 
 ## The section every skill carries
