@@ -55,7 +55,7 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
    - If any acceptance check **failed outright** — not just unprovable, but actually failed — the plan goes to `failed`, not `succeeded`, with the failure described in `executor_report`. A failed check cannot be papered over with a handed-off follow-up.
    - If you hit a hard gate (credentials you don't have, money, destructive action), flip to `blocked` and surface it to the human — do not guess past it.
 
-   None of this changes the boundary in Standing rules: you do not call `review_plan` on the plan you just closed out, and you do not dispose the disclosures you posted in (b) — see "Never certify your own build" below.
+   None of this changes the boundary in Standing rules: you do not dispose the disclosures you posted in (b) — see "Leave your notes for a design chat" below.
 
    **(e) Check in** per Progress tracking.
 
