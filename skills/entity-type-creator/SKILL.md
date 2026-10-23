@@ -1,7 +1,8 @@
 ---
 name: entity-type-creator
-version: 0.1.0
+version: 0.1.1
 status: draft
+requires: [references/thread-checkin.md]
 triggers: ["define a new entity type", "new entity type", "add an entity type", "cbrain needs a new type", "add a type to the schema", "create a new KIND of entity", a request to define a new KIND of thing that has no type in SCHEMA.md yet]
 dependencies: [cbrain/contracts/SCHEMA.md]
 owner: Charles
