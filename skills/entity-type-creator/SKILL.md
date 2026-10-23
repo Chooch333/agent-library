@@ -117,4 +117,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v0.1.1 (2026-10-23)** — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **v0.1.0 (2026-06-09)** — Initial skill, `status: draft`. Created alongside the schema-driven entity-type work (E-185): the watcher now reads type names + per-type guidance from `SCHEMA.md` at runtime, which is what makes a single schema commit auto-deploy a new type to the watcher. SOP: confirm new-type (not instance/field) → gather meaning/propose_when/key_fields in one pass → bundle the three SCHEMA.md additions (enum entry, fields section, guidance stanza) + changelog → single "approved" gate → commit with SHA re-fetch and post-write verify. Replaces no prior skill (the retired `cbrain-entity-builder`, E-172/E-173, handled instances, not types). Pitfalls seeded from the SCHEMA.md structure; unrun, so `status` stays `draft` until Charles defines a real new type through it.
