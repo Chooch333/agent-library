@@ -1,11 +1,11 @@
 ---
 name: execute-build-task
-version: 1.1
+version: 1.2
 status: active
 triggers: [dispatched by the orchestrate-build lead]
 dependencies: []
 owner: Charles
-updated: 2026-09-22
+updated: 2026-10-23
 wiring:
   runs: on-its-own
   starts: "called by Build lead"
