@@ -179,6 +179,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.5.1** (2026-10-23) — Board rule 12's check-in moves into the new Progress tracking section (build = the chat's own name for its work; project is Charles's; no 5 am sweep). Per BB-2026-10-21-next-steps-panel.
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Board rule 12, Check in — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `design-assist`, thread_key = board tag); `close_thread` when the brief is shelved or Charles parks it. Feeds the Next steps list on cbrain's Dev tab. Board upkeep unchanged. New `requires` entry.
 
 - **0.4.1** (2026-10-15) — Build 39 (BB-2026-10-14-protocol-retirement): the chat-protocol rulebook is retired. Live pointers to it now name `skills/build/SKILL.md` (authority, shelving, return contract, tool-first, judgment-call provenance, Response format) or `references/project-state.md` (naming rule, project fit-check); the Punch List pointer names `skills/inspector/SKILL.md`. New `requires: [references/project-state.md]` header. Older changelog lines keep their original wording.
