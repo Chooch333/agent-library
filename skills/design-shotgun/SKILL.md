@@ -152,4 +152,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /design-shotgun. Major adaptation: the gstack designer binary (image generation) is unavailable; this skill now produces detailed text descriptions of variants instead of actual PNG mockups. Stripped: $D variants/iterate/compare commands, comparison-board HTML generation, $B browser preview, taste memory persistence to ~/.gstack/. Kept: concept generation, anti-convergence directive, specificity rules, comparison table format.
