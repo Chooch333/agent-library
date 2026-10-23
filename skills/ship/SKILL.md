@@ -196,4 +196,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /ship. Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, automatic test runner integration, Greptile review, Codex challenge, gstack-version-queue (workspace-aware), persist-ship-metrics file write. Adapted: git/push/PR-create operations now route through Custom GitHub MCP. Kept: pre-flight, review gate, version bump auto-decision, CHANGELOG auto-generation, TODOs sync, commit hygiene, documentation sync, PR body template, ship report.
