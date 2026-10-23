@@ -245,4 +245,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /plan-design-review. Stripped: gstack designer binary (visual mockup generation), browse binary integration, gstack runtime bash, telemetry, ~/.gstack/projects/designs/ filesystem ops, Step 0.5 mockup generation pass, post-pass mockup regeneration. Kept: design philosophy, 9 design principles, cognitive patterns, Krug UX principles, 0-10 rating, 7-pass review, AI slop blacklist, hard rejection criteria, classifier (landing/app/hybrid).
