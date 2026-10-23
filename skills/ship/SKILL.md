@@ -158,6 +158,14 @@ Final summary:
 - TODOs added/removed
 - Anything outstanding for follow-up
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: build-chat
+- build: what the branch ships + "ship", e.g. "Slide dedup fix ship" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn, once the branch is named (Step 1)
+- Checks in: end of every turn
+- Closes when: the PR is opened and the ship report given (Step 10) (`close_thread`, closed_how "PR opened")
+
 ## Examples
 
 ### Example 1: "Ship the family trip app slide dedup fix"
