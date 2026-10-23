@@ -88,6 +88,14 @@ Then re-run step c.
 
 If Vercel refuses to link the repo (Vercel's GitHub app has no access to it): tell Charles to open Vercel → Account Settings → Git → GitHub → Configure, and add `<name>` to the repos it can see. Then re-run step c.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: build-chat
+- build: the app's name + "wiring", e.g. "Trip planner app wiring" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
+- Opens when: the run stops for Charles (the database money question, a token to refresh, Vercel's GitHub access)
+- Checks in: end of every turn
+- Closes when: step e is told to Charles with the workflow green and the deploy READY (`close_thread`, closed_how "app wired")
+
 ## Open (left open by Charles, 2026-10-07)
 
 Whether key values may ever go in a spreadsheet, and where a long-term labeled list of key names lives. Until he decides: no sheet, and names are reported in chat only.
