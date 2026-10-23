@@ -115,6 +115,14 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 - *Success evidence:* the message id, recorded in the run marker's `detail.recap_message_id` with `recap_sent: true`.
 - *Recovery:* the send fails → record `recap_sent: false` and the error; try once more at the end of the run. Never send a second recap the same day.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the broken part's plain name + "repair", e.g. "Video intake repair" (thread_key "job:stack-repairer-<dot id>"; `source` "job")
+- Opens when: a run logs `needs-you` (a hard gate only Charles can clear) or a second `watching` with no cause found. Fixes, re-runs and briefs don't need a card; briefs show on the Build Shelf
+- Checks in: when a run leaves something open (next_step = the exact ask from the `needs-you` row, waiting_on `you`)
+- Closes when: the dot's newest grade is `green` (`close_thread`, closed_how "back to green"), or Charles clicks Done
+
 ## Short brief template (for its own briefs)
 
 ```
