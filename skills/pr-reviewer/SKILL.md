@@ -223,4 +223,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /review. Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, Codex CLI cross-model challenge, gstack-diff-scope binary, Greptile integration, workspace-aware ship queue, Step 5.8 persist-result file writes. Adapted: git operations now go through Custom GitHub MCP. Kept: scope drift detection, critical pass categories, confidence calibration, fix-first pipeline, adversarial review prompt and canonical recommendation format, TODO cross-reference, documentation staleness check.
