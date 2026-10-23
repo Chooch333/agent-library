@@ -65,5 +65,14 @@ Both may be on one line (`run: <uuid> action: <name>`, from a wake line) or two.
 - No money. No deletions outside this run's rows and folder.
 - Never certify: the run's review stops are Charles's.
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the run's building name + "render run", e.g. "Sample duplex render run"
+- Opens when: a session ends at a stop (`model-stop`, `stills-stop`, `waiting-for-pc`) or `failed`
+- Checks in: when a run leaves something open (thread_key "job:arch-renders-run-<run id>"; next_step says what Charles should look at or press on the Workflows screen)
+- Closes when: `pass-stills` sets the run `done`, or Charles clicks Done
+
 ## Changelog
+- 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-12) — First version, written by the Build 35 night run. Not yet run end to end (Build 35.1).
