@@ -83,7 +83,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `add to cbrain`, `build out cbrain`, `let's capture`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | Draft a brief per `references/chat-capture.md` → Charles approves → `skills/archivist/SKILL.md` files it |
+| `add to cbrain`, `build out cbrain`, `let's capture`, `capture this`, `I want to record`, `create an entity for`, or a person/org/project not yet in cbrain named during a knowledge-capture chat | Draft a brief per `references/chat-capture.md` → Charles approves → `skills/archivist/SKILL.md` files it |
 | `define a new entity type`, `new entity type`, `add a type to the schema`, `cbrain needs a type for`, or defining a new KIND of thing that has no `type` in `SCHEMA.md` yet | `skills/entity-type-creator/SKILL.md` (single-approval SCHEMA.md addition; auto-deploys to the watcher) |
 
 ### Self-maintenance
