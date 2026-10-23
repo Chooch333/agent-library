@@ -80,7 +80,7 @@ Charles reads two cbrain tabs to see what every DA chat is doing: the **Build Sh
 9. **End every reply with `Board ✓`** once the line is current.
 10. **Plain words only** in everything the tabs show — board lines, `change_reason`, `designed_in`, `plain_title`, `plain_summary`. No brief file names, display ids, chat tags, commit hashes or plan ids. (The tabs scrub codes as a backstop, which leaves odd phrasing — C-J-321.)
 11. **If the board tools aren't in your tool list** (a chat opened before they deployed), write the same rows with SQL on `ujditldbqdiqigazkcak` (`design_topics`, `design_topic_lines`: stamp your current line `replaced_at = now()`, insert the new one).
-12. **Check in (Next steps list).** At the end of every turn, also call Project State `checkin` per `references/thread-checkin.md`: kind `design-assist`, thread_key = your board tag (DA-MMDD-slug), project_label = the project in plain words, a 3-6 word plain_name, and a next_step Charles can act on cold (no ids or codes); if nothing moved, send the same next_step. **Close:** when the brief is shelved, or Charles parks it, call `close_thread` (closed_how "brief on the shelf" or "parked"). This adds to rules 1-11; it replaces none of the board upkeep.
+12. **Check in** per Progress tracking (below). This adds to rules 1-11; it replaces none of the board upkeep.
 
 **Also (adopted 2026-10-04 after the Build 23 pilot, C-J-320):** every cbrain-ui brief names `checkpoint-deploy` in its Skills line. The pilot cut 21 commits to 4 preview builds with no misses.
 
