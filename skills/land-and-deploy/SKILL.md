@@ -140,6 +140,14 @@ Status:           SHIPPED | SHIPPED_WITH_CONCERNS | REVERTED
 - If a Build Brief was the source, log completion against it
 - If new TODOs surfaced from review, confirm they're on the list
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: build-chat
+- build: what the PR ships + "landing", e.g. "Slide dedup fix landing" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
+- Opens when: the run stops on a question (merge conflict, failing CI, deploy error, runtime errors after deploy)
+- Checks in: end of every turn
+- Closes when: the deploy report says SHIPPED or REVERTED and confirmed live (`close_thread`, closed_how "shipped" or "reverted")
+
 ## Examples
 
 ### Example 1: "Land and deploy the slide dedup fix"
