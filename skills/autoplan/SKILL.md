@@ -180,5 +180,6 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.2.1** (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); one-line pointer in the operating loop. Per BB-2026-10-21-next-steps-panel.
 - **0.2.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `plan-review`); `close_thread` when Charles approves the review. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /autoplan. Stripped: gstack runtime bash, telemetry, Codex CLI integration for cross-model verification, ~/.gstack/ filesystem ops. Kept: 6 decision principles, decision classification (Mechanical / Taste / User Challenge), sequential phase execution rule, two never-auto-decided exceptions (premises, User Challenges), final gate format.
