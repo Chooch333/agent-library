@@ -97,4 +97,5 @@ None. This skill finishes in one run and leaves nothing open.
 - Theme reviews drifting into candidate lists with no rubric.
 
 ## Changelog
+- **0.1.1** (2026-10-23) — Progress tracking section ("None" form). Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-09-11) — Initial draft per BB-2026-09-11-investment-review-role.
