@@ -1,12 +1,12 @@
 ---
 name: orchestrate-build
-version: 1.5
+version: 1.6
 status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task]
 owner: Charles
-updated: 2026-10-04
-requires: [references/project-state.md]
+updated: 2026-10-23
+requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "\"go build next\""
