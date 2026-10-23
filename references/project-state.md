@@ -30,7 +30,7 @@ A **session** is a unit of work within a chat that ends with a Session Log. A ch
 
 ## Campaigns and the naming rule
 
-Campaigns are a grouping layer that sits above projects and tags — a table (`campaigns`: `slug`, `title`, `purpose`, `status` — `active`/`done`/`parked`) for organizing related plans across a project's lifetime. Plans now carry `plain_title`, `plain_summary`, `campaign_id`, `designed_in`, plus review fields (`reviewed_at`, `reviewed_by`, `review_notes` — see Reviewing a succeeded plan, `skills/build/SKILL.md`).
+Campaigns are a grouping layer that sits above projects and tags — a table (`campaigns`: `slug`, `title`, `purpose`, `status` — `active`/`done`/`parked`) for organizing related plans across a project's lifetime. Plans now carry `plain_title`, `plain_summary`, `campaign_id`, `designed_in`, plus retired review fields (`reviewed_at`, `reviewed_by`, `review_notes` — no longer written; the finished-build review gate was removed 2026-10-23, see "Succeeded means done" in `skills/build/SKILL.md`).
 
 **DA authority over campaigns.** DA/planning chats have full fluidity authority over campaigns — rename one, recategorize a plan into a different campaign, fork a new campaign out of an existing one — freely, logged as a judgment call (same provenance discipline as any other judgment call). Charles is never asked to approve a campaign change.
 
