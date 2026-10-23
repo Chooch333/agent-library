@@ -193,4 +193,5 @@ None. This skill finishes in one run and leaves nothing open.
 
 ## Changelog
 
+- **0.1.1** (2026-10-23) — Progress tracking section ("None" form). Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-05-13) — Initial draft. Reshaped from Tan's gstack /document-release. Stripped: gstack runtime bash, telemetry, ~/.gstack/ filesystem ops, shell-based git diff and doc-file discovery, persistent metrics. Adapted: file read/edit/commit operations route through Custom GitHub MCP. Kept: 9-step audit, auto-update vs ask-user classification, never-auto-update list, per-file-type heuristics (README, ARCHITECTURE, CONTRIBUTING, CLAUDE.md, others), CHANGELOG voice polish rules, cross-doc consistency check.
