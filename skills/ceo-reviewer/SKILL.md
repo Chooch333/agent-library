@@ -177,6 +177,14 @@ CEO review · {date} · Posture: {mode} · Builds on: Vetting Report {date}
 - Diagrams (system architecture, data flow, state machine, error flow, deployment sequence, rollback flowchart)
 - Completion Summary
 
+## Progress tracking
+Follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: plan-review
+- build: the plan's or concept's name + "review" (or "business plan" on the Business Plan run), e.g. "Watcher service CEO review" (thread_key "plan-review:<build in lowercase words joined by hyphens>")
+- Opens when: the first turn of the review, at the first STOP gate
+- Checks in: end of every turn
+- Closes when: Charles approves the review's required outputs, or the Business & Tech Plan report is delivered (`close_thread`, closed_how "review approved" or "business plan delivered")
+
 ## Examples
 
 ### Example 1: "Review my plan to add a watcher service"
