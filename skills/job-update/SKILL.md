@@ -70,6 +70,9 @@ Supabase project `lpeswznkxzeeyiqaewma`, `execute_sql`.
    - **Skipped:** anything rejected or left off, and why. "None" if none.
    - **See it:** `https://cbrain-ui-git-review-chooch333s-projects.vercel.app/projects/<slug>`
 
+## Progress tracking
+None. This skill finishes in one run and leaves nothing open.
+
 ## Never
 
 - Write without Charles's ask.
