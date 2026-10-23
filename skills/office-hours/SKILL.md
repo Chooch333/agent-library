@@ -1,6 +1,6 @@
 ---
 name: office-hours
-version: 0.4.1
+version: 0.4.2
 status: draft
 triggers:
   - "business concept"
