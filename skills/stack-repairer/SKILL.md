@@ -1,6 +1,6 @@
 ---
 name: stack-repairer
-version: 0.2.1
+version: 0.3.0
 status: draft
 triggers:
   - "Stack Repairer: run"
