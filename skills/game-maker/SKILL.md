@@ -79,7 +79,9 @@ Then say exactly: **"If it looks good, tell me Launch and I'll send it to the ar
 Follow `Chooch333/family-arcade` `tools/launch.md` step by step. In short:
 1. Pack `public/games/<slug>/`: `game.json`, `cabinet.json`, `cabinet-paint.js`, `index.html`.
 2. Commit `game.json`, `cabinet.json`, `cabinet-paint.js` with `[wip]`.
-3. Build the cabinet: dispatch workflow `build-cabinet.yml` `{ slug, deploy: "false" }`, wait for it, read
+3. **Always build the cabinet — never skip this.** Custom GitHub MCP `run_workflow(owner Chooch333, repo
+   family-arcade, workflow_file build-cabinet.yml, inputs { slug, deploy: "false" })`, then `list_workflow_runs` /
+   `get_workflow_run` until completed and `get_job_logs(search "CABINET-RESULT")`; read
    `CABINET-RESULT` in its log (all checks true). It commits `cabinet.glb` + `cabinet-preview.png` and sets
    `"model": "cabinet.glb"`. If it fails, fix the painter (usually a canvas error) and run it again.
 4. Commit `index.html` last with `[deploy]`.
