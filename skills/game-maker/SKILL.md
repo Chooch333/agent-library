@@ -1,7 +1,7 @@
 ---
 name: game-maker
 description: 'Use when Charles (or a kid with him) says "New game: …" in a Claude chat: one-shot a whole 3D web game on the family-arcade kit as an artifact, design its arcade cabinet, run the play and review gates, and on "Launch" send game + cabinet to the family arcade site with a robot live check.'
-version: 0.3.0
+version: 0.3.1
 status: draft
 triggers: ["New game: …", "Launch (after a game-maker game is on screen)"]
 owner: Charles
