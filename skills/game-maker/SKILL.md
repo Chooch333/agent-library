@@ -111,6 +111,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: the game is Launched and its live check passed (`close_thread`, closed_how "launched")
 
 ## Changelog
+- 0.3.1 (2026-10-23) — Charles: trim (edge glow) color chosen per game; vary flat vs layered/textured finishes; control deck is standard (black panel, black buttons, red joystick) and no longer painted; Launch must always run `build-cabinet.yml`.
 - 0.3.0 (2026-10-23) — Every game designs its own arcade cabinet: new step 3 (cabinet.json + cabinet-paint.js on the standard cabinet `kit/cabinet/cabinet3d.js`, wrap-around paint, preview artifact); Launch builds `cabinet.glb` with `build-cabinet.yml` before the `[deploy]` commit; repaint path. The arcade floor only places cabinets. Charles, 2026-10-23.
 - 0.2.1 (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); step 7 points to it. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `game-maker`); `close_thread` when the game is Launched. Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
