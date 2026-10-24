@@ -48,7 +48,8 @@ If the repo can't be read, say so and stop — never write a game or cabinet fro
 Every game gets the **standard cabinet** (one shape for all games — never change the shape) painted for this game.
 All creative license is yours; follow `kit/cabinet.md`.
 - Write **`cabinet.json`**: `marquee.text` (the floating neon name, usually the title), `marquee.color`,
-  `body.color`, `body.trim` (the glowing edges), `buttons`, `stick`, `metal`.
+  `body.color`, `body.trim` (the glowing edge color — **choose it for this game**; never reuse one default).
+  The control deck is standard and not designed: black panel, black buttons, red joystick.
 - Write **`cabinet-paint.js`** (`export default function paint(c, h) { … }`, plain canvas 2D, inches):
   - **Wrap, don't frame.** The skin is one picture around the body (left side u 0–37 → front 37–62 → right side
     62–99). Carry one big simple shape of the game's world — a road, a wave, lightning, vines, a skyline — from
