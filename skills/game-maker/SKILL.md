@@ -56,8 +56,11 @@ All creative license is yours; follow `kit/cabinet.md`.
     the side round the corner onto the front. Never "a picture inside little panels". Never a plain box.
   - Paint the left half (u 0–49.5), then `h.mirrorHalf()`; then words and one-sided stickers (they'd read
     backwards if mirrored). One clear hero (the game's character/emoji) on each side.
-  - Also paint the marquee (backlit sign with the title), the screen (an attract picture), and the panel top.
+  - Also paint the marquee (backlit sign with the title) and the screen (an attract picture).
   - Two or three main colors plus the trim neon; bold and readable from across a room.
+  - **Vary the finish.** Not every cabinet flat: some flat poster color, others layered and textured
+    (overlapping depth layers, shading/highlights, grain, halftone, brush or pattern texture, outlines, drop
+    shadows). Pick what suits the game so the arcade doesn't look like one style.
 - Show it: fill `kit/cabinet/preview.html` (cabinet.json + title/emoji into `#cabinet-json`, `cabinet3d.js` and
   `cabinet-paint.js` pasted unchanged into their marked spots) and publish it as a second artifact — a turnable
   cabinet with its neon name. Keep both files in the chat; they are what Launch ships.
