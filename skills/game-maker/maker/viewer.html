@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHARACTER_NAME</title>
+<!-- 2D-3D Maker viewer template: replace CHARACTER_NAME (two places). Loads ./character.js beside it.
+     Cartoon outlines, if wanted, belong in this page only, never in character.js or the .glb. -->
+<style>
+  :root { --bg: #f6eddc; --ink: #1c1a1a; --btn: #ffffff; --accent: #e2483a; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #f6eddc; --ink: #1c1a1a; } }
+  :root[data-theme="dark"] { --bg: #f6eddc; --ink: #1c1a1a; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font-family: system-ui, sans-serif; overflow: hidden; }
+  canvas { display: block; }
+  .bar { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; gap: 10px; }
+  button { font: 600 16px system-ui, sans-serif; padding: 10px 20px; border: 3px solid var(--ink); border-radius: 999px; background: var(--btn); color: var(--ink); cursor: pointer; }
+  button.on { background: var(--accent); color: #fff; }
+  h1 { position: fixed; top: 12px; left: 16px; margin: 0; font-size: 18px; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<h1>CHARACTER_NAME</h1>
+<div class="bar" id="moves"></div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { createCharacter } from './character.js';
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xf6eddc);
+scene.add(new THREE.HemisphereLight(0xffffff, 0xd9c7a8, 1.6));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2);
+sun.position.set(-3, 6, 5); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left: -4, right: 4, top: 4, bottom: -4 });
+scene.add(sun);
+const ground = new THREE.Mesh(new THREE.CircleGeometry(6, 64), new THREE.MeshStandardMaterial({ color: 0xeadbc0, roughness: 1 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+
+const ch = createCharacter();
+ch.root.traverse((o) => { if (o.isMesh) o.castShadow = true; });
+scene.add(ch.root);
+
+// frame the character from its size
+const box = new THREE.Box3().setFromObject(ch.root), c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3()).length();
+const camera = new THREE.PerspectiveCamera(35, innerWidth / innerHeight, 0.05, 100);
+camera.position.set(c.x + s * 0.9, c.y + s * 0.35, c.z + s * 1.6);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.copy(c); controls.enableDamping = true; controls.update();
+
+const bar = document.getElementById('moves');
+for (const name of Object.keys(ch.clips)) {
+  const b = document.createElement('button'); b.textContent = name[0].toUpperCase() + name.slice(1); b.dataset.move = name;
+  if (name === 'idle') b.classList.add('on');
+  b.onclick = () => { ch.play(name); bar.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b)); };
+  bar.appendChild(b);
+}
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => { ch.update(Math.min(0.05, clock.getDelta())); controls.update(); renderer.render(scene, camera); });
+window.__viewerReady = true;
+</script>
+</body>
+</html>
