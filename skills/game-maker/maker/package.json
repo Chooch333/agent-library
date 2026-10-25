@@ -1,0 +1,7 @@
+{
+  "name": "2d-3d-maker",
+  "private": true,
+  "type": "module",
+  "description": "2D-3D Maker tool for the game-maker skill's Character maker: heat map, exporter, validator, still.",
+  "dependencies": { "three": "0.160.0", "gltf-validator": "2.0.0-dev.3.10" }
+}
