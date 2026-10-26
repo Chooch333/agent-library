@@ -1,12 +1,12 @@
 ---
 name: design-assist
-version: 0.5.2
+version: 0.6.0
 status: draft
 triggers:
   - "Design Assist"
 dependencies: []
 owner: Charles
-updated: 2026-10-21
+updated: 2026-10-26
 source: Original. Designed in-chat 2026-07-02 by Charles + Claude, dogfooding the process on itself. v0.2.0 proactive-harness revision designed in-chat 2026-07-09, again dogfooding. Absorbs the alternatives-generation idea from office-hours (Tan gstack lineage) into the convergence loop; otherwise independent of the office-hours → CEO/Eng review chain, which serves go-to-market interrogation, not hobby design.
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
@@ -52,6 +52,7 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 10. **Acceptance criteria drafted early.** "What proves this worked" is drafted in the brief by end of Phase A, not at exit — it sharpens every downstream fork.
 11. **Confidence labeled.** Verified-by-checking vs. assumed vs. drafted-unreviewed are visibly distinct in the artifact — rendered per `references/brief-artifact-style.md`'s pill/finding system (verified / assumed / drafted / correction), not just worded differently.
 12. **Builds keep the Stack Flow current.** Any brief that adds, removes, renames or re-routes a running part carries a Stack Flow step that edits `concepts/stack-map.md` (dots, lines, side-panel text) in the same build. A brief that changes nothing on the diagram says `Stack Flow: no change` and why, in one line — the `**Stack Flow:**` header line in `references/build-brief-template.md`. Standing authorization from Charles, 2026-10-07 (`skills/build/SKILL.md`); the Rules Inspector still compares the map to what shipped each week and files anything missed.
+13. **Builds keep the step map current.** Any brief that adds a workflow to the Workflows screen, or adds, removes, renames or reorders a workflow's steps, carries a step that edits that workflow's step list (`definition.steps`) in the same build. Each step has key (the exact name the runner logs), title, who (you | claude | checker | script | pc), uses, makes; stops say where pins go back to (back_to); time only when measured. A brief that changes no steps says `Step map: no change` in one line. The "No step map yet" flag on the Workflows screen is the backstop.
 
 ## The living artifact — draft Build Brief
 
@@ -179,6 +180,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **v0.6.0** (2026-10-26) — Doctrine rule 13: builds keep a workflow's step map (`definition.steps`) current; briefs carry a `**Step map:**` header line beside Stack Flow. Per Build 50 (BB-2026-10-26-workflow-step-map).
 - **0.5.2** (2026-10-23) — Review gate removed at Charles's direction. Intake no longer pulls or audits succeeded builds and never calls `review_plan`. When Charles says a build is done, the DA chat disposes that build's notes, fixes a weak plain name if needed, and runs the walkthrough visibility rule (which now keys off that moment instead of the review).
 - **0.5.1** (2026-10-23) — Board rule 12's check-in moves into the new Progress tracking section (build = the chat's own name for its work; project is Charles's; no 5 am sweep). Per BB-2026-10-21-next-steps-panel.
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Board rule 12, Check in — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `design-assist`, thread_key = board tag); `close_thread` when the brief is shelved or Charles parks it. Feeds the Next steps list on cbrain's Dev tab. Board upkeep unchanged. New `requires` entry.
