@@ -279,6 +279,43 @@ right. If Opus misses on it, fix this section first, not the model. After every 
 on total-harness (`add_note`, tags `game-maker`, `character-maker`): drawing, minutes, score per round, what Charles
 and the kids said, and any rule that should change.
 
+### 9.11 Drop in (character → avatar, game hero, saved or hidden)
+Runs at the end of every Character maker run, and on its own in any chat on
+`Drop in: <character> → <player>'s avatar | <game> hero | saved | hide`.
+
+1. **Ask once**, skipping what the message already says: "Whose is it (Dad, Graham, Louis or Elliott), and where
+   does it go: their avatar, a game's hero, or just saved?" Player keys: `dad`, `graham` (shown as G MONEY),
+   `louis`, `elliott`.
+2. **On the site?** If `public/characters/<name>/character.glb` is missing or older than `character.js`:
+   `run_workflow(Chooch333, family-arcade, build-character.yml, {name, deploy: "true"})`, then
+   `list_workflow_runs` / `get_workflow_run` until completed, `get_job_logs(search "CHARACTER-RESULT")`; `ok`
+   must be true. Over 2 MB: lower segment counts in `character.js` (never shapes), commit, run again. Three fails:
+   stop and bring Charles a diagnosis.
+3. **Register** (Supabase `execute_sql`, `lpeswznkxzeeyiqaewma`, `arcade_*` only):
+   ```sql
+   insert into public.arcade_characters (name, label, player_key, storage_path, still_path, source)
+   values ('<name>', '<label as the kids say it>', '<key>', '/characters/<name>/character.glb',
+           '/characters/<name>/still.png', 'chat <date>')
+   on conflict (name) do update set label = excluded.label, player_key = excluded.player_key,
+     storage_path = excluded.storage_path, still_path = excluded.still_path, hidden = false;
+   ```
+   A character going to a second player gets its own row, named `<name>-<key>`, pointing at the same files.
+4. **Where it goes:**
+   - *Avatar:* `update public.arcade_players set avatar = '<name>' where player_key = '<key>';` It also appears in
+     that player's Avatars in the panel.
+   - *Game hero:* the slot swap in family-arcade `tools/launch.md` ("Upgrading a model later"): slot
+     `"char:<name>"`, bump `version`, commit `[deploy]`, update `arcade_games.version`, wait for READY, live check;
+     the slot's `source` must be `"glb"`.
+   - *Saved:* nothing more; it waits in the player's Avatars.
+   - *Hide:* `update public.arcade_characters set hidden = true where name = '<name>'; update public.arcade_players
+     set avatar = null where avatar = '<name>';` Files stay.
+5. **Report** in one line: "On the floor: Louis now walks as Super Sweets. Change it any time in the panel under his
+   name." (or the game's play link after its live check).
+6. Check in per Progress tracking. A standalone Drop in closes when the report is sent (closed_how "dropped in").
+
+Tested 2026-10-25 (Build 49): `sweets-e` (run E's Super Sweets) built by the robot (1.78 MB, 55,776 triangles,
+0 validator errors), registered to Dad and set as his avatar; the floor check walked it.
+
 ## Progress tracking
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: game-maker
