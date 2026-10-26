@@ -228,9 +228,10 @@ round, measured from the drawing like any other.
 5. `log.md`: model name as the environment reports it, start and end times (`date -u`), minutes to first model
    and to full deliverable, the round table, triangles, file size, validator result, anything that could not be
    done.
-6. Save the source: Chooch333/kids-games `characters/<name>/` → `character.js`, `viewer.html`, `log.md` (text
-   files; the .glb is rebuilt from `character.js` in seconds by `export.mjs`, which is the point of code as the
-   source). Send `character.glb` and `still.png` to Charles as files.
+6. Save the source on the arcade: Chooch333/family-arcade `public/characters/<name>/` → `character.js`,
+   `viewer.html`, `log.md` (Custom GitHub `create_or_update_file`, `[wip]`). `<name>` is lowercase words joined
+   by hyphens and must not already be in `arcade_characters`. Send `still.png` to Charles. Then run Drop in
+   (9.11); its robot builds `character.glb` on the site from `character.js`.
 7. Report in two lines: the still, the viewer, minutes, score. Then Charles and the kids judge it (likeness is
    their call, not the score's). Changes they ask for are line edits to `COLORS` / `DIM` /
    the parts, re-exported in seconds (3 to 5 changed lines in the lab's edit test).
