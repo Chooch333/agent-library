@@ -257,10 +257,9 @@ round, measured from the drawing like any other.
   `rig` and `stage` code copied unchanged (the site, save and input parts left out): no page errors, character
   walking. Not yet tried in a launched game.
 - **The .glb route** (`"slots": { "hero": "assets/character.glb" }` or `"char:<name>"`) also tested: the kit
-  loads it, finds idle/walk/jump, and walks it. Use it for the arcade's character bucket
-  (`tools/launch.md`, "Upgrading a model later") and for other engines (Roblox, Unreal). Open item: that upload
-  needs an https link to the file, and the GitHub connector only writes text files; there is no tested way yet
-  to host a Claude-made .glb for it.
+  loads it, finds idle/walk/jump, and walks it. Use it for a launched game's hero (`tools/launch.md`,
+  "Upgrading a model later") and for other engines (Roblox, Unreal). The arcade hosts each character's .glb at
+  `/characters/<name>/character.glb`, built by `build-character.yml` (Drop in, 9.11).
 
 ### 9.9 What not to do (each was tried on Super Sweets)
 - Measure the whole drawing before the first model (run A: 101 min).
