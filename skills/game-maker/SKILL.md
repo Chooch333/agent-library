@@ -10,7 +10,7 @@ requires: [references/thread-checkin.md]
 wiring:
   runs: in-chat
   reads: [Chooch333/family-arcade kit/README.md, kit/template/index.html, kit/arcade-kit.js, kit/cabinet.md, kit/cabinet/cabinet3d.js, kit/cabinet/preview.html, Chooch333/agent-library skills/game-maker/maker/*]
-  writes: [Chooch333/family-arcade public/games/<slug>/ (game + cabinet files), cbrain db arcade_games, runs/<slug>/, Chooch333/kids-games characters/<name>/]
+  writes: [Chooch333/family-arcade public/games/<slug>/ (game + cabinet files), cbrain db arcade_games, runs/<slug>/, Chooch333/family-arcade public/characters/<name>/ (via build-character.yml), cbrain db arcade_characters + arcade_players.avatar]
   stack: [family-arcade]
   origin: yours
   label: Game Maker
