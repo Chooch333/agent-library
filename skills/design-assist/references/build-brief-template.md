@@ -21,12 +21,14 @@
 | 10 | Pasteable prompt written | ⬜ |
 | 11 | All 11 decision domains Answered / Defaulted / N-A — none silent; domain status table in brief body (see `references/brief-completeness-framework.md`) | ⬜ |
 | 12 | Stack Flow line filled — a brief that adds, removes, renames or re-routes a running part has a Directive step editing `concepts/stack-map.md` (dots, lines, side-panel text); otherwise "no change — {why}" (SKILL doctrine rule 12) | ⬜ |
+| 13 | Step map line filled — a brief that adds a workflow to the Workflows screen, or adds, removes, renames or reorders a workflow's steps, has a Directive step editing that workflow's step list (`definition.steps`); otherwise "no change — {why}" (SKILL doctrine rule 13) | ⬜ |
 
 ---
 
 **● What this is:** {one-line summary of the task}
 
 **Stack Flow:** {what changes on the diagram — dots, lines, side-panel text} | no change — {why, one line}
+**Step map:** {edits the step list for <workflow> | no change, and why}
 
 **● What I'll do:** {what the receiving chat is expected to produce}
 
