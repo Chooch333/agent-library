@@ -92,6 +92,7 @@ Three failed tries at the same check means stop, write down what was tried, and 
 ## The Pascal GLB route (Build 35, from the 2026-10-11 run)
 - The model now comes from **Pascal**: a scene file (`arch-renders/pipeline/pascal/generate.mjs`) exported to GLB by Pascal **on Charles's PC** (skill `pascal-editor`; the cloud export is broken). Blender 5.2.2 imports it with every wall, window and door as a named part (`wall_<id>`, `window_<id>`, `door_<id>`).
 - The renderer is `pipeline/pascal/render.py`. It reads cameras, sun, site kit, output and look from `workflows.conventions` **data**, and maps materials by **signature** (`sign_glb.mjs`, calibrated per Pascal version into `materials.pascal_signature`), never by name or image order.
+- **Revit models (FBX):** render with `pipeline/revit-intake/render_revit.py` (same arguments and outputs, `--blend` in place of `--glb`); `render.py` stays the Pascal/PDF renderer.
 - Modes: `preview` (800×450, 16 samples), `idpass` (one flat colour per part, no anti-aliasing, plus a colour→part map so a pin on a preview names a part), `still` (1600×900, 64 samples).
 - Measured 2026-10-11 (two-storey commercial building, simpler near site): check renders 50–60 s each; stills 5.9–7.8 min each.
 
