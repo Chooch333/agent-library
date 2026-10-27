@@ -42,7 +42,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `New game:` (a message that starts with it, e.g. `New game: squish things to earn coins`; in any chat, mid-chat included), `New character:` (a message that starts with it, with a drawing), `Drop in:` (a message that starts with it, e.g. `Drop in: Super Sweets → Louis's avatar`), and `Launch` said after a Game Maker game is on screen | `skills/game-maker/SKILL.md` |
+| `New game:` (a message that starts with it, e.g. `New game: squish things to earn coins`; in any chat, mid-chat included), `New character:` (a message that starts with it, with a drawing), `Drop in:` (a message that starts with it, e.g. `Drop in: Super Sweets → Louis's avatar`), `Remove:` (a message that starts with it, e.g. `Remove: Waddle Out from Louis' arcade`; in any chat), and `Launch` said after a Game Maker game is on screen | `skills/game-maker/SKILL.md` (0.6.0) |
 
 ### Plan-mode reviews
 
