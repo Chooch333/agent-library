@@ -87,5 +87,6 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: `pass-stills` sets the run `done`, or Charles clicks Done
 
 ## Changelog
+- 0.2.0 (2026-10-27) — Two source-file paths (PDF set, Revit FBX) that meet at `previews`; FBX step keys `fbx-get`, `fbx-open`, `fbx-setup`; an FBX job stops with a plain note until Build 53 adds the intake script and the render input. Per BB-2026-10-27-source-file-paths (Build 52).
 - 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-12) — First version, written by the Build 35 night run. Not yet run end to end (Build 35.1).
