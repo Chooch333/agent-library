@@ -1,6 +1,6 @@
 ---
 name: arch-renders-run
-version: 0.2.0
+version: 0.3.0
 status: draft
 triggers: [the "Arch renders runner" scheduled task fires with "run: <uuid>" and "action: <name>"; no chat trigger]
 dependencies: [arch-massing, arch-render, pascal-editor, wake]
@@ -11,7 +11,7 @@ wiring:
   runs: on-its-own
   starts: "fired by the Workflows screen (cbrain-ui POST /api/workflows/runs/<id>/fire): API trigger, or a wake line the Harness dispatcher picks up at :47"
   runs_in: claude-code
-  reads: [cbrain workflow_runs, workflow_assets, workflow_pins, workflow_gate_results, materials, workflows.conventions, the run's Drive link, Chooch333/arch-renders pipeline/pascal, Chooch333/arch-renders-assets]
+  reads: [cbrain workflow_runs, workflow_assets, workflow_pins, workflow_gate_results, materials, workflows.conventions, the run's Drive link, Chooch333/arch-renders pipeline/pascal and pipeline/revit-intake, Chooch333/arch-renders-assets]
   writes: [cbrain workflow_runs (step, progress, status), workflow_assets, workflow_gate_results, workflow_pins (answers), Chooch333/arch-renders-runs]
   stack: [total-harness]
   origin: yours
@@ -44,11 +44,18 @@ The run's `scope.cameIn` names its source file type. Match it to the workflow's 
 - **Revit FBX** (`fbx`): `fbx-get`, `fbx-open`, `fbx-setup`, then `previews`.
 Log progress only under the chosen path's step keys; the screen shows each job its own path.
 
-**FBX path, until Build 53 lands.** If the run takes the FBX path and `Chooch333/arch-renders` has no `pipeline/revit-intake/` folder, set `fbx-get` to `failed` with the note "The FBX path isn't built in the runner yet (Build 53). Start this job again once it lands.", set `step = 'failed'` and end. Never fall back to the PDF steps for an FBX job. Once Build 53 lands, its steps are:
-1. `fbx-get` — download the FBX from the run's Drive link (Google Drive connector) into this session's private folder. Never commit it.
-2. `fbx-open` — open it in Blender with the intake script in `pipeline/revit-intake/`; check element count, scale and up direction.
-3. `fbx-setup` — build materials from the Revit material names through the material table (unknown names go gray and are listed as assumptions), fix the Revit camera (near clip, stray animation), save the Blender file the render step reads.
-Then `previews` onward as below, with the render step reading that Blender file (Build 53 adds the input to `render.py`). Model-stop pins on an FBX job go back to `fbx-setup` (materials or camera), not the scene.
+**FBX path (Build 53).** Scripts: `Chooch333/arch-renders/pipeline/revit-intake/` (README has the run order and file shapes). `RUN` is this run's folder in the session's private folder. Never fall back to the PDF steps for an FBX job.
+1. `fbx-get` — download the FBX from the run's Drive link (Google Drive connector) into this session's private folder as `model.fbx`. Never commit it (the runs repo ignores `*.fbx`). No link or no access: `failed`, note "the run has no readable FBX link".
+2. `fbx-open` — `python3 intake.py open --fbx model.fbx --out RUN` → `RUN/base.blend`, `RUN/names.json`. Check the printed counts and bounds (metres, lowest point at z = 0).
+3. `fbx-setup` — `python3 intake.py setup --run RUN --materials materials.json [--overrides RUN/overrides.json] [--assets ASSETS_DIR]` → `RUN/model.blend`, `RUN/takeoff.json`, `RUN/intake-report.json`. `materials.json` is the cbrain `materials` export (all rows, including `revit_patterns` and `revit_rank`). Use the run's `overrides.json` when it has one (setup reads `RUN/overrides.json` by default); `--assets` (the `arch-renders-assets` clone) only when a texture material is used.
+4. `previews` — for each camera `revit` and `cutaway`: `python3 render_revit.py --blend RUN/model.blend --conventions conventions.json --mode preview --camera <cam> --out RUN/preview_<cam>.png --report RUN/preview_<cam>.report.json`, then the same with `--mode idpass --out RUN/idpass_<cam>.png` (no `--report`; it writes the colour map `RUN/idpass_<cam>.json`). Check against arch-render's list.
+5. Commit to `arch-renders-runs/runs/<run-id>/`: `model.blend`, `takeoff.json`, `intake-report.json`, `overrides.json` (if any), previews, id passes and their `.json` colour maps. Add `workflow_assets` rows with `repo_path` (no bytes): `model`, `takeoff`, `preview` (meta `{camera, order}`), `id-pass` (meta `{camera, preview_asset_id, colors}` from the id pass's `.json`). Gate result (gate 3, v1), from `intake-report.json`: assumptions = every Revit name on `unmatched` (source `assumed`; unnamed slots too, when any) plus the ground plane (`assumed`); checks = coverage, import size and bounds. Then `model-stop`.
+
+**answer-pins** (FBX): read the open pins on gate 3 at the latest version. Each pin's `part` is an `rvt_` key: find the element in the id-pass map (the `colors` entry with that `part`; its `label` is the element) and the element's Revit material names in `names.json`. Change `RUN/overrides.json`: map that Revit name to another library slug (`materials`, any case); or, when no library row fits, add a flat library row to cbrain `materials` with a `revit_patterns` entry, re-export `materials.json` and log it as an assumption; or hide a category (`hide`, regex on element names; `show` exempts an element from the cutaway list); or nudge the camera (`camera`: `heading_deg`, `down_deg`, `distance`). Re-run `fbx-setup` and `previews` as version N+1, commit, answer every pin (`answer`, `answered_in_version`, status `answered` or `wont-fix` with a reason), new gate result under review, back to `model-stop`.
+
+**pass-model** (FBX): as below, with `stills` = `python3 render_revit.py --blend RUN/model.blend --conventions conventions.json --mode still --camera <cam> --out RUN/still_<cam>.png` for both `revit` and `cutaway`. **answer-still-pins** (FBX): a change to the model goes back through `fbx-setup`, previews and stills as a new version.
+
+Reading Revit's own material records (`fbx_matnames.py`) is lab-proven only until the first real FBX job; an FBX not from Revit falls back to the material names Blender imported on each slot (`intake-report.json` `name_source`: `revit-records` or `imported-slots`).
 
 ## Steps by action
 **start** (gate 3, version 1), PDF path:
@@ -87,6 +94,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: `pass-stills` sets the run `done`, or Charles clicks Done
 
 ## Changelog
+- 0.3.0 (2026-10-27) — FBX path runs: intake.py and render_revit.py steps replace the 'not built yet' stop (Build 53)
 - 0.2.0 (2026-10-27) — Two source-file paths (PDF set, Revit FBX) that meet at `previews`; FBX step keys `fbx-get`, `fbx-open`, `fbx-setup`; an FBX job stops with a plain note until Build 53 adds the intake script and the render input. Per BB-2026-10-27-source-file-paths (Build 52).
 - 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-12) — First version, written by the Build 35 night run. Not yet run end to end (Build 35.1).
