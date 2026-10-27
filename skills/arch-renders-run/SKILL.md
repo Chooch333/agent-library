@@ -38,8 +38,20 @@ Both may be on one line (`run: <uuid> action: <name>`, from a wake line) or two.
 5. End at a stop: set `step` to the stop, `status` to `waiting-on-charles`, the stop's gate result to `under-review`. Or end at `done`.
 6. Three failed tries at one step: set the step `failed` with a plain diagnosis (what was tried, what failed), `step = 'failed'`, and end. Never relax a check.
 
+## Two source-file paths (Build 52)
+The run's `scope.cameIn` names its source file type. Match it to the workflow's `definition.paths` by label (exact, then ignoring case and spaces) or key; no answer or no match means the PDF path. The paths share everything from `previews` on.
+- **PDF set** (`pdf`): `read-sheets`, `takeoff`, `check-takeoff`, `scene`, `validate`, `export`, then `previews`.
+- **Revit FBX** (`fbx`): `fbx-get`, `fbx-open`, `fbx-setup`, then `previews`.
+Log progress only under the chosen path's step keys; the screen shows each job its own path.
+
+**FBX path, until Build 53 lands.** If the run takes the FBX path and `Chooch333/arch-renders` has no `pipeline/revit-intake/` folder, set `fbx-get` to `failed` with the note "The FBX path isn't built in the runner yet (Build 53). Start this job again once it lands.", set `step = 'failed'` and end. Never fall back to the PDF steps for an FBX job. Once Build 53 lands, its steps are:
+1. `fbx-get` — download the FBX from the run's Drive link (Google Drive connector) into this session's private folder. Never commit it.
+2. `fbx-open` — open it in Blender with the intake script in `pipeline/revit-intake/`; check element count, scale and up direction.
+3. `fbx-setup` — build materials from the Revit material names through the material table (unknown names go gray and are listed as assumptions), fix the Revit camera (near clip, stray animation), save the Blender file the render step reads.
+Then `previews` onward as below, with the render step reading that Blender file (Build 53 adds the input to `render.py`). Model-stop pins on an FBX job go back to `fbx-setup` (materials or camera), not the scene.
+
 ## Steps by action
-**start** (gate 3, version 1):
+**start** (gate 3, version 1), PDF path:
 1. `read-sheets` — open the run's drawings link through the Google Drive connector. No link or no access: `failed`, note "the run has no readable drawings link". Never commit sheets anywhere.
 2. `takeoff` — write `takeoff.json` (schema `pipeline/pascal/takeoff.schema.json`): every number `{v, src}` with the sheet it came from, or `src: "assumed"`; `materials_used` maps each finish on the drawings to a library slug with its sheet. Use skill `arch-massing` for reading plans and elevations.
 3. `check-takeoff` — a fresh checker agent grades the takeoff against the sheets; at most two fix rounds; keep its report as `takeoff-check.json`.
