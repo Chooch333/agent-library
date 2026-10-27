@@ -110,6 +110,19 @@ without Charles's say-so.
 **Repainting later** ("make the cabinet blue"): change `cabinet.json` / `cabinet-paint.js` (`[wip]`), dispatch
 `build-cabinet.yml` with `deploy: "true"`, wait for READY. The game itself doesn't change.
 
+## 6a. Remove (on "Remove: <game> from <player>'s arcade")
+Takes a game out of **one** player's arcade. It waits under **Taken out** in that player's panel (click the name on
+the arcade), where Put back returns it. Anyone may ask; no PIN (Charles, 2026-10-26).
+1. If the message names no arcade, ask **"Great, whose arcade: Dad's, Graham's, Louis' or Elliott's?"** and do
+   nothing until answered. Find the game by title or slug in `arcade_games`; if it's unclear which game, ask once.
+2. Supabase `execute_sql`, `lpeswznkxzeeyiqaewma`, `arcade_*` only, once per named arcade:
+   `select public.arcade_remove_game('<key>', '<slug>');` — `game not in this arcade` means it isn't there; say so.
+   Never delete an `arcade_placements` row by hand: the game would not show under Taken out.
+3. Report one line: "Taken out of Louis' arcade. Put it back any time from his panel."
+Put back from a chat, if asked: `select public.arcade_put_back_game('<key>', '<slug>');` (only works for a game
+taken out of that arcade). Taking a game out of **every** arcade is the parent panel's Hide
+(`arcade_games.status = 'hidden'`), not this. Files and saves stay either way.
+
 ## 7. Record lessons
 After Launch, one Project State note on total-harness (`add_note`, tags `game-maker`, `family-arcade`): game, rounds,
 what the kids liked, what the live check caught, and any kit rule that should change (as a suggestion, not an edit).
