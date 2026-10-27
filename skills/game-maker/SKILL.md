@@ -96,10 +96,14 @@ Then follow `Chooch333/family-arcade` `tools/launch.md` step by step. In short:
    `CABINET-RESULT` in its log (all checks true). It commits `cabinet.glb` + `cabinet-preview.png` and sets
    `"model": "cabinet.glb"`. If it fails, fix the painter (usually a canvas error) and run it again.
 4. Commit `index.html` last with `[deploy]`.
-5. Upsert the `arcade_games` row and place the game in the arcades (`tools/floor.md`), Supabase
-   `lpeswznkxzeeyiqaewma`, `arcade_*` tables only.
+5. Upsert the `arcade_games` row, then **place it only in the named arcade(s)**: `select
+   public.arcade_place_game('<key>', '<slug>')` once per named key, never for any other (`tools/floor.md`),
+   Supabase `lpeswznkxzeeyiqaewma`, `arcade_*` tables only. Read back
+   `select player_key, spot from arcade_placements where game_slug = '<slug>'`: it must list exactly the named
+   arcades (plus any it was already in, on a re-launch). If it doesn't, fix that before going on.
 6. Wait for the Vercel deploy READY, dispatch `live-check.yml`, read `LIVE-CHECK-RESULT`.
-Only after a pass, report: `Launched: <title> → <address>/play/<slug>` and show `cabinet-preview.png`.
+Only after a pass, report: `Launched: <title> → <Name>'s arcade · <address>/play/<slug>` (every arcade it is in,
+matching the read-back) and show `cabinet-preview.png`.
 If the check fails, fix and re-run. Never touch any non-arcade cbrain table. Never use a paid tool (Meshy etc.)
 without Charles's say-so.
 
