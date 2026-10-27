@@ -79,7 +79,15 @@ When feedback slows, give one line: either "Ready to launch." or "One thing to f
 Then say exactly: **"If it looks good, tell me Launch and I'll send it to the arcade."**
 
 ## 6. Launch (only when Charles says "Launch")
-Follow `Chooch333/family-arcade` `tools/launch.md` step by step. In short:
+0. **Whose arcade — always the first step.** If the Launch message does not name an arcade, reply exactly:
+   **"Great, whose arcade: Dad's, Graham's, Louis' or Elliott's?"** and **commit nothing until answered** — no
+   file, no workflow, no database row. Accept one name or several (keys `dad`, `graham` — "G MONEY" is Graham —
+   `louis`, `elliott`). "Everyone's" / "all four" only when said outright; never assume it. On a re-launch of a
+   slug already placed, ask the same question and say where it already is (read back
+   `select player_key from arcade_placements where game_slug = '<slug>'`): a re-launch updates the one copy in
+   every arcade it is already in, and only newly named arcades get a new placement.
+
+Then follow `Chooch333/family-arcade` `tools/launch.md` step by step. In short:
 1. Pack `public/games/<slug>/`: `game.json`, `cabinet.json`, `cabinet-paint.js`, `index.html`.
 2. Commit `game.json`, `cabinet.json`, `cabinet-paint.js` with `[wip]`.
 3. **Always build the cabinet — never skip this.** Custom GitHub MCP `run_workflow(owner Chooch333, repo
