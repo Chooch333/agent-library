@@ -30,7 +30,7 @@
 - [verified 2026-10-28] The runner reads only the run's Drive link (`fbx-get`, `read-sheets`). A file attached to a chat never reaches it. The Drive connector's upload takes the file as text inside Claude's own message (`create_file` `base64Content`), which suits a one-page note, not a plan set or a model.
 - [assumed ~] Charles's plan sets and Revit FBX files are several MB or more, so a chat attachment can't be moved to Drive this way. Not measured.
 - [verified 2026-10-28] The "Arch renders runner" scheduled task exists (created by Build 35.1 at 14:30 UTC) and a chat can fire it directly: `fire_trigger` is in a normal chat's tool list, and the runner's probes ran from fires with appended text. Fires with no text end as "bad fire text" (four times today), so the chat must always pass `run:` and `action:`.
-- [verified 2026-10-28, from Build 35.1's probes] In the runner's scheduled sessions the Google Drive connector returns nothing for any query, so Build 35.1 moved job drawings to a folder on the PC (`C:\Users\cecou\code\drawings\<job>`). This brief's Drive-link route depends on the runner reading Drive.
+- [verified 2026-10-28, from Build 35.1's probes] The Google Drive connector returns nothing for any query, in the runner's sessions and in an ordinary chat (search and recent-files both empty, checked 2026-10-28 14:10 ET), so it is a connection problem, not a runner one. Build 35.1 moved job drawings to a folder on the PC (`C:\Users\cecou\code\drawings\<job>`). This brief's Drive-link route depends on the runner reading Drive.
 - [verified 2026-10-28] AGENT.md routes chat triggers by phrase; "New game:" fires at the start of any message, mid-chat included. No row mentions renders.
 
 ## Receiving chat
