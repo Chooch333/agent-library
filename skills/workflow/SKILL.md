@@ -34,6 +34,7 @@ A **speed run** (`skills/speed-run`) is how an unknown path gets researched firs
 Write the steps from Charles's sentence to the finished thing as rows (the speed run's walkthrough columns: Step · Who · How · Where · Needs · Could stop it · Bin).
 - **Any row unknown, or needing a tool nobody has proven here** → run `skills/speed-run` first, then come back with its researched step list, card and slices.
 - **Every row reuses something that works** → skip the speed run. Still write a one-paragraph use-case card (sentence, input as it really arrives, finish line, touch budget, money).
+- Either way, look up where the input and output live and which tools are connected before asking Charles; ask him only what no tool can tell (speed-run, "First turn").
 
 ## 2. Pick the kind
 | | Screen workflow | Chat workflow |
