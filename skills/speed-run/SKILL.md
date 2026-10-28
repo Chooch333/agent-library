@@ -73,4 +73,4 @@ Follows `references/thread-checkin.md`.
 - Closes when: handed to the workflow skill (closed_how "researched"), or parked on the R&D Shelf (closed_how "parked")
 
 ## Changelog
-- 0.1.0 (2026-10-27) — First version, Build 54. Moves the speed-run method out of the Claude Doc into a skill and narrows it to discovery (stages 0-5), per Charles: the speed run finds and researches the steps; the workflow skill canonizes them.
+- 0.1.0 (2026-10-27) — First version, Build 54. Moves the speed-run method out of the Claude Doc into a skill and narrows it to discovery (stages 0-5), per Charles: the speed run finds and researches the steps; the workflow skill canonizes them. "First turn" section added after Build 54's cold-read test (the first draft's helper asked where the sheet lived and did not name the record plan's tags).
