@@ -2,6 +2,7 @@
 
 History of routing changes to `AGENT.md`, newest first. Moved out of AGENT.md on 2026-10-15 (Build 39). Older lines keep their original wording.
 
+- **2026-10-27** — Disambiguation gains "New workflow vs changing one": a new workflow is designed in a Design Assist chat, which loads `skills/workflow` (new, canonize) and `skills/speed-run` (new, discovery) when steps are unknown; changing an existing workflow is an ordinary Design Assist brief. No new trigger rows. Design Assist 0.7.0. Per Build 54 (BB-2026-10-27-workflow-method).
 - **2026-10-26** — Family arcade row: adds `Remove:` (a message that starts with it, e.g. `Remove: Waddle Out from Louis' arcade`) → `skills/game-maker/SKILL.md` 0.6.0, section 6a (Build 51, BB-2026-10-26-launch-target-remove). Takes a game out of one arcade; Put back is in the player's panel.
 - **2026-10-25** — Family arcade row: adds `New character:` (a message that starts with it, with a drawing) and `Drop in:` (e.g. `Drop in: Super Sweets → Louis's avatar`) → `skills/game-maker/SKILL.md` 0.5.0 (Build 49, BB-2026-10-25-characters-into-arcade). `New character:` was already in the skill but not routed here; `Drop in:` is new (game-maker 9.11).
 - **2026-10-21** — Added "Family arcade" section with a `New game:` row (any chat, mid-chat included; plus `Launch` after a Game Maker game is on screen) → `skills/game-maker/SKILL.md` (Build 42). Charles: skills live in repos, not the claude.ai skill list, so this row is how chats reach Game Maker.
