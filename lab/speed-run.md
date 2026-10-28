@@ -4,7 +4,7 @@ Method: `skills/speed-run` (discovery) → `skills/workflow` (canonize), both re
 - arch-renders · Speed run: arch renders · use-case card: Stage 1 of the Working Doc https://claude.ai/code/artifact/864ebc78-392a-4840-bf64-bca83b03f76c (drafted 2026-10-10, awaiting Charles's confirm; replaces the parked draft) · input is a standard plan set PDF, never a required DXF · style study: Build 33 · until the card is confirmed, its requirements are the text below.
 - family-arcade · Speed run: family arcade (game factory) · Working Doc https://claude.ai/code/artifact/eb6b7b5f-c5f2-4cd3-a67f-3a1b4bd8bb0d · speed-run record Project State plan 5eb4d7db (total-harness) · Build 42 (plan 1b8c5990) builds the arcade site, starter kit, Launch step and game-maker skill · games are browser Three.js (TH-072); the arcade is its own Next.js + Tailwind site (TH-073) · added 2026-10-19 by the R&D lab with Charles's approval.
 
-Each new speed run adds one line here pointing at its own use-case card. How speed runs work: "Speed-run framework" tab of the same doc.
+Each new speed run adds one line here pointing at its own use-case card. How speed runs work: `skills/speed-run` (the "Speed-run framework" tab of the same doc is history).
 
 ## arch-renders: standing requirements
 
