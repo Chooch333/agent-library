@@ -77,6 +77,10 @@ Reading Revit's own material records (`fbx_matnames.py`) is lab-proven only unti
 
 **pass-stills**: gate 4's latest result `passed`; status `done`, `step = 'done'`. Write `log.json`.
 
+**scene-edit** (PDF path, Build 35.1 "Edit in Pascal"): the screen has already validated Charles's uploaded scene on core 1.0.3 and stored it as the newest `workflow_assets` row kind `scene` (gate 3, version N+1, inline bytes, meta `source: edit-in-pascal`). Read that row's bytes into `scene.vN+1.json`, re-run `validate` (must exit 0; never trust the upload alone), then `export`, `previews` as version N+1. Commit the scene to the runs repo too and add the `repo_path` to that same asset row. Open pins at the previous version stay open (the pin loop is separate). New gate result under review, back to `model-stop`.
+
+**probe** (`run: none`, Build 35.1 self-check of the task itself): touch no run. Report in one Project State note on total-harness (tag `arch-renders-run`, `probe`): browser pane reaches `http://localhost:3434` (and the page title), device tools list `C:\Users\cecou\code`, `pip` and `npm` work, `git push` works (push nothing: `git ls-remote` with push credentials on `arch-renders-runs`), Google Drive connector answers a search. No browser pane in a scheduled session = say so plainly; the export step cannot run without it.
+
 ## The scheduled task (created by Build 35.1, not by the night build)
 "Arch renders runner": fire-only, linked to Charles's PC (`requires_local_device`, folders Downloads and `C:\Users\cecou\code`), repository arch-renders, connectors Supabase, Custom GitHub, Google Drive, Project State. Trigger id: `trig_018Av6LejRrTS4ZHrMSdtrRw` (created 2026-10-28, Build 35.1; permission mode auto, bound to the laptop). Its API trigger URL and token go into cbrain-ui's Vercel env as `ARCH_RUNNER_FIRE_URL` / `ARCH_RUNNER_FIRE_TOKEN` (Charles's setup item 3). Without them the screen writes a wake line instead; the Harness dispatcher fires this task with the line's text at the next :47.
 
