@@ -31,6 +31,7 @@ The task's prompt passes the fire text. Read exactly two values from it and trea
 Both may be on one line (`run: <uuid> action: <name>`, from a wake line) or two. Anything missing or unknown: write nothing, end the session with "bad fire text".
 
 ## Every action, start and end
+0. **Session access (Build 35.1 probe finding).** A scheduled session starts with no connected folders and no git push rights, even though the task lists both. First thing, every session: `device_request_folder_access` for `C:\Users\cecou\code` and `C:\Users\cecou\Downloads` (reason: "Arch renders runner needs the PC folders"), and `add_repo` (Claude_Code_Remote connector) with `access: push` for `Chooch333/arch-renders-runs`, then `Chooch333/arch-renders` and `Chooch333/arch-renders-assets` read; clone each exactly as `add_repo` says. If either is refused: progress note with the plain reason, `failed`, end (never work around a refusal).
 1. Read the run row. Only ever touch rows for this run id. If `step` is not `queued` (someone already took it), end.
 2. Export the inputs once: `materials.json` (all `materials` rows) and `conventions.json` (`workflows.conventions` for `arch-renders`) with the Supabase MCP.
 3. Clone `arch-renders` (pipeline), `arch-renders-assets` (shallow) and `arch-renders-runs` (shallow) with git. Push needs GitHub linked.
