@@ -22,6 +22,7 @@
 | 11 | All 11 decision domains Answered / Defaulted / N-A — none silent; domain status table in brief body (see `references/brief-completeness-framework.md`) | ⬜ |
 | 12 | Stack Flow line filled — a brief that adds, removes, renames or re-routes a running part has a Directive step editing `concepts/stack-map.md` (dots, lines, side-panel text); otherwise "no change — {why}" (SKILL doctrine rule 12) | ⬜ |
 | 13 | Step map line filled — a brief that adds a workflow to the Workflows screen, or adds, removes, renames or reorders a workflow's steps, has a Directive step editing that workflow's step list (`definition.steps`); otherwise "no change — {why}" (SKILL doctrine rule 13) | ⬜ |
+| 14 | Workflow parts list — a brief that first makes a new workflow real ticks every item of `skills/workflow` section 3, or writes "not needed — why" per item | ⬜ |
 
 ---
 
