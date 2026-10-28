@@ -36,6 +36,8 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 
 **Do not fire when:** the design is already shaped and he wants execution (build chat), viability interrogation (office-hours), or a one-shot multi-perspective read (brainstorm chat).
 
+**New workflows.** If the thing being designed is a new workflow — something Charles will start with one sentence or Start the Job — load `skills/workflow/SKILL.md` and follow it inside this loop. It runs a speed run first (`skills/speed-run`) when any step is unknown, and its parts list joins the completeness gate (gate 14). Changing an existing workflow stays an ordinary brief under rules 12-13.
+
 ## The Proactivity Doctrine
 
 > These rules govern every DA turn. They override politeness, turn-length caution, and the instinct to ask before acting. Violating one is a session defect. Within DA sessions, the build skill's Response format rule on judgment calls (`skills/build/SKILL.md`) is satisfied by the batched fork list plus pre-applied recommendations below — DA does not surface every judgment call individually.
