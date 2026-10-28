@@ -182,7 +182,8 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
-- **v0.6.0** (2026-10-26) — Doctrine rule 13: builds keep a workflow's step map (`definition.steps`) current; briefs carry a `**Step map:**` header line beside Stack Flow. Per Build 50 (BB-2026-10-26-workflow-step-map).
+- **0.7.0** (2026-10-27) — New workflows: the When section points to `skills/workflow` (which runs `skills/speed-run` first when any step is unknown); its parts list joins the completeness gate as gate 14. Rule 13's no-change line now says why. Phase D step 9's sweep also checks every unbuilt brief that adds or changes a workflow's steps has a Step map step. Changelog label fix (v0.6.0 → 0.6.0). Per Build 54 (BB-2026-10-27-workflow-method; closes TH-J-032's loose ends).
+- **0.6.0** (2026-10-26) — Doctrine rule 13: builds keep a workflow's step map (`definition.steps`) current; briefs carry a `**Step map:**` header line beside Stack Flow. Per Build 50 (BB-2026-10-26-workflow-step-map).
 - **0.5.2** (2026-10-23) — Review gate removed at Charles's direction. Intake no longer pulls or audits succeeded builds and never calls `review_plan`. When Charles says a build is done, the DA chat disposes that build's notes, fixes a weak plain name if needed, and runs the walkthrough visibility rule (which now keys off that moment instead of the review).
 - **0.5.1** (2026-10-23) — Board rule 12's check-in moves into the new Progress tracking section (build = the chat's own name for its work; project is Charles's; no 5 am sweep). Per BB-2026-10-21-next-steps-panel.
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Board rule 12, Check in — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `design-assist`, thread_key = board tag); `close_thread` when the brief is shelved or Charles parks it. Feeds the Next steps list on cbrain's Dev tab. Board upkeep unchanged. New `requires` entry.
