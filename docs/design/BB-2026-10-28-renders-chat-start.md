@@ -7,7 +7,7 @@
 **Speed run:** arch-renders
 **Harness slices:** block 16 (one skill per tool pack)
 **After:** Build 35.1 (`1a2ff678`: the runner scheduled task). Without it a chat-started job waits like a screen-started one.
-**Target repos:** Chooch333/agent-library, cbrain database (lpeswznkxzeeyiqaewma) · **Overnight:** no (the self-check fires the runner and reads it back)
+**Target repos:** Chooch333/agent-library, cbrain database (lpeswznkxzeeyiqaewma) · **Overnight:** yes (Charles, 2026-10-28).
 **Stack Flow:** yes — one new line: any chat → Arch renders runner (same dot the screen fires).
 **Step map:** edits the step list for Architectural renderings — the intake step's "uses" text only (no step added, removed or renamed).
 
