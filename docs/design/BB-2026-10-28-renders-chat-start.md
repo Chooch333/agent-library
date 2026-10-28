@@ -59,7 +59,7 @@ A daytime build chat running orchestrate-build.
 - **Other workflows:** only arch renders has a runner.
 
 ## Directive
-1. Read live state: cbrain-ui `review` `app/api/workflows/[slug]/runs/route.ts`, `lib/db/workflows.ts` (`insertRun`, `recordFire`), `lib/runner-fire.ts`, `lib/workflow-model.ts` (`runRequestProblem`); the arch-renders row; `list_triggers` (is the Arch renders runner there yet?); AGENT.md; skill `workflow`.
+1. Read live state: cbrain-ui `review` `app/api/workflows/[slug]/runs/route.ts`, `lib/db/workflows.ts` (`insertRun`, `recordFire`), `lib/runner-fire.ts`, `lib/workflow-model.ts` (`runRequestProblem`); the arch-renders row; `list_triggers` (is the Arch renders runner there yet?); AGENT.md; skill `workflow`. **Stop here first if the runner still can't read Drive:** check the runner skill's drawings route as Build 35.1 left it. If drawings must be in the PC folder, do not build the Drive-link route. Stop with a diagnosis and one fork for Charles: fix Drive access for the runner, or have the chat place the file in the PC drawings folder.
 2. Add the "Start from chat" section to `skills/arch-renders-run/SKILL.md` (Scope 1) with the exact SQL for the insert and the conditional fire record, the exact fire text and the exact wake-line text; bump its version and changelog. If Build 38 has already edited this skill, merge on top of its version.
 3. Add the AGENT.md row (Scope 2) and a CHANGELOG line.
 4. Save the current `definition` as an undo note on total-harness, then update `intake.uses` (`execute_sql`); read it back.
