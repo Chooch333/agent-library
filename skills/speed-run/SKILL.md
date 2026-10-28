@@ -30,6 +30,15 @@ It runs ahead of the Total Harness campaign order and pulls forward only the thi
 - Loaded by `skills/workflow` (inside a Design Assist chat) when any step of a new workflow is unknown or needs a tool verdict.
 - Skipped when every step reuses something that already works; the workflow skill writes the step list directly.
 
+## First turn
+The first reply, before anything is written:
+- names the step or steps nobody has a proven tool for (that is why this is a speed run);
+- names the record plan it opens at stage 0, with its tags: `total-harness`, `speed-run`, `speed-run-<slug>` (plus `block-N` once slices are known);
+- recommends screen or chat (`skills/workflow` section 2) with one reason;
+- drafts the use-case card from Charles's sentence.
+
+**Look up, don't ask, where things live.** Where the input arrives, where the output goes (a sheet, a folder, a repo) and which tools are connected are found by searching the connected tools (Drive, Gmail, GitHub, Project State, cbrain). Put the best find on the card as "found: … (confirm)", or "not found yet — stage 2 looks". Ask Charles only what no tool can tell: his finish line, what "works" means, the touch budget, money.
+
 ## Stages
 Stages 1-4 need no tech decision and run first. A tool never defines the workflow; it fills a slot in a walkthrough already written.
 
