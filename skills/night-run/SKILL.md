@@ -61,7 +61,7 @@ If the run text says "dry run": read the line, report the order, what's ready an
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: job
 - build: the brief's plain title, for a build that ended stuck or deploy-red (e.g. "Next steps side panel")
-- Opens when: a build ends `stuck` or `deploy-red`, or is interrupted twice (step 7, "Tonight's trouble")
+- Opens when: a build ends `stuck`, `deploy-red` or `skipped`, is interrupted twice, or is built with something left for Charles (step 7, "Tonight's trouble" and "Leftovers")
 - Checks in: when a run leaves something open; and every night's re-check writes checked status on up to 15 open cards (step 7)
 - Closes when: the job clears it (a later night builds the plan and it lands), or Charles clicks Done
 
