@@ -60,7 +60,7 @@ Reading Revit's own material records (`fbx_matnames.py`) is lab-proven only unti
 
 ## Steps by action
 **start** (gate 3, version 1), PDF path:
-1. `read-sheets` — open the run's drawings link through the Google Drive connector. No link or no access: `failed`, note "the run has no readable drawings link". Never commit sheets anywhere.
+1. `read-sheets` — the run's `drawings_link` is either a folder on the PC (starts with `C:\Users\cecou\code\` — e.g. `C:\Users\cecou\code\drawings\<job>`; read the PDFs there with the device tools and `device_stage_files`) or a Google Drive link (open it through the Google Drive connector). The PC folder is the working route: on 2026-10-28 the Drive connector returned nothing at all, not even recent files, so a Drive link may not be readable. No link or no access: `failed`, note "the run has no readable drawings link". Never commit sheets anywhere; staged copies live only in the session's private folder.
 2. `takeoff` — write `takeoff.json` (schema `pipeline/pascal/takeoff.schema.json`): every number `{v, src}` with the sheet it came from, or `src: "assumed"`; `materials_used` maps each finish on the drawings to a library slug with its sheet. Use skill `arch-massing` for reading plans and elevations.
 3. `check-takeoff` — a fresh checker agent grades the takeoff against the sheets; at most two fix rounds; keep its report as `takeoff-check.json`.
 4. `scene` — `node generate.mjs takeoff.json materials.json scene.v1.json --seed <run-id>`; stop on any `unsourced` value.
