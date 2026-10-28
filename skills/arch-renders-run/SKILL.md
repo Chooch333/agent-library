@@ -78,7 +78,7 @@ Reading Revit's own material records (`fbx_matnames.py`) is lab-proven only unti
 **pass-stills**: gate 4's latest result `passed`; status `done`, `step = 'done'`. Write `log.json`.
 
 ## The scheduled task (created by Build 35.1, not by the night build)
-"Arch renders runner": fire-only, linked to Charles's PC (`requires_local_device`, folders Downloads and `C:\Users\cecou\code`), repository arch-renders, connectors Supabase, Custom GitHub, Google Drive, Project State. Its trigger id goes here: `{ARCH_RUNNER_TRIG}`. Its API trigger URL and token go into cbrain-ui's Vercel env as `ARCH_RUNNER_FIRE_URL` / `ARCH_RUNNER_FIRE_TOKEN` (Charles's setup item 3). Without them the screen writes a wake line instead; the Harness dispatcher fires this task with the line's text at the next :47.
+"Arch renders runner": fire-only, linked to Charles's PC (`requires_local_device`, folders Downloads and `C:\Users\cecou\code`), repository arch-renders, connectors Supabase, Custom GitHub, Google Drive, Project State. Trigger id: `trig_018Av6LejRrTS4ZHrMSdtrRw` (created 2026-10-28, Build 35.1; permission mode auto, bound to the laptop). Its API trigger URL and token go into cbrain-ui's Vercel env as `ARCH_RUNNER_FIRE_URL` / `ARCH_RUNNER_FIRE_TOKEN` (Charles's setup item 3). Without them the screen writes a wake line instead; the Harness dispatcher fires this task with the line's text at the next :47.
 
 ## Rules
 - No client names, dimensions or sheets in agent-library or any public place. Client sheets stay on Drive.
