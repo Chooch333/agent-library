@@ -66,7 +66,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: the job clears it (a later night builds the plan and it lands), or Charles clicks Done
 
 ## Finish
-- If anything ended `stuck`, `deploy-red`, or interrupted twice: send ONE email to Charles (Gmail, to himself), subject "Night builds — N need you", one plain line per item plus the Build Shelf link (https://cbrain-ui-git-review-chooch333s-projects.vercel.app/dev?tab=shelf). Otherwise send nothing — the shelf's Last night strip is the report.
+- If anything ended `stuck`, `deploy-red`, `skipped`, or interrupted twice: send ONE email to Charles (Gmail, to himself), subject "Night builds — N need you", one plain line per item plus the Build Shelf link (https://cbrain-ui-git-review-chooch333s-projects.vercel.app/dev?tab=shelf). Otherwise send nothing — the shelf's Last night strip is the report.
 - Never review a plan, dispose a disclosure, edit a brief, change a tag, close a Next steps card, or set a card's project. DA chats and Charles do that.
 
 ## Changelog
