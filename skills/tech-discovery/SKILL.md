@@ -55,6 +55,10 @@ AT THE START OF EVERY CHAT (my first message is only "Tech discovery: <name or l
 - Read AGENT.md as usual, then the files this skill's `requires:` header names.
 - Harness status: Project State project total-harness (list_plans, latest notes) and the map at Chooch333/cbrain concepts/harness-map.md.
 - Past work: read every `lab/shelf/*.md`, the list of `lab/briefs/` and `lab/reports/`, and `lab/speed-run.md`. If this tech already has a brief, say so and ask whether to update it or stop.
+- R&D inbox: also list `Chooch333/yt-relay` `posts/*.json` with `rd: "waiting"` (a private repo — read it through Custom GitHub). These are X and Instagram posts Charles shared from his phone with an R&D steer; the Post Reader (`skills/post-reader`) saved each one with a `pre_read`. Field reference: yt-relay `posts/README.md`.
+
+THE R&D INBOX
+`Tech discovery: inbox` lists the waiting posts (author, date, the pre-read's one-line `shows`), recommends one, and starts the discovery on it once Charles picks. `Tech discovery: <link>` that matches a waiting post uses it too. The post text, pre-read and Charles's steer seed step 2's use-case Q&A; ask only what they leave open. The post's full text and linked pages are in world-graph `data/articles/<article_id>.md` (the post entry names the `article_id`).
 
 THE DISCOVERY, IN ORDER
 Keep one Working Document per chat. Findings go in the document. Chat is for choices only.
