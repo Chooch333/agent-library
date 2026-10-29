@@ -86,7 +86,8 @@ FILING (only after I approve the brief)
 - Write `lab/briefs/<tech>.md`: the whole brief, word for word with the page. Front matter per `lab/README.md`.
 - Write or update one `lab/shelf/<tool>.md` per tool: set `brief` to the brief's file name, the verdict, `come_back_when`, `reviewed`. A new shelf file's first history line is `- YYYY-MM-DD · <Verdict> · Discovery (<brief>)`. A changed verdict adds a dated line at the top; never edit or remove a history line.
 - Clear `draft` when the brief is approved.
-- Discovery files no handoff to Total Harness and no Project State entries. Do not create a Project State project for the lab.
+- When the discovery started from a shared post: set that post entry's `rd` to `"filed"` and `rd_brief` to the brief's file name (yt-relay `posts/<key>.json`, read it back). If Charles drops the post instead, set `rd` to `"dropped"`. When no `rd: "waiting"` posts remain, `close_thread` on `job:post-reader-rd-inbox` (closed_how "inbox empty").
+- Discovery files no handoff to Total Harness and no Project State entries (beyond the check-ins and the inbox card above). Do not create a Project State project for the lab.
 
 STANDING RULES
 Pick one lane and name what you ruled out. Money always stops. Do not stack assumptions: verify the bottom one first. Push back when I am wrong. Skills fire only when I name them.
