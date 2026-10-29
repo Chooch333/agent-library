@@ -250,6 +250,11 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.5.2** (2026-10-29) -- Step 3a: an article's `guidance` is
+  Charles's stated focus (for the feed, or for this one post when
+  `kind: post`), and a `media: video` post was read from its caption
+  only. Shared X and Instagram posts now arrive through the Post Reader.
+  Per BB-2026-10-28-social-post-share (Build 60).
 - **v1.5.1** (2026-10-23) -- Progress tracking section ("None" form).
   Per BB-2026-10-21-next-steps-panel.
 - **v1.5.0** (2026-10-10) -- Summaries for the Reader. Step 3e writes a
