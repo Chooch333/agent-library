@@ -29,8 +29,13 @@ Pascal (npm `@pascal-app/*`, MIT) is the 3D building editor the arch-renders rou
 - Charles copies it into his Startup folder (Win+R, `shell:startup`) once, so Pascal starts when the PC does.
 - Check: `http://localhost:3434` loads in the browser pane and Settings shows 1.0.3.
 
+## The pane must be showing (Build 35.1, proven 2026-10-28)
+Pascal draws with WebGPU. With the browser pane hidden, the page gets ~1–2 frames a second and GPU work stalls: a hidden Crider export came out with 810 of 1,919 parts (walls missing) and the next one never finished; with the pane showing the same export took ~1 s and matched the lab exactly. Before loading: `tabs_context` must say the pane is **displayed**, and a 2 s `requestAnimationFrame` count in the page must be above 60. Otherwise wait ("show the browser pane on your PC: open this chat in the Claude app, Ctrl+Shift+B"). Never export hidden, and don't patch `requestAnimationFrame` (it doesn't unstick the GPU). A tool session can't show the pane itself; only Charles can, in the chat that owns it.
+
+Large scenes: send the scene text gzip+base64 and inflate in the page with `DecompressionStream('gzip')`, checking its sha256 before loading (100 KB → 10 KB).
+
 ## Load a scene (browser pane)
-1. Open `http://localhost:3434`, then Settings.
+1. Open `http://localhost:3434`, then Settings (`button[aria-label="Settings"]`). Version: the PC's `C:\Users\cecou\code\pascal-start.log` says "Editor runtime 1.0.3 ready" (Settings shows no version).
 2. Fill the hidden JSON file input from script: `pipeline/pascal/load_scene.js` → `pascalLoadScene(<scene text>)` (a `File` set through a `DataTransfer`, then `change`).
 3. "Ready to import" shows counts: they must equal the scene's walls, windows and doors.
 4. Click **Replace current scene**. The camera opens jammed against the model; it does not matter for export.
