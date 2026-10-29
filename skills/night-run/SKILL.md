@@ -1,13 +1,13 @@
 ---
 name: night-run
-version: 0.3.1
+version: 0.4.0
 status: draft
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "Claude Code routine 'Night builds', daily 1 am America/Indiana/Indianapolis (Charles set 1 am, 2026-10-04)"
   runs_in: claude-code-cloud
-  reads: [project-state, repos, vercel, open-threads]
+  reads: [project-state, repos, vercel, open-threads, advisor-dispositions]
   writes: [plans, night_runs, open-threads, email]
   label: Night builds
 ---
