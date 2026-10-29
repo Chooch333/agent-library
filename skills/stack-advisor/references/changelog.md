@@ -194,3 +194,36 @@ Newest last.
   change becomes a `Cost change:` line — neither drops or down-scores an
   idea. The briefing gains "How you're set up today" and per-part AI/pay
   tags. Heading suffix ` · NEW CAPABILITY`.
+- **v2.1.1** (2026-10-23) — Progress tracking section ("None" form;
+  BB-2026-10-21-next-steps-panel).
+- **v2.2.0** (2026-10-29) — Done for you (BB-2026-10-28-advisor-done-for-you,
+  Build 57; rule approved by Charles 2026-10-28). New step 4b: an idea
+  that cleared its lane is done for you only when all five hold — fits
+  inside something that already runs (no new scheduled task, account,
+  paid service or screen), small effort, no cost change and no keys,
+  money or deleting, not declined/building/addressed and no open
+  question, and checked against live data this run and trimmed to the
+  smallest version. At most 2 per run. Each becomes a short brief
+  (Stack Repairer template, `**Build:** unnumbered (Stack Advisor)`,
+  tags `advisor-auto` + `build-brief` + the ADV id, `overnight: true`,
+  queued, standing approval — never "Overnight: yes or no?"), committed
+  to the target repo's `docs/design/`, and a `done_for_you` entry in
+  run_result.json (`{adv_id, plan_id, bb_id, plain_change, builds_on}`);
+  the ledger script sets it `building` and a Declined click stops it.
+  The night runner (v0.4.0) waits 18 hours and abandons a plan Charles
+  declined. Job boundary: no longer propose-only — never builds, never
+  edits the map, never queues anything that fails the rule. Two lenses in
+  3b and scoring ("expand what Claude can do for Charles", "take work off
+  Charles"; a clear yes raises capability or payoff; a `Lens:` line per
+  idea). Contract item 9 ("Done for you is earned"). Writing one notch
+  plainer: 20-word sentences, shorter blocks (~120 words), "Why it
+  matters here" dropped, rule 5's must-translate list extended, rule 9
+  "say what changes for Charles, not how it works inside", a
+  Done-for-you block (What will change / What you'll notice / What I
+  checked / To stop it). Email: Done for you first, Ideas for you
+  second (three one-sentence lines each), opening at most two
+  sentences; the six-section block, Checked/Assumed and "What they
+  found" leave the email. Delivery: Done-for-you rows get Stack-screen
+  status `building` and a "Builds {day} night unless you click Declined
+  — {change}" response. While the critic is live nothing is handed off
+  ("Could be done for you" line instead).
