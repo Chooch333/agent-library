@@ -121,6 +121,10 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.2.2 (2026-10-29) -- Step 3a: `guidance` is Charles's focus for the
+  whole channel when `source` is `rss:<channel>`, and for this one video
+  when `source` is `charles` (a steer typed in the phone Shortcut). Per
+  BB-2026-10-28-phone-steer (Build 58).
 - v0.2.1 (2026-10-23) -- Progress tracking section ("None" form). Per
   BB-2026-10-21-next-steps-panel.
 - v0.2.0 (2026-10-10) -- Summaries for the Reader: step 3e writes a
