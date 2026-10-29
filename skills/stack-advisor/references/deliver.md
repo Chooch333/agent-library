@@ -66,6 +66,26 @@ the record; these rows copy it.
   from its `Brief` file — written straight to this run's standard
   ("Writing for Charles", rule 1a) as it's created. The advisor is the
   only writer of `advisor_ideas.status`; the app never sets it.
+- **Done for you (Build 57, BB-2026-10-28-advisor-done-for-you).** Each
+  idea in this run's `done_for_you` gets `status = 'building'` and
+  `response` = "Builds {day} night unless you click Declined —
+  {plain_change}", where `{day}` is the weekday of the evening before
+  `builds_on` (a 1 am Thursday build reads "Builds Wednesday night").
+  Write it now, in this run — the Stack screen reads it straight away and
+  labels the idea a pending build with one Declined button; the ledger
+  catches up through `run_packet.py` (its Response reads "doing for you —
+  …"). In the sync bullet above, never overwrite a Done-for-you row's
+  screen wording with the ledger's "doing for you" Response while it is
+  still `building`; once the ledger says `declined` or `addressed`, sync
+  status and response as usual. Its `body` also carries `lens` and
+  `done_for_you` = `{what_will_change, what_youll_notice, what_i_checked,
+  to_stop_it}`, with "What you'll notice: …" and "What I checked: …"
+  appended to the end of `what_gets_better` (the screen shows them with
+  no screen change). Every idea's `body.lens` holds its Lens line.
+- **Plainer blocks (Build 57).** New blocks have no "Why it matters here":
+  leave `why_the_connection` out (the screen skips a missing section).
+  Old rows are never rewritten.
 - Read back with a SELECT: the run row, plus a count of this run's idea
-  rows. If this write fails, 6a–d still stand. Name the error in the 6d
-  note; the next run's sync repairs the gap.
+  rows (and each Done-for-you row's `status`/`response`). If this write
+  fails, 6a–d still stand. Name the error in the 6d note; the next run's
+  sync repairs the gap.
