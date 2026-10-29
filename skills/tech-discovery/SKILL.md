@@ -119,6 +119,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 ## Pitfalls
 
 - **Client material in this public repo** (Pascal Editor review, 2026-10-11). Briefs are public. Never put a client building's details in one.
+- **A steer is private.** Paraphrase it in a brief; never quote it. (Steers on shared posts live only in the private yt-relay and world-graph repos.)
 
 ## Changelog
 
