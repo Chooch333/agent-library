@@ -20,7 +20,9 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order, then
 
 - `overnight_line {}` (Project State) — the line: `overnight_line` view rows in order (`plan_id`, `plain_title`, `target_repo`, `queued_at`, `position`, `ready`, `waiting_on`), plus the newest night's `night_runs` rows.
 - `night_log { plan_id, result, line, started_at?, ended_at? }` (Project State) — one `night_runs` row per outcome. `result` is one of `built` / `skipped` / `stuck` / `deploy-red` / `interrupted`, or `night-start` for the every-night start marker (step 0b — the only result written without a `plan_id`). The night is computed in America/Indiana/Indianapolis; a start before noon counts toward the previous night.
-- `get_plan`, `update_plan_status` (Project State) — read a plan; set it `blocked`.
+- `get_plan`, `update_plan_status` (Project State) — read a plan; set it `blocked` (or `abandoned`, step 2a only).
+- `set_overnight` (Project State) — take a declined Stack Advisor brief off the line (step 2a).
+- Supabase `execute_sql` on cbrain `lpeswznkxzeeyiqaewma` — read `advisor_dispositions` (step 2a; read only).
 - `post_judgment_call` (Project State) — non-blocking disclosures.
 - `list_open_threads`, `checkin` (Project State) — read the Next steps cards; write a card's checked status (`context`, `checked_at`, `chats`). Rules: `references/thread-checkin.md`.
 - `list_deployments` (Vercel) — `projectId: cbrain-ui`, `teamId: team_8nMi0Bd6orQHGeTrMZYWCamm`, branch `review`.
