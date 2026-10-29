@@ -37,7 +37,7 @@ From outside Claude: not yet set up (needs the API token; see the open next move
 ## Tasks
 - Harness dispatcher — trig_01HZwjsrtqcioS3LNay8FNCk — cloud, hourly at :47.
 - Laptop runner — trig_01NB1BKFvfpMJQmDKqGLmNbg — runs on Charles's laptop (folder C:\Users\cecou\code), fire-only.
-- Arch renders runner — trig_0171C76mb13vv8T33GrsBGah — linked to Charles's laptop (folders Downloads and C:\Users\cecou\code), fire-only, skill `arch-renders-run`. A wake line from the cbrain-ui fire route reads `do: fire_trigger the Arch renders runner ... with text "run: <uuid> action: <name>"`: the dispatcher fires this id with exactly that text (Build 35.1).
+- Arch renders runner — trig_01E8MroafhN6j3BXVSh5A2AD — bound to and linked to Charles's laptop (folders Downloads and C:\Users\cecou\code), fire-only, skill `arch-renders-run`. A wake line from the cbrain-ui fire route reads `do: fire_trigger the Arch renders runner ... with text "run: <uuid> action: <name>"`: the dispatcher fires this id with exactly that text (Build 35.1).
 
 ## Rules
 - Use `where: cloud` only. `where: pc` does not work hands-off: the Laptop runner gets the laptop only when Charles approves that run, so unattended pc wakes fail. Charles chose not to fix this (decision TH-088, 2026-10-23).
