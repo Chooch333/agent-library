@@ -45,7 +45,9 @@ the whole point (Build 17.1).
    step 4.
 3. For each item, in order:
    a. Read data/transcripts/<video_id>.md in full. If its frontmatter has
-      `guidance`, treat it as Charles's stated focus for that channel.
+      `guidance`, treat it as Charles's stated focus — for that channel
+      when `source` is `rss:<channel>`, for this one video when `source`
+      is `charles`.
    b. Dedupe: query the cbrain mirror (lpeswznkxzeeyiqaewma) graph_nodes
       where group_id = 'world-knowledge', by name overlap (ILIKE) with the
       video's likely entities. Reuse a real match's uuid; ground every
