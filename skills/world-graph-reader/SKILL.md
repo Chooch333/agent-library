@@ -71,6 +71,12 @@ against the API.
       this path. Older article files may carry `truncated_for_extraction`
       / `extracted_words` frontmatter -- a stale label from the
       pay-per-use fallback; ignore it.
+      If the article's frontmatter has `guidance`, treat it as Charles's
+      stated focus -- for that feed when it came from a feed, for this
+      one post when `kind` is `post`. A post marked `media: video` was
+      read from its caption only; never state what the video shows
+      beyond that. (Posts are X and Instagram posts Charles shared from
+      his phone, saved here by the Post Reader, `skills/post-reader`.)
    b. Query the Supabase mirror for dedupe candidates against
       `lpeswznkxzeeyiqaewma` (cbrain's project): `graph_nodes` /
       `graph_edges` where `group_id = 'world-knowledge'`, filtered by
