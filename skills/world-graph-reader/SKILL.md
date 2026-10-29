@@ -1,6 +1,6 @@
 ---
 name: world-graph-reader
-version: 1.5.1
+version: 1.5.2
 status: active
 triggers: ["world-graph-reader run"]
 owner: Charles
