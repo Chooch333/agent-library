@@ -110,6 +110,8 @@ The skills compose. Common flows:
 |--------|------|-------|
 | Tan / gstack | `imports/tan-gstack/_AGENTS.md` | Full catalog of all 48 gstack skills with reshape status (✅/⏭️/◯) and skip reasons |
 | Tan / gbrain | `imports/tan-gbrain/_RESOLVER.md` | Catalog of all 43 gbrain skills. None reshaped — gbrain requires Postgres + pgvector runtime |
+| Charles | `references/charter.md` | What Charles wants: mission, end state, standing rules, how he works. Read before proposing any change to the harness (Design Assist, Stack Advisor, Advisor Critic, tech-discovery, tech-review). |
+| cbrain | `Chooch333/cbrain concepts/stack-map.md` `lanes:` | The rules of each place Claude runs. Read before designing anything that runs unattended or touches the PC. |
 
 ## Disambiguation rules
 
