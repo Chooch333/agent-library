@@ -47,7 +47,7 @@ captain), craft expert (or craft), brief, bench, index, seat, lens, roster-build
 Team Builder. Never translate them: no "role", "lead", "parent", "persona" or
 "reviewer". He reads these files; a synonym costs him the thread.
 **Don't fire when:** grading finished work against a rubric (the checker); seven
-framings of a brief (a brainstorm chat); a Design Assist chat executing decided work.
+framings of a brief (a brainstorm chat); a build chat executing decided work.
 
 ## Modes
 | Mode | Seated | Output |
