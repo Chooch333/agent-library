@@ -5,6 +5,10 @@ This file is the front door. Project instructions point here. It routes a first 
 > Rule: not one line of domain knowledge belongs in this file.
 > If you find yourself writing "how to do X" here, you're writing a skill, not routing.
 
+## Every chat, before the first reply
+
+Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It is what Charles wants and how he works; it is not only for harness or Total Harness chats. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
+
 ## Active skills
 
 ### Brainstorming
