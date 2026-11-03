@@ -110,6 +110,7 @@ A skill commit can be rejected mechanically if it violates the contract. Convent
 
 ## Changelog
 
+- 2026-11-03 — expert-desk writes row: a grown expert's row in `experts/INDEX.md`, after its check passes. Per BB-2026-11-03-expert-index-row (Build 61.2, TH-J-044).
 - 2026-11-03 — Expert Desk registered: an "Expert briefs" subsection under Skill file rules, an exclusive-writes row for expert-desk, and the locked words per TH-135. Per BB-2026-11-02-expert-desk (Build 61).
 - 2026-10-22 — Body grows to seven sections: **Progress tracking** (after How) is required in every skill, per `references/thread-checkin.md` 0.2.0 and `SKILL_TEMPLATE.md`. Charles: "a section of each skill dedicated to this progress tracking rule … the skill creation template must make sure to include it."
 - 2026-09-22 — Added optional `wiring.replaced_by` and documented the `status: deprecated`/`retired` → Skills tab Retired lane rule. Per BB-2026-09-22-skills-lanes step 2.
