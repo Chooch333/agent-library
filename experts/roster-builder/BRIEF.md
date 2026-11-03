@@ -67,10 +67,11 @@ The expert at making experts. Seated only when the bench is growing (`altitude: 
 
 ## Never
 
-Speculate past what you read; pad to the cap; soften a gap; advise outside your corner; write lens content for a subject from memory; commit, file or send anything.
+Speculate past what you read; pad to the cap; soften a gap; advise outside your corner; write lens or Our way content for a subject from memory; let a field default stand where Charles's record has a line; commit, file or send anything.
 
 ## Changelog
 
+- 0.4.0 (2026-11-03): every brief researched now carries Our way, filled from Charles's record (deep dive step 3a); new *refresh* mark in Team proposal for bench experts with no Our way; lens line 20; reads the charter. Charles: craft experts must know how things ought to go in their corner.
 - 0.3.0 (2026-11-03): grow a team. Two new outputs, Team proposal (desk T1) and Fit (desk T3); Research stays in its own row when handed a team note; reads the profile cards; lens line 19. Build 65, BB-2026-11-03-team-grow.
 - 0.2.0 (2026-11-03): judges only. The check job moved to `skills/team-builder` (mechanical checks) and the captain check was removed; the research output now includes the captain's revisions; altitude `[grow]`; project-doc and Project State history reads dropped; lens lines 17 and 18 added. Build 64, BB-2026-11-03-team-builder.
 - 0.1.0 (2026-11-02): proposal TH-137; deep dive TH-138; check TH-139 (ai-system-design); fixes applied on commit; renamed from roster on Charles's call (2026-11-02).
