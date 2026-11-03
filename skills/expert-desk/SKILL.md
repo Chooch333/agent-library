@@ -87,7 +87,7 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - A check run on a note has no receipt; Team Builder checks the file it wrote and reads it back from main. [TH-139]
 - Two experts seeded by one chat on one day share lines; Team Builder's overlap check runs against every brief on the bench. [TH-139]
 - A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; Team Builder writes the index row in the same run. [TH-J-044]
-- A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 63]
+- A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 64]
 
 ## Changelog
 - **0.2.2** (2026-11-03): grow-run notes go on the new Project State project `expert-bench`, not `total-harness`, because experts span every domain Charles works in (Charles, first grow run). Words rule added: the bench's terms only, never role, lead, parent, persona, reviewer.
