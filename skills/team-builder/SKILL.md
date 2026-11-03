@@ -77,4 +77,4 @@ Expert mode: the Expert Desk's first grow run under this skill (none yet; the dr
 - The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 64]
 
 ## Changelog
-- **0.1.0** (2026-11-03): first version (Build 63, BB-2026-11-03-team-builder).
+- **0.1.0** (2026-11-03): first version (Build 64, BB-2026-11-03-team-builder).
