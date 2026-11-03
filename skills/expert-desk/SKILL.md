@@ -31,7 +31,9 @@ never calls Team Builder for an expert whose reframe Charles has not confirmed.
 
 ## When
 **Fire when:** a message starts `Expert desk:` in a macro design chat (Domain
-Expansion, Stack Advisor, Total Harness); or `I need an expert in <x>` in any chat
+Expansion, Stack Advisor, Total Harness) or a Design Assist chat; a Design Assist chat
+seats experts on its own at its steps 5–6 (design space and traps) whenever the work
+matches a call_when on the index; or `I need an expert in <x>` in any chat
 that can start helpers, since the need for an expert shows up where the work is;
 or `I need a team of experts for <x>` (or `a group of experts`) in any chat that can
 start helpers, usually a few turns in, after Charles has talked through which experts
