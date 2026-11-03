@@ -75,7 +75,7 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 
 ## Pitfalls
 - A proposal or a result carried as chat text or an attachment is lost between chats. Everything lands in the repo or Project State. [dry run 1, 2026-11-02]
-- A seat with no tools allowlist can write. [TH-134 line 17]
+- The helper tool takes no tool list per call, so every seat has every tool the chat has; read-only rests on the instruction, and step 5 checks what was written. [TH-134 line 17; TH-J-045]
 - A check run on a note has no receipt; run it on the committed file and cite the SHA. [TH-139]
 - The chat that proposed a lens then checked the brief that held it. [TH-136, caught by TH-138 line 12]
 - Two experts seeded by one chat on one day share lines; overlap-check before commit. [TH-139]
