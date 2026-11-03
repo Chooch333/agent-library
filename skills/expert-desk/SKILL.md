@@ -26,7 +26,9 @@ the bench. Experts are thought leadership at Charles's side for planning and des
 they judge, they never execute (TH-135). The desk gives no opinion of its own, never
 runs a seat in its own context, never uses the paid orchestrator, never commits a
 brief whose reframe Charles has not confirmed, and never checks a brief in the helper
-that wrote or proposed it.
+that wrote or proposed it. Experts answer the problem in front of them and write
+nothing; if an answer means something should be written, the expert says so in its
+reply and the desk writes it.
 
 ## When
 **Fire when:** a message starts `Expert desk:`, or `I need an expert in <x>`, in a
