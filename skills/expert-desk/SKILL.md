@@ -1,6 +1,6 @@
 ---
 name: expert-desk
-version: 0.3.2
+version: 0.3.3
 status: draft
 triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)"]
 dependencies: [team-builder]
@@ -61,7 +61,7 @@ A.1 gets the distilled A report as context, never the A papers. The roster-build
 ## How — review
 | Step | Precondition | Action | Evidence | Recovery |
 |---|---|---|---|---|
-| 1 Read | situation or plan, goal, mode | Open the plan if it's a link. Load the profile card for the work's domain from `profiles/` (`harness` for Charles's stack, `construction` for a construction project or pursuit; one card per domain, named in each captain's `profiles:`). A.1: load the distilled A report. | Goal in one line | No goal: ask one question and stop. Never invent one. |
+| 1 Read | situation or plan, goal, mode | Open the plan if it's a link. Load the profile card for the work's domain from `profiles/` (`harness` for Charles's stack, `construction` for a construction project or pursuit; one card per domain, named in each captain's `profiles:`). A.1: load the distilled A report if there is one; a Design Assist chat starts stack work at A.1 with no A run (design-assist step 6a). | Goal in one line | No goal: ask one question and stop. Never invent one. |
 | 2 Seat | profile loaded | Read `experts/INDEX.md`. Seat per the mode table, at or under max_seats. | Seat list with mode per seat, plus one expert left out (A) or dropped (A.1) and why | No expert matches, or a craft is named with no brief: go to Grow. Never guess a seat. |
 | 3 Brief | seats chosen; the Agent tool is in this session | One prompt per seat from `references/seat-template.md`. Same context block for every seat. Note the time. | Prompts written; start time | No Agent tool: say "The Expert Desk needs a chat that can start helpers," and stop. Never run seats here; never use the Brainstorm Orchestrator. |
 | 4 Run | prompts written | Start every seat in one message (parallel), `subagent_type: general-purpose`, foreground. Seats are read-only by instruction: the helper tool takes no tool list, so each seat has every tool this chat has. Record tokens per helper. | One reply per seat | A seat fails: say which, retry once, then report without it. |
@@ -114,6 +114,7 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - Teammates researched in parallel are blind to each other; two crafts joining one captain would each rewrite its brief. The fit pass reads them together and merges each captain's revisions once. [Build 65; TH-139]
 
 ## Changelog
+- **0.3.3** (2026-11-03): mode A.1 may start with no prior A report, which is how a Design Assist chat seats the stack crafts (`carry: c-stack`, `craft: full`, design-assist 0.8.2).
 - **0.3.2** (2026-11-03): mode A.1 seats only the crafts under a carried captain whose call_when matches the work, within max_seats (it seated every craft under the captain); the profile cards say the same. First team grow filled into Examples. EB-006 companion fix, shipped with the stack wiring team (EB-007).
 - **0.3.1** (2026-11-03): fires in Design Assist chats, which seat experts on their own at steps 5–6; the merge joins seats' *How I'd do it* paths into one A-to-Z path and files *Newer than my brief* items as lens-notes; team grow can mark a bench expert *refresh* so it is rewritten with an Our way section (expert-brief 0.2.0). Charles: experts are resources for DA chats, and craft experts must know how things ought to go in their corner.
 - **0.3.0** (2026-11-03): grow a team. `I need a team of experts for <x>` (or `a group`), mid-chat included: team ask from the chat → one team proposal → Charles confirms once → research in parallel → fit pass → Team Builder team mode, captains first, a failed expert stops only itself and its crafts. Single grow unchanged (Build 65, BB-2026-11-03-team-grow).
