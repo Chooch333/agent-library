@@ -30,8 +30,11 @@ their answers as Project State notes, and `skills/team-builder` writes files. Th
 never calls Team Builder for an expert whose reframe Charles has not confirmed.
 
 ## When
-**Fire when:** a message starts `Expert desk:`, or `I need an expert in <x>`, in a
-macro design chat (Domain Expansion, Stack Advisor, Total Harness).
+**Fire when:** a message starts `Expert desk:` in a macro design chat (Domain
+Expansion, Stack Advisor, Total Harness); or `I need an expert in <x>` in any chat
+that can start helpers, since the need for an expert shows up where the work is.
+Grow-run notes always go on the Project State project `total-harness`, the bench's
+home, whatever chat the ask came from.
 **Don't fire when:** grading finished work against a rubric (the checker); seven
 framings of a brief (a brainstorm chat); a Design Assist chat executing decided work.
 
