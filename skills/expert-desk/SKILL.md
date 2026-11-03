@@ -9,10 +9,10 @@ updated: 2026-11-03
 requires: [skills/expert-desk/references/seat-template.md, skills/expert-desk/references/report-shape.md]
 wiring:
   runs: with-you
-  starts: "\"Expert desk:\" or \"I need an expert in\" in a macro design chat"
+  starts: "\"Expert desk:\", \"I need an expert in\" or \"I need a team of experts for\""
   runs_in: claude-chat
   reads: [agent-library experts, charter, stack-map]
-  writes: ["project-state notes (expert-proposal, expert-draft)"]
+  writes: ["project-state notes (expert-proposal, expert-team-proposal, expert-draft, expert-team-fit)"]
   stack: []
   origin: yours
   label: Expert Desk
