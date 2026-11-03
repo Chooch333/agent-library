@@ -1,9 +1,9 @@
 ---
 name: expert-desk
-version: 0.1.2
+version: 0.2.0
 status: draft
 triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in a macro design chat)"]
-dependencies: []
+dependencies: [team-builder]
 owner: Charles
 updated: 2026-11-03
 requires: [skills/expert-desk/references/seat-template.md, skills/expert-desk/references/report-shape.md]
@@ -12,7 +12,7 @@ wiring:
   starts: "\"Expert desk:\" or \"I need an expert in\" in a macro design chat"
   runs_in: claude-chat
   reads: [agent-library experts, charter, stack-map]
-  writes: ["experts/<slug>/BRIEF.md (drafts, via its helper)", "experts/INDEX.md (a grown expert's row, after its check passes)", "project-state notes (reframes, checks)"]
+  writes: ["project-state notes (expert-proposal, expert-draft)"]
   stack: []
   origin: yours
   label: Expert Desk
@@ -24,11 +24,10 @@ wiring:
 The one skill every expert interaction goes through. It seats experts and it grows
 the bench. Experts are thought leadership at Charles's side for planning and design;
 they judge, they never execute (TH-135). The desk gives no opinion of its own, never
-runs a seat in its own context, never uses the paid orchestrator, never commits a
-brief whose reframe Charles has not confirmed, and never checks a brief in the helper
-that wrote or proposed it. Experts answer the problem in front of them and write
-nothing; if an answer means something should be written, the expert says so in its
-reply and the desk writes it.
+runs a seat in its own context, never uses the paid orchestrator, and never has a
+helper write anything: experts answer the problem in front of them, the desk files
+their answers as Project State notes, and `skills/team-builder` writes files. The desk
+never calls Team Builder for an expert whose reframe Charles has not confirmed.
 
 ## When
 **Fire when:** a message starts `Expert desk:`, or `I need an expert in <x>`, in a
@@ -42,7 +41,8 @@ framings of a brief (a brainstorm chat); a Design Assist chat executing decided 
 | A — evaluate and plan | profile's default captains + up to 2 by call_when | full |
 | A.1 — pull in the technical people (`carry: <captains>`) | carried captains (default: those whose A findings were not all noted) + each craft under them on the index | captains full; craft risks-only unless `craft: full` |
 | B — one expert, one issue (`seat: <expert>` or plain language) | the named seat or the call_when match; no match → Grow | that seat's output; no merge |
-A.1 gets the distilled A report as context, never the A papers.
+A.1 gets the distilled A report as context, never the A papers. The roster-builder
+(`altitude: [grow]`) is never seated in a review mode.
 
 ## How — review
 | Step | Precondition | Action | Evidence | Recovery |
@@ -58,10 +58,10 @@ A.1 gets the distilled A report as context, never the A papers.
 ## How — grow (one gate)
 | Step | Precondition | Action | Evidence | Recovery |
 |---|---|---|---|---|
-| G1 Reframe | step 2 found no match, or Charles said "I need an expert in <x>" | Start a roster-builder helper. It reads the index, decides captain or craft (a craft names its captain; propose the captain first if none fits), writes the seed lens with a source per line, and files the reframe as a Project State note (`expert-proposal`, `expert-<slug>`). Show Charles three lines: name, level + under, call_when. **Stop until he confirms.** | Note id; his one-line confirmation | He changes the level or the line: rewrite the note and continue. He cuts: stop. |
-| G2 Research | confirmed | Start a deep-dive helper pointed at the note with `references/expert-deep-dive.md`. It commits `experts/<slug>/BRIEF.md` as draft and reports the SHA. | Commit SHA | "Bigger than a craft" or "smaller than a captain": back to G1 with the new level, no new confirmation needed unless the name changes. |
-| G3 Check | SHA | Start a fresh helper seated as the nearest captain (never the helper that wrote or proposed it). It fetches the committed file by SHA, runs the four checks (structural; overlap against every brief on the bench; provenance; first use pending) and files an `expert-check` note citing the SHA. PASS or PASS WITH FIXES: the desk (not the check helper) makes one commit that applies the fixes and adds the expert's row to `experts/INDEX.md` (level, under, status draft, call_when copied word for word from the brief; it replaces the expert's stub row if one exists), then reads both files back. FAIL: show Charles the failure and stop; the expert stays off the index. | Check note id; final SHA; index row read back | Never fix a FAIL silently. |
-| G4 Done | check filed; index row read back | Run step 5's check from the start of G1. Expected writes: the reframe note, the brief commit, the check note, the desk's fix commit; show Charles anything else. Then tell him in two lines: the expert is on the bench and the index as draft; it goes active after its first seat yields a finding he tags "new." | — | — |
+| G1 Propose | step 2 found no match, or Charles said "I need an expert in <x>" | Note the time. Start a roster-builder helper for its Proposal output. It returns name, level, under, call_when, documents, seed lens and deep-dive scope as text. The desk files that as a Project State note on the calling project (`expert-proposal`, `expert-<slug>`) and shows Charles three lines: name, level + under, call_when. **Stop until he confirms.** | Note id; his one-line confirmation | He changes the level or the line: update the note and continue. He cuts: stop. |
+| G2 Research | confirmed | Start a second roster-builder helper for its Research output, pointed at the proposal note and `references/expert-deep-dive.md`. It returns the whole new BRIEF.md and the captain's revisions as text. The desk files that as a note (`expert-draft`, `expert-<slug>`). | Note id | "Bigger than a craft" or "smaller than a captain": back to G1 at the new level; no new confirmation unless the name changes. |
+| G3 Build | draft note filed | Load `skills/team-builder/SKILL.md`, expert mode, pointed at the draft note. It writes the brief, applies the captain's revisions, runs the mechanical checks, adds the index row, commits, reads back and returns a receipt. | Team Builder's receipt: SHAs, index row, check results | A mechanical FAIL: show Charles the failing lines and stop. Nothing is committed. Never fix it here. |
+| G4 Done | receipt | Run step 5's check from G1's start time. Expected writes: the two notes and Team Builder's commits; show Charles anything else. Then tell him in two lines: the expert is on the bench and the index as draft, and the captain's brief changed (what moved); it goes active after its first seat yields a finding he tags "new." | — | — |
 
 **Landing.** The calling chat puts a review report into its living artifact as a drafted
 block. A finding Charles tags *wrong*, or a miss that reaches him later, becomes a
@@ -71,17 +71,18 @@ block. A finding Charles tags *wrong*, or a miss that reaches him later, becomes
 None. The desk finishes in one run inside the calling chat; that chat's thread covers it.
 
 ## Examples
-Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139).
+Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139) was the old four-step flow; the first run under this version fills this in.
 
 ## Pitfalls
-- A proposal or a result carried as chat text or an attachment is lost between chats. Everything lands in the repo or Project State. [dry run 1, 2026-11-02]
+- A proposal or a result carried as chat text or an attachment is lost between chats. Every helper answer lands in a Project State note before the next step. [dry run 1, 2026-11-02]
 - The helper tool takes no tool list per call, so every seat has every tool the chat has; read-only rests on the instruction, and step 5 checks what was written. [TH-134 line 17; TH-J-045]
-- A check run on a note has no receipt; run it on the committed file and cite the SHA. [TH-139]
-- The chat that proposed a lens then checked the brief that held it. [TH-136, caught by TH-138 line 12]
-- Two experts seeded by one chat on one day share lines; overlap-check before commit. [TH-139]
-- A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; the index row lands in the same commit as the check's fixes. [TH-J-044]
+- A check run on a note has no receipt; Team Builder checks the file it wrote and reads it back from main. [TH-139]
+- Two experts seeded by one chat on one day share lines; Team Builder's overlap check runs against every brief on the bench. [TH-139]
+- A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; Team Builder writes the index row in the same run. [TH-J-044]
+- A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 63]
 
 ## Changelog
+- **0.2.0** (2026-11-03): grow is propose → confirm → research → build. Helpers write nothing; the desk files notes; `skills/team-builder` writes the brief, the captain's revisions and the index row. The captain check step is removed (Build 63, BB-2026-11-03-team-builder).
 - **0.1.2** (2026-11-03): experts answer and write nothing; the desk writes. The tools allowlist is dropped (the helper tool cannot set one); new step 5 lists anything written during a run, and grow's G4 does the same (Build 61.3, BB-2026-11-03-expert-seats-answer; TH-J-045).
 - **0.1.1** (2026-11-03): grow step G3 adds the expert's row to `experts/INDEX.md` after its check passes, in the desk's fix commit (Build 61.2, BB-2026-11-03-expert-index-row; TH-J-044).
 - **0.1.0** (2026-11-03): first version (Build 61, BB-2026-11-02-expert-desk).
