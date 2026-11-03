@@ -7,7 +7,20 @@ One prompt per seat. The context block is the same for every seat.
 > Read Chooch333/agent-library `experts/<slug>/BRIEF.md` and follow it exactly,
 > including every file under its `reads`. Mode: <full | risks-only>. Severity:
 > <profile scale>. Situation: <s>. Goal: <goal>. Already decided, don't reopen: <list>.
-> The work: <text, or link and how to read it>. Read only; write nothing. Reply only
-> in the brief's Output shape for your mode.
+> The work: <text, or link and how to read it>. Your job is to answer the problem in
+> front of you. Write nothing anywhere: no commits, no notes, no messages. If your
+> answer means something should be written or changed, say so in your reply; the desk
+> does it. Reply only in the brief's Output shape for your mode.
 
-Tools allowlist for every review seat: Read, WebFetch, ToolSearch, `mcp__Custom_GitHub__get_file_contents`, `mcp__Project_State__get_plan`, `mcp__Project_State__search_state`. No write tools. Grow helpers add exactly one write: roster-builder G1 and the check G3 get `mcp__Project_State__add_note`; the deep dive G2 gets `mcp__Custom_GitHub__create_or_update_file` scoped to `experts/<slug>/`.
+## What each seat may write
+
+The helper tool takes no tool list, so a seat has every tool the calling chat has. What a seat may write is set by its prompt, and the desk's step 5 checks it after the run.
+
+| Seat | May write |
+|---|---|
+| Review seat (modes A, A.1, B) | Nothing |
+| G1 roster-builder | One Project State note: the reframe (`expert-proposal`, `expert-<slug>`) |
+| G2 deep dive | One file: `experts/<slug>/BRIEF.md`, status draft |
+| G3 check | One Project State note: the check (`expert-check`), citing the SHA |
+
+Grow prompts end with: "Write only the one thing named for your step. Anything else you think should be written, say so in your reply."
