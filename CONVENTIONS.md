@@ -34,7 +34,8 @@ An agent that can mutate its own rules while executing is a debugging nightmare.
 - **Brief** — an expert's file, `experts/<slug>/BRIEF.md`. A Build Brief is a different thing.
 - **Profile card** — the desk's per-domain settings: default captains, severity scale, max seats (`skills/expert-desk/profiles/`).
 - **Lens** — the named ways work in an expert's corner goes wrong, each with its source.
-- **Roster-builder** — the expert that proposes, researches, checks and retires experts.
+- **Roster-builder** — the expert at making experts: it proposes a new expert and, after Charles confirms, researches it and returns its brief and the captain's revisions as text. It judges; it writes nothing.
+- **Team Builder** — the skill that puts a new member on the team: writes an expert's brief (and the captain's revisions) or a skill's SKILL.md, runs the mechanical checks, registers it, commits it as draft. Two modes, one skill. Not an agent.
 - **Mode A / A.1 / B** — A: captains evaluate and plan. A.1: carried captains plus their craft experts. B: one expert, one issue.
 
 ## Skill file rules
