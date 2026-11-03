@@ -35,6 +35,7 @@ The expert at making experts. Seated only when the bench is growing (`altitude: 
 17. A captain asked to pass judgment on a craft in a field it does not hold; the captain's brief changes when a craft joins under it, it does not veto the craft [Charles 2026-11-03, Build 64]
 18. A job attached to an expert because a chat once did it while seated as that expert: the check job rode on this brief from dry run 1 until Build 64 moved it to the skill that writes [TH-136 "ROSTER CHECK"; Build 64]
 19. Teammates grown in one run, each blind to the others, claim the same corner, and two crafts joining one captain each rewrite its brief; one chat seeding two briefs in a day already shared lines [TH-139; Charles 2026-11-03, Build 65]
+20. A craft built as a critic only: a lens of what goes wrong and no Our way, so it cannot say how Charles does the job or what he already decided, and every design chat re-derives it [Charles 2026-11-03, expert CE design chat; expert-brief.md 0.2.0]
 
 ## Procedure
 
