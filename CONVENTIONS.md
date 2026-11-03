@@ -72,7 +72,7 @@ Before writing a new SKILL.md, answer the twelve questions in `references/skill-
 
 ### Expert briefs
 
-`experts/<slug>/BRIEF.md` follows `references/expert-brief.md` instead of the seven-section body. Briefs are seated by the Expert Desk and never routed by AGENT.md. A build with a Build Brief edits them, the same as skills; the desk's deep-dive helper creates one as draft after Charles confirms its reframe.
+`experts/<slug>/BRIEF.md` follows `references/expert-brief.md` instead of the seven-section body. Briefs are seated by the Expert Desk and never routed by AGENT.md. A build with a Build Brief edits them, the same as skills; a new one is created as draft by `skills/team-builder` after Charles confirms the roster-builder's reframe, and the captain's brief is revised in the same run.
 
 ## Optional wiring block
 
