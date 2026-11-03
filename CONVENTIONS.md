@@ -68,6 +68,10 @@ updated: <YYYY-MM-DD>
 
 Before writing a new SKILL.md, answer the twelve questions in `references/skill-design-framework.md` — that document governs the skill's *design*; this file (with `SKILL_TEMPLATE.md`) governs its *format*. The answers travel in the Build Brief that creates the skill.
 
+### Expert briefs
+
+`experts/<slug>/BRIEF.md` follows `references/expert-brief.md` instead of the seven-section body. Briefs are seated by the Expert Desk and never routed by AGENT.md. A build with a Build Brief edits them, the same as skills; the desk's deep-dive helper creates one as draft after Charles confirms its reframe.
+
 ## Optional wiring block
 
 Any SKILL.md (and the new `external/` pointer files) may carry an optional `wiring:` map inside its YAML front-matter, consumed by cbrain-ui's Skills tab:
