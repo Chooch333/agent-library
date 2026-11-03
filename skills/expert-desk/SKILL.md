@@ -33,8 +33,13 @@ never calls Team Builder for an expert whose reframe Charles has not confirmed.
 **Fire when:** a message starts `Expert desk:` in a macro design chat (Domain
 Expansion, Stack Advisor, Total Harness); or `I need an expert in <x>` in any chat
 that can start helpers, since the need for an expert shows up where the work is.
-Grow-run notes always go on the Project State project `total-harness`, the bench's
-home, whatever chat the ask came from.
+Grow-run notes always go on the Project State project `expert-bench`, whatever chat
+the ask came from; experts span every domain Charles works in, not only the harness.
+
+**Words.** With Charles, use only the bench's own terms: expert, domain captain (or
+captain), craft expert (or craft), brief, bench, index, seat, lens, roster-builder,
+Team Builder. Never translate them: no "role", "lead", "parent", "persona" or
+"reviewer". He reads these files; a synonym costs him the thread.
 **Don't fire when:** grading finished work against a rubric (the checker); seven
 framings of a brief (a brainstorm chat); a Design Assist chat executing decided work.
 
