@@ -29,7 +29,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 | Trigger phrases | Skill |
 |---|---|
-| `Expert desk:` (a message that starts with it, e.g. `Expert desk: <situation or plan link> — goal: <one line> — mode: A`; any macro design chat), or `I need an expert in <x>` / `I need an expert for <x>` (a message that starts with it, in such a chat) | `skills/expert-desk/SKILL.md` |
+| `Expert desk:` (a message that starts with it, e.g. `Expert desk: <situation or plan link> — goal: <one line> — mode: A`; any macro design chat), or `I need an expert in <x>` / `I need an expert for <x>` (a message that starts with it, in any chat that can start helpers) | `skills/expert-desk/SKILL.md` |
 
 ### Investment
 
