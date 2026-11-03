@@ -1,8 +1,8 @@
 ---
 name: team-builder
-version: 0.1.0
+version: 0.2.0
 status: draft
-triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)"]
+triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)"]
 dependencies: []
 owner: Charles
 updated: 2026-11-03
@@ -12,7 +12,7 @@ wiring:
   starts: "called by the Expert Desk or by a build chat; never by a trigger phrase"
   runs_in: claude-chat
   reads: [the approved spec, agent-library experts, CONVENTIONS, SKILL_TEMPLATE]
-  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)"]
+  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~; for a team, a reused captain's row)", "a reused captain's profiles: line (team mode)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)"]
   stack: []
   origin: yours
   label: Team Builder
@@ -30,7 +30,8 @@ execute (TH-135); this is the execution half of growing the team.
 
 ## When
 **Fire when:** the Expert Desk reaches grow step G3 with an `expert-draft` note
-(expert mode), or a build chat is executing a Build Brief whose `Skills:` header or
+(expert mode); the Expert Desk reaches team grow step T4 with a team note, its draft
+notes and a fit note (team mode); or a build chat is executing a Build Brief whose `Skills:` header or
 scope names a new skill (skill mode).
 **Don't fire when:** deciding whether an expert is needed (the Roster Builder); editing
 an existing skill's rules (an ordinary build under the Execute row); the content is a
@@ -46,6 +47,15 @@ Project State note, a cbrain entity or anything that is not a brief or a SKILL.m
 | 5 Commit | registered | One commit per file, each message naming the build or desk run. | Commit SHAs | A commit fails: retry once, then stop and report what landed. |
 | 6 Read back | committed | Fetch every written file from main and compare to the drafts. | "read back: identical" per file | A mismatch: report it; do not re-commit without saying so. |
 | 7 Receipt | read back | Return to the caller: files written, SHAs, index or routing row, any blank fields, check results. | Receipt | — |
+
+### Team mode
+Expert mode, once per expert, in the team note's build order: captains before their crafts.
+- **Read** the team note, every draft note and the fit note. Apply the fit's cuts and rewordings to each draft before step 2.
+- **Captain revisions** come from the fit note's merged set, not the drafts. Apply to a captain only the lines tagged with crafts that passed their checks; lines for a craft that stopped are left out and listed in the receipt.
+- **Overlap check** runs as each expert lands, so later teammates are checked against earlier ones as well as the bench.
+- **A FAIL** stops that expert and every craft under it in this team; commit nothing for them; carry on with the rest. Never fix a FAIL silently.
+- **Profile card.** New captains: step 4 as usual. A captain marked *on the bench* that the team note places on a card: add the card to its `profiles:` line (version bump, changelog line) and to the card's `captains_default`, unless that would put the defaults past the card's `max_seats`; then leave both and list it in the receipt.
+- **Receipt:** one table for the team: expert, landed or stopped (with the failing lines), SHAs, index row, captain lines left out, card changes.
 
 ### Mechanical checks, expert mode
 - Header: all nine fields; `under` empty only for a captain; `status: draft`.
@@ -74,7 +84,9 @@ Expert mode: the Expert Desk's first grow run under this skill (none yet; the dr
 - Two briefs seeded by one chat on one day shared six lens lines; the overlap check is against every brief on the bench, not the ones that come to mind. [TH-139]
 - Figures in lens lines went stale within a day; keep the pointer, drop the number. [TH-139]
 - A proposal carried as chat text or an attachment was lost between chats; the spec is a Project State note or a Build Brief, never a message. [dry run 1, 2026-11-02]
+- Teammates researched in parallel each wrote revisions for the same captain; the fit note merges them once, and only lines for crafts that landed are applied. [Build 65]
 - The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 64]
 
 ## Changelog
+- **0.2.0** (2026-11-03): team mode, loaded at the Expert Desk's team grow step T4: captains first, the fit note's cuts and merged captain revisions applied, a failed expert stops only itself and its crafts, a reused captain joins the team's profile card within max seats, one team receipt (Build 65, BB-2026-11-03-team-grow).
 - **0.1.0** (2026-11-03): first version (Build 64, BB-2026-11-03-team-builder).
