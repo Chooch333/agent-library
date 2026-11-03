@@ -55,7 +55,7 @@ A.1 gets the distilled A report as context, never the A papers. The roster-build
 ## How — review
 | Step | Precondition | Action | Evidence | Recovery |
 |---|---|---|---|---|
-| 1 Read | situation or plan, goal, mode | Open the plan if it's a link. Load the profile (default `profiles/harness.md`). A.1: load the distilled A report. | Goal in one line | No goal: ask one question and stop. Never invent one. |
+| 1 Read | situation or plan, goal, mode | Open the plan if it's a link. Load the profile card for the work's domain from `profiles/` (`harness` for Charles's stack, `construction` for a construction project or pursuit; one card per domain, named in each captain's `profiles:`). A.1: load the distilled A report. | Goal in one line | No goal: ask one question and stop. Never invent one. |
 | 2 Seat | profile loaded | Read `experts/INDEX.md`. Seat per the mode table, at or under max_seats. | Seat list with mode per seat, plus one expert left out (A) or dropped (A.1) and why | No expert matches, or a craft is named with no brief: go to Grow. Never guess a seat. |
 | 3 Brief | seats chosen; the Agent tool is in this session | One prompt per seat from `references/seat-template.md`. Same context block for every seat. Note the time. | Prompts written; start time | No Agent tool: say "The Expert Desk needs a chat that can start helpers," and stop. Never run seats here; never use the Brainstorm Orchestrator. |
 | 4 Run | prompts written | Start every seat in one message (parallel), `subagent_type: general-purpose`, foreground. Seats are read-only by instruction: the helper tool takes no tool list, so each seat has every tool this chat has. Record tokens per helper. | One reply per seat | A seat fails: say which, retry once, then report without it. |
