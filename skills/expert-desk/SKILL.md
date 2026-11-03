@@ -76,6 +76,8 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - A check run on a note has no receipt; run it on the committed file and cite the SHA. [TH-139]
 - The chat that proposed a lens then checked the brief that held it. [TH-136, caught by TH-138 line 12]
 - Two experts seeded by one chat on one day share lines; overlap-check before commit. [TH-139]
+- A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; the index row lands in the same commit as the check's fixes. [TH-J-044]
 
 ## Changelog
+- **0.1.1** (2026-11-03): grow step G3 adds the expert's row to `experts/INDEX.md` after its check passes, in the desk's fix commit (Build 61.2, BB-2026-11-03-expert-index-row; TH-J-044).
 - **0.1.0** (2026-11-03): first version (Build 61, BB-2026-11-02-expert-desk).
