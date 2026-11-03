@@ -2,7 +2,7 @@
 name: expert-desk
 version: 0.2.1
 status: draft
-triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in a macro design chat)"]
+triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)"]
 dependencies: [team-builder]
 owner: Charles
 updated: 2026-11-03
