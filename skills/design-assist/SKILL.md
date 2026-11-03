@@ -153,7 +153,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 **Aggregation rules:** agents never touch the living artifact; only the conducting chat writes it. Distillation names where agents disagreed. The full output link is always provided so Charles can read the raw papers.
 
-*(Capability shipped and verified live 2026-07-06 — a two-agent custom run completed end-to-end. If a fan-out run fails, diagnose per BRAINSTORM.md Step 6; do not silently skip fan-out.)*
+*(If a helper fails, retry once, then say which agent is missing in the brief; do not silently skip fan-out.)*
 
 ## Examples
 
