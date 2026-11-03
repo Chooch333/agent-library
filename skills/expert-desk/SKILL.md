@@ -12,7 +12,7 @@ wiring:
   starts: "\"Expert desk:\" or \"I need an expert in\" in a macro design chat"
   runs_in: claude-chat
   reads: [agent-library experts, charter, stack-map]
-  writes: ["experts/<slug>/BRIEF.md (drafts, via its helper)", "project-state notes (reframes, checks)"]
+  writes: ["experts/<slug>/BRIEF.md (drafts, via its helper)", "experts/INDEX.md (a grown expert's row, after its check passes)", "project-state notes (reframes, checks)"]
   stack: []
   origin: yours
   label: Expert Desk
