@@ -9,5 +9,6 @@
 5. **Questions for Charles** (≤3)
 6. **Noted:** N items (in the papers below)
 7. **Seats:** list with mode · **Left out / dropped:** expert, and why
+8. **Writes during the run:** none, or what, where and when (step 5's check)
 
 <details>Raw papers</details>
