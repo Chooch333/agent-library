@@ -25,6 +25,12 @@ This file is the front door. Project instructions point here. It routes a first 
 |---|---|
 | `Design Assist` or its synonym `DA chat` (either phrase in prompt, case-insensitive — e.g. `this is a DA chat`; these are the only triggers; do not auto-fire from adjacent phrases or a bare "DA") | `skills/design-assist/SKILL.md` |
 
+### Expert Desk
+
+| Trigger phrases | Skill |
+|---|---|
+| `Expert desk:` (a message that starts with it, e.g. `Expert desk: <situation or plan link> — goal: <one line> — mode: A`; any macro design chat), or `I need an expert in <x>` / `I need an expert for <x>` (a message that starts with it, in such a chat) | `skills/expert-desk/SKILL.md` |
+
 ### Investment
 
 | Trigger phrases | Skill |
