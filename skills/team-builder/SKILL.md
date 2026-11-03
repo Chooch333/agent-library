@@ -52,6 +52,7 @@ Project State note, a cbrain entity or anything that is not a brief or a SKILL.m
 Expert mode, once per expert, in the team note's build order: captains before their crafts.
 - **Read** the team note, every draft note and the fit note. Apply the fit's cuts and rewordings to each draft before step 2.
 - **Captain revisions** come from the fit note's merged set, not the drafts. Apply to a captain only the lines tagged with crafts that passed their checks; lines for a craft that stopped are left out and listed in the receipt.
+- **Refresh rows** (an expert on the bench rewritten whole to the current brief format): overwrite its BRIEF.md, keep its name, bump its version, add a changelog line; update its index row only if call_when changed; skip the overlap check against its own old brief.
 - **Overlap check** runs as each expert lands, so later teammates are checked against earlier ones as well as the bench.
 - **A FAIL** stops that expert and every craft under it in this team; commit nothing for them; carry on with the rest. Never fix a FAIL silently.
 - **Profile card.** New captains: step 4 as usual. A captain marked *on the bench* that the team note places on a card: add the card to its `profiles:` line (version bump, changelog line) and to the card's `captains_default`, unless that would put the defaults past the card's `max_seats`; then leave both and list it in the receipt.
