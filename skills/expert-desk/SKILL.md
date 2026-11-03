@@ -75,6 +75,20 @@ A.1 gets the distilled A report as context, never the A papers. The roster-build
 | G3 Build | draft note filed | Load `skills/team-builder/SKILL.md`, expert mode, pointed at the draft note. It writes the brief, applies the captain's revisions, runs the mechanical checks, adds the index row, commits, reads back and returns a receipt. | Team Builder's receipt: SHAs, index row, check results | A mechanical FAIL: show Charles the failing lines and stop. Nothing is committed. Never fix it here. |
 | G4 Done | receipt | Run step 5's check from G1's start time. Expected writes: the two notes and Team Builder's commits; show Charles anything else. Then tell him in two lines: the expert is on the bench and the index as draft, and the captain's brief changed (what moved); it goes active after its first seat yields a finding he tags "new." | — | — |
 
+## How — grow a team (one gate)
+Same rules as single grow; the difference is that every expert is laid out against its
+teammates before any is researched. Helpers never see this chat, so step T0's team ask
+is all they get of it.
+
+| Step | Precondition | Action | Evidence | Recovery |
+|---|---|---|---|---|
+| T0 Ask | Charles said "I need a team (or group) of experts for <x>" | Note the time. Write the team ask from this chat: the situation in one paragraph, quoting Charles; every expert he named or the chat surfaced, each with his own words for it; this chat's link. Read every file or plan the chat named. | Ask text | No situation can be stated from the chat: ask one question and stop. Never invent one. |
+| T1 Team proposal | ask written | Start one roster-builder helper for its Team proposal output, given the ask. It returns one row per expert (new, on the bench, fills a stub, merged, cut, or added), the build order and the profile card. The desk files ask and answer as one note on `expert-bench` (`expert-team-proposal`, `expert-team-<slug>`) and shows Charles one table: name · level + under · call_when · new / on the bench / fills a stub / merged / cut / added, with the count of experts to research. **Stop until he confirms.** | Note id; his one-line confirmation | He changes a row: update the note and continue. He cuts a row: drop it. He cuts all: stop. |
+| T2 Research | confirmed | Start one roster-builder helper per row marked new, fills a stub or added, all in one message (parallel), each for its Research output, pointed at the team note, its own row and `references/expert-deep-dive.md`. File each answer as a note (`expert-draft`, `expert-<slug>`, `expert-team-<slug>`). | One note id per row | A helper fails: retry once, then that row stops and the rest go on; a captain's stop also stops its crafts in this team. "Bigger than a craft" or "smaller than a captain": that row alone goes back through T1 at the new level; no new confirmation unless its name changes. |
+| T3 Fit | every running row has a draft note | Start one fresh roster-builder helper for its Fit output, given the team note, every draft note and the bench. It returns the lines to cut or reword where teammates overlap, one merged set of revisions per captain (each moved line keeps the craft it moves to), and any two call_when lines that would fire on the same work. File it (`expert-team-fit`, `expert-team-<slug>`). | Note id | — |
+| T4 Build | fit note filed | Load `skills/team-builder/SKILL.md`, team mode, pointed at the team note, the draft notes and the fit note. | Team Builder's team receipt | A mechanical FAIL stops that expert and any craft under it in this team; the rest land. Show Charles the failing lines; never fix them here. |
+| T5 Done | receipt | Run step 5's check from T0's start time. Expected writes: this run's notes and Team Builder's commits; show Charles anything else. Then tell him in a few lines: who is on the bench as draft, who stopped and why, which captain briefs changed, and which profile card now seats the team. | — | — |
+
 **Landing.** The calling chat puts a review report into its living artifact as a drafted
 block. A finding Charles tags *wrong*, or a miss that reaches him later, becomes a
 `lens-note` (`references/expert-brief.md`, "Growing a lens").
