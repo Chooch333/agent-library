@@ -110,6 +110,7 @@ A skill commit can be rejected mechanically if it violates the contract. Convent
 
 ## Changelog
 
+- 2026-11-03 — Expert Desk registered: an "Expert briefs" subsection under Skill file rules, an exclusive-writes row for expert-desk, and the locked words per TH-135. Per BB-2026-11-02-expert-desk (Build 61).
 - 2026-10-22 — Body grows to seven sections: **Progress tracking** (after How) is required in every skill, per `references/thread-checkin.md` 0.2.0 and `SKILL_TEMPLATE.md`. Charles: "a section of each skill dedicated to this progress tracking rule … the skill creation template must make sure to include it."
 - 2026-09-22 — Added optional `wiring.replaced_by` and documented the `status: deprecated`/`retired` → Skills tab Retired lane rule. Per BB-2026-09-22-skills-lanes step 2.
 - 2026-09-22 — Amendment 2 (decision A-080): the Execute row now allows a build chat executing an approved Build Brief to create or edit exactly the skill files and AGENT.md routing rows that brief names; added a Schema rules bullet on routing-row authorship and Repairer-driven drift-repair. Per BB-2026-09-21-inspector-repairer step 12a.
