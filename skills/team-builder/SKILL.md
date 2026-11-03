@@ -12,7 +12,7 @@ wiring:
   starts: "called by the Expert Desk or by a build chat; never by a trigger phrase"
   runs_in: claude-chat
   reads: [the approved spec, agent-library experts, CONVENTIONS, SKILL_TEMPLATE]
-  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)"]
+  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)"]
   stack: []
   origin: yours
   label: Team Builder
