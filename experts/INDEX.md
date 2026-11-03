@@ -6,6 +6,7 @@ The desk reads only this file to pick seats. Briefs live in experts/<slug>/BRIEF
 | c-stack | captain | — | the work touches Charles's stack: lanes, scheduled runs, helpers, MCP, repos, connectors, what runs where, money, what Charles must hold | draft |
 | ai-system-design | captain | — | the work designs or changes how Claude works: skills, agents, helpers, context, review loops, intake pipelines | draft |
 | product-design | captain | — | the work has a screen, page, artifact or anything Charles reads or clicks | draft |
+| design-build-delivery | captain | — | the work procures, contracts, prices, staffs or runs a construction project delivered design-build or progressive design-build, or shapes how FAW pursues or performs one: owner readiness, selection, DB contract forms and risk, the A/E subcontract, design management and drawing delivery, early work, Phase 1 cost to GMP, off-ramps | draft |
 | github-integrations | craft | c-stack | the work uses Actions, the GitHub MCP, branch or file ops, or a repo as a queue | draft |
 | chat-access | craft | c-stack | the work assumes what a chat lane can reach: the Agent tool, its tools, connectors, scheduled vs live, PC | draft |
 | roster-builder | craft (grow runs only) | ai-system-design | Charles asks for an expert, no expert on the index matches a call, or a craft is named with no brief | draft |
