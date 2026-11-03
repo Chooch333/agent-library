@@ -3,7 +3,7 @@ name: harness
 captains_default: [c-stack, ai-system-design, product-design]
 craft_by_mode:
   A: none
-  A.1: risks-only, for each craft under a carried captain on the index whose call_when matches the work, within max_seats
+  A.1: risks-only, for each craft under a carried captain on the index whose call_when matches the work, within max_seats; full when the run says `craft: full` (Design Assist stack work does)
   implementation: full
 optional_seats:
   premortem: when a fork is low-confidence and expensive to reverse
