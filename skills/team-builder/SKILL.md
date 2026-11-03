@@ -90,5 +90,6 @@ Expert mode: the Expert Desk's first grow run under this skill (none yet; the dr
 - The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 64]
 
 ## Changelog
+- **0.2.1** (2026-11-03): Our way check (expert-brief 0.2.0); team mode writes *refresh* rows, so an expert already on the bench can be rewritten to the new format inside a team grow. Charles: craft experts must know how things ought to go in their corner.
 - **0.2.0** (2026-11-03): team mode, loaded at the Expert Desk's team grow step T4: captains first, the fit note's cuts and merged captain revisions applied, a failed expert stops only itself and its crafts, a reused captain joins the team's profile card within max seats, one team receipt (Build 65, BB-2026-11-03-team-grow).
 - **0.1.0** (2026-11-03): first version (Build 64, BB-2026-11-03-team-builder).
