@@ -22,6 +22,17 @@ deep-dive scope) and, for a craft, the captain's brief.
    lines, return it as a second file text for `experts/<slug>/references/vocabulary.md`.
 3. Practices: the two to four established ways work in this subject is done, and
    what each is for.
+3a. Our way: Charles's record first, before the field. Read `references/charter.md`;
+   search Project State across all projects (`search_state`, decisions and lessons,
+   using the subject's terms, several queries); read the build briefs and cbrain
+   notes those results point to. For each job that keeps coming up in this corner,
+   write one Our way line per `references/expert-brief.md`: how we do it, what was
+   dropped and why, with the decision, lesson, build or charter line as its source.
+   Where two records disagree, the newer wins and the older is named as dropped. Only
+   where his record is silent may a field default stand, marked `~ field default`.
+   A craft with fewer than five Our way lines after this step says so and lists the
+   jobs it found no record for. No client, job or employer specifics (the repo is
+   public); point to the record instead.
 4. Traps: how work in this subject goes wrong, from real cases. Each becomes a Lens
    line with its source. Confirm, cut or add to the seed lens; never keep an
    unsourced line without marking it ~; never keep a figure, keep the pointer.
