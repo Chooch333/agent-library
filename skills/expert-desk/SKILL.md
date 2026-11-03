@@ -82,5 +82,6 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; the index row lands in the same commit as the check's fixes. [TH-J-044]
 
 ## Changelog
+- **0.1.2** (2026-11-03): experts answer and write nothing; the desk writes. The tools allowlist is dropped (the helper tool cannot set one); new step 5 lists anything written during a run, and grow's G4 does the same (Build 61.3, BB-2026-11-03-expert-seats-answer; TH-J-045).
 - **0.1.1** (2026-11-03): grow step G3 adds the expert's row to `experts/INDEX.md` after its check passes, in the desk's fix commit (Build 61.2, BB-2026-11-03-expert-index-row; TH-J-044).
 - **0.1.0** (2026-11-03): first version (Build 61, BB-2026-11-02-expert-desk).
