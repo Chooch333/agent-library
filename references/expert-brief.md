@@ -2,7 +2,8 @@
 
 An expert's brief is the instructions for one seat at the Expert Desk. The desk
 (`skills/expert-desk`) seats it in a fresh helper (subagent) that answers and writes
-nothing; the desk does any writing and checks after each run (expert-desk 0.1.2).
+nothing. A new brief is proposed and researched by the roster-builder, confirmed once
+by Charles, and written, checked, registered and committed by `skills/team-builder`.
 Nothing in AGENT.md routes to a brief. "Brief" here is an expert's file; a Build Brief
 is a different thing. The expert bench is `experts/`. Experts are thought leadership
 for planning and design; they judge, they never execute (TH-135).
