@@ -53,7 +53,7 @@ A.1 gets the distilled A report as context, never the A papers.
 | 4 Run | prompts written | Start every seat in one message (parallel), `subagent_type: general-purpose`, foreground. Seats are read-only by instruction: the helper tool takes no tool list, so each seat has every tool this chat has. Record tokens per helper. | One reply per seat | A seat fails: say which, retry once, then report without it. |
 | 5 Check | replies in; start time | List what changed since the start time: commits on agent-library and on any repo the work names, and new Project State rows on the calling project. A review run expects none. | Writes found, or "none" | Anything found goes under *Writes during the run* in the report, with what and where (it may be another session's). Never undo it silently. |
 | 6 Merge | replies in | Merge duplicates and count the seats behind each. Rank *blocks* before *improves*. *noted* is a count only. Name disagreements; don't settle them. Drop any finding about a source its seat didn't read. B: no merge. | Report per `references/report-shape.md` | A seat returned nothing or broke the shape: say which. Don't fill in for it. |
-| 6 Report | drafted | Give the report to the calling chat, raw replies collapsed under it. | One page | — |
+| 7 Report | drafted | Give the report to the calling chat, raw replies collapsed under it. | One page | — |
 
 ## How — grow (one gate)
 | Step | Precondition | Action | Evidence | Recovery |
