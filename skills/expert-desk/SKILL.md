@@ -85,6 +85,7 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 63]
 
 ## Changelog
+- **0.2.1** (2026-11-03): `I need an expert in` fires in any chat that can start helpers; grow-run notes always on `total-harness`; the level is the roster-builder's call, never a question to Charles. From the first grow run, asked in a FAW job chat, which had no Project State project to file on.
 - **0.2.0** (2026-11-03): grow is propose → confirm → research → build. Helpers write nothing; the desk files notes; `skills/team-builder` writes the brief, the captain's revisions and the index row. The captain check step is removed (Build 63, BB-2026-11-03-team-builder).
 - **0.1.2** (2026-11-03): experts answer and write nothing; the desk writes. The tools allowlist is dropped (the helper tool cannot set one); new step 5 lists anything written during a run, and grow's G4 does the same (Build 61.3, BB-2026-11-03-expert-seats-answer; TH-J-045).
 - **0.1.1** (2026-11-03): grow step G3 adds the expert's row to `experts/INDEX.md` after its check passes, in the desk's fix commit (Build 61.2, BB-2026-11-03-expert-index-row; TH-J-044).
