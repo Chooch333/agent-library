@@ -5,7 +5,7 @@ under: ai-system-design
 profiles: [harness]
 call_when: "Charles asks for an expert, no expert on the index matches a call, or a craft is named with no brief"
 altitude: [grow]
-reads: ["agent-library:references/expert-brief.md", "agent-library:references/expert-deep-dive.md", "agent-library:references/skill-design-framework.md", "agent-library:experts/INDEX.md", "agent-library:experts/<captain>/BRIEF.md (the captain the proposal names)", "agent-library:skills/expert-desk/profiles/", "https://arxiv.org/html/2606.05976v1", "https://arxiv.org/pdf/2512.05858", "https://arxiv.org/abs/2604.02460", "https://arxiv.org/abs/2407.00215", "https://search.isc.ac/inventory/49/1384039.htm"]
+reads: ["agent-library:references/charter.md", "agent-library:references/expert-brief.md", "agent-library:references/expert-deep-dive.md", "agent-library:references/skill-design-framework.md", "agent-library:experts/INDEX.md", "agent-library:experts/<captain>/BRIEF.md (the captain the proposal names)", "agent-library:skills/expert-desk/profiles/", "https://arxiv.org/html/2606.05976v1", "https://arxiv.org/pdf/2512.05858", "https://arxiv.org/abs/2604.02460", "https://arxiv.org/abs/2407.00215", "https://search.isc.ac/inventory/49/1384039.htm"]
 version: 0.3.0
 status: draft
 ---
