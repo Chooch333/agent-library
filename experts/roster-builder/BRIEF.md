@@ -32,7 +32,7 @@ The expert at making experts. Seated only when the bench is growing (`altitude: 
 14. A reads path that does not exist yet: this brief's own proposal listed expert-brief.md, expert-deep-dive.md and INDEX.md before Build 61 committed them [TH-137 reads vs plan Current state "no experts/ folder"; skill-design-framework Q4]
 15. Lens notes filed and never folded in; the brief sits at its first version while the misses pile up [expert-brief.md "Growing a lens"; premortem: map suggestions filed and almost never applied]
 16. No retirement path: an expert whose seats keep yielding only "knew it" or "wrong" stays on the index [~ no rule exists; TH-137 names retiring and nothing defines it; inverse of skill-design-framework Q11]
-17. A captain asked to pass judgment on a craft in a field it does not hold; the captain's brief changes when a craft joins under it, it does not veto the craft [Charles 2026-11-03, Build 63]
+17. A captain asked to pass judgment on a craft in a field it does not hold; the captain's brief changes when a craft joins under it, it does not veto the craft [Charles 2026-11-03, Build 64]
 18. A job attached to an expert because a chat once did it while seated as that expert: the check job rode on this brief from dry run 1 until Build 63 moved it to the skill that writes [TH-136 "ROSTER CHECK"; Build 63]
 
 ## Procedure
