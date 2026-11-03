@@ -1,6 +1,6 @@
 ---
 name: expert-desk
-version: 0.3.1
+version: 0.3.2
 status: draft
 triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)"]
 dependencies: [team-builder]
@@ -53,7 +53,7 @@ framings of a brief (a brainstorm chat); a build chat executing decided work.
 | Mode | Seated | Output |
 |---|---|---|
 | A — evaluate and plan | profile's default captains + up to 2 by call_when | full |
-| A.1 — pull in the technical people (`carry: <captains>`) | carried captains (default: those whose A findings were not all noted) + each craft under them on the index | captains full; craft risks-only unless `craft: full` |
+| A.1 — pull in the technical people (`carry: <captains>`) | carried captains (default: those whose A findings were not all noted) + each craft under them on the index whose call_when matches the work, within max_seats | captains full; craft risks-only unless `craft: full` |
 | B — one expert, one issue (`seat: <expert>` or plain language) | the named seat or the call_when match; no match → Grow | that seat's output; no merge |
 A.1 gets the distilled A report as context, never the A papers. The roster-builder
 (`altitude: [grow]`) is never seated in a review mode.
@@ -101,6 +101,8 @@ None. The desk finishes in one run inside the calling chat; that chat's thread c
 ## Examples
 Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139) was the old four-step flow; the first run under this version fills this in.
 
+**Grow a team (first run, 2026-11-03).** "I need a team of experts for stack wiring — the roles are in EB-006 on expert-bench", asked in a Brainstorm & Design Assist chat after the team was talked through. T0 ask + T1 proposal: EB-007 (seven rows: c-stack refresh; chat-access refreshed and renamed lanes; github-integrations refresh; services, data-homes, intake, oversight new). Charles confirmed the one table. T2: seven research helpers in parallel, drafts on a branch, notes EB-008 to EB-014. T3 fit: EB-015 (thirteen line changes, two bench briefs touched, oversight's call_when narrowed). T4: all seven landed on main as draft.
+
 ## Pitfalls
 - A proposal or a result carried as chat text or an attachment is lost between chats. Every helper answer lands in a Project State note before the next step. [dry run 1, 2026-11-02]
 - The helper tool takes no tool list per call, so every seat has every tool the chat has; read-only rests on the instruction, and step 5 checks what was written. [TH-134 line 17; TH-J-045]
@@ -112,6 +114,7 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - Teammates researched in parallel are blind to each other; two crafts joining one captain would each rewrite its brief. The fit pass reads them together and merges each captain's revisions once. [Build 65; TH-139]
 
 ## Changelog
+- **0.3.2** (2026-11-03): mode A.1 seats only the crafts under a carried captain whose call_when matches the work, within max_seats (it seated every craft under the captain); the profile cards say the same. First team grow filled into Examples. EB-006 companion fix, shipped with the stack wiring team (EB-007).
 - **0.3.1** (2026-11-03): fires in Design Assist chats, which seat experts on their own at steps 5–6; the merge joins seats' *How I'd do it* paths into one A-to-Z path and files *Newer than my brief* items as lens-notes; team grow can mark a bench expert *refresh* so it is rewritten with an Our way section (expert-brief 0.2.0). Charles: experts are resources for DA chats, and craft experts must know how things ought to go in their corner.
 - **0.3.0** (2026-11-03): grow a team. `I need a team of experts for <x>` (or `a group`), mid-chat included: team ask from the chat → one team proposal → Charles confirms once → research in parallel → fit pass → Team Builder team mode, captains first, a failed expert stops only itself and its crafts. Single grow unchanged (Build 65, BB-2026-11-03-team-grow).
 - **0.2.2** (2026-11-03): grow-run notes go on the new Project State project `expert-bench`, not `total-harness`, because experts span every domain Charles works in (Charles, first grow run). Words rule added: the bench's terms only, never role, lead, parent, persona, reviewer.
