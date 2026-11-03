@@ -8,7 +8,7 @@ The desk reads only this file to pick seats. Briefs live in experts/<slug>/BRIEF
 | product-design | captain | — | the work has a screen, page, artifact or anything Charles reads or clicks | draft |
 | github-integrations | craft | c-stack | the work uses Actions, the GitHub MCP, branch or file ops, or a repo as a queue | draft |
 | chat-access | craft | c-stack | the work assumes what a chat lane can reach: the Agent tool, its tools, connectors, scheduled vs live, PC | draft |
-| roster-builder | craft | ai-system-design | no expert on the index matches a call, Charles asks for an expert, a craft is named with no brief, or an expert brief is being proposed, written, checked, grown or retired | draft |
+| roster-builder | craft (grow runs only) | ai-system-design | Charles asks for an expert, no expert on the index matches a call, or a craft is named with no brief | draft |
 | skill-authoring | craft | ai-system-design | the work writes or changes a SKILL.md, a skill's description or triggers, or a .claude/agents/ definition, or depends on how Claude picks, loads or delegates to one | draft |
 | premortem | craft (optional seat) | ai-system-design | a fork is low-confidence and expensive to reverse | draft |
 | three-js | craft | (none yet) | stub: 3D in the browser | stub |
