@@ -1,6 +1,6 @@
 ---
 name: team-builder
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)"]
 dependencies: []
