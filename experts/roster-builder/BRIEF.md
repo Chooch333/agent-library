@@ -61,5 +61,5 @@ Speculate past what you read; pad to the cap; soften a gap; advise outside your 
 
 ## Changelog
 
-- 0.2.0 (2026-11-03): judges only. The check job moved to `skills/team-builder` (mechanical checks) and the captain check was removed; the research output now includes the captain's revisions; altitude `[grow]`; project-doc and Project State history reads dropped; lens lines 17 and 18 added. Build 63, BB-2026-11-03-team-builder.
+- 0.2.0 (2026-11-03): judges only. The check job moved to `skills/team-builder` (mechanical checks) and the captain check was removed; the research output now includes the captain's revisions; altitude `[grow]`; project-doc and Project State history reads dropped; lens lines 17 and 18 added. Build 64, BB-2026-11-03-team-builder.
 - 0.1.0 (2026-11-02): proposal TH-137; deep dive TH-138; check TH-139 (ai-system-design); fixes applied on commit; renamed from roster on Charles's call (2026-11-02).
