@@ -32,7 +32,11 @@ never calls Team Builder for an expert whose reframe Charles has not confirmed.
 ## When
 **Fire when:** a message starts `Expert desk:` in a macro design chat (Domain
 Expansion, Stack Advisor, Total Harness); or `I need an expert in <x>` in any chat
-that can start helpers, since the need for an expert shows up where the work is.
+that can start helpers, since the need for an expert shows up where the work is;
+or `I need a team of experts for <x>` (or `a group of experts`) in any chat that can
+start helpers, usually a few turns in, after Charles has talked through which experts
+the work needs. Names are optional: with them, the roster-builder starts from his list;
+without, it finds the team from the situation.
 Grow-run notes always go on the Project State project `expert-bench`, whatever chat
 the ask came from; experts span every domain Charles works in, not only the harness.
 
