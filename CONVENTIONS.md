@@ -9,6 +9,7 @@ Rules for the agent-library. Adapted from hanyuancheung's `llm-skill` contract.
 | **Execute** | The schema + up to 3 SKILL.md files | Nothing in the skill system, **except**: a build chat executing an approved Build Brief may create or edit exactly the skill files and AGENT.md routing rows that brief names | Touch any skill file, AGENT.md row, or schema its brief doesn't name |
 | **Inspector** | Project State evidence, cbrain's stack-map, shipped repos (read-only) | Only Punch List rows (`punch_items`, `punch_item_notes`, `punch_checkpoints`) | Edit a target file directly, or write anywhere outside the Punch List |
 | **Repairer** | Punch List rows (`auto`-tier, `open` items), the live target it's about to edit | The target file/repo an item names, plus that item's Punch List write-back | File a Punch List item, or verify its own repair |
+| **expert-desk** | `experts/INDEX.md`, expert briefs, the charter, the stack map's lanes, the work under review | `experts/<slug>/BRIEF.md` (draft, after a confirmed reframe); Project State notes tagged `expert-proposal` and `expert-check` | Commit a brief whose reframe Charles has not confirmed, check a brief in the helper that wrote or proposed it, or write anything else in any repo |
 
 An agent that can mutate its own rules while executing is a debugging nightmare. Keep the writes mutually exclusive so every change is traceable.
 
