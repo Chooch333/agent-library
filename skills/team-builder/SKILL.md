@@ -74,7 +74,7 @@ Expert mode: the Expert Desk's first grow run under this skill (none yet; the dr
 - Two briefs seeded by one chat on one day shared six lens lines; the overlap check is against every brief on the bench, not the ones that come to mind. [TH-139]
 - Figures in lens lines went stale within a day; keep the pointer, drop the number. [TH-139]
 - A proposal carried as chat text or an attachment was lost between chats; the spec is a Project State note or a Build Brief, never a message. [dry run 1, 2026-11-02]
-- The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 63]
+- The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 64]
 
 ## Changelog
 - **0.1.0** (2026-11-03): first version (Build 63, BB-2026-11-03-team-builder).
