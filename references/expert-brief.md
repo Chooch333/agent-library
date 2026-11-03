@@ -1,4 +1,4 @@
-# Expert brief format (0.1.0, draft)
+# Expert brief format (0.2.0, draft)
 
 An expert's brief is the instructions for one seat at the Expert Desk. The desk
 (`skills/expert-desk`) seats it in a fresh helper (subagent) that answers and writes
@@ -8,8 +8,15 @@ Nothing in AGENT.md routes to a brief. "Brief" here is an expert's file; a Build
 is a different thing. The expert bench is `experts/`. Experts are thought leadership
 for planning and design; they judge, they never execute (TH-135).
 
+An expert knows two things about its corner: how work there ought to go for Charles
+(Our way) and how it goes wrong (Lens). A brief with only a lens is a critic, not an
+expert (Charles, 2026-11-03).
+
 Folder: `experts/<slug>/BRIEF.md`. Longer material may go in `experts/<slug>/references/`.
 Facts about a tool live in cbrain `concepts/` and are listed under `reads`, never copied in.
+agent-library is public: no client, job, employer or person specifics in a brief. Point
+to the record (a decision or lesson ID, a build, a cbrain entity) instead of quoting it
+(Charles, 2026-11-03, design-build-delivery).
 
 ## Header (nine fields; `under` is empty only for a captain)
 ---
@@ -20,45 +27,74 @@ profiles: [harness]
 call_when: <one line; the desk routes on this only>
 altitude: [concept, plan]          # craft: [plan: risks-only, implementation: full]
 reads: [<repo>:<path> | <url>, ...] # read at run time; only what exists
-version: 0.1.0
+version: 0.2.0
 status: draft
 ---
 
 ## Body (in order)
-1. **Lens** — 10–20 named ways work in this corner goes wrong. One line each, ending
+1. **Our way** — how work in this corner ought to go for Charles: what he decided,
+   what he prefers, what was tried and dropped. Required for a craft (5–20 lines); a
+   captain may carry its field's standing choices (0–20). One line per job that keeps
+   coming up in the corner:
+   `<job>: <how we do it>; not <what was dropped or ruled out>, because <reason> [source]`
+   The source is Charles's own record: the charter, a decision or lesson ID, a build,
+   or his stated preference with its date. Where his record is silent and the field
+   has a settled default, the line may stand on that, marked `~ field default`. The
+   claim and the pointer, never the figure. Our way points to the record; it is not a
+   copy of it. At run time the seat checks the live record, and a newer decision beats
+   the brief.
+2. **Lens** — 10–20 named ways work in this corner goes wrong. One line each, ending
    with its source in brackets: a trace (chat, build, ID), a document, or [research].
    The claim and the pointer, never the figure: numbers age, the paper does not.
    Grown from real misses; never invented. A line not fully carried by its source is
-   marked ~ and says what is uncertain.
-2. **Procedure** — (1) Read the situation, the goal and every file under `reads`.
-   (2) Open the actual work; never judge from a summary when the source is reachable.
-   (3) Walk each lens line against it. (4) Write the output in the mode the desk
-   named: 8 findings at most (full), 3 (risks-only). (5) Read only, write nothing; you
-   are alone and see no other seat.
-3. **Output** — the fixed shapes below.
-4. **Never** — speculate past what you read; pad to the cap; soften a blocker; advise
-   outside your corner.
-5. **Changelog**
+   marked ~ and says what is uncertain. A lens line does not repeat an Our way line.
+3. **Procedure** — (1) Read the situation, the goal, `agent-library:references/charter.md`
+   and every file under `reads`. (2) Search Project State across all projects for
+   decisions and lessons in this corner, using its terms; where one is newer than an
+   Our way line and differs, the record wins, and you say so. (3) Open the actual work;
+   never judge from a summary when the source is reachable. (4) Walk each Our way line
+   and each Lens line against it. (5) Write the output in the mode the desk named.
+   (6) Read only, write nothing; you are alone and see no other seat.
+4. **Output** — the fixed shapes below.
+5. **Never** — speculate past what you read; pad to the cap; soften a blocker; advise
+   outside your corner; propose a way the record already ruled out without naming
+   the decision that ruled it out.
+6. **Changelog**
 
 ## Output shape, full
 **Seat:** <name> · **Mode:** full
-**Options I would add** (≤3): option — its trade
+**How I'd do it** — one path, or two when there is a real fork: an A-to-Z sequence of
+steps, each citing the Our way line or record it rests on; a step with nothing behind
+it is marked *~ new*. (A captain with no Our way lines omits this.)
+**Where the work departs from our way** — the line quoted, what the work does instead
 **What I would change** (≤3)
-**What goes wrong in my corner** — each tagged *blocks the goal* | *improves the plan*
+**What goes wrong in my corner** (≤8) — each tagged *blocks the goal* | *improves the plan*
 | *noted*, naming the part of the work it is about
+**Newer than my brief** — any decision or lesson found in step 2 that changes an Our
+way line (the desk files it as a lens-note), or "none"
 **What I would need to know** (≤2)
 **If this failed in three months, why** — one line. Mandatory.
-**Read:** every file or page you actually opened
+**Read:** every file or page you actually opened, and the searches you ran
 
 ## Output shape, risks-only (craft at plan altitude)
 **Seat:** <name> · **Mode:** risks-only
+**Where the work departs from our way** (≤3)
 **What goes wrong in my corner** (≤3, tagged as above)
+**Newer than my brief** — as above
 **If this failed in three months, why** — one line
 **Read:** as above
 
-## Growing a lens
-A finding Charles tags *wrong*, or a miss that reached him, becomes a Project State
-note on the calling project tagged `lens-note` and `expert-<slug>`: one line, in his
-words or the trace's. A later brief folds lens notes in (version bump, changelog).
-A seat never edits its own brief. Lens notes go to the expert that owns the line;
-no line is owned by two experts.
+## Growing a brief
+A finding Charles tags *wrong*, a miss that reached him, or a newer decision a seat
+reported under *Newer than my brief* becomes a Project State note on `expert-bench`
+tagged `lens-note` and `expert-<slug>`: one line, in his words or the trace's. A later
+brief folds lens notes into Our way or the Lens (version bump, changelog). A seat never
+edits its own brief. A note goes to the expert that owns the line; no line is owned by
+two experts.
+
+## Changelog
+- 0.2.0 (2026-11-03): Our way section (required for a craft), How I'd do it and
+  Newer than my brief in the output, the charter and a Project State search in the
+  procedure, the public-repo rule. Charles: craft experts must know how things ought
+  to go in their corner, especially his stack's decisions and preferences.
+- 0.1.0 (2026-11-03): first version (Build 61).
