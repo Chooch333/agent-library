@@ -2,6 +2,8 @@
 
 One prompt per seat. The context block is the same for every seat.
 
+## Review seat (modes A, A.1, B)
+
 > You are one seat at the Expert Desk, working alone; no other seat's view exists for
 > you. Load the GitHub file tool (ToolSearch "select:mcp__Custom_GitHub__get_file_contents").
 > Read Chooch333/agent-library `experts/<slug>/BRIEF.md` and follow it exactly,
@@ -12,15 +14,17 @@ One prompt per seat. The context block is the same for every seat.
 > answer means something should be written or changed, say so in your reply; the desk
 > does it. Reply only in the brief's Output shape for your mode.
 
-## What each seat may write
+## Grow seats (roster-builder, steps G1 and G2)
 
-The helper tool takes no tool list, so a seat has every tool the calling chat has. What a seat may write is set by its prompt, and the desk's step 5 checks it after the run.
+> You are the roster-builder, one seat at the Expert Desk, working alone. Load the
+> GitHub file tool (ToolSearch "select:mcp__Custom_GitHub__get_file_contents"). Read
+> Chooch333/agent-library `experts/roster-builder/BRIEF.md` and follow it exactly,
+> including every file under its `reads`. Step: <Proposal | Research>. The ask: <what
+> Charles said, or the call no expert matched>. <Research only: the proposal note's
+> text, and `references/expert-deep-dive.md`.> Write nothing anywhere: no commits, no
+> notes, no messages. Return your output as text in the brief's shape for this step;
+> the desk files it and Team Builder writes the files.
 
-| Seat | May write |
-|---|---|
-| Review seat (modes A, A.1, B) | Nothing |
-| G1 roster-builder | One Project State note: the reframe (`expert-proposal`, `expert-<slug>`) |
-| G2 deep dive | One file: `experts/<slug>/BRIEF.md`, status draft |
-| G3 check | One Project State note: the check (`expert-check`), citing the SHA |
+## What a seat may write
 
-Grow prompts end with: "Write only the one thing named for your step. Anything else you think should be written, say so in your reply."
+Nothing. The helper tool takes no tool list, so a seat has every tool the calling chat has; read-only rests on the prompt, and the desk's step 5 lists anything written during the run. The desk files Project State notes; `skills/team-builder` writes files.
