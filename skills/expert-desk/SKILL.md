@@ -106,8 +106,11 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - Two experts seeded by one chat on one day share lines; Team Builder's overlap check runs against every brief on the bench. [TH-139]
 - A grown expert written to the bench but not the index is never seated, and the desk tries to grow it again; Team Builder writes the index row in the same run. [TH-J-044]
 - A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 64]
+- A team asked for a few turns into a chat: the experts were named earlier, in Charles's words, and a helper never sees the chat. The team ask quotes them and is filed in the proposal note. [Charles 2026-11-03, Build 65]
+- Teammates researched in parallel are blind to each other; two crafts joining one captain would each rewrite its brief. The fit pass reads them together and merges each captain's revisions once. [Build 65; TH-139]
 
 ## Changelog
+- **0.3.0** (2026-11-03): grow a team. `I need a team of experts for <x>` (or `a group`), mid-chat included: team ask from the chat → one team proposal → Charles confirms once → research in parallel → fit pass → Team Builder team mode, captains first, a failed expert stops only itself and its crafts. Single grow unchanged (Build 65, BB-2026-11-03-team-grow).
 - **0.2.2** (2026-11-03): grow-run notes go on the new Project State project `expert-bench`, not `total-harness`, because experts span every domain Charles works in (Charles, first grow run). Words rule added: the bench's terms only, never role, lead, parent, persona, reviewer.
 - **0.2.1** (2026-11-03): `I need an expert in` fires in any chat that can start helpers; the level is the roster-builder's call, never a question to Charles. From the first grow run, asked in a FAW job chat, which had no Project State project to file on.
 - **0.2.0** (2026-11-03): grow is propose → confirm → research → build. Helpers write nothing; the desk files notes; `skills/team-builder` writes the brief, the captain's revisions and the index row. The captain check step is removed (Build 64, BB-2026-11-03-team-builder).
