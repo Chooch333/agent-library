@@ -25,6 +25,16 @@ An agent that can mutate its own rules while executing is a debugging nightmare.
 - **Skill** — written instructions for one kind of job. It does nothing on its own. Every entry on the tab is a skill.
 - **Agent** — a skill that runs on its own: it has a trigger (a schedule or an event), tools, and nobody steering each step. On the tab this is a badge, "Runs on its own", not a separate list.
 - **Role** — retired from anything Charles reads (UI labels, briefs, artifacts). The old role folder was folded into `skills/` (Build 38, 2026-10-15).
+- **Expert Desk** — the one skill every expert interaction goes through.
+- **Expert bench** — the folder `experts/`.
+- **Expert** — thought leadership for planning and design; judges, never executes (TH-135).
+- **Domain captain** — an expert that holds a field's judgment and is seated first.
+- **Craft expert** — an expert in one technique, always under a captain.
+- **Brief** — an expert's file, `experts/<slug>/BRIEF.md`. A Build Brief is a different thing.
+- **Profile card** — the desk's per-domain settings: default captains, severity scale, max seats (`skills/expert-desk/profiles/`).
+- **Lens** — the named ways work in an expert's corner goes wrong, each with its source.
+- **Roster-builder** — the expert that proposes, researches, checks and retires experts.
+- **Mode A / A.1 / B** — A: captains evaluate and plan. A.1: carried captains plus their craft experts. B: one expert, one issue.
 
 ## Skill file rules
 
