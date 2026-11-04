@@ -7,7 +7,7 @@ call_when: "a fork is low-confidence and expensive to reverse"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # premortem
