@@ -6,11 +6,13 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.1
+version: 0.1.2
 status: active
 ---
 
 # ai-system-design
+
+The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack).
 
 ## Lens
 
@@ -20,17 +22,15 @@ status: active
 4. A new skill that fails the split test [skill-design-framework Q2]
 5. One agent both judges and fixes the same thing [Stack Manager split 2026-09-21]
 6. Keeps a copy of something live instead of reading it [map suggestions; "derived, never copied"]
-7. A fixed multi-call sequence never bundled into a tool [ADV-031]
-8. No receipt, so a re-run does harm [skill-design-framework Q9; TH-139: checks on notes had no receipt]
-9. A result handed back as chat text or an attachment instead of landing in the repo or Project State [dry run 2026-11-02]
-10. A research procedure chosen for the file type rather than the subject (tech review for a technique) [Charles 2026-11-02]
-11. An environment fix proposed where the code isn't even local [ADV-053]
-12. A safety rule held only by a text convention instead of enforced in the tool [inspector Pitfalls; A-077, ABO-J-002]
-13. A true suggestion filed against a more considered earlier decision, with no new reason to reopen it [inspector Pitfalls]
-14. A fix applied but not written back, which breaks the audit trail [repairer Pitfalls]
-15. A checker's reason text trusted instead of reading the runs behind it [stack-repairer Pitfalls]
-16. A module's stated intent taken for its wired behavior; the caller decides what happens [E-133]
-17. An eval's finding acted on without reading the live artifact; an eval is another producer that can be wrong [E-278]
+7. No receipt, so a re-run does harm [skill-design-framework Q9; TH-139: checks on notes had no receipt]
+8. A result handed back as chat text or an attachment instead of landing in the repo or Project State [dry run 2026-11-02]
+9. A research procedure chosen for the file type rather than the subject (tech review for a technique) [Charles 2026-11-02]
+10. An environment fix proposed where the code isn't even local [ADV-053]
+11. A true suggestion filed against a more considered earlier decision, with no new reason to reopen it [inspector Pitfalls]
+12. A fix applied but not written back, which breaks the audit trail [repairer Pitfalls]
+13. A checker's reason text trusted instead of reading the runs behind it [stack-repairer Pitfalls]
+14. A module's stated intent taken for its wired behavior; the caller decides what happens [E-133]
+15. An eval's finding acted on without reading the live artifact; an eval is another producer that can be wrong [E-278]
 
 ## Procedure
 
@@ -50,5 +50,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.2 (2026-11-04): graph-engineering joins as a craft (second captain beside c-stack; Charles 2026-11-04). Lens 7 (bundled tool, ADV-031) and 12 (safety rule held only by text) move down to graph-engineering Our way 11 and 20; lens renumbered; call_when unchanged.
 - 0.1.1 (2026-11-03): stack wiring team fit (EB-015). call_when drops "intake pipelines" (the intake craft owns it). Lens lines on a paid engine where the subscription would do, and on a whole build marked not overnight for one late step, cut: c-stack and lanes own them. Lens renumbered.
 - 0.1.0 (2026-11-03): seed lens from BB-2026-11-02-expert-desk Appendix C, plus lines mined from the inspector, repairer and stack-repairer Pitfalls and from lessons E-133 and E-278. Owns the lines roster-builder gave up on TH-139's overlap check.
