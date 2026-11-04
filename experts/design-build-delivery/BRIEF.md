@@ -48,4 +48,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-04): call_when hands standing up or growing an in-house design group as a firm capability to the new captain ae-practice (EB-053, EB-057). No lens lines move; line 5 (the outside designer of record) stays here, next to ae-practice line 12 (the builder's own designers).
 - 0.1.0 (2026-11-03): proposal EB-002, confirmed as captain by Charles 2026-11-03; draft EB-003, fix EB-004. Deep dive re-verified every seed line against its opened source: the CD 410 wording was corrected; the off-ramp inference was replaced by DBIA BP4 d; the shortlist rule was corrected to two-step best value (BP3), not PDB; VDOT dropped as a QBS source because it scores price. On Charles's call, every FAW job-specific line and trace was removed before commit; the repo is public. Figures removed from lines 4 and 10 at Team Builder's check. TVD technique and BD rhythm are out of scope.
