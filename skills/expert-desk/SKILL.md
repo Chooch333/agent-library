@@ -1,6 +1,6 @@
 ---
 name: expert-desk
-version: 0.4.0
+version: 0.4.1
 status: draft
 triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)", "CE <expert>: <link or topic> (a message that starts with it, in any chat that can start helpers)", "the scheduled task \"Expert CE\" (Sunday 00:00 and 01:00 Indianapolis; its prompt fetches this file and runs the CE job)"]
 dependencies: [team-builder]
