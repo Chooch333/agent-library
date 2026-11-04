@@ -152,7 +152,7 @@ The scheduled task's prompt fetches this file and points here. Rules first:
 | F2 Fold | catch-up done | Load `skills/team-builder/SKILL.md` in update mode, pointed at every waiting lens-note (tag `lens-note`, no `folded` or `routed` tag) for the experts in scope. File its receipt as a note on expert-bench (tags `expert-ce`, `ce-fold`). | Team Builder's receipt; note id | Team Builder has no update mode yet, or stops: file the `ce-fold` note with what it said, and stop. Never fold a lens-note here. |
 
 ## Progress tracking
-None. The desk finishes in one run inside the calling chat; that chat's thread covers it.
+None. The desk finishes in one run inside the calling chat; that chat's thread covers it. A CE job run leaves nothing open: its receipt (or `ce-fold` note) is the record.
 
 ## Examples
 Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139) was the old four-step flow; the first run under this version fills this in.
