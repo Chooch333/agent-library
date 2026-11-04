@@ -1,6 +1,6 @@
 ---
 name: video-reader
-version: 0.2.2
+version: 0.3.0
 status: draft
 triggers: ["video-reader run"]
 owner: Charles
