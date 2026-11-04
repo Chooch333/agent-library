@@ -7,7 +7,7 @@ call_when: "the work decides where a kind of data lives or is read from — cbra
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # data-homes
