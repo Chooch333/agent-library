@@ -151,18 +151,22 @@ against the API.
       not started -- launch it: go build <plan_id> on world-graph",
       never "no action needed." Only `running` means it is in progress.
 
-4. SUMMARY BACKFILL (v1.5.0) -- after the new items, before the backlog
-   drain. Up to 10 articles per run that were read before summaries
-   existed, newest first.
+4. SUMMARY BACKFILL (v1.6.0) -- after the new items, before the backlog
+   drain. This step always runs when fewer than 20 new items were
+   waiting at step 2: it needs only the GitHub connector, every write
+   is a GitHub commit, and no other access is a reason to skip it. Up to
+   20 articles per run with no summary, newest first.
    a. Find them: query cbrain Supabase `lpeswznkxzeeyiqaewma`, table
       `intake_items`: `kind = 'article' and summary is null and full_text
-      is not null and status in ('in_graph', 'read')`, ordered
-      `published_at desc nulls last`, limit 10. That table is the nightly
-      copy `pipeline/sources_export.py` writes, so it can be a day behind.
-      If it can't be read, list `data/extracted/` and pick the newest
-      files with no `summary` key instead. Skip any item with no
-      `data/articles/<id>.md` -- RSS items collected before 2026-09-13
-      have no stored text.
+      is not null and status in ('in_graph', 'read') and
+      coalesce(status_label, '') not in ('Duplicate', 'Audit only')`,
+      ordered `published_at desc nulls last`, limit 20. That table is the
+      nightly copy `pipeline/sources_export.py` writes, so it can be a
+      day behind. If it can't be read, list `data/extracted/` and pick
+      the newest files with no `summary` key instead. Either way, skip a
+      file with `duplicate_of` or `audit_only` (never re-pick it), and
+      skip any item with no `data/articles/<id>.md` -- RSS items
+      collected before 2026-09-13 have no stored text.
    b. For each: read `data/articles/<id>.md` in full and the current
       `data/extracted/<id>.json`. If the file already has a `summary`,
       skip it. Otherwise write the summary by 3e's rules and commit the
