@@ -84,13 +84,31 @@ way line (the desk files it as a lens-note), or "none"
 **If this failed in three months, why** — one line
 **Read:** as above
 
-## Growing a brief
-A finding Charles tags *wrong*, a miss that reached him, or a newer decision a seat
-reported under *Newer than my brief* becomes a Project State note on `expert-bench`
-tagged `lens-note` and `expert-<slug>`: one line, in his words or the trace's. A later
-brief folds lens notes into Our way or the Lens (version bump, changelog). A seat never
-edits its own brief. A note goes to the expert that owns the line; no line is owned by
-two experts.
+## Growing a lens
+An expert learns from six places (Build 68):
+
+| Where an expert learns | Lands | Written by |
+|---|---|---|
+| Sources: feeds and pages labeled for it (`experts: [<slug>]` in world-graph `feeds.json`; yt-relay `channels.json`) | the weekly CE run | the CE run |
+| A finding Charles tags *wrong* or *new*; a miss that reaches him | at once, lens-note | the desk or the calling chat |
+| Decisions newer than its brief (*Newer than my brief*, desk step 6) | at once, lens-note | the desk |
+| The stack fix log, stack experts only (`c-stack` and its crafts): `stack_repairs` rows and `stack-incident` lessons | the weekly CE run | the CE run |
+| `CE <expert>: <link or topic>` in any chat that can start helpers | at once | the desk |
+| Web search (TinyFish `search` only while its wallet shows $0) | the weekly CE run | the CE run |
+
+Each lands as a Project State note on `expert-bench` tagged `expert-<slug>`:
+- a **lens-note** (`lens-note`): a change to a line of the brief, one line, in
+  Charles's words or the trace's, or marked "Inferred" with the page cited when the
+  expert drew it from what it read;
+- a **field note** (`field-note`): a CE finding that is not a lens line, something
+  true in the corner worth knowing at the next seat, one finding, the page cited.
+
+Every seat reads its waiting lens-notes (no `folded` or `routed` tag) and its latest
+field notes before answering (`skills/expert-desk/references/seat-template.md`). Team
+Builder update mode folds the waiting lens-notes into the brief at the Sunday 01:00 CE
+run (`skills/expert-desk`, CE job): into Our way or the Lens, version bump, changelog.
+A seat still never edits its own brief. A note goes to the expert that owns the line;
+no line is owned by two experts.
 
 ## Changelog
 - 0.2.0 (2026-11-03): Our way section (required for a craft), How I'd do it and
