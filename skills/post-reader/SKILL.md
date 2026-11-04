@@ -94,6 +94,24 @@ Agent, Browser or Research (metered), never the API key.
    g. Flip the post entry to status "done" with article_id, title,
       media, done_at. Commit, read back.
 3. If the run is short on time, stop after the post in hand.
+3b. Sites the nightly Action could not read (v0.2.0). Read world-graph
+   data/feed_pages.json. For each entry with needs_tinyfish true:
+   a. Fetch its url with TinyFish fetch_content (format markdown). No
+      metered TinyFish tool, ever. Blocked or only site chrome: set
+      last_result to what you saw, keep needs_tinyfish true, go on.
+   b. Hash the main text as pipeline/feed_pages.py text_hash does: sha256
+      of the text with every run of whitespace collapsed to one space.
+      Same as the entry's hash: nothing to save.
+   c. Changed: url = <page url>#v-<first 12 of the hash>, article_id from
+      that url. Write data/articles/<article_id>.md (frontmatter article_id,
+      source = the feed name, title "<name>: page updated <date>", url,
+      published and fetched_at now, word_count, text_source "tinyfish_fetch",
+      kind "page", page_url, page_hash) and data/queue/<article_id>.json in
+      write_pending shape. Status "pending", or "saved" when the source has
+      experts and is not on the Stack Advisor list (feeds.json).
+   d. Update the entry: hash, last_saved, last_result "ok_tinyfish". Leave
+      needs_tinyfish true; the nightly Action clears it when it can read
+      the page itself. Commit, read back.
 4. R&D inbox card: count posts with rd "waiting". If one or more,
    Project State checkin as a job (source "job", kind "job",
    thread_key "job:post-reader-rd-inbox", plain_name "R&D inbox from
