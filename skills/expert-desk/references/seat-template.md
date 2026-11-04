@@ -8,7 +8,11 @@ One prompt per seat. The context block is the same for every seat.
 > you. Load the GitHub file tool (ToolSearch "select:mcp__Custom_GitHub__get_file_contents").
 > Read Chooch333/agent-library `experts/<slug>/BRIEF.md` and follow it exactly,
 > including every file under its `reads`, and read `references/charter.md`. Before
-> answering, search Project State across all projects (ToolSearch
+> answering, read your waiting `lens-note` notes (no `folded` or `routed` tag) and your
+> latest `field-note` notes on Project State project `expert-bench` tagged
+> `expert-<slug>` (ToolSearch "select:mcp__Project_State__find_by_tags"; keep only rows
+> carrying those tags exactly), and treat them as part of your brief. Then search
+> Project State across all projects (ToolSearch
 > "select:mcp__Project_State__search_state"; decisions and lessons, your corner's
 > terms): what Charles decided and what was dropped in your corner is part of your
 > answer, and a record newer than your brief wins over it. If your brief has no Our
