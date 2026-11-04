@@ -7,7 +7,7 @@ triggers:
   - "Claude Code routine \"Stack Repairer\" (7:00, 12:00 and 17:00 America/Indiana/Indianapolis)"
 dependencies: [orchestrate-build]
 owner: Charles
-updated: 2026-10-29
+updated: 2026-11-04
 requires: [references/project-state.md, references/gotchas.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
