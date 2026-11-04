@@ -58,6 +58,27 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 - Every run also writes exactly one **run marker** row: `dot_id = '_run'`, `action = 'watching'`, `finding` = a one-line count ("3 red, 1 late — 2 acted on, 2 watched"), `detail` = `{"window": "07:00|12:00|17:00", "red": [...ids], "late": [...ids], "recap_sent": true|false}`, `outcome` left null forever. The Stack Repairer's own dot on the stack map checks the newest `run_at`, so a quiet day still shows the Repairer alive. Never grade a `_run` row.
 - `detail` always carries `{ "evidence": "...", "size": "rerun|urgent-fix|brief|hard-gate|watch", "attempt": n }` plus whatever ids prove it (`run_id`, `deployment_id`, `workflow`, `ref`).
 
+## Reported problems
+
+`stack_repairs` is also the stack fix log. A chat or run that notices a broken running part outside its own job files one `reported` row here, not a Comms Table post (AGENT.md). Design questions stay on the Comms Table.
+
+**Row shape.** Insert only, through Supabase `execute_sql` on `lpeswznkxzeeyiqaewma`. No recheck, no row.
+- `dot_id`: the nearest dot on the stack map, or `_unmapped`.
+- `finding`: one plain line saying what is broken.
+- `action`: `reported`.
+- `detail`: `{"evidence": "...", "found_by": "<chat or run>", "recheck": "<a check anyone can run that passes once it is fixed>", "plan_id": "<optional, a plan that already covers it>"}`.
+
+**Open rows.** A row is open when it has no `graded` row pointing at it and it is either `reported`, or a `needs-you` or `watching` row whose `detail` carries `reported_by` (rows logged by hand before this action existed).
+
+**Handling.** An open row is treated like a red dot in steps 3 and 4: re-check the live state first, because the report may be stale. Every row a run writes about it carries `detail.reports` (the open row's id) and a copy of `detail.recheck`. One open row gets one action in flight: skip it while a row with that `detail.reports` is waiting on a grade.
+- Fixable: the smallest size that works.
+- A click only Charles can make, or a hard gate: `needs-you`.
+- A plan already covers it: `watching` with `plan_id`. Step 3's second-`watching` rule does not apply; the plan is the brief.
+- An ongoing condition (it can recur, not a one-off): the fix includes a real check on the map so it becomes a dot. That is a map change, so it is a `briefed` row, never a direct edit.
+- A source that is quiet or failing is an alert on its row on the Sources page and nothing else. Never a keep-or-drop question to Charles (Decision WG-213).
+
+**Grading.** See step 2. An open `needs-you` row is not repeated each run; the original row stays open until its recheck passes.
+
 ## How
 
 **1. Read.**
