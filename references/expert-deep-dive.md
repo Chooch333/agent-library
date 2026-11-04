@@ -43,7 +43,7 @@ deep-dive scope) and, for a craft, the captain's brief.
    captain's revisions.
 7. Write the whole BRIEF.md per `references/expert-brief.md`: call_when (sharpened),
    reads (only documents actually opened and that exist), Our way (from step 3a), the
-   lens (10–20 sourced lines), the boilerplate procedure and output sections, a changelog line.
+   lens (at least 10 sourced lines, most important first; no upper limit, so never merge or cut a sourced line for length), the boilerplate procedure and output sections, a changelog line.
 8. Write the captain's revisions: the lens lines that move (quoted), any change to the
    captain's call_when, and nothing else.
 9. Return both as text in the roster-builder's Research shape: `### BRIEF`, then
