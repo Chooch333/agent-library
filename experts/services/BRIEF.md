@@ -7,7 +7,7 @@ call_when: "the work adds or changes a Vercel project, function, cron or deploy 
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # services
