@@ -154,5 +154,6 @@ Plain English in the note, the pre-read and the card. Charles is not
 technical.
 
 ## Changelog
+- 0.2.1 (2026-11-04) — Step 3c: reads feed items held in data/feed_holds.json with fetch_content, because OpenAI's pages answer the nightly Action with HTTP 403. Per BB-2026-11-03-feed-channel-fix (Build 66).
 - 0.2.0 (2026-11-04) — Step 3b: reads feed-less sites marked needs_tinyfish with fetch_content (free per page) and writes the article and state back. Per BB-2026-11-03-feed-channel-fix (Build 66).
 - 0.1.0 (2026-10-28) — Initial draft. Per BB-2026-10-28-social-post-share (Build 60). Adjusted from the brief's draft only where the first live read showed it: author from the page title when the author field is empty (Instagram), t.co vs real link on X, reel detection from the canonical/twitter title, queue source_name kept off the followed-feed list.
