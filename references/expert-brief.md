@@ -33,9 +33,13 @@ status: active                     # an expert is active from the day it lands; 
 
 ## Body (in order)
 1. **Our way** — how work in this corner ought to go for Charles: what he decided,
-   what he prefers, what was tried and dropped. Required for a craft (5–20 lines); a
-   captain may carry its field's standing choices (0–20). One line per job that keeps
-   coming up in the corner:
+   what he prefers, what was tried and dropped. Required for a craft (at least 5 lines); a
+   captain may carry its field's standing choices (0 or more). No upper limit on Our
+   way or Lens: every sourced line earns its place, most important first, because a
+   seat weighs earlier instructions more (IFScale, arXiv 2507.11538). Length is never
+   a reason to merge or cut a line; whether a corner has grown into two experts is the
+   roster-builder's call at grow time, on its three tests (Charles 2026-11-04). One
+   line per job that keeps coming up in the corner:
    `<job>: <how we do it>; not <what was dropped or ruled out>, because <reason> [source]`
    The source is Charles's own record: the charter, a decision or lesson ID, a build,
    or his stated preference with its date. Where his record is silent and the field
