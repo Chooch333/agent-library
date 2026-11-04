@@ -1,6 +1,6 @@
 ---
 name: post-reader
-version: 0.1.0
+version: 0.2.0
 status: draft
 triggers: ["Post Reader run"]
 owner: Charles
