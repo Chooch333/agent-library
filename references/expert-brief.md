@@ -1,4 +1,4 @@
-# Expert brief format (0.2.0, draft)
+# Expert brief format (0.3.0, draft)
 
 An expert's brief is the instructions for one seat at the Expert Desk. The desk
 (`skills/expert-desk`) seats it in a fresh helper (subagent) that answers and writes
