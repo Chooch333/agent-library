@@ -47,7 +47,7 @@ status: active                     # an expert is active from the day it lands; 
    claim and the pointer, never the figure. Our way points to the record; it is not a
    copy of it. At run time the seat checks the live record, and a newer decision beats
    the brief.
-2. **Lens** — 10–20 named ways work in this corner goes wrong. One line each, ending
+2. **Lens** — at least 10 named ways work in this corner goes wrong (no upper limit; most important first). One line each, ending
    with its source in brackets: a trace (chat, build, ID), a document, or [research].
    The claim and the pointer, never the figure: numbers age, the paper does not.
    Grown from real misses; never invented. A line not fully carried by its source is
