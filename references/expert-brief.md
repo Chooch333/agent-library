@@ -22,7 +22,7 @@ to the record (a decision or lesson ID, a build, a cbrain entity) instead of quo
 ---
 name: <slug>
 level: captain | craft
-under: <captain slug>              # craft: required. No craft without a captain.
+under: <captain slug>              # craft: required. No craft without a captain. A craft that serves two fields names both, comma-separated (`c-stack, ai-system-design`), the same text in the index's Under column; it counts as under each, so either captain's A.1 run can seat it (Charles 2026-11-04, graph-engineering).
 profiles: [harness]
 call_when: <one line; the desk routes on this only>
 altitude: [concept, plan]          # craft: [plan: risks-only, implementation: full]
