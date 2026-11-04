@@ -7,7 +7,7 @@ call_when: "the work decides where a job runs — chat, scheduled task, PC task,
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
 version: 0.2.0
-status: draft
+status: active
 ---
 
 # lanes
