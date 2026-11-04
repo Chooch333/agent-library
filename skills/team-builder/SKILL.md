@@ -23,7 +23,7 @@ wiring:
 ## What
 The one skill that puts a new member on the team: an expert's brief or a skill's SKILL.md.
 It takes an approved spec, writes the file to its format, runs the mechanical checks,
-registers it, commits it as draft and reads it back. It judges nothing: whether the
+registers it, commits it (an expert as active, a skill as draft) and reads it back. It judges nothing: whether the
 expert or skill should exist was settled before it is called (the Roster Builder and
 Charles's confirmation for an expert; a Build Brief for a skill). Experts judge, skills
 execute (TH-135); this is the execution half of growing the team. In update mode it
