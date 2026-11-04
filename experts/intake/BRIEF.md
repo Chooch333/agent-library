@@ -7,7 +7,7 @@ call_when: "the work brings outside content in (feeds, videos, email, shared pos
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # intake
