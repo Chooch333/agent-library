@@ -7,7 +7,7 @@ call_when: "the work changes Charles's stack as a whole: what it costs or counts
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (meters:, lanes:)", "agent-library:references/skill-design-framework.md (Q10)", "agent-library:experts/INDEX.md"]
 version: 0.2.0
-status: draft
+status: active
 ---
 
 # c-stack
