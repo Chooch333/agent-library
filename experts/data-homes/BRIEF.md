@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a kind of data lives or is read from — cbrain pages, the Supabase index, Project State, the world-graph and its mirror, repo files, Storage — or keeps, rebuilds or removes a copy of it"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
@@ -43,10 +43,9 @@ Which store holds each kind of data, where readers read it from, and how copies 
 7. A home chosen that its reader has no key for: the app cannot write the repo, and the private graph repo is closed to the app [CB-404, alternative b; CB-336]
 8. Search keeps answering from a stale index, with no error, after the sync has failed; the trap is trusting the copy, and watching the sync is oversight's [CB-090]
 9. A rebuilt table that refreshes only when its source page changes: declarations older than a fix never reach the tuples table, and a delete-then-insert outside a transaction leaves a gap if it crashes [CB-398; CB-081]
-10. A rename, merge or retire treated as one edit: there is no approved path, so every page that links to the old name has to be found by hand [CB-398]
-11. A write designed before its read path is read end to end: a table nothing reads is a shelf, and a status filter turns a status change into a disappearance [CB-189]
-12. A fact removed from its home but left in its copies: the index, the mirror, embeddings, run logs and git history [CB-505]
-13. A naming scheme (group id, slug, separator) never run end to end, so it ships a value the store rejects [WG-052]
+10. A write designed before its read path is read end to end: a table nothing reads is a shelf, and a status filter turns a status change into a disappearance [CB-189]
+11. A fact removed from its home but left in its copies: the index, the mirror, embeddings, run logs and git history [CB-505]
+12. A naming scheme (group id, slug, separator) never run end to end, so it ships a value the store rejects [WG-052]
 
 ## Procedure
 
@@ -84,4 +83,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-04): Lens 10 (rename/merge has no path, CB-398) moved to graph-engineering (EB-051); lens renumbered. Lens 13 (WG-052) kept.
 - 0.1.0 (2026-11-03): researched as row 5 of EB-007 (stack wiring team, desk T2), from Charles's record across cbrain, world-graph, context-database and total-harness. Seed Our way kept; added CB-049/058/081, WG-051, CB-406, TH-041, CB-355, WG-021, TH-073, D-050, TH-001 and PP-011. Seed lens kept, except: CB-068 was not found and its claim moved to Our way 3 on CB-049; "truth split across two stores" became Lens 5 (CB-186), because Our way 4 already carries the CB-404 reason; added CB-053, CB-090, CB-398, CB-189, CB-505 and WG-052. Fit pass (EB-015): the new-app line moved to services; the work-handoff line and the unapplied-suggestions lens line cut (skill-authoring and ai-system-design own them); skill-design-framework dropped from reads. The graph stays folded in (Our way 15 of 20).
