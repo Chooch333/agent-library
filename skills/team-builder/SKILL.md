@@ -1,18 +1,18 @@
 ---
 name: team-builder
-version: 0.2.1
+version: 0.3.0
 status: draft
-triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)"]
+triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)", "Loaded by the Expert Desk's CE job at its Catch-up and fold step, the Sunday 01:00 firing of the scheduled task \"Expert CE\", pointed at the waiting lens-notes on expert-bench (update mode)"]
 dependencies: []
 owner: Charles
-updated: 2026-11-03
-requires: [references/expert-brief.md, CONVENTIONS.md]
+updated: 2026-11-04
+requires: [references/expert-brief.md, CONVENTIONS.md, references/chat-capture.md, references/thread-checkin.md]
 wiring:
   runs: with-you
-  starts: "called by the Expert Desk or by a build chat; never by a trigger phrase"
+  starts: "called by the Expert Desk (grow, team grow, or its Expert CE job) or by a build chat; never by a trigger phrase"
   runs_in: claude-chat
-  reads: [the approved spec, agent-library experts, CONVENTIONS, SKILL_TEMPLATE]
-  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~; for a team, a reused captain's row)", "a reused captain's profiles: line (team mode)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)"]
+  reads: [the approved spec, agent-library experts, CONVENTIONS, SKILL_TEMPLATE, "waiting lens-notes on expert-bench (update mode)"]
+  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~; for a team, a reused captain's row)", "a reused captain's profiles: line (team mode)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)", "an existing experts/<slug>/BRIEF.md: Lens lines, version, changelog (update mode)", "lens-note tags: folded, folded-<sha7>, routed (update mode)", "Comms Table posts on expert-bench (update mode)", "Next steps cards, kind job (update mode)", "Archivist drafts: cbrain _briefs/BR-DRAFT-<date>-<suffix>.md (update mode)"]
   stack: []
   origin: yours
   label: Team Builder
@@ -26,16 +26,22 @@ It takes an approved spec, writes the file to its format, runs the mechanical ch
 registers it, commits it as draft and reads it back. It judges nothing: whether the
 expert or skill should exist was settled before it is called (the Roster Builder and
 Charles's confirmation for an expert; a Build Brief for a skill). Experts judge, skills
-execute (TH-135); this is the execution half of growing the team.
+execute (TH-135); this is the execution half of growing the team. In update mode it
+also keeps the team current: it folds waiting lens-notes into existing briefs by
+mechanical rules, in a scheduled run with nobody present, and routes what it may not
+write to the Archivist or to Charles.
 
 ## When
 **Fire when:** the Expert Desk reaches grow step G3 with an `expert-draft` note
 (expert mode); the Expert Desk reaches team grow step T4 with a team note, its draft
-notes and a fit note (team mode); or a build chat is executing a Build Brief whose `Skills:` header or
-scope names a new skill (skill mode).
+notes and a fit note (team mode); a build chat is executing a Build Brief whose `Skills:` header or
+scope names a new skill (skill mode); or the Expert Desk's CE job reaches its Catch-up
+and fold step (the Sunday 01:00 firing of the scheduled task "Expert CE") with lens-notes
+waiting on `expert-bench` (update mode).
 **Don't fire when:** deciding whether an expert is needed (the Roster Builder); editing
 an existing skill's rules (an ordinary build under the Execute row); the content is a
-Project State note, a cbrain entity or anything that is not a brief or a SKILL.md.
+Project State note, a cbrain entity or anything that is not a brief or a SKILL.md
+(update mode only drafts a cbrain brief; the Archivist files it after Charles approves).
 
 ## How
 | Step | Precondition | Action | Evidence | Recovery |
@@ -47,6 +53,31 @@ Project State note, a cbrain entity or anything that is not a brief or a SKILL.m
 | 5 Commit | registered | One commit per file, each message naming the build or desk run. | Commit SHAs | A commit fails: retry once, then stop and report what landed. |
 | 6 Read back | committed | Fetch every written file from main and compare to the drafts. | "read back: identical" per file | A mismatch: report it; do not re-commit without saying so. |
 | 7 Receipt | read back | Return to the caller: files written, SHAs, index or routing row, any blank fields, check results. | Receipt | — |
+
+### Update mode
+Loaded by the Expert Desk's CE job at its Catch-up and fold step (the Sunday 01:00
+firing of "Expert CE"), pointed at the waiting lens-notes on `expert-bench`. Nobody is
+present: nothing here asks a question or waits on an approval, and every outcome is a
+commit, a tag, a post, a card, a draft or a receipt line. Team Builder still judges
+nothing about whether an expert should exist; it sorts each note by the rules below and
+writes only what the sort allows. Steps 1 to 7 above do not apply; these rules do.
+
+**Rules**
+1. **Waiting** = a note on `expert-bench` whose tags hold `lens-note` and one `expert-<slug>`, and neither `folded` nor `routed`. `find_by_tags` expands tags fuzzily: keep only rows whose own tags match exactly. A note with no `expert-` tag, with two, or whose slug has no `experts/<slug>/BRIEF.md` (or only a stub row) is left waiting and listed in the receipt.
+2. **Never** edit an Our way line, a line whose source is Charles's own record, the header (except `version`), or any section but Lens and Changelog. Never write a figure into a brief. Never change a note's text or delete it; tags are the only write to a note. Never seal or file a cbrain brief.
+3. **Sort each note.** Check in this order; the first that fits wins, so a note that touches an Our way line always reaches Charles even when it also carries a tool fact.
+   - **(a) Already folded:** the note's display id (EB-xxx) is in that brief's Changelog. Find the commit that folded it: `list_commits` on main (up to the last hundred), the newest message with "Expert CE fold" and that id. Add tags `folded` and `folded-<first seven characters of its SHA>`; no such commit → `folded` alone, listed in the receipt. Write nothing else.
+   - **(c) For Charles:** the note changes or adds an Our way line, or changes a line whose bracketed source is Charles's own record (his words with a date, the charter, a decision or lesson of his). Never edited here. First `list_judgment_calls` on `expert-bench`; a post already naming this display id → only tag. Otherwise `post_judgment_call` on `expert-bench` (plan_id: the plan the CE job passes, else the Build 68 brief `0e08817e-5ff9-4e63-a3cf-72d96c572ed7`), title "Expert CE: <expert> — <the line, by what it covers>", `action_needed: needs-charles`, `plain_summary` one plain sentence naming the expert, the line and what the note says should change, context with the display id, the note's text, the line quoted and the brief's path (and, if the note also carries a tool fact, that it does: its capture is drafted in a chat with Charles after he answers, not here). Then the Next steps card (rule 5). Then tag `routed`.
+   - **(b) A tool fact:** the note says how a tool, service or connector behaves (what it exposes, accepts, refuses or returns), not how work in the corner goes wrong. Tool facts live in cbrain `concepts/`, never in a brief (expert-brief.md). Draft one capture brief for this note per `references/chat-capture.md`, type `concept`: check `concepts/` for the slug (exists → `enrich_field`, else `create_entity`); intents only, no `observations`; no questions asked: a field the note does not supply stays blank and is named in the body, and follow-on entities or new predicates are listed in the body for Charles, never added as intents. File it on cbrain main as `_briefs/BR-DRAFT-<YYYY-MM-DD>-<four random hex>.md` (path taken → new suffix) with `status: draft`, `created`, `producer: team-builder`, `source: { kind: lens-note, ref: <note id>, catalyst: "Expert CE, <slug>", received_at: <note created_at>, detail: { subject: "Expert CE tool fact for <expert>: <one line>", display_id: <EB-xxx> } }`, `intents`. The Archivist files only after Charles approves (AGENT.md): the Stack Inspector's approval-gate check lists the draft, and a later chat seals it with `seal_brief` and that file name. Tag the note `routed`.
+   - **(d) A Lens line:** everything else. One Lens line in that expert's brief: the claim in one line, no digits outside a date or an ID, starting `~ ` when the note says Inferred, ending with the note's display id in brackets (the note's own sources may precede it inside them). A note that corrects a named Lens line whose source is not Charles's record rewrites that line in place, keeping its number and sources and adding the display id. A note that would add a line to a Lens already at twenty → (c) with `action_needed: needs-design-check`; tag `routed`.
+4. **Writing a brief** (all (d) notes for one expert together):
+   - Read `experts/<slug>/BRIEF.md` from main and keep its blob sha. Build the new file from that text: the Lens lines added or rewritten, `version` patch-bumped, one Changelog line `- <version> (<date>): folded EB-…, EB-… (Expert CE)`; nothing else changes.
+   - Run the expert-mode Lens checks on the result: ten to twenty lines, each ending with a source in brackets, no digits outside dates or IDs, no more than three lines shared with any other brief on the bench. A FAIL → commit nothing for that brief, leave its notes waiting, list the failing lines in the receipt.
+   - Commit with one whole-file `create_or_update_file` on main through the GitHub connector, keyed on the blob sha just read; message "Expert CE fold: <slug> — EB-…, EB-…". One commit per brief.
+   - A conflict (409, sha mismatch): re-read the file, layer this run's changes on top of what is there now (bump from the version now there; a note now named in its Changelog becomes (a)), rerun the checks, retry once more. Still failing → stop that brief, leave its notes waiting, list it in the receipt.
+   - Fetch the brief from main and compare it to what was sent. Identical → tag each folded note `folded` and `folded-<sha7>`. A mismatch → no tags, its notes stay waiting, the receipt says so; never re-commit without saying so.
+5. **Next steps card** (every (c), and the twenty-line case): one `checkin` per expert per run, kind `job`, `source: job`, thread_key `job:team-builder-ce-<slug>`, plain_name "<expert> brief changes to decide", waiting_on `you`, next_step in plain words with no ids: what the expert's brief would change and that the ask is on the Comms Table. Two notes for one expert in a run share one next_step naming both.
+6. **Receipt** to the caller, per expert: notes folded (display ids and commit SHA), routed to the Archivist (display ids and draft file names), routed to Charles (display ids and post ids), left waiting and why (no brief, a check FAIL with its lines, a conflict, a read-back mismatch). Plus any note with no expert or two.
 
 ### Team mode
 Expert mode, once per expert, in the team note's build order: captains before their crafts.
@@ -76,10 +107,18 @@ Expert mode, once per expert, in the team note's build order: captains before th
 - The AGENT.md row the Build Brief gives is present; `description` is present if the surface routes on it [TH-134 line 13].
 
 ## Progress tracking
-None. Team Builder finishes in one run inside the calling chat and leaves nothing open; the receipt goes back to the caller.
+Expert, team and skill mode: none; they finish in one run inside the calling chat and the receipt goes back to the caller.
+Update mode follows `references/thread-checkin.md` (naming convention and when to check in).
+- kind: job
+- build: the expert's name + "brief changes to decide", e.g. "lanes brief changes to decide" (thread_key "job:team-builder-ce-<slug>", `source` "job")
+- Opens when: a run routes a note to Charles (rule 3 (c), or a full Lens)
+- Checks in: when a run leaves something open (rule 5; waiting_on `you`)
+- Closes when: Charles clicks Done. A CE run never closes or reopens the card.
 
 ## Examples
 Expert mode: the Expert Desk's first grow run under this skill (none yet; the dry runs of 2026-11-02 were written by hand). Skill mode: the next Build Brief that names a new skill.
+
+Update mode, a dry sort of the four notes waiting on 2026-11-04 (no run has happened yet): EB-017 (intake: a second half of an Our way line superseded by Charles's "Yes sources"), EB-018 (c-stack: a candidate Our way line from Charles's own words), EB-019 (lanes: an Our way line and a Lens line said wrong, with a suggested line) and EB-020 (lanes: an Our way line that cannot be done from a chat, plus how the scheduled-task tools behave) all sort to (c): four Comms Table posts, needs-charles; three Next steps cards (intake, c-stack, and one for lanes naming both its notes); each note tagged `routed`; no brief is committed. EB-020's tool fact is named in its post, not drafted, because (c) is checked before (b).
 
 ## Pitfalls
 - A check run on a Project State note instead of the committed file has no receipt; "every reads path exists" was never really fetched. Check the file you wrote, then read it back from main. [TH-139]
@@ -88,8 +127,12 @@ Expert mode: the Expert Desk's first grow run under this skill (none yet; the dr
 - A proposal carried as chat text or an attachment was lost between chats; the spec is a Project State note or a Build Brief, never a message. [dry run 1, 2026-11-02]
 - Teammates researched in parallel each wrote revisions for the same captain; the fit note merges them once, and only lines for crafts that landed are applied. [Build 65]
 - The check job once lived in an expert's brief and the expert seated to run it had never seen it; mechanical checks live here, in the skill that writes. [TH-J-045 follow-up, Build 64]
+- A scheduled run cannot answer an approval prompt: the first live Stack Repairer run's edits hung and saved nothing, most likely waiting on a confirmation nobody could give. Nothing in update mode waits on a question; every outcome is a write or a receipt line. [stack-repairer 0.2.0 changelog, 2026-10-07]
+- Two runs can write one brief (a rerun of the 01:00 job, or a chat folding by hand the same night). The write is whole-file and keyed on the blob sha just read; a 409 means re-read and layer this run's change on top, never overwrite what the other run wrote. [BB-2026-11-03-expert-ce, directive 3]
+- The first four waiting lens-notes all asked to change Our way lines, which are Charles's own record, not Lens lines a run may write on its own; Our way changes go to Charles, every time. [EB-017 to EB-020, 2026-11-03]
 
 ## Changelog
+- **0.3.0** (2026-11-04): update mode, loaded by the Expert Desk's CE job at Catch-up and fold (Sunday 01:00, scheduled task "Expert CE"), safe with nobody present: each waiting lens-note is sorted (already folded → tags only; touches Our way or a Charles-sourced line → Comms Table needs-charles plus a Next steps card; a tool fact → a draft cbrain capture brief for the Archivist in `_briefs/`; else one Lens line, or needs-design-check when the Lens is full); whole-file sha-keyed writes with re-read-and-layer on a 409, Lens checks before commit, read-back, then `folded` + `folded-<sha7>` tags; one receipt per expert (Build 68, BB-2026-11-03-expert-ce).
 - **0.2.1** (2026-11-03): Our way check (expert-brief 0.2.0); team mode writes *refresh* rows, so an expert already on the bench can be rewritten to the new format inside a team grow. Charles: craft experts must know how things ought to go in their corner.
 - **0.2.0** (2026-11-03): team mode, loaded at the Expert Desk's team grow step T4: captains first, the fit note's cuts and merged captain revisions applied, a failed expert stops only itself and its crafts, a reused captain joins the team's profile card within max seats, one team receipt (Build 65, BB-2026-11-03-team-grow).
 - **0.1.0** (2026-11-03): first version (Build 64, BB-2026-11-03-team-builder).
