@@ -129,6 +129,9 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.3.0 (2026-11-04) -- Step 4b: a video with no extracted file gets a
+  summary-only file when no unloaded queue entry exists. Drains the 124
+  old videos at 10 a run. Per BB-2026-11-03-feed-channel-fix (Build 66).
 - v0.2.2 (2026-10-29) -- Step 3a: `guidance` is Charles's focus for the
   whole channel when `source` is `rss:<channel>`, and for this one video
   when `source` is `charles` (a steer typed in the phone Shortcut). Per
