@@ -7,7 +7,7 @@ call_when: "the work has a screen, page, artifact or anything Charles reads or c
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:skills/design-assist/references/brief-artifact-style.md"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # product-design
