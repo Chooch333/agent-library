@@ -71,6 +71,7 @@ Speculate past what you read; pad to the cap; soften a gap; advise outside your 
 
 ## Changelog
 
+- 0.4.1 (2026-11-04): lens 10 reworded for a bench with no upper limit on Our way or Lens (expert-brief 0.4.0): the test is the source, not the count; a sourced line is never merged or cut for length, and whether a corner is two experts is the three tests' call. Charles 2026-11-04.
 - 0.4.0 (2026-11-03): every brief researched now carries Our way, filled from Charles's record (deep dive step 3a); new *refresh* mark in Team proposal for bench experts with no Our way; lens line 20; reads the charter. Charles: craft experts must know how things ought to go in their corner.
 - 0.3.0 (2026-11-03): grow a team. Two new outputs, Team proposal (desk T1) and Fit (desk T3); Research stays in its own row when handed a team note; reads the profile cards; lens line 19. Build 65, BB-2026-11-03-team-grow.
 - 0.2.0 (2026-11-03): judges only. The check job moved to `skills/team-builder` (mechanical checks) and the captain check was removed; the research output now includes the captain's revisions; altitude `[grow]`; project-doc and Project State history reads dropped; lens lines 17 and 18 added. Build 64, BB-2026-11-03-team-builder.
