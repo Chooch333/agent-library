@@ -2,6 +2,8 @@
 
 History of routing changes to `AGENT.md`, newest first. Moved out of AGENT.md on 2026-10-15 (Build 39). Older lines keep their original wording.
 
+- **2026-11-04** — No routing change. No check gate on experts: every built expert on `experts/INDEX.md` and in its brief is `active` (was `draft` until a finding Charles tagged "new"), and Team Builder now lands new experts active (expert-brief header, team-builder steps 2 and 4 and its header check, expert-desk G4 and T5, CONVENTIONS, roster-builder lens line 13). Skills keep draft until their first live run. Charles: "we're not going to have a check gate here. Get them in, we'll refine as we go." Done inline at his direction.
+
 - **2026-11-04** — Expert Desk row adds `CE <expert>: <link or topic>` (a message that starts with it, in any chat that can start helpers) → `skills/expert-desk/SKILL.md` 0.4.0: "How — CE chat" (one desk seat studies the link or topic; up to three notes and a chat receipt that leaves the weekly read-through alone) and the "CE job", run by the new scheduled task "Expert CE" (Sunday 00:00 dispatch, one copy per expert; 01:00 catch-up, then Team Builder update mode folds the waiting lens-notes). Seat template: every seat reads its waiting lens-notes and latest field notes; new CE seat. `references/expert-brief.md` 0.3.0 ("Growing a lens" names every way an expert learns). Per Build 68 (BB-2026-11-03-expert-ce).
 
 - **2026-11-04** — Disambiguation gains one line: a broken running part noticed outside a chat's or run's own job becomes one `reported` row in the Stack Repairer's log (`skills/stack-repairer/SKILL.md` 0.4.0, Reported problems); design questions stay on the Comms Table. No trigger rows changed. Per Build 67 (BB-2026-11-03-stack-fix-log).
