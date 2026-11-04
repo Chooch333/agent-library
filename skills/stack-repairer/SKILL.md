@@ -47,6 +47,7 @@ The Stack Repairer fixes things that break while the stack is running, so Charle
 - Vercel MCP (`teamId team_8nMi0Bd6orQHGeTrMZYWCamm`): `list_deployments`, `get_runtime_logs`, `get_deployment`.
 - Project State MCP: `write_plan`, `update_plan_status`, `add_lesson`, `search_state`, `overnight_line`, `post_judgment_call`, `list_plans`.
 - Gmail: `send_message` (recap only).
+- Claude Code Remote: `list_triggers` (read only, for a recheck on a scheduled task).
 
 ## The `stack_repairs` log
 
