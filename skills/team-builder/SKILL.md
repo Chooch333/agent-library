@@ -91,7 +91,7 @@ Expert mode, once per expert, in the team note's build order: captains before th
 
 ### Mechanical checks, expert mode
 - Header: all nine fields; `under` empty only for a captain; `status: active`.
-- Our way: a craft has 5 to 20 lines, a captain 0 to 20; each line names a job, how we do it, and ends with a source in brackets; a line with no record of Charles's behind it is marked `~ field default`; no digits outside a date or an ID; no client, job or employer names (the repo is public).
+- Our way: a craft has at least 5 lines, a captain 0 or more, with no upper limit (never merge or cut a sourced line for length); most important first; each line names a job, how we do it, and ends with a source in brackets; a line with no record of Charles's behind it is marked `~ field default`; no digits outside a date or an ID; no client, job or employer names (the repo is public).
 - Lens: 10 to 20 lines; every line ends with a source in brackets; no digits outside a date or an ID (the claim and the pointer, never the figure); an uncertain line marked ~.
 - Every path under `reads` exists (fetch each one).
 - No more than three lens lines shared with any brief on the bench (word-overlap, then eyeball the hits).
