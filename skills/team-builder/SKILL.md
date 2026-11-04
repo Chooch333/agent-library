@@ -12,7 +12,7 @@ wiring:
   starts: "called by the Expert Desk (grow, team grow, or its Expert CE job) or by a build chat; never by a trigger phrase"
   runs_in: claude-chat
   reads: [the approved spec, agent-library experts, CONVENTIONS, SKILL_TEMPLATE, "waiting lens-notes on expert-bench (update mode)"]
-  writes: ["experts/<slug>/BRIEF.md (new, draft)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~; for a team, a reused captain's row)", "a reused captain's profiles: line (team mode)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)", "an existing experts/<slug>/BRIEF.md: Lens lines, version, changelog (update mode)", "lens-note tags: folded, folded-<sha7>, routed (update mode)", "Comms Table posts on expert-bench (update mode)", "Next steps cards, kind job (update mode)", "Archivist drafts: cbrain _briefs/BR-DRAFT-<date>-<suffix>.md (update mode)"]
+  writes: ["experts/<slug>/BRIEF.md (new, active)", "the captain's BRIEF.md (revisions the spec names)", "experts/INDEX.md (one row)", "skills/expert-desk/profiles/<domain>.md (a new captain's row, or a new card marked ~; for a team, a reused captain's row)", "a reused captain's profiles: line (team mode)", "skills/<slug>/SKILL.md (new, draft)", "AGENT.md (one routing row)", "an existing experts/<slug>/BRIEF.md: Lens lines, version, changelog (update mode)", "lens-note tags: folded, folded-<sha7>, routed (update mode)", "Comms Table posts on expert-bench (update mode)", "Next steps cards, kind job (update mode)", "Archivist drafts: cbrain _briefs/BR-DRAFT-<date>-<suffix>.md (update mode)"]
   stack: []
   origin: yours
   label: Team Builder
