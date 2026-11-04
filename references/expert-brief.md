@@ -111,6 +111,10 @@ A seat still never edits its own brief. A note goes to the expert that owns the 
 no line is owned by two experts.
 
 ## Changelog
+- 0.3.0 (2026-11-04): "Growing a brief" is now "Growing a lens" (the name the desk and
+  the roster-builder already used): every way an expert learns, field notes, waiting
+  notes read at every seat, folded by Team Builder update mode at the Sunday 01:00 CE
+  run. Build 68 (BB-2026-11-03-expert-ce).
 - 0.2.0 (2026-11-03): Our way section (required for a craft), How I'd do it and
   Newer than my brief in the output, the charter and a Project State search in the
   procedure, the public-repo rule. Charles: craft experts must know how things ought
