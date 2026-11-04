@@ -254,6 +254,12 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.6.0** (2026-11-04) -- Step 3a: on a `kind: rollup` article keep
+  only stack-relevant changes and record the lines dropped. Step 4: runs
+  on GitHub alone, up to 20 a run when fewer than 20 new items wait, and
+  never re-picks a duplicate or audit-only file. Items with status
+  `saved` are expert-only and are never read here (step 2 takes
+  `pending` only). Per BB-2026-11-03-feed-channel-fix (Build 66).
 - **v1.5.2** (2026-10-29) -- Step 3a: an article's `guidance` is
   Charles's stated focus (for the feed, or for this one post when
   `kind: post`), and a `media: video` post was read from its caption
