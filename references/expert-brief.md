@@ -28,7 +28,7 @@ call_when: <one line; the desk routes on this only>
 altitude: [concept, plan]          # craft: [plan: risks-only, implementation: full]
 reads: [<repo>:<path> | <url>, ...] # read at run time; only what exists
 version: 0.2.0
-status: draft
+status: active                     # an expert is active from the day it lands; no check gate (Charles, 2026-11-04)
 ---
 
 ## Body (in order)
