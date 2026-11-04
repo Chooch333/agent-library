@@ -134,6 +134,7 @@ The skills compose. Common flows:
 - **New TYPE vs new INSTANCE vs new FIELD (cbrain).** A new KIND of thing that no `type` in `SCHEMA.md` fits → `skills/entity-type-creator/SKILL.md` (it edits the schema; the watcher reads the schema at runtime, so the commit auto-deploys). A new INSTANCE of an existing type (a person, an org, a project) → chat-capture → Archivist, NOT the type creator. An existing type that just wants one more optional field → a small direct schema edit, not a new type. Test: is there no `type` value this thing could carry? Only then is it a new type.
 - **New workflow vs changing one.** Designing a new workflow happens in a Design Assist chat, which loads `skills/workflow` (and `skills/speed-run` when steps are unknown). Changing an existing workflow's steps, screens or rules is an ordinary Design Assist brief (rules 12-13).
 - A first message that matches no trigger has no skill. Plain conversation, quick questions and other non-build work proceed normally; no default is assumed.
+- A broken running part you notice outside your job → one `reported` row (shape in stack-repairer, Reported problems). Design questions stay on the Comms Table.
 - If unsure, ask before acting.
 
 ## Activation pattern (claude.ai chat)
