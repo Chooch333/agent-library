@@ -77,6 +77,16 @@ against the API.
       read from its caption only; never state what the video shows
       beyond that. (Posts are X and Instagram posts Charles shared from
       his phone, saved here by the Post Reader, `skills/post-reader`.)
+      **Release roll-ups (v1.6.0).** When the frontmatter has `kind:
+      rollup`, the nightly Action has already dropped internal
+      housekeeping lines. Keep only changes that touch Charles's stack
+      (cbrain `concepts/stack-map.md`: MCP, skills, agents, Claude Code,
+      graph and memory, Supabase, Vercel, GitHub). File no entities or
+      facts for the rest. Add a top-level `rollup` key to the extracted
+      file: `{"lines_read": n, "lines_kept": n, "lines_dropped": n}`, and
+      say in the summary how many lines were dropped as off-stack. A
+      roll-up with nothing on-stack is a legal result: `entities: []`,
+      `facts: []`, a one-paragraph summary, status done.
    b. Query the Supabase mirror for dedupe candidates against
       `lpeswznkxzeeyiqaewma` (cbrain's project): `graph_nodes` /
       `graph_edges` where `group_id = 'world-knowledge'`, filtered by
