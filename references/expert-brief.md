@@ -115,6 +115,12 @@ A seat still never edits its own brief. A note goes to the expert that owns the 
 no line is owned by two experts.
 
 ## Changelog
+- 0.4.0 (2026-11-04): no upper limit on Our way or Lens (was 5–20 for a craft's Our way,
+  0–20 for a captain's, 10–20 for a Lens); the minimums stay. Lines go most important
+  first. Length is never a reason to merge or cut a sourced line; whether a corner is
+  really two experts is the roster-builder's call on its three tests. A craft may name
+  two captains in `under`. Charles 2026-11-04, after graph-engineering 0.2.0 merged 19
+  lines into 10 and cut three lens lines to fit: "Approve all. Make it expert wide."
 - 0.3.0 (2026-11-04): "Growing a brief" is now "Growing a lens" (the name the desk and
   the roster-builder already used): every way an expert learns, field notes, waiting
   notes read at every seat, folded by Team Builder update mode at the Sunday 01:00 CE
