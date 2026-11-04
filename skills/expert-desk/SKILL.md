@@ -40,7 +40,9 @@ that can start helpers, since the need for an expert shows up where the work is;
 or `I need a team of experts for <x>` (or `a group of experts`) in any chat that can
 start helpers, usually a few turns in, after Charles has talked through which experts
 the work needs. Names are optional: with them, the roster-builder starts from his list;
-without, it finds the team from the situation.
+without, it finds the team from the situation. Also `CE <expert>: <link or topic>` in
+any chat that can start helpers (one expert studies one link or topic: How — CE chat),
+and the scheduled task "Expert CE", whose prompt fetches this file (CE job).
 Grow-run notes always go on the Project State project `expert-bench`, whatever chat
 the ask came from; experts span every domain Charles works in, not only the harness.
 
