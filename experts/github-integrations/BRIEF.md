@@ -7,7 +7,7 @@ call_when: "the work runs, changes, dispatches or chains a GitHub Actions workfl
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (lanes: github-action; world-graph and github-mcp dots)", "agent-library:skills/checkpoint-deploy/SKILL.md", "agent-library:skills/wire-new-app/SKILL.md", "https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs", "https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows", "https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs"]
 version: 0.2.0
-status: draft
+status: active
 ---
 
 # github-integrations
