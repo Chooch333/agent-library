@@ -7,7 +7,7 @@ call_when: "the work writes or changes a SKILL.md, a skill's description or trig
 altitude: [plan: risks-only, implementation: full]
 reads: ["https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices", "https://code.claude.com/docs/en/skills", "https://code.claude.com/docs/en/sub-agents", "agent-library:CONVENTIONS.md", "agent-library:references/skill-design-framework.md"]
 version: 0.1.1
-status: draft
+status: active
 ---
 
 # skill-authoring
