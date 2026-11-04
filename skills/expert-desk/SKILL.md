@@ -1,18 +1,19 @@
 ---
 name: expert-desk
-version: 0.3.3
+version: 0.4.0
 status: draft
-triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)"]
+triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, any macro design chat)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)", "CE <expert>: <link or topic> (a message that starts with it, in any chat that can start helpers)", "the scheduled task \"Expert CE\" (Sunday 00:00 and 01:00 Indianapolis; its prompt fetches this file and runs the CE job)"]
 dependencies: [team-builder]
 owner: Charles
-updated: 2026-11-03
+updated: 2026-11-04
 requires: [skills/expert-desk/references/seat-template.md, skills/expert-desk/references/report-shape.md]
 wiring:
   runs: with-you
-  starts: "\"Expert desk:\", \"I need an expert in\" or \"I need a team of experts for\""
+  starts: "\"Expert desk:\", \"I need an expert in\" or \"I need a team of experts for\"; \"CE <expert>: <link or topic>\"; the scheduled task \"Expert CE\" (Sunday 00:00 and 01:00 Indianapolis)"
   runs_in: claude-chat
-  reads: [agent-library experts, charter, stack-map]
-  writes: ["project-state notes (expert-proposal, expert-team-proposal, expert-draft, expert-team-fit)"]
+  runs_in_note: "the CE job runs in the scheduled task \"Expert CE\" (Claude Code, Sunday 00:00 and 01:00 Indianapolis), not in a chat"
+  reads: [agent-library experts, charter, stack-map, "cbrain intake_items and sources_state (CE job)", "cbrain stack_repairs (CE job)", "project-state lens-notes, field-notes, stack-incident lessons"]
+  writes: ["project-state notes (expert-proposal, expert-team-proposal, expert-draft, expert-team-fit)", "project-state CE notes (lens-note, field-note, ce-start, ce-receipt; also ce-fold, ce-dispatch-failed and the CE chat receipt expert-ce-chat)"]
   stack: []
   origin: yours
   label: Expert Desk
