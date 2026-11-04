@@ -7,7 +7,7 @@ call_when: "the work adds, removes or re-routes a running part (where or how oft
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
 version: 0.1.0
-status: draft
+status: active
 ---
 
 # oversight
