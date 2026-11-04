@@ -155,7 +155,7 @@ The scheduled task's prompt fetches this file and points here. Rules first:
 None. The desk finishes in one run inside the calling chat; that chat's thread covers it. A CE job run leaves nothing open: its receipt (or `ce-fold` note) is the record.
 
 ## Examples
-Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139) was the old four-step flow; the first run under this version fills this in.
+Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder run of 2026-11-02 (TH-137 → TH-138 → TH-139) was the old four-step flow; the first run under this version fills this in. CE chat and CE job: none yet; Build 68's build-day test fills this in.
 
 **Grow a team (first run, 2026-11-03).** "I need a team of experts for stack wiring — the roles are in EB-006 on expert-bench", asked in a Brainstorm & Design Assist chat after the team was talked through. T0 ask + T1 proposal: EB-007 (seven rows: c-stack refresh; chat-access refreshed and renamed lanes; github-integrations refresh; services, data-homes, intake, oversight new). Charles confirmed the one table. T2: seven research helpers in parallel, drafts on a branch, notes EB-008 to EB-014. T3 fit: EB-015 (thirteen line changes, two bench briefs touched, oversight's call_when narrowed). T4: all seven landed on main as draft.
 
