@@ -28,7 +28,7 @@ The expert at making experts. Seated only when the bench is growing (`altitude: 
 10. A lens past the cap pads the critique, and critics invent problems a reader then acts on; a human reading with the critic hallucinates less than the critic alone [CriticGPT 2024 abstract; expert-brief.md cap; ~ the length-to-hallucination link is not in the abstract read]
 11. Lens content for a subject written from memory instead of from sources [TH-134: its lens came from the Anthropic docs; expert-brief.md "never invented"]
 12. The same expert created twice under two names [framework doc third test; TH-136 overlap check: more than three shared lines is a lens addition, not a new expert]
-13. A new expert set active before its first real seat yields a finding Charles tags "new" [skill-design-framework Q11; TH-136 check; framework doc]
+13. A new expert held back behind a check before it can be used: experts go in active and are refined as they are used, through lens-notes and continuing education [Charles 2026-11-04: "we're not going to have a check gate here. Get them in, we'll refine as we go."]
 14. A reads path that does not exist yet: this brief's own proposal listed expert-brief.md, expert-deep-dive.md and INDEX.md before Build 61 committed them [TH-137 reads vs plan Current state "no experts/ folder"; skill-design-framework Q4]
 15. Lens notes filed and never folded in; the brief sits at its first version while the misses pile up [expert-brief.md "Growing a lens"; premortem: map suggestions filed and almost never applied]
 16. No retirement path: an expert whose seats keep yielding only "knew it" or "wrong" stays on the index [~ no rule exists; TH-137 names retiring and nothing defines it; inverse of skill-design-framework Q11]
