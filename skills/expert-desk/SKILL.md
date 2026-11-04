@@ -25,8 +25,9 @@ wiring:
 The one skill every expert interaction goes through. It seats experts and it grows
 the bench. Experts are thought leadership at Charles's side for planning and design;
 they judge, they never execute (TH-135). The desk gives no opinion of its own, never
-runs a seat in its own context, never uses the paid orchestrator, and never has a
-helper write anything: experts answer the problem in front of them, the desk files
+runs a seat in its own context (one exception: the CE job, below, where a scheduled
+run is the expert, because a scheduled run has no seat to hand to), never uses the
+paid orchestrator, and never has a helper write anything: experts answer the problem in front of them, the desk files
 their answers as Project State notes, and `skills/team-builder` writes files. The desk
 never calls Team Builder for an expert whose reframe Charles has not confirmed.
 
