@@ -112,6 +112,21 @@ Agent, Browser or Research (metered), never the API key.
    d. Update the entry: hash, last_saved, last_result "ok_tinyfish". Leave
       needs_tinyfish true; the nightly Action clears it when it can read
       the page itself. Commit, read back.
+3c. Feed items the nightly Action could not fetch (v0.2.1). OpenAI's site
+   refuses GitHub's machines (HTTP 403), but fetch_content reads it. Read
+   world-graph data/feed_holds.json. For up to 10 held items, newest
+   first:
+   a. Skip one whose data/queue/<article_id>.json already exists.
+   b. Fetch its url with TinyFish fetch_content. Under 100 words, or only
+      site chrome: leave it; the nightly run keeps retrying and marks it
+      failed after three nights.
+   c. Write data/articles/<article_id>.md (article_id from the hold;
+      frontmatter article_id, source, title, url, published, fetched_at,
+      word_count, text_source "tinyfish_fetch") and
+      data/queue/<article_id>.json in write_pending shape, status
+      "pending". Read both back. Never edit data/feed_holds.json: the next
+      nightly run sees the queue entry, marks the url seen and ends the
+      hold.
 4. R&D inbox card: count posts with rd "waiting". If one or more,
    Project State checkin as a job (source "job", kind "job",
    thread_key "job:post-reader-rd-inbox", plain_name "R&D inbox from
