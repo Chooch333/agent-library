@@ -98,6 +98,14 @@ the whole point (Build 17.1).
       skip it. Otherwise write one by 3e's rules and commit the same file
       with only the summary key added -- every other key unchanged. Read
       it back.
+      **No extracted file (v0.3.0).** About 124 older videos have none.
+      If data/video_queue/<video_id>.json is missing, or is already
+      loaded, create the file as {article_id: <video_id>, summary_only:
+      true, summary, entities: [], facts: []}. The loader works from the
+      queue, so it never reads a file with no queue entry (checked in
+      pipeline/load_extracted.py). If the queue entry is still waiting or
+      done-but-not-loaded, skip the video: a summary-only file would let
+      it load with no facts. Step 3 will read it properly.
    c. Never touch the queue entry: the video stays loaded and nothing new
       goes to the graph.
 5. If the run is running out of room, stop after the current item
