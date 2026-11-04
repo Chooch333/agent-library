@@ -168,6 +168,9 @@ Filled from Build 61.1 run 1 before `status: active`. Grow: the roster-builder r
 - A captain seated to pass judgment on a craft in a field it does not hold; the captain's brief is revised when a craft joins, it is not asked to approve it. [Charles 2026-11-03, Build 64]
 - A team asked for a few turns into a chat: the experts were named earlier, in Charles's words, and a helper never sees the chat. The team ask quotes them and is filed in the proposal note. [Charles 2026-11-03, Build 65]
 - Teammates researched in parallel are blind to each other; two crafts joining one captain would each rewrite its brief. The fit pass reads them together and merges each captain's revisions once. [Build 65; TH-139]
+- A task firing itself is unproven: an unattended run fired another task only when its own task was set to "Automatically approve", and there is no record of a task firing itself. Dispatch falls back to Catch-up at 01:00. [lens-note EB-019 on expert-bench]
+- Project State find_by_tags expands tags fuzzily, so a search for `expert-ce` also returns `expert-ce-chat` notes; a CE chat receipt taken as a weekly receipt would move the read-through point. Keep only rows whose tags match exactly. [find_by_tags tool description; Build 68]
+- Figures in lens lines went stale within a day; a lens-note keeps the claim and the pointer, never the number. [TH-139]
 
 ## Changelog
 - **0.3.3** (2026-11-03): mode A.1 may start with no prior A report, which is how a Design Assist chat seats the stack crafts (`carry: c-stack`, `craft: full`, design-assist 0.8.2).
