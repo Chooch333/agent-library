@@ -129,7 +129,7 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
 
 **7. Daily recap (17:00 run only).**
 - *Precondition:* this run started at or after 17:00 America/Indiana/Indianapolis, and today's log has no `_run` row with `detail.recap_sent = true`.
-- *Action:* build four short sections from today's `stack_repairs` rows (and the evening's state):
+- *Action:* build four short sections from today's `stack_repairs` rows, plus the open reported `needs-you` rows from any day (and the evening's state). A reported row shows under whichever section its action falls in; use `detail.recap_wording` when a row has one:
   - **Fixed today** — `rerun`/`cleared`/`fixed`/`built` rows, one line each, saying what broke and what was done, with "(back to green)" when its newest `graded` row is `green`.
   - **Queued for tonight** — `briefed` rows, by plain title.
   - **Last night's builds** — from `overnight_line` → `last_night`: one line per build (plain title + result).
