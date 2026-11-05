@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
