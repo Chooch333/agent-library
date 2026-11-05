@@ -45,7 +45,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 5. A sequential per-row loop inside a capped function: fine at first, times out as the data grows, and re-running just times out again [CB-553; CB-070]
 6. HTML instead of JSON read as one failure; the login wall (401) and a timeout (504) look alike until the status code is read [CB-072]
 7. The first request after READY fails on a cold function and is chased as a regression before one retry [CB-211]
-8. Typecheck taken as deploy-safe: .ts import extensions pass it and fail at runtime; a build script on a function-only project fails the deploy [CB-040; CB-041]
+8. A build script on a function-only Vercel project fails the deploy: Vercel runs it, then looks for output that a typecheck never makes [CB-041]
 9. A check or smoke script whose secret exists but is never passed in the workflow's env lines: the brief named the secret and not the wiring, and the build ends blocked [CB-258; CB-265]
 10. A key value printed unmasked in an Action's log [wire-new-app d]
 11. "No approval received" on a Project State write retried, instead of the SQL fallback with a separate confirming read [gotchas; D-089; CB-126]
