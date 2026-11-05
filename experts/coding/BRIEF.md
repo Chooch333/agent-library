@@ -6,7 +6,7 @@ profiles: [harness, construction]
 call_when: "the work writes, restructures or reviews code in any of Charles's repos, whatever it is for (harness services and MCP servers, cbrain-ui, family apps and games, real-estate and work tools; TypeScript, Python or a one-file HTML game): how the code is split into files, its types and the contracts it reads, its tests, its libraries and their versions, a rename or reshuffle across files, or which checks and coding tools (typecheck, tests, style checker, language server) are used where Claude writes it, and why"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "agent-library:skills/build/SKILL.md (Build execution — tool-first)", "agent-library:skills/orchestrate-build/SKILL.md (step 6; Standing rules: No browser tests)", "agent-library:skills/execute-build-task/SKILL.md (Worker rules)", "agent-library:skills/game-maker/SKILL.md (sections 1–2, 9.1–9.2)", "cbrain:services/package.json", "cbrain:services/tsconfig.json", "cbrain:.github/workflows/services-test.yml", "cbrain-ui:package.json (ref review)", "family-arcade:package.json", "family-arcade:kit/README.md", "world-graph:requirements.txt", "https://code.claude.com/docs/en/plugins/code-intelligence"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
