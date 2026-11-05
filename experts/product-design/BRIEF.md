@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work has a screen, page, artifact or anything Charles reads or clicks"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:skills/design-assist/references/brief-artifact-style.md"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
