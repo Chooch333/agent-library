@@ -71,6 +71,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.2 (2026-11-05): coding joins the craft list (EB-063). Its corner spans every repo Charles has built, not only the harness. No line moves; call_when unchanged.
 - 0.2.1 (2026-11-04): graph-engineering joins the craft list (EB-051). No line moves; call_when unchanged.
 - 0.2.0 (2026-11-03): refreshed to expert-brief 0.2.0 as captain of the stack wiring team (EB-007). New Our way (14 lines) from the charter, TH-024, TH-062, TH-076, TH-085, CB-322, CB-354, CB-562, WG-130 and design-assist rule 8. Lens cut back to captain altitude: old lines 2, 11–14 moved to lanes; 16 and 20 to oversight; 17 to github-integrations; 15, 18 and 19 cut (chat-access 4, github-integrations Our way 7 and skill-authoring 1 own them); old lines 1 and 3–10 folded into Our way, since a lens line does not repeat one. New lens lines from CB-019, CB-487, PP-005, PP-007, WG-014, WG-087, D-092, TH-059 and the design-assist 0.8.0 changelog. call_when narrowed to whole-stack work. Reads: gotchas.md dropped; skill-design-framework Q10 and INDEX added. Fit pass (EB-015): Our way 5 and 9 reworded so intake and skill-authoring keep their own lines.
 - 0.1.0 (2026-11-03): seed lens from BB-2026-11-02-expert-desk Appendix C, plus C-071.
