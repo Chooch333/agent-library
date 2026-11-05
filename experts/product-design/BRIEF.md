@@ -28,7 +28,6 @@ status: active
 12. Overused fonts come back as soon as he pushes back [design-consultation Pitfalls]
 13. A rewrite of a sound structure when he asked for a conversation about edits [L-041]
 14. Technical options stacked up where the use case, in plain words, would settle it [C-033]
-15. A screen's parts renamed while tests elsewhere still read the old wording [CB-382, CB-402]
 
 ## Procedure
 
