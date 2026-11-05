@@ -89,4 +89,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-05): lens 8 keeps the deploy half (CB-041); the typecheck-vs-runtime half (CB-040) moves to coding (EB-063).
 - 0.1.0 (2026-11-03): new craft under c-stack, team note EB-007 row 4 (stack wiring team; Charles confirmed 2026-11-03). Our way from D, CB, E, P, F and TH decisions and lessons, wire-new-app (Build 28) and the stack map; lens line 1 merges github-integrations 3 and chat-access 2. Seed lens line 1 (D-059) re-checked: create_project now accepts a letter code. Seed lines "health check without a real read" and "test setup left in accounts" folded into Our way 18. Vercel docs opened once (crons run on production; did not settle E-386). Supabase docs not opened; every other line rests on Charles's record. Fit pass (EB-015): Our way 8 takes in data-homes' new-app line (TH-073); Lens 9 narrowed to the env wiring.
