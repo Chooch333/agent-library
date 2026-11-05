@@ -47,4 +47,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-05): lens 15 (renamed screen parts vs tests reading the old wording, CB-382 and CB-402) moves to coding Lens 13 (EB-063).
 - 0.1.0 (2026-11-03): seed lens from BB-2026-11-02-expert-desk Appendix C, plus lines mined from the design-reviewer and design-consultation Pitfalls and lessons L-041, C-033, CB-382 and CB-402.
