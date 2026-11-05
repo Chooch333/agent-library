@@ -6,13 +6,13 @@ profiles: [harness]
 call_when: "the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, a charter rule, or whether to build or adopt a part"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (meters:, lanes:)", "agent-library:references/skill-design-framework.md (Q10)", "agent-library:experts/INDEX.md"]
-version: 0.2.1
+version: 0.2.2
 status: active
 ---
 
 # c-stack
 
-The captain over the stack crafts (lanes, github-integrations, services, data-homes, intake, oversight, graph-engineering). Its corner is whole-stack judgment no craft owns: charter rules, money and allowances, the hard gates, what Charles holds, build-vs-adopt, vocabulary, governance flags. It overrules a craft's path that breaks one of these; it does not judge inside a craft's corner.
+The captain over the stack crafts (lanes, github-integrations, services, data-homes, intake, oversight, graph-engineering, coding). Its corner is whole-stack judgment no craft owns: charter rules, money and allowances, the hard gates, what Charles holds, build-vs-adopt, vocabulary, governance flags. It overrules a craft's path that breaks one of these; it does not judge inside a craft's corner.
 
 ## Our way
 
