@@ -8,6 +8,7 @@ craft_by_mode:
   implementation: full
 optional_seats:
   premortem: when a fork is low-confidence and expensive to reverse
+  coding: when the work writes or changes code (a work tool or pipeline, such as the plan-set-to-model pipeline)
 max_seats: 6
 ---
 Seated when the work is a construction project or pursuit: FAW jobs, delivery method,
