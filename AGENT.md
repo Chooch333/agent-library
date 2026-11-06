@@ -95,7 +95,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| An FA Wilhelm job comes up — its tasks, issues, dates, milestones, meetings, team, RACI or design decisions (e.g. `what's open on IMI?`, `add this`, `log this`, `put this on the job`) — mid-chat included; fetch once per chat | `skills/job-update/SKILL.md` (reads any time; writes only on Charles's ask; general construction/permitting talk is not a job and loads nothing) |
+| An FA Wilhelm job comes up — its tasks, issues, dates, milestones, meetings, team, RACI or design decisions (e.g. `what's open on IMI?`, `add this`, `log this`, `put this on the job`) — mid-chat included; fetch once per chat | `skills/job-update/SKILL.md` (reads any time; writes only on Charles's ask; general construction/permitting talk is not a job and loads no job skill; the experts rule still applies) |
 
 ### Knowledge capture
 
