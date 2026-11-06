@@ -41,7 +41,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| `Expert desk:` (a message that starts with it, e.g. `Expert desk: <situation or plan link> — goal: <one line> — mode: A`; any macro design chat or Design Assist chat — DA chats also seat experts on their own at their step 6a), or `I need an expert in <x>` / `I need an expert for <x>` (a message that starts with it, in any chat that can start helpers), or `I need a team of experts for <x>` / `I need a group of experts for <x>` (a message that starts with it, mid-chat included, in any chat that can start helpers; the experts may have been named earlier in the chat), or `CE <expert>: <link or topic>` (a message that starts with it, in any chat that can start helpers) | `skills/expert-desk/SKILL.md` |
+| `Expert desk:` (a message that starts with it, e.g. `Expert desk: <situation or plan link> — goal: <one line> — mode: A`, in any chat that can start helpers), or a judgment question that matches an expert's call_when (see "Every chat, every message — experts"; DA chats also seat experts at their step 6a), or `I need an expert in <x>` / `I need an expert for <x>` (a message that starts with it, in any chat that can start helpers), or `I need a team of experts for <x>` / `I need a group of experts for <x>` (a message that starts with it, mid-chat included, in any chat that can start helpers; the experts may have been named earlier in the chat), or `CE <expert>: <link or topic>` (a message that starts with it, in any chat that can start helpers) | `skills/expert-desk/SKILL.md` |
 
 ### Investment
 
