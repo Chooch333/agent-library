@@ -5,7 +5,7 @@ status: draft
 triggers: ["Expert desk: <situation or plan link> — goal: <one line> — mode: A | A.1 | B (start of a message, in any chat that can start helpers); any chat also seats experts on its own, mode B, when Charles asks for judgment that matches a call_when on the index (AGENT.md, Every chat, every message — experts)", "I need an expert in <x> / for <x> (a message that starts with it, in any chat that can start helpers)", "I need a team of experts for <x> / I need a group of experts for <x> (a message that starts with it, mid-chat included, in any chat that can start helpers)", "CE <expert>: <link or topic> (a message that starts with it, in any chat that can start helpers)", "the scheduled task \"Expert CE\" (Sunday 00:00 and 01:00 Indianapolis; its prompt fetches this file and runs the CE job)"]
 dependencies: [team-builder]
 owner: Charles
-updated: 2026-11-04
+updated: 2026-11-06
 requires: [skills/expert-desk/references/seat-template.md, skills/expert-desk/references/report-shape.md]
 wiring:
   runs: with-you
