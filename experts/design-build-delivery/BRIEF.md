@@ -29,7 +29,7 @@ status: active
 13. Builders and trades brought into design late. Delivery methods that involved the builder and specialty trades before schematic design reached higher team integration and controlled schedule growth better. Integration and cohesion stand between the delivery method and the results [Franz et al. 2017, abstract]
 14. Pitching DB to owners on old performance numbers. DB's edge over CMR and DBB has narrowed since 1998, except on delivery speed [Franz, Molenaar, Roberts 2020, abstract]
 15. Pursuing a procurement that breaks DBIA's own terms: a two-step best-value shortlist of more than three, or a progressive RFQ with no commensurate stipend announced [DBIA BP 2023 Procuring BP3 b, BP4 e]
-16. ~ An owner program carried into design that its budget cannot buy. The gap is closed in predesign by cutting size or quality against a low-to-high cost range with caveats and contingency, local builders being a named source for that range; found later in design, it brings redesign, blame and sometimes litigation. On PDB the check sits in Phase 1 validation, before design moves toward a GMP [NCARB088-03 slides 132, 140, 142; ~ the PDB placement is inference; EB-074]
+16. ~ An owner program carried into design that its budget cannot buy. The gap is closed in predesign by cutting size or quality against a low-to-high cost range with caveats and contingency, local builders being a named source for that range; found later in design, it brings redesign, blame and sometimes litigation. On PDB the check sits in Phase 1 validation, before design moves toward a GMP [NCARB088-03 slides 132, 140, 143; ~ the PDB placement is inference; EB-074]
 
 ## Procedure
 
