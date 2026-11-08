@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.1
+version: 0.1.2
 status: active
 ---
 
@@ -52,6 +52,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 12. A new Project State project created without its letter code; the tool now takes one but it is optional, and the first entry fails without it [D-059; ~ create_project description read live 2026-11-03 cites D-060, not opened]
 13. ~ Project State write tools reshape dotted tags without an error [tools-and-quirks, memory 2026-09-09; not re-checked live]
 14. A tool's limits taken from an old note instead of its live code: a "gated" tool fired fine [CB-073; CB-063]
+15. ~ An endpoint where one mode checks the bearer and its extra modes (dry run, test send) do not, so anyone with the address reads every check's detail or sends Charles mail; one check at the top of the handler covers every mode [stack_repairs 6e81fb89; CB-582; EB-111]
 
 ## Procedure
 
@@ -89,5 +90,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.2 (2026-11-08): folded EB-111 (Expert CE)
 - 0.1.1 (2026-11-05): lens 8 keeps the deploy half (CB-041); the typecheck-vs-runtime half (CB-040) moves to coding (EB-063).
 - 0.1.0 (2026-11-03): new craft under c-stack, team note EB-007 row 4 (stack wiring team; Charles confirmed 2026-11-03). Our way from D, CB, E, P, F and TH decisions and lessons, wire-new-app (Build 28) and the stack map; lens line 1 merges github-integrations 3 and chat-access 2. Seed lens line 1 (D-059) re-checked: create_project now accepts a letter code. Seed lines "health check without a real read" and "test setup left in accounts" folded into Our way 18. Vercel docs opened once (crons run on production; did not settle E-386). Supabase docs not opened; every other line rests on Charles's record. Fit pass (EB-015): Our way 8 takes in data-homes' new-app line (TH-073); Lens 9 narrowed to the env wiring.
