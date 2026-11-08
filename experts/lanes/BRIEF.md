@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.0
+version: 0.2.1
 status: active
 ---
 
@@ -45,6 +45,9 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 12. A scheduled task's prompt left asking for something its skill dropped, or pointing at a moved path, and the run follows whichever it reads [WG-177; WG-166]
 13. A step's lane picked by default without a test: sent to the PC when the cloud workspace could run it, or kept in the cloud after its cloud run failed its check [TH-032, Charles: where each step runs is open; TH-045; TH-058]
 14. A lane fact read from the map after the platform changed: ~ the scheduled-tasks page read 2026-11-03 says cloud runs start in auto mode with no mode chosen at creation, while stack-map lanes: scheduled (verified 2026-10-29) says approvals are set per task; check the task's own setting [Anthropic scheduled-tasks docs, permission prompts; stack-map lanes: scheduled]
+15. ~ One fetch tool's refusal written up as "can't be opened from here", so a cloud run guesses the cause when the same lane could reach it another way [stack_repairs 0fa1d5cf, 482e1aac, 52d00c5e, f5f7779d; CB-573; ~ which tool got through on 2026-11-02 is not recorded; EB-038]
+16. A task that takes fire text decides its job on the first turn, but the text arrives as a later turn, so a first turn with no text is not proof the fire had none [EB-029; EB-034; fire_trigger tool description; EB-041]
+17. ~ A task's connector list (list_triggers) read as everything its runs can reach, so Charles is asked for a settings click to add a tool the runs already use, and a trimmed list is taken to mean trimmed reach; check what a run actually did [stack_repairs 1ec8d464; WG-219; WG-222; EB-103]
 
 ## Procedure
 
@@ -82,4 +85,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.1 (2026-11-08): folded EB-038, EB-041, EB-103 (Expert CE)
 - 0.2.0 (2026-11-03): replaces chat-access 0.1.0. Renamed `lanes` (Charles confirmed) and widened from what a chat can reach to where any job runs (chat, scheduled task, PC task, GitHub Action, Vercel cron, API pipeline) and what that place can reach, approve or remember. Our way added from Charles's record, format 0.2.0. Lens re-sourced: chat-access lines 1 and 3 became Our way 4 and 3; line 2 went to services; lines 7 and 8 were left to skill-authoring; lines 4, 5, 9, 10 and 11 became Lens 6, 7, 8, 9 and 10; line 6 (a helper's fixed overhead) went to skill-authoring at the fit pass (EB-015). c-stack lens lines 2, 11, 12, 13, 14 and 15 moved down. reads: dropped skills/checker/SKILL.md; added the charter and Anthropic's two scheduled-task pages (read 2026-11-03). Team EB-007 on expert-bench, confirmed by Charles 2026-11-03.
