@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds, removes or re-routes a running part (where or how often it runs), or decides how one is checked, how its failure or a wait on Charles reaches him, or what each run leaves behind to show it ran"
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
@@ -50,6 +50,8 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 14. A part's status page failing read as the part itself failing, sending Charles to check a healthy machine [CB-565]
 15. Side-panel facts left stale after a part changes where or how often it runs: cloud runs still listed a sleeping computer as their weak spot, and the map's cadence disagreed with the task's. The Advisor caught it, not a check [SM-076; SM-078]
 16. ~ A dot removed from the map leaves its old status row behind, frozen at its last check [stack_status next-steps-sweep row, last checked 2026-10-23, read 2026-11-03, with no matching dot on the stack map; ~ not confirmed whether anything still reads that row]
+17. ~ A URL check that passes whenever the page answers while the page itself reports trouble: the video relay dot read green through a run of dark feeds and stranded videos; point the check at the page's own health field [stack_repairs 35d24e44; CB-591; EB-131]
+18. ~ A known cause that comes back every few days, fixed each time by the same re-run and graded green, so the per-day re-run cap and the still-red size-up never fire; when the lasting fix is Charles's to revisit (a trigger he turned off), the ladder never brings it to him [stack_repairs b51452ff, b1a9bb41; CB-562; stack-repairer steps 2 and 4a; EB-132]
 
 ## Procedure
 
@@ -87,4 +89,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-08): folded EB-131, EB-132 (Expert CE)
 - 0.1.0 (2026-11-03): first brief. Researched by roster-builder (desk T2) from the stack wiring team note on expert-bench, row 7. Our way comes from Charles's record (CB-367, CB-484, CB-492, Builds 13.6, 27 and 56, WG-103, thread-checkin, design-assist rule 12). Lens lines 1 and 2 moved down from c-stack (its lines 16 and 20). Fit pass (EB-015): call_when narrowed to adding, removing or re-routing a part; Our way 5 leaves timer placement to services; Lens 2 drops the clause skill-authoring owns.
