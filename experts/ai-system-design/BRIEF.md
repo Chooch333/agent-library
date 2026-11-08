@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.2
+version: 0.1.3
 status: active
 ---
 
@@ -31,6 +31,7 @@ The captain over how Claude works. Its crafts: skill-authoring, premortem, roste
 13. A checker's reason text trusted instead of reading the runs behind it [stack-repairer Pitfalls]
 14. A module's stated intent taken for its wired behavior; the caller decides what happens [E-133]
 15. An eval's finding acted on without reading the live artifact; an eval is another producer that can be wrong [E-278]
+16. ~ A note promoted into what every later seat loads (a brief line, an index, a standing field note) without being checked against the page or trace it cites, so one wrong note rides into every seat; Team Builder update mode folds Inferred lens-notes into a brief as ~ lines with no step that opens the cited page [https://www.anthropic.com/research/components-of-agent-memory; skills/team-builder 0.3.1, update mode rule 3(d); EB-095]
 
 ## Procedure
 
@@ -50,6 +51,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.3 (2026-11-08): folded EB-095 (Expert CE)
 - 0.1.2 (2026-11-04): graph-engineering joins as a craft (second captain beside c-stack; Charles 2026-11-04). Lens 7 (bundled tool, ADV-031) and 12 (safety rule held only by text) move down to graph-engineering Our way 11 and 20; lens renumbered; call_when unchanged.
 - 0.1.1 (2026-11-03): stack wiring team fit (EB-015). call_when drops "intake pipelines" (the intake craft owns it). Lens lines on a paid engine where the subscription would do, and on a whole build marked not overnight for one late step, cut: c-stack and lanes own them. Lens renumbered.
 - 0.1.0 (2026-11-03): seed lens from BB-2026-11-02-expert-desk Appendix C, plus lines mined from the inspector, repairer and stack-repairer Pitfalls and from lessons E-133 and E-278. Owns the lines roster-builder gave up on TH-139's overlap check.
