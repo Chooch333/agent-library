@@ -6,7 +6,7 @@ profiles: [harness, construction]
 call_when: "the work writes, restructures or reviews code in any of Charles's repos, whatever it is for (harness services and MCP servers, cbrain-ui, family apps and games, real-estate and work tools; TypeScript, Python or a one-file HTML game): how the code is split into files, its types and the contracts it reads, its tests, its libraries and their versions, a rename or reshuffle across files, or which checks and coding tools (typecheck, tests, style checker, language server) are used where Claude writes it, and why"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "agent-library:skills/build/SKILL.md (Build execution — tool-first)", "agent-library:skills/orchestrate-build/SKILL.md (step 6; Standing rules: No browser tests)", "agent-library:skills/execute-build-task/SKILL.md (Worker rules)", "agent-library:skills/game-maker/SKILL.md (sections 1–2, 9.1–9.2)", "cbrain:services/package.json", "cbrain:services/tsconfig.json", "cbrain:.github/workflows/services-test.yml", "cbrain-ui:package.json (ref review)", "family-arcade:package.json", "family-arcade:kit/README.md", "world-graph:requirements.txt", "https://code.claude.com/docs/en/plugins/code-intelligence"]
-version: 0.1.1
+version: 0.1.2
 status: active
 ---
 
@@ -54,7 +54,7 @@ Outside this corner: hosting, deploy settings and keys (services); how a commit 
 13. A test with hard-coded expectations (a milestone's status, a header's wording, an element id) turns red when real progress or a wording change happens: expected values should come from the data, and every test file is searched for the old literal when a screen's words change [CB-191; CB-245; CB-382; CB-402; moved from product-design lens 15]
 14. ~ Clean-up never scheduled: build workers may not touch code next to their task, so known problems sit open as next moves with no build to clear them [execute-build-task worker rule 1; E-395; ~ the link is inferred]
 15. A runtime version set in the dashboard while `package.json` pins another: the file wins without a word, and the dashboard's upgrade button does not touch it [PP-033]
-16. ~ Repos with no typecheck or test at all (project-state-mcp; Family-Trip-App and Chooch-Property-Analyzer have a style checker only), so only using the app catches a break [those repos' package.json; ~ what the files show, no failure traced]
+16. ~ Repos with no test or typecheck script, where each fix's proof is a one-off script that nothing reruns: project-state-mcp's tag module broke twice, and each fix left its own scratch script [those repos' package.json; stack_repairs f8e950e7; project-state-mcp scripts/; C-055/C-056; ~ still untraced for Family-Trip-App and Chooch-Property-Analyzer, which have a style checker only; EB-145]
 17. ~ Each repo keeps its code its own way (exact pins plus a test and a checker in family-arcade, ranges plus typecheck and tests in cbrain services, a style checker only in the trip app), so a lesson learned in one never reaches the others [the package.json files under reads; ~ inferred]
 
 ## Procedure
@@ -93,5 +93,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.2 (2026-11-08): folded EB-145 (Expert CE)
 - 0.1.1 (2026-11-05): Our way 15–18 are now Charles's decisions TH-150 to TH-153 on total-harness ("Yes log the LSP calls"), no longer proposed calls.
 - 0.1.0 (2026-11-05): new craft under c-stack (proposal EB-063, superseding EB-062; Charles "go"). The corner spans all of Charles's repos, not only the harness (Charles, 2026-11-05). Our way comes from Charles's record (CB-162, CB-160, PP-033, CB-441, TH-075, CB-582, E-297, E-309, TH-072, the build, orchestrate-build and game-maker skills, family-arcade kit/README, cbrain services-test.yml, world-graph requirements.txt). Our way 15–18 are proposed per-place calls on language server, typecheck and style checker; no tool is adopted (Charles: "I don't have to have LSP capability. I just want it to be clear why or why not"). Lens 4 moved from services lens 8 (first half); Lens 13 takes product-design lens 15. Left to their owners: E-133 (ai-system-design), E-359 (graph-engineering), CB-081's transaction claim (data-homes lens 9), CB-148 (lanes lens 10), large-file edit method and commit order (github-integrations Our way 10–11). pm-app (README only) and moonshot-demo (planning folder) hold no code. Tool facts on where each coding tool runs belong on a cbrain concepts/ page that does not exist yet, so it is not listed under reads. Nothing from memory.
