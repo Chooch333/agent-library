@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work writes or changes a SKILL.md, a skill's description or triggers, or a .claude/agents/ definition, or depends on how Claude picks, loads or delegates to one"
 altitude: [plan: risks-only, implementation: full]
 reads: ["https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices", "https://code.claude.com/docs/en/skills", "https://code.claude.com/docs/en/sub-agents", "agent-library:CONVENTIONS.md", "agent-library:references/skill-design-framework.md"]
-version: 0.1.1
+version: 0.1.2
 status: active
 ---
 
@@ -33,6 +33,7 @@ status: active
 17. Assumes skills and subagents resolve name clashes the same way. Skills: enterprise > personal > project. Subagents: managed > CLI > project > user > plugin. For project vs personal the two run in opposite order. [code.claude.com/docs/en/skills, locations; code.claude.com/docs/en/sub-agents, scope priority]
 18. A skill written once is assumed live on every surface. Custom skills don't sync between the API, claude.ai and Claude Code. A skill in agent-library on GitHub is invisible to native discovery until it is installed. The Claude Code page says claude.ai account skills do reach cloud and Cowork sessions, which the overview contradicts, so check the target surface's skill list. [platform overview, "Custom Skills do not sync across surfaces"; code.claude.com/docs/en/skills, locations table; ~ on which page wins]
 19. A helper's fixed overhead left out of what a run will use [BB-2026-11-02-expert-desk, probe]
+20. ~ An expert or skill that fires only on a typed phrase while its fire condition (call_when) sits in a file no chat opens until the phrase is typed, and an unasked-fire rule written inside one skill fires only where that skill is loaded; a grow phrase read as a grow even when that expert is already on the bench [Charles 2026-11-05; agent-library AGENT.md Expert Desk row and Disambiguation; skills/expert-desk When and G1; skills/design-assist step 6a; EB-069]
 
 ## Procedure
 
@@ -54,5 +55,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.2 (2026-11-08): folded EB-069 (Expert CE)
 - 0.1.1 (2026-11-03): stack wiring team fit (EB-015): lens line 19 (a helper's fixed overhead) moved here from chat-access, now lanes.
 - 0.1.0 (2026-11-02): seed lens from the roster-builder proposal; lines 11–18 from a deep dive on the Anthropic skills and subagent docs (TH-134); checked TH-136.
