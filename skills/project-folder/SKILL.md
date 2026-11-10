@@ -65,7 +65,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the moonshot's name in words, e.g. "Backyard drone build" (thread_key "job:project-folder-<slug>")
 - Opens when: a session stops at a stop in spec.md (the concept stop first), or parks with a wake line (README Status `stopped: waiting on <what>`), or a feature fails three checks (README Status `stopped: <id> failed 3 checks`)
 - Checks in: at every session close that leaves the project stopped or waiting (next_step = the stop or the wait, in words)
-- Closes when: every feature in the folder passes and Charles accepts it, or Charles clicks Done
+- Closes when: every feature in the folder passes and Charles accepts it, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.3.0 (2026-10-23) — Checker role (Build 45, BB-2026-10-21-checker-role): Close marks a feature ready and the checker grades it; the builder never sets passes. Roles section (planner, builder, checker). Template gains `"checker": true` and `checks/`.
