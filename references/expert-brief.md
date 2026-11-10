@@ -131,6 +131,11 @@ A seat still never edits its own brief. A note goes to the expert that owns the 
 no line is owned by two experts.
 
 ## Changelog
+- 0.5.0 (2026-11-10): origin mark first in every Our way bracket: `Charles ·`, `Claude ·`
+  or `field ·` (replaces `~ field default`); several sources take the highest (Charles,
+  then Claude, then field); unclear is Claude, never Charles by guess. Growing a lens
+  says how a proved change folds without Charles. Build 77
+  (BB-2026-11-09-expert-fold-rule); the fold rule is Charles's, 2026-11-09 (TH-155).
 - 0.4.0 (2026-11-04): no upper limit on Our way or Lens (was 5–20 for a craft's Our way,
   0–20 for a captain's, 10–20 for a Lens); the minimums stay. Lines go most important
   first. Length is never a reason to merge or cut a sourced line; whether a corner is
