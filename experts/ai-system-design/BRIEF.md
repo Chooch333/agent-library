@@ -55,6 +55,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.4 (2026-11-09): folded EB-174, EB-175, EB-176, EB-177 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 17 to 20 added, each marked ~ as inferred.
 - 0.1.3 (2026-11-08): folded EB-095 (Expert CE)
 - 0.1.2 (2026-11-04): graph-engineering joins as a craft (second captain beside c-stack; Charles 2026-11-04). Lens 7 (bundled tool, ADV-031) and 12 (safety rule held only by text) move down to graph-engineering Our way 11 and 20; lens renumbered; call_when unchanged.
 - 0.1.1 (2026-11-03): stack wiring team fit (EB-015). call_when drops "intake pipelines" (the intake craft owns it). Lens lines on a paid engine where the subscription would do, and on a whole build marked not overnight for one late step, cut: c-stack and lanes own them. Lens renumbered.
