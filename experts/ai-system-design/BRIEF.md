@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.3
+version: 0.1.4
 status: active
 ---
 
