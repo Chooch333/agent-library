@@ -121,6 +121,12 @@ Every seat reads its waiting lens-notes (no `folded` or `routed` tag) and its la
 field notes before answering (`skills/expert-desk/references/seat-template.md`). Team
 Builder update mode folds the waiting lens-notes into the brief at the Sunday 01:00 CE
 run (`skills/expert-desk`, CE job): into Our way or the Lens, version bump, changelog.
+A note whose change rests on a record newer than the line (a Charles decision or
+dated statement, a shipped build, a test, a stack fix log row, a cited file read),
+confirmed by the run, is folded in place with that record cited and the line's origin
+set from it. Only a clash between two of Charles's decisions, or a new opinion with no
+record that would change an Our way line, reaches him; a new opinion that reads as a
+risk lands as a ~ Lens line (Charles, 2026-11-09, TH-155).
 A seat still never edits its own brief. A note goes to the expert that owns the line;
 no line is owned by two experts.
 
