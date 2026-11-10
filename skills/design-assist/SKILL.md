@@ -183,6 +183,7 @@ Fan-out is **Claude-decided, Claude-executed, Claude-aggregated**. Charles is to
 
 ## Changelog
 
+- **0.8.6** (2026-11-10) — Step 1 intake, right after the weekly scorer line: the chat runs the step-in scorer skill's Replay section itself when its Pick step returns a task (a helper cannot start helpers, so never inside the scorer's helper); the answer helpers and grader run in the background and the `fixed-set-run` note is filed when they return. Per Build 75 (BB-2026-11-09-fixed-test-set).
 - **0.8.5** (2026-11-10) — Step 1 intake starts the step-in scorer once a week: when the newest `step-in-receipt` that read chats is more than 7 days old (or there is none), one helper fetches `skills/step-in-scorer/SKILL.md` and follows it; the chat doesn't wait on it past its reply. Per Build 74 (BB-2026-11-09-step-in-scorer).
 - **0.8.4** (2026-11-09) — Overnight is automatic. Every shelved brief is tagged overnight unless Charles says otherwise; the chat never asks "Overnight: yes or no?". The tag stays off only when the build cannot run at night, with the reason in one line on the handoff block. Charles, 2026-11-09, in a Design Assist chat: "Mark overnight as auto unless I tell you otherwise. I hate having to make another turn just to answer that question." Edited inline at his direction, no Build Brief.
 - **0.8.3** (2026-11-06) — Step 6a names itself as the Design Assist form of AGENT.md's new experts rule (every chat, every message); DA adds the stack A.1 run and pre-applies the room's path. Per Build 70 (BB-2026-11-05-experts-every-chat).
