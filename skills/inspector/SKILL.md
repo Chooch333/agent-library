@@ -148,6 +148,7 @@ Two step-in records from different chats, both `pattern-cant-reach`, `skill-none
 
 ## Changelog
 
+- **0.2.1** (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - **0.2.0** (2026-11-10) — Reads step-in records and checks fixes by effect. Step 4 gains an all-time step-in bucket (newest 40, outside the 60 cap; `unchecked` and `step-in-unsure` set aside). Step 5 clusters step-ins by what was missed, never by tag alone, and treats a step-in dated after a direct fix as still open. Step 6 files a step-in cluster (two or more chats) as a rule edit plus its fixed-set task with `From:` and `Touches:` lines, each on its own tier. Step 2a: a step-in item is verified only after a clean replay and two clean receipts, regressed only on a confirmed later step-in, and otherwise waiting. Step 7's first line is the step-in count. Examples 3 and 4 are this build's dry walks. Per Build 76 (BB-2026-11-09-inspector-reads-step-ins).
 - **0.1.2** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **0.1.1** (2026-10-13) — Step 3b added: every switched-on cron (vercel.json, workflow schedules, Claude scheduled tasks) must have a matching `ops.schedule` entry on the stack map, which feeds the Stack Flow Day view; a mismatch is a Punch List item (kind `map`). Per Build 11.7.13 (BB-2026-10-12-stack-day-calendar).
