@@ -137,6 +137,13 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.4.0 (2026-11-10) -- Step 3f fails a transcript on the relay's thin
+  test (under 40 real words a minute, or under 20 real words, bracketed
+  tags stripped) when `duration_sec` is in the frontmatter, and under 20
+  real words otherwise -- replacing "under ~150 words", which failed short
+  real videos. Step 4a's backfill query skips videos under 20 words
+  (`coalesce(word_count,0) >= 20`). Per BB-2026-11-09-video-transcript-retry
+  (Build 72).
 - v0.3.0 (2026-11-04) -- Step 4b: a video with no extracted file gets a
   summary-only file when no unloaded queue entry exists. Drains the 124
   old videos at 10 a run. Per BB-2026-11-03-feed-channel-fix (Build 66).
