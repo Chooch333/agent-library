@@ -1,6 +1,6 @@
 # chat-capture.md — Drafting a cbrain brief from chat
 
-**Status:** v0.1.1 — reference, not a skill. No write-authority.
+**Status:** v0.1.2 — reference, not a skill. No write-authority.
 **Owner:** Charles
 **Read this when:** Charles asks to capture a person / organization / project / framework / concept / place into cbrain *from chat* ("add to cbrain," "let's capture," "create an entity for," or names an entity not yet in cbrain during a clear knowledge-capture chat).
 
