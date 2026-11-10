@@ -114,7 +114,7 @@ In chats that touch cbrain (search_brain, get_entity, graph_query, or any mentio
 
 Common triggers include: user asks a question that would benefit from graph traversal ("who is responsible for X?", "what blocks Y?", "what depends on Z?"); user describes a recurring relationship pattern in content; user adds a tag or frontmatter field that names a relationship Claude has not seen before; Claude finds itself doing prose search to answer a question that a single SQL JOIN against tuples would answer if a predicate existed.
 
-When perceived, Claude surfaces the candidate as a numbered Needs from you item with:
+When perceived, Claude asks about the candidate in the chat as a closed choice (approve or decline, with its recommendation), with:
 
 - Proposed predicate name (slug-style, e.g., `responsible_for`)
 - Meaning (one sentence)
