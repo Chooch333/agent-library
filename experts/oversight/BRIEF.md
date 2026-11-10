@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds, removes or re-routes a running part (where or how often it runs), or decides how one is checked, how its failure or a wait on Charles reaches him, or what each run leaves behind to show it ran"
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
-version: 0.1.2
+version: 0.1.3
 status: active
 ---
 
