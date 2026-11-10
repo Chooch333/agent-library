@@ -18,7 +18,7 @@ A **build chat** is work that produces deliverables, decisions, or progress on a
 ## Response format
 
 - A response that needs anything from Charles ends with one numbered list under the exact heading **Needs from you**, preceded by a `---` rule. If nothing is needed, no section.
-- Everything that needs him goes on that one list: decisions, approvals, and judgment calls he might want to reverse. Nothing buried in the body.
+- Only hand-ons go on it (Closing out, bin 4, `references/thread-checkin.md`), in the same words as their Next steps card. Judgment calls are logged, not listed. Nothing buried in the body.
 - Each item is a closed choice with a recommendation.
 
 ---
