@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.2
+version: 0.2.3
 status: active
 ---
 
