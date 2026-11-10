@@ -175,3 +175,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
 ## Provenance
 
 Added 2026-09-14 at Charles's request, generalizing the ad-hoc styling used in a world-graph feed-reader design session that day (verification-findings cards + Build Brief cards + Needs-from-you list, published as one HTML artifact). That session's specific artifact wasn't drafted from any existing template — this file is what makes the pattern reusable and gives it a canonical home next to `build-brief-template.md`.
+
+## Changelog
+
+- 2026-11-10 — Needs from you carries hand-ons only, each a closed choice with a recommendation (Build 78, BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0, Closing out). First changelog line; earlier changes are in the design-assist skill's changelog.
