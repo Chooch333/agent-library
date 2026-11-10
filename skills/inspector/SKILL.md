@@ -1,6 +1,6 @@
 ---
 name: inspector
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers:
   - "Inspector: walk"
