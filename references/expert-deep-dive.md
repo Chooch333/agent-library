@@ -1,4 +1,4 @@
-# Expert deep dive (0.3.1, draft)
+# Expert deep dive (0.3.2, draft)
 
 The procedure the roster-builder follows, seated as a research helper, when the desk
 grows a new expert, and the deliverable it returns. One procedure for every expert,
