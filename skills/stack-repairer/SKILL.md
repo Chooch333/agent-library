@@ -135,7 +135,7 @@ One row per action. Columns: `id`, `run_at` (default now()), `dot_id`, `finding`
   - **Fixed today** — `rerun`/`cleared`/`fixed`/`built` rows, one line each, saying what broke and what was done, with "(back to green)" when its newest `graded` row is `green`.
   - **Queued for tonight** — `briefed` rows, by plain title.
   - **Last night's builds** — from `overnight_line` → `last_night`: one line per build (plain title + result).
-  - **Needs you** — every `needs-you` row still open, in its exact-ask wording.
+  - **Needs you** — the Next steps list, which is the one to-do list: every open card waiting on Charles (`list_open_threads`, `waiting_on` `you`), one line each in the card's own `next_step` words, oldest first. The Repairer's own open `needs-you` rows already have cards, so they show here through the list; a `needs-you` row whose card is missing (its check-in failed) is added in its exact-ask wording. If `list_open_threads` fails, fall back to the open `needs-you` rows and say "Couldn't read the to-do list today". Closing out, `references/thread-checkin.md`.
   - Plus one **Reader** line if it can be read from data: articles and facts the Collector processed today, from the newest Project State note on project `world-graph` tagged `world-graph-reader` dated today. If there's no such note, leave the line out.
   - Plain English, at most ~15 lines, no codes or file paths. If every section is empty and there is no Reader line, send nothing.
   - Send with Gmail `send_message` (from the connected claude.go.between@gmail.com account) to cecourtney10@gmail.com, subject `Stack Repairer — <Mon D>` (e.g. `Stack Repairer — Oct 6`), with a link to the Stack screen: https://cbrain-ui-git-review-chooch333s-projects.vercel.app/stack?view=flow
