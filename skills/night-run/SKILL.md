@@ -68,7 +68,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the brief's plain title, for a build that ended stuck or deploy-red (e.g. "Next steps side panel")
 - Opens when: a build ends `stuck`, `deploy-red` or `skipped`, is interrupted twice, or is built with something left for Charles (step 7, "Tonight's trouble" and "Leftovers")
 - Checks in: when a run leaves something open; and every night's re-check writes checked status on up to 15 open cards (step 7)
-- Closes when: the job clears it (a later night builds the plan and it lands), or Charles clicks Done
+- Closes when: the job clears it (a later night builds the plan and it lands), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Finish
 - If anything ended `stuck`, `deploy-red`, `skipped`, or interrupted twice: send ONE email to Charles (Gmail, to himself), subject "Night builds — N need you", one plain line per item plus the Build Shelf link (https://cbrain-ui-git-review-chooch333s-projects.vercel.app/dev?tab=shelf). Otherwise send nothing — the shelf's Last night strip is the report.
