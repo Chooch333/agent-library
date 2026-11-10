@@ -147,6 +147,13 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.5.0 (2026-11-10) -- Deeper mining. Step 3c gains three lines:
+  mechanism first; caption-misspelled names that are plain from the
+  title, channel or graph take the right name (otherwise quarantine);
+  videos over about 4,000 words are read section by section, about 2,000
+  words at a time, still one file per video and 10 a run. Step 7's note
+  counts videos read in sections. Per BB-2026-11-09-full-transcripts
+  (Build 73).
 - v0.4.0 (2026-11-10) -- Step 3f fails a transcript on the relay's thin
   test (under 40 real words a minute, or under 20 real words, bracketed
   tags stripped) when `duration_sec` is in the frontmatter, and under 20
