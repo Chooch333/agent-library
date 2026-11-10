@@ -153,6 +153,10 @@ must choose."). Close the card, or rewrite it as the closed choice he must make.
 
 ## Changelog
 
+- 0.4.1 (2026-11-10) — Kind `chat` added (database and table) and replaces the
+  `folder-chat` stand-in for a skill-less hand-on; the folder-chat row closes
+  without a click; the checkin refusal of non-asks waiting on Charles is
+  written down. Build 78 (BB-2026-11-09-closing-out).
 - 0.4.0 (2026-11-09) — Closing out: every chat and job sorts each leftover
   into do it / decide it / queue it / hand it on before saying done; only bin 4
   reaches Charles, as one card and the reply's Needs from you. A card closes
