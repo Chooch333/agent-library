@@ -113,7 +113,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the building's name + "renders", e.g. "Sample duplex renders"
 - Opens when: a still set stops on the stop rule, or is posted for Charles's review (gate 3 or gate 4 under review)
 - Checks in: when a run leaves something open (thread_key "job:arch-render-<run slug>")
-- Closes when: Charles passes gate 4 on the run, or clicks Done
+- Closes when: Charles passes gate 4 on the run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.2.2 (2026-10-27) — Revit models render with `pipeline/revit-intake/render_revit.py`; `render.py` stays the Pascal/PDF renderer (Build 53).
