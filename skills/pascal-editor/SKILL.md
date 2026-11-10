@@ -1,6 +1,6 @@
 ---
 name: pascal-editor
-version: 0.1.1
+version: 0.2.1
 status: draft
 triggers: [used by arch-renders-run and builds that need a Pascal scene loaded or exported; no chat trigger]
 dependencies: []
