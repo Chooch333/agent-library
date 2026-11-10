@@ -67,6 +67,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: the export's counts check passes on a later run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
+- 0.2.1 (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - 0.2.0 (2026-10-28) — Run on the PC for real (Build 35.1): pane-must-show rule (WebGPU stalls when hidden), version from pascal-start.log, compressed scene transfer, save-prompt `.tmp` handling (see arch-renders pipeline/pascal/export.md). Calibration now also covers the door and Pascal's own slab, roof and site parts by part ownership (arch-renders 031d175, 26b22aa).
 - 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-12) — First version, from the 2026-10-11 Crider lab run and Build 35's night build. The PC steps are written but not yet re-run by script (Build 35.1).
