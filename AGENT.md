@@ -153,7 +153,7 @@ The skills compose. Common flows:
 - **New workflow vs changing one.** Designing a new workflow happens in a Design Assist chat, which loads `skills/workflow` (and `skills/speed-run` when steps are unknown). Changing an existing workflow's steps, screens or rules is an ordinary Design Assist brief (rules 12-13).
 - A first message that matches no trigger has no skill. Plain conversation, quick questions and other non-build work proceed normally; no default is assumed. The experts rule ("Every chat, every message — experts") is the one exception: it applies to every message.
 - A broken running part you notice outside your job → one `reported` row (shape in stack-repairer, Reported problems). Design questions stay on the Comms Table.
-- If unsure, ask before acting.
+- If unsure which skill fits, ask before acting. Anything else unsure is sorted by Closing out.
 
 ## Activation pattern (claude.ai chat)
 
