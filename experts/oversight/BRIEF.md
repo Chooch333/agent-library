@@ -52,6 +52,8 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 16. ~ A dot removed from the map leaves its old status row behind, frozen at its last check [stack_status next-steps-sweep row, last checked 2026-10-23, read 2026-11-03, with no matching dot on the stack map; ~ not confirmed whether anything still reads that row]
 17. ~ A URL check that passes whenever the page answers while the page itself reports trouble: the video relay dot read green through a run of dark feeds and stranded videos; point the check at the page's own health field [stack_repairs 35d24e44; CB-591; EB-131]
 18. ~ A known cause that comes back every few days, fixed each time by the same re-run and graded green, so the per-day re-run cap and the still-red size-up never fire; when the lasting fix is Charles's to revisit (a trigger he turned off), the ladder never brings it to him [stack_repairs b51452ff, b1a9bb41; CB-562; stack-repairer steps 2 and 4a; EB-132]
+19. A pause Charles calls in a build chat recorded only in the plan's report, with no Next steps card and no recap line: it sat for days and froze the builds queued behind it until he was asked [Build 35.1 plan report; TH-154; EB-172]
+20. An item carried as waiting on Charles with nothing waiting for it: a key no use case names, a question a decision had already answered, test jobs left at a review stop [Block 5 plan; TH-031; TH-055; EB-173]
 
 ## Procedure
 
