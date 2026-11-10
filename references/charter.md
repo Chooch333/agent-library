@@ -12,7 +12,7 @@
 
 ## Standing rules
 - Before building any technical component, search for existing tools that already do it and present build-vs-adopt with sources. (The cbrain lesson.)
-- Two-engine rule: deterministic work on GitHub Actions; Claude-as-worker on scheduled tasks; Claude inside application code on a capped API key.
+- Two-engine rule: deterministic work on GitHub Actions or a Vercel cron (timers go on Vercel while Actions timers are off); Claude-as-worker on scheduled tasks; Claude inside application code on a capped API key. (Wording changed by Charles 2026-11-09.)
 - AI usage stays on the subscription. No spending without Charles knowing.
 - Harness vocabulary follows Anthropic's nomenclature. Charles controls which sources terms come from.
 - Build chats run on Opus.
