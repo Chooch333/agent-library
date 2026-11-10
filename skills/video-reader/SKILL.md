@@ -131,9 +131,10 @@ the whole point (Build 17.1).
 6. No email, ever -- not on success, not on failure.
 7. Write one Project State note on world-graph (add_note, tag
    video-reader). First line, plain English for the Stack Repairer's
-   recap, e.g. "Read 8 videos, 92 facts checked (6 set aside); 31 still
-   waiting." Then counts (read / failed / facts verified / quarantined /
-   summaries backfilled / still pending) and the paths written.
+   recap, e.g. "Read 8 videos (3 long ones in sections), 92 facts checked
+   (6 set aside); 31 still waiting." Then counts (read / read in sections
+   / failed / facts verified / quarantined / summaries backfilled / still
+   pending) and the paths written.
 
 ## Progress tracking
 None. This skill finishes in one run and leaves nothing open.
