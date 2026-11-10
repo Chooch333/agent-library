@@ -64,7 +64,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the building's name + "Pascal export", e.g. "Sample duplex Pascal export"
 - Opens when: the run waits for the PC ("waiting for your PC") or stops on the stop rule
 - Checks in: when a run leaves something open (thread_key "job:pascal-editor-<run slug>"; next_step says what Charles must do on the PC, in words)
-- Closes when: the export's counts check passes on a later run, or Charles clicks Done
+- Closes when: the export's counts check passes on a later run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.2.0 (2026-10-28) — Run on the PC for real (Build 35.1): pane-must-show rule (WebGPU stalls when hidden), version from pascal-start.log, compressed scene transfer, save-prompt `.tmp` handling (see arch-renders pipeline/pascal/export.md). Calibration now also covers the door and Pascal's own slab, roof and site parts by part ownership (arch-renders 031d175, 26b22aa).
