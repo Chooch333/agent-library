@@ -106,6 +106,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 | Trigger phrases | Skill |
 |---|---|
 | A YouTube link (youtube.com or youtu.be) in any message, mid-chat included, when the chat needs what the video says; fetch once per chat | `references/youtube-transcript.md` (never say a video has no transcript, or ask Charles to paste one, before its steps) |
+| An X (x.com, twitter.com) or Instagram link whose post has a video, in any message, mid-chat included, when the chat needs what the video shows; fetch once per chat | `references/watch-video.md` (never say a video can't be seen, or ask Charles to describe it, before its steps; needs the built-in browser on a linked PC) |
 
 ### Knowledge capture
 
