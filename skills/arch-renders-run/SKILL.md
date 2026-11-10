@@ -96,7 +96,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the run's building name + "render run", e.g. "Sample duplex render run"
 - Opens when: a session ends at a stop (`model-stop`, `stills-stop`, `waiting-for-pc`) or `failed`
 - Checks in: when a run leaves something open (thread_key "job:arch-renders-run-<run id>"; next_step says what Charles should look at or press on the Workflows screen)
-- Closes when: `pass-stills` sets the run `done`, or Charles clicks Done
+- Closes when: `pass-stills` sets the run `done`, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.3.0 (2026-10-27) — FBX path runs: intake.py and render_revit.py steps replace the 'not built yet' stop (Build 53)
