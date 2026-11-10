@@ -90,7 +90,7 @@ date. Never write "still waiting" or "no change".
 Close: when your skill's stated finish happens, call `close_thread` with
 closed_how in words ("report filed", "brief on the shelf"). Also close it when
 nothing on the card waits on Charles and everything else is done or queued
-(closed_how "nothing left for you"). A finish written as "Charles clicks Done"
+(closed_how "nothing left for you"). An older finish that waits on a Done click
 means the same: close it yourself once nothing waits on him. A card is never
 left at "click Done".
 Jobs: a card that has closed is not checked in against again; a new ask opens
