@@ -68,6 +68,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: every feature in the folder passes and Charles accepts it, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
+- 0.3.1 (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - 0.3.0 (2026-10-23) — Checker role (Build 45, BB-2026-10-21-checker-role): Close marks a feature ready and the checker grades it; the builder never sets passes. Roles section (planner, builder, checker). Template gains `"checker": true` and `checks/`.
 - 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 — Waiting section (Build 30, wake-up set)
