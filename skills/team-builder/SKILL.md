@@ -28,8 +28,9 @@ expert or skill should exist was settled before it is called (the Roster Builder
 Charles's confirmation for an expert; a Build Brief for a skill). Experts judge, skills
 execute (TH-135); this is the execution half of growing the team. In update mode it
 also keeps the team current: it folds waiting lens-notes into existing briefs by
-mechanical rules, in a scheduled run with nobody present, and routes what it may not
-write to the Archivist or to Charles.
+mechanical rules, in a scheduled run with nobody present: a change a newer record
+proves is folded without Charles, and only what it may not write goes to the
+Archivist or to him.
 
 ## When
 **Fire when:** the Expert Desk reaches grow step G3 with an `expert-draft` note
