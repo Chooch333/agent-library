@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.2
+version: 0.1.3
 status: active
 ---
 
@@ -30,7 +30,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 12. Before adding a key: infer from what is already readable or from a token already held; ask Charles for a new key only when it is the only way [CB-484; E-051; ~ Charles 2026-09-19, no keys beyond the subscription, from memory]
 13. Function-to-function calls: the stable production domain; not a deployment-specific address, which ages out or sits behind the login wall [CB-088; CB-070]
 14. App login: an app-level password gate in middleware, its value set by Charles in the dashboard; not Vercel Deployment Protection, because it forces a Vercel sign-in and confuses internal calls [CB-093; CB-072]
-15. Timers that must run: in cbrain's Vercel project; not cbrain-ui's, because Vercel crons run only against a production deployment [CB-492 item 4; Vercel docs vercel.json crons, read 2026-11-03]
+15. Timers that must run: on a production Vercel project, cbrain's or that of the server that owns the data (project-state-mcp's daily backfill); not cbrain-ui's, because Vercel crons run only against a production deployment [CB-492 item 4; plan aacd9bfa; CB-581; Vercel docs vercel.json crons, read 2026-11-03]
 16. Long work in a function: cap the items per run and claim the duration limit; batches go to a queue table drained by a cron worker; not continuation tokens or all-synchronous calls [E-024; P-011]
 17. Cron cadence: sub-daily crons rely on the team's paid Vercel plan; the free tier's two-cron cap was dropped [E-032 supersedes CB-008]
 18. Proving a setup: a create-nothing rehearsal or the first real app; the health route does one real read with the server key; nothing left in Charles's accounts for testing [wire-new-app a, c, f; ~ Charles 2026-10-07, from memory]
@@ -40,7 +40,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 
 1. A brand-new tool name expected live the way a new parameter on an existing tool is; or a chat opened before the deploy expected to see it [D-083; E-085; board rule 11 (from github-integrations 3, chat-access 2)]
 2. A READY deployment taken as live: the production alias stayed pinned to an old deployment while new ones went out unaliased, and no chat tool could re-alias it [E-381]
-3. ~ A Vercel cron on a project behind Vercel Authentication never ran and logged nothing; protection is the leading explanation, not confirmed [E-386]
+3. A Vercel cron that never ran blamed on Vercel Authentication when production was a stale deployment: crons register from the production deployment, so promoting it fixed the cron and no protection change was needed [E-386; E-389; EB-047]
 4. Deployment protection switched off project-wide to fix one caller; a security change on a live system made inline instead of parked [E-386 alternatives; charter governance flags]
 5. A sequential per-row loop inside a capped function: fine at first, times out as the data grows, and re-running just times out again [CB-553; CB-070]
 6. HTML instead of JSON read as one failure; the login wall (401) and a timeout (504) look alike until the status code is read [CB-072]
@@ -90,6 +90,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.3 (2026-11-09): applied EB-047, EB-110 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.2 (2026-11-08): folded EB-111 (Expert CE)
 - 0.1.1 (2026-11-05): lens 8 keeps the deploy half (CB-041); the typecheck-vs-runtime half (CB-040) moves to coding (EB-063).
 - 0.1.0 (2026-11-03): new craft under c-stack, team note EB-007 row 4 (stack wiring team; Charles confirmed 2026-11-03). Our way from D, CB, E, P, F and TH decisions and lessons, wire-new-app (Build 28) and the stack map; lens line 1 merges github-integrations 3 and chat-access 2. Seed lens line 1 (D-059) re-checked: create_project now accepts a letter code. Seed lines "health check without a real read" and "test setup left in accounts" folded into Our way 18. Vercel docs opened once (crons run on production; did not settle E-386). Supabase docs not opened; every other line rests on Charles's record. Fit pass (EB-015): Our way 8 takes in data-homes' new-app line (TH-073); Lens 9 narrowed to the env wiring.

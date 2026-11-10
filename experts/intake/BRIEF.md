@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.0
+version: 0.1.1
 status: active
 ---
 
@@ -21,7 +21,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 3. Web pages in an unattended run: TinyFish fetch_content only, which is free per page; not TinyFish Agent, Browser or Research, and not the API key, because those are metered [post-reader "What"; expert-CE plan 0e08817e "Out"]
 4. Size limits: only on the pay-per-use fallback; on the subscription path the per-article limit and the per-night word cap are lifted, because they exist only to bound an API bill, and on the subscription they only stall long items [WG-104; WG-108]
 5. Paid intake at its spending limit: refused items wait, every paid intake pauses until the stated reset, and a capped once-a-day catch-up drains the backlog; not a monthly budget or pace line, and refusals are never logged as failed, because failed items are never retried [WG-130; SM-063 (ADV-044)]
-6. Adding or dropping a source: one line in world-graph feeds.json or yt-relay channels.json, with no build; commits feeds are not followed without a new decision; whether to keep a quiet source is Charles's call [CB-349; CB-573]
+6. Adding or dropping a source: one line in world-graph feeds.json or yt-relay channels.json, with no build; commits feeds are not followed without a new decision; a failing or quiet source shows as an alert on its row on the Sources page, and Charles is never asked keep-or-drop [CB-349; CB-573; WG-213]
 7. Saying what intake exists: list the repo's workflows and digests first; not the decision log or the map alone, because two sessions once made decisions from an out-of-date picture [WG-082]
 8. An unreadable item: retried, then marked failed with a reason after the third try; never guessed past [post-reader 2b; stack-map post-reader breaks_if]
 9. Video: only the transcript (captions) is taken, never the video itself; it is fetched by the PC job and read by the Video Reader on the subscription, with the paid reading step switched off; not fetched from the cloud, because YouTube blocks cloud addresses where the PC gets through [stack-map youtube, yt-relay, video-reader; WG-073; WG-063]
@@ -30,9 +30,10 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 12. Email: only mail Charles forwards to the go-between address, where the +word names the project; not his personal inbox, because he chose to reach content at its source platform instead [E-001; E-013]
 13. Paid members sites: one subscription-content server with his saved logins and a slow queued worker; not one scraper per site and not browser-extension capture, because the login and fetch are shared across sites and capture would need him to open each page; the name is subscription-content, never "paywall" [P-001; P-011; P-038; stack-map Members-site worker]
 14. Run size: each reader takes a fixed number of items per run and the rest wait for the next run; not unbounded runs, because a run cut off mid-batch leaves partial state [E-024; post-reader step 1; stack-map collector, email-watcher]
-15. Duplicates: an item's id comes from its URL, and an existing to-do entry is never overwritten, so sharing twice changes nothing [post-reader 2e; stack-map shared-posts]
+15. Duplicates: an item's id comes from its URL; a never-seen link older than the age floor is marked seen and skipped; a second address for text the same source already saved is skipped and counted; an existing to-do entry is never overwritten, so sharing twice changes nothing; not URL alone, because a link move made years of old posts count as new and one article served at two addresses was collected twice [post-reader 2e; stack-map shared-posts; Build 66 directive 2; CB-585; CB-596]
 16. What a video yields: facts that are granular and technical, naming the mechanism the talk describes; not facts about the talk itself, history or headline features, because the Stack Advisor needs something to build on [Charles 2026-10-19, stated; ~ from memory, not in Project State]
-17. Subject scope: world-graph intake carries only AI and tech today; a site that serves one expert is read directly by that expert, not added to intake [~ observation, and the second half is an open fork recommended in expert-CE plan 0e08817e fork 2, not decided]
+17. Subject scope: world-graph intake carries only AI and tech today; a site an expert should keep watching goes into intake's Sources, labeled for that expert (`experts: [<slug>]`), and only one-off links are read by the expert directly [~ observation for the first half; EB-016, Charles 2026-11-03 "Yes sources"]
+18. Nightly pull: each source's newest new items first, taken in turn under one count cap sized to the Collector's run; GitHub release feeds are read from the releases list as one roll-up per source per day; not one newest-first cap across all feeds, because one busy source took the whole night and a feed window shorter than a day's releases lost entries for good [Build 66, plan 82569503 directives 1 and 3; WG-108]
 
 ## Lens
 
@@ -50,6 +51,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 12. A global word minimum that drops real short items (one-bullet release-note days) as too short [WG-105]
 13. A feed that never produced anything, diagnosed by guesswork instead of by opening it: a working feed can be permanently empty or too thin for the word minimum [CB-573]
 14. A new input source, or a jump in volume, added to a part that reads on the API, with the per-item and per-week cost math and the money gate left at the old volume [design-assist 0.2.10 changelog: the transcript go-live brief]
+15. A chat told Charles a video has no transcript because its own web fetch hit YouTube's bot wall, without checking world-graph data/transcripts or intake_items or queuing the video on yt-relay, where the PC relay fetches captions from a home address [Charles 2026-11-09: "Why does Claude keep telling me there's no transcript"; graph-engineering chat 2026-11-04; step-in lessons tagged pattern-cant-reach]
 
 ## Procedure
 
@@ -87,4 +89,5 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.1 (2026-11-09): applied EB-017, EB-123, EB-124, EB-125 and a lens line from the first step-in cluster under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.0 (2026-11-03): new craft under c-stack, stack wiring team (EB-007 row 6, confirmed by Charles 2026-11-03). Our way comes from the world-graph decisions on the subscription reader, size and spending limits, the post-reader skill, the stack map's intake dots, and the email and subscription-content records. The lens comes from world-graph and cbrain lessons and design-assist rule 8. Takes "intake pipelines" from ai-system-design's call_when. Fit pass (EB-015): Lens 1 and 14 narrowed so c-stack keeps cap timing and stating cost.

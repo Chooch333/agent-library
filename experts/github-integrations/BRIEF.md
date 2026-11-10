@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work runs, changes, dispatches or chains a GitHub Actions workflow, writes files through the GitHub MCP, uses branches, commits with nobody present, or keeps a queue as files in a repo folder"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (lanes: github-action; world-graph and github-mcp dots)", "agent-library:skills/checkpoint-deploy/SKILL.md", "agent-library:skills/wire-new-app/SKILL.md", "https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs", "https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows", "https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs"]
-version: 0.2.0
+version: 0.2.1
 status: active
 ---
 
@@ -17,7 +17,7 @@ GitHub used as a worker and as a store: workflows, dispatch, concurrency, branch
 ## Our way
 
 1. Graph writes: every graph-writing run joins the one concurrency group `falkordb-writer`, never cancelled, and applies all unapplied work, so a waiting run that gets dropped loses nothing; not one group per workflow, because two runs would load and commit the same saved graph [stack-map world-graph dot; CB-406 item 5]
-2. Schedules: Actions timers stay off since 2026-10-12. Only the nightly run fires on its own, and its missed-work sweep starts any waiting jobs; everything else runs by hand; not a push trigger or schedule added to make one job run on its own, because that routes around the switch-off (the rule is c-stack's Our way 6) [stack-map schedule comments; SM-079; CB-562]
+2. Schedules: Actions timers stay off since 2026-10-12. Only the nightly run fires on its own, and its missed-work sweep starts only waiting project writes and email briefs, and every other job, the video to-do job included, waits for a hand run; everything else runs by hand; not a push trigger or schedule added to make one job run on its own, because that routes around the switch-off (the rule is c-stack's Our way 6) [stack-map schedule comments; SM-079; CB-562; world-graph pipeline/dispatch_write_protocol.py, read 2026-11-08 (EB-031)]
 3. Dispatch: `run_workflow` with an explicit ref and every input passed, after reading the workflow file for its defaults; a new dispatchable workflow is committed to the default branch first. Not a default trusted, because workflows that look alike default to different targets [CB-210; CB-173; CB-144]
 4. Missed runs: after an outage, dispatch by hand whatever was pushed in the meantime, after checking the ledger for what the thawing run already applied; not waiting on push triggers, because they never replay [CB-438; CB-512; gotchas]
 5. A failed run: read `get_workflow_run` and `get_job_logs` first. Zero steps, ending in seconds, is the billing lock: a hard gate, no re-runs. Zero steps, cancelled after a long wait, is a runner hiccup: dispatch again with an explicit ref. Not re-run blind, because the log is readable and every run costs minutes [A-092; CB-550; CB-520]
@@ -42,7 +42,7 @@ GitHub used as a worker and as a store: workflows, dispatch, concurrency, branch
 4. A large matched block replaced, silently deleting what sat inside it, or an anchor swallowing the opening of the next block [CB-045; E-192]
 5. A regex or `$` inside a `replace_in_file` new text corrupting the whole file [E-189]
 6. A file move assumed byte-safe through content-based tools; it is not [E-150]
-7. A `search_code` miss taken as proof: the index lags a push, covers only `main`, and returned nothing on the private repos [A-070; CB-258; TH-064]
+7. A `search_code` miss taken as proof: the index lags a push, covers only `main`, and has returned nothing on some private repos while others (world-graph) answer, so a miss counts only after a term known to be in that repo hits, and the file itself is read [A-070; CB-258; TH-064; EB-098]
 8. A token whose scopes look right in the dashboard but fails on a real dispatch; recreating it fixed it, editing did not [CB-138]
 9. An evidence file overwritten in place by date, then read as this run's result [CB-210]
 10. A long freehand comment block written in an edit, breaking the build while the write tool reports success; the deploy state is the compile check [CB-233; E-168]
@@ -87,5 +87,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.1 (2026-11-09): applied EB-031, EB-098 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.2.0 (2026-11-03): refresh to expert-brief 0.2.0 per EB-007 row 3. Our way added (17 lines) from Charles's record. Old lens lines moved into Our way: 5 (wrong ref) to 7; 6 (branch left out) to 9; 7 (already exists) to 13; 8 and 10 (dispatch) to 3; 9 (cancelled run) to 5; 11 (split commits) to 11; 12 (large file) to 10. Old line 3 (MCP manifest frozen) left to services. Old line 4 (fast-forward treated as a merge) cut: no trace; branch operations now stand on CB-168 and CB-528. Old line 15 kept CB-258, which carries "indexes main only", and added TH-064 for private repos. New lens lines 2, 4 (E-192 part), 5, 9 (evidence part), 10, 11, 12 and 14. Fit pass (EB-015): Our way 2 reworded (c-stack owns the switch-off rule); a lens line on a hand-only feeder cut (intake Lens 7 owns CB-562). c-stack lens 17 and 18 moved down. The seed Our way line about secrets passing inside an Action was left to services, which owns keys.
 - 0.1.0 (2026-11-03): seed lens from BB-2026-11-02-expert-desk Appendix D, mined from gotchas.md and lessons across projects.

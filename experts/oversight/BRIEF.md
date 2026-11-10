@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds, removes or re-routes a running part (where or how often it runs), or decides how one is checked, how its failure or a wait on Charles reaches him, or what each run leaves behind to show it ran"
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
-version: 0.1.1
+version: 0.1.2
 status: active
 ---
 
@@ -28,7 +28,7 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 10. How Charles clears a needs-you: he answers in any chat (for a held email: answer the questions and say "seal the draft"). Not by replying to the recap, because replies to the recap stay unread [CB-537; email-approval-gate dot]
 11. A job that leaves something open: it checks in as a job, with a plain next step and who it waits on, and closes its own card when the thing clears. Jobs never reopen a card [thread-checkin.md 0.3.1; stack-repairer Progress tracking]
 12. Each scheduled run's own trace: one Project State note per run. Its first line is a plain-English count, then the counts and the paths written. No email, neither a digest nor a failure notice. Not the digest emails, which Build 27 retired [post-reader steps 5–6; Build 27 Collector digest retired; BB-2026-11-03-expert-ce "one note per run; no email"]
-13. A problem a run finds outside its own job: it is posted to the Comms Table as a needs-design-check disclosure, skipped if an identical one is already open. Not only in the run's note or email, because design chats pull the disclosure inbox, not notes [WG-103; WG-107]
+13. A problem a run or chat finds in a running part outside its own job: one `reported` row in the stack fix log (stack_repairs) with a recheck anyone can run; the Stack Repairer treats it like a red dot and grades it by that recheck, and design questions stay on the Comms Table; not a Comms Table needs-design-check post, because running-part posts sat there with no runner until a build swept them [WG-103; WG-107; Build 67, BB-2026-11-03-stack-fix-log; AGENT.md; stack-repairer 0.4.0; TH-149; EB-130]
 14. Telling quiet from dead: a part writes a marker every run, even when it did nothing, and its dot checks the newest marker. The Stack Repairer also watches the Stack Inspector's own row and treats a stale one as a red dot [stack-repairer `_run` marker and step 1; Build 27 forks]
 15. Proving a new or changed check: run the checker in dry mode with a temporary test input that turns the dot red and then back. Do it right after a scheduled check so no real status row records the test [Build 13.6 session log CB-567; CB-502 dry mode]
 
@@ -89,5 +89,6 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.2 (2026-11-09): applied EB-130 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.1 (2026-11-08): folded EB-131, EB-132 (Expert CE)
 - 0.1.0 (2026-11-03): first brief. Researched by roster-builder (desk T2) from the stack wiring team note on expert-bench, row 7. Our way comes from Charles's record (CB-367, CB-484, CB-492, Builds 13.6, 27 and 56, WG-103, thread-checkin, design-assist rule 12). Lens lines 1 and 2 moved down from c-stack (its lines 16 and 20). Fit pass (EB-015): call_when narrowed to adding, removing or re-routing a part; Our way 5 leaves timer placement to services; Lens 2 drops the clause skill-authoring owns.
