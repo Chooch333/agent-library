@@ -4,7 +4,7 @@ version: 0.1.2
 status: draft
 triggers: [used by builds, moonshots and the Harness dispatcher when work must wait; no chat trigger]
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
