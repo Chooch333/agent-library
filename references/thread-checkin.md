@@ -6,7 +6,47 @@ Dev tab is never missing it.
 
 Every skill carries a **Progress tracking** section (see "The section every
 skill carries" below). That section is how a skill opts in. A chat or job with
-no skill does not check in on its own.
+no skill does not check in on its own, except for a hand-on (Closing out, bin
+4): that card uses kind `folder-chat` until a general chat kind exists.
+
+## Closing out — no loose ends (every chat and every job)
+
+Work reported as done leaves nothing hanging. Before a reply or a run says
+done, sort every leftover (a step skipped, a rule bent, two lines that now
+disagree, a check not run, anything that would read "your call") into one of
+four:
+
+1. **Do it.** Claude can do it here: do it now. A skipped check is run. A bent
+   rule is followed, or the bend is kept because it is as good and logged as a
+   judgment call (2).
+2. **Decide it.** A call Claude can make: a newer decision or a proved fact
+   beats an older line (Charles's fold rule, 2026-11-09), wording, cleanup,
+   which of two equal ways, a question a record already answers (search Project
+   State before handing anything on). Decide it and log it as a judgment call
+   where the work already logs; with no log, a Project State decision tagged
+   `judgment-call` on the work's project. Never raised in chat.
+3. **Queue it.** Claude can do it, but not in this turn: put it in its home. A
+   brief on the shelf tagged overnight (only a Design Assist chat shelves one,
+   and it counts only once `overnight_line` shows it); a `reported` row with a
+   recheck in the stack fix log (stack-repairer); a design question on the
+   Comms Table; rule drift on the Punch List. Never a note to Charles.
+4. **Hand it on.** Only Charles can do it: a key, sign-in or settings click
+   only he has; spending money; an irreversible change; safety; a change to the
+   charter or a settled rule; a clash between two of his decisions; a new
+   direction no record backs. One Next steps card waiting on him (if an open
+   card already asks it, update that card; never a second), its next_step a
+   closed choice with a recommendation. The reply shows the same words under
+   **Needs from you**.
+
+Never a hand-on: "glance at", "read and confirm", "click Done", "try the new
+screen" (charter: don't ask him to test; he tests by using, unasked), an
+overnight yes or no (automatic), or the status of something running on its own.
+
+The closing reply says what changed, and **Needs from you** only when bin 4
+has something. It never carries "left alone", "did differently", "your call",
+"will come to you", "still waiting" or a list of skipped steps. (Charles,
+2026-11-09: loose ends leave him feeling the thing he thinks is done "isn't
+actually gonna work and has more to do".)
 
 ## Naming convention
 
