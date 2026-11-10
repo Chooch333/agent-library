@@ -56,6 +56,15 @@ the whole point (Build 17.1).
       Organization, Asset, Claim, Event, Method, Metric, Topic). A
       speaker's opinion or prediction is a Claim attributed to that
       speaker, never stated as fact.
+      - Mechanism first: what was built, how it works and what is new,
+        over facts about the talk, history or headline claims.
+      - Names: captions misspell names. A caption word that is plainly a
+        name in the title, the channel or the graph ("Clog code" is Claude
+        Code) takes the right name and counts as stated. Not plain:
+        quarantine.
+      - Long videos (over about 4,000 words): go section by section, about
+        2,000 words at a time, extracting from each before moving on. One
+        file per video. Still 10 a run.
    d. Self-check every fact against the transcript text:
       verified_against_source only when the transcript states or directly
       implies it; otherwise quarantine. One-sentence reasoning each. Name
