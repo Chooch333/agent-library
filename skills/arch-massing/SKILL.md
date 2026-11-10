@@ -165,7 +165,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the building's name + "massing", e.g. "Sample duplex massing"
 - Opens when: a gate stops on the stop rule or a scanned set, or the run is set to `waiting-on-charles` for him to check the model
 - Checks in: when a run leaves something open (thread_key "job:arch-massing-<run slug>")
-- Closes when: Charles passes gate 2 on the run, or clicks Done
+- Closes when: Charles passes gate 2 on the run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
