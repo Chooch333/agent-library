@@ -121,7 +121,7 @@ When perceived, Claude asks about the candidate in the chat as a closed choice (
 - Example tuple from current context
 - Trigger that prompted the suggestion
 
-Charles approves or declines; on approval, the predicate enters cbrain's predicate registry and extractor (`services/lib/extract.ts`).
+Charles approves or declines. If the chat ends with it unanswered, it goes to the Comms Table as a design question (Closing out, bin 3, in `references/thread-checkin.md`), never under **Needs from you**, which carries hand-ons only. On approval, the predicate enters cbrain's predicate registry and extractor (`services/lib/extract.ts`).
 
 **Cap surfacing to 3 candidates per chat.** Only surface when the trigger is concrete rather than speculative — if Claude isn't confident the pattern is real, skip it.
 
