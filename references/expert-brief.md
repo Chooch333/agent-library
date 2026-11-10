@@ -40,13 +40,23 @@ status: active                     # an expert is active from the day it lands; 
    a reason to merge or cut a line; whether a corner has grown into two experts is the
    roster-builder's call at grow time, on its three tests (Charles 2026-11-04). One
    line per job that keeps coming up in the corner:
-   `<job>: <how we do it>; not <what was dropped or ruled out>, because <reason> [source]`
-   The source is Charles's own record: the charter, a decision or lesson ID, a build,
-   or his stated preference with its date. Where his record is silent and the field
-   has a settled default, the line may stand on that, marked `~ field default`. The
-   claim and the pointer, never the figure. Our way points to the record; it is not a
-   copy of it. At run time the seat checks the live record, and a newer decision beats
-   the brief.
+   `<job>: <how we do it>; not <what was dropped or ruled out>, because <reason> [<origin> · source]`
+   The source is the record behind the line: the charter, a decision or lesson ID, a
+   build, or Charles's stated preference with its date. Every Our way bracket starts
+   with its **origin mark**, so it is always clear whose rule the line is:
+   - `[Charles · …]`: his words with a date, the charter, or a decision or lesson he
+     made or approved;
+   - `[Claude · …]`: a build's or chat's judgment call, a lesson Claude wrote, or a
+     file read;
+   - `[field · …]`: a settled default of the field where his record is silent
+     (replaces the old `~ field default`).
+   A line with several sources takes the highest: Charles beats Claude beats field.
+   When it is unclear, the mark is Claude, never Charles by guess: Charles is never
+   recorded as the author of AI inference. Inside a bracket, `Charles:`, `Claude:` or
+   `field:` may label the sources that follow. A line with no mark is refused by Team
+   Builder's mechanical checks. The claim and the pointer, never the figure. Our way
+   points to the record; it is not a copy of it. At run time the seat checks the live
+   record, and a newer decision beats the brief.
 2. **Lens** — at least 10 named ways work in this corner goes wrong (no upper limit; most important first). One line each, ending
    with its source in brackets: a trace (chat, build, ID), a document, or [research].
    The claim and the pointer, never the figure: numbers age, the paper does not.
