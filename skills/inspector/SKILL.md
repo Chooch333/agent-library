@@ -117,7 +117,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: "Weekly rules walk" (thread_key "job:inspector-weekly-walk")
 - Opens when: a walk ends incomplete (no checkpoint written) or skips a source it couldn't read. Findings themselves go on the Punch List, not the Next steps list
 - Checks in: when a run leaves something open
-- Closes when: a later walk completes with every source read and its checkpoint written (`close_thread`, closed_how "walk completed"), or Charles clicks Done
+- Closes when: a later walk completes with every source read and its checkpoint written (`close_thread`, closed_how "walk completed"), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Examples
 
