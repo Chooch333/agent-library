@@ -92,6 +92,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.4 (2026-11-09): Our way 5 updated under the fold rule (TH-155): Lens 24 (EB-168) proved a live chat's fire was refused, so the line now says creating is done from a live chat and firing has no proven lane. Closes the "your call" left by the 0.2.3 hand fold; Design Assist chat on closing out work.
 - 0.2.3 (2026-11-09): folded EB-164, EB-165, EB-166, EB-167, EB-168, EB-169 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 20 to 24 added, Lens 6 rewritten in place.
 - 0.2.2 (2026-11-09): applied EB-019, EB-020, EB-070 and the 2026-11-09 past-chat check under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.2.1 (2026-11-08): folded EB-038, EB-041, EB-103 (Expert CE)
