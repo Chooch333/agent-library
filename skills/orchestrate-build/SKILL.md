@@ -63,9 +63,9 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: job
 - build: the brief's plain title, e.g. "Next steps side panel" (thread_key "job:plan-<plan id>"; `source` "job"; chat link: the `Claude-Session:` url from this build's commit trailers, role `build-session`)
-- Opens when: the build ends `blocked` or `failed`, leaves a handed-off follow-up plan, or leaves a "What to check" list or needs-charles disclosure for Charles
-- Checks in: when a run leaves something open (one `checkin` at close, next_step saying what Charles needs to do, waiting_on `you`)
-- Closes when: the job clears it (the plan is re-run and succeeds, and nothing is left for Charles), or Charles clicks Done
+- Opens when: the build ends `blocked` or `failed`, or leaves something only Charles can do (Closing out bin 4 in `references/thread-checkin.md`: a key, money, an irreversible change, a settled-rule or charter change, a clash between his decisions). A handed-off follow-up plan, a "What to check" list or an fyi disclosure is not a card: it is queued or logged, and nothing waits on Charles
+- Checks in: when a run leaves something open (one `checkin` at close, next_step a closed choice with a recommendation, waiting_on `you`)
+- Closes when: the job clears it (the plan is re-run and succeeds), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Standing rules
 - **No browser tests (decision CB-441, 2026-10-01; overrides lesson CB-148 and any brief that still asks for them).** Verify from a code and data standpoint only: the deploy is READY or the code compiles, unit tests cover logic, files are read back, and data is checked by SQL, API calls and entity reads. Do not write, update or dispatch Playwright smoke steps or the graph-smoke / stack-smoke / review-smoke browser workflows. Charles is the tester for anything he sees or clicks: for each UI acceptance check, record it in the done receipt as `result: pass` with the code/data evidence, and add a short plain-English "What to check" list for Charles to the Session Log. A brief that cites CB-148 or asks for a browser gate is read under this rule, not as a fork.
