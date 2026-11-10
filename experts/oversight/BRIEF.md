@@ -91,6 +91,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.3 (2026-11-09): folded EB-172, EB-173 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 19 and 20 added.
 - 0.1.2 (2026-11-09): applied EB-130 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.1 (2026-11-08): folded EB-131, EB-132 (Expert CE)
 - 0.1.0 (2026-11-03): first brief. Researched by roster-builder (desk T2) from the stack wiring team note on expert-bench, row 7. Our way comes from Charles's record (CB-367, CB-484, CB-492, Builds 13.6, 27 and 56, WG-103, thread-checkin, design-assist rule 12). Lens lines 1 and 2 moved down from c-stack (its lines 16 and 20). Fit pass (EB-015): call_when narrowed to adding, removing or re-routing a part; Our way 5 leaves timer placement to services; Lens 2 drops the clause skill-authoring owns.
