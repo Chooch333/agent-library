@@ -50,6 +50,8 @@ GitHub used as a worker and as a store: workflows, dispatch, concurrency, branch
 12. `[skip ci]` expected to stop a dispatched or scheduled run; it only applies to push and pull-request events [GitHub skip docs, read 2026-11-03]
 13. A run of the Claude Action started by a bot is refused unless that bot is allowed [A-064; ~ the workflow it hit, repair.yml, was deleted 2026-10-23]
 14. A Node `fetch()` step failing on runners over IPv6 while curl steps pass [CB-144]
+15. ~ A self-hosted runner on Windows installed as a service when its job needs a desktop window or the graphics card; the setup in use is one repo, a login-start shortcut and Idle on the repo's Runners page as the sign of life, and the service limit is assumed, not tested here [GitHub docs, adding self-hosted runners, read 2026-11-09; TH-154; EB-170]
+16. Self-hosted runner minutes assumed to be billed or to draw down the included minutes: GitHub's billing page lists them as free and outside included usage, a per-minute fee was announced and then postponed, so the page is re-read before a design leans on it [GitHub Actions billing docs and changelog of 2025-12-16, read 2026-11-09; EB-171]
 
 ## Procedure
 
