@@ -34,6 +34,18 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order, then
 
 "Landed" = plan status `succeeded` AND its newest `night_runs` row is not `deploy-red`.
 
+## Site checks (cbrain-ui builds only)
+
+The cbrain site (Chooch333/cbrain-ui) has its own automatic checks (`npm test`, every `scripts/*.test.mjs` file — about 40 on 2026-11-10, no network, no secrets). Any night build that changes the site runs them before it is called done. Nothing else changes: edits still go through the connector, and the copy below is read-only.
+
+1. **Copy (once per night).** If `/home/claude/cbrain-ui` has no working copy (`git -C /home/claude/cbrain-ui rev-parse HEAD` fails): if the `add_repo` tool (Claude_Code_Remote) is callable, call it with owner `Chooch333`, repo `cbrain-ui`, access `read`; then `git clone --depth 1 --branch review https://github.com/Chooch333/cbrain-ui /home/claude/cbrain-ui` (command timeout 10 min). One clone only; on HTTP 429 wait 5 s and retry once. If there is no `add_repo` tool and the clone is refused ("could not read Username", or `gh` answers 403 "GitHub access to this repository is not enabled for this session"), this session has no copy access: go to 5. Never borrow a token or credential from anywhere else.
+2. **Refresh (every run).** `git -C /home/claude/cbrain-ui fetch --depth 1 origin review && git -C /home/claude/cbrain-ui reset --hard origin/review`. Note the commit (`rev-parse --short HEAD`) — it must include the build's last commit.
+3. **Install.** `npm ci --no-audit --no-fund` in that folder — first run of the night, and again whenever `package-lock.json` changed. About 20 s.
+4. **Check.** `npm test`. Exit 0 = passed. Otherwise the failing files are the `> node scripts/…` lines followed by an error; name them in plain words (e.g. "the task table check fails").
+5. **Can't run at all** (no copy access, or add_repo, clone or install fails twice): don't block the build over it. Post a disclosure (`post_judgment_call`, fyi) saying the checks didn't run and why, and add one line to the Finish email. Don't swap in a partial copy fetched file by file through the connector — the checks import much of the site, so a partial copy is not the site's checks.
+
+Measured 2026-10-28 from a Design Assist cloud session with `add_repo`: copy 2 s, install 20 s, checks 29 s, 35 files passed. Counts toward the Claude plan's normal usage; no GitHub Actions minutes, no separate charge. 2026-11-10 (Build 59, run inside the Night builds session): no `add_repo` tool, `git clone` refused for lack of credentials, `gh` 403 — so the copy step is proven only in a session that has `add_repo`. Until the Night builds session can read cbrain-ui, expect step 5 on site builds; npm registry installs and the check runner itself were proven there on a small connector copy (2 files: exit 0, then a planted failure exit 1 naming the file).
+
 ## Dry run
 If the run text says "dry run": read the line, report the order, what's ready and what each waits on, and which open cards step 7 would re-check. Build nothing, write nothing, email nothing (no start marker either).
 
