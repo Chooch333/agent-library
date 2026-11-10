@@ -5,7 +5,7 @@ status: draft
 triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)", "Loaded by the Expert Desk's CE job at its Catch-up and fold step, the Sunday 01:00 firing of the scheduled task \"Expert CE\", pointed at the waiting lens-notes on expert-bench (update mode)"]
 dependencies: []
 owner: Charles
-updated: 2026-11-04
+updated: 2026-11-10
 requires: [references/expert-brief.md, CONVENTIONS.md, references/chat-capture.md, references/thread-checkin.md]
 wiring:
   runs: with-you
