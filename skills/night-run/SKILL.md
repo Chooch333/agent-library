@@ -85,6 +85,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Finish
 - If anything ended `stuck`, `deploy-red`, `skipped`, or interrupted twice: send ONE email to Charles (Gmail, to himself), subject "Night builds — N need you", one plain line per item plus the Build Shelf link (https://cbrain-ui-git-review-chooch333s-projects.vercel.app/dev?tab=shelf). Otherwise send nothing — the shelf's Last night strip is the report.
+- The same email also lists any failed site checks from step 5 (one plain line each, e.g. "the task table check fails after Build 60"), and one line if Site checks couldn't run at all tonight (Site checks step 5). Either one alone is enough reason to send it; then count it in N.
 - Never review a plan, dispose a disclosure, edit a brief, change a tag, close a Next steps card, or set a card's project. DA chats and Charles do that. (Abandoning a Stack Advisor brief Charles declined, step 2a, is his answer carried out, not a review.)
 
 ## Changelog
