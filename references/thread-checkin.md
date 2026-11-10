@@ -137,7 +137,7 @@ None. This skill finishes in one run and leaves nothing open.
 | speed run (project instructions, until it has a skill) | speed-run | finish line met or Charles stops it; next_step names the current stage |
 | block chat (project instructions, until it has a skill) | block-chat | block marked done |
 | any chat in a personal folder (project instructions, until it has a skill) | folder-chat | Charles clicks Done, or the chat says it's finished |
-| jobs (night runs, builds, repairers, wake-ups, runners) | job | the job clears it, or Charles clicks Done |
+| jobs (night runs, builds, repairers, wake-ups, runners) | job | the job clears it, or nothing on it waits on Charles |
 
 New kinds are added here and to the database's kind list together.
 
