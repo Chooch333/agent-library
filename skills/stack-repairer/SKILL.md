@@ -148,7 +148,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: the broken part's plain name + "repair", e.g. "Video intake repair" (thread_key "job:stack-repairer-<dot id>", or "job:stack-repairer-<row id>" for an `_unmapped` row; `source` "job")
 - Opens when: a run logs `needs-you` (a hard gate only Charles can clear) or a second `watching` with no cause found. Fixes, re-runs and briefs don't need a card; briefs show on the Build Shelf
 - Checks in: when a run leaves something open (next_step = the exact ask from the `needs-you` row, waiting_on `you`)
-- Closes when: the dot's newest grade is `green`, or for a reported `needs-you` row its recheck passes (`close_thread`, closed_how "back to green"), or Charles clicks Done
+- Closes when: the dot's newest grade is `green`, or for a reported `needs-you` row its recheck passes (`close_thread`, closed_how "back to green"), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Short brief template (for its own briefs)
 
