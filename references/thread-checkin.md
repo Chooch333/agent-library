@@ -7,7 +7,7 @@ Dev tab is never missing it.
 Every skill carries a **Progress tracking** section (see "The section every
 skill carries" below). That section is how a skill opts in. A chat or job with
 no skill does not check in on its own, except for a hand-on (Closing out, bin
-4): that card uses kind `folder-chat` until a general chat kind exists.
+4): that card uses kind `chat`.
 
 ## Closing out — no loose ends (every chat and every job)
 
