@@ -5,7 +5,7 @@ status: draft
 triggers: [used by builds when an arch-renders run reaches gate 3 (materials stills) or gate 4 (output stills and clip frames); no chat trigger]
 dependencies: [arch-massing, arch-materials, pascal-editor]
 owner: Charles
-updated: 2026-10-27
+updated: 2026-11-10
 requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
