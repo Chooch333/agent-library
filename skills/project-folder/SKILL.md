@@ -5,7 +5,7 @@ status: draft
 triggers: [used by builds and harness roles when a moonshot starts or resumes; no chat trigger]
 dependencies: [checker]
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
