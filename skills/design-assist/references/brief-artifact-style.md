@@ -48,7 +48,7 @@ Charles must be able to read every word without squinting. Added 2026-09-24 afte
 2. Mechanism diagram (inline SVG per `artifact-diagramming`) when the design has a real multi-stage or before/after shape worth drawing — skip it otherwise.
 3. "What I verified, and where I was wrong" — carried forward from the working draft, final state.
 4. One `.brief` card per Build Brief, fields exactly as `build-brief-template.md`'s ● fields (What this is / What I'll do / What you'll do / Current state going in / Receiving chat / Scope in/out / Directive / Inputs / Acceptance criteria / Pasteable prompt) — no invented fields, none dropped.
-5. Needs from you — only if something genuinely still needs Charles's word beyond brief approval itself (rare at handoff; gate 3 requires zero open forks). Omit if empty.
+5. Needs from you — hand-ons only (Closing out, bin 4, in `references/thread-checkin.md`: a key or sign-in only he has, money, an irreversible change, a charter or settled-rule change, a clash between his decisions), each a closed choice with a recommendation. Brief approval itself, a glance or a screen to try is never listed (rare at handoff; gate 3 requires zero open forks). Omit if empty.
 6. Footline — what happens once Charles approves: commit to git, `write_plan`/`update_plan_content`, set `queued`, Handoff Reference block per `handoff-reference-template.md`.
 
 ## CSS (reuse verbatim; only `--accent*` may vary by subject)
