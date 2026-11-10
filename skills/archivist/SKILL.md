@@ -1,6 +1,6 @@
 ---
 name: archivist
-version: 0.2.2
+version: 0.2.3
 status: draft
 triggers: [an approved brief conforming to cbrain/contracts/BRIEF_SCHEMA.md, "file this brief", "archive approved brief", a brief sealed by seal_brief (the automated filing trigger)]
 dependencies: []
