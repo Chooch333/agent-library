@@ -6,13 +6,13 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.4
+version: 0.1.5
 status: active
 ---
 
 # ai-system-design
 
-The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack).
+The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing.
 
 ## Lens
 
@@ -30,12 +30,11 @@ The captain over how Claude works. Its crafts: skill-authoring, premortem, roste
 12. A fix applied but not written back, which breaks the audit trail [repairer Pitfalls]
 13. A checker's reason text trusted instead of reading the runs behind it [stack-repairer Pitfalls]
 14. A module's stated intent taken for its wired behavior; the caller decides what happens [E-133]
-15. An eval's finding acted on without reading the live artifact; an eval is another producer that can be wrong [E-278]
-16. ~ A note promoted into what every later seat loads (a brief line, an index, a standing field note) without being checked against the page or trace it cites, so one wrong note rides into every seat; Team Builder update mode folds Inferred lens-notes into a brief as ~ lines with no step that opens the cited page [https://www.anthropic.com/research/components-of-agent-memory; skills/team-builder 0.3.1, update mode rule 3(d); EB-095]
-17. ~ Decisions made one at a time that add up to a dead end: a step pinned to the PC, PC wakes dropped and the stop alert parked were each sound alone; the lane decisions on record are read together before a workflow is scoped [TH-058; TH-068; TH-088; EB-174]
-18. ~ A skill's finish line made unreachable by a later standing rule: the rehearsal sat as the last check of the last brief while builds may not hold Charles's stops or start a real job, so nothing owned it; when a standing rule lands, the skills whose finish depends on it are swept [skills/workflow, "Rehearse, then canonize"; TH-062; EB-175]
-19. ~ A cause recorded as fact before it was isolated, closing an option: a cloud export failure was put down to the missing graphics card, and a hidden window on a machine with one later failed the same way; the better cause is itself untested [TH-058; skills/pascal-editor; EB-176]
-20. ~ A workflow widened before its first real job ran, with builds counted where finished jobs and Charles's minutes should be [total-harness plans tagged speed-run-arch-renders; EB-177]
+15. ~ A note promoted into what every later seat loads (a brief line, an index, a standing field note) without being checked against the page or trace it cites, so one wrong note rides into every seat; Team Builder update mode folds Inferred lens-notes into a brief as ~ lines with no step that opens the cited page [https://www.anthropic.com/research/components-of-agent-memory; skills/team-builder 0.3.1, update mode rule 3(d); EB-095]
+16. ~ Decisions made one at a time that add up to a dead end: a step pinned to the PC, PC wakes dropped and the stop alert parked were each sound alone; the lane decisions on record are read together before a workflow is scoped [TH-058; TH-068; TH-088; EB-174]
+17. ~ A skill's finish line made unreachable by a later standing rule: the rehearsal sat as the last check of the last brief while builds may not hold Charles's stops or start a real job, so nothing owned it; when a standing rule lands, the skills whose finish depends on it are swept [skills/workflow, "Rehearse, then canonize"; TH-062; EB-175]
+18. ~ A cause recorded as fact before it was isolated, closing an option: a cloud export failure was put down to the missing graphics card, and a hidden window on a machine with one later failed the same way; the better cause is itself untested [TH-058; skills/pascal-editor; EB-176]
+19. ~ A workflow widened before its first real job ran, with builds counted where finished jobs and Charles's minutes should be [total-harness plans tagged speed-run-arch-renders; EB-177]
 
 ## Procedure
 
@@ -55,6 +54,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.5 (2026-11-09): scoring-and-testing joins as a craft (EB-178, EB-179; Charles confirmed 2026-11-09). Lens 15 (an eval's finding acted on without reading the live artifact, E-278) moves down to scoring-and-testing Lens 1; Lens 16 to 20 renumber to 15 to 19; call_when unchanged.
 - 0.1.4 (2026-11-09): folded EB-174, EB-175, EB-176, EB-177 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 17 to 20 added, each marked ~ as inferred.
 - 0.1.3 (2026-11-08): folded EB-095 (Expert CE)
 - 0.1.2 (2026-11-04): graph-engineering joins as a craft (second captain beside c-stack; Charles 2026-11-04). Lens 7 (bundled tool, ADV-031) and 12 (safety rule held only by text) move down to graph-engineering Our way 11 and 20; lens renumbered; call_when unchanged.
