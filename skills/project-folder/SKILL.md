@@ -1,6 +1,6 @@
 ---
 name: project-folder
-version: 0.3.0
+version: 0.3.1
 status: draft
 triggers: [used by builds and harness roles when a moonshot starts or resumes; no chat trigger]
 dependencies: [checker]
