@@ -36,7 +36,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 3. A dispatcher run told to fire another scheduled task was refused under "auto" (a bypass run fired one), and the item was already marked sent before delivery [TH-011; TH-015; TH-043; EB-019]
 4. A PC-bound task fired on the assumption it gets the computer: it starts in the cloud with no device tools, or with no folders until someone approves on the machine [TH-018; TH-034; TH-043; TH-130]
 5. The Windows relay on the PC assumed to drain on its schedule: it runs only while Charles is signed in, and its wake setting is unlikely to wake the machine [WG-058]
-6. A connector that answers with nothing (Drive) taken to mean "nothing there" rather than "can't see" [TH-128; TH-130; TH-132]
+6. A connector that answers with nothing (Drive) taken to mean "nothing there" rather than "can't see"; it answered with nothing from a live chat as well as from scheduled runs [TH-128; TH-130; TH-132; EB-169]
 7. A job assumed able to start, read or link to a chat: no scheduled job reads claude.ai chats, and a running chat can't see its own link [CB-490; ~ "one chat cannot start another" is cited to a dry run of 2026-11-02 in BB-2026-11-02-expert-desk; that dry run's own record was not opened]
 8. A cloud run assumed to reach any host or repo: hosts outside the environment's allowlist are refused, repos not attached won't clone, and protected previews redirect to sign-in; connectors are the way through, and how a run commits is github-integrations' Our way 17 [CB-286; TH-010; TH-130; SM-091; Anthropic scheduled-tasks docs, environments]
 9. Memory assumed missing outside claude.ai chats, or past-chat search assumed present outside them; it is the other way round [MB-007]
