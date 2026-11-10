@@ -116,6 +116,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: Charles passes gate 4 on the run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
+- 0.2.3 (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - 0.2.2 (2026-10-27) — Revit models render with `pipeline/revit-intake/render_revit.py`; `render.py` stays the Pascal/PDF renderer (Build 53).
 - 0.2.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.2.0 (2026-10-12) — Build 35 night run: Pascal GLB route, signature mapping, conventions as data, preview/id-pass/still modes, times, the four fix rules, the inspect.py gotcha. Draft until Build 35.1 renders by script.
