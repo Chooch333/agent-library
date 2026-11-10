@@ -5,7 +5,7 @@ status: draft
 triggers: [used by arch-renders-run and builds that need a Pascal scene loaded or exported; no chat trigger]
 dependencies: []
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
