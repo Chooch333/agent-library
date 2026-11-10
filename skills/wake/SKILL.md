@@ -52,7 +52,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: what the parked work is, from its `do:` instruction, in 3-6 plain words, e.g. "Keychain print resume" (thread_key "job:wake-<next move id>")
 - Opens when: a wake line is parked (the work is waiting on a time, an event or the PC)
 - Checks in: when a run leaves something open: on parking, and when the dispatcher resumes a line that stops again (next_step says what it waits for, in words)
-- Closes when: the dispatcher resumes the line and completes its next move (`close_thread`, closed_how "resumed and done"), or Charles clicks Done
+- Closes when: the dispatcher resumes the line and completes its next move (`close_thread`, closed_how "resumed and done"), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
 - 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
