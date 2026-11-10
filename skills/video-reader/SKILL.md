@@ -94,7 +94,8 @@ the whole point (Build 17.1).
    run that were read before summaries existed, newest first.
    a. Find them: query cbrain Supabase (lpeswznkxzeeyiqaewma) table
       intake_items: kind = 'video' and summary is null and full_text is
-      not null and status in ('in_graph', 'read'), ordered
+      not null and coalesce(word_count,0) >= 20 and status in
+      ('in_graph', 'read'), ordered
       published_at desc nulls last, limit 10. That table is the nightly
       copy pipeline/sources_export.py writes, so it can be a day behind;
       if it can't be read, list data/extracted_video/ and pick the newest
