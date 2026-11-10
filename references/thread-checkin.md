@@ -146,6 +146,11 @@ The database refuses a next_step or plain_name with ids or codes in it ("Write
 this without ids like TH-004 — say what it is."). Rewrite it in words and call
 again.
 
+It also refuses a card waiting on Charles (`waiting_on` `you`) whose next_step
+says "click Done", "nothing is left", "nothing left", "when you've seen this"
+or "glance at" ("Nothing here waits on Charles — close the card, or say what he
+must choose."). Close the card, or rewrite it as the closed choice he must make.
+
 ## Changelog
 
 - 0.4.0 (2026-11-09) — Closing out: every chat and job sorts each leftover
