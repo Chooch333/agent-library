@@ -9,6 +9,10 @@ This file is the front door. Project instructions point here. It routes a first 
 
 Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It is what Charles wants and how he works; it is not only for harness or Total Harness chats. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
 
+## Every chat and every job — closing out
+
+Before any reply or run says work is done, follow "Closing out" in `references/thread-checkin.md`: every leftover is done, decided and logged, queued in its home, or handed to Charles as one Next steps card. Nothing else reaches him. (Charles, 2026-11-09.)
+
 ## Every chat, every message — experts
 
 When Charles asks for judgment in a field — how something should be done, what's right, what could go wrong, a review of a plan or a choice — in any chat, on any message, mid-chat included: read `experts/INDEX.md` (the first time; keep its call_when lines in mind for the rest of the chat). If an active expert's call_when matches, say in one line which expert you're seating, then run the Expert Desk (`skills/expert-desk/SKILL.md`) in mode B with that seat, unasked. Two matches: both seats (mode B's limit). This rule applies whether or not a trigger below matches.
