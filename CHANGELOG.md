@@ -2,6 +2,8 @@
 
 History of routing changes to `AGENT.md`, newest first. Moved out of AGENT.md on 2026-10-15 (Build 39). Older lines keep their original wording.
 
+- **2026-11-10** — No routing change. `skills/step-in-scorer/SKILL.md` 0.2.0 gains the section "Replay: run by the chat, never by the scorer's helper": it re-asks at most two `tests/fixed-set.md` tasks whose touched files or model changed (or that have no separately graded run), two runs each of a plain setup and the Expert Desk route, graded by one blind helper, recorded as a `fixed-set-run` note and a Runs table row. `skills/design-assist/SKILL.md` 0.8.6 step 1 runs it in the chat after the weekly scorer line. Build 61.1 is replaced by this. Per Build 75 (BB-2026-11-09-fixed-test-set).
+
 - **2026-11-10** — No routing change. New skill `skills/step-in-scorer/SKILL.md` (0.1.0, draft): counts how often Charles had to step in, in this Project's chats only; one lesson per step-in on total-harness, a blind re-score of three earlier chats first, and a `step-in-receipt` note whose first line says how much it read. It has no trigger phrase by design: `skills/design-assist/SKILL.md` 0.8.5 step 1 starts it as a helper once a week. Project State's public heartbeat gains `step_in_scorer.last_receipt`; the Chats dot on the stack map gains the part and its check. Per Build 74 (BB-2026-11-09-step-in-scorer).
 
 - **2026-11-10** — No routing change. `skills/video-reader/SKILL.md` 0.5.0: step 3c reads mechanism first, fixes caption-misspelled names that are plain from the title, channel or graph, and reads videos over about 4,000 words section by section; step 7's note counts videos read in sections. Per Build 73 (BB-2026-11-09-full-transcripts).
