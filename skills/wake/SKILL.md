@@ -1,6 +1,6 @@
 ---
 name: wake
-version: 0.1.1
+version: 0.1.2
 status: draft
 triggers: [used by builds, moonshots and the Harness dispatcher when work must wait; no chat trigger]
 owner: Charles
