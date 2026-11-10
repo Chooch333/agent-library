@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a kind of data lives or is read from — cbrain pages, the Supabase index, Project State, the world-graph and its mirror, repo files, Storage — or keeps, rebuilds or removes a copy of it"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
-version: 0.1.2
+version: 0.1.3
 status: active
 ---
 
@@ -16,21 +16,21 @@ Which store holds each kind of data, where readers read it from, and how copies 
 
 ## Our way
 
-1. Knowledge or work-state: anything true about a person, company, project or place goes to a cbrain page through a brief the Archivist files; anything we are doing or deciding goes to Project State. Not a chat committing to cbrain directly, because the Archivist is the only thing allowed to write there [AGENT.md disambiguation rules]
-2. Knowledge pages: the markdown page is the source, and the Supabase index is rebuilt from it whenever a page changes. Not a database as the home of knowledge, because at this scale Claude does the finding and the vector index only narrows the search [CB-016; stack-map cbrain-index]
-3. Relationships: declared once, in the page's `relationships` frontmatter. The tuples table is rebuilt from the pages. A two-way relation is stored as one row, with the predicate registry marking it two-way. Not stored in both directions, because two rows drift apart [CB-049; CB-058; CB-081]
-4. Project data (tasks, milestones, team, RACI, waits-on, decisions): the graph is the only home. The mirror builds the app's tables from it, and one write protocol is the only way in. Not tables or cbrain pages as the home, because tables split the truth and the app cannot write the repo [CB-404]
-5. Reading the graph: read the mirror tables in the cbrain database, and the mirror status file to see how fresh they are. Not a live graph query, because the graph is a saved file that only becomes a running database inside a graph-writing Action [stack-map world-graph, graph-mirror; WG-051]
-6. Edits to project data from a screen: held as a server-side draft, then sent as one change brief on Update, by the route app → Supabase outbox → cbrain-sync → world-graph. Not one write per edit, and not a new key for the app, because a graph write is slow and the app's token reaches only its own repo [CB-404; CB-406]
-7. Attachments and other files: Supabase Storage at a path scoped to the project when the writer holds the service key; from a cloud session without that key, the bytes go in a cbrain table. Never the repo, because repo bloat costs more than storing small files inline saves [CB-009; TH-041]
-8. Facts that mirror a source elsewhere: worked out at read time from that source. Not stored as a seed row, because nothing updates a seed and it is wrong within days [CB-176]
-9. Data a screen shows: the writer also writes structured rows, and the screen reads those; git keeps the readable archive. Not parsing markdown on every page load, and not a nightly sync job, because format drift breaks parsing silently and a sync job is one more job to keep [CB-291]
-10. Definitions and fixed word lists: on the cbrain page or in a SCHEMA.md controlled block; a skill's wiring goes in that skill's own header and is read live. Not app code, a Supabase table or a central list page, because a second definition drifts [CB-248; CB-355]
-11. A contract several repos share: the markdown contract in cbrain `contracts/` is the authority, and each repo that uses it keeps a copy pinned to the contract's commit. Not fetched at run time, because that makes a scheduled job depend on the network and run code from another repo [WG-021]
-12. A new route for data: through a store the writer already holds a key for, for example a summary row written by a job that already writes to that database. Not a new key for the reader, because only Charles can supply a key [CB-336; CB-406]
-13. Decisions: never changed once written, only superseded by a new one that points back with a reason. Not edited in place, because that loses the record of why [D-037; D-050]
-14. A status shown in two places: one place is named the record and the other a mirror (Project State is the record for harness blocks). Not two copies of equal standing, because the project instructions name Project State as the record [TH-001]
-15. Data that needs finer protection than the store offers: kept out of the graph, not protected inside it, because a one-user stack has no cell-level security [PP-011]
+1. Knowledge or work-state: anything true about a person, company, project or place goes to a cbrain page through a brief the Archivist files; anything we are doing or deciding goes to Project State. Not a chat committing to cbrain directly, because the Archivist is the only thing allowed to write there [Claude · AGENT.md disambiguation rules]
+2. Knowledge pages: the markdown page is the source, and the Supabase index is rebuilt from it whenever a page changes. Not a database as the home of knowledge, because at this scale Claude does the finding and the vector index only narrows the search [Claude · CB-016; stack-map cbrain-index]
+3. Relationships: declared once, in the page's `relationships` frontmatter. The tuples table is rebuilt from the pages. A two-way relation is stored as one row, with the predicate registry marking it two-way. Not stored in both directions, because two rows drift apart [Charles · CB-049; CB-058; CB-081]
+4. Project data (tasks, milestones, team, RACI, waits-on, decisions): the graph is the only home. The mirror builds the app's tables from it, and one write protocol is the only way in. Not tables or cbrain pages as the home, because tables split the truth and the app cannot write the repo [Charles · CB-404]
+5. Reading the graph: read the mirror tables in the cbrain database, and the mirror status file to see how fresh they are. Not a live graph query, because the graph is a saved file that only becomes a running database inside a graph-writing Action [Claude · stack-map world-graph, graph-mirror; WG-051]
+6. Edits to project data from a screen: held as a server-side draft, then sent as one change brief on Update, by the route app → Supabase outbox → cbrain-sync → world-graph. Not one write per edit, and not a new key for the app, because a graph write is slow and the app's token reaches only its own repo [Charles · CB-404; CB-406]
+7. Attachments and other files: Supabase Storage at a path scoped to the project when the writer holds the service key; from a cloud session without that key, the bytes go in a cbrain table. Never the repo, because repo bloat costs more than storing small files inline saves [Charles · CB-009; TH-041]
+8. Facts that mirror a source elsewhere: worked out at read time from that source. Not stored as a seed row, because nothing updates a seed and it is wrong within days [Claude · CB-176]
+9. Data a screen shows: the writer also writes structured rows, and the screen reads those; git keeps the readable archive. Not parsing markdown on every page load, and not a nightly sync job, because format drift breaks parsing silently and a sync job is one more job to keep [Charles · CB-291]
+10. Definitions and fixed word lists: on the cbrain page or in a SCHEMA.md controlled block; a skill's wiring goes in that skill's own header and is read live. Not app code, a Supabase table or a central list page, because a second definition drifts [Charles · CB-248; CB-355]
+11. A contract several repos share: the markdown contract in cbrain `contracts/` is the authority, and each repo that uses it keeps a copy pinned to the contract's commit. Not fetched at run time, because that makes a scheduled job depend on the network and run code from another repo [Claude · WG-021]
+12. A new route for data: through a store the writer already holds a key for, for example a summary row written by a job that already writes to that database. Not a new key for the reader, because only Charles can supply a key [Charles · CB-336; CB-406]
+13. Decisions: never changed once written, only superseded by a new one that points back with a reason. Not edited in place, because that loses the record of why [Charles · D-037; D-050]
+14. A status shown in two places: one place is named the record and the other a mirror (Project State is the record for harness blocks). Not two copies of equal standing, because the project instructions name Project State as the record [Claude · TH-001]
+15. Data that needs finer protection than the store offers: kept out of the graph, not protected inside it, because a one-user stack has no cell-level security [Claude · PP-011]
 
 ## Lens
 
@@ -84,6 +84,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.3 (2026-11-10): origin mark on every Our way line (8 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.2 (2026-11-08): folded EB-117 (Expert CE)
 - 0.1.1 (2026-11-04): Lens 10 (rename/merge has no path, CB-398) moved to graph-engineering (EB-051); lens renumbered. Lens 13 (WG-052) kept.
 - 0.1.0 (2026-11-03): researched as row 5 of EB-007 (stack wiring team, desk T2), from Charles's record across cbrain, world-graph, context-database and total-harness. Seed Our way kept; added CB-049/058/081, WG-051, CB-406, TH-041, CB-355, WG-021, TH-073, D-050, TH-001 and PP-011. Seed lens kept, except: CB-068 was not found and its claim moved to Our way 3 on CB-049; "truth split across two stores" became Lens 5 (CB-186), because Our way 4 already carries the CB-404 reason; added CB-053, CB-090, CB-398, CB-189, CB-505 and WG-052. Fit pass (EB-015): the new-app line moved to services; the work-handoff line and the unapplied-suggestions lens line cut (skill-authoring and ai-system-design own them); skill-design-framework dropped from reads. The graph stays folded in (Our way 15 of 20).
