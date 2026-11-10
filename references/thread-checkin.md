@@ -147,6 +147,14 @@ again.
 
 ## Changelog
 
+- 0.4.0 (2026-11-09) — Closing out: every chat and job sorts each leftover
+  into do it / decide it / queue it / hand it on before saying done; only bin 4
+  reaches Charles, as one card and the reply's Needs from you. A card closes
+  itself when nothing waits on Charles ("click Done" finishes mean the same);
+  closed job cards are not re-used. Charles, 2026-11-09, Design Assist chat:
+  "Either those sorts of things get decided by claude and just taken care or,
+  if claude can't make the decision, it gets put onto a to-do list." Seats:
+  ai-system-design, oversight. Edited inline at his direction.
 - 0.3.1 (2026-10-22) — Correction (Charles): the build is an identifier, not
   a grouper. Each chat names its own build (it is the card's title); chats
   don't match or reuse names. Grouping is by project, which only Charles sets,
