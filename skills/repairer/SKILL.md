@@ -92,7 +92,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: "Weekly rules repair run" (thread_key "job:repairer-weekly-run")
 - Opens when: a run ends with its run marker not written, or a `set_punch_status` call is rejected and the item is held with the rejection text. Ordinary held and failed items stay on the Punch List, not the Next steps list
 - Checks in: when a run leaves something open
-- Closes when: a later run writes its marker with no rejected calls (`close_thread`, closed_how "run completed"), or Charles clicks Done
+- Closes when: a later run writes its marker with no rejected calls (`close_thread`, closed_how "run completed"), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Examples
 
