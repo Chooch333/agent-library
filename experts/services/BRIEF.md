@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.3
+version: 0.1.4
 status: active
 ---
 
@@ -16,25 +16,25 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 
 ## Our way
 
-1. MCP server host: one Vercel function at /api/mcp, reachable from every claude.ai surface; not Supabase Edge Functions, a VPS or a local stdio server, because it needs no config and never depends on the laptop being on [D-021; P-002]
-2. MCP tool surface: custom high-level tools that carry the rules (tags, embeddings, history, cross-project safety), one server per domain, with sites or kinds as registry rows so adding one needs no redeploy; not the generic raw-SQL MCP plus prompt guidance, because conventions drift chat to chat [D-042; P-001; P-014]
-3. Server credentials: the server-side service-role key, held only by the service that owns that database; not an anon key plus RLS policies, and not the same key copied onto a second service [D-001; E-336]
-4. New tables: RLS on with zero policies, so only the server key reads them; not RLS off, because the Supabase advisor flags it as public exposure [CB-095; P-042]
-5. New MCP tool rollout: deploy, reconnect the connector, make the first live call from a fresh session, and check at the database meanwhile [gotchas; D-083]
-6. New app: run wire-new-app: private repo, Vercel project created git-connected by the Action, Supabase keys moved machine to machine; not project creation or file-tree deploys through the Vercel MCP, because the connector cannot create projects and manual deploys truncate [wire-new-app; CB-094; E-351]
-7. Deploys: push to git and wait for the webhook deploy, polling before diagnosing a lag; not deploy_to_vercel, because it silently drops files and broke production [E-351]
-8. New Supabase project: only after Charles's plain yes, since it costs money; the default is none, with the new app's tables walled off inside the existing cbrain database so they can be copied out later [wire-new-app b; TH-073]
-9. Schema change on a hosted project: apply_migration through the Supabase MCP from the chat that owns the code, additive, naming the project on every call; not handed to another tool or session [F-004; F-015; D-071]
-10. Keys: values are never read, printed, pasted, put in a sheet or asked for; names only, reported in chat; a bad token is fixed by pointing Charles to its one refresh place [wire-new-app Never, g, Open]
-11. Secret mismatch: make a fresh secret, set it on both sides, redeploy; not recovering the old value, because both stores are write-only [CB-089; CB-088]
-12. Before adding a key: infer from what is already readable or from a token already held; ask Charles for a new key only when it is the only way [CB-484; E-051; ~ Charles 2026-09-19, no keys beyond the subscription, from memory]
-13. Function-to-function calls: the stable production domain; not a deployment-specific address, which ages out or sits behind the login wall [CB-088; CB-070]
-14. App login: an app-level password gate in middleware, its value set by Charles in the dashboard; not Vercel Deployment Protection, because it forces a Vercel sign-in and confuses internal calls [CB-093; CB-072]
-15. Timers that must run: on a production Vercel project, cbrain's or that of the server that owns the data (project-state-mcp's daily backfill); not cbrain-ui's, because Vercel crons run only against a production deployment [CB-492 item 4; plan aacd9bfa; CB-581; Vercel docs vercel.json crons, read 2026-11-03]
-16. Long work in a function: cap the items per run and claim the duration limit; batches go to a queue table drained by a cron worker; not continuation tokens or all-synchronous calls [E-024; P-011]
-17. Cron cadence: sub-daily crons rely on the team's paid Vercel plan; the free tier's two-cron cap was dropped [E-032 supersedes CB-008]
-18. Proving a setup: a create-nothing rehearsal or the first real app; the health route does one real read with the server key; nothing left in Charles's accounts for testing [wire-new-app a, c, f; ~ Charles 2026-10-07, from memory]
-19. A broken MCP server deploy: the rollback Action, run by hand with the earlier deployment's address [stack-map cbrain-mcp dot]
+1. MCP server host: one Vercel function at /api/mcp, reachable from every claude.ai surface; not Supabase Edge Functions, a VPS or a local stdio server, because it needs no config and never depends on the laptop being on [Claude · D-021; P-002]
+2. MCP tool surface: custom high-level tools that carry the rules (tags, embeddings, history, cross-project safety), one server per domain, with sites or kinds as registry rows so adding one needs no redeploy; not the generic raw-SQL MCP plus prompt guidance, because conventions drift chat to chat [Claude · D-042; P-001; P-014]
+3. Server credentials: the server-side service-role key, held only by the service that owns that database; not an anon key plus RLS policies, and not the same key copied onto a second service [Claude · D-001; E-336]
+4. New tables: RLS on with zero policies, so only the server key reads them; not RLS off, because the Supabase advisor flags it as public exposure [Charles · CB-095; P-042]
+5. New MCP tool rollout: deploy, reconnect the connector, make the first live call from a fresh session, and check at the database meanwhile [Claude · gotchas; D-083]
+6. New app: run wire-new-app: private repo, Vercel project created git-connected by the Action, Supabase keys moved machine to machine; not project creation or file-tree deploys through the Vercel MCP, because the connector cannot create projects and manual deploys truncate [Claude · wire-new-app; CB-094; E-351]
+7. Deploys: push to git and wait for the webhook deploy, polling before diagnosing a lag; not deploy_to_vercel, because it silently drops files and broke production [Claude · E-351]
+8. New Supabase project: only after Charles's plain yes, since it costs money; the default is none, with the new app's tables walled off inside the existing cbrain database so they can be copied out later [Charles · wire-new-app b; TH-073]
+9. Schema change on a hosted project: apply_migration through the Supabase MCP from the chat that owns the code, additive, naming the project on every call; not handed to another tool or session [Charles · F-004; F-015; D-071]
+10. Keys: values are never read, printed, pasted, put in a sheet or asked for; names only, reported in chat; a bad token is fixed by pointing Charles to its one refresh place [Claude · wire-new-app Never, g, Open]
+11. Secret mismatch: make a fresh secret, set it on both sides, redeploy; not recovering the old value, because both stores are write-only [Charles · CB-089; CB-088]
+12. Before adding a key: infer from what is already readable or from a token already held; ask Charles for a new key only when it is the only way [Charles · CB-484; E-051; ~ Charles 2026-09-19, no keys beyond the subscription, from memory]
+13. Function-to-function calls: the stable production domain; not a deployment-specific address, which ages out or sits behind the login wall [Charles · CB-088; CB-070]
+14. App login: an app-level password gate in middleware, its value set by Charles in the dashboard; not Vercel Deployment Protection, because it forces a Vercel sign-in and confuses internal calls [Charles · CB-093; CB-072]
+15. Timers that must run: on a production Vercel project, cbrain's or that of the server that owns the data (project-state-mcp's daily backfill); not cbrain-ui's, because Vercel crons run only against a production deployment [Claude · CB-492 item 4; plan aacd9bfa; CB-581; Vercel docs vercel.json crons, read 2026-11-03]
+16. Long work in a function: cap the items per run and claim the duration limit; batches go to a queue table drained by a cron worker; not continuation tokens or all-synchronous calls [Charles · E-024; P-011]
+17. Cron cadence: sub-daily crons rely on the team's paid Vercel plan; the free tier's two-cron cap was dropped [Claude · E-032 supersedes CB-008]
+18. Proving a setup: a create-nothing rehearsal or the first real app; the health route does one real read with the server key; nothing left in Charles's accounts for testing [Charles · wire-new-app a, c, f; ~ Charles 2026-10-07, from memory]
+19. A broken MCP server deploy: the rollback Action, run by hand with the earlier deployment's address [Claude · stack-map cbrain-mcp dot]
 
 ## Lens
 
@@ -90,6 +90,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.4 (2026-11-10): origin mark on every Our way line (9 Charles, 10 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.3 (2026-11-09): applied EB-047, EB-110 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.2 (2026-11-08): folded EB-111 (Expert CE)
 - 0.1.1 (2026-11-05): lens 8 keeps the deploy half (CB-041); the typecheck-vs-runtime half (CB-040) moves to coding (EB-063).
