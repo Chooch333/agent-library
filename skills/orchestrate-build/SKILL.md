@@ -5,7 +5,7 @@ status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task, checker]
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
