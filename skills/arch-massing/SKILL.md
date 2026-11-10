@@ -1,6 +1,6 @@
 ---
 name: arch-massing
-version: 0.2.1
+version: 0.2.2
 status: draft
 triggers: [used by builds when an arch-renders run reaches gate 1 or gate 2 (plan set -> white-box massing model); no chat trigger]
 dependencies: [project-folder, execute-build-task]
