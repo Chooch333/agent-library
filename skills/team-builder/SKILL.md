@@ -115,7 +115,7 @@ Update mode follows `references/thread-checkin.md` (naming convention and when t
 - build: the expert's name + "brief changes to decide", e.g. "lanes brief changes to decide" (thread_key "job:team-builder-ce-<slug>", `source` "job")
 - Opens when: a run routes a note to Charles (rule 3 (c), or a full Lens)
 - Checks in: when a run leaves something open (rule 5; waiting_on `you`)
-- Closes when: Charles clicks Done. A CE run never closes or reopens the card.
+- Closes when: every note routed to Charles is decided, so nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`); the chat where he decides them closes it. A CE run never closes or reopens the card.
 
 ## Examples
 Expert mode: the Expert Desk's first grow run under this skill (none yet; the dry runs of 2026-11-02 were written by hand). Skill mode: the next Build Brief that names a new skill.
