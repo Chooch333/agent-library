@@ -7,7 +7,7 @@ triggers:
   - "Cowork scheduled task \"Repairer — weekly run\" (Monday 7:00am, Charles's local time)"
 dependencies: []
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
