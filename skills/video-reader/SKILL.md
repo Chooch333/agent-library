@@ -81,8 +81,15 @@ the whole point (Build 17.1).
       facts), so it never changes the graph. If a summary can't be
       written, leave the key out -- never placeholder text, never the API.
    f. Flip data/video_queue/<video_id>.json status to "done" -- or
-      "failed" with a `reason` (transcript under ~150 words, empty, or
-      unreadable). Never guess past an unreadable transcript.
+      "failed" with a `reason`: empty, unreadable, or thin (v0.4.0).
+      Count real words with bracketed tags such as [Music] or [Applause]
+      (any script) taken out. With `duration_sec` in the frontmatter, thin
+      means under 40 real words a minute of video or under 20 real words
+      in all (the relay's own thin test, yt-relay ladder.py); with no
+      `duration_sec`, thin means under 20 real words. A short video with
+      a short, real transcript is read, not failed. Never guess past an
+      unreadable transcript. A failed entry is put back on the list by the
+      nightly run if the relay later fetches a fuller transcript.
 4. SUMMARY BACKFILL (v0.2.0) -- after the new items. Up to 10 videos per
    run that were read before summaries existed, newest first.
    a. Find them: query cbrain Supabase (lpeswznkxzeeyiqaewma) table
