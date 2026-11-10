@@ -55,5 +55,6 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: the dispatcher resumes the line and completes its next move (`close_thread`, closed_how "resumed and done"), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
+- 0.1.2 (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - 0.1.1 (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - 0.1.0 (2026-10-07) — First version (Build 30, wake-up set).
