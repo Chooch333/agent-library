@@ -1,6 +1,6 @@
 ---
 name: arch-render
-version: 0.2.2
+version: 0.2.3
 status: draft
 triggers: [used by builds when an arch-renders run reaches gate 3 (materials stills) or gate 4 (output stills and clip frames); no chat trigger]
 dependencies: [arch-massing, arch-materials, pascal-editor]
