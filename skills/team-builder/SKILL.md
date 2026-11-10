@@ -1,6 +1,6 @@
 ---
 name: team-builder
-version: 0.4.0
+version: 0.4.1
 status: draft
 triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)", "Loaded by the Expert Desk's CE job at its Catch-up and fold step, the Sunday 01:00 firing of the scheduled task \"Expert CE\", pointed at the waiting lens-notes on expert-bench (update mode)"]
 dependencies: []
