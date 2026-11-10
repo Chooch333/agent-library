@@ -45,7 +45,7 @@ The Stack Repairer fixes things that break while the stack is running, so Charle
 - Supabase `execute_sql` on cbrain project `lpeswznkxzeeyiqaewma`: `stack_status` (read), `stack_repairs` (read/write).
 - Custom GitHub MCP: `list_workflow_runs`, `get_workflow_run`, `get_job_logs`, `run_workflow` (always pass an explicit `ref`), `get_file_contents`, `replace_in_file`, `create_or_update_file`, `list_commits`.
 - Vercel MCP (`teamId team_8nMi0Bd6orQHGeTrMZYWCamm`): `list_deployments`, `get_runtime_logs`, `get_deployment`.
-- Project State MCP: `write_plan`, `update_plan_status`, `add_lesson`, `search_state`, `overnight_line`, `post_judgment_call`, `list_plans`.
+- Project State MCP: `write_plan`, `update_plan_status`, `add_lesson`, `search_state`, `overnight_line`, `post_judgment_call`, `list_plans`, `list_open_threads` (recap only), `checkin` / `close_thread` (its own cards).
 - Gmail: `send_message` (recap only).
 - Claude Code Remote: `list_triggers` (read only, for a recheck on a scheduled task).
 
