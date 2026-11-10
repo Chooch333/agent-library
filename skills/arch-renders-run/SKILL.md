@@ -1,6 +1,6 @@
 ---
 name: arch-renders-run
-version: 0.3.0
+version: 0.3.1
 status: draft
 triggers: [the "Arch renders runner" scheduled task fires with "run: <uuid>" and "action: <name>"; no chat trigger]
 dependencies: [arch-massing, arch-render, pascal-editor, wake]
