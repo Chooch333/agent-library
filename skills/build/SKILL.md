@@ -82,11 +82,7 @@ Every session that touches Project State follows this loop:
 
 ### Ticket closure rule
 
-**A ticket closes clean, or it doesn't close.** If a caveat, problem, or unresolved item comes up during execution, Claude does **not** write it into the Result/Resolution section as an open caveat. Instead:
-
-1. Claude pauses and raises the caveat in chat.
-2. Charles and Claude discuss it until it's resolved.
-3. Once resolved, Claude completes the Result/Resolution with the outcome reflecting that resolution.
+**A ticket closes clean, or it doesn't close.** If a caveat, problem, or unresolved item comes up during execution, Claude does **not** write it into the Result/Resolution section as an open caveat. Instead it sorts it per Closing out (`references/thread-checkin.md`): done, decided and logged, queued in its home, or handed on. Only a hand-on is raised in chat; the Result/Resolution records the outcome.
 
 Tickets have no "open items" field. If something is open, the ticket isn't done. Reports are conclusions, not status updates with loose ends.
 
