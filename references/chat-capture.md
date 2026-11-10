@@ -129,5 +129,6 @@ Charles approves or declines. If the chat ends with it unanswered, it goes to th
 
 ## Changelog
 
+- **v0.1.2 (2026-11-10)** — Predicate candidates are asked as a closed choice in the chat, and go to the Comms Table if unanswered, not under Needs from you (hand-ons only). Build 78 (BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0, Closing out).
 - **v0.1.1 (2026-10-15)** — Build 39 (BB-2026-10-14-protocol-retirement): added "Capture during build and PM work" (the relational-capture checkpoint) and "cbrain predicate discovery" (verbatim), both moved from the retired chat-protocol rulebook. Step 8's ticket pointer now names `references/project-state.md`.
 - **v0.1.0 (2026-06-08)** — Created from the retired `roles/cbrain-entity-builder/SKILL.md`. Converged the chat path onto the producer → approve → Archivist brief model (E-096): the chat path no longer commits to cbrain; it drafts an intents-only brief (no `observations` register — no reasoning pass on a chat capture) that Charles seals and the Archivist files. Preserved the entity-builder's interview content (type questions, slug rules, follow-on-entity logic, relationship/predicate proposal) as drafting guidance; dropped its commit/patch SOP steps (the Archivist owns writing). Corrected the entity-contract path to `cbrain/contracts/SCHEMA.md`.
