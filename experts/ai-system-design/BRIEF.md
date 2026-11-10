@@ -32,6 +32,10 @@ The captain over how Claude works. Its crafts: skill-authoring, premortem, roste
 14. A module's stated intent taken for its wired behavior; the caller decides what happens [E-133]
 15. An eval's finding acted on without reading the live artifact; an eval is another producer that can be wrong [E-278]
 16. ~ A note promoted into what every later seat loads (a brief line, an index, a standing field note) without being checked against the page or trace it cites, so one wrong note rides into every seat; Team Builder update mode folds Inferred lens-notes into a brief as ~ lines with no step that opens the cited page [https://www.anthropic.com/research/components-of-agent-memory; skills/team-builder 0.3.1, update mode rule 3(d); EB-095]
+17. ~ Decisions made one at a time that add up to a dead end: a step pinned to the PC, PC wakes dropped and the stop alert parked were each sound alone; the lane decisions on record are read together before a workflow is scoped [TH-058; TH-068; TH-088; EB-174]
+18. ~ A skill's finish line made unreachable by a later standing rule: the rehearsal sat as the last check of the last brief while builds may not hold Charles's stops or start a real job, so nothing owned it; when a standing rule lands, the skills whose finish depends on it are swept [skills/workflow, "Rehearse, then canonize"; TH-062; EB-175]
+19. ~ A cause recorded as fact before it was isolated, closing an option: a cloud export failure was put down to the missing graphics card, and a hidden window on a machine with one later failed the same way; the better cause is itself untested [TH-058; skills/pascal-editor; EB-176]
+20. ~ A workflow widened before its first real job ran, with builds counted where finished jobs and Charles's minutes should be [total-harness plans tagged speed-run-arch-renders; EB-177]
 
 ## Procedure
 
