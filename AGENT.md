@@ -97,6 +97,12 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 |---|---|
 | An FA Wilhelm job comes up — its tasks, issues, dates, milestones, meetings, team, RACI or design decisions (e.g. `what's open on IMI?`, `add this`, `log this`, `put this on the job`) — mid-chat included; fetch once per chat | `skills/job-update/SKILL.md` (reads any time; writes only on Charles's ask; general construction/permitting talk is not a job and loads no job skill; the experts rule still applies) |
 
+### Outside content
+
+| Trigger phrases | Skill |
+|---|---|
+| A YouTube link (youtube.com or youtu.be) in any message, mid-chat included, when the chat needs what the video says; fetch once per chat | `references/youtube-transcript.md` (never say a video has no transcript, or ask Charles to paste one, before its steps) |
+
 ### Knowledge capture
 
 | Trigger phrases | Skill |
