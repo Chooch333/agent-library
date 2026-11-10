@@ -5,7 +5,7 @@ status: draft
 triggers: [used by builds when an arch-renders run reaches gate 1 or gate 2 (plan set -> white-box massing model); no chat trigger]
 dependencies: [project-folder, execute-build-task]
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-10
 requires: [references/thread-checkin.md]
 wiring:
   runs: inside-builds
