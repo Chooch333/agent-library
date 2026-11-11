@@ -34,10 +34,9 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order, then
 
 "Landed" = plan status `succeeded` AND its newest `night_runs` row is not `deploy-red`.
 
-## Site checks (cbrain-ui builds only)
+**Site checks.** The cbrain site runs its own checks at the start of every Vercel build (Build 79). A failing check fails the deploy, which step 5 logs as `deploy-red` and step 3 treats as a broken preview. The runner copies no repo.
 
-The cbrain site (Chooch333/cbrain-ui) has its own automatic checks (`npm test`, every `scripts/*.test.mjs` file — about 40 on 2026-11-10, no network, no secrets). Any night build that changes the site runs them before it is called done. Nothing else changes: edits still go through the connector, and the copy below is read-only.
-
+@@B79-CUT-START@@
 1. **Copy (once per night).** If `/home/claude/cbrain-ui` has no working copy (`git -C /home/claude/cbrain-ui rev-parse HEAD` fails): if the `add_repo` tool (Claude_Code_Remote) is callable, call it with owner `Chooch333`, repo `cbrain-ui`, access `read`; then `git clone --depth 1 --branch review https://github.com/Chooch333/cbrain-ui /home/claude/cbrain-ui` (command timeout 10 min). One clone only; on HTTP 429 wait 5 s and retry once. If there is no `add_repo` tool and the clone is refused ("could not read Username", or `gh` answers 403 "GitHub access to this repository is not enabled for this session"), this session has no copy access: go to 5. Never borrow a token or credential from anywhere else.
 2. **Refresh (every run).** `git -C /home/claude/cbrain-ui fetch --depth 1 origin review && git -C /home/claude/cbrain-ui reset --hard origin/review`. Note the commit (`rev-parse --short HEAD`) — it must include the build's last commit.
 3. **Install.** `npm ci --no-audit --no-fund` in that folder — first run of the night, and again whenever `package-lock.json` changed. About 20 s.
