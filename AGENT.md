@@ -70,7 +70,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| `New explainer:` (a message that starts with it, e.g. `New explainer: animal cell`; in any chat, mid-chat included), `Hide:` and `Show:` (a message that starts with it, naming an explainer on Explore, e.g. `Hide: Inside a Cell`), and `Publish` said after an Explainer Maker page is on screen | `skills/explainer-maker/SKILL.md` (0.1.0) |
+| `New explainer:` (a message that starts with it, e.g. `New explainer: animal cell`; in any chat, mid-chat included), `Hide:` and `Show:` (a message that starts with it, naming an explainer on Explore, e.g. `Hide: Inside a Cell`), and `Publish` said after an Explainer Maker page is on screen | `skills/explainer-maker/SKILL.md` (0.1.1) |
 
 ### Plan-mode reviews
 
