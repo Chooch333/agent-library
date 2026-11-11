@@ -24,11 +24,15 @@ the stops. Charles decides when a page is published.
 
 ## 1. Read the kit (every time, before writing a line)
 Custom GitHub MCP `get_file_contents`, owner `Chooch333`, repo `kids-ed`:
-`kit/README.md` first. It lists the kits and which topics each one fits. Then that kit's
-`PLAYBOOK.md` (the rulebook) and `template/index.html`, and `kit/explainer-kit.js` (paste it
-unchanged). If the repo can't be read, say so and stop. Never build from memory of the kit.
-If no kit fits the topic (version 0.1.0 has only the cell kit), say so in one line and stop. Never stretch a
-kit to a topic it wasn't made for.
+`kit/README.md` first. It lists the kits and which topics each one fits. If no kit fits the topic (the cell
+kit is the only one so far), say so in one line and stop. Never stretch a kit to a topic it wasn't made for.
+Only when a kit fits, read that kit's `PLAYBOOK.md` (the rulebook) and `template/index.html`, and
+`kit/explainer-kit.js` (paste it unchanged). If the repo can't be read, say so and stop. Never build from memory
+of the kit.
+**The template is starting code, not a topic.** If the topic matches an explainer already in `ed_explainers`
+(Supabase `execute_sql`, project `lpeswznkxzeeyiqaewma`: `select slug, title, status from public.ed_explainers;`),
+or is the template's own subject (the cell template is the animal cell), say so and offer to edit that one
+instead of building a copy.
 
 ## 2. Build (one answer, whole)
 - Follow the playbook: its "Before starting" list, then its Order of work. Start from the template, never a
