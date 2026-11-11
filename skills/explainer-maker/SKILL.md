@@ -1,7 +1,7 @@
 ---
 name: explainer-maker
 description: 'Use when Charles (or a boy with him) says "New explainer: <topic>" in a Claude chat: build a kids'' 3D explainer page from the kids-ed explainer kit (its playbook and template), run the playbook checks, show it as an artifact, and on "Publish" put it on the boys'' Explore site after a robot check. "Hide: <explainer>" takes one off Explore; "Show: <explainer>" puts it back.'
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers: ["New explainer: <topic>", "Publish (after an Explainer Maker page is on screen)", "Hide: <explainer>", "Show: <explainer>"]
 owner: Charles
