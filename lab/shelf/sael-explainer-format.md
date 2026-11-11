@@ -4,8 +4,9 @@ does: "One-file Three.js 3D explainer page in the sael.net house style, built on
 verdict: adopt-now
 verdict_note: "the method (spec, one-shot build, check gate); the page kit and the cheaper-model route are shelved inside the report"
 come_back_when: ""
-blocks: [7, 8, 16, 17]
+blocks: []
 brief: ""
+home: "kids-ed project (Explore, repo Chooch333/kids-ed); moved off Total Harness 2026-11-11"
 report: kids-3d-explainer-page-sael-format
 reviewed: 2026-10-20
 draft: false
