@@ -15,7 +15,10 @@ One prompt per seat. The context block is the same for every seat.
 > Project State across all projects (ToolSearch
 > "select:mcp__Project_State__search_state"; decisions and lessons, your corner's
 > terms): what Charles decided and what was dropped in your corner is part of your
-> answer, and a record newer than your brief wins over it. If your brief has no Our
+> answer, and a record newer than your brief wins over it. Anything the work calls
+> approved or already decided: check who chose it and what they were shown. A value
+> nobody chose (a habitual default, the version a build happened to use) is not a
+> decision; judge it in your corner even if it sits under Already decided. If your brief has no Our
 > way section, still give **How I'd do it** from what the charter and those records
 > say, citing each. Mode: <full | risks-only>. Severity:
 > <profile scale>. Situation: <s>. Goal: <goal>. Already decided, don't reopen: <list>.
