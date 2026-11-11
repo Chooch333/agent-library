@@ -51,7 +51,6 @@ If the run text says "dry run": read the line, report the order, what's ready an
 4. Build: set nothing yourself — dispatch ONE helper (subagent) with the brief's own pasteable prompt plus: "Autonomous overnight run. Do all the work yourself; no further dispatch. Forks: decide and log. Hard gate: post the question, mark the plan blocked, stop. Don't run the unit-tests workflow on GitHub." Wait for it.
 5. Confirm it landed (`get_plan`):
    - Plan status `succeeded` with a done receipt → if the repo deploys, poll the review deployment for the build's last commit (`list_deployments`, every 2 min, up to 30 min). READY → log `built`. ERROR → log `deploy-red` (its dependents now wait).
-     - If the build changed cbrain-ui (commits on `review` since the build started, `list_commits`) and its done receipt has no 'site checks passed' entry, run Site checks yourself. A failure → `checkin` a Next steps card ('the site's checks fail after <build>', waiting on you) and list it in the Finish email; the `night_log` row stays `built`. Can't run at all → Site checks step 5.
    - Status `blocked` or `failed` → log `stuck` with the reason in plain words.
    - Helper died / usage limit → log `interrupted` and go to step 7.
 6. Go to 2. The line is re-read every time, so builds unblocked tonight run tonight.
