@@ -84,4 +84,7 @@ Follows `references/thread-checkin.md`.
   a standalone Hide or Show when its report is sent (closed_how "hidden" / "shown")
 
 ## Changelog
+- 0.1.1 (draft, 2026-11-11) — Build 81.1, from Build 81's cold test: step 1 settles whether a kit fits from
+  `kit/README.md` before reading the rest; the template is starting code, not a topic, so a topic already
+  published (or the template's own subject) offers an edit instead of a copy.
 - 0.1.0 (draft) — first version, Build 81.
