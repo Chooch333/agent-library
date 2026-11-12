@@ -1,0 +1,22 @@
+# nonprofit-development — vocabulary
+
+- Annual fund / annual campaign: the yearly unrestricted giving drive; event guests are cultivated into it.
+- Qualified sponsorship payment: a business payment with no substantial return benefit beyond acknowledgment of name or logo; not taxable to the charity (IRS irs.gov/node/13726; Treas. Reg. 1.513-4).
+- Acknowledgment vs advertising: identifying the sponsor vs promoting its products (qualitative or comparative language, price, endorsement, inducement).
+- Exclusive sponsor vs exclusive provider: the first is acknowledgment; the second (limits competing products) is a substantial return benefit.
+- Substantial return benefit: a benefit to the sponsor beyond acknowledgment; only the payment above its fair market value qualifies.
+- Quid pro quo contribution: a payment that is partly a gift and partly for goods or services; above $75 it needs a written disclosure with a good-faith estimate of value (IRC 6115; Pub 1771 Rev. 11-2023; check the current revision).
+- Contemporaneous written acknowledgment: required for a single gift of $250 or more; it must be in the donor's hands before they file (Pub 1771 Rev. 11-2023).
+- Fair market value (FMV): value to the guest or buyer, not the charity's cost.
+- Token / insubstantial benefit: low-value items or benefits that need no disclosure; the dollar limits are inflation-adjusted every year (see the current Pub 1771).
+- Underwriting: sponsor money that covers the event's hard costs.
+- Fund-a-need / paddle raise: a live appeal at the event for a named need; no cost of goods; the money is restricted to that need.
+- Silent / live auction: donated items sold to bidders; the buyer deducts only the amount above FMV.
+- Host committee: volunteer leaders who open doors through their own relationships.
+- Give-or-get: a board policy where each member gives or raises a set amount.
+- Prospect assignment: the Y staff assigns each prospect to one volunteer, with their prior-year gift.
+- Pledge card: the record of an ask and its commitment, turned in to staff.
+- Stewardship: thanks, reporting and contact between asks that earns the next gift.
+- Retention (new vs repeat): the share of last year's donors who give again (FEP).
+- Fulfillment / recap report: proof to a sponsor of what it received.
+- Charity gaming: raffles and similar activities, licensed by the Indiana Gaming Commission under IC 4-32.3.
