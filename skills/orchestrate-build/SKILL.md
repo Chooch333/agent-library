@@ -31,11 +31,11 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
    - After 11 pm Indianapolis time, if the brief is tagged Overnight, leave it to the night runner unless you are the night runner.
    - Immediately flip the plan status to `running` (`update_plan_status`).
 
-2. **Read the brief header.** The header declares required skills (e.g. `skills: orchestrate-build v1, <domain-skill>`). Fetch any skill you have not already loaded from `Chooch333/agent-library` at `skills/<name>/SKILL.md` and follow it alongside this one.
+2. **Read the brief header.** The header declares required skills (e.g. `skills: orchestrate-build v1, <domain-skill>`). Fetch any skill you have not already loaded from `Chooch333/agent-library` at `skills/<name>/SKILL.md` and follow it alongside this one. Also read every file the `requires:` header names, including `references/gotchas.md` (known tool traps), before the first Project State write.
 
 3. **Break the brief into small tasks.** Small means: one clear deliverable, completable without needing a decision that isn't already answered by the brief. If a step looks like it contains a hidden decision, make it its own task so the fork surfaces fast.
 
-4. **Dispatch each task to a subagent** using the `execute-build-task` definition. Give the worker: the task, the relevant brief excerpt, exact file paths / table names it may touch, and the definition of done.
+4. **Dispatch each task to a subagent** using the `execute-build-task` definition. Give the worker: the task, the relevant brief excerpt, exact file paths / table names it may touch, the definition of done, and any trap from `references/gotchas.md` that touches the task, quoted.
 
 5. **Answer forks yourself.** When a worker reports a decision point, decide it — using the brief's intent, Project State decisions, and repo conventions as your guide. Record every fork + your answer (you will log them at the end). Do not stop the build to ask the human. Only halt and surface to the human if continuing would require credentials you don't have, would spend money, or would destroy data.
 
