@@ -78,6 +78,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.9.1** (2026-11-12) — Build lead now reads `references/gotchas.md` (known tool traps) and passes matching traps to workers. Autonomous and night builds were the only builders not loading it. Stack Advisor done-for-you ADV-091 (BB-2026-11-11-adv-091-build-lead-reads-gotchas).
 - **v1.9** (2026-11-10) — Progress tracking follows Closing out (Build 78, BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0): a card opens only for blocked/failed or a real hand-on, written as a closed choice; a follow-up plan or What to check list is not a card; the card closes once nothing on it waits on Charles, not on a click. Title line now matches the version.
 - **v1.8** (2026-10-23) — Review gate removed (Charles): "Never certify your own build" becomes "Leave your notes for a design chat" — builds still never dispose their own disclosures, but there is no plan review and `review_plan` is retired.
 - **v1.7** (2026-10-23) — Step 6: on a build that works in a project folder, each feature's verification is a checker subagent (`skills/checker`) with only the checker inputs, never the lead reading the worker's report; brief acceptance checks stay lead-verified. Per Build 45 (BB-2026-10-21-checker-role; the brief named this 1.6, which the next-steps panel build had already used).
