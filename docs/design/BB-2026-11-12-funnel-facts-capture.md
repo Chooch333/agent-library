@@ -8,7 +8,7 @@
 **Stack Flow:** edits `concepts/stack-map.md` lanes (chat, scheduled, scheduled-pc, github-action rows) and adds a "Lab run" part (lane github-action, pays_with github-actions) under the Chats dot, with its side-panel text.
 **Step map:** no change — no workflow is added or changed.
 **Overnight:** yes · **target_repo:** Chooch333/agent-library (also writes Chooch333/cbrain `concepts/stack-map.md`) · **after:** none
-**Cost:** subscription only. Build ≈ 1 builder run. The new nightly fold step (B) runs a Team Builder helper only on nights with a new correction (≈ 2–3 a week, ≈ 150k tokens each). No Actions minutes.
+**Cost:** subscription only. Build ≈ 1 builder run. The new nightly fold step (step 5) runs a Team Builder helper only on nights with a new correction (≈ 2–3 a week, ≈ 150k tokens each). No Actions minutes.
 
 **What this is:** First of four alignment-funnel builds. Make the stack map tell the truth about where Claude can run and reach, and make Charles's corrections land at their source the same day.
 **What I'll do (build chat):** the six steps below.
