@@ -27,6 +27,7 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order, then
 - `list_open_threads`, `checkin` (Project State) — read the Next steps cards; write a card's checked status (`context`, `checked_at`, `chats`). Rules: `references/thread-checkin.md`.
 - `list_deployments` (Vercel) — `projectId: cbrain-ui`, `teamId: team_8nMi0Bd6orQHGeTrMZYWCamm`, branch `review`.
 - Gmail `send_message` — the one finish email, to Charles himself.
+- `find_by_tags`, `add_note`, `file_punch_item` (Project State) and `search_code` / `get_file_contents` (Custom GitHub) — the night fold (step 6b).
 
 **Repos — edits through the connector.** Every repo is changed through the Custom GitHub connector (`get_file_contents`, `create_or_update_file`, `replace_in_file`, `list_commits`, `list_workflow_runs`, `run_workflow`). Never skip a build for "no repos attached", "no git access" or "can't clone". Access check before each build: one `get_file_contents` on the plan's `target_repo` (its README, or the brief's git path). Only if that call fails twice, log `skipped` with the error text in plain words. Pass this paragraph to the helper in step 4.
 
