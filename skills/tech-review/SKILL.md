@@ -170,6 +170,8 @@ A later review finds EffectCraft stalled, and Charles approves the change. The c
 
 ## Changelog
 
+- **0.6.0** (2026-11-13) — Tests run on what Claude already has, without asking (Charles, TH-195: "When something needs a test, run it, do not ask"; TH-199 item 4). Step 4's closing "stop and wait for my yes" is replaced: the plan names its run place (chat workspace, lab-run, or the PC only with a folder already connected), uses only places and keys Claude holds, has a primary path and an alternate only with a real advantage (its needs stated up front, described, not set up), one "Needs from Charles" line, a reach check before the plan is shown, the five-reason test on every step for Charles, seats only when needs remain or a run place, key, account, repo or paid vendor is added; then the primary path runs at once. Money still stops. Step 5: a lab-run test uses one folder per test and reads outputs only from the commit whose `out/run_id.txt` matches its run; a zero-step or unmatched run is "not run", reported untested. Supersedes 0.4.1's approval of every test plan. Build 84 (BB-2026-11-12-funnel-rd-paths).
+
 - **0.5.1** (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); one-line pointer in the lab rules. Per BB-2026-10-21-next-steps-panel.
 
 - **0.5.0** (2026-10-21) — Build 44 (BB-2026-10-20-next-steps-dev-tab): new Check in step — every turn, Project State `checkin` per `references/thread-checkin.md` (kind `tech-review`); `close_thread` when the R&D Report is filed (plus the handoff on Adopt now). Feeds the Next steps list on cbrain's Dev tab. New `requires` entry.
