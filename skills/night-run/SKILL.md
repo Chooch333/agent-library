@@ -38,7 +38,7 @@ Builds shelved briefs tagged Overnight, one at a time, in dependency order, then
 **Site checks.** The cbrain site runs its own checks at the start of every Vercel build (Build 79). A failing check fails the deploy, which step 5 logs as `deploy-red` and step 3 treats as a broken preview. The runner copies no repo.
 
 ## Dry run
-If the run text says "dry run": read the line, report the order, what's ready and what each waits on, and which open cards step 7 would re-check. Build nothing, write nothing, email nothing (no start marker either).
+If the run text says "dry run": read the line, report the order, what's ready and what each waits on, which corrections step 6b would sweep and fold, and which open cards step 7 would re-check. Build nothing, write nothing, email nothing (no start marker either).
 
 ## Loop
 0. Clock: America/Indiana/Indianapolis. Start nothing new at or after 05:00.
