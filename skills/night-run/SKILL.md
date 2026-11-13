@@ -8,13 +8,15 @@ wiring:
   starts: "Claude Code routine 'Night builds', daily 1 am America/Indiana/Indianapolis (Charles set 1 am, 2026-10-04)"
   runs_in: claude-code-cloud
   reads: [project-state, repos, vercel, open-threads, advisor-dispositions, charles-correction decisions, agent-library experts and skills]
-  writes: [plans, night_runs, open-threads, email, lens-notes, punch-items, night-fold notes]
+  writes: [plans, plan revisions and the experts-seated tag (seat step), night_runs, open-threads, email, lens-notes, punch-items, night-fold notes, expert-desk-report notes, night-revision notes]
   label: Night builds
 ---
 
 # Night run
 
 Builds shelved briefs tagged Overnight, one at a time, in dependency order, then re-checks open cards on the Next steps list. Nobody is watching: decide, log, move on. Stop only at hard gates (keys, money, deleting data) — and then only that build stops.
+
+Every build is seen by the stack experts (Seat step, below): before it when no design chat seated its brief (step 3a), and after it always (step 5a). An expert's objection is a revision instruction, applied the same night by a fresh builder, two rounds at most; whatever is left goes to that expert as a lens-note. None of it reaches Charles (Charles, 2026-11-12, decision TH-198: a gate "would turn most overnight builds into homework").
 
 ## Tools
 
