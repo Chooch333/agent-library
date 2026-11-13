@@ -1,11 +1,11 @@
 ---
 name: tech-review
-version: 0.5.1
+version: 0.6.0
 status: draft
 triggers: ["Tech review:"]
 dependencies: []
 owner: Charles
-updated: 2026-10-21
+updated: 2026-11-13
 source: "Lab rules from the R&D Lab Notebook (read 2026-10-09). Designed in DA chat DA-1009-rd-lab; built in Build 31 (BB-2026-10-09-tech-review-skill). R&D Report format set by Charles 2026-10-14 (Flythrough Renderer - Blender review). Discovery split into tech-discovery by Charles 2026-10-14."
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
