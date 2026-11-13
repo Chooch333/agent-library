@@ -78,7 +78,7 @@ VERDICTS (discovery can only Shelf or Never)
 DISCOVERY BRIEF (one page, plain words, no jargon; explain any term the first time it appears)
 Title: the use it could serve, then the tech (e.g. "Video Game Asset Generator - Sinnon"), marked "Discovery Brief" with the date.
 Sections, in order:
-What it is. Verdict by tool. Where it fits. What we could use it for: now, later, cannot. What we checked. What else does this job. Requirements check. Risks and cover. If adopted: what gets built, dollars, my hours, proof of done. Test run, if we do one: the one test problem, the input, the variants worth comparing, and the questions only a test can settle. Sources.
+What it is. Verdict by tool. Where it fits. What we could use it for: now, later, cannot. What we checked. What else does this job. Requirements check. Risks and cover. If adopted: what gets built, dollars, my hours, proof of done. Test run, if we do one: the one test problem, the input, the variants worth comparing, and the questions only a test can settle, plus one line naming the run place the test would use, from tech-review step 4's list (the chat workspace, or lab-run in `Chooch333/arch-renders`; my PC only when a folder is already connected in that chat). Sources.
 Mark every claim Published (from the maker's own documentation or another source checked today) or Assumed (our judgment). Nothing in a brief is Tested.
 Publish the brief as an artifact page.
 
