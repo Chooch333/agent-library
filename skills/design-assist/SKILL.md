@@ -33,7 +33,7 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 
 ## When
 
-**Fire when:** Charles says "Design Assist" in the prompt. That is the only trigger. Do not auto-fire from adjacent phrases.
+**Fire when:** Charles says "Design Assist" or its synonym "DA chat" in the prompt (case-insensitive, as AGENT.md lists them). Those are the only triggers. Do not auto-fire from adjacent phrases or a bare "DA".
 
 **Do not fire when:** the design is already shaped and he wants execution (build chat), viability interrogation (office-hours), or a one-shot multi-perspective read (brainstorm chat).
 
