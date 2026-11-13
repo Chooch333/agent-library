@@ -4,8 +4,9 @@ Read at DELIVER (step 6c). Moved here unchanged from SKILL.md v1.8.1 by
 BB-2026-10-05-advisor-reads-smarter (Build 28). Build 28.1 added the two
 honest lines and the lane tag (NEW CAPABILITY since Build 41). Build 57
 (BB-2026-10-28-advisor-done-for-you) split it into two groups — Done for
-you first, Ideas for you second — and cut each idea to three lines. Once
-the critic is live, the Advisor Critic sends this email, not the Advisor.
+you first, Ideas for you second — and cut each idea to three lines. The
+Advisor always sends it (the Advisor Critic is retired, Build 85); an idea
+an expert seat cut is not in it.
 
 The email is a quick hit. Charles reads the full idea on the Stack
 screen; the email tells him what's there in under a minute, in plain
