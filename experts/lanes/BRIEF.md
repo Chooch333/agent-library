@@ -55,7 +55,6 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 22. ~ The PC shell (device_bash) assumed to be the PC: its own description says it is a Linux workspace on the machine that cannot control the PC's apps or reach a service on the PC's localhost; read, not tested [device_bash tool description, read 2026-11-09; EB-166]
 23. Computer use assumed able to operate any window: browsers are view-only, terminals and File Explorer take plain clicks only, a covered window is not brought forward while the person keeps the screen, and the Startup folder could not be granted [Total Harness chat 2026-11-09; EB-167]
 24. A live chat assumed able to fire a scheduled task: the chat's own permission check refused the fire with no card to approve, so a design that starts a task from a chat tests it in that kind of chat first [Total Harness chat 2026-11-09; TH-154; EB-168]
-25. ~ A dry-fold test line, filed and folded by the same-day capture build to prove a fold touches only the notes it is pointed at; reverted the same night [EB-193]
 
 ## Procedure
 
