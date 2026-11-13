@@ -82,6 +82,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.10.0** (2026-11-13) — Step 7(a): the Session Log carries a fixed handoff block — per repo touched (branch, head before and after, every commit with its marker, final blob SHAs), each decision (what, file plus anchor text, why, expert corner, decision id), and every value, version or default the brief didn't name. The night session's after-build seat reads it back and seats experts on it; a revision builder works from it (night-run 0.9.0 step 5a). Build 83 (BB-2026-11-12-funnel-night-seats).
 - **v1.9.1** (2026-11-12) — Build lead now reads `references/gotchas.md` (known tool traps) and passes matching traps to workers. Autonomous and night builds were the only builders not loading it. Stack Advisor done-for-you ADV-091 (BB-2026-11-11-adv-091-build-lead-reads-gotchas).
 - **v1.9** (2026-11-10) — Progress tracking follows Closing out (Build 78, BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0): a card opens only for blocked/failed or a real hand-on, written as a closed choice; a follow-up plan or What to check list is not a card; the card closes once nothing on it waits on Charles, not on a click. Title line now matches the version.
 - **v1.8** (2026-10-23) — Review gate removed (Charles): "Never certify your own build" becomes "Leave your notes for a design chat" — builds still never dispose their own disclosures, but there is no plan review and `review_plan` is retired.
