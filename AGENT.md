@@ -21,6 +21,8 @@ Don't seat when the chat is carrying out a skill's steps (a build chat, game-mak
 
 Needs the Agent tool. A chat without it answers itself and says in one line which expert it couldn't seat.
 
+**Charles's corrections.** When Charles corrects how Claude worked or says how he wants something done from now on, the chat, in the same turn: (1) logs one Project State decision on the work's project, tagged `charles-directed` and `charles-correction`, quoting his words with the chat link when the chat can read it, else the chat's title and date (a Design Assist chat also passes its board tag as `chat_tag`); (2) applies it at its source, citing that decision: a skill it names → that skill is edited now (version bump, changelog line); a rule for all work → `references/charter.md`: when it adds a line, add it with his words quoted; when it contradicts a line already there, ask one closed question with a recommended answer first, and on his yes replace that line in place, the replaced line named in the decision; judgment inside one expert's corner → one `lens-note` for that expert on `expert-bench`, citing the decision. Applying his stated words needs no seat. Two of his decisions that clash: ask him in the chat, now. A chat without Project State or GitHub says so in one line and files nothing.
+
 ## Active skills
 
 ### Brainstorming
