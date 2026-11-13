@@ -4,14 +4,14 @@
 **Project State plan:** `94089c3e-a977-461e-8c41-5590c1623ef1` on `total-harness`
 **Build:** 82
 **Skills:** orchestrate-build
-**Seated:** revision 2, report TH-200, seats c-stack, lanes, oversight, data-homes, github-integrations, ai-system-design
+**Seated:** revision 2, report TH-200, seats c-stack, lanes, oversight, data-homes, github-integrations, ai-system-design · revision 3 (step 7 and the edits to steps 3 and 6), report TH-205, seats ai-system-design, skill-authoring
 **Stack Flow:** edits `concepts/stack-map.md` lanes (chat, scheduled, scheduled-pc, github-action rows) and adds a "Lab run" part (lane github-action, pays_with github-actions) under the Chats dot, with its side-panel text.
 **Step map:** no change — no workflow is added or changed.
 **Overnight:** yes · **target_repo:** Chooch333/agent-library (also writes Chooch333/cbrain `concepts/stack-map.md`) · **after:** none
 **Cost:** subscription only. Build ≈ 1 builder run. The new nightly fold step (step 5) runs a Team Builder helper only on nights with a new correction (≈ 2–3 a week, ≈ 150k tokens each). No Actions minutes.
 
 **What this is:** First of four alignment-funnel builds. Make the stack map tell the truth about where Claude can run and reach, and make Charles's corrections land at their source the same day.
-**What I'll do (build chat):** the six steps below.
+**What I'll do (build chat):** the seven steps below.
 **What you'll do:** nothing.
 
 ## Asked for — Charles, 2026-11-12 (frozen; as recorded in the handoff note TH-199)
@@ -29,7 +29,7 @@
 - **[assumed]** Private-repo Actions minutes left this cycle: unknown; no tool reads the level (the meter only detects a lock, CB-550).
 
 ## Scope
-**In:** lane rows and the Lab run part; the corrections rule; Team Builder `only:`; the night fold step; the step-in scorer's dedupe.
+**In:** lane rows and the Lab run part; the corrections rule; Team Builder `only:`; the night fold step; the step-in scorer's dedupe; Design Assist files Charles's preferences turn by turn.
 **Out:** night-build seats (Build 83); R&D rules and lab-run.yml changes (Build 84); the Stack Advisor (Build 85); rotating or deleting the Runpod-stored GitHub key (governance, parked); Projects whose instructions don't fetch AGENT.md (a paste only Charles can make; not asked).
 
 ## Directive
@@ -41,17 +41,35 @@
    - No Runpod row anywhere.
 2. **Lab run part** (Stack Flow): under the Chats dot's `made_of`, add "Lab run" — lane `github-action`, lives arch-renders `.github/workflows/lab-run.yml`, runs_on GitHub-hosted machine, thinks_with no AI, started by a chat's `run_workflow`, saves_to `lab/<job>/out` in arch-renders, pays_with github-actions, plus a plain `story`. Add the line Chats → GitHub if missing. Side-panel text in plain words.
 3. **The corrections rule** (agent-library `AGENT.md`): extend the existing "Every chat, every message — experts" section with one paragraph; no new section:
-   > **Charles's corrections.** When Charles corrects how Claude worked or says how he wants something done from now on, the chat, in the same turn: (1) logs one Project State decision on the work's project, tagged `charles-directed` and `charles-correction`, quoting his words with the chat link; (2) applies it at its source, citing that decision: a skill it names → that skill is edited now (version bump, changelog line); a rule for all work → `references/charter.md`, replacing the line it overrides in place, his words quoted, the replaced line named in the decision; judgment inside one expert's corner → one `lens-note` for that expert on `expert-bench`, citing the decision. Applying his stated words needs no seat. Two of his decisions that clash: ask him in the chat, now. A chat without Project State or GitHub says so in one line and files nothing.
+   > **Charles's corrections.** When Charles corrects how Claude worked or says how he wants something done from now on, the chat, in the same turn: (1) logs one Project State decision on the work's project, tagged `charles-directed` and `charles-correction`, quoting his words with the chat link when the chat can read it, else the chat's title and date (a Design Assist chat also passes its board tag as `chat_tag`); (2) applies it at its source, citing that decision: a skill it names → that skill is edited now (version bump, changelog line); a rule for all work → `references/charter.md`: when it adds a line, add it with his words quoted; when it contradicts a line already there, ask one closed question with a recommended answer first, and on his yes replace that line in place, the replaced line named in the decision; judgment inside one expert's corner → one `lens-note` for that expert on `expert-bench`, citing the decision. Applying his stated words needs no seat. Two of his decisions that clash: ask him in the chat, now. A chat without Project State or GitHub says so in one line and files nothing.
 4. **Team Builder `only:`** (`skills/team-builder/SKILL.md` update mode): accept `only: <note ids or a tag>`; with it, sort and fold only those notes; without it, unchanged. Version bump, changelog.
 5. **Night fold step** (`skills/night-run/SKILL.md`, new step 6b after the build loop, before step 7, inside the 05:00 rule): (a) find decisions tagged `charles-correction` created since the last night's `night-start` row (all projects, exact tag); for each that replaced a charter line, grep agent-library `experts/*/BRIEF.md`, `skills/`, `AGENT.md` for the replaced line's words or its decision id and file one `lens-note` per hit citing the new decision; (b) one helper runs Team Builder update mode with `only:` the day's `lens-note`s whose text cites a `charles-correction` decision; (c) file one note on total-harness tagged `night-fold`: "fold: N notes, M briefs changed", then the note and commit list. Nothing reaches Charles. If the helper fails, the notes stay waiting for Sunday's fold.
-6. **Step-in scorer dedupe** (`skills/step-in-scorer/SKILL.md` S4): a step-in whose chat link matches a `charles-correction` decision counts as already on record; never filed twice.
+6. **Step-in scorer dedupe** (`skills/step-in-scorer/SKILL.md` S4): a step-in that matches a `charles-correction` decision on the same chat (its link, its title and date, or its board tag) **and the same correction** counts as already on record; never filed twice. A chat's other misses are still filed.
+7. **Design Assist files his preferences turn by turn** (agent-library `skills/design-assist/SKILL.md`, 0.8.6 → 0.9.0; bump `updated:`; changelog line; one line in the root `CHANGELOG.md`):
+   - **Trigger aligned in three places.** Header `triggers`, the When section and `wiring.starts` each gain "DA chat" beside "Design Assist", as AGENT.md already lists it.
+   - **New section, placed straight after "## When"** (near the top, so it is still in view late in a long chat):
+     > ## Charles's corrections in this chat
+     > So Charles never has to say a thing twice. A chat started with the trigger phrase is tech work, so on every turn the chat sorts what he said and files it under AGENT.md's "Charles's corrections" rule, without saying so and without asking. This section adds only what that rule lacks.
+     > - **Preference** (how he wants something done from now on) or **correction** → the decision and its source edit or lens-note, the same turn, with this chat's board tag as `chat_tag`.
+     > - **Decision** on this design → the brief and the record, as now.
+     > - **One-off** for this chat or this brief only → nothing filed.
+     > - **Not sure it is standing** → log the decision with his words, tagged `charles-directed` and `held-preference` (never `charles-correction`), and make no source edit. Never ask him which it is.
+     > - **A skill an unbuilt brief is changing** (this chat's or another on the shelf): the preference goes into that brief as a step, not into the live file, so the build does not overwrite it. This is the only way a preference enters a Build Brief; a brief gets no preferences section.
+     > - **Questions:** only the two AGENT.md allows (a charter line he contradicted; two of his decisions that clash).
+     > - **Summoned mid-chat.** On the turn the trigger phrase is first said in a chat already under way, read back from the top of this chat before intake (when earlier turns are out of view, `read_conversation` with `conversation_id: "current"`; if that tool is missing, say so in the list below) and sort what he already said the same way. Skip anything already on record: search the day's `charles-correction` decisions for his same words first.
+     > - **Mark.** The reply's closing mark becomes `Board ✓ · Filed N`, N being the decisions filed this turn (0 is a real answer). No other mention in the reply.
+   - **Step 10 (Handoff), the Session Log sentence** gains: "The Session Log carries a list **Preferences filed this chat:**, built from the record (decisions carrying this chat's board tag and `charles-correction` or `held-preference`), not from recall, after one sweep of the chat for anything missed: one plain line each (what he wants, where it landed), charter changes first, held ones marked held, or `none`."
+   - **Progress tracking, "Closes when"** gains: "A chat that parks with no brief still files that Session Log note with the list before `close_thread`."
+   - **Design Board upkeep rule 9** reads `Board ✓ · Filed N`.
+   - Then file one next move on total-harness, tagged `build-82` and `alignment-funnel`: "First Design Assist chat after Build 82 lands: check its replies end `Board ✓ · Filed N` and its Session Log carries the list; if either is missing, file a Punch List item against design-assist." Nothing reaches Charles.
 
 ## Acceptance
 1. The four lane rows read as in step 1 on cbrain main; `get_entity('stack-map')` parses; the index rebuilt; TH-170 completed.
 2. The Lab run part shows on the Chats dot with lane github-action and pays_with github-actions.
-3. AGENT.md's experts section carries the corrections paragraph (one paragraph, no new section).
+3. AGENT.md's experts section carries the corrections paragraph (one paragraph, no new section), with the charter clause and the chat-link wording as in step 3.
 4. A dry fold with `only:` on one test lens-note (filed, then folded, then its brief line reverted by a forward commit) touches only that note.
 5. night-run step 6b and step-in-scorer S4 read as above; both version-bumped.
+6. design-assist is 0.9.0: "DA chat" in `triggers`, When and `wiring.starts`; the section "Charles's corrections in this chat" sits straight after When and reads as in step 7; step 10, Progress tracking and rule 9 carry their new lines; the root `CHANGELOG.md` has its line; the follow-up next move is filed. Read each back from main.
 
 ## Decisions
 - [Charles] Same-day capture of his corrections (TH-199 item 6).
@@ -60,6 +78,11 @@
 - [Claude-per-doctrine] Expert folds run in the night session, not in the chat: chats load no extra skill, and the night session has helpers. Within a day meets the goal. Seats split (data-homes same turn, ai-system-design overnight).
 - [Claude-per-doctrine] A charter change sweeps the lines that copy it. Seat: data-homes.
 - [Claude-per-doctrine] lab-run is a part on the github-action lane, not a lane of its own. Seat: lanes.
+- [Charles, by voice 2026-11-12] Design Assist is the trigger for turn-by-turn capture of his preferences; recorded quietly without asking him; not a subsection of the Build Brief; the Session Log lists what was filed as his audit; a contradicted charter line is the one thing asked; summoned mid-chat, the chat reads back from the top. "Just make it happen."
+- [Claude-per-doctrine] The closing mark `Board ✓ · Filed N`. Both seats named a silent every-turn duty with no receipt as the way this fails; the count is two words and asks nothing. Charles has not seen it; strike it if he objects. Ruled out: a receipt in the per-turn check-in (its line is for Charles and refuses ids).
+- [Claude-per-doctrine] Not sure it is standing → recorded as held, no source edit (seat: ai-system-design). Ruled out: filing nothing (loses the preference without a trace); asking him (homework).
+- [Claude-per-doctrine] A preference about a skill an unbuilt brief is changing goes into that brief (seat: ai-system-design). No new tag for captures: the same `charles-correction` decision, so steps 5 and 6 cover them. Section named for AGENT.md's rule, not "Capture" (that word already routes to the cbrain Archivist; seat: skill-authoring). Step 6 now needs the same correction, not only the same chat (seat: ai-system-design).
+- [Claude-per-doctrine] Proof is the first real Design Assist chat after the build, checked by a filed next move, not a replay: the builder cannot start helpers.
 - Ruled out: a corrections inbox (one more place to read); keying charter edits on trigger words (EB-092).
 
 ## Pasteable prompt
