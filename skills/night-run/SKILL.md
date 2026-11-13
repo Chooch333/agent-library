@@ -85,6 +85,14 @@ If the run text says "dry run": read the line, report the order, what's ready an
    - **Leftovers**: for every `built` result tonight whose report names a hand-on (Closing out, bin 4: something only Charles can do; a step handed to a later build or a check Claude can run is not one), `checkin` a card the same way with that leftover as `next_step`. No email for these.
    - If a check-in fails, retry once, then move on; the card is picked again tomorrow.
 
+## Seat step
+One step, used twice: before a build when its brief is unseated (step 3a) and after every landed build (step 5a). This session runs it itself through the Expert Desk (`skills/expert-desk/SKILL.md`, review mode, prompts from its `references/seat-template.md`); a builder helper cannot start helpers.
+- **Seats.** Read `experts/INDEX.md`. Seat c-stack plus the one craft under it whose call_when best matches the work: two seats. When the work sits wholly in one craft's corner, that craft alone: one seat. Each seat counts against the brake (step 0).
+- **Mode full** for every seat; a risks-only seat returns no path to apply (design-assist 0.8.2). Seat prompt fields: Situation = "night build, before" or "night build, after"; Goal = "what should change, as instructions a builder can apply"; Already decided = the brief's Decisions section (the "Asked for" block and every [Charles] decision are not reopened; a value nobody chose still is judged, per the seat template); The work = the brief (3a), or the handoff block and the commits it names, with how to open them (5a). Each seat reads its own waiting lens-notes first (seat template), so a leftover from an earlier night is in front of it.
+- **Report.** The desk merges as its step 6 says and files the report as one note on the plan's project, tags `expert-desk-report`, `expert-<slug>` per seat, and `night-seat`; its *Newer than my brief* items become lens-notes as the desk says. The 3a report's note id is the one the `Seated:` line names.
+- **Objection.** A *blocks* or *improves* finding that names something to change. *noted* is not one. An objection outside the brief's scope (its Out list) is not applied; it goes straight to that expert as a leftover lens-note (step 5a).
+- **A seat fails.** Retry once (desk step 4). Still failing: 3a builds the brief as it stands; 5a lets the build stand as built. Either way, one leftover lens-note for that expert and `seat failed` in the trace line.
+
 ## Progress tracking
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: job
