@@ -39,6 +39,7 @@ Source: {who they are, in a few words} — "{video or article title}" · {url}
 Lens: {more Claude can do | less work for you | both}
 Cost change: {what moves to what, rough cost if the source says}   ← only when the idea moves work off the Claude plan, adds a paid service, or changes what anything costs
 {Checked | Assumed} — {one line}
+Expert check: {the expert's plain name} {passed | sharpened} it   ← or "Expert check: none this run — {why: no helper tool this run, or more expert groups than seats}"
 ```
 
 Aim for about 120 words per block, headings included. Anything essential
