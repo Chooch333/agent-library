@@ -8,7 +8,9 @@ one-slot lane's heading and the draft format (bottom). Build 41
 its heading, its "What you could do afterward" line and the Cost line.
 Build 57 (BB-2026-10-28-advisor-done-for-you) made every block one notch
 plainer and shorter, dropped "Why it matters here", and added the Lens
-line and the Done-for-you block.
+line and the Done-for-you block. Build 85
+(BB-2026-11-12-funnel-advisor-seats) removed the draft format with the
+retired critic and added the Expert check line.
 
 ## Brief format
 
