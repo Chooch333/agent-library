@@ -93,6 +93,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.6 (2026-11-13): folded EB-193 (Expert CE)
 - 0.2.5 (2026-11-10): origin mark on every Our way line (5 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.2.4 (2026-11-09): Our way 5 updated under the fold rule (TH-155): Lens 24 (EB-168) proved a live chat's fire was refused, so the line now says creating is done from a live chat and firing has no proven lane. Closes the "your call" left by the 0.2.3 hand fold; Design Assist chat on closing out work.
 - 0.2.3 (2026-11-09): folded EB-164, EB-165, EB-166, EB-167, EB-168, EB-169 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 20 to 24 added, Lens 6 rewritten in place.
