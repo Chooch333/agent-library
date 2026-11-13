@@ -12,7 +12,7 @@ source: Original. Designed in-chat 2026-07-02 by Charles + Claude, dogfooding th
 requires: [references/charter.md, references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: with-you
-  starts: "\"Design Assist\""
+  starts: "\"Design Assist\" or \"DA chat\""
   runs_in: claude-chat
   reads: [project-state, cbrain, repos]
   writes: [plans, briefs]
