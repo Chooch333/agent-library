@@ -103,7 +103,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Finish
 - If anything ended `stuck`, `deploy-red`, `skipped`, or interrupted twice: send ONE email to Charles (Gmail, to himself), subject "Night builds — N need you", one plain line per item plus the Build Shelf link (https://cbrain-ui-git-review-chooch333s-projects.vercel.app/dev?tab=shelf). Otherwise send nothing — the shelf's Last night strip is the report.
-- Never review a plan, dispose a disclosure, edit a brief, change a tag, close a Next steps card, or set a card's project. DA chats and Charles do that. (Abandoning a Stack Advisor brief Charles declined, step 2a, is his answer carried out, not a review. Step 6b's lens-notes, Punch List items, night-fold note and its Team Builder helper's expert-brief fold are Charles's own corrections carried out, not a review; "a brief" here is a Build Brief.)
+- Never review a plan, dispose a disclosure or close a card; the seat step may revise a brief and set `experts-seated`. (Step 7's close of a `looks-done` card whose every line was checked is the one card it closes, Closing out in `references/thread-checkin.md`.) Never set a card's project; Charles does that. (Abandoning a Stack Advisor brief Charles declined, step 2a, is his answer carried out, not a review. Step 6b's lens-notes, Punch List items, night-fold note and its Team Builder helper's expert-brief fold are Charles's own corrections carried out, not a review; "a brief" here is a Build Brief.)
 
 ## Changelog
 
