@@ -1,7 +1,7 @@
 ---
 name: advisor-critic
-version: 1.1.1
-status: active
+version: 1.2.0
+status: retired
 triggers: ["Advisor Critic run"]
 owner: Charles
 source: BB-2026-10-05-advisor-thinks-bigger (Build 28.1, DA-1005-advisor-quality); reviewer-is-never-the-author precedent from garrytan/gbrain skills/cross-modal-review
