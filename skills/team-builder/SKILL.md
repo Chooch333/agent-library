@@ -38,7 +38,8 @@ Archivist or to him.
 notes and a fit note (team mode); a build chat is executing a Build Brief whose `Skills:` header or
 scope names a new skill (skill mode); or the Expert Desk's CE job reaches its Catch-up
 and fold step (the Sunday 01:00 firing of the scheduled task "Expert CE") with lens-notes
-waiting on `expert-bench` (update mode).
+waiting on `expert-bench` (update mode); or a helper of the night run reaches its fold
+step 6b with `only:` the day's correction lens-notes (update mode with `only:`).
 **Don't fire when:** deciding whether an expert is needed (the Roster Builder); editing
 an existing skill's rules (an ordinary build under the Execute row); the content is a
 Project State note, a cbrain entity or anything that is not a brief or a SKILL.md
