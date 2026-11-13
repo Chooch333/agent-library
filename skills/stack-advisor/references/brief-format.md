@@ -142,28 +142,11 @@ system's files. Since Build 57: one notch plainer than before.
    get one email when a build is skipped," not "the runner posts a
    night_runs row and a checkin card."
 
-## Draft format (critic live)
+## Expert check (Build 85)
 
-When `cbrain/docs/advisor/critic_live.json` exists the Advisor writes the
-brief to `cbrain/docs/advisor/drafts/ADV-YYYY-MM-DD.md` instead, for the
-Advisor Critic to judge. Same blocks and opening as above, plus:
-
-```
----
-status: draft
-run_id: ADV-YYYY-MM-DD
-focus: intake | build-machine | app
-created_at: <ISO>
-new_capability: ADV-NNN[, ADV-NNN] | none — {one-line reason}
----
-```
-
-and, as the last lines of each idea block (the critic strips them when it
-publishes):
-
-```
-Critic notes — Pool: P-NNNN · Lane: fix | new-capability · Score: {parts} = {total} · Connects to: {ids} · Source file: {repo:path, or "records: …"}
-```
-
-The critic sets `status: reviewed` and appends a "Critic verdicts" section
-(one line per idea: keep / sharpen / cut — reason) once it has ruled.
+The draft format for the Advisor Critic is gone: the critic is retired
+(BB-2026-11-12-funnel-advisor-seats), and every run delivers directly.
+Experts judge the ideas instead (SKILL step 4a). An idea a seat cut never
+appears in the brief. "How this run worked" adds one line per seat: the
+expert, the ideas it judged and its verdicts (pass / sharpen / cut — reason),
+or "No expert seats this run — {why}".
