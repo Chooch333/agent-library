@@ -64,6 +64,17 @@ commit, a tag, a post, a card, a draft or a receipt line. Team Builder still jud
 nothing about whether an expert should exist; it sorts each note by the rules below and
 writes only what the sort allows. Steps 1 to 7 above do not apply; these rules do.
 
+**`only:`** The caller may pass `only: <note ids or a tag>` (the night run's fold step
+6b does, with the day's lens-notes that cite a `charles-correction` decision). With it,
+the run sorts and folds only those notes: ids (display ids such as EB-xxx, or row ids)
+name the notes; a tag keeps only the waiting notes whose own tags hold that tag exactly.
+Every other waiting note is left as it is: not sorted, not tagged, not written into any
+brief, and not listed in the receipt (it waits for the next full run). A named note that
+is not waiting (already `folded` or `routed`, or not a `lens-note` on `expert-bench`) is
+listed in the receipt and not touched. Rules 1 to 6 apply as written to the notes in
+scope; rule 4 builds each brief from main with only the in-scope notes' lines. Without
+`only:`, unchanged: every waiting note is sorted.
+
 **Rules**
 1. **Waiting** = a note on `expert-bench` whose tags hold `lens-note` and one `expert-<slug>`, and neither `folded` nor `routed`. `find_by_tags` expands tags fuzzily: keep only rows whose own tags match exactly. A note with no `expert-` tag, with two, or whose slug has no `experts/<slug>/BRIEF.md` (or only a stub row) is left waiting and listed in the receipt.
 2. **Never** edit an Our way line, or a line whose source is Charles's own record, except by sort (e) Proved. Never edit the header (except `version`) or any section but Our way, Lens and Changelog. Never write a figure into a brief. Never write an Our way line without its origin mark (`references/expert-brief.md`). Never change a note's text or delete it; tags are the only write to a note. Never seal or file a cbrain brief.
