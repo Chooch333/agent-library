@@ -152,7 +152,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: what this chat is designing, in 3-6 plain words, e.g. "Next steps side panel" (thread_key = the board tag, DA-MMDD-slug)
 - Opens when: the first turn (the board tag is stamped)
 - Checks in: end of every turn
-- Closes when: the brief is shelved, or Charles parks it (`close_thread`, closed_how "brief on the shelf" or "parked")
+- Closes when: the brief is shelved, or Charles parks it (`close_thread`, closed_how "brief on the shelf" or "parked"). A chat that parks with no brief still files that Session Log note with the list before `close_thread`.
 
 ## Fan-out — automated multi-agent loops
 
