@@ -63,9 +63,7 @@ Click Declined on the Stack screen before 1 am on {day}, or tell any chat "don't
 ```
 
 `{day}` is the weekday of `builds_on` (SKILL step 4d) — a build at 1 am
-Thursday reads "before 1 am on Thursday". While the critic is live, a
-Done-for-you candidate gets the single line `Could be done for you: {why
-it passes the rule}` instead, and no **To stop it**.
+Thursday reads "before 1 am on Thursday".
 
 Every idea in the committed ADV file (and the `advisor_ideas.body` copy
 the Stack screen reads) renders exactly like this, in this order, nothing
