@@ -1,16 +1,16 @@
 ---
 name: stack-advisor
-version: 2.2.0
+version: 2.3.0
 status: active
 triggers: ["Stack Advisor run"]
 owner: Charles
-source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool; run packet per BB-2026-10-05-advisor-reads-smarter; briefing, focus days, Frontier lane and critic hand-off per BB-2026-10-05-advisor-thinks-bigger; new-capability lane per BB-2026-10-19-advisor-new-capability; done for you, two lenses and plainer writing per BB-2026-10-28-advisor-done-for-you
+source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool; run packet per BB-2026-10-05-advisor-reads-smarter; briefing, focus days and Frontier lane per BB-2026-10-05-advisor-thinks-bigger; new-capability lane per BB-2026-10-19-advisor-new-capability; done for you, two lenses and plainer writing per BB-2026-10-28-advisor-done-for-you; expert seats, field notes and the critic's retirement per BB-2026-11-12-funnel-advisor-seats
 requires: [references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "Mon/Wed/Fri schedule"
-  runs_in: cowork
-  reads: [world-graph, project-state, cbrain]
+  runs_in: claude-code-cloud
+  reads: [world-graph, project-state, cbrain, expert-bench]
   writes: [idea-pool, advisor-tables, email, plans]
   stack: []
   origin: yours
@@ -21,11 +21,14 @@ wiring:
 
 ## What
 Every scheduled run, know Charles's stack and where he is headed, read the
-newest sources, and deliver a brief of up to 6 concrete upgrade ideas:
+newest sources (the experts' own field notes among them), and deliver a
+brief of up to 6 concrete upgrade ideas:
 fixes for today's weak spots, plus new-capability ideas: new or emerging
 tech and techniques connected to how Charles is wired up and running today.
 Two questions drive every idea: what more could Claude sensibly do for
 Charles, and what work could it sensibly take off him?
+Before the brief goes out, the matching expert from the Expert Desk judges
+the ideas (step 4a): it passes, sharpens or cuts each one.
 Small, obvious upgrades that pass the Done-for-you rule (step 4b) the
 Advisor also puts on the overnight build shelf itself — at most 2 per run,
 and Charles has a day to say no. It never builds and never edits the
@@ -50,18 +53,16 @@ whole.** Shapes: `cbrain/docs/advisor/README.md`.
   it to a DA chat, which produces a Build Brief.
 - It still never builds, never edits the stack map, and never queues
   anything that fails the rule — when unsure, it stays an idea.
+- **You are the author; the expert seat is the judge** (step 4a). A seat
+  may cut or sharpen an idea; it never adds one or raises a score, and it
+  never vetoes on "nothing says Charles wants this" or on cost (contract
+  item 8).
 - **The brief is the only email.** Never email Charles that a run failed.
   A failing run stops and, if it can, leaves the 6d Project State note on
   stack-map saying what failed. The Stack Advisor dot's output check goes
   late when runs stop, and the Stack Repairer covers it.
-- When the Advisor Critic is live (6, hand-off switch) the critic, never
-  you, approves and sends your ideas. You are the author; it is the judge.
-  While it is live you hand nothing to the shelf: a Done-for-you
-  candidate goes in the draft as an ordinary idea with the line
-  `Could be done for you: {why it passes the rule}`.
 
 ## Contract — what every brief guarantees
-The Advisor Critic grades every draft against this list.
 1. **Grounded.** Every idea rests on a source you read in full (or Charles's
    own records) and names a real part in `connects_to`: a stack-map id, a
    build-machine part, a harness step/block id, or a plan or decision.
@@ -80,8 +81,8 @@ The Advisor Critic grades every draft against this list.
    ideas is legal, with one line saying why.
 6. **Plain English** per "Writing for Charles" (`references/brief-format.md`):
    short sentences, what changes for Charles, not how it works inside.
-7. **Never quiet.** Every scheduled run ends in a brief (or a draft for the
-   critic) — even a zero-idea one.
+7. **Never quiet.** Every scheduled run ends in a brief — even a zero-idea
+   one.
 8. **No silent veto.** Never drop or down-score an idea because no record
    says Charles wants it — ask him in "Questions for Charles". Never drop
    or down-score an idea because it changes billing or cost — flag it (see
@@ -147,7 +148,7 @@ idea for another section is still allowed.
    b. `docs/advisor/sections/<focus>.md` — full detail for today's section.
    c. `docs/advisor/run_packet.json` — live ideas, `index`,
       `ledger_status`, `next_pool_id`, `next_adv_id`, `last_brief`,
-      `drafts_pending` and the waiting `items`.
+      `field_notes_read_through`, `last_seats` and the waiting `items`.
    Nothing else: not the Master Roadmap (31fdcb9b), the Build Map Skeleton
    (076b64ca), `concepts/stack-map.md` or `get_entity('stack-map')`. If the
    briefing or section file is missing or its "Generated" date is over 3
@@ -177,8 +178,28 @@ idea for another section is still allowed.
       take work off Charles?" Write the one it answers in the idea block's
       `Lens:` line (`more Claude can do` | `less work for you` | both). A
       clear yes to either feeds the score in step 4.
-4. SCORE AND SELECT. Two lanes. Score every candidate and every live idea
-   that got new evidence.
+   g. **Expert field notes.** The experts' weekly reading (Expert CE) files
+      `field-note` notes on Project State project `expert-bench`. Read the
+      ones created after the packet's `field_notes_read_through` (null: the
+      last 7 days), at most 10, oldest first, with one Supabase SQL on
+      `ujditldbqdiqigazkcak`: `select n.display_id, n.created_at, n.tags,
+      n.content from notes n join projects p on p.id = n.project_id where
+      p.slug = 'expert-bench' and 'field-note' = any(n.tags) and
+      n.created_at > '<read-through>' order by n.created_at, n.display_id
+      limit 10;` (exact tag match; never find_by_tags, which expands tags).
+      Each is a source item read in full: it yields 0–3 candidates like a
+      deep-read item, cited as `{kind: "records", display_ids: ["EB-NNN"]}`
+      and grounded in what the note itself says and cites ("Source: your
+      own records — the {expert} expert's field note (EB-NNN)"). They are
+      not packet items: no `skim` entry. Write the newest `created_at` read
+      as `field_notes_read_through` in run_result.json (none read: the
+      packet's value as it was).
+4. SCORE AND SELECT. **Probe first:** check that this session has the
+   Agent tool (helpers; some sessions name it Task). None → `seats:
+   "unavailable"` in run_result.json, skip step 4a and go on exactly as
+   before (the night session seats a Done-for-you brief before it
+   builds); no error, nothing to Charles. Two lanes. Score every candidate
+   and every live idea that got new evidence.
    - **Fix lane (0–100, threshold 60):** *connection* 0–40 (names a
      queued/running plan, an open decision, or a live part and says exactly
      what changes) · *evidence* 0–25 (grounded in a source you read; +8 per
@@ -229,10 +250,61 @@ idea for another section is still allowed.
      it. Excluded: ledger `building`/`declined`/`addressed` ideas, any idea
      a plan or decision cites by ADV ID, and one already live in its part
      (list it under `adopt`). A `cut` idea returns only with a new source
-     that answers the critic's reason (its Response).
+     that answers the reason in its Response (an expert seat's, or the old
+     critic's).
    - Write the two Contract lines for every selected idea now.
    - Assign `adv_id`s from `next_adv_id` upward (a resurfaced idea keeps
      its own) and pool ids from `next_pool_id` upward.
+4a. EXPERTS JUDGE (skip when the probe found no Agent tool). Mark the
+   Done-for-you candidates first (4b's five conditions, a first pass, live
+   check included), so their seat sees them as such; a live packet idea
+   that is a candidate joins in. Then follow the Expert Desk
+   (`skills/expert-desk/SKILL.md`, review mode B; you are the calling chat):
+   a. **Group.** Read `experts/INDEX.md` in agent-library. Give each idea
+      the one active expert whose call_when best matches the change it
+      proposes (never `roster-builder`, `premortem` or a stub). One group
+      per expert.
+   b. **Seat.** At most 3 seats a run: the largest groups first (a tie goes
+      to the group with the higher best score). An idea in a group past the
+      cap goes out unjudged, and its block says so (`Expert check:` line,
+      `references/brief-format.md`). `seats` in run_result.json = the
+      number of seats that answered (0 when there were no ideas).
+   c. **Prompt.** One prompt per seat from
+      `skills/expert-desk/references/seat-template.md` "Review seat", mode
+      full. Situation: "Stack Advisor run ADV-YYYY-MM-DD: ideas for Charles,
+      to go out in today's brief." Goal: "Judge each idea: pass, sharpen or
+      cut." Already decided, don't reopen: contract item 8 ("no veto
+      because nothing says he wants it", and no veto for a cost change —
+      those become a question and a Cost line), and that each idea cleared
+      its lane's score. The work: the group's ideas as their ADV blocks
+      (`references/brief-format.md`), each with its source path or records
+      and, for a Done-for-you candidate, what was checked live and how it
+      was trimmed. Ask the seat to end its reply with one line per idea:
+      `ADV-NNN · pass | sharpen | cut — {reason, plain words}`, and for
+      sharpen the lines it would rewrite. Start every seat in one message
+      (parallel), `subagent_type: general-purpose`, foreground. A seat that
+      fails: retry once, then its ideas go out unjudged.
+   d. **Apply.** *Cut:* the idea leaves this brief and the email; put it in
+      run_result.json's `cut` (`{pool_id, adv_id, ledger_idea, reason,
+      seat}`) instead of `surfaced` — the script gives it the ledger's
+      `cut` status with the seat's reason as its Response. A cut whose
+      only reason is "nothing says he wants it" or a cost change is not a
+      cut: keep the idea and add its question or Cost line (item 8).
+      *Sharpen:* rewrite those lines in place, staying inside what the
+      source supports; never add an idea, raise a score or invent
+      evidence. *Pass:* keep it as written. Every judged idea's block gets
+      its `Expert check:` line. A cut high-conviction idea is not
+      replaced. If a cut empties the new-capability slot, the opening says
+      so in one line.
+   e. **File.** One note on Project State project `cbrain` (`add_note`)
+      holding each seat's reply, tagged `expert-desk-report`,
+      `stack-advisor`, the run id (e.g. `adv-2026-11-16`) and
+      `expert-<slug>` per seat. Its id is the report the Done-for-you
+      provenance line cites (4b). File each seat's *Newer than my brief*
+      items as `lens-note`s on `expert-bench` (desk step 6).
+   f. **Check.** Desk step 5: list commits and Project State rows written
+      since the seats started. Expected: none from the seats. Anything
+      else goes in the 6d note; never undo it silently.
 4b. DONE FOR YOU. Look at every selected idea, and at live ideas in the
    packet that already cleared their lane. An idea qualifies only when
    **all five** hold:
@@ -249,10 +321,11 @@ idea for another section is still allowed.
       in the night runner and ADV-052 became one check in the Stack
       Inspector). If the check shows the premise is wrong, it is not done
       for you; say so in its block's *Why this might be wrong*.
-   When unsure whether it is small enough, leave it as an idea.
+   When unsure whether it is small enough, leave it as an idea. An idea
+   its seat cut is never done for you; one it sharpened is, if it still
+   meets all five.
    **At most 2 per run**, best score first; the rest that qualify stay as
-   ideas. While the critic is live, hand nothing off (Job boundary). For
-   each one:
+   ideas. For each one:
    a. Before writing, `list_plans` on project `cbrain` for a
       draft/queued/running plan citing the ADV id — if one exists, it is
       not done for you (it is already on its way).
@@ -264,10 +337,14 @@ idea for another section is still allowed.
       idea, what you checked live and how you trimmed it; tags
       `advisor-auto`, `build-brief` and the ADV id (e.g. `adv-086`);
       `overnight: true`; `target_repo`; `plain_title` and `plain_summary`
-      in plain words. The directive's last step marks the LEDGER row
-      `addressed` ("done for you — built YYYY-MM-DD, {BB id}"). Then
-      `update_plan_status` → `queued`. These briefs carry standing
-      approval — never ask "Overnight: yes or no?".
+      in plain words. When a seat passed or sharpened it, also tag
+      `experts-seated` and put `Seated: revision 1, report <4a note id>,
+      seats <slug>` as the brief's **Seated:** header line and the first
+      line of the plan's `provenance`; an unjudged one gets neither (the
+      night session seats it before it builds). The directive's last step
+      marks the LEDGER row `addressed` ("done for you — built YYYY-MM-DD,
+      {BB id}"). Then `update_plan_status` → `queued`. These briefs carry
+      standing approval — never ask "Overnight: yes or no?".
    c. Commit the brief to the target repo's `docs/design/{BB id}.md` with
       the plan id in its header; read it back.
    d. Work out `builds_on`: the Indianapolis date of the first 1 am Night
@@ -287,17 +364,16 @@ idea for another section is still allowed.
    ID ("Do you want X? Recommend: yes/no because…"). Max 3 questions
    total; idea questions first. An idea with a question is never done for
    you this run.
-6. DELIVER — the hand-off switch. First read `references/brief-format.md`,
-   `references/email-format.md` and `references/deliver.md`. Then check
-   whether `cbrain/docs/advisor/critic_live.json` exists
-   (`get_file_contents`; not found = absent).
-   **Absent → deliver directly**, as before:
+6. DELIVER. First read `references/brief-format.md`,
+   `references/email-format.md` and `references/deliver.md`. Then:
    a. Commit the brief → `cbrain/docs/advisor/ADV-YYYY-MM-DD.md`; read back.
    b. Commit `cbrain/docs/advisor/run_result.json` (shape in the README):
       `run_id` (the ADV file name), `run_at`, `brief`, `feedback`, `skim`
       (`key`, `ids` copied from the packet, `rating`), `candidates` (with
       `lane`), `rescored`, `adopt`, `surfaced` (with `lane`; Done-for-you
-      ideas too), `held`, `done_for_you` (step 4b). Read it back. Only
+      ideas too), `held`, `done_for_you` (step 4b), `seats` (step 4: a
+      number, or `"unavailable"`), `field_notes_read_through` (step 3b g)
+      and `cut` (step 4a). Read it back. Only
       then set `consumed_at = now()` on every disposition row folded or
       skipped in 1b. Dispatch `advisor-packet.yml` (ref `main`) and
       confirm the refreshed packet shows `last_run_id` = your `run_id`
@@ -305,31 +381,19 @@ idea for another section is still allowed.
    c. Gmail send — subject "Stack Advisor brief ADV-YYYY-MM-DD", Done for
       you first, Ideas for you second (`references/email-format.md`).
    d. Project State note on stack-map: one-paragraph digest + git path,
-      focus section, packet bytes, items skimmed / deep-read,
-      new-capability result, and the Done-for-you plan ids.
+      focus section, packet bytes, items skimmed / deep-read, field notes
+      read, seats (who judged what: passed / sharpened / cut, or
+      unavailable), new-capability result, and the Done-for-you plan ids.
    e. Supabase copy for the Stack screen, per `references/deliver.md`
-      (Done-for-you rows get status `building`).
-   **Present → stop at a draft** for the Advisor Critic:
-   a. Commit the draft → `cbrain/docs/advisor/drafts/ADV-YYYY-MM-DD.md` in
-      the draft format (`references/brief-format.md`); read back.
-   b. As 6b, with `"stage": "draft"` in run_result.json and no
-      `done_for_you`. The script holds new ideas as `draft` in the pool
-      and LEDGER until the critic rules.
-   c. **No email.**
-   d. As 6d, saying the draft waits for the critic.
-   e. Supabase: no `advisor_runs` row and no new `advisor_ideas` rows (the
-      critic writes them when it publishes). Only sync `status`/`response`
-      of existing `advisor_ideas` rows from the packet's `ledger_changed`,
-      skipping rows whose status is `draft` or `cut`.
-   To turn the critic off, Charles deletes `critic_live.json`; the next run
-   delivers directly again.
+      (Done-for-you rows get status `building`; a cut idea gets no row).
 
 ## Progress tracking
 None. This skill finishes in one run and leaves nothing open.
 
-Changelog: `references/changelog.md`. Latest: **v2.2.0** (2026-10-29) — Done for you:
-small, obvious, live-checked upgrades (five conditions, at most 2 per run) go on the
-overnight shelf as `advisor-auto` briefs with standing approval; Charles has a day and a
-Declined click to stop them. Two lenses (more Claude can do, less work for Charles),
-contract item 9, a two-group email and one notch plainer writing
-(BB-2026-10-28-advisor-done-for-you, Build 57).
+Changelog: `references/changelog.md`. Latest: **v2.3.0** (2026-11-13) — Experts judge
+the ideas: after selection, the matching expert from the Expert Desk (mode B, at most
+3 seats a run) passes, sharpens or cuts each idea before the email; a cut goes back
+through run_result.json's `cut` to the ledger's `cut` status. Expert field notes on
+expert-bench are read as sources. The Advisor Critic and its switch file are retired;
+DELIVER always delivers directly. Runs in a Claude Code cloud scheduled task
+(BB-2026-11-12-funnel-advisor-seats, Build 85).
