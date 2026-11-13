@@ -1,11 +1,11 @@
 ---
 name: tech-discovery
-version: 0.3.0
+version: 0.4.0
 status: draft
 triggers: ["Tech discovery:"]
 dependencies: []
 owner: Charles
-updated: 2026-10-21
+updated: 2026-11-13
 source: "Split out of tech-review 0.2.1 by Charles, 2026-10-14 (R&D lab chat). Steps and brief format are the tech-review 0.1.1 review and tech card, minus the hands-on test."
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
