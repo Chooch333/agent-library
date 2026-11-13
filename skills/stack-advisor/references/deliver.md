@@ -6,11 +6,11 @@ the ledger is now written by `tools/advisor/run_packet.py` from your
 `run_result.json`, so ledger values below come from your own result (new
 ideas) and from the refreshed packet's `ledger_changed` (everything else).
 
-**Critic live (Build 28.1, BB-2026-10-05-advisor-thinks-bigger).** When
-`critic_live.json` exists, the Advisor does only the last bullet below
-(status/response sync of rows that already exist) and the Advisor Critic
-does the rest when it publishes — for the ideas it kept. A LEDGER row whose
-status is `draft` or `cut` is never written to `advisor_ideas`.
+**Cut ideas (Build 85, BB-2026-11-12-funnel-advisor-seats).** An idea an
+expert seat cut (SKILL step 4a) is not in the brief and gets no
+`advisor_ideas` row. A LEDGER row whose status is `draft` or `cut` is never
+written to `advisor_ideas`. (The Advisor Critic, which once wrote these rows
+itself, is retired.)
 
 Supabase copy for the cbrain-ui Stack screen (project
 `lpeswznkxzeeyiqaewma`). Same data as the ADV file and the ledger, stored as
