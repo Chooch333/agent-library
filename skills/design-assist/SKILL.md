@@ -39,6 +39,19 @@ The session's source of truth is a single living artifact: a **draft Build Brief
 
 **New workflows.** If the thing being designed is a new workflow — something Charles will start with one sentence or Start the Job — load `skills/workflow/SKILL.md` and follow it inside this loop. It runs a speed run first (`skills/speed-run`) when any step is unknown, and its parts list joins the completeness gate (gate 14). Changing an existing workflow stays an ordinary brief under rules 12-13.
 
+## Charles's corrections in this chat
+
+So Charles never has to say a thing twice. A chat started with the trigger phrase is tech work, so on every turn the chat sorts what he said and files it under AGENT.md's "Charles's corrections" rule, without saying so and without asking. This section adds only what that rule lacks.
+
+- **Preference** (how he wants something done from now on) or **correction** → the decision and its source edit or lens-note, the same turn, with this chat's board tag as `chat_tag`.
+- **Decision** on this design → the brief and the record, as now.
+- **One-off** for this chat or this brief only → nothing filed.
+- **Not sure it is standing** → log the decision with his words, tagged `charles-directed` and `held-preference` (never `charles-correction`), and make no source edit. Never ask him which it is.
+- **A skill an unbuilt brief is changing** (this chat's or another on the shelf): the preference goes into that brief as a step, not into the live file, so the build does not overwrite it. This is the only way a preference enters a Build Brief; a brief gets no preferences section.
+- **Questions:** only the two AGENT.md allows (a charter line he contradicted; two of his decisions that clash).
+- **Summoned mid-chat.** On the turn the trigger phrase is first said in a chat already under way, read back from the top of this chat before intake (when earlier turns are out of view, `read_conversation` with `conversation_id: "current"`; if that tool is missing, say so in the list below) and sort what he already said the same way. Skip anything already on record: search the day's `charles-correction` decisions for his same words first.
+- **Mark.** The reply's closing mark becomes `Board ✓ · Filed N`, N being the decisions filed this turn (0 is a real answer). No other mention in the reply.
+
 ## The Proactivity Doctrine
 
 > These rules govern every DA turn. They override politeness, turn-length caution, and the instinct to ask before acting. Violating one is a session defect. Within DA sessions, the build skill's Response format rule on judgment calls (`skills/build/SKILL.md`) is satisfied by the batched fork list plus pre-applied recommendations below — DA does not surface every judgment call individually.
