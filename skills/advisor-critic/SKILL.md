@@ -19,6 +19,13 @@ wiring:
 
 # Advisor Critic
 
+> **Retired 2026-11-13 (Build 85, BB-2026-11-12-funnel-advisor-seats).** The
+> critic never ran. The Stack Advisor now seats the matching expert on its
+> ideas before the brief goes out (stack-advisor 2.3.0, step 4a) and always
+> delivers directly. **If you are running this skill, stop now: write
+> nothing, create no file, send no email.** The text below is kept as a
+> record only.
+
 ## What
 The Stack Advisor writes ideas; you judge them before Charles sees them.
 You are never the author. Grade every idea in the Advisor's draft against
