@@ -227,3 +227,28 @@ Newest last.
   status `building` and a "Builds {day} night unless you click Declined
   — {change}" response. While the critic is live nothing is handed off
   ("Could be done for you" line instead).
+- **v2.3.0** (2026-11-13) — Experts judge the ideas
+  (BB-2026-11-12-funnel-advisor-seats, Build 85; Charles, TH-199 item 6).
+  Step 4 opens with a probe for the helper tool: none → `seats:
+  "unavailable"` and the run goes on as before (the night session seats a
+  Done-for-you brief before it builds). New step 4a: the selected ideas
+  (Done-for-you candidates marked) are grouped by the expert whose
+  call_when best matches on `experts/INDEX.md`, one Expert Desk seat per
+  group, mode B, at most 3 seats a run (largest groups first; the rest go
+  out unjudged and their block says so); contract item 8 goes in as
+  Already decided. A cut leaves the brief and goes to run_result.json's
+  new `cut` list, which the ledger script records as `cut` with the seat's
+  reason as its Response; a sharpened idea is rewritten in place; a
+  Done-for-you brief a seat passed gets tag `experts-seated` and the
+  `Seated: revision 1, report <note id>, seats <slug>` line; the desk
+  report is one `expert-desk-report` note on cbrain. New step 3b g: up to
+  10 `field-note` notes on expert-bench created after the packet's
+  `field_notes_read_through` (none yet: the last 7 days) are read as
+  sources, and run_result.json stores the newest read. The critic switch
+  is removed: no Job boundary bullet, no "The Advisor Critic grades"
+  opener, no "while the critic is live" in 4b, no draft branch in step 6,
+  which always delivers directly; `skills/advisor-critic` is retired.
+  Wiring `runs_in: claude-code-cloud` (it is a Claude Code cloud scheduled
+  task); `reads` adds expert-bench. References: brief-format (draft format
+  removed, `Expert check:` line), deliver (cut ideas get no Stack-screen
+  row), email-format (the Advisor always sends it).
