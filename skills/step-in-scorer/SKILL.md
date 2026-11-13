@@ -1,6 +1,6 @@
 ---
 name: step-in-scorer
-version: 0.2.0
+version: 0.3.0
 status: draft
 triggers: ["Started once a week as a helper by the first Design Assist chat whose intake finds the newest step-in-receipt that read chats more than 7 days old, or none (design-assist step 1)", "Run by hand in a session bound to this claude.ai Project that has the past-chat tools (recent_chats, read_conversation)", "Replay section only: run by a Design Assist chat itself (never a helper) when the Replay Pick step returns a task (design-assist step 1)"]
 dependencies: [expert-desk]
