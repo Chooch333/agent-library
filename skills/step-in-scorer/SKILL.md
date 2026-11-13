@@ -49,6 +49,7 @@ Project for every write: `total-harness`. Source on every write: `Step-in scorer
    - **ask**: his plain answer to a fair question only he could answer (the rubric's rule). Counted as `A`, never filed.
    - **unsure**: can't tell which → counted as `U`, filed with tag `step-in-unsure` instead of `step-in`.
    Before filing, `find_by_tags` `["step-in", "step-in-unsure"]` (lessons, exact-tag filter, limit 200). A step-in is **already recorded** when a record's situation names the same chat (its link; when the record has no link, the same chat title and date) and the same correction. Already recorded → counted in N, not filed again.
+   Also check Charles's own correction decisions: `find_by_tags` `["charles-correction"]` (decisions, all projects, exact-tag filter). A step-in that matches a `charles-correction` decision on the same chat (its link, its title and date, or its board tag, the decision's `chat_tag`) **and the same correction** counts as already on record (its display id goes in the receipt's "already on record" list); never filed twice. A chat's other misses, ones no decision names, are still filed.
 5. **S5 File.** One `add_lesson` per new step-in (and per unsure), severity `normal`:
    - situation: `Step-in, chat "<title>" (<date>, <link>), turn <n>, <skill-slug and section, or no skill>: Claude did: <one line>.`
    - lesson: `Charles wanted: <one line>.`
