@@ -1,5 +1,0 @@
-{
-  "tool": "node",
-  "version": "24.22.3",
-  "reason": "Node 24 is the baseline for every Node project (decision PP-032, Charles 2026-09-24; never 20.x, which is end of life). 24.22.3 is the newest 24.x on the npm registry as of 2026-11-14."
-}
