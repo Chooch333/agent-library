@@ -302,6 +302,7 @@ round, measured from the drawing like any other.
 - A shared library of shape helpers (TH-093's parts library): not used. It was only ever tested with Fable;
   run E, the standard Charles chose, built every shape from scratch.
 - Outlines inside the .glb; paid 3D services without Charles's say-so (Meshy stays a separate route beside this).
+- Skip the heat map because the picture isn't a front view (Blue Ninja, 2026-11-15): cut it out or ask (9.1).
 
 ### 9.10 Not proven yet
 One drawing so far. The consistency test is a second, different drawing by one of the boys: under 40 minutes,
