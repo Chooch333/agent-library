@@ -42,7 +42,8 @@ Write the steps from Charles's sentence to the finished thing as rows (the speed
 | Starts | "Start the Job" on Total Harness → Workflows | A trigger sentence in any chat |
 | Runs | A runner scheduled task, one action per session | Inside the chat |
 | Stops | Gates on the job page; Charles passes or pins | Chat turns ("tell me Launch") |
-| Example | Architectural renderings | Game Maker (family arcade) |
+| Card on the Workflows tab | Yes, with the Start the Job form | Yes, showing its trigger sentences |
+| Example | Architectural renderings | Game Maker, Character Maker (family arcade) |
 
 Pick **screen** when one run outlasts a chat, needs the PC or long renders, or Charles reviews pictures with pins. Pick **chat** when a run finishes inside one conversation. Both is allowed; say which is primary. This is a DA fork with a recommendation.
 
