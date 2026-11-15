@@ -148,9 +148,16 @@ Evidence and every run compared (A–F): R&D report "Likeness Heat Map"
   model, hand the job to an Opus worker with this section as its brief, or ask Charles to switch the chat to
   Opus. Never run it on Fable.
 - **Needs a code workspace** (Node 22+, Python 3.10+). If the chat has none, say so plainly and stop.
-- **The drawing:** one clean front view on a plain background (the same input Meshy gets). If the character is
-  drawn turned, ask for a front view (the heat map's `--yaw` option exists but has never been used on a turned
-  drawing).
+- **The heat map always runs (TH-230).** Never skip it on your own call, whatever the picture looks like. Its
+  input is one front view on a plain background (the same input Meshy gets). Make the picture fit before round 1:
+  - *Background, other objects, or more than the character* (a ball, a scene): cut the character out yourself onto a
+    plain background with a short script, and use that as `drawing.png`. No question needed.
+  - *Turned, side-on, or mid-move* (a lunge, a swing): stop before building and ask exactly: **"This picture isn't
+    a straight-on front view, so the likeness check can't score it. Can someone draw or pick a front view, or
+    should I build it by eye without the check?"** Build nothing until answered. Skip the heat map only on
+    Charles's yes, and write "Heat map skipped — Charles said so" in `log.md`. (The heat map's `--yaw` option
+    has never been used on a turned drawing; don't rely on it.)
+  Blue Ninja (2026-11-15) skipped it silently on a turned, mid-swing picture; that is the failure this rule stops.
 - **Get the 2D-3D Maker tool:** read every file in Chooch333/agent-library `skills/game-maker/maker/` (Custom
   GitHub MCP `get_file_contents`, or the public raw files), write them into one folder, run its setup line
   (`maker/README.md`). The tool measures and packages only; it holds **no shapes**. Build every part of every
