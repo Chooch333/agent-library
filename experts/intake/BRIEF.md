@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.2
+version: 0.1.3
 status: active
 ---
 
@@ -24,7 +24,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 6. Adding or dropping a source: one line in world-graph feeds.json or yt-relay channels.json, with no build; commits feeds are not followed without a new decision; a failing or quiet source shows as an alert on its row on the Sources page, and Charles is never asked keep-or-drop [Charles · CB-349; CB-573; WG-213]
 7. Saying what intake exists: list the repo's workflows and digests first; not the decision log or the map alone, because two sessions once made decisions from an out-of-date picture [Charles · WG-082]
 8. An unreadable item: retried, then marked failed with a reason after the third try; never guessed past [Claude · post-reader 2b; stack-map post-reader breaks_if]
-9. Video: only the transcript (captions) is taken, never the video itself; it is fetched by the PC job and read by the Video Reader on the subscription, with the paid reading step switched off; not fetched from the cloud, because YouTube blocks cloud addresses where the PC gets through [Charles · stack-map youtube, yt-relay, video-reader; WG-073; WG-063]
+9. Video: only the transcript (captions) is taken, never the video itself; it is fetched by the PC job and read by the Video Reader on the subscription, with the paid reading step switched off; a video with no captions or thin captions waits and is retried over several days before it ends with a reason, because captions often appear well after a video is posted; not fetched from the cloud, because YouTube blocks cloud addresses where the PC gets through [Charles · stack-map youtube, yt-relay, video-reader; WG-073; WG-063; Claude: Build 72, plan 567842d5, succeeded; yt-relay commits c30a74a to 9b4a4ea; EB-154]
 10. A video inside a shared post: only the caption and preview image are read, and the article says so; not speech-to-text, because that step is not built [Claude · post-reader 2e; WG-189]
 11. Sharing from the phone: one share shortcut sends the link to the yt-relay receiver; YouTube links go to the video to-do list and X or Instagram posts to the shared-posts list, each with an optional steer; any other link is turned away [Claude · stack-map yt-relay "Phone receiver"; Build 60]
 12. Email: only mail Charles forwards to the go-between address, where the +word names the project; not his personal inbox, because he chose to reach content at its source platform instead [Claude · E-001; E-013]
@@ -52,6 +52,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 13. A feed that never produced anything, diagnosed by guesswork instead of by opening it: a working feed can be permanently empty or too thin for the word minimum [CB-573]
 14. A new input source, or a jump in volume, added to a part that reads on the API, with the per-item and per-week cost math and the money gate left at the old volume [design-assist 0.2.10 changelog: the transcript go-live brief]
 15. A chat told Charles a video has no transcript because its own web fetch hit YouTube's bot wall, without checking world-graph data/transcripts or intake_items or queuing the video on yt-relay, where the PC relay fetches captions from a home address [Charles 2026-11-09: "Why does Claude keep telling me there's no transcript"; graph-engineering chat 2026-11-04; step-in lessons tagged pattern-cant-reach]
+16. ~ A reader's failure that never reaches the status the Sources page reads, so short failed transcripts showed as waiting while a hand-started to-do step held new ones back; Build 72 moved the step into the nightly run and carries the failure through [CB-591; CB-593; Build 72, plan 567842d5; EB-155]
 
 ## Procedure
 
@@ -89,6 +90,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.3 (2026-11-15): folded EB-154 (proved: Build 72, plan 567842d5 succeeded), EB-155 (Expert CE). EB-155 asked for its two gaps to go into Our way 9; Build 72 closed both, so it lands as a Lens line, and Our way 9 never said the video step waits for a hand run (github-integrations Our way 2 now agrees).
 - 0.1.2 (2026-11-10): origin mark on every Our way line (11 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.1 (2026-11-09): applied EB-017, EB-123, EB-124, EB-125 and a lens line from the first step-in cluster under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.0 (2026-11-03): new craft under c-stack, stack wiring team (EB-007 row 6, confirmed by Charles 2026-11-03). Our way comes from the world-graph decisions on the subscription reader, size and spending limits, the post-reader skill, the stack map's intake dots, and the email and subscription-content records. The lens comes from world-graph and cbrain lessons and design-assist rule 8. Takes "intake pipelines" from ai-system-design's call_when. Fit pass (EB-015): Lens 1 and 14 narrowed so c-stack keeps cap timing and stating cost.
