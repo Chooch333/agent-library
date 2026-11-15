@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds, removes or re-routes a running part (where or how often it runs), or decides how one is checked, how its failure or a wait on Charles reaches him, or what each run leaves behind to show it ran"
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
-version: 0.1.4
+version: 0.1.5
 status: active
 ---
 
@@ -22,15 +22,15 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 4. What colour silence gets: silence alone turns a dot amber; red needs a real failure or a used-up allowance. Not red on a quiet spell, because a machine asleep overnight would raise a false alarm [Claude · CB-492 item 1]
 5. The checker itself: the Stack Inspector is a timer in cbrain's Vercel project and uses no AI; not a GitHub Action, because it would go silent exactly when Actions runs out [Charles · CB-484; CB-492 item 4]
 6. How Charles hears about a broken part: no email per problem. The Stack Repairer reads red and late dots on its schedule and fixes each one at the smallest size; its evening run sends one recap of the day. Not the checker's own red/fixed alert email, which Build 27 switched off and which stays off [Claude · Build 27, BB-2026-10-05-stack-repairer; stack-repairer "Do NOT"; CB-492 item 2 dropped]
-7. Fixing a red dot: use the smallest fix that works: a re-run, a one-file fix, a short brief queued with standing approval, or a build right away when urgent. Re-runs are capped before the fix moves up a size. Hard gates (a key, money, an irreversible change) are logged needs-you, never asked as a blocking question [Claude · stack-repairer step 4; Build 27]
+7. Fixing a red dot: use the smallest fix that works: a re-run, a one-file fix, a short brief queued with standing approval, or a build right away when urgent. Re-runs are capped before the fix moves up a size. Hard gates (money, a credential only Charles holds, an irreversible change, safety, a settled rule) are logged needs-you, never asked as a blocking question; an expert's objection or a revision's outcome, including a revision that fails or goes red, is never a needs-you, a card or an email [Charles · TH-198; Claude: stack-repairer step 4; Build 27; EB-192]
 8. Running parts vs rules: running parts belong to the Stack Inspector and Stack Repairer, daily. Rules, skills and the map belong to the Rules Inspector and Rules Repairer, weekly, through the Punch List. A broken dot whose real fix is a rule or map change gets a brief, never a direct edit by the Stack Repairer [Claude · stack-repairer What, Do NOT; stack-map Stack Flow section]
-9. Anything waiting on Charles: it goes under Needs you in the evening recap, worded as the exact ask, plus a Next steps card. Not a separate email, because Charles asked for daily only, no immediate email [Charles · stack-repairer 0.3.0, Charles 2026-10-23; email-approval-gate dot; Build 13.6]
+9. Anything waiting on Charles (only the hard gates above): it goes under Needs you in the evening recap, worded as the exact ask, plus a Next steps card. Not a separate email, because Charles asked for daily only, no immediate email, and not review work a design hands back to him, because that is a design fault [Charles · stack-repairer 0.3.0, Charles 2026-10-23; email-approval-gate dot; Build 13.6; TH-198; EB-192]
 10. How Charles clears a needs-you: he answers in any chat (for a held email: answer the questions and say "seal the draft"). Not by replying to the recap, because replies to the recap stay unread [Claude · CB-537; email-approval-gate dot]
 11. A job that leaves something open: it checks in as a job, with a plain next step and who it waits on, and closes its own card when the thing clears. Jobs never reopen a card [Claude · thread-checkin.md 0.3.1; stack-repairer Progress tracking]
 12. Each scheduled run's own trace: one Project State note per run. Its first line is a plain-English count, then the counts and the paths written. No email, neither a digest nor a failure notice. Not the digest emails, which Build 27 retired [Claude · post-reader steps 5–6; Build 27 Collector digest retired; BB-2026-11-03-expert-ce "one note per run; no email"]
 13. A problem a run or chat finds in a running part outside its own job: one `reported` row in the stack fix log (stack_repairs) with a recheck anyone can run; the Stack Repairer treats it like a red dot and grades it by that recheck, and design questions stay on the Comms Table; not a Comms Table needs-design-check post, because running-part posts sat there with no runner until a build swept them [Charles · WG-103; WG-107; Build 67, BB-2026-11-03-stack-fix-log; AGENT.md; stack-repairer 0.4.0; TH-149; EB-130]
 14. Telling quiet from dead: a part writes a marker every run, even when it did nothing, and its dot checks the newest marker. The Stack Repairer also watches the Stack Inspector's own row and treats a stale one as a red dot [Claude · stack-repairer `_run` marker and step 1; Build 27 forks]
-15. Proving a new or changed check: run the checker in dry mode with a temporary test input that turns the dot red and then back. Do it right after a scheduled check so no real status row records the test [Claude · Build 13.6 session log CB-567; CB-502 dry mode]
+15. Proving a new or changed check: run the checker in dry mode with a temporary test input that turns the dot red and then back. Do it right after a scheduled check so no real status row records the test. Dry mode refuses a call without the checker's secret as a bearer, so the proof needs a session that holds that secret, and the build brief says where the proof runs [Claude · Build 13.6 session log CB-567; CB-502 dry mode; stack_repairs 9de39d46; cbrain services/api/cron/stack-status.ts needsLogin, read 2026-11-15; EB-232]
 
 ## Lens
 
@@ -54,6 +54,8 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 18. ~ A known cause that comes back every few days, fixed each time by the same re-run and graded green, so the per-day re-run cap and the still-red size-up never fire; when the lasting fix is Charles's to revisit (a trigger he turned off), the ladder never brings it to him [stack_repairs b51452ff, b1a9bb41; CB-562; stack-repairer steps 2 and 4a; EB-132]
 19. A pause Charles calls in a build chat recorded only in the plan's report, with no Next steps card and no recap line: it sat for days and froze the builds queued behind it until he was asked [Build 35.1 plan report; TH-154; EB-172]
 20. An item carried as waiting on Charles with nothing waiting for it: a key no use case names, a question a decision had already answered, test jobs left at a review stop [Block 5 plan; TH-031; TH-055; EB-173]
+21. A grade or report link typed by hand and stitched from two rows' ids points at no row, so the real row looks ungraded or open with nothing in flight, and the ladder treats it that way; a check that every link points at a real row belongs with the log [stack_repairs 3a5b1377, cc808024; skills/stack-repairer step 2; EB-231]
+22. A watching row that points at a plan turns off the second-watching size-up even when the plan is a draft nothing will queue, so the dot is watched for good with no runner behind the fix [stack_repairs 5b0da05a; plan d0fdb70b, a draft; skills/stack-repairer "Reported problems"; EB-233]
 
 ## Procedure
 
@@ -91,6 +93,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.5 (2026-11-15): folded EB-192 (proved: TH-198), EB-232 (proved: stack_repairs 9de39d46, cbrain stack-status.ts read), EB-231 (proved: stack_repairs 3a5b1377 and cc808024), EB-233 (proved: stack_repairs 5b0da05a, plan d0fdb70b still a draft, stack-repairer read), EB-153 (proved: Build 67, EB-130; Our way 13 already names the stack fix log since 0.1.2, so no line changes) (Expert CE).
 - 0.1.4 (2026-11-10): origin mark on every Our way line (4 Charles, 11 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.3 (2026-11-09): folded EB-172, EB-173 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 19 and 20 added.
 - 0.1.2 (2026-11-09): applied EB-130 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
