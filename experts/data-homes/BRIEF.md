@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a kind of data lives or is read from — cbrain pages, the Supabase index, Project State, the world-graph and its mirror, repo files, Storage — or keeps, rebuilds or removes a copy of it"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
-version: 0.1.3
+version: 0.1.4
 status: active
 ---
 
@@ -47,6 +47,7 @@ Which store holds each kind of data, where readers read it from, and how copies 
 11. A fact removed from its home but left in its copies: the index, the mirror, embeddings, run logs and git history [CB-505]
 12. A naming scheme (group id, slug, separator) never run end to end, so it ships a value the store rejects [WG-052]
 13. ~ A copy's delete step that treats "could not find the source" as "the source is gone" (a check that failed to load, a lookup on the wrong path, a missing marker) deletes live data, and a recheck that uses the same lookup agrees with it; an unknown answer should keep the row [gbrain v0.60.511.0; gbrain v0.60.497.0; ~ cbrain rebuild.ts orphan sweep has this shape, no miss seen yet; EB-117]
+14. ~ A write that reaches its home through a queue or outbox counted as saved when its status stops at sent or pushed; it is done only when the home marks it applied, since the consumer may be gone or the commit stranded [gbrain v0.60.524.0 release notes; CB-543; EB-222]
 
 ## Procedure
 
@@ -84,6 +85,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.4 (2026-11-15): folded EB-222 (Expert CE)
 - 0.1.3 (2026-11-10): origin mark on every Our way line (8 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.2 (2026-11-08): folded EB-117 (Expert CE)
 - 0.1.1 (2026-11-04): Lens 10 (rename/merge has no path, CB-398) moved to graph-engineering (EB-051); lens renumbered. Lens 13 (WG-052) kept.
