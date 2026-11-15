@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.4
+version: 0.1.5
 status: active
 ---
 
@@ -31,7 +31,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 13. Function-to-function calls: the stable production domain; not a deployment-specific address, which ages out or sits behind the login wall [Charles · CB-088; CB-070]
 14. App login: an app-level password gate in middleware, its value set by Charles in the dashboard; not Vercel Deployment Protection, because it forces a Vercel sign-in and confuses internal calls [Charles · CB-093; CB-072]
 15. Timers that must run: on a production Vercel project, cbrain's or that of the server that owns the data (project-state-mcp's daily backfill); not cbrain-ui's, because Vercel crons run only against a production deployment [Claude · CB-492 item 4; plan aacd9bfa; CB-581; Vercel docs vercel.json crons, read 2026-11-03]
-16. Long work in a function: cap the items per run and claim the duration limit; batches go to a queue table drained by a cron worker; not continuation tokens or all-synchronous calls [Charles · E-024; P-011]
+16. Long work in a function: cap the items per run and claim the duration limit; batches go to a queue table drained by a cron worker, or the run keeps a time budget under the duration limit its vercel.json states and works a few rows at a time, so the unfinished rows are the queue, the next cron run drains them, and the run reports that it stopped early; not continuation tokens or all-synchronous calls [Charles · E-024; P-011; Claude: stack_repairs 8187de7c, 4e5513cc; plan aacd9bfa; project-state-mcp api/backfill.ts and vercel.json, read 2026-11-15; EB-218]
 17. Cron cadence: sub-daily crons rely on the team's paid Vercel plan; the free tier's two-cron cap was dropped [Claude · E-032 supersedes CB-008]
 18. Proving a setup: a create-nothing rehearsal or the first real app; the health route does one real read with the server key; nothing left in Charles's accounts for testing [Charles · wire-new-app a, c, f; ~ Charles 2026-10-07, from memory]
 19. A broken MCP server deploy: the rollback Action, run by hand with the earlier deployment's address [Claude · stack-map cbrain-mcp dot]
@@ -90,6 +90,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.5 (2026-11-15): folded EB-218 (proved: stack_repairs 8187de7c and 4e5513cc, project-state-mcp backfill.ts and vercel.json read) (Expert CE). EB-195 left waiting: it asks for the header's call_when to match the index row, and update mode never edits the header.
 - 0.1.4 (2026-11-10): origin mark on every Our way line (9 Charles, 10 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.3 (2026-11-09): applied EB-047, EB-110 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.1.2 (2026-11-08): folded EB-111 (Expert CE)
