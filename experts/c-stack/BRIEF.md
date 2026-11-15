@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, a charter rule, or whether to build or adopt a part"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (meters:, lanes:)", "agent-library:references/skill-design-framework.md (Q10)", "agent-library:experts/INDEX.md"]
-version: 0.2.5
+version: 0.2.6
 status: active
 ---
 
@@ -21,8 +21,8 @@ The captain over the stack crafts (lanes, github-integrations, services, data-ho
 3. Stating cost: every scoped part carries its real-money cost and size unasked, per item and per week where it scales; not left for Charles to ask [Claude · design-assist rule 8]
 4. Money for a new use case: decided per use case, free by default or a named cap per paid tool set at a money stop; not a standing default, because money is one of the three fields a use case decides with no default [Charles · TH-024; TH-076]
 5. A paid allowance runs out: wait for the reset or slow down; not raising the limit or buying a top-up, because raising a limit is Charles's call [Charles · CB-322; WG-130]
-6. A switch-off made to save an allowance: it stays off, and a lasting change waits for Charles's say; not switched back on or routed around by a build, because he turned it off on purpose [Claude · CB-562, Actions triggers off since 2026-10-12]
-7. When to stop for Charles: only for money, credentials only he can supply, an irreversible data change, safety, or a change to a settled harness rule; a plainly prudent tooling or method fork is a logged judgment call; not a stop to ask whether to continue, or a request that he test what Claude can test, because he wants design and build carried through [Charles · skill-design-framework Q10; TH-085; charter, How he wants to work]
+6. A switch-off made to save an allowance: it stays off, and a lasting change waits for Charles's say; a timer it held moves to a Vercel cron or into a run that already starts by itself, per the charter's two-engine rule; not switched back on or routed around by a build, because he turned it off on purpose [Charles · TH-159; WG-233; WG-236; charter, standing rules; Claude: CB-562, Actions triggers off since 2026-10-12; EB-203]
+7. When to stop for Charles: only for money, credentials only he can supply, an irreversible data change, safety, or a change to a settled harness rule; a plainly prudent tooling or method fork is a logged judgment call; an expert's objection to a build is a revision applied in the same run, never a stop or a mark that the build needs a fix, and a plan is judged by tracing each outcome to where it lands and naming each one that lands on Charles; not a stop to ask whether to continue, a request that he test what Claude can test, or review work handed back to him, because he wants design and build carried through and an outcome that lands on him as review work is a design fault [Charles · skill-design-framework Q10; TH-085; TH-198; charter, How he wants to work; EB-186]
 8. Builds and real work: a build proves its workflow on a test job it makes and then hides; real jobs and his review stops stay out of the build, and one-time setup only he can do (keys, links) is a hard gate; not his review as the build's acceptance, because that ties a build's close to his calendar [Charles · TH-062]
 9. What Charles holds: nothing between chats, with no state to remember, check or carry and no text to paste (where a rule goes instead is skill-authoring's line 7); not the earlier paste-a-bullet pattern (TH-026), because he reworked his Projects to read AGENT.md first [Charles · Charles 2026-10-23; charter, "reduce how much he has to hold"]
 10. Governance flags (security, employer data on personal infrastructure): raised in one line and parked for their own session; not settled inside the design [Charles · charter, standing rules]
@@ -46,6 +46,10 @@ The captain over the stack crafts (lanes, github-integrations, services, data-ho
 10. Wiring done on the fly in a chat, with no protocol built in advance, that Charles cannot audit [charter, How he wants to work; charter, non-negotiable]
 11. ~ A record says a call is Charles's without testing it against the five reasons to stop for him, so it becomes a card, an amber dot and a timed re-ask on a question he does not want [CB-573; WG-213; stack_repairs 482e1aac, 0ad9795e; EB-024]
 12. ~ A part is retired but its scheduled task and its open next moves are left on, because the retirement's done list covers only repo files; a task no session can switch off becomes one more click Charles holds, with a credential still in it [A-114; stack_repairs 266b923a; PP-013; EB-088]
+13. ~ A claude.ai Project's instructions hold rules as pasted text only Charles can edit, so a later decision leaves a stale copy every chat in that Project obeys [TH-069; TH-121; C-075; ~ the Total Harness instructions as read 2026-11-09 were not re-read here; EB-151]
+14. ~ A campaign gate (block order, the single money stop) outlives the decisions that replaced it, and the campaign's purpose and description still state the old order [TH-024; TH-070; TH-076; EB-152]
+15. ~ A value a build picks by habit breaks a standing decision of Charles's, because the builder never searched the record before picking, and the handoff then lists it as a value nobody chose [PP-032; plan dd53e29c; EB-196]
+16. ~ A switch-off made to save an allowance also cuts a free step another part depends on, and that part's dot stays green while its work piles up; name what depends on a run before switching it off [CB-593; CB-562; EB-202]
 
 ## Procedure
 
@@ -74,6 +78,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.6 (2026-11-15): folded EB-203 (proved: TH-159, WG-233, WG-236, charter standing rules), EB-186 (proved: TH-198), EB-190 (proved: TH-195 as recorded in TH-201; no line rested on TH-196's prepaid-balance idea, so no line changes), EB-151, EB-152, EB-196, EB-202 (Expert CE). EB-156 (a Vercel tool fact) went to the Archivist as a draft brief.
 - 0.2.5 (2026-11-10): origin mark on every Our way line (13 Charles, 2 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.2.4 (2026-11-09): applied EB-018 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
 - 0.2.3 (2026-11-08): folded EB-024, EB-088 (Expert CE)
