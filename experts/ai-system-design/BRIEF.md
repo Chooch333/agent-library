@@ -6,13 +6,18 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.5
+version: 0.1.6
 status: active
 ---
 
 # ai-system-design
 
 The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing.
+
+## Our way
+
+1. Saying how a part works: read that part's own file before a design rests on the claim; not a line about it in another part's file, because a design chat said overnight builds cannot call an expert on the strength of one line in the scorer skill, while the night-run skill shows the night session can [Charles · TH-198, 2026-11-12; EB-187]
+2. Checking a design for how Claude works: trace it outcome by outcome to who has to act next and name each one that lands on Charles, taking the extra minutes to reason it through; not a design judged by its steps alone, because a review step's commonest outcome landed on him [Charles · TH-198, 2026-11-12; EB-187]
 
 ## Lens
 
@@ -35,6 +40,7 @@ The captain over how Claude works. Its crafts: skill-authoring, premortem, roste
 17. ~ A skill's finish line made unreachable by a later standing rule: the rehearsal sat as the last check of the last brief while builds may not hold Charles's stops or start a real job, so nothing owned it; when a standing rule lands, the skills whose finish depends on it are swept [skills/workflow, "Rehearse, then canonize"; TH-062; EB-175]
 18. ~ A cause recorded as fact before it was isolated, closing an option: a cloud export failure was put down to the missing graphics card, and a hidden window on a machine with one later failed the same way; the better cause is itself untested [TH-058; skills/pascal-editor; EB-176]
 19. ~ A workflow widened before its first real job ran, with builds counted where finished jobs and Charles's minutes should be [total-harness plans tagged speed-run-arch-renders; EB-177]
+20. ~ One part of the harness judged on its own, with no map of the parts Charles already has that do neighbouring jobs: the bench was evaluated without placing it beside intake, the Inspectors, the Repairers and the Stack Advisor, and the chat stated that no skill covered a problem the intake brief already answered because it had not opened the brief or seated the expert [Charles 2026-11-09: "This response you've given is symptomatic of the problem that all of my learning infrastructure is trying to solve"; TH-155; EB-162]
 
 ## Procedure
 
@@ -54,6 +60,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.6 (2026-11-15): folded EB-187 (proved: TH-198; first Our way lines for this captain), EB-162 (Expert CE).
 - 0.1.5 (2026-11-09): scoring-and-testing joins as a craft (EB-178, EB-179; Charles confirmed 2026-11-09). Lens 15 (an eval's finding acted on without reading the live artifact, E-278) moves down to scoring-and-testing Lens 1; Lens 16 to 20 renumber to 15 to 19; call_when unchanged.
 - 0.1.4 (2026-11-09): folded EB-174, EB-175, EB-176, EB-177 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 17 to 20 added, each marked ~ as inferred.
 - 0.1.3 (2026-11-08): folded EB-095 (Expert CE)
