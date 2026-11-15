@@ -1,6 +1,6 @@
 ---
 name: workflow
-version: 0.1.0
+version: 0.2.0
 status: draft
 triggers: [loaded by Design Assist when the thing being designed is a new workflow]
 dependencies: [design-assist, speed-run, checker, project-folder, wake]
