@@ -51,7 +51,7 @@ The brief that first makes the workflow real ticks every item or writes "not nee
 
 **Every workflow**
 1. **Use-case skill** — agent-library `skills/<slug>/SKILL.md`: wiring header, triggers, steps, stops, rules, Progress tracking (thread-checkin), changelog. `status: draft` until canonized.
-2. **Step list** — each step: key, title, who (`you|claude|checker|script|pc`), uses, makes; stops add `back_to`; `time` only once measured. Screen: `definition.steps`. Chat: a Steps table in the skill. Keys are exactly what the runner logs (DA rule 13).
+2. **Step list** — each step: key, title, who (`you|claude|checker|script|pc`), uses, makes; stops add `back_to`; `time` only once measured. Both kinds: `definition.steps` on the workflow's cbrain row (item 11), the one copy of the list. Keys are exactly what the runner logs (DA rule 13). A chat workflow's skill names its row; a change to a step in the skill changes the row in the same edit.
 3. **Stops** — what Charles sees, what he can press or say, where a pin goes back to, and how a waiting stop reaches him (Today, a Next steps check-in, the Stack Repairer's daily recap). A stop never waits silently.
 4. **Tool skills** — one per tool pack it drives (block 16); reuse where one exists.
 5. **Rubric and checker** — what "works" means, graded by the `checker` skill, never by the maker (blocks 6, 17).
