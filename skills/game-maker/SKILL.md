@@ -27,6 +27,11 @@ Charles's words: *"you would 1 shot the whole game from the first prompt, no ste
 character a kid draws. The arcade floor (the 3D arcade room) only places cabinets and handles walking up to
 them; it never designs a cabinet or a game.
 
+**Workflows cards.** This skill is two workflows on the cbrain site's Workflows tab: **Game Maker** (cbrain
+`workflows` row `game-maker`, sections 1–7) and **Character Maker** (row `character-maker`, section 9). Their step
+lists are the same steps as these sections. A change to a step here changes that row's `definition.steps` in the
+same edit (skills/workflow, parts list 2).
+
 ## 1. Read the kit (every time, before writing a line)
 Custom GitHub MCP `get_file_contents`, owner `Chooch333`, repo `family-arcade`:
 `kit/README.md` (the rulebook), `kit/template/index.html` (the shape), `kit/arcade-kit.js` (paste it unchanged),
