@@ -69,7 +69,7 @@ The brief that first makes the workflow real ticks every item or writes "not nee
 13. **Runner scheduled task** "<Title> runner", fire-only; fire URL and token in cbrain-ui's Vercel env, otherwise wake lines the Harness dispatcher picks up. PC steps wait as `waiting-for-pc` (laptop wakes are off).
 
 **Chat workflows add**
-14. **AGENT.md trigger row.**
+14. **AGENT.md trigger row** — the same sentences as the card's `triggers`, pointing at the skill. Rehearsal checks the two match.
 15. **A delivery step that checks its own result** before saying done (e.g. Launch's robot live check).
 
 ## 4. Briefs
