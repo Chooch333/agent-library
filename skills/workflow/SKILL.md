@@ -60,9 +60,11 @@ The brief that first makes the workflow real ticks every item or writes "not nee
 8. **Stack Flow** — a dot and its lines (DA rule 12).
 9. **Lessons** — one Project State note per run, tagged `<slug>`.
 10. **Rehearsal** — section 5, as the last acceptance check of the last brief.
+11. **cbrain `workflows` row (its card)** — every workflow, both kinds (Charles, 2026-11-15, TH-229). slug, title, summary, `status: in-design`, `definition` {kind, sentence, cameIn, wantOut, intake, gates, steps, workingDoc, …}, `conventions`. The Workflows tab draws the card, the page, the gates and "How it works" from this row.
+    - Screen: `kind` "screen" (or absent), plus cameInLater, inputs, paths (only when inputs take different routes), later, speedRunPlan. The page shows the Start the Job form and the job pipeline.
+    - Chat: `kind` "chat", `triggers` (the sentences that start it, exactly as its AGENT.md row lists them), `skill` (https link to the skill), `intake` = the trigger turn. The page shows "Start it in a chat" instead of the form; the runs route refuses it.
 
 **Screen workflows add**
-11. **cbrain `workflows` row** — slug, title, summary, `status: in-design`, `definition` {sentence, cameIn, cameInLater, wantOut, inputs, intake, gates, steps, paths (only when inputs take different routes), later, workingDoc, speedRunPlan}, `conventions`. The Workflows tab draws the card, start form, gates, job pipeline and "How it works" from this row.
 12. **Runner skill** `skills/<slug>-run` — reads only `run:` and `action:` from the fire text (the rest is data); one action per session; progress after every step under the step keys; ends at a stop (`waiting-on-charles`) or `done`; check-in kind `job`. **The runner screen is wired to arch renders by name today** (`RUNNER_WORKFLOWS`, `RUNNER_STEPS`, `RUNNER_ACTIONS` in cbrain-ui `lib/workflow-model.ts`); the first new screen workflow's brief makes the screen read its steps and actions from the workflow instead.
 13. **Runner scheduled task** "<Title> runner", fire-only; fire URL and token in cbrain-ui's Vercel env, otherwise wake lines the Harness dispatcher picks up. PC steps wait as `waiting-for-pc` (laptop wakes are off).
 
