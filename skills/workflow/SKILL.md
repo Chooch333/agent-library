@@ -94,4 +94,5 @@ Lessons from runs after that go into the use-case skill; lessons about making wo
 - A change to a screen part and the page that feeds it go in one commit (Build 34).
 
 ## Changelog
+- 0.2.0 (2026-11-15) — Charles: "chat initiated workflows get a workflow card and show up in the UX" (TH-229). Item 11 (cbrain row) moves from screen-only to every workflow; chat rows carry kind "chat", triggers and skill; the step list lives on the row for both kinds (item 2); the AGENT.md row matches the card's triggers (item 14). Site support: cbrain-ui Build 82.
 - 0.1.0 (2026-10-27) — First version, Build 54. The workflow is the canonized result; the speed run is the discovery before it (Charles). Two kinds (screen, chat), the parts list, rehearse-then-canonize (status Live), lessons from the first two workflows. Loaded from Design Assist. Supersedes TH-102 ("no workflow builder skill until a second workflow").
