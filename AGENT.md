@@ -66,7 +66,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| `New game:` (a message that starts with it, e.g. `New game: squish things to earn coins`; in any chat, mid-chat included), `New character:` (a message that starts with it, with a drawing), `Drop in:` (a message that starts with it, e.g. `Drop in: Super Sweets → Louis's avatar`), `Remove:` (a message that starts with it, e.g. `Remove: Waddle Out from Louis' arcade`; in any chat), and `Launch` said after a Game Maker game is on screen | `skills/game-maker/SKILL.md` (0.6.0) |
+| `New game:` (a message that starts with it, e.g. `New game: squish things to earn coins`; in any chat, mid-chat included), `New character:` (a message that starts with it, with a drawing), `Drop in:` (a message that starts with it, e.g. `Drop in: Super Sweets → Louis's avatar`), `Remove:` (a message that starts with it, e.g. `Remove: Waddle Out from Louis' arcade`; in any chat), and `Launch` said after a Game Maker game is on screen | `skills/game-maker/SKILL.md` (0.7.0) — two Workflows cards: Game Maker (`New game:`, `Launch`, `Remove:`) and Character Maker (`New character:`, `Drop in:`) |
 
 ### Kids' Ed
 
