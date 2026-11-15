@@ -1,7 +1,7 @@
 ---
 name: game-maker
 description: 'Use when Charles (or a kid with him) says "New game: …" or "New character: <drawing>" in a Claude chat: one-shot a whole 3D web game on the family-arcade kit as an artifact, design its arcade cabinet, turn a drawing into a 3D game character (Character maker, Opus only), drop a character in as a player''s avatar or a game''s hero ("Drop in: …"), run the play and review gates, and on "Launch" first ask whose arcade (Dad''s, Graham''s, Louis'' or Elliott''s) and commit nothing until answered, then send game + cabinet to the family arcade site, placed only in the named arcade(s), with a robot live check; "Remove: <game> from <player>''s arcade" takes a game out of one arcade.'
-version: 0.6.0
+version: 0.7.0
 status: draft
 triggers: ["New game: …", "New character: <drawing>", "Drop in: <character> → <player>'s avatar | <game> hero | saved | hide", "Launch (after a game-maker game is on screen)", "Remove: <game> from <player>'s arcade"]
 owner: Charles
