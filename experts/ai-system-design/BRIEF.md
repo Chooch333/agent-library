@@ -6,13 +6,13 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.6
+version: 0.1.7
 status: active
 ---
 
 # ai-system-design
 
-The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing.
+The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing, jev (jev also sits under c-stack).
 
 ## Our way
 
