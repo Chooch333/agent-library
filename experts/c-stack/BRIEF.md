@@ -78,6 +78,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.7 (2026-11-16): jev joins as a craft, also under ai-system-design (EB-248, EB-249; Charles approved 2026-11-16). Crafts list updated; call_when unchanged.
 - 0.2.6 (2026-11-15): folded EB-203 (proved: TH-159, WG-233, WG-236, charter standing rules), EB-186 (proved: TH-198), EB-190 (proved: TH-195 as recorded in TH-201; no line rested on TH-196's prepaid-balance idea, so no line changes), EB-151, EB-152, EB-196, EB-202 (Expert CE). EB-156 (a Vercel tool fact) went to the Archivist as a draft brief.
 - 0.2.5 (2026-11-10): origin mark on every Our way line (13 Charles, 2 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.2.4 (2026-11-09): applied EB-018 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
