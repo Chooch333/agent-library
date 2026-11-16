@@ -60,6 +60,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.7 (2026-11-16): jev joins as a craft, also under c-stack (EB-248, EB-249; Charles approved 2026-11-16). Crafts list updated; call_when unchanged.
 - 0.1.6 (2026-11-15): folded EB-187 (proved: TH-198; first Our way lines for this captain), EB-162 (Expert CE).
 - 0.1.5 (2026-11-09): scoring-and-testing joins as a craft (EB-178, EB-179; Charles confirmed 2026-11-09). Lens 15 (an eval's finding acted on without reading the live artifact, E-278) moves down to scoring-and-testing Lens 1; Lens 16 to 20 renumber to 15 to 19; call_when unchanged.
 - 0.1.4 (2026-11-09): folded EB-174, EB-175, EB-176, EB-177 by hand in a Total Harness chat at Charles's word ("Add them yourself now"): Lens 17 to 20 added, each marked ~ as inferred.
