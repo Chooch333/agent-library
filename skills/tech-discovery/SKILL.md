@@ -83,7 +83,7 @@ Mark every claim Published (from the maker's own documentation or another source
 Do not publish the brief as a claude.ai page. Show it to me in the chat as a file; on approval the filed copy in `lab/briefs/` is the record, and the R&D tab reads it from there. ("I don't think I need these published. I don't think I use that." Charles, 2026-11-19)
 
 FILING (only after I approve the brief)
-- Write `lab/briefs/<tech>.md`: the whole brief, word for word with the page. Front matter per `lab/README.md`.
+- Write `lab/briefs/<tech>.md`: the whole brief, word for word with the one I approved. Front matter per `lab/README.md`, with `brief_url` left empty.
 - Write or update one `lab/shelf/<tool>.md` per tool: set `brief` to the brief's file name, the verdict, `come_back_when`, `reviewed`. A new shelf file's first history line is `- YYYY-MM-DD · <Verdict> · Discovery (<brief>)`. A changed verdict adds a dated line at the top; never edit or remove a history line.
 - Clear `draft` when the brief is approved.
 - When the discovery started from a shared post: set that post entry's `rd` to `"filed"` and `rd_brief` to the brief's file name (yt-relay `posts/<key>.json`, read it back). If Charles drops the post instead, set `rd` to `"dropped"`. When no `rd: "waiting"` posts remain, `close_thread` on `job:post-reader-rd-inbox` (closed_how "inbox empty").
