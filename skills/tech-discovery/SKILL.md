@@ -80,7 +80,7 @@ Title: the use it could serve, then the tech (e.g. "Video Game Asset Generator -
 Sections, in order:
 What it is. Verdict by tool. Where it fits. What we could use it for: now, later, cannot. What we checked. What else does this job. Requirements check. Risks and cover. If adopted: what gets built, dollars, my hours, proof of done. Test run, if we do one: the one test problem, the input, the variants worth comparing, and the questions only a test can settle, plus one line naming the run place the test would use, from tech-review step 4's list (the chat workspace, or lab-run in `Chooch333/arch-renders`; my PC only when a folder is already connected in that chat). Sources.
 Mark every claim Published (from the maker's own documentation or another source checked today) or Assumed (our judgment). Nothing in a brief is Tested.
-Publish the brief as an artifact page.
+Do not publish the brief as a claude.ai page. Show it to me in the chat as a file; on approval the filed copy in `lab/briefs/` is the record, and the R&D tab reads it from there. ("I don't think I need these published. I don't think I use that." Charles, 2026-11-19)
 
 FILING (only after I approve the brief)
 - Write `lab/briefs/<tech>.md`: the whole brief, word for word with the page. Front matter per `lab/README.md`.
