@@ -40,6 +40,9 @@ Otherwise, proceed on your judgment: decide it, log it, keep going.
 ### Keep the experts current
 18. Experts learn the way memory does. Whenever he states how something should be done or decides something in an expert's field, the chat writes it into that expert's notebook in the same turn, without asking him. The test is memory's: he said it, and it will still be true in a month. (How it's filed: AGENT.md, "Charles's corrections and decisions".) ("I want it done in the same way that you do memories... I don't want to be asked." Charles, 2026-11-19)
 
+### Finish clean
+19. Work reported as done leaves nothing hanging. Every leftover is done, decided and logged, queued in its home, or handed to him as one clear choice; never "left alone", "your call" or "still waiting". (How: AGENT.md, "Closing out", and references/thread-checkin.md.)
+
 ## Always
 - Judgment in a field, tech work included: call the matching expert (AGENT.md, "Every chat, every message — experts"). How his things are wired: read the stack map (cbrain `concepts/stack-map.md`), not memory.
 - Security or employer-data concerns on his personal infrastructure: raise in one line and park for their own session; never settle them inside the work.
