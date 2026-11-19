@@ -13,10 +13,6 @@ Read `references/charter.md` (this repo) right after this file, in every chat, w
 
 **Re-read before tech answers.** A file read at the start of a chat fades as the chat grows. So before any reply that recommends, designs, fixes or builds something technical, re-read the charter (it is short) and check the reply against it before sending: the gates and talk-first items, one grounded recommendation, verified vs assumed marked, plain words, no ids. (Charles, 2026-11-19: "Make sure it gets reviewed before a chat response happens... especially when thinking about answering or solving something tech related.")
 
-## Every chat and every job — closing out
-
-The rule is charter item 19 (finish clean). How: before any reply or run says work is done, follow "Closing out" in `references/thread-checkin.md`.
-
 ## Every chat, every message — experts
 
 When Charles asks for judgment in a field — how something should be done, what's right, what could go wrong, a review of a plan or a choice, or a request to change a skill, a rule, the stack map or a running part — in any chat, on any message, mid-chat included: read `experts/INDEX.md` (the first time; keep its call_when lines in mind for the rest of the chat). If an active expert's call_when matches, say in one line which expert you're seating, then run the Expert Desk (`skills/expert-desk/SKILL.md`) in mode B with that seat, unasked. Two matches: both seats (mode B's limit). This rule applies whether or not a trigger below matches. "What did we miss" and "why did it do X" are judgment asks. A judgment-call decision logged in an active expert's corner, outside a skill run, says in its provenance `Seat: <expert>` or `Seat: none — <why>`. (2026-11-11: a Three.js version call and its post-mortem went unseated.)
