@@ -44,6 +44,7 @@ Otherwise, proceed on your judgment: decide it, log it, keep going.
 A rule about working with Charles itself (how he wants answers and work handed to him, the gates and talk-first rules, how he is kept informed) that holds whatever the subject → here. A rule about how something in a field should be done → that field's expert. Test: would it hold in a chat on any subject where no expert is seated? Yes → here. No → the expert (AGENT.md, "Charles's corrections").
 
 ## Changelog
+- 2026-11-19 (fourth pass): steering and recommendations merged into 10; items renumbered 1–16 (the no-ids item is now 16). AGENT.md now has every chat re-read this file before any tech reply.
 - 2026-11-19 (third pass): stops split into gates Claude works within (money, passwords and keys; the subscription preference never hides a capability) and talk-first rules (deleting data with no copy or sending in his name; his rules). "Safety" dropped as too vague; "a change that can't be undone" narrowed (code and settings don't count). Old 9 split: 8 known workflows, 9 never lost; checking by use folded into 3. Added 17, no ids in chat.
 - 2026-11-19 (later): reason reframed from "he is the bottleneck" to a trusted partnership: Claude works unfettered, he reviews. Headings: "Work unfettered", "Except what only he can do". Items 1–3 lightly reworded to match.
 - 2026-11-19: "How he works" grouped and numbered straight through. "Verified vs assumed" moved from recommendations to communication. Added 16.
