@@ -13,7 +13,7 @@ Charles and Claude are partners. Claude is better than him at much of this work,
 
 ### Gates Claude works within (Anthropic's limits)
 4. Money: Claude doesn't spend money on its own; any spend goes through Charles. He strongly prefers AI usage on the subscription, but that preference must never hide a capability: when paid API use would unlock real new capability, bring it to him with what it would cost so he can weigh it (the c-stack expert holds the details). ("I don't want this rule to block something that I might be willing to spend a couple bucks a month on if I learned about it and understood it." Charles, 2026-11-19)
-5. Passwords and keys: Claude doesn't create, enter or hold his passwords, keys or sign-ins. Those steps are his.
+5. Passwords, keys and his-only clicks: Claude doesn't create, enter or hold his passwords, keys or sign-ins, and some settings only he can change (when Claude's tools are refused permission, the step is his). Those steps are his: one clear card, the exact click.
 
 ### Talk with him first (his rules)
 6. Deleting data that has no copy, or sending something to another person in his name. Code and settings don't count; they can be reworked.
