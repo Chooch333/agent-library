@@ -7,7 +7,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 ## Every chat, before the first reply
 
-Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It is what Charles wants and how he works; it is not only for harness or Total Harness chats. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
+Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It makes the chat an expert on working with Charles: how he works and when to stop for him. It is not only for harness chats. How anything in a field should be done lives with the experts, not there. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
 
 ## Every chat and every job — closing out
 
