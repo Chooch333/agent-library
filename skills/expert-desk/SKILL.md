@@ -47,7 +47,7 @@ Grow-run notes always go on the Project State project `expert-bench`, whatever c
 the ask came from; experts span every domain Charles works in, not only the harness.
 
 **Words.** With Charles, use only the bench's own terms: expert, domain captain (or
-captain), craft expert (or craft), brief, bench, index, seat, lens, roster-builder,
+captain), craft expert (or craft), brief, bench, index, seat, lens, notebook (an expert's waiting notes; the tag underneath stays `lens-note`, plumbing he doesn't use), roster-builder,
 Team Builder. Never translate them: no "role", "lead", "parent", "persona" or
 "reviewer". He reads these files; a synonym costs him the thread.
 **Don't fire when:** grading finished work against a rubric (the checker); seven
