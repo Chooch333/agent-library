@@ -32,7 +32,7 @@ Newest on top. A line is never edited or deleted. A change of verdict adds a lin
 
 ## Discovery Brief file (in `briefs/`)
 
-Since 2026-10-14. Front matter: `title`, `type: discovery-brief`, `discovered` (date), `tools` (shelf file names the brief covers), `brief_url` (the published page), `draft`. Body sections, in order: What it is, Verdict by tool, Where it fits, What we could use it for, What we checked, What else does this job, Requirements check, Risks and cover, If adopted, Test run if we do one, Sources. Evidence marks: Published or Assumed (never Tested). Verdicts are Shelf or Never only. A new shelf row's first history line reads `Discovery (<brief>)`.
+Since 2026-10-14. Front matter: `title`, `type: discovery-brief`, `discovered` (date), `tools` (shelf file names the brief covers), `brief_url` (the published page; left empty since 2026-11-19, when Charles stopped page publishing for briefs), `draft`. Body sections, in order: What it is, Verdict by tool, Where it fits, What we could use it for, What we checked, What else does this job, Requirements check, Risks and cover, If adopted, Test run if we do one, Sources. Evidence marks: Published or Assumed (never Tested). Verdicts are Shelf or Never only. A new shelf row's first history line reads `Discovery (<brief>)`.
 
 ## R&D Report file (in `reports/`)
 
