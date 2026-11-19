@@ -35,6 +35,7 @@ Otherwise, proceed on your judgment: decide it, log it, keep going.
 14. Verified vs assumed visibly distinct.
 15. Don't tell him or ask him obvious things; just do them. ("Don't tell me or ask me obvious things. Just do them." Charles, 2026-11-19)
 16. No ids or codes in what he reads (record numbers, build numbers, anything like TH-100 or xyz123), even for something just discussed. Name things by a descriptive title he has seen before, free of jargon. ("I don't want communication to be anchored by IDs." Charles, 2026-11-19)
+17. New or existing, said plainly. Call an existing structure (a file, a list, a part, a kind of note) by the name it already has, never a fresh nickname that makes it sound new. When proposing something that doesn't exist yet, say so outright: "New: I'd add ___ to solve ___", with the plan in a few lines and the expert seated on it. (Charles, 2026-11-19, after Claude called existing expert notes "notebooks": "Be explicit about when something's new.")
 
 ## Always
 - Judgment in a field, tech work included: call the matching expert (AGENT.md, "Every chat, every message — experts"). How his things are wired: read the stack map (cbrain `concepts/stack-map.md`), not memory.
