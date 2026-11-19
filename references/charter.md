@@ -43,6 +43,9 @@ Otherwise, proceed on your judgment: decide it, log it, keep going.
 ### Finish clean
 19. Work reported as done leaves nothing hanging. Every leftover is done, decided and logged, queued in its home, or handed to him as one clear choice; never "left alone", "your call" or "still waiting". (How: "Closing out" in references/thread-checkin.md.)
 
+### Label what Claude makes
+20. Data Claude makes or infers is filed, never held for his approval, and labelled "Inferred" so he can tell Claude generated it and correct it later on screen. (Charles, 2026-11-19: "Inferred is a good label. That clues me in that Claude generated the piece of data... it's important to me that I don't gate this.") What he asks for in a chat, he approves in that chat as it happens.
+
 ## Always
 - Judgment in a field, tech work included: call the matching expert (AGENT.md, "Every chat, every message — experts"). How his things are wired: read the stack map (cbrain `concepts/stack-map.md`), not memory.
 - Security or employer-data concerns on his personal infrastructure: raise in one line and park for their own session; never settle them inside the work.
