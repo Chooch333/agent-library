@@ -123,6 +123,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **0.5.0** (2026-11-19) — Briefs are no longer published as claude.ai pages: the chat shows the brief as a file, and the filed copy in `lab/briefs/` is the record (the R&D tab already reads it there); `brief_url` is left empty. Charles, 2026-11-19 (coolLabs discovery chat): "I don't think I need these published. I don't think I use that." Applied as his stated correction; no seat.
 - **0.4.0** (2026-11-13) — The brief's "Test run, if we do one" adds one line naming the run place the test would use, from tech-review step 4's list (chat workspace, lab-run, or the PC only with a folder already connected), so the later Tech Review starts from a place Claude can already run. No seat. Build 84 (BB-2026-11-12-funnel-rd-paths).
 - **0.3.0** (2026-10-29) — R&D inbox: at the start, also list yt-relay `posts/*.json` with `rd: "waiting"` (shared X and Instagram posts with an R&D steer, saved by the Post Reader). `Tech discovery: inbox` lists them and starts on the one Charles picks; a matching link uses its post too. Filing marks the post `filed` (or `dropped`) and closes the inbox card when it empties. New pitfall: a steer is private. Per BB-2026-10-28-social-post-share (Build 60).
 - **0.2.1** (2026-10-23) — The Check in step becomes the Progress tracking section (build naming per thread-checkin 0.3.1; no project_label; no 5 am sweep); one-line pointer in the lab rules. Per BB-2026-10-21-next-steps-panel.
