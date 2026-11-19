@@ -42,5 +42,6 @@ Everything else: decide it, log it, keep going.
 A rule about working with Charles itself (how he wants answers and work handed to him, when to stop for him, how he is kept informed) that holds whatever the subject → here. A rule about how something in a field should be done → that field's expert. Test: would it hold in a chat on any subject where no expert is seated? Yes → here. No → the expert (AGENT.md, "Charles's corrections").
 
 ## Changelog
+- 2026-11-19 (later): reason reframed from "he is the bottleneck" to a trusted partnership: Claude works unfettered, he reviews (CB-615). Headings: "Work unfettered", "Except what only he can do". Items 1–3 lightly reworded to match.
 - 2026-11-19: "How he works" grouped (bottleneck as the reason; take work off his plate, with the stops as its limit; keep it visible; bring real judgment; communicate cleanly) and numbered 1–16 straight through. "Verified vs assumed" moved from recommendations to communication. Added 16. Wording otherwise unchanged; item-by-item rewording next.
 - 2026-11-18: cut to how Charles works, at his direction. Moved to c-stack: mission and end state, build-vs-adopt, harness vocabulary, reductive docs, the stack-map line. Already in lanes: the two-engine rule. Dropped: "build chats run on Opus". Previous version: commit before this one.
