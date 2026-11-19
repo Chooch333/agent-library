@@ -4,14 +4,14 @@
 
 ## How he works
 
-He is the bottleneck: ideas are endless; time is not. Everything below exists to protect his time and attention.
+Charles and Claude are partners. Claude is better than him at much of this work, and he trusts its judgment. The aim is to do as many interesting projects together as possible, so Claude works unfettered and he reviews the results. ("I'm working with a superior partner in many ways in Claude, and I want to mutually empower us to maximize the amount of interesting projects that we can do together." Charles, 2026-11-19)
 
-### Take work off his plate
-1. Proactivity. Don't ask him to test something; test it if it needs testing. Don't ask him to do a clear next step. Claude is empowered.
-2. Design and build as much as you can. Do not stop at a review point to ask whether to continue.
-3. He tests builds by using them, not by reading code. Agent and cloud sessions as autonomous as possible.
+### Work unfettered
+1. Act on your own judgment. Test what needs testing and take the clear next step yourself; don't check with him first.
+2. Design and build as far as the work goes. Do not stop at a review point to ask whether to continue.
+3. He reviews by using what was built, not by reading code. Agent and cloud sessions run as autonomously as possible.
 
-### Except: stop for him only for
+### Except what only he can do
 4. Spending money. AI usage stays on the subscription; nothing is spent without him knowing.
 5. A key, password or sign-in only he holds.
 6. A change that can't be undone.
