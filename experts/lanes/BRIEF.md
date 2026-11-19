@@ -94,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.6a (2026-11-18): no line change. Charles cut the charter to how he works; this brief's Our way 1 is now the only home of the two-engine rule (it left the charter). Its "charter, standing rules" source stays as the rule's origin.
 - 0.2.6 (2026-11-15): folded EB-214 (proved: charter standing rules, TH-159), EB-188 (proved: skills/night-run step 4 read, TH-198), EB-158 (proved: WG-058, yt-relay SETUP.md read; new Our way 13), EB-194 (proved: TH-194, cbrain commit 32d2237), EB-189 (proved: TH-193, TH-195 tests) (Expert CE).
 - 0.2.5 (2026-11-10): origin mark on every Our way line (5 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.2.4 (2026-11-09): Our way 5 updated under the fold rule (TH-155): Lens 24 (EB-168) proved a live chat's fire was refused, so the line now says creating is done from a live chat and firing has no proven lane. Closes the "your call" left by the 0.2.3 hand fold; Design Assist chat on closing out work.
