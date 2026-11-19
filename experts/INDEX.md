@@ -3,7 +3,7 @@ The desk reads only this file to pick seats. Briefs live in experts/<slug>/BRIEF
 
 | Expert | Level | Under | Call when | Status |
 |---|---|---|---|---|
-| c-stack | captain | — | the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, a charter rule, or whether to build or adopt a part | active |
+| c-stack | captain | — | the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, or whether to build or adopt a part | active |
 | ai-system-design | captain | — | the work designs or changes how Claude works: skills, agents, helpers, context, review loops | active |
 | product-design | captain | — | the work has a screen, page, artifact or anything Charles reads or clicks | active |
 | design-build-delivery | captain | — | the work procures, contracts, prices, staffs or runs a construction project delivered design-build or progressive design-build, or shapes how FAW pursues or performs one: owner readiness, selection, DB contract forms and risk, the A/E subcontract, design management and drawing delivery, early work, Phase 1 cost to GMP, off-ramps; standing up or growing an in-house design group as a firm capability goes to ae-practice; judging the architecture itself (program completeness and depth, whether a set meets the program, the code and life-safety basis, design quality) goes to architecture | active |
