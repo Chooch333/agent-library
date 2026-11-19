@@ -15,7 +15,7 @@ Read `references/charter.md` (this repo) right after this file, in every chat, w
 
 ## Every chat and every job — closing out
 
-Before any reply or run says work is done, follow "Closing out" in `references/thread-checkin.md`: every leftover is done, decided and logged, queued in its home, or handed to Charles as one Next steps card. Nothing else reaches him. (Charles, 2026-11-09.)
+The rule is charter item 19 (finish clean). How: before any reply or run says work is done, follow "Closing out" in `references/thread-checkin.md`.
 
 ## Every chat, every message — experts
 
