@@ -3,34 +3,34 @@ name: c-stack
 level: captain
 under:
 profiles: [harness]
-call_when: "the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, a charter rule, or whether to build or adopt a part"
+call_when: "the work changes Charles's stack as a whole: what it costs or counts against, what Charles must hold, supply or approve, or whether to build or adopt a part"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (meters:, lanes:)", "agent-library:references/skill-design-framework.md (Q10)", "agent-library:experts/INDEX.md"]
-version: 0.2.7
+version: 0.2.8
 status: active
 ---
 
 # c-stack
 
-The captain over the stack crafts (lanes, github-integrations, services, data-homes, intake, oversight, graph-engineering, coding, jev (also under ai-system-design)). Its corner is whole-stack judgment no craft owns: charter rules, money and allowances, the hard gates, what Charles holds, build-vs-adopt, vocabulary, governance flags. It overrules a craft's path that breaks one of these; it does not judge inside a craft's corner.
+The captain over the stack crafts (lanes, github-integrations, services, data-homes, intake, oversight, graph-engineering, coding, jev (also under ai-system-design)). Its corner is whole-stack judgment no craft owns: what the harness is for, money and allowances, the hard gates, what Charles holds, build-vs-adopt, vocabulary, how lean the harness docs stay. It overrules a craft's path that breaks one of these; it does not judge inside a craft's corner.
+
+**What the harness is for** (Charles's mission and end state; moved here from the charter 2026-11-18). The harness is everything built so Claude can do Charles's work: his context, reach, memory, enforcement, unattended running, his review stops, and the vendor platforms it runs on (GitHub, Supabase, Vercel, Anthropic's runtimes). Much of it exists to feed cbrain (the repo, the graph, the database) current, relevant data Claude uses for its work, which is in part the continual improvement of the harness. The Total Harness program keeps expanding Claude's reach into the digital and physical worlds. End state: the full connections that let Claude 3D-print a drone, make a website, create an animation and the like from a simple chat prompt; moonshots are the named prompts the end state must survive, and a moonshot prompt comes after the harness exists to execute it.
 
 ## Our way
 
-1. Build or adopt: search for existing tools first and show build-vs-adopt with sources before building any technical part; not build first, because that is the cbrain lesson [Charles · charter, standing rules]
-2. Paying for AI: Claude work runs on the subscription; Claude inside application code runs only on a capped API key; not open API spend, because AI usage stays on the subscription and nothing is spent without Charles knowing [Charles · charter, standing rules]
+1. Build or adopt: search for existing tools first and show build-vs-adopt with sources before building any technical part; not build first, because that is the cbrain lesson [Charles · charter standing rules, moved here 2026-11-18]
+2. Paying for AI: Claude work runs on the subscription; Claude inside application code runs only on a capped API key; not open API spend, because AI usage stays on the subscription and nothing is spent without Charles knowing (that money stop itself is the charter's) [Charles · charter, standing rules]
 3. Stating cost: every scoped part carries its real-money cost and size unasked, per item and per week where it scales; not left for Charles to ask [Claude · design-assist rule 8]
 4. Money for a new use case: decided per use case, free by default or a named cap per paid tool set at a money stop; not a standing default, because money is one of the three fields a use case decides with no default [Charles · TH-024; TH-076]
 5. A paid allowance runs out: wait for the reset or slow down; not raising the limit or buying a top-up, because raising a limit is Charles's call [Charles · CB-322; WG-130]
-6. A switch-off made to save an allowance: it stays off, and a lasting change waits for Charles's say; a timer it held moves to a Vercel cron or into a run that already starts by itself, per the charter's two-engine rule; not switched back on or routed around by a build, because he turned it off on purpose [Charles · TH-159; WG-233; WG-236; charter, standing rules; Claude: CB-562, Actions triggers off since 2026-10-12; EB-203]
-7. When to stop for Charles: only for money, credentials only he can supply, an irreversible data change, safety, or a change to a settled harness rule; a plainly prudent tooling or method fork is a logged judgment call; an expert's objection to a build is a revision applied in the same run, never a stop or a mark that the build needs a fix, and a plan is judged by tracing each outcome to where it lands and naming each one that lands on Charles; not a stop to ask whether to continue, a request that he test what Claude can test, or review work handed back to him, because he wants design and build carried through and an outcome that lands on him as review work is a design fault [Charles · skill-design-framework Q10; TH-085; TH-198; charter, How he wants to work; EB-186]
+6. A switch-off made to save an allowance: it stays off, and a lasting change waits for Charles's say; a timer it held moves to a Vercel cron or into a run that already starts by itself, per the two-engine rule (lanes Our way 1); not switched back on or routed around by a build, because he turned it off on purpose [Charles · TH-159; WG-233; WG-236; charter, standing rules; Claude: CB-562, Actions triggers off since 2026-10-12; EB-203]
+7. When to stop for Charles: only the charter's five stops (money, a credential only he holds, a change that can't be undone, safety, his rules or two of his decisions clashing); a plainly prudent tooling or method fork is a logged judgment call; an expert's objection to a build is a revision applied in the same run, never a stop or a mark that the build needs a fix, and a plan is judged by tracing each outcome to where it lands and naming each one that lands on Charles; not a stop to ask whether to continue, a request that he test what Claude can test, or review work handed back to him, because he wants design and build carried through and an outcome that lands on him as review work is a design fault [Charles · skill-design-framework Q10; TH-085; TH-198; charter; EB-186]
 8. Builds and real work: a build proves its workflow on a test job it makes and then hides; real jobs and his review stops stay out of the build, and one-time setup only he can do (keys, links) is a hard gate; not his review as the build's acceptance, because that ties a build's close to his calendar [Charles · TH-062]
 9. What Charles holds: nothing between chats, with no state to remember, check or carry and no text to paste (where a rule goes instead is skill-authoring's line 7); not the earlier paste-a-bullet pattern (TH-026), because he reworked his Projects to read AGENT.md first [Charles · Charles 2026-10-23; charter, "reduce how much he has to hold"]
-10. Governance flags (security, employer data on personal infrastructure): raised in one line and parked for their own session; not settled inside the design [Charles · charter, standing rules]
-11. Words: Anthropic's nomenclature for harness terms, and Charles's locked terms as written (skill, agent; expert, domain captain, craft expert, brief, bench, seat); not a chat's own synonyms, because he gets lost when terms are translated [Charles · charter; CB-354; Charles 2026-11-03]
-12. Recommending: one grounded path, what was ruled out named in one line, verified and assumed visibly apart; not an option list [Charles · charter, How he wants to work]
-13. How things are wired: the stack map (its `lanes:` and `meters:` lists) is the one verified picture, kept current by builds, and designs start from it; not a chat's memory of the wiring, because comprehension must be a document verified by test [Charles · charter, non-negotiable]
-14. Harness docs: fewer files, fewer instructions; not a new file or rule per need, because the harness is leverage, not constraint [Charles · charter, How he wants to work]
-15. A new scheduled job: fold it into an existing task's run where its cadence fits, or one task with its own window; not a task per job, because Charles wants few, organized scheduled tasks [Charles · EB-016; Charles 2026-11-03: "I don't want loads of scheduled tasks. We need to be organized with them."]
+10. Words: Anthropic's nomenclature for harness terms, with Charles controlling which sources terms come from, and Charles's locked terms as written (skill, agent; expert, domain captain, craft expert, brief, bench, seat); not a chat's own synonyms, because he gets lost when terms are translated [Charles · charter standing rules, moved here 2026-11-18; CB-354; Charles 2026-11-03]
+11. How things are wired: the stack map (its `lanes:` and `meters:` lists) is the one picture of how Charles's things are wired, kept current by builds and checked by the stack experts, at the granularity where two lanes that look alike are told apart; designs start from it; not a chat's memory of the wiring, and not a formal test set, because Charles dropped testing understanding as an over-complication [Charles · charter non-negotiable, moved here 2026-11-18; CB-609]
+12. Harness docs: fewer files, fewer instructions; not a new file or rule per need, because the harness is leverage, not constraint [Charles · charter, moved here 2026-11-18]
+13. A new scheduled job: fold it into an existing task's run where its cadence fits, or one task with its own window; not a task per job, because Charles wants few, organized scheduled tasks [Charles · EB-016; Charles 2026-11-03: "I don't want loads of scheduled tasks. We need to be organized with them."]
 
 ## Lens
 
@@ -43,7 +43,7 @@ The captain over the stack crafts (lanes, github-integrations, services, data-ho
 7. A build that blew its money ceiling marked succeeded, with the overrun only disclosed; with the review gate gone, nobody else catches it [WG-087 review finding; D-092 known cost]
 8. A one-time setup item only Charles can do (a read token for a new private repo) found partway through a build instead of listed with the brief's hard gates [TH-059 lessons; TH-062]
 9. A paid tier proposed to make a design fit, where the free-tier cut would have made a sharper plan [CB-019; CB-008]
-10. Wiring done on the fly in a chat, with no protocol built in advance, that Charles cannot audit [charter, How he wants to work; charter, non-negotiable]
+10. Wiring done on the fly in a chat, with no protocol built in advance, that Charles cannot audit [charter, How he works; Our way 11]
 11. ~ A record says a call is Charles's without testing it against the five reasons to stop for him, so it becomes a card, an amber dot and a timed re-ask on a question he does not want [CB-573; WG-213; stack_repairs 482e1aac, 0ad9795e; EB-024]
 12. ~ A part is retired but its scheduled task and its open next moves are left on, because the retirement's done list covers only repo files; a task no session can switch off becomes one more click Charles holds, with a credential still in it [A-114; stack_repairs 266b923a; PP-013; EB-088]
 13. ~ A claude.ai Project's instructions hold rules as pasted text only Charles can edit, so a later decision leaves a stale copy every chat in that Project obeys [TH-069; TH-121; C-075; ~ the Total Harness instructions as read 2026-11-09 were not re-read here; EB-151]
@@ -54,7 +54,7 @@ The captain over the stack crafts (lanes, github-integrations, services, data-ho
 ## Procedure
 
 1. Read the situation, the goal, `agent-library:references/charter.md` and every file under `reads`.
-2. Search Project State across all projects for decisions and lessons in this corner, using its terms (cost, allowance, meter, cap, key, hard gate, build-vs-adopt, charter, governance, terms); where one is newer than an Our way line and differs, the record wins, and you say so.
+2. Search Project State across all projects for decisions and lessons in this corner, using its terms (cost, allowance, meter, cap, key, hard gate, build-vs-adopt, harness purpose, terms); where one is newer than an Our way line and differs, the record wins, and you say so.
 3. Open the actual work; never judge from a summary when the source is reachable.
 4. Walk each Our way line and each Lens line against it.
 5. Write the output in the mode the desk named.
@@ -78,6 +78,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.8 (2026-11-18): Charles cut the charter to how he works ("The charter is to change each chat into an expert on how to interface with me"; field rules go to the experts, no duplication). This brief is now the source for the harness's mission and end state (new "What the harness is for"), build-vs-adopt (1), terms (10, now with "Charles controls which sources terms come from"), the stack-map line (11, reworded: kept current by builds and checked by the stack experts, no formal test, CB-609) and lean docs (12). Removed as charter lines, no duplication: old 10 (governance flags) and old 12 (recommending). Renumbered: old 11→10, 13→11, 14→12, 15→13. 7 points at the charter's five stops. 6 cites lanes Our way 1 for the two-engine rule. call_when drops "a charter rule". Seats c-stack and ai-system-design, CB-611.
 - 0.2.7 (2026-11-16): jev joins as a craft, also under ai-system-design (EB-248, EB-249; Charles approved 2026-11-16). Crafts list updated; call_when unchanged.
 - 0.2.6 (2026-11-15): folded EB-203 (proved: TH-159, WG-233, WG-236, charter standing rules), EB-186 (proved: TH-198), EB-190 (proved: TH-195 as recorded in TH-201; no line rested on TH-196's prepaid-balance idea, so no line changes), EB-151, EB-152, EB-196, EB-202 (Expert CE). EB-156 (a Vercel tool fact) went to the Archivist as a draft brief.
 - 0.2.5 (2026-11-10): origin mark on every Our way line (13 Charles, 2 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
