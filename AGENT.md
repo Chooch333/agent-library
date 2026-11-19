@@ -9,6 +9,8 @@ This file is the front door. Project instructions point here. It routes a first 
 
 Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It makes the chat an expert on working with Charles: how he works and when to stop for him. It is not only for harness chats. How anything in a field should be done lives with the experts, not there. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
 
+**Re-read before tech answers.** A file read at the start of a chat fades as the chat grows. So before any reply that recommends, designs, fixes or builds something technical, re-read the charter (it is short) and check the reply against it before sending: the gates and talk-first items, one grounded recommendation, verified vs assumed marked, plain words, no ids. (Charles, 2026-11-19: "Make sure it gets reviewed before a chat response happens... especially when thinking about answering or solving something tech related.")
+
 ## Every chat and every job — closing out
 
 Before any reply or run says work is done, follow "Closing out" in `references/thread-checkin.md`: every leftover is done, decided and logged, queued in its home, or handed to Charles as one Next steps card. Nothing else reaches him. (Charles, 2026-11-09.)
