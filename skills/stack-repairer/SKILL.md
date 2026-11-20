@@ -14,7 +14,7 @@ wiring:
   starts: "\"Stack Repairer: run\" / Claude Code routine 'Stack Repairer', 7:00 · 12:00 · 17:00 Indianapolis"
   runs_in: claude-code
   reads: [stack-status, stack-repairs, github-actions, vercel, project-state]
-  writes: [stack-repairs, repos, plans, lessons, email]
+  writes: [stack-repairs, repos, plans, lessons, email, email-reprocess-requests]
   stack: []
   origin: yours
   label: Stack Repairer
