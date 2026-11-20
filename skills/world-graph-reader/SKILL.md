@@ -46,6 +46,8 @@ against the API.
 
 ## Each run, in order
 
+Read `references/charter.md` before the first step.
+
 1. ORIENT -- read live, keep nothing cached:
    a. `pipeline/entity_types.py` in `Chooch333/world-graph`, or
       `Chooch333/cbrain/contracts/ENTITY_TYPE_REGISTRY.md` if its
