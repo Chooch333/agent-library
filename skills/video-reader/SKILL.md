@@ -35,6 +35,8 @@ the whole point (Build 17.1).
 - Never touches the article queue (data/queue/) -- that's the Collector's.
 
 ## Each run, in order
+Read `references/charter.md` before the first step.
+
 1. ORIENT -- read live: pipeline/entity_types.py in Chooch333/world-graph
    (or Chooch333/cbrain/contracts/ENTITY_TYPE_REGISTRY.md if its
    schema_version is ahead -- the cbrain contract wins), and this role's
