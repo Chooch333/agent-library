@@ -150,6 +150,8 @@ Chooch333/world-graph/docs/reader/VIDEO-SETUP.md.
 Plain English in the note and the summaries. Charles is not technical.
 
 ## Changelog
+- v0.5.1 (2026-11-20) -- Every run reads `references/charter.md` before
+  the first step (CB-613). Build 87 (BB-2026-11-19-stop-false-asks).
 - v0.5.0 (2026-11-10) -- Deeper mining. Step 3c gains three lines:
   mechanism first; caption-misspelled names that are plain from the
   title, channel or graph take the right name (otherwise quarantine);
