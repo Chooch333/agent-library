@@ -20,6 +20,8 @@ wiring:
 
 Work that has to wait parks itself with one wake line. The Harness dispatcher checks every hour and resumes what is ready.
 
+Read `references/charter.md` before the first step.
+
 ## Park work (any build or session)
 Add a Project State next move on the work's own project, tag `wake`, description exactly:
 
