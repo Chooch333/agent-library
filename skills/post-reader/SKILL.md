@@ -1,11 +1,12 @@
 ---
 name: post-reader
-version: 0.2.1
+version: 0.2.2
 status: draft
 triggers: ["Post Reader run"]
 owner: Charles
+updated: 2026-11-20
 source: BB-2026-10-28-social-post-share (Build 60)
-requires: [references/project-state.md, references/thread-checkin.md]
+requires: [references/charter.md, references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "twice-daily schedule (morning and late afternoon, Indianapolis)"
