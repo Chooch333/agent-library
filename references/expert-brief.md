@@ -134,6 +134,9 @@ A seat still never edits its own brief. A note goes to the expert that owns the 
 no line is owned by two experts.
 
 ## Changelog
+- 0.5.1 (2026-11-20): a tool fact is filed as the expert's field note on `expert-bench`
+  (Inferred, no gate), not drafted as a cbrain `concepts/` brief for approval; Team
+  Builder 0.6.0 sort (b). Build 87 (BB-2026-11-19-stop-false-asks).
 - 0.5.0 (2026-11-10): origin mark first in every Our way bracket: `Charles ·`, `Claude ·`
   or `field ·` (replaces `~ field default`); several sources take the highest (Charles,
   then Claude, then field); unclear is Claude, never Charles by guess. Growing a lens
