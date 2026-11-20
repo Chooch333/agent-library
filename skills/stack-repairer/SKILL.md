@@ -79,7 +79,7 @@ A dot or open row that already has a `needs-you` or `watching` row (any day, sti
 
 **Handling.** An open row is treated like a red dot in steps 3 and 4: re-check the live state first, because the report may be stale. Every row a run writes about it carries `detail.reports` (the open row's id) and a copy of `detail.recheck`. One open row gets one action in flight: skip it while a row with that `detail.reports` is waiting on a grade.
 - Fixable: the smallest size that works.
-- A click only Charles can make, or a hard gate: `needs-you`.
+- A click only Charles can make, or a hard gate, that passes the Hand it on test above: `needs-you`.
 - A plan already covers it: `watching` with `plan_id`. Step 3's second-`watching` rule does not apply; the plan is the brief.
 - An ongoing condition (it can recur, not a one-off): the fix includes a real check on the map so it becomes a dot. That is a map change, so it is a `briefed` row, never a direct edit.
 - A source that is quiet or failing is an alert on its row on the Sources page and nothing else. Never a keep-or-drop question to Charles (Decision WG-213).
