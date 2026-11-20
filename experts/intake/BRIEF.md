@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.3
+version: 0.1.4
 status: active
 ---
 
@@ -34,6 +34,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 16. What a video yields: facts that are granular and technical, naming the mechanism the talk describes; not facts about the talk itself, history or headline features, because the Stack Advisor needs something to build on [Charles · Charles 2026-10-19, stated; ~ from memory, not in Project State]
 17. Subject scope: world-graph intake carries only AI and tech today; a site an expert should keep watching goes into intake's Sources, labeled for that expert (`experts: [<slug>]`), and only one-off links are read by the expert directly [Charles · ~ observation for the first half; EB-016, Charles 2026-11-03 "Yes sources"]
 18. Nightly pull: each source's newest new items first, taken in turn under one count cap sized to the Collector's run; GitHub release feeds are read from the releases list as one roll-up per source per day; not one newest-first cap across all feeds, because one busy source took the whole night and a feed window shorter than a day's releases lost entries for good [Charles · Build 66, plan 82569503 directives 1 and 3; WG-108]
+19. Forwarded email once summarised: the summary files itself with no review, labelled Inferred on its pages, graph summaries and task changes; an open substantive question becomes an open issue task, never answered by a guess; a healthy draft whose seal failed is retried, and a degraded one goes to the redo list; not held at an approval gate for Charles, because he does not want Claude-made data gated and corrects it on screen [Charles · CB-628; charter, "Label what Claude makes"; Claude: Build 88, plan 549b6749, succeeded; EB-258]
 
 ## Lens
 
@@ -90,6 +91,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.4 (2026-11-20): folded EB-258 (proved: CB-628, Build 88 plan 549b6749 succeeded; new Our way 19, none replaced) (Expert CE).
 - 0.1.3 (2026-11-15): folded EB-154 (proved: Build 72, plan 567842d5 succeeded), EB-155 (Expert CE). EB-155 asked for its two gaps to go into Our way 9; Build 72 closed both, so it lands as a Lens line, and Our way 9 never said the video step waits for a hand run (github-integrations Our way 2 now agrees).
 - 0.1.2 (2026-11-10): origin mark on every Our way line (11 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.1 (2026-11-09): applied EB-017, EB-123, EB-124, EB-125 and a lens line from the first step-in cluster under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
