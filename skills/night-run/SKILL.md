@@ -1,8 +1,8 @@
 ---
 name: night-run
-version: 0.9.0
+version: 0.9.1
 status: draft
-requires: [references/project-state.md, references/thread-checkin.md, skills/expert-desk/SKILL.md]
+requires: [references/charter.md, references/project-state.md, references/thread-checkin.md, skills/expert-desk/SKILL.md]
 wiring:
   runs: on-its-own
   starts: "Claude Code routine 'Night builds', daily 1 am America/Indiana/Indianapolis (Charles set 1 am, 2026-10-04)"
