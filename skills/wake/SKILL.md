@@ -1,11 +1,11 @@
 ---
 name: wake
-version: 0.1.2
+version: 0.1.3
 status: draft
 triggers: [used by builds, moonshots and the Harness dispatcher when work must wait; no chat trigger]
 owner: Charles
-updated: 2026-11-10
-requires: [references/project-state.md, references/thread-checkin.md]
+updated: 2026-11-20
+requires: [references/charter.md, references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "Harness dispatcher (hourly :47) and Laptop runner (fire-only)"
