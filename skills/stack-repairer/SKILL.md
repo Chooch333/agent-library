@@ -148,8 +148,8 @@ Read `references/charter.md` before the first step.
   - Plus one **Reader** line if it can be read from data: articles and facts the Collector processed today, from the newest Project State note on project `world-graph` tagged `world-graph-reader` dated today. If there's no such note, leave the line out.
   - Plain English, at most ~15 lines, no codes or file paths. If every section is empty and there is no Reader line, send nothing; the marker then carries `recap: "nothing-to-send"`.
   - Send with Gmail `send_message` (from the connected claude.go.between@gmail.com account) to cecourtney10@gmail.com, subject `Stack Repairer — <Mon D>` (e.g. `Stack Repairer — Oct 6`), with a link to the Stack screen: https://cbrain-ui-git-review-chooch333s-projects.vercel.app/stack?view=flow
-- *Success evidence:* the message id, recorded in the run marker's `detail.recap_message_id` with `recap_sent: true`.
-- *Recovery:* the send fails → record `recap_sent: false` and the error; try once more at the end of the run. Never send a second recap the same day.
+- *Success evidence:* the message id, recorded in the run marker's `detail.recap_message_id` with `recap_sent: true` and `recap: "sent"`.
+- *Recovery:* the send fails → try once more at the end of the run; still failing → record `recap_sent: false`, `recap: "error"` and the error. Never send a second recap the same day.
 
 ## Progress tracking
 Follows `references/thread-checkin.md` (naming convention and when to check in).
