@@ -1,13 +1,13 @@
 ---
 name: repairer
-version: 0.2.2
-status: draft
+version: 0.2.3
+status: active
 triggers:
   - "Repairer: run"
   - "Cowork scheduled task \"Repairer — weekly run\" (Monday 7:00am, Charles's local time)"
 dependencies: []
 owner: Charles
-updated: 2026-11-10
+updated: 2026-11-20
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
