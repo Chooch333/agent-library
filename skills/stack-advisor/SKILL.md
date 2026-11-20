@@ -121,7 +121,7 @@ Sat/Sun → app). The focus aims skim ratings and graph questions; a strong
 idea for another section is still allowed.
 
 ## Each run, in order
-Read `references/charter.md` before the first step.
+Read `references/charter.md` before the first step (the agent-library root `references/`, not this skill's own folder).
 
 1. FEEDBACK FIRST. Collect Charles's answers from both sources (a union;
    either may be empty) as `feedback` entries for run_result.json —
