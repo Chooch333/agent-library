@@ -385,6 +385,7 @@ The Archivist appends to `i-001`'s `assertions` (the establishing entry is untou
 
 ## Changelog
 
+- **v0.3.0 (2026-11-20)** — Build 87 (BB-2026-11-19-stop-false-asks): the email approval gate is gone (Charles, 2026-11-19; charter "Label what Claude makes"; CB-628). A brief the email watcher seals by machine (`gate_origin: auto`) is filed with no approval, and everything it files is labelled Inferred (pre-flight); pages Charles asks for in a chat are still approved in that chat. "Drafts are reviewed by Charles" and "Truth was Charles's call at the approval gate" are retired. The watcher, seal endpoint and on-screen label are Build 88's.
 - **v0.2.3 (2026-11-10)** — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - **v0.2.2 (2026-10-23)** — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 - **v0.2.1 (2026-09-13)** — Regression guard (BB-2026-09-11-project-screen-cleanup, Build 8.3, item 0), closing the C-J-108 collision: a `sources` back-reference write now checks the existing value first — absent → create a list; already a list → append; anything else (a mapping, a string) → leave it untouched and **surface**, never merge a list entry into it. Added to §1's additive rule, cross-referenced from §2's `create_entity` back-reference step, and documented as a new Pitfall. No other filing behavior changed.
