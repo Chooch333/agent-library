@@ -6,7 +6,7 @@ triggers: ["Stack Advisor run"]
 owner: Charles
 updated: 2026-11-20
 source: BB-2026-08-27-stack-advisor (DA session 2026-08-27); pool/scoring system per BB-2026-09-03-advisor-idea-pool; run packet per BB-2026-10-05-advisor-reads-smarter; briefing, focus days and Frontier lane per BB-2026-10-05-advisor-thinks-bigger; new-capability lane per BB-2026-10-19-advisor-new-capability; done for you, two lenses and plainer writing per BB-2026-10-28-advisor-done-for-you; expert seats, field notes and the critic's retirement per BB-2026-11-12-funnel-advisor-seats
-requires: [references/project-state.md]
+requires: [references/charter.md, references/project-state.md]
 wiring:
   runs: on-its-own
   starts: "Mon/Wed/Fri schedule"
