@@ -37,6 +37,8 @@ Agent, Browser or Research (metered), never the API key.
   world-graph are private; the steer may live there.
 
 ## Each run, in order
+Read `references/charter.md` before the first step.
+
 1. LIST yt-relay posts/*.json with status "pending", oldest
    requested_at first. Cap 10 per run. None is a legal, boring run —
    go to step 4. (Field reference: yt-relay posts/README.md.)
