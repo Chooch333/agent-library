@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.6
+version: 0.2.7
 status: active
 ---
 
@@ -17,7 +17,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 ## Our way
 
 1. Picking the engine: deterministic work on a GitHub Action or a Vercel cron (a Vercel function with no Claude), with its timer on a Vercel cron while Actions timers are off; Claude as worker on a scheduled task; Claude inside app code only on a capped API key; not Claude work on an Action or rote work on a Claude run, because that is the two-engine rule, and not a timer on an Action, because plain chats followed the old wording twice [Charles · charter, standing rules (wording changed 2026-11-09); TH-159; Claude: stack_repairs 8187de7c; EB-214]
-2. Unattended Claude work: a cloud scheduled task on the subscription; not headless Claude Code on the PC, because that was new, unproven infrastructure next to a cloud runtime already proven, and not a paid orchestrator on the API key, because AI usage stays on the subscription [Charles · WG-088; BB-2026-11-02-expert-desk, current state; charter]
+2. Unattended Claude work: a cloud scheduled task on the subscription; not headless Claude Code on the PC, because that was new, unproven infrastructure next to a cloud runtime already proven, and not a paid orchestrator on the API key by default, because AI usage stays on the subscription by default; a paid option that would unlock real capability is brought to Charles with its cost (c-stack Our way, paying for AI) [Charles · WG-088; BB-2026-11-02-expert-desk, current state; charter, "Gates Claude works within"; CB-616; EB-274]
 3. Work that needs the PC: nothing is parked with "where: pc" and wakes are cloud-only. A PC-bound task reaches only the folders approved on that machine, only while the desktop app is open, and needs a person for apps or the screen; not a laptop-side always-allow task, because Charles chose to leave laptop wakes alone [Charles · TH-088; TH-J-024; stack-map lanes: scheduled-pc]
 4. Work that needs fresh helpers (seats, checkers, fresh-session tests): run it in a chat that has the helper tool (claude.ai Project chats, FAW's included, have started helpers), or in the night session, which starts one helper per brief and seats experts on its builds; a builder helper under it cannot start another, so a build never plans on one; stop or hand off where the tool is missing; not a helper started by a builder, because the builder is itself a helper and is told no further dispatch [Charles · TH-198; Claude: skills/night-run step 4, read 2026-11-15; TH-J-001; TH-J-022; BB-2026-11-02-expert-desk, revision 7 and current state; BB-2026-11-03-expert-ce, draft; EB-002; EB-053; EB-070; EB-188]
 5. Creating or firing a scheduled task: create it from a live chat where Charles approves the card, and when a build can't, it leaves a setup card and a next move. Firing one has no proven lane: a design that fires a task tests the fire in the kind of chat or run that will do it before relying on it; not assumed safe from a live chat, because a live chat's own permission check refused a fire with no card to approve, and not from an unattended run, because create_trigger has been refused there and fire_trigger has been both refused and allowed under the same "auto" setting (a run on "Automatically approve" did fire another task) [Claude · TH-J-003; TH-011; TH-015; WG-192, lessons; WG-190; TH-043; EB-019; EB-042; EB-043; EB-168, proved 2026-11-09, updated under the fold rule TH-155]
@@ -94,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.7 (2026-11-20): folded EB-274 (proved: CB-616, charter.md read) (Expert CE).
 - 0.2.6a (2026-11-18): no line change. Charles cut the charter to how he works; this brief's Our way 1 is now the only home of the two-engine rule (it left the charter). Its "charter, standing rules" source stays as the rule's origin.
 - 0.2.6 (2026-11-15): folded EB-214 (proved: charter standing rules, TH-159), EB-188 (proved: skills/night-run step 4 read, TH-198), EB-158 (proved: WG-058, yt-relay SETUP.md read; new Our way 13), EB-194 (proved: TH-194, cbrain commit 32d2237), EB-189 (proved: TH-193, TH-195 tests) (Expert CE).
 - 0.2.5 (2026-11-10): origin mark on every Our way line (5 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
