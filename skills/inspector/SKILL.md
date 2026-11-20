@@ -1,13 +1,13 @@
 ---
 name: inspector
-version: 0.2.1
-status: draft
+version: 0.2.2
+status: active
 triggers:
   - "Inspector: walk"
   - "Cowork scheduled task \"Inspector — weekly walk\" (Sunday 9:00pm, Charles's local time)"
 dependencies: []
 owner: Charles
-updated: 2026-11-10
+updated: 2026-11-20
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
