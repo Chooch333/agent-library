@@ -120,6 +120,8 @@ Sat/Sun → app). The focus aims skim ratings and graph questions; a strong
 idea for another section is still allowed.
 
 ## Each run, in order
+Read `references/charter.md` before the first step.
+
 1. FEEDBACK FIRST. Collect Charles's answers from both sources (a union;
    either may be empty) as `feedback` entries for run_result.json —
    `{adv_id, answer: interested|declined|scoping|done, note, at, via}`:
