@@ -147,7 +147,7 @@ The scheduled task's prompt fetches this file and points here. Rules first:
 - **Read cap.** At most 20 items per run, counted across all places; at most 3,000 words of each item's text (the query above cuts it); at most 3 TinyFish searches. An item past the cap is not read. The read-through stops at the last item read, so next week continues from there. Items in one place that share one timestamp (a Stack Repairer run's rows share one `run_at`) are read together or not at all, so the read-through never splits them; if the first group alone passes the cap, read it whole and say so in the receipt.
 - **Read-through point.** For each place, the `read_through` in the newest weekly receipt for that slug: a note tagged `expert-ce`, `ce-receipt` and `expert-<slug>`, matched exactly (find_by_tags expands tags fuzzily, so keep only rows that carry all three tags as written). No receipt yet: 7 days before this run.
 - **Never.** TinyFish Agent, Browser, Research or Monitor tools; any TinyFish API key; any email; any paid call.
-- **The run is the expert.** The CE job is the one place a run is the expert in its own context: a scheduled run has no seat to hand to. It follows the expert's brief, judges what matters to its corner (the expert decides), and writes only Project State notes; Catch-up's fold is Team Builder's write.
+- **The helper is the expert.** Each expert's desk helper follows that expert's brief and judges what matters to its corner (the expert decides); the session writes only Project State notes; the fold is Team Builder's write.
 
 | Step | Precondition | Action | Evidence | Recovery |
 |---|---|---|---|---|
