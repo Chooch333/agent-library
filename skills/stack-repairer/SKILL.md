@@ -88,6 +88,8 @@ A dot or open row that already has a `needs-you` or `watching` row (any day, sti
 
 ## How
 
+Read `references/charter.md` before the first step.
+
 **1. Read.**
 - *Precondition:* none — first step every run.
 - *Action:* `select id, kind, label, state, own_state, reason, via_allowance, last_seen_at, checked_at, detail from stack_status where state in ('failing','late') and kind in ('dot','allowance')`. Skip `unknown` rows entirely (a `none` check or "couldn't check just now" is not a problem to fix). Also read the `_checker` meta row: if its `checked_at` is more than 45 minutes old, the Stack Inspector itself is down — treat `_checker` as a red dot named "Stack Inspector" (the evidence is cbrain-sync's Vercel cron `/api/cron/stack-status`). Then read today's log: `select * from stack_repairs where run_at >= date_trunc('day', now() at time zone 'America/Indiana/Indianapolis') at time zone 'America/Indiana/Indianapolis' order by run_at`. Then read the open reported rows, any day: `select r.* from stack_repairs r where (r.action = 'reported' or (r.action in ('needs-you','watching') and r.detail ? 'reported_by')) and not exists (select 1 from stack_repairs g where g.action = 'graded' and g.detail->>'grades' = r.id::text) order by r.run_at`.
