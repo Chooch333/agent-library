@@ -1,14 +1,14 @@
 ---
 name: stack-repairer
-version: 0.4.3
+version: 0.5.0
 status: draft
 triggers:
   - "Stack Repairer: run"
   - "Claude Code routine \"Stack Repairer\" (7:00, 12:00 and 17:00 America/Indiana/Indianapolis)"
 dependencies: [orchestrate-build]
 owner: Charles
-updated: 2026-11-10
-requires: [references/project-state.md, references/gotchas.md, references/thread-checkin.md]
+updated: 2026-11-20
+requires: [references/charter.md, references/project-state.md, references/gotchas.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
   starts: "\"Stack Repairer: run\" / Claude Code routine 'Stack Repairer', 7:00 · 12:00 · 17:00 Indianapolis"
