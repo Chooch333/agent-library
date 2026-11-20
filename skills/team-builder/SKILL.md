@@ -43,7 +43,7 @@ step 6b with `only:` the day's correction lens-notes (update mode with `only:`).
 **Don't fire when:** deciding whether an expert is needed (the Roster Builder); editing
 an existing skill's rules (an ordinary build under the Execute row); the content is a
 Project State note, a cbrain entity or anything that is not a brief or a SKILL.md
-(update mode only drafts a cbrain brief; the Archivist files it after Charles approves).
+(update mode never writes a cbrain brief; a tool fact is filed as the expert's field note).
 
 ## How
 | Step | Precondition | Action | Evidence | Recovery |
