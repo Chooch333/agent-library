@@ -5,7 +5,7 @@ status: draft
 triggers: [an approved brief conforming to cbrain/contracts/BRIEF_SCHEMA.md, "file this brief", "archive approved brief", a brief sealed by seal_brief (the automated filing trigger)]
 dependencies: []
 owner: Charles
-updated: 2026-11-10
+updated: 2026-11-20
 requires: [references/thread-checkin.md]
 wiring:
   runs: on-its-own
