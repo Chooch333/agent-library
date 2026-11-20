@@ -13,7 +13,7 @@ wiring:
   runs_in: claude-chat
   runs_in_note: "the CE job runs in the scheduled task \"Expert CE\" (Claude Code, Sunday 00:00 and 01:00 Indianapolis), not in a chat"
   reads: [agent-library experts, charter, stack-map, "cbrain intake_items and sources_state (CE job)", "cbrain stack_repairs (CE job)", "project-state lens-notes, field-notes, stack-incident lessons"]
-  writes: ["project-state notes (expert-proposal, expert-team-proposal, expert-draft, expert-team-fit)", "project-state CE notes (lens-note, field-note, ce-start, ce-receipt; also ce-fold, ce-dispatch-failed and the CE chat receipt expert-ce-chat)"]
+  writes: ["project-state notes (expert-proposal, expert-team-proposal, expert-draft, expert-team-fit)", "project-state CE notes (lens-note, field-note, ce-start, ce-receipt; also ce-run, ce-catchup, ce-fold and the CE chat receipt expert-ce-chat)"]
   stack: []
   origin: yours
   label: Expert Desk
