@@ -32,7 +32,8 @@ The Stack Repairer fixes things that break while the stack is running, so Charle
 
 **Fire when:**
 - Invoked by name ("Stack Repairer: run").
-- The Claude Code routine "Stack Repairer" fires (7:00, 12:00, 17:00 America/Indiana/Indianapolis). If the routine is set up as hourly instead, skip any run outside 06:30–18:30 Indianapolis without writing anything.
+- The Claude Code routine "Stack Repairer" fires (7:00, 12:00, 17:00 America/Indiana/Indianapolis).
+- **Skip rule (first thing, before step 1).** A routine run that starts outside the 7, 12 and 17 o'clock hours, Indianapolis time (07:00–07:59, 12:00–12:59, 17:00–17:59), ends at once and writes nothing: no rows, no run marker, no card, no email. The task's schedule may still be hourly (Build 87 could not change it from a scheduled run), so this rule is what keeps the Repairer to three runs a day. A run invoked by name ("Stack Repairer: run") in a chat is not skipped.
 
 **Do NOT:**
 - Edit rules, skills or the stack map (`concepts/stack-map.md`, any `SKILL.md`, any `references/` file, AGENT.md). That is the Rules Inspector / Rules Repairer's domain. A broken dot whose real fix is a rules or map change gets a `briefed` row and a short brief, never a direct edit.
