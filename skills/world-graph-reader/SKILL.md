@@ -267,6 +267,8 @@ Plain English in the Project State note. Charles is not
 technical. One technical clause per point, max.
 
 ## Changelog
+- **v1.6.1** (2026-11-20) -- Every run reads `references/charter.md`
+  before the first step (CB-613). Build 87 (BB-2026-11-19-stop-false-asks).
 - **v1.6.0** (2026-11-04) -- Step 3a: on a `kind: rollup` article keep
   only stack-relevant changes and record the lines dropped. Step 4: runs
   on GitHub alone, up to 20 a run when fewer than 20 new items wait, and
