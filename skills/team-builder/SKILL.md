@@ -60,7 +60,7 @@ Project State note, a cbrain entity or anything that is not a brief or a SKILL.m
 Loaded by the Expert Desk's CE job at its Catch-up and fold step (the Sunday 01:00
 firing of "Expert CE"), pointed at the waiting lens-notes on `expert-bench`. Nobody is
 present: nothing here asks a question or waits on an approval, and every outcome is a
-commit, a tag, a post, a card, a draft or a receipt line. Team Builder still judges
+commit, a tag, a post, a card, a field note or a receipt line. Team Builder still judges
 nothing about whether an expert should exist; it sorts each note by the rules below and
 writes only what the sort allows. Steps 1 to 7 above do not apply; these rules do.
 
