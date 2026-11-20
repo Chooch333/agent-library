@@ -13,7 +13,10 @@ An expert knows two things about its corner: how work there ought to go for Char
 expert (Charles, 2026-11-03).
 
 Folder: `experts/<slug>/BRIEF.md`. Longer material may go in `experts/<slug>/references/`.
-Facts about a tool live in cbrain `concepts/` and are listed under `reads`, never copied in.
+Facts about a tool (what it exposes, accepts, refuses or returns) live in the expert's
+field notes on `expert-bench` (tag `field-note`), filed with no approval gate and labelled
+Inferred, never copied into the brief; a cbrain `concepts/` page that already exists may
+still be listed under `reads`.
 agent-library is public: no client, job, employer or person specifics in a brief. Point
 to the record (a decision or lesson ID, a build, a cbrain entity) instead of quoting it
 (Charles, 2026-11-03, design-build-delivery).
