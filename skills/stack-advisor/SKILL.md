@@ -393,7 +393,9 @@ Read `references/charter.md` before the first step.
 ## Progress tracking
 None. This skill finishes in one run and leaves nothing open.
 
-Changelog: `references/changelog.md`. Latest: **v2.3.0** (2026-11-13) — Experts judge
+Changelog: `references/changelog.md`. Latest: **v2.3.1** (2026-11-20) — every run
+reads `references/charter.md` before the first step (CB-613; Build 87,
+BB-2026-11-19-stop-false-asks). Before that, **v2.3.0** (2026-11-13) — Experts judge
 the ideas: after selection, the matching expert from the Expert Desk (mode B, at most
 3 seats a run) passes, sharpens or cuts each idea before the email; a cut goes back
 through run_result.json's `cut` to the ledger's `cut` status. Expert field notes on
