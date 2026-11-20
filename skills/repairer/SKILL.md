@@ -113,6 +113,7 @@ The same run fires again before the Inspector's next walk. `list_punch_items` fo
 
 ## Changelog
 
+- **0.2.3** (2026-11-20) — `status: active`: the Repairer has run live weekly since 2026-09-22, applying, holding and writing back Punch List items and shipping its own 0.2.0 under live conditions; the 0.1.0 "draft pending the first live run" no longer holds. Build 87 (BB-2026-11-19-stop-false-asks); Punch List item PL-014.
 - **0.2.2** (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - **0.2.1** (2026-10-23) — Progress tracking section after How. Per BB-2026-10-21-next-steps-panel.
 
