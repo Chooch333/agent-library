@@ -252,3 +252,6 @@ Newest last.
   task); `reads` adds expert-bench. References: brief-format (draft format
   removed, `Expert check:` line), deliver (cut ideas get no Stack-screen
   row), email-format (the Advisor always sends it).
+- **v2.3.1** (2026-11-20) — Every run reads `references/charter.md` before
+  the first step (CB-613), and `requires:` names it. Build 87
+  (BB-2026-11-19-stop-false-asks).
