@@ -82,7 +82,7 @@ A dot or open row that already has a `needs-you` or `watching` row (any day, sti
 - A click only Charles can make, or a hard gate, that passes the Hand it on test above: `needs-you`.
 - A plan already covers it: `watching` with `plan_id`. Step 3's second-`watching` rule does not apply; the plan is the brief.
 - An ongoing condition (it can recur, not a one-off): the fix includes a real check on the map so it becomes a dot. That is a map change, so it is a `briefed` row, never a direct edit.
-- A source that is quiet or failing is an alert on its row on the Sources page and nothing else. Never a keep-or-drop question to Charles (Decision WG-213).
+- A source that is quiet is an alert on its row on the Sources page and nothing else: no `stack_repairs` row at all. A real fetch error is still fixed (a moved or broken link is a one-file fix). Never a keep-or-drop question to Charles (Decision WG-213).
 
 **Grading.** See step 2. An open `needs-you` row is not repeated each run; the original row stays open until its recheck passes.
 
