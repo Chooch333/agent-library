@@ -57,8 +57,8 @@ Project State note, a cbrain entity or anything that is not a brief or a SKILL.m
 | 7 Receipt | read back | Return to the caller: files written, SHAs, index or routing row, any blank fields, check results. | Receipt | — |
 
 ### Update mode
-Loaded by the Expert Desk's CE job at its Catch-up and fold step (the Sunday 01:00
-firing of "Expert CE"), pointed at the waiting lens-notes on `expert-bench`. Nobody is
+Loaded by the Expert Desk's CE job at its Fold step (after the Sunday 00:00 Run all,
+or the 01:00 catch-up, of "Expert CE"), pointed at the waiting lens-notes on `expert-bench`. Nobody is
 present: nothing here asks a question or waits on an approval, and every outcome is a
 commit, a tag, a post, a card, a field note or a receipt line. Team Builder still judges
 nothing about whether an expert should exist; it sorts each note by the rules below and
