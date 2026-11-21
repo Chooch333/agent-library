@@ -1,6 +1,6 @@
 # Seat template
 
-*Version 0.2.0 (2026-11-21).* One prompt per seat. The context block is the same for every seat.
+*Version 0.2.1 (2026-11-21).* One prompt per seat. The context block is the same for every seat.
 
 ## Review seat (modes A, A.1, B)
 
@@ -12,7 +12,9 @@
 > your newest 10 `field-note` notes (by created time; older ones are not read) on
 > Project State project `expert-bench` tagged `expert-<slug>` (ToolSearch
 > "select:mcp__Project_State__find_by_tags"; keep only rows carrying those tags
-> exactly), and treat them as part of your brief. Then search
+> exactly): two queries, entity_types ["note"], match_mode all, limit 200: tags
+> ["lens-note","expert-<slug>"] and tags ["field-note","expert-<slug>"]; sort field notes by
+> created_at, newest first, and take 10, and treat them as part of your brief. Then search
 > Project State across all projects (ToolSearch
 > "select:mcp__Project_State__search_state"; decisions and lessons, your corner's
 > terms): what Charles decided and what was dropped in your corner is part of your
@@ -61,5 +63,6 @@
 Nothing. The helper tool takes no tool list, so a seat has every tool the calling chat has; read-only rests on the prompt, and the desk's step 5 lists anything written during the run. The desk files Project State notes; `skills/team-builder` writes files.
 
 ## Changelog
+- **0.2.1** (2026-11-21): the review seat spells out the two reads (lens-notes and field-notes, notes, match_mode all, limit 200) and takes the newest 10 field notes by created_at; the CE seat follows it. Night seat review of Build 89 (data-homes; report CB-681).
 - **0.2.0** (2026-11-21): read cap in the review seat and the CE seat: all waiting lens-notes (no `folded` or `routed` tag), unchanged; field notes, the newest 10 (they never fold into a brief, so without a cap the read grows every week; capped by count, not date, so a quiet expert still sees its last ten); record searches unchanged. Build 89 (BB-2026-11-19-expert-backstop); seats ai-system-design, data-homes.
 - **0.1.0**: earlier changes are in `skills/expert-desk/SKILL.md`'s changelog (0.5.1: a value nobody chose is not a decision).
