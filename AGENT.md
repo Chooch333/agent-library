@@ -130,6 +130,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 | `Inspector: walk` | `skills/inspector/SKILL.md` |
 | `Repairer: run` | `skills/repairer/SKILL.md` |
 | `Stack Repairer: run` | `skills/stack-repairer/SKILL.md` |
+| `what's going on with my stack`, `stack status`, `Chief of Staff` (any chat, mid-chat included, Duet included; on demand, never scheduled) | `skills/stack-chief-of-staff/SKILL.md` |
 
 ## Natural sequences
 
