@@ -1,11 +1,11 @@
 ---
 name: speed-run
-version: 0.1.0
+version: 0.1.1
 status: draft
 triggers: [loaded by skills/workflow when a new workflow has steps or tools nobody has proven yet]
 dependencies: [workflow, tech-discovery, tech-review]
 owner: Charles
-updated: 2026-10-27
+updated: 2026-11-20
 source: The Speed-run framework (Claude Doc 2f4b7713, approved 2026-10-09 as TH-024..027, changed TH-069/TH-070), narrowed to discovery by Charles on 2026-10-27 — the speed run finds the steps, the workflow skill canonizes them. Written by Build 54 (BB-2026-10-27-workflow-method).
 requires: [references/project-state.md, references/thread-checkin.md]
 wiring:
@@ -51,6 +51,8 @@ Stages 1-4 need no tech decision and run first. A tool never defines the workflo
 | 4 | Gap sort | Each row binned: **Reuse** / **Slice** (block N) / **Tech slot** (questions + fallback) / **You** (one-time checklist, never a per-run step) | Every tech slot names its questions and a fallback | Run the checklist when it suits |
 | 5 | Tech intake (R&D) | Each tech slot handed to the lab (`rd-handoff`, `speed-run-<slug>`); each returned card checked against the tech contract; a slot with no candidate goes as "find candidates for this slot" | Every slot filled, or the speed run parks with the slot named | Run the lab chats it asks for |
 
+**Several techs for one step** (Charles, 2026-11-20). When a step has two or more candidate techs, each gets its own verdict in the gap sort: **Known, plug in** (standard, documented use, or already proven in his stack; the walkthrough uses it as is) or **Needs R&D** (never run here, or its fit is a real unknown; it goes to the lab with its questions). Don't rule a candidate out on Claude's preference. Between candidates that both pass, Claude picks: free beats paid, less plumbing beats more. The bar is output that isn't garbage, not the best tool. ("I don't even care which one you choose, just as long as the output is not garbage.")
+
 **Walkthrough columns:** Step · Who (Claude, a checker, a connector, you) · How (script, connector, screen, you — in that order of preference) · Where (cloud, laptop, bench) · Needs · Could stop it (✓ checked / ~ assumed) · Bin.
 **Skeleton every walkthrough covers:** the skill waking on the sentence · tools present where it runs · the input arriving as it really does · reading it · making · self-check · stops · checker · packaging · delivery · lessons.
 
@@ -73,4 +75,5 @@ Follows `references/thread-checkin.md`.
 - Closes when: handed to the workflow skill (closed_how "researched"), or parked on the R&D Shelf (closed_how "parked")
 
 ## Changelog
+- 0.1.1 (2026-11-20) — Charles's correction in the game dev workflow speed run (decision "Game dev speed run: Godot, Hunyuan3D and Marble stay in…"): every candidate tech for a step gets a Known-plug-in or Needs-R&D verdict; candidates aren't ruled out on preference; Claude picks between passing options; the bar is not garbage.
 - 0.1.0 (2026-10-27) — First version, Build 54. Moves the speed-run method out of the Claude Doc into a skill and narrows it to discovery (stages 0-5), per Charles: the speed run finds and researches the steps; the workflow skill canonizes them. "First turn" section added after Build 54's cold-read test (the first draft's helper asked where the sheet lived and did not name the record plan's tags).
