@@ -94,7 +94,7 @@ Each step lists what plugs in today and what could. **Bold** = in use or decided
 
 ## What else does this job
 
-- **Unreal Engine**: the best graphics and animation, but no web play and heavy for Claude to drive. *Assumed.*
+- **Unreal Engine**: the best graphics and animation. Corrected 2026-11-21: since 5.8 (latest full release, June 2026) Epic ships its own experimental connector (MCP plugin) that lets Claude drive the editor, and the 5.9 Preview (Nov 9, 2026) improves it and adds an early web target. Runs best as an installed game on the home PC. *Published.*
 - **Tencent HunyuanWorld 1.0**: a free, open-source world generator, Marble's free rival. Not reviewed. *Published* that it exists.
 - **Tripo**: picture-to-3D with automatic skeletons; reviewed on Oct 10 beside Meshy. *Published* (lab record).
 - **Claude-coded characters and math-built shapes**: tested; good for round, toy-like shapes only. The coded character workflow is being retired. *Published* (lab record).
