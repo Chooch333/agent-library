@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds or changes a Vercel project, function, cron or deploy setting, a Supabase project or its access rules, a custom MCP server or tool, or a key or secret"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:skills/wire-new-app/SKILL.md", "agent-library:references/gotchas.md", "cbrain:concepts/stack-map.md (meters:; lanes: vercel-cron; dots cbrain-mcp, project-state-mcp, github-mcp, stack-inspector)"]
-version: 0.1.5
+version: 0.1.6
 status: active
 ---
 
@@ -27,7 +27,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 9. Schema change on a hosted project: apply_migration through the Supabase MCP from the chat that owns the code, additive, naming the project on every call; not handed to another tool or session [Charles · F-004; F-015; D-071]
 10. Keys: values are never read, printed, pasted, put in a sheet or asked for; names only, reported in chat; a bad token is fixed by pointing Charles to its one refresh place [Claude · wire-new-app Never, g, Open]
 11. Secret mismatch: make a fresh secret, set it on both sides, redeploy; not recovering the old value, because both stores are write-only [Charles · CB-089; CB-088]
-12. Before adding a key: infer from what is already readable or from a token already held; ask Charles for a new key only when it is the only way [Charles · CB-484; E-051; ~ Charles 2026-09-19, no keys beyond the subscription, from memory]
+12. Before adding a key: infer from what is already readable or from a token already held, and ask Charles for a new key only when it is the only way, since making it is his step; a free vendor key that unlocks a test is a fair ask, on an account he already has where one will do, and paid use goes to him with what it would cost; not "no keys beyond the subscription", because a subscription preference must never hide a capability [Charles · charter items 4 and 5, 2026-11-19; CB-484; E-051; Claude: EB-287, an account he already has, from CB-668's fewer gates]
 13. Function-to-function calls: the stable production domain; not a deployment-specific address, which ages out or sits behind the login wall [Charles · CB-088; CB-070]
 14. App login: an app-level password gate in middleware, its value set by Charles in the dashboard; not Vercel Deployment Protection, because it forces a Vercel sign-in and confuses internal calls [Charles · CB-093; CB-072]
 15. Timers that must run: on a production Vercel project, cbrain's or that of the server that owns the data (project-state-mcp's daily backfill); not cbrain-ui's, because Vercel crons run only against a production deployment [Claude · CB-492 item 4; plan aacd9bfa; CB-581; Vercel docs vercel.json crons, read 2026-11-03]
@@ -35,6 +35,7 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 17. Cron cadence: sub-daily crons rely on the team's paid Vercel plan; the free tier's two-cron cap was dropped [Claude · E-032 supersedes CB-008]
 18. Proving a setup: a create-nothing rehearsal or the first real app; the health route does one real read with the server key; nothing left in Charles's accounts for testing [Charles · wire-new-app a, c, f; ~ Charles 2026-10-07, from memory]
 19. A broken MCP server deploy: the rollback Action, run by hand with the earlier deployment's address [Claude · stack-map cbrain-mcp dot]
+20. Outside AI clients that support Claude's work (Gemini first): they may write to his repos and reach them through the same door Claude uses, his Custom GitHub server, with no password and no per-client key on it; not a second, differently shaped route, because he wants one setup for every AI, and not a password or a key per client, because those are gates he must remember and manage that limit Claude, on data he judges not secret [Charles · CB-666; CB-668, 2026-11-20; EB-275; EB-277]
 
 ## Lens
 
@@ -50,9 +51,10 @@ Setting up and changing hosted parts (Vercel projects, functions and crons; Supa
 10. A key value printed unmasked in an Action's log [wire-new-app d]
 11. "No approval received" on a Project State write retried, instead of the SQL fallback with a separate confirming read [gotchas; D-089; CB-126]
 12. A new Project State project created without its letter code; the tool now takes one but it is optional, and the first entry fails without it [D-059; ~ create_project description read live 2026-11-03 cites D-060, not opened]
-13. ~ Project State write tools reshape dotted tags without an error [tools-and-quirks, memory 2026-09-09; not re-checked live]
+13. Project State write tools reshape a new tag that sits near an existing one (`ce-dispatch` saved as `ce-dispatch-failed`, `lanes` saved as `lane`) and say so only in tag_substitutions, so a job keyed on that tag fails silently; read a new tag back by its exact name; ~ the older claim about dotted tags is unproven [EB-085; skills/expert-desk 0.6.0 Pitfalls; Build 87 close-out, lessons; tools-and-quirks memory 2026-09-09; EB-255]
 14. A tool's limits taken from an old note instead of its live code: a "gated" tool fired fine [CB-073; CB-063]
 15. ~ An endpoint where one mode checks the bearer and its extra modes (dry run, test send) do not, so anyone with the address reads every check's detail or sends Charles mail; one check at the top of the handler covers every mode [stack_repairs 6e81fb89; CB-582; EB-111]
+16. On a git-connected Vercel project whose test workflow runs only by hand, a test run started after the push finds a fault only once it is live in production, so "tests pass" in a grade is a check after the deploy, not a gate before it [stack_repairs fa0ce47b; cbrain .github/workflows/services-test.yml, push trigger off, read 2026-11-22; CB-663; EB-217; EB-306]
 
 ## Procedure
 
@@ -90,6 +92,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.6 (2026-11-22): folded EB-275 and EB-277 (proved: CB-666, CB-668; new Our way 20; EB-275's key per client left out, since CB-668 supersedes it), EB-287 (proved: charter.md read, items 4 and 5; Our way 12 drops "no keys beyond the subscription"), EB-255 (proved: EB-085, skills/expert-desk 0.6.0 Pitfalls read, Build 87 close-out; Lens 13 rewritten in place), EB-306 (proved: stack_repairs fa0ce47b, services-test.yml read, CB-663; new Lens 16) (Expert CE). EB-252 is a tool fact, filed as a field note. EB-195 left waiting again: it asks for the header's call_when, which update mode never edits.
 - 0.1.5 (2026-11-15): folded EB-218 (proved: stack_repairs 8187de7c and 4e5513cc, project-state-mcp backfill.ts and vercel.json read) (Expert CE). EB-195 left waiting: it asks for the header's call_when to match the index row, and update mode never edits the header.
 - 0.1.4 (2026-11-10): origin mark on every Our way line (9 Charles, 10 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.3 (2026-11-09): applied EB-047, EB-110 under the fold rule Charles set 2026-11-09 (a line overtaken by his later decision, or by a fact a build or test proved, is updated and cites it; only a new opinion or a clash between two of his decisions reaches him). Self-learning loop design chat; the matching Comms Table posts are cleared.
