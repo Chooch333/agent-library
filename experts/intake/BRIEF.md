@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.4
+version: 0.1.5
 status: active
 ---
 
@@ -27,7 +27,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 9. Video: only the transcript (captions) is taken, never the video itself; it is fetched by the PC job and read by the Video Reader on the subscription, with the paid reading step switched off; a video with no captions or thin captions waits and is retried over several days before it ends with a reason, because captions often appear well after a video is posted; not fetched from the cloud, because YouTube blocks cloud addresses where the PC gets through [Charles · stack-map youtube, yt-relay, video-reader; WG-073; WG-063; Claude: Build 72, plan 567842d5, succeeded; yt-relay commits c30a74a to 9b4a4ea; EB-154]
 10. A video inside a shared post: only the caption and preview image are read, and the article says so; not speech-to-text, because that step is not built [Claude · post-reader 2e; WG-189]
 11. Sharing from the phone: one share shortcut sends the link to the yt-relay receiver; YouTube links go to the video to-do list and X or Instagram posts to the shared-posts list, each with an optional steer; any other link is turned away [Claude · stack-map yt-relay "Phone receiver"; Build 60]
-12. Email: only mail Charles forwards to the go-between address, where the +word names the project; not his personal inbox, because he chose to reach content at its source platform instead [Claude · E-001; E-013]
+12. Email: only mail Charles forwards to the go-between address, where the +word names the project, enters cbrain; reading his personal inbox on demand when a chat asks, through its own server locked to that one account, is a chat's reach, not intake; not his personal inbox as an intake source, because he chose to reach content at its source platform instead [Charles · TH-235, 2026-11-17; Claude: E-001; E-013; E-019; EB-253]
 13. Paid members sites: one subscription-content server with his saved logins and a slow queued worker; not one scraper per site and not browser-extension capture, because the login and fetch are shared across sites and capture would need him to open each page; the name is subscription-content, never "paywall" [Charles · P-001; P-011; P-038; stack-map Members-site worker]
 14. Run size: each reader takes a fixed number of items per run and the rest wait for the next run; not unbounded runs, because a run cut off mid-batch leaves partial state [Charles · E-024; post-reader step 1; stack-map collector, email-watcher]
 15. Duplicates: an item's id comes from its URL; a never-seen link older than the age floor is marked seen and skipped; a second address for text the same source already saved is skipped and counted; an existing to-do entry is never overwritten, so sharing twice changes nothing; not URL alone, because a link move made years of old posts count as new and one article served at two addresses was collected twice [Claude · post-reader 2e; stack-map shared-posts; Build 66 directive 2; CB-585; CB-596]
@@ -47,7 +47,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 7. A to-do step switched off by hand: items are saved with no to-do entry, so they are never read while the reader logs quiet runs [CB-562; WG-154; WG-176]
 8. A sign-in wall, a "post unavailable" page or bare site chrome taken as the item's content [post-reader 2b]
 9. A video post counted as read when only its caption was [post-reader 2d-2e; WG-189]
-10. A fetch bug read as bad sources: when the same failure hits every item from one source, the cause is the fetch, not the articles [WG-101; WG-103]
+10. A fetch bug read as bad sources: when the same failure hits every item from one source, the cause is the fetch, not the articles; and each of those items is still marked failed, and failed being final, a later fetch fix recovers none of them [WG-101; WG-103; stack_repairs 38996dfd; plan d0fdb70b; intake_items status labels, read 2026-11-22; EB-315]
 11. A reader keyed on a downstream flag (loaded into the graph) instead of the saved item, so a stuck loader also blocks the reading [CB-349 (c)]
 12. A global word minimum that drops real short items (one-bullet release-note days) as too short [WG-105]
 13. A feed that never produced anything, diagnosed by guesswork instead of by opening it: a working feed can be permanently empty or too thin for the word minimum [CB-573]
@@ -91,6 +91,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.5 (2026-11-22): folded EB-253 (proved: TH-235, Charles 2026-11-17, which narrows E-013 and E-019 for on-demand reading only; Our way 12's origin mark moves to Charles), EB-315 (proved: stack_repairs 38996dfd, intake_items read) (Expert CE).
 - 0.1.4 (2026-11-20): folded EB-258 (proved: CB-628, Build 88 plan 549b6749 succeeded; new Our way 19, none replaced) (Expert CE).
 - 0.1.3 (2026-11-15): folded EB-154 (proved: Build 72, plan 567842d5 succeeded), EB-155 (Expert CE). EB-155 asked for its two gaps to go into Our way 9; Build 72 closed both, so it lands as a Lens line, and Our way 9 never said the video step waits for a hand run (github-integrations Our way 2 now agrees).
 - 0.1.2 (2026-11-10): origin mark on every Our way line (11 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
