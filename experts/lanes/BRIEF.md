@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.7
+version: 0.2.8
 status: active
 ---
 
@@ -39,7 +39,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 5. The Windows relay on the PC assumed to drain on its schedule: it runs only while Charles is signed in, and its wake setting is unlikely to wake the machine [WG-058]
 6. A connector that answers with nothing (Drive) taken to mean "nothing there" rather than "can't see"; it answered with nothing from a live chat as well as from scheduled runs [TH-128; TH-130; TH-132; EB-169]
 7. A job assumed able to start, read or link to a chat: no scheduled job reads claude.ai chats, and a running chat can't see its own link [CB-490; ~ "one chat cannot start another" is cited to a dry run of 2026-11-02 in BB-2026-11-02-expert-desk; that dry run's own record was not opened]
-8. A cloud run assumed to reach any host or repo: hosts outside the environment's allowlist are refused, repos not attached won't clone, and protected previews redirect to sign-in; connectors are the way through, and how a run commits is github-integrations' Our way 17 [CB-286; TH-010; TH-130; SM-091; Anthropic scheduled-tasks docs, environments]
+8. A cloud run assumed to reach any host or repo: hosts outside the environment's allowlist are refused, and refused one host at a time, not a whole platform (one Stack Repairer run read one of Charles's Vercel sites and was refused another), so test the exact host from the task that will call it; repos not attached won't clone, and protected previews redirect to sign-in; connectors are the way through, and how a run commits is github-integrations' Our way 17 [CB-286; TH-010; TH-130; SM-091; Anthropic scheduled-tasks docs, environments; stack_repairs a6d177f0, ef73489f; EB-213; EB-302]
 9. Memory assumed missing outside claude.ai chats, or past-chat search assumed present outside them; it is the other way round [MB-007]
 10. A UI dry run reported done by a session with no browser, with a type-check standing in for a click-through [CB-142; CB-148]
 11. A fresh-session test run inside the already-informed session because the lane had no helper tool [TH-J-001, which declined to fake it; ~ TH-J-022 used a separate headless Claude process instead, not yet reviewed]
@@ -48,7 +48,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 14. A lane fact read from the map after the platform changed: ~ the scheduled-tasks page read 2026-11-03 says cloud runs start in auto mode with no mode chosen at creation, while stack-map lanes: scheduled (verified 2026-10-29) says approvals are set per task; check the task's own setting [Anthropic scheduled-tasks docs, permission prompts; stack-map lanes: scheduled]
 15. ~ One fetch tool's refusal written up as "can't be opened from here", so a cloud run guesses the cause when the same lane could reach it another way [stack_repairs 0fa1d5cf, 482e1aac, 52d00c5e, f5f7779d; CB-573; ~ which tool got through on 2026-11-02 is not recorded; EB-038]
 16. A task that takes fire text decides its job on the first turn, but the text arrives as a later turn, so a first turn with no text is not proof the fire had none [EB-029; EB-034; fire_trigger tool description; EB-041]
-17. ~ A task's connector list (list_triggers) read as everything its runs can reach, so Charles is asked for a settings click to add a tool the runs already use, and a trimmed list is taken to mean trimmed reach; check what a run actually did [stack_repairs 1ec8d464; WG-219; WG-222; EB-103]
+17. A task's connector list (list_triggers) read as everything its runs can reach, so Charles is asked for a settings click to add a tool the runs already use, and a trimmed list is taken to mean trimmed reach; check what a run actually did, and never write a recheck that reads only the list [stack_repairs 1ec8d464, 8e1f15a1; WG-219; WG-222; EB-103; CB-595; EB-301]
 18. A chat in another claude.ai Project assumed to read AGENT.md and the charter because this one does: each Project's instructions are set on their own and cannot be seen from another chat [CB-515; CB-517; C-075; EB-070]
 19. ~ "No scheduled job reads claude.ai chats" taken to cover every Claude Code session: a Claude Code cloud session bound to a claude.ai Project, and its helpers, can list and search that Project's past chats; whether a scheduled run gets the same tools is unproved [MB-007; CB-490; self-learning loop design chat 2026-11-09, lanes seat check]
 20. A hidden browser pane in a PC-linked session assumed to work like a shown one: it gets a frame or two a second, graphics work stalls and an export comes out with parts missing; a tool session cannot show the pane, only Charles can in the chat that owns it [pascal-editor skill, "The pane must be showing"; arch-renders pipeline/pascal/export.md; EB-164]
@@ -94,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.8 (2026-11-22): folded EB-301 (proved: CB-595, stack_repairs 8e1f15a1; Lens 17 drops its ~), EB-302 (proved: stack_repairs a6d177f0 and ef73489f; Lens 8 rewritten in place) (Expert CE). EB-251 and EB-257 are tool facts, filed as field notes EB-342 and EB-343.
 - 0.2.7 (2026-11-20): folded EB-274 (proved: CB-616, charter.md read) (Expert CE).
 - 0.2.6a (2026-11-18): no line change. Charles cut the charter to how he works; this brief's Our way 1 is now the only home of the two-engine rule (it left the charter). Its "charter, standing rules" source stays as the rule's origin.
 - 0.2.6 (2026-11-15): folded EB-214 (proved: charter standing rules, TH-159), EB-188 (proved: skills/night-run step 4 read, TH-198), EB-158 (proved: WG-058, yt-relay SETUP.md read; new Our way 13), EB-194 (proved: TH-194, cbrain commit 32d2237), EB-189 (proved: TH-193, TH-195 tests) (Expert CE).
