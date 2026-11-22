@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a kind of data lives or is read from — cbrain pages, the Supabase index, Project State, the world-graph and its mirror, repo files, Storage — or keeps, rebuilds or removes a copy of it"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
-version: 0.1.4
+version: 0.1.5
 status: active
 ---
 
@@ -42,7 +42,7 @@ Which store holds each kind of data, where readers read it from, and how copies 
 6. A copy treated as complete: the graph copy held only a fraction of the items, under inconsistent names [CB-336, alternatives considered]
 7. A home chosen that its reader has no key for: the app cannot write the repo, and the private graph repo is closed to the app [CB-404, alternative b; CB-336]
 8. Search keeps answering from a stale index, with no error, after the sync has failed; the trap is trusting the copy, and watching the sync is oversight's [CB-090]
-9. A rebuilt table that refreshes only when its source page changes: declarations older than a fix never reach the tuples table, and a delete-then-insert outside a transaction leaves a gap if it crashes [CB-398; CB-081]
+9. A rebuilt table that refreshes only when its source page changes: declarations older than a fix never reach the tuples table, a delete-then-insert outside a transaction leaves a gap if it crashes, and a change marker (a content hash, a watermark) saved before the copies it vouches for are built turns one failed build into a permanent one, because every later run reads the marker and skips; write the marker last [CB-398; CB-081; cbrain services/lib/upsert.ts, read 2026-11-22; gbrain v0.60.531.0; EB-309; EB-310]
 10. A write designed before its read path is read end to end: a table nothing reads is a shelf, and a status filter turns a status change into a disappearance [CB-189]
 11. A fact removed from its home but left in its copies: the index, the mirror, embeddings, run logs and git history [CB-505]
 12. A naming scheme (group id, slug, separator) never run end to end, so it ships a value the store rejects [WG-052]
@@ -85,6 +85,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.5 (2026-11-22): folded EB-310 (proved: cbrain services/lib/upsert.ts read; Lens 9 rewritten in place) (Expert CE)
 - 0.1.4 (2026-11-15): folded EB-222 (Expert CE)
 - 0.1.3 (2026-11-10): origin mark on every Our way line (8 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
 - 0.1.2 (2026-11-08): folded EB-117 (Expert CE)
