@@ -6,7 +6,7 @@ profiles: [harness, construction]
 call_when: "the work writes, restructures or reviews code in any of Charles's repos, whatever it is for (harness services and MCP servers, cbrain-ui, family apps and games, real-estate and work tools; TypeScript, Python or a one-file HTML game): how the code is split into files, its types and the contracts it reads, its tests, its libraries and their versions, a rename or reshuffle across files, or which checks and coding tools (typecheck, tests, style checker, language server) are used where Claude writes it, and why"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "agent-library:skills/build/SKILL.md (Build execution — tool-first)", "agent-library:skills/orchestrate-build/SKILL.md (step 6; Standing rules: No browser tests)", "agent-library:skills/execute-build-task/SKILL.md (Worker rules)", "agent-library:skills/game-maker/SKILL.md (sections 1–2, 9.1–9.2)", "cbrain:services/package.json", "cbrain:services/tsconfig.json", "cbrain:.github/workflows/services-test.yml", "cbrain-ui:package.json (ref review)", "family-arcade:package.json", "family-arcade:kit/README.md", "world-graph:requirements.txt", "https://code.claude.com/docs/en/plugins/code-intelligence"]
-version: 0.1.6
+version: 0.1.7
 status: active
 ---
 
@@ -56,7 +56,7 @@ Outside this corner: hosting, deploy settings and keys (services); how a commit 
 15. A runtime version set in the dashboard while `package.json` pins another: the file wins without a word, and the dashboard's upgrade button does not touch it [PP-033]
 16. ~ Repos with no test or typecheck script, where each fix's proof is a one-off script that nothing reruns: project-state-mcp's tag module broke twice, and each fix left its own scratch script [those repos' package.json; stack_repairs f8e950e7; project-state-mcp scripts/; C-055/C-056; ~ still untraced for Family-Trip-App and Chooch-Property-Analyzer, which have a style checker only; EB-145]
 17. ~ Each repo keeps its code its own way (exact pins plus a test and a checker in family-arcade, ranges plus typecheck and tests in cbrain services, a style checker only in the trip app), so a lesson learned in one never reaches the others [the package.json files under reads; ~ inferred]
-18. A record read through a library's fetch and saved back whole blanks every field the fetch left out (a graph fact's search fingerprint), and neither the typecheck nor a green job sees it; set only the fields that changed, and give the test a fake fetch that drops the same fields the real one does (the graph-library half is graph-engineering's Lens 8) [stack_repairs 7aa018a3; plan ea4ec481; world-graph 978eab7 pipeline/test_load_extracted_episodes.py; EB-243]
+18. A record read through a library's fetch and saved back whole blanks every field the fetch left out (a graph fact's search fingerprint), and neither the typecheck nor a green job sees it; set only the fields that changed, and give the test a fake fetch that drops the same fields the real one does (the graph-library half is graph-engineering's Lens 8) [stack_repairs 7aa018a3; plan ea4ec481; world-graph 978eab7 pipeline/test_load_extracted_episodes.py; EB-243; CB-594; EB-332]
 
 ## Procedure
 
@@ -94,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.7 (2026-11-22): folded EB-332 (proved: CB-594; Lens 18 gains it as a source) (Expert CE). EB-331 is a tool fact (a Vercel deploy reaches READY over type errors between files), filed as field note EB-344; Our way 15 is unchanged, since the record behind the note is no newer than the line.
 - 0.1.6 (2026-11-21): folded EB-282 (proved: TH-256, Charles 2026-11-20) (Expert CE).
 - 0.1.5 (2026-11-15): folded EB-183 and EB-184 (proved: KE-003, from Charles's question of 2026-11-11; TH-179), EB-243 (proved: stack_repairs 7aa018a3, plan ea4ec481, world-graph commit 978eab7) (Expert CE).
 - 0.1.4 (2026-11-10): origin mark on every Our way line (6 Charles, 12 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
