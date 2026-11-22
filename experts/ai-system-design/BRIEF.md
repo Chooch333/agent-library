@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work designs or changes how Claude works: skills, agents, helpers, context, review loops"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:references/skill-design-framework.md", "agent-library:CONVENTIONS.md"]
-version: 0.1.7
+version: 0.1.8
 status: active
 ---
 
@@ -41,6 +41,8 @@ The captain over how Claude works. Its crafts: skill-authoring, premortem, roste
 18. ~ A cause recorded as fact before it was isolated, closing an option: a cloud export failure was put down to the missing graphics card, and a hidden window on a machine with one later failed the same way; the better cause is itself untested [TH-058; skills/pascal-editor; EB-176]
 19. ~ A workflow widened before its first real job ran, with builds counted where finished jobs and Charles's minutes should be [total-harness plans tagged speed-run-arch-renders; EB-177]
 20. ~ One part of the harness judged on its own, with no map of the parts Charles already has that do neighbouring jobs: the bench was evaluated without placing it beside intake, the Inspectors, the Repairers and the Stack Advisor, and the chat stated that no skill covered a problem the intake brief already answered because it had not opened the brief or seated the expert [Charles 2026-11-09: "This response you've given is symptomatic of the problem that all of my learning infrastructure is trying to solve"; TH-155; EB-162]
+21. ~ An outside model's reply (Gemini, ChatGPT) weighed like a seat's: it has no lens, no notebook and none of Charles's decisions, so its points count only once checked against the source they cite, and only checked points reach a brief [CB-666; EB-276; EB-279; skills/expert-desk 0.6.0 step 6; EB-280]
+22. ~ A part's state split per claude.ai Project while the skills and the dot that read it still take one shared newest value, so a second Project's chat may never start it and its dot stays green when only one Project ran [skills/step-in-scorer 0.4.1 and 0.4.2, receipt Project line; skills/design-assist step 1; EB-284]
 
 ## Procedure
 
@@ -60,6 +62,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.8 (2026-11-22): folded EB-280, EB-284 (Expert CE). EB-284's fix to the design-assist and step-in-scorer skills is not a brief line; only its risk lands here.
 - 0.1.7 (2026-11-16): jev joins as a craft, also under c-stack (EB-248, EB-249; Charles approved 2026-11-16). Crafts list updated; call_when unchanged.
 - 0.1.6 (2026-11-15): folded EB-187 (proved: TH-198; first Our way lines for this captain), EB-162 (Expert CE).
 - 0.1.5 (2026-11-09): scoring-and-testing joins as a craft (EB-178, EB-179; Charles confirmed 2026-11-09). Lens 15 (an eval's finding acted on without reading the live artifact, E-278) moves down to scoring-and-testing Lens 1; Lens 16 to 20 renumber to 15 to 19; call_when unchanged.
