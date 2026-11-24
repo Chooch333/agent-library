@@ -102,5 +102,6 @@ Whether key values may ever go in a spreadsheet, and where a long-term labeled l
 
 ## Changelog
 
+- **0.1.2** (2026-11-24) — Requires `references/browser-use.md`: when a token needs refreshing (step g) or Vercel needs GitHub access, open the pages for Charles on the PC he's at and give him the one card of exact clicks, per its "his-only clicks" job. Charles's decision in a Stack Work chat, 2026-11-24 (standardize browser use).
 - **0.1.1** (2026-10-23) — Progress tracking section. Per BB-2026-10-21-next-steps-panel.
 - **0.1.0** (2026-10-08) — Initial draft. Build 28 (BB-2026-10-07-wire-new-app). Proven by a rehearsal run only; first real use is the final proof (step f).
