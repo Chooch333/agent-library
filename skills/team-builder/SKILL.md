@@ -93,6 +93,31 @@ scope; rule 4 builds each brief from main with only the in-scope notes' lines. W
 5. **Next steps card** (every (c)): one `checkin` per expert per run, kind `job`, `source: job`, thread_key `job:team-builder-ce-<slug>`, plain_name "<expert> brief changes to decide", waiting_on `you`, next_step in plain words with no ids: what the expert's brief would change and that the ask is on the Comms Table. Two notes for one expert in a run share one next_step naming both.
 6. **Receipt** to the caller, per expert: notes folded as proved (display ids, the record each rests on, commit SHA), notes folded as Lens lines (display ids and commit SHA), tool facts filed as field notes (display ids and field-note ids), routed to Charles (display ids and post ids), left waiting and why (no brief, a check FAIL with its lines, a conflict, a read-back mismatch). Plus any note with no expert or two.
 
+### Operator mode
+Loaded by `skills/operator-setup` at its Build step, pointed at an `operator-draft` note on Project State project `cbrain` (the confirmed walk-through answers, the operator-design seat's verdicts and the mandate text). It writes a new Operator's tech items and judges nothing: whether it should exist and what it may do were settled by the operator-design expert and Charles's confirmation. The tech-item list is the brief's, never this skill's memory: read `experts/operator-design/BRIEF.md` and complete every Our way line marked *category*; copy nothing it marks *first Operator's own*.
+
+Steps 1 to 7 above apply, with these writes at step 2 and these registrations at step 4:
+- **Mandate:** `operators/<slug>/MANDATE.md` from the note's mandate text, in `references/operator-mandate.md`'s shape, `status: draft`.
+- **Run registration:** one row in the Operator table in `skills/operator-run/SKILL.md` (title, start phrases, mandate path), a patch version bump and one changelog line there.
+- **Start phrases:** added to the AGENT.md Operators row; one Disambiguation line when the note says a phrase could fire another row.
+- **Bench pages:** each new move the note names becomes a section of a read-only reference page under the skill that owns the data's door, with that skill's pointer line, patch bump and changelog line. A move that needs a new skill, or one that writes, is not written here: stop and say it needs a Build Brief.
+- **Stack Flow:** one dot for the Operator on cbrain `concepts/stack-map.md`, shaped like the newest Operator dot there, with its lines, the two counts in the note text corrected, and one dated paragraph. Pull or re-read the file afterwards and confirm it still parses and no line points at a missing dot.
+- **Expert:** when the note names an expert that is not on `experts/INDEX.md`, the Bench row names the fallback seat the note gives, and one `grow-ask` note is filed on `expert-bench`.
+- Nothing is written for the starter skill, the Agent Team view or the log table: they cover every Operator already.
+
+**Mechanical checks, operator mode**
+- Mandate: the header line (slug, version, status, owner, updated); every section of the template, in order, under its exact heading; under sixty lines; tables where the template has tables.
+- No names of jobs, clients, people or companies in the mandate or a bench page (the repo is public).
+- Authority: no "May, alone" entry changes data the Standing check reads; "Never" includes sending to anyone but Charles and judging its own goal.
+- Standing check names a checker that is not the Operator.
+- Bench: at least two rows that are different kinds of move; every "Use when" names a fact a run can read; every File path exists (fetch each); every "Yes" under Writes matches an "Only on Charles's ask" entry.
+- Each start phrase appears in no other AGENT.md row, or a Disambiguation line is written.
+- The slug is not an existing Operator's, skill's or expert's name; the title is not a locked word.
+- Run by is `skills/operator-run/SKILL.md`.
+A FAIL: stop, report the failing lines, commit nothing.
+
+**Receipt, operator mode:** files written and SHAs, the operator-run row, the AGENT.md phrases, the dot and counts, any grow-ask, check results, and anything the note asked for that was not written and why. The hidden-data test is `skills/operator-setup`'s next step, not this mode's.
+
 ### Team mode
 Expert mode, once per expert, in the team note's build order: captains before their crafts.
 - **Read** the team note, every draft note and the fit note. Apply the fit's cuts and rewordings to each draft before step 2.
