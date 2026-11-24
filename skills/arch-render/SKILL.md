@@ -128,6 +128,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - Closes when: Charles passes gate 4 on the run, or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Changelog
+- 0.2.5 (2026-11-24) — New section "AI finish pass" (draft): the steps moved here from `references/browser-use.md`, which is navigation rules only (Charles, 2026-11-24).
 - 0.2.4 (2026-11-24) — Requires `references/browser-use.md`. The AI finish pass line now points there (Claude drives ChatGPT or Gemini in Chrome; free on his subscriptions; draft until first real run); the old "money stop" wording was about a paid route, not his rule. Charles's decision in a Stack Work chat, 2026-11-24.
 - 0.2.3 (2026-11-10) — Build 78 (BB-2026-11-09-closing-out): the card finish no longer waits on Charles clicking Done; it closes itself once nothing on it waits on him (references/thread-checkin.md 0.4.0, Closing out).
 - 0.2.2 (2026-10-27) — Revit models render with `pipeline/revit-intake/render_revit.py`; `render.py` stays the Pascal/PDF renderer (Build 53).
