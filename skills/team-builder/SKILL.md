@@ -1,8 +1,8 @@
 ---
 name: team-builder
-version: 0.6.0
+version: 0.7.0
 status: draft
-triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)", "Loaded by the Expert Desk's CE job at its Fold step (after the Sunday 00:00 Run all or the 01:00 catch-up of the scheduled task \"Expert CE\"), pointed at the waiting lens-notes on expert-bench (update mode)", "Loaded by a helper of the night run at its fold step 6b, with only: the day's lens-notes that cite a charles-correction decision (update mode with only:)"]
+triggers: ["Loaded by the Expert Desk at grow step G3 (expert mode)", "Loaded by skills/operator-setup at its Build step, pointed at an operator-draft note (operator mode)", "Loaded by the Expert Desk at team grow step T4 (team mode)", "Loaded by a build chat when its Build Brief names a new skill under Skills: (skill mode)", "Loaded by the Expert Desk's CE job at its Fold step (after the Sunday 00:00 Run all or the 01:00 catch-up of the scheduled task \"Expert CE\"), pointed at the waiting lens-notes on expert-bench (update mode)", "Loaded by a helper of the night run at its fold step 6b, with only: the day's lens-notes that cite a charles-correction decision (update mode with only:)"]
 dependencies: []
 owner: Charles
 updated: 2026-11-20
