@@ -59,6 +59,8 @@ Always: work in a new tab, never one of his; close every tab Claude opened when 
 
 This file learns where it is used. When a browser step fails, surprises, or works a new way (a new kind of stop, a site that behaves differently, a PC id that changed, something unproven that just got proven), the chat that hit it fixes the line here in the same turn, dated, without asking Charles, and bumps the version. A stop that isn't in the table gets a row once it's handled. Judgment about how browser use should work (not a step that broke) goes to the lanes expert like any judgment ask.
 
+**When this has outgrown a file.** Charles does not monitor this ("I don't want to monitor", 2026-11-24). The chat that makes an edit here counts, every time: the rows in "When something stops", and the entries in the Changelog. More than 10 stop rows, or more than 8 changelog entries, means browser use has become a field of its own. That chat then, in the same turn: tells Charles in one line ("Browser use has collected enough rules and exceptions that it should be its own craft expert: say the word and I'll grow it"), and files one note on Project State `expert-bench` tagged `grow-ask` naming the field (browser use) and this file. Once a `grow-ask` note for browser use exists, later chats don't tell him again.
+
 ## What is and isn't proven
 
 - Proven: opening tabs on his work PC from a cloud chat (2026-11-24); sites he already uses open signed in; the two device ids held across a Chrome reconnect the same day.
