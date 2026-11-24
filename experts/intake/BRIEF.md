@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.5
+version: 0.1.6
 status: active
 ---
 
@@ -32,7 +32,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 14. Run size: each reader takes a fixed number of items per run and the rest wait for the next run; not unbounded runs, because a run cut off mid-batch leaves partial state [Charles · E-024; post-reader step 1; stack-map collector, email-watcher]
 15. Duplicates: an item's id comes from its URL; a never-seen link older than the age floor is marked seen and skipped; a second address for text the same source already saved is skipped and counted; an existing to-do entry is never overwritten, so sharing twice changes nothing; not URL alone, because a link move made years of old posts count as new and one article served at two addresses was collected twice [Claude · post-reader 2e; stack-map shared-posts; Build 66 directive 2; CB-585; CB-596]
 16. What a video yields: facts that are granular and technical, naming the mechanism the talk describes; not facts about the talk itself, history or headline features, because the Stack Advisor needs something to build on [Charles · Charles 2026-10-19, stated; ~ from memory, not in Project State]
-17. Subject scope: world-graph intake carries only AI and tech today; a site an expert should keep watching goes into intake's Sources, labeled for that expert (`experts: [<slug>]`), and only one-off links are read by the expert directly [Charles · ~ observation for the first half; EB-016, Charles 2026-11-03 "Yes sources"]
+17. Subject scope: world-graph intake carries only AI and tech today; a site an expert should keep watching goes into intake's Sources, labeled for that expert (`experts: [<slug>]`), and only one-off links are read by the expert directly; investing content, a paid investing or crypto creator included, never comes in through world-graph Sources, because what they save is loaded into cbrain and nothing about investing goes into cbrain [Charles · ~ observation for the first half; EB-016, Charles 2026-11-03 "Yes sources"; INV-001, Charles 2026-11-23; EB-358]
 18. Nightly pull: each source's newest new items first, taken in turn under one count cap sized to the Collector's run; GitHub release feeds are read from the releases list as one roll-up per source per day; not one newest-first cap across all feeds, because one busy source took the whole night and a feed window shorter than a day's releases lost entries for good [Charles · Build 66, plan 82569503 directives 1 and 3; WG-108]
 19. Forwarded email once summarised: the summary files itself with no review, labelled Inferred on its pages, graph summaries and task changes; an open substantive question becomes an open issue task, never answered by a guess; a healthy draft whose seal failed is retried, and a degraded one goes to the redo list; not held at an approval gate for Charles, because he does not want Claude-made data gated and corrects it on screen [Charles · CB-628; charter, "Label what Claude makes"; Claude: Build 88, plan 549b6749, succeeded; EB-258]
 
@@ -54,6 +54,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 14. A new input source, or a jump in volume, added to a part that reads on the API, with the per-item and per-week cost math and the money gate left at the old volume [design-assist 0.2.10 changelog: the transcript go-live brief]
 15. A chat told Charles a video has no transcript because its own web fetch hit YouTube's bot wall, without checking world-graph data/transcripts or intake_items or queuing the video on yt-relay, where the PC relay fetches captions from a home address [Charles 2026-11-09: "Why does Claude keep telling me there's no transcript"; graph-engineering chat 2026-11-04; step-in lessons tagged pattern-cant-reach]
 16. ~ A reader's failure that never reaches the status the Sources page reads, so short failed transcripts showed as waiting while a hand-started to-do step held new ones back; Build 72 moved the step into the nightly run and carries the failure through [CB-591; CB-593; Build 72, plan 567842d5; EB-155]
+17. ~ A paid creator's library (an investing creator, or a paid channel on YouTube) labeled for one expert but taken in like any source: with no expert-only flag it reaches the Video Reader and the AI and tech graph, and investing content lands in cbrain; the seat's route for it is the subscription-content server into a store of its own [INV-001; EB-358]
 
 ## Procedure
 
@@ -91,6 +92,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.6 (2026-11-24): folded EB-358 (proved: INV-001, Charles 2026-11-23, nothing about investing goes into cbrain; Our way 17 narrowed, origin mark stays Charles). The note's route (the subscription-content server into its own store) and its expert-only flag for paid creator libraries have no record behind them yet, so they land as ~ Lens 17, not as Our way (Expert CE).
 - 0.1.5 (2026-11-22): folded EB-253 (proved: TH-235, Charles 2026-11-17, which narrows E-013 and E-019 for on-demand reading only; Our way 12's origin mark moves to Charles), EB-315 (proved: stack_repairs 38996dfd, intake_items read) (Expert CE).
 - 0.1.4 (2026-11-20): folded EB-258 (proved: CB-628, Build 88 plan 549b6749 succeeded; new Our way 19, none replaced) (Expert CE).
 - 0.1.3 (2026-11-15): folded EB-154 (proved: Build 72, plan 567842d5 succeeded), EB-155 (Expert CE). EB-155 asked for its two gaps to go into Our way 9; Build 72 closed both, so it lands as a Lens line, and Our way 9 never said the video step waits for a hand run (github-integrations Our way 2 now agrees).
