@@ -87,6 +87,7 @@ None. This skill finishes in one run and leaves nothing open.
 
 ## Changelog
 
+- **0.2.2** (2026-11-24) — A change lands at world-graph's nightly run, not in minutes: the writer's on-push run has been off since 2026-10-12 and Charles chose to leave it off ("Leave it", CB-763). Steps 5 and 6 reworded; a chat never starts the writer itself. New `references/job-moves.md`: four read-only moves (where the job stands, meeting prep, follow-up drafts, gap check) used by the Project Manager Operator (`skills/operator-run`) and by any chat asked the same thing. Edited inline in the Operator design chat at Charles's direction.
 - **0.2.1** (2026-10-23) — Job email address and the new-people rule moved in from the FAW project instructions (now routed through AGENT.md).
 - **0.2.0** (2026-10-23) — Milestone `kind` (meeting) and `basis: "steer"` rules, moved here from the Build 24.4 paste item C-J-403 (Charles: this belongs in skills, not project instructions). `create_milestone` / `set_milestone` op lists updated.
 - **0.1.1** (2026-10-23) — Progress tracking section ("None" form). Per BB-2026-10-21-next-steps-panel.
