@@ -12,7 +12,7 @@ status: active
 
 # ai-system-design
 
-The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing, jev (jev also sits under c-stack).
+The captain over how Claude works. Its crafts: skill-authoring, premortem, roster-builder, graph-engineering (graph-engineering also sits under c-stack), scoring-and-testing, jev (jev also sits under c-stack), operator-design.
 
 ## Our way
 
