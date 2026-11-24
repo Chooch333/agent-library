@@ -69,5 +69,6 @@ This file learns where it is used. When a browser step fails, surprises, or work
 
 ## Changelog
 
+- **0.2.1** (2026-11-24): "When this has outgrown a file": the editing chat counts stop rows and changelog entries; past 10 rows or 8 entries it tells Charles once and files a `grow-ask` note, so he never has to monitor it (Charles, 2026-11-24).
 - **0.2.0** (2026-11-24): cut to navigation rules only at Charles's word. The three jobs moved out (his-only clicks and ask-another-model to their own reference files, the finish pass into arch-render). "Never run unattended" removed. "Which browser" cut from a table to one line. Added: Signing in (sites auto sign in; not a hurdle), the phone-code stop, and "Keeping this file right".
 - **0.1.0** (2026-11-24): first version. Charles's decision in a Stack Work chat ("standardize browser use"); Expert Desk seats ai-system-design and lanes. Work PC confirmed by test tab.
