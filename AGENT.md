@@ -109,6 +109,12 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 |---|---|
 | An FA Wilhelm job comes up — its tasks, issues, dates, milestones, meetings, team, RACI or design decisions (e.g. `what's open on IMI?`, `add this`, `log this`, `put this on the job`) — mid-chat included; fetch once per chat | `skills/job-update/SKILL.md` (reads any time; writes only on Charles's ask; general construction/permitting talk is not a job and loads no job skill; the experts rule still applies) |
 
+### Operators
+
+| Trigger phrases | Skill |
+|---|---|
+| `PM: <job>` or `PM: what needs me` (a message that starts with it, in any chat, mid-chat included), or `run the Project Manager` / `run my Operators` (any chat or Duet, on demand or on Duet's cadence) | `skills/operator-run/SKILL.md`, which loads the Operator's mandate (`operators/project-manager/MANDATE.md`) and, when a move needs it, `skills/job-update` |
+
 ### Outside content
 
 | Trigger phrases | Skill |
