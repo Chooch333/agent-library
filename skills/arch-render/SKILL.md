@@ -6,7 +6,7 @@ triggers: [used by builds when an arch-renders run reaches gate 3 (materials sti
 dependencies: [arch-massing, arch-materials, pascal-editor]
 owner: Charles
 updated: 2026-11-10
-requires: [references/thread-checkin.md]
+requires: [references/thread-checkin.md, references/browser-use.md]
 wiring:
   runs: inside-builds
   reads: [gate-2 model.glb (typed parts), material assignment, site settings, cbrain workflows.conventions (cameras, look), asset kit]
