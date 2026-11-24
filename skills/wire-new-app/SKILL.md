@@ -7,7 +7,7 @@ triggers:
 owner: Charles
 updated: 2026-10-23
 source: Designed in DA chat DA-1007-wire-new-app (2026-10-07); built in Build 28 (BB-2026-10-07-wire-new-app). Key passing runs in Chooch333/cbrain .github/workflows/wire-new-app.yml.
-requires: [references/project-state.md, references/thread-checkin.md, references/browser-use.md]
+requires: [references/project-state.md, references/thread-checkin.md, references/browser-use.md, references/his-only-clicks.md]
 wiring:
   runs: with-you
   starts: "\"wire up <name>\""
