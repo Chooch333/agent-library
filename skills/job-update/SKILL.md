@@ -5,7 +5,7 @@ status: active
 triggers:
   - "add this" / "log this" / "put this on the job" (or plainly the same ask) in a FAW chat
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-24
 source: Designed in DA chat DA-1005-faw-chat-input (2026-10-05). Uses the existing graph write door (world-graph docs/contracts/WRITE_PACKAGE.md); no new plumbing.
 requires: [references/project-state.md]
 wiring:
