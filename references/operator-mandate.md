@@ -45,7 +45,7 @@ Where the report goes and its parts.
 The few things a fresh session must read so nothing depends on memory of the last run.
 
 ## Run by
-`skills/operator-run/SKILL.md`, or the Operator's own skill if it has one.
+`skills/operator-run/SKILL.md`. Never a run skill of its own.
 
 ## Changelog
 ```
