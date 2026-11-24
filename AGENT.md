@@ -120,7 +120,9 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| No phrase: before the first browser tool call in any chat (opening a page on Charles's PC, driving ChatGPT or Gemini, a download), and before telling Charles a step is his to click (a key, token, permission or sign-in); mid-chat included; fetch once per chat | `references/browser-use.md` (which browser, which of his two PCs, his-only clicks, the photo-real finish pass, asking another model; never pick a PC yourself, and never say a browser job can't be done before its steps) |
+| No phrase: before the first browser tool call in any chat (opening a page on Charles's PC, driving ChatGPT or Gemini, a download); mid-chat included; fetch once per chat | `references/browser-use.md` (navigation rules only: which browser, which of his two PCs, what to do when a page stops; never pick a PC yourself, and never say a browser job can't be done before its steps) |
+| No phrase: before telling Charles a step is his to click (creating, sharing or saving a key, token or permission, or a setting only he can change); mid-chat included; fetch once per chat | `references/his-only-clicks.md` (open every page in order, one card of exact clicks; reads browser-use first) |
+| Charles asks for ChatGPT's or Gemini's view on something (e.g. `ask Gemini what it thinks`, `get GPT's take`); mid-chat included | `references/ask-another-model.md` (draft; reads browser-use first) |
 
 ### Knowledge capture
 
