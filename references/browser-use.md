@@ -1,6 +1,6 @@
 # Browser use
 
-*Version 0.2.0 (2026-11-24), draft.* Read before the first browser tool call in a chat. One way, every chat. ("I want to standardize browser use so Claude does it the same every time... I don't want a new chat to have to figure it out, or do it wrong." Charles, 2026-11-24.)
+*Version 0.2.1 (2026-11-24), draft.* Read before the first browser tool call in a chat. One way, every chat. ("I want to standardize browser use so Claude does it the same every time... I don't want a new chat to have to figure it out, or do it wrong." Charles, 2026-11-24.)
 
 This file is only the rules for getting around in the browser: which browser, which PC, what to do when a page stops. What a job does once the page is open lives with that job ("this was just about rules around navigating through the browser use specifically", Charles, 2026-11-24):
 - Pages only Charles can click (keys, tokens, permissions): `references/his-only-clicks.md`
