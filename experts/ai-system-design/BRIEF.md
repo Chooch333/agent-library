@@ -62,6 +62,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.9 (2026-11-24): operator-design joins as a craft (EB-380; Charles confirmed 2026-11-24). Crafts list updated; no lens line moves; call_when unchanged. The two notebook entries on the Operator definition (EB-372, EB-377) are routed: that line is operator-design Our way 2.
 - 0.1.8 (2026-11-22): folded EB-280, EB-284 (Expert CE). EB-284's fix to the design-assist and step-in-scorer skills is not a brief line; only its risk lands here.
 - 0.1.7 (2026-11-16): jev joins as a craft, also under c-stack (EB-248, EB-249; Charles approved 2026-11-16). Crafts list updated; call_when unchanged.
 - 0.1.6 (2026-11-15): folded EB-187 (proved: TH-198; first Our way lines for this captain), EB-162 (Expert CE).
