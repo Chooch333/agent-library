@@ -37,6 +37,9 @@ An agent that can mutate its own rules while executing is a debugging nightmare.
 - **Lens** — the named ways work in an expert's corner goes wrong, each with its source.
 - **Roster-builder** — the expert at making experts: it proposes a new expert and, after Charles confirms, researches it and returns its brief and the captain's revisions as text. It judges; it writes nothing.
 - **Team Builder** — the skill that puts a new member on the team: writes an expert's brief (and the captain's revisions) or a skill's SKILL.md, runs the mechanical checks, registers it, commits it (an expert as active, a skill as draft); in update mode it folds waiting lens-notes into existing briefs. Four modes (expert, team, skill, update), one skill. Not an agent.
+- **Operator** — in Charles's words, "a broader scale, long duration goal that is achieved by judging how to use varied skills to perform varied tasks over a longer time horizon" (CB-753, CB-759). A third category beside Skill and Expert. Its goal may be broad; no "one subject" limit, no stated time span. Never called a job, an assignment or a role.
+- **Mandate** — an Operator's file, `operators/<slug>/MANDATE.md`: the essence of the Operator (what it is for, what it may do alone, how we know it is working, which skills it draws on). Follows `references/operator-mandate.md`, not the seven-section skill body. Not a skill; run only through `skills/operator-run`.
+- **Operator log** — the cbrain table `operator_log`: what an Operator did, what it waits on and what Charles last heard. Insert-only; never job status.
 - **Mode A / A.1 / B** — A: captains evaluate and plan. A.1: carried captains plus their craft experts. B: one expert, one issue.
 
 ## Skill file rules
