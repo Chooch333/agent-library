@@ -86,6 +86,18 @@ Grass instanced on a fixed rectangle (visible edge in the aerial; covered the wa
 - Default clip method: short true camera moves (4–6 s) rendered as frames, plus camera drift over the approved stills (EffectCraft). Faster frames need a graphics card (Charles's PC or a rented GPU): an R&D question with a money stop.
 - Untested: frame-to-frame flicker at 16 spp (per-frame denoising), cloud session lifetime over multi-hour renders.
 
+## AI finish pass (draft, not yet run by Claude)
+Charles did this by hand with ChatGPT and judged it very successful (a plaza model with photo-wrapped buildings; ChatGPT cleaned the whole image to read as a photo). On his subscriptions it costs nothing extra. Getting to the page follows `references/browser-use.md`.
+1. The still has passed its checks and is filed.
+2. Open ChatGPT or Gemini in a new tab. Gemini is his pick for images when both would do.
+3. Get the render to the model. Two routes, both unproven; the first real run tries A, then B, and this section keeps the one that works:
+   - **A. Claude carries it**: upload the render into the chat page (the upload tool takes 3.8 MB a call; shrink above that), ask for the finish, download the result through Chrome, bring it back over the PC link and file it beside the render. Needs the PC link up on the PC being driven.
+   - **B. The model fetches and saves back** through its own connection to his GitHub (his decision of 2026-11-20 for Gemini). Unproven for image files.
+4. The ask: keep the geometry, camera, buildings and signage exactly; change only what reads as computer-made (surfaces, light, plants, people, sky). One image per render.
+5. Check the result against the render before Charles sees it: same building, same camera, nothing added or removed. A changed design is a fail, not a nicer picture.
+6. File both; label the finished one "Inferred · finish pass by <model>".
+After the first real run, the chat that ran it rewrites these steps from what happened and drops "draft".
+
 ## Stop rule
 Three failed tries at the same check means stop, write down what was tried, and report. Never relax a check to pass.
 
