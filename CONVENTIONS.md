@@ -15,7 +15,9 @@ Rules for the agent-library. Adapted from hanyuancheung's `llm-skill` contract.
 
 | **operator-run** | The Operator's mandate (`operators/<slug>/MANDATE.md`), the live data its Scope names, its own rows in cbrain `operator_log`, the one bench file its move names | Insert-only rows in cbrain `operator_log`; one `reported` row in the stack fix log for something broken or for a proof count that is due; an email to Charles only when he asked for one | Change anything its mandate's Authority table does not allow, write to a job without Charles's ask (that is job-update's Write), update or delete a log row, edit a mandate or any skill, or judge whether its own goal is met |
 
-A mandate is created or edited only by a build or design chat Charles has directed, the same as a skill under the Execute row.
+| **operator-setup** | The operator-design brief, the mandate template, operator-run's Operator table, Project State records on the goal, the live data the new Operator would manage | One Project State note per setup on `cbrain` tagged `operator-draft`, after Charles confirms; test rows in cbrain `operator_log`, each flagged test | Write any file in any repo, judge whether the goal is an Operator (the operator-design seat does), or call team-builder before Charles confirms |
+
+A mandate is created by team-builder's operator mode from a setup Charles confirmed (`skills/operator-setup`), or created or edited by a build or design chat he has directed, the same as a skill under the Execute row. In operator mode team-builder also writes the new Operator's row in operator-run's table, its start phrases in AGENT.md, read-only bench pages under the owning skill, and its Stack Flow dot.
 
 An agent that can mutate its own rules while executing is a debugging nightmare. Keep the writes mutually exclusive so every change is traceable.
 
