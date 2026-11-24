@@ -25,7 +25,7 @@ Reference implementation: `Chooch333/arch-renders/lab/cycles-house/house.py` (on
 ## Route (settled)
 - **Stills: Blender Cycles, in the cloud workspace.** `pip install --break-system-packages bpy==5.2.2`. CPU only (no graphics card), 2 processors, 7 GB.
 - Ruled out for stills: the browser scene (real-time, visibly game-like) and EEVEE (runs, but software-emulated: 55 s for one cube at 320×180).
-- AI finish pass (gate 4 option): after a still passes its checks, Claude can drive ChatGPT or Gemini in Chrome on Charles's PC to make it read as a photo, per `references/browser-use.md` (photo-real finish pass; draft until its first real run). On his subscriptions it costs nothing extra; a paid API route is still a money stop. Downloads and which PC also follow that file.
+- AI finish pass (gate 4 option): after a still passes its checks, Claude can drive ChatGPT or Gemini in Chrome on Charles's PC to make it read as a photo, per "AI finish pass" below (draft until its first real run). On his subscriptions it costs nothing extra; a paid API route is still a money stop. Downloads and which PC also follow that file.
 
 ## Asset kit
 Everything comes from Poly Haven (CC0). Textures at 2k JPG with four maps: `diff`, `nor_gl`, `rough`, `disp`. Sky: a `*_puresky_4k.hdr`.
