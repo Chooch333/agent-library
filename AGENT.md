@@ -116,6 +116,12 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 | A YouTube link (youtube.com or youtu.be) in any message, mid-chat included, when the chat needs what the video says; fetch once per chat | `references/youtube-transcript.md` (never say a video has no transcript, or ask Charles to paste one, before its steps) |
 | An X (x.com, twitter.com) or Instagram link whose post has a video, in any message, mid-chat included, when the chat needs what the video shows; fetch once per chat | `references/watch-video.md` (never say a video can't be seen, or ask Charles to describe it, before its steps; needs the built-in browser on a linked PC) |
 
+### Browser use
+
+| Trigger phrases | Skill |
+|---|---|
+| No phrase: before the first browser tool call in any chat (opening a page on Charles's PC, driving ChatGPT or Gemini, a download), and before telling Charles a step is his to click (a key, token, permission or sign-in); mid-chat included; fetch once per chat | `references/browser-use.md` (which browser, which of his two PCs, his-only clicks, the photo-real finish pass, asking another model; never pick a PC yourself, and never say a browser job can't be done before its steps) |
+
 ### Knowledge capture
 
 | Trigger phrases | Skill |
