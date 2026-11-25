@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.8
+version: 0.2.9
 status: active
 ---
 
@@ -29,6 +29,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 11. A step that depends on the surface (memory, past-chat search, a browser, the PC link): the step names its fallback and marks itself not available, with the reason, when the thing is missing; not assumed the same everywhere, because surfaces differ in both directions [Claude · MB-007; CB-142]
 12. Knowing what a lane can reach, approve or keep: read stack-map lanes: (each row carries its verified date), and when a run shows otherwise, correct that block in the same build; not re-derived per chat or copied into briefs, because comprehension lives in that document [Charles · charter, non-negotiable; SM-090]
 13. A no-Claude timer job on the PC (Windows Task Scheduler, as the yt-relay intake job): plan it as running only while Charles is signed in, with no view of its runs from elsewhere, and as the only git writer in its clones; not set to run whether or not he is signed in, because a signed-out run cannot reach the stored git credentials and its push fails with no visible error [Claude · WG-058; yt-relay SETUP.md, read 2026-11-15; EB-158; ~ the only-writer half rests on the note's read of run_intake.py on 2026-11-09, not re-read here]
+14. Starting regular things, Operators first: Claude's Duet starts them, on a cadence or on demand, and the run reports back to Charles in Duet or by email, his choice; what Duet can reach (his custom connectors, an unattended email send) is tested live before anything relies on it; not on demand from chats first with one scheduled task later, because Charles chose Duet as his chief of staff for regular things [Charles · CB-761, 2026-11-24; EB-378]
 
 ## Lens
 
@@ -94,6 +95,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.9 (2026-11-25): folded EB-378 (proved: CB-761, Charles 2026-11-24; new Our way 14, none replaced) (Expert CE).
 - 0.2.8 (2026-11-22): folded EB-301 (proved: CB-595, stack_repairs 8e1f15a1; Lens 17 drops its ~), EB-302 (proved: stack_repairs a6d177f0 and ef73489f; Lens 8 rewritten in place) (Expert CE). EB-251 and EB-257 are tool facts, filed as field notes EB-342 and EB-343.
 - 0.2.7 (2026-11-20): folded EB-274 (proved: CB-616, charter.md read) (Expert CE).
 - 0.2.6a (2026-11-18): no line change. Charles cut the charter to how he works; this brief's Our way 1 is now the only home of the two-engine rule (it left the charter). Its "charter, standing rules" source stays as the rule's origin.
