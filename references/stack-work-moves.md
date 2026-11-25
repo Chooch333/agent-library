@@ -1,6 +1,6 @@
-# Stack work moves — the Chief Engineer's bench page (0.2.0)
+# Stack work moves — bench page for the Chief Engineer and the Harness Pathfinder (0.3.0)
 
-Moves for the Operator at `operators/chief-engineer/MANDATE.md`, run by `skills/operator-run/SKILL.md`. A run fetches this page only when its Bench picks one of these moves, and reads only that section. No skill owns the Next steps list, the shelf and the board together, so this page sits beside `references/thread-checkin.md` (operator-design seat, 2026-11-24).
+Moves for the Operators at `operators/chief-engineer/MANDATE.md` and `operators/harness-pathfinder/MANDATE.md`, run by `skills/operator-run/SKILL.md`. A run fetches this page only when its Bench picks one of these moves, and reads only that section. No skill owns the Next steps list, the shelf and the board together, so this page sits beside `references/thread-checkin.md` (operator-design seat, 2026-11-24).
 
 ## Rules for every move
 - Writes nothing but the run's own log rows. No card is opened, reworded, closed or reopened here; no brief is shelved.
