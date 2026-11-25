@@ -84,7 +84,7 @@ itself clears it.
   matches, try again next turn; never guess. Claude Code sessions use the
   `Claude-Session:` url from their own commit trailer.
 
-- chats (Stack Work Project chats): pass one `chats` entry for your own link
+- chats (Stack Work and Total Harness Project chats): pass one `chats` entry for your own link
   whose label is the first line of Charles's first message in the chat, word
   for word (up to 80 characters). The past-chat tools list a chat under a
   different link than the one it checks in with, so this label is how the
