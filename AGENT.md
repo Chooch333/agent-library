@@ -25,12 +25,6 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 ## Active skills
 
-### Brainstorming
-
-| Trigger phrases | Skill |
-|---|---|
-| `this is a brainstorm chat` (case-insensitive, must be in the very first message — mentioning brainstorming mid-chat is not an invocation) | `BRAINSTORM.md` — **owner=Chooch333, repo=chat-protocol** (not agent-library — the only row in this table that points outside this repo) |
-
 ### Build
 
 | Trigger phrases | Skill |
