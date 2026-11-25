@@ -42,5 +42,13 @@ Moves for the Operator at `operators/chief-engineer/MANDATE.md`, run by `skills/
 4. Log a `wait`: `why` = what will finish it, `clears_when` = the one Project State read that shows it landed (see the mandate's Log section). No brief yet: the wait is on the card for that Design Assist chat appearing.
 **Log:** one `move` row and one `wait` row.
 
+## 5 Sort the cards
+**For:** an open Next steps card with no project, or one sitting in a project that no longer fits. The one move on this page that writes, and the Chief does it alone (Charles, 2026-11-25: "it should be able to adjust and reorganize as make sense to it").
+1. Read the central project list (the one the Dev tab's project dropdown reads). Never invent a project name that is not on it; a card that fits none is said in the report as "needs a new project: <name it would give>".
+2. For each such card, pick the project from what the card and its chat say the work is for. A card he sorted himself is moved only when its work plainly changed.
+3. Set it through Project State's tool for a card's project. No such tool exists yet (2026-11-25: the field is written only from the Dev tab): until it does, write nothing and give the sorting in the report, one line per project with a count.
+**Log:** one `move` row; `detail.evidence` = how many cards had no project, how many were set or proposed.
+
 ## Changelog
+- 0.2.0 (2026-11-25): renamed for the Chief Engineer; new move 5, Sort the cards (Charles, decision CB-783).
 - 0.1.0 (2026-11-24): first version, written by Team Builder operator mode from draft note CB-768 (Charles confirmed in the chat; decision CB-769). Seat: operator-design, report CB-767.
