@@ -16,7 +16,7 @@ wiring:
   runs_in: claude-chat
   reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Stack Superintendent)"]
   writes: [operator-log]
-  stack: [project-manager, stack-superintendent]
+  stack: [project-manager, chief-engineer]
   origin: yours
   label: Operator run
 ---
