@@ -84,6 +84,12 @@ itself clears it.
   matches, try again next turn; never guess. Claude Code sessions use the
   `Claude-Session:` url from their own commit trailer.
 
+- chats (Stack Work Project chats): pass one `chats` entry for your own link
+  whose label is the first line of Charles's first message in the chat, word
+  for word (up to 80 characters). The past-chat tools list a chat under a
+  different link than the one it checks in with, so this label is how the
+  Stack Superintendent matches a chat to its card.
+
 If nothing changed, send the same next_step: the list keeps the old line and its
 date. Never write "still waiting" or "no change".
 
