@@ -88,7 +88,7 @@ itself clears it.
   whose label is the first line of Charles's first message in the chat, word
   for word (up to 80 characters). The past-chat tools list a chat under a
   different link than the one it checks in with, so this label is how the
-  Stack Superintendent matches a chat to its card.
+  Chief Engineer matches a chat to its card.
 
 If nothing changed, send the same next_step: the list keeps the old line and its
 date. Never write "still waiting" or "no change".
