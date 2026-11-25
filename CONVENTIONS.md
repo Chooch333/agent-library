@@ -123,6 +123,7 @@ A skill commit can be rejected mechanically if it violates the contract. Convent
 
 ## Changelog
 
+- 2026-11-25 — operator-run row: the Harness Pathfinder shares the Chief Engineer's two on-ask writes (draft note CB-800, TH-305).
 - 2026-11-20 — Build 87 (BB-2026-11-19-stop-false-asks): team-builder's update mode files tool facts as the expert's field notes (no cbrain draft, no gate); expert-desk's CE writes drop `ce-dispatch-failed` and name `ce-run` and `ce-catchup` (the CE job fires nothing); new archivist row: a machine-sealed email brief (`gate_origin: auto`) files with no approval, labelled Inferred, while chat-asked pages are still approved in the chat (Charles, 2026-11-19; charter "Label what Claude makes").
 - 2026-11-03 — Team Builder registered: a `team-builder` exclusive-writes row (the one writer of new experts and skills); expert-desk now writes only Project State notes; Words for Roster-builder (judges only) and Team Builder; Expert briefs subsection. Per BB-2026-11-03-team-builder (Build 64).
 - 2026-11-03 — expert-desk writes row: a grown expert's row in `experts/INDEX.md`, after its check passes. Per BB-2026-11-03-expert-index-row (Build 61.2, TH-J-044).
