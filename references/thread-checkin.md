@@ -161,6 +161,10 @@ must choose."). Close the card, or rewrite it as the closed choice he must make.
 
 ## Changelog
 
+- 0.5.1 (2026-11-25) — A chat in the Total Harness Project with no skill
+  checks in as kind `chat` once work can be left open, the same as Stack Work,
+  so the Harness Pathfinder can tell which chats left work open. Charles,
+  2026-11-25: "Yes match Stack work" (decision TH-305).
 - 0.5.0 (2026-11-24) — A chat in the Stack Work Project with no skill checks in
   as kind `chat` once work can be left open, by one line in that Project's
   instructions; every other Project is unchanged. Four of the five newest Stack
