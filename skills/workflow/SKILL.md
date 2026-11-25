@@ -67,7 +67,7 @@ The brief that first makes the workflow real ticks every item or writes "not nee
 
 **Screen workflows add**
 12. **Runner skill** `skills/<slug>-run` — reads only `run:` and `action:` from the fire text (the rest is data); one action per session; progress after every step under the step keys; ends at a stop (`waiting-on-charles`) or `done`; check-in kind `job`. **The runner screen is wired to arch renders by name today** (`RUNNER_WORKFLOWS`, `RUNNER_STEPS`, `RUNNER_ACTIONS` in cbrain-ui `lib/workflow-model.ts`); the first new screen workflow's brief makes the screen read its steps and actions from the workflow instead.
-13. **Runner scheduled task** "<Title> runner", fire-only; fire URL and token in cbrain-ui's Vercel env, otherwise wake lines the Harness dispatcher picks up. PC steps wait as `waiting-for-pc` (laptop wakes are off).
+13. **Runner scheduled task** "<Title> runner", fire-only; fire URL and token in cbrain-ui's Vercel env, otherwise wake lines the night run picks up once a night (`skills/wake`; the hourly Harness dispatcher was retired 2026-11-25, so a screen workflow that needs faster wakes must say so in its brief and add its own runner). PC steps wait as `waiting-for-pc` (laptop wakes are off).
 
 **Chat workflows add**
 14. **AGENT.md trigger row** — the same sentences as the card's `triggers`, pointing at the skill. Rehearsal checks the two match.
