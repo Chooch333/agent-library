@@ -15,7 +15,7 @@ After six real reports, one choice is brought to Charles: keep this table, or le
 Read live, in scope only: Project chats with no card; cards not moved in 14 days; draft briefs older than 14 days; builds running or blocked over 7 days; and cards closed in the last 14 days (finishing, not only aging). The day marks are Inferred. Checked by Charles using the reports and the Dev tab, and by a separate count of this Operator's log (operator-run, Proof). Never by this Operator.
 
 ## Scope
-Work started in chats of the claude.ai Project the run is in (Stack Work). Each run reads live: the Project's 20 most recently updated chats (past-chat tools); the Next steps list, open and closed (Project State); the design board and the shelf (Project State). In scope: those chats, and any card, topic, brief or build that carries one of their links or board tags. No list is kept anywhere, and no project field is read or set. What carries no chat is not placed: counted once in the report.
+Work started in chats of the claude.ai Project the run is in (Stack Work). Each run reads live: the Project's 20 most recently updated chats (past-chat tools); the Next steps list, open and closed (Project State); the design board and the shelf (Project State). In scope: those chats, and any card, topic, brief or build matched to one of them (how: `references/stack-work-moves.md`, Rules; a link alone misses). No list is kept anywhere, and no project field is read or set. What carries no chat is not placed: counted once in the report.
 
 ## Bench
 | Move | Use when (a fact in the live data) | File | Writes? |
