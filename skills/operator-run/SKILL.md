@@ -39,6 +39,7 @@ The one routine every Operator follows each time it is started. An Operator is, 
 |---|---|---|
 | Project Manager | `PM: <job>`, `PM: what needs me`, "run the Project Manager" | `operators/project-manager/MANDATE.md` |
 | Chief Engineer | `Check in` (in a Stack Work chat), `Chief: check in`, `Chief: finish <thing>`, `Chief: close <thing>`, "run the Chief Engineer" | `operators/chief-engineer/MANDATE.md` |
+| Harness Pathfinder | `Check in` (in a Total Harness chat), `Pathfinder: check in`, `Pathfinder: finish <thing>`, `Pathfinder: close <thing>`, "run the Harness Pathfinder" | `operators/harness-pathfinder/MANDATE.md` |
 
 ## When
 **Fire when:** a message starts with an Operator's start phrase, in any chat; Duet is asked to run an Operator or its cadence comes due ("run my Operators" with no name = every Operator in the table, one after another).
