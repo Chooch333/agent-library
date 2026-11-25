@@ -1,22 +1,23 @@
 ---
 name: operator-run
-version: 0.2.1
+version: 0.2.2
 status: draft
 triggers:
   - "PM: <job>" or "PM: what needs me" (a message that starts with it, in any chat, mid-chat included)
   - "Check in" (a message that starts with it, in a chat inside the Stack Work Project, mid-chat included), or "Chief: check in", "Chief: finish <thing>" or "Chief: close <thing>" (a message that starts with it, in any chat or Duet)
+  - "Check in" (a message that starts with it, in a chat inside the Total Harness Project, mid-chat included), or "Pathfinder: check in", "Pathfinder: finish <thing>" or "Pathfinder: close <thing>" (a message that starts with it, in any chat or Duet)
   - "run the <Operator title>" / "run my Operators" (Duet or any chat, on demand or on Duet's cadence)
 dependencies: [job-update, expert-desk]
 owner: Charles
-updated: 2026-11-24
+updated: 2026-11-25
 requires: [references/charter.md, references/operator-mandate.md]
 wiring:
   runs: with-you
   starts: "Duet, on demand or on its cadence; or an Operator's start phrase in a chat (\"PM: <job>\", \"Check in\")"
   runs_in: claude-chat
-  reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Chief Engineer)"]
+  reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Chief Engineer, Harness Pathfinder)", "agent-library lab files (Harness Pathfinder)"]
   writes: [operator-log]
-  stack: [project-manager, chief-engineer]
+  stack: [project-manager, chief-engineer, harness-pathfinder]
   origin: yours
   label: Operator run
 ---
