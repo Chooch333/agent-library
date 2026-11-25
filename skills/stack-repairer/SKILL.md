@@ -1,10 +1,10 @@
 ---
 name: stack-repairer
-version: 0.5.3
+version: 0.6.0
 status: draft
 triggers:
   - "Stack Repairer: run"
-  - "Claude Code routine \"Stack Repairer\" (7:00, 12:00 and 17:00 America/Indiana/Indianapolis)"
+  - "Claude Code routine \"Stack Repairer\" (daily 17:29 America/Indiana/Indianapolis)"
 dependencies: [orchestrate-build]
 owner: Charles
 updated: 2026-11-22
