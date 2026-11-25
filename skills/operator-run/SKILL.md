@@ -12,7 +12,7 @@ updated: 2026-11-24
 requires: [references/charter.md, references/operator-mandate.md]
 wiring:
   runs: with-you
-  starts: "Duet, on demand or on its cadence; or an Operator's start phrase in a chat (\"PM: <job>\", \"Super: what's hanging\")"
+  starts: "Duet, on demand or on its cadence; or an Operator's start phrase in a chat (\"PM: <job>\", \"Check in\")"
   runs_in: claude-chat
   reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Chief Engineer)"]
   writes: [operator-log]
