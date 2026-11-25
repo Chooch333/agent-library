@@ -5,6 +5,8 @@ Read-only moves for the Operator at `operators/stack-superintendent/MANDATE.md`,
 ## Rules for every move
 - Writes nothing but the run's own log rows. No card is opened, reworded, closed or reopened here; no brief is shelved.
 - In scope means: a chat of the claude.ai Project the run is in, and the card, design-board topic, brief or build that carries that chat's link or board tag. Anything with no chat on it is not placed; say how many, once per report, never item by item.
+- Matching a chat to its card. The link alone is not enough: a chat in this Project checks in with its session link, and the past-chat tools list the same chat under a different link (build-day test, 2026-11-24: the one chat that had a card matched nothing by link). Try in this order and stop at the first hit: the same link; the card's board tag (DA-MMDD-slug) found in the chat; the card's chat label equal to the first line of the chat's first message; a card opened within a day of the chat's start whose name plainly names the same work. Say "no card" only after all four miss.
+- Listing the chats. One past-chats call returns only a few chats (five on 2026-11-24, whatever number is asked for). Page back with `before` until twenty chats or fourteen days are covered, five calls at most; say how far back the run saw.
 - What a chat was for is re-read from the chat every time (past-chat tools: find the spot, read one page). Never from the log, a past report or memory.
 - A card's night-run status (stand, done, left, verdict) is read as written. Do not re-derive it.
 - At most five pieces of work per report, oldest first; the rest is a count. Never read a list back to Charles.
