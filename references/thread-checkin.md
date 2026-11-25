@@ -154,6 +154,11 @@ must choose."). Close the card, or rewrite it as the closed choice he must make.
 
 ## Changelog
 
+- 0.5.0 (2026-11-24) — A chat in the Stack Work Project with no skill checks in
+  as kind `chat` once work can be left open, by one line in that Project's
+  instructions; every other Project is unchanged. Four of the five newest Stack
+  Work chats were on no list. Charles, 2026-11-24: "Yes, Stack Work only"
+  (decision CB-769); changes his 2026-10-22 rule for that Project only.
 - 0.4.1 (2026-11-10) — Kind `chat` added (database and table) and replaces the
   `folder-chat` stand-in for a skill-less hand-on; the folder-chat row closes
   without a click; the checkin refusal of non-asks waiting on Charles is
