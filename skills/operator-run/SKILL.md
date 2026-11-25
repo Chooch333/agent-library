@@ -1,10 +1,10 @@
 ---
 name: operator-run
-version: 0.2.0
+version: 0.2.1
 status: draft
 triggers:
   - "PM: <job>" or "PM: what needs me" (a message that starts with it, in any chat, mid-chat included)
-  - "Super: what's hanging", "Super: finish <thing>" or "Super: close <thing>" (a message that starts with it, in a chat inside the Stack Work Project, mid-chat included)
+  - "Check in" (a message that starts with it, in a chat inside the Stack Work Project, mid-chat included), or "Chief: check in", "Chief: finish <thing>" or "Chief: close <thing>" (a message that starts with it, in any chat or Duet)
   - "run the <Operator title>" / "run my Operators" (Duet or any chat, on demand or on Duet's cadence)
 dependencies: [job-update, expert-desk]
 owner: Charles
