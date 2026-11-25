@@ -11,7 +11,7 @@ updated: 2026-11-22
 requires: [references/charter.md, references/project-state.md, references/gotchas.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
-  starts: "\"Stack Repairer: run\" / Claude Code routine 'Stack Repairer', 7:00 · 12:00 · 17:00 Indianapolis"
+  starts: "\"Stack Repairer: run\" / Claude Code routine 'Stack Repairer', daily 17:29 Indianapolis"
   runs_in: claude-code
   reads: [stack-status, stack-repairs, github-actions, vercel, project-state]
   writes: [stack-repairs, repos, plans, lessons, email, email-reprocess-requests]
