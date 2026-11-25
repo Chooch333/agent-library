@@ -1,6 +1,6 @@
 ---
 name: night-run
-version: 0.9.1
+version: 0.9.2
 status: draft
 requires: [references/charter.md, references/project-state.md, references/thread-checkin.md, skills/expert-desk/SKILL.md]
 wiring:
