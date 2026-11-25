@@ -50,5 +50,6 @@ Moves for the Operators at `operators/chief-engineer/MANDATE.md` and `operators/
 **Log:** one `move` row; `detail.evidence` = how many cards had no project, how many were set or proposed.
 
 ## Changelog
+- 0.3.0 (2026-11-25): shared with the Harness Pathfinder; scope comes from each mandate's Scope, so Total Harness records with no chat are placed by its mandate (operator-design seat, TH-302; draft note CB-800).
 - 0.2.0 (2026-11-25): renamed for the Chief Engineer; new move 5, Sort the cards (Charles, decision CB-783).
 - 0.1.0 (2026-11-24): first version, written by Team Builder operator mode from draft note CB-768 (Charles confirmed in the chat; decision CB-769). Seat: operator-design, report CB-767.
