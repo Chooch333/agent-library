@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.6
+version: 0.1.7
 status: active
 ---
 
@@ -35,6 +35,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 17. Subject scope: world-graph intake carries only AI and tech today; a site an expert should keep watching goes into intake's Sources, labeled for that expert (`experts: [<slug>]`), and only one-off links are read by the expert directly; investing content, a paid investing or crypto creator included, never comes in through world-graph Sources, because what they save is loaded into cbrain and nothing about investing goes into cbrain [Charles · ~ observation for the first half; EB-016, Charles 2026-11-03 "Yes sources"; INV-001, Charles 2026-11-23; EB-358]
 18. Nightly pull: each source's newest new items first, taken in turn under one count cap sized to the Collector's run; GitHub release feeds are read from the releases list as one roll-up per source per day; not one newest-first cap across all feeds, because one busy source took the whole night and a feed window shorter than a day's releases lost entries for good [Charles · Build 66, plan 82569503 directives 1 and 3; WG-108]
 19. Forwarded email once summarised: the summary files itself with no review, labelled Inferred on its pages, graph summaries and task changes; an open substantive question becomes an open issue task, never answered by a guess; a healthy draft whose seal failed is retried, and a degraded one goes to the redo list; not held at an approval gate for Charles, because he does not want Claude-made data gated and corrects it on screen [Charles · CB-628; charter, "Label what Claude makes"; Claude: Build 88, plan 549b6749, succeeded; EB-258]
+20. Designing or changing how outside information comes in: keep it simple and use the same mechanism for several uses, so a new source or use rides a path that already exists; not a new mechanism per use, because Charles wants intake simple and shared [Charles · CB-757, 2026-11-23; EB-374]
 
 ## Lens
 
@@ -92,6 +93,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.7 (2026-11-25): folded EB-374 (proved: CB-757, Charles 2026-11-23; new Our way 20, none replaced) (Expert CE).
 - 0.1.6 (2026-11-24): folded EB-358 (proved: INV-001, Charles 2026-11-23, nothing about investing goes into cbrain; Our way 17 narrowed, origin mark stays Charles). The note's route (the subscription-content server into its own store) and its expert-only flag for paid creator libraries have no record behind them yet, so they land as ~ Lens 17, not as Our way (Expert CE).
 - 0.1.5 (2026-11-22): folded EB-253 (proved: TH-235, Charles 2026-11-17, which narrows E-013 and E-019 for on-demand reading only; Our way 12's origin mark moves to Charles), EB-315 (proved: stack_repairs 38996dfd, intake_items read) (Expert CE).
 - 0.1.4 (2026-11-20): folded EB-258 (proved: CB-628, Build 88 plan 549b6749 succeeded; new Our way 19, none replaced) (Expert CE).
