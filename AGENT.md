@@ -113,7 +113,7 @@ Needs the Agent tool. A chat without it answers itself and says in one line whic
 
 | Trigger phrases | Skill |
 |---|---|
-| `PM: <job>` or `PM: what needs me` (a message that starts with it, in any chat, mid-chat included), or `run the Project Manager` / `run my Operators` (any chat or Duet, on demand or on Duet's cadence) | `skills/operator-run/SKILL.md`, which loads the Operator's mandate (`operators/project-manager/MANDATE.md`) and, when a move needs it, `skills/job-update` |
+| `PM: <job>` or `PM: what needs me` (a message that starts with it, in any chat, mid-chat included), or `Super: what's hanging` / `Super: finish <thing>` / `Super: close <thing>` (a message that starts with it, in a chat inside the Stack Work Project, mid-chat included), or `run the Project Manager` / `run the Stack Superintendent` / `run my Operators` (any chat or Duet, on demand or on Duet's cadence) | `skills/operator-run/SKILL.md`, which loads the named Operator's mandate from its table (`operators/project-manager/MANDATE.md`, `operators/stack-superintendent/MANDATE.md`) and, when a move needs it, `skills/job-update` |
 | `I need an operator for <x>` / `I need an operator to <x>` (a message that starts with it, in any chat that can start helpers, mid-chat included) | `skills/operator-setup/SKILL.md` (walks the steps with Charles, seats the operator-design expert, one confirmation, then `skills/team-builder` operator mode writes it) |
 
 ### Outside content
