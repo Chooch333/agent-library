@@ -141,8 +141,8 @@ Read `references/charter.md` before the first step.
 **6. Run marker.**
 - *Action:* insert the one `_run` row described above. Always, even when nothing was red. On the 17:00 run, do step 7 first and write this marker after it, with `recap_sent`, `recap_message_id` (or the send error) already filled in — the marker is inserted once and never updated.
 
-**7. Daily recap (17:00 run only).**
-- *Precondition:* this run started at or after 17:00 America/Indiana/Indianapolis, and today's log has no `_run` row with `detail.recap_sent = true`.
+**7. Daily recap (the routine run only).**
+- *Precondition:* this is the scheduled routine run (not a chat's "Stack Repairer: run"), and today's log has no `_run` row with `detail.recap_sent = true`. (Before 2026-11-25 this was "the 17:00 run"; wherever this file still says the 17:00 run, read the routine run.)
 - *Action:* build four short sections from today's `stack_repairs` rows, plus the open reported `needs-you` rows from any day (and the evening's state). A reported row shows under whichever section its action falls in; use `detail.recap_wording` when a row has one:
   - **Fixed today** — `rerun`/`cleared`/`fixed`/`built` rows, one line each, saying what broke and what was done, with "(back to green)" when its newest `graded` row is `green`.
   - **Queued for tonight** — `briefed` rows, by plain title.
