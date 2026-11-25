@@ -1,0 +1,44 @@
+# Stack work moves — the Stack Superintendent's bench page (0.1.0)
+
+Read-only moves for the Operator at `operators/stack-superintendent/MANDATE.md`, run by `skills/operator-run/SKILL.md`. A run fetches this page only when its Bench picks one of these moves, and reads only that section. No skill owns the Next steps list, the shelf and the board together, so this page sits beside `references/thread-checkin.md` (operator-design seat, 2026-11-24).
+
+## Rules for every move
+- Writes nothing but the run's own log rows. No card is opened, reworded, closed or reopened here; no brief is shelved.
+- In scope means: a chat of the claude.ai Project the run is in, and the card, design-board topic, brief or build that carries that chat's link or board tag. Anything with no chat on it is not placed; say how many, once per report, never item by item.
+- What a chat was for is re-read from the chat every time (past-chat tools: find the spot, read one page). Never from the log, a past report or memory.
+- A card's night-run status (stand, done, left, verdict) is read as written. Do not re-derive it.
+- At most five pieces of work per report, oldest first; the rest is a count. Never read a list back to Charles.
+- Plain words to Charles: things by their titles, no ids, tags, table or tool names.
+- The day marks below (14 and 7) are Inferred; nobody chose them. Change them in the mandate, not here.
+
+## 1 Read a chat
+**For:** a Project chat that has no card, open or closed.
+1. Open the chat at its start and at its last turns (two reads at most).
+2. Say, in three lines: what Charles was trying to do (his words where he said it); what is left; one recommended next move (finish it here, scope a build, or nothing: it was a question that got its answer).
+3. A chat that was a plain question with nothing left open is said in one line and not counted as hanging.
+**Log:** one `move` row; `detail.evidence` = "chat with no card", `ref` = the chat's link.
+
+## 2 Re-test the ask
+**For:** an in-scope card that has waited on Charles for 14 days or more.
+1. Read the card's next step and its night-run status.
+2. Apply the Hand it on test in `references/thread-checkin.md` (Closing out, bin 4): is it a key, sign-in or setting only he has, money, an irreversible change, a change to his rules, a clash between two of his decisions, or a direction no record backs? Search Project State for a decision that already answers it before saying it needs him.
+3. Say one of: it truly needs him (the closed choice, with a recommendation); a record already answers it (name the record in words); Claude could do it (say where it should be queued). Recommend, never act.
+**Log:** one `move` row; `detail.evidence` = the card's age in days and the verdict.
+
+## 3 What's left
+**For:** an in-scope draft brief older than 14 days, or an in-scope build marked running or blocked for more than 7 days.
+1. Read the brief's own done-list (its acceptance checks).
+2. Match each check to evidence that exists today (a commit, a record, a live read). A remembered verdict is not evidence.
+3. Say what is proved, what is left, and one recommended next move: finish it (name the chat that would), drop it (say why it no longer matters), or it is already done and only the record is behind.
+**Log:** one `move` row; `detail.evidence` = the brief's age and how many checks have evidence.
+
+## 4 Scope it
+**For:** Charles says "finish" or "scope" a thing, in this run.
+1. Find the thing in scope; if two things match his words, ask which, once.
+2. Read its chat (move 1, steps 1 to 2) so the aim is his, not a guess.
+3. Give him one line to say that opens the Design Assist chat for it, with the aim and what is left folded in. The run does not load Design Assist itself.
+4. Log a `wait`: `why` = what will finish it, `clears_when` = the one Project State read that shows it landed (see the mandate's Log section). No brief yet: the wait is on the card for that Design Assist chat appearing.
+**Log:** one `move` row and one `wait` row.
+
+## Changelog
+- 0.1.0 (2026-11-24): first version, written by Team Builder operator mode from draft note CB-768 (Charles confirmed in the chat; decision CB-769). Seat: operator-design, report CB-767.
