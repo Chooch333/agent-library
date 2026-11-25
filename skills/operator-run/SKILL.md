@@ -14,7 +14,7 @@ wiring:
   runs: with-you
   starts: "Duet, on demand or on its cadence; or an Operator's start phrase in a chat (\"PM: <job>\", \"Super: what's hanging\")"
   runs_in: claude-chat
-  reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Stack Superintendent)"]
+  reads: [operator mandates, cbrain-supabase, operator-log, "project-state and this Project's past chats (Chief Engineer)"]
   writes: [operator-log]
   stack: [project-manager, chief-engineer]
   origin: yours
