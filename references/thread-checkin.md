@@ -144,6 +144,7 @@ None. This skill finishes in one run and leaves nothing open.
 | block chat (project instructions, until it has a skill) | block-chat | block marked done |
 | any chat in a personal folder (project instructions, until it has a skill) | folder-chat | the chat says it's finished, or nothing on it waits on Charles |
 | any chat in the Stack Work Project with no skill, once work can be left open (project instructions) | chat | the chat says the work is finished, shelved or dropped, and nothing on it waits on Charles |
+| any chat in the Total Harness Project with no skill, once work can be left open (project instructions) | chat | the chat says the work is finished, shelved or dropped, and nothing on it waits on Charles |
 | any chat with no skill that leaves a hand-on (Closing out, bin 4) | chat | the hand-on is answered, or nothing on it waits on Charles |
 | jobs (night runs, builds, repairers, wake-ups, runners) | job | the job clears it, or nothing on it waits on Charles |
 
