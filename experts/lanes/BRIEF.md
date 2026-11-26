@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a job runs — chat, scheduled task, PC task, GitHub Action, Vercel cron or API pipeline — or assumes what that place can reach, approve or remember"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (lanes:)", "https://code.claude.com/docs/en/routines", "https://code.claude.com/docs/en/desktop-scheduled-tasks"]
-version: 0.2.9
+version: 0.2.10
 status: active
 ---
 
@@ -25,7 +25,7 @@ Where a job runs, and what that place can reach, approve or remember. GitHub Act
 7. A scheduled task's prompt: one line that fetches an agent-library skill and follows it, with the rules kept in the skill; not rules written into the prompt, because the prompt is fixed at creation and drifts from the skill [Claude · stack-map lanes: scheduled; CB-504, routine handoff; WG-177]
 8. Database writes in a run nobody watches: use inserts, or functions called through SELECT, and roll test rows back in a block that ends by raising an error; not UPDATE, DELETE or DROP through the Supabase connector, because those wait for an approval nobody gives [Claude · CB-532; CB-504, lessons; TH-J-018; CB-536]
 9. Naming a part's lane: Claude on a key means api-pipeline, even inside an Action. A request-driven Vercel function with no Claude is vercel-cron. A runtime no lane fits (database triggers, the Windows relay, a helper inheriting its parent's lane) is left unplaced and named; not forced into the nearest lane, because the github-action lane says no AI [Claude · SM-090]
-10. Seeing a protected preview or a screen from a cloud lane: don't fetch it. Builds check code and data, and Charles checks the screen from the brief's What to check list; not CI browser screenshots (the route CB-286 and CB-378 named), because CB-441 retired the browser gate [Charles · CB-286; CB-378; CB-441]
+10. Seeing a protected preview or a screen from a cloud lane: don't fetch it. Builds check code and data; Charles's own testing is not a step in the build, and a brief carries no What to check list for him; not CI browser screenshots (the route CB-286 and CB-378 named), because CB-441 retired the browser gate [Charles · CB-286; CB-378; CB-441; CB-794, 2026-11-25; CB-792; EB-408]
 11. A step that depends on the surface (memory, past-chat search, a browser, the PC link): the step names its fallback and marks itself not available, with the reason, when the thing is missing; not assumed the same everywhere, because surfaces differ in both directions [Claude · MB-007; CB-142]
 12. Knowing what a lane can reach, approve or keep: read stack-map lanes: (each row carries its verified date), and when a run shows otherwise, correct that block in the same build; not re-derived per chat or copied into briefs, because comprehension lives in that document [Charles · charter, non-negotiable; SM-090]
 13. A no-Claude timer job on the PC (Windows Task Scheduler, as the yt-relay intake job): plan it as running only while Charles is signed in, with no view of its runs from elsewhere, and as the only git writer in its clones; not set to run whether or not he is signed in, because a signed-out run cannot reach the stored git credentials and its push fails with no visible error [Claude · WG-058; yt-relay SETUP.md, read 2026-11-15; EB-158; ~ the only-writer half rests on the note's read of run_intake.py on 2026-11-09, not re-read here]
@@ -95,6 +95,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.2.10 (2026-11-26): folded EB-408 (proved: CB-794 and CB-792, Charles 2026-11-25, his own testing is not a gate and What to check lists go; Our way 10 rewritten in place) (Expert CE).
 - 0.2.9 (2026-11-25): folded EB-378 (proved: CB-761, Charles 2026-11-24; new Our way 14, none replaced) (Expert CE).
 - 0.2.8 (2026-11-22): folded EB-301 (proved: CB-595, stack_repairs 8e1f15a1; Lens 17 drops its ~), EB-302 (proved: stack_repairs a6d177f0 and ef73489f; Lens 8 rewritten in place) (Expert CE). EB-251 and EB-257 are tool facts, filed as field notes EB-342 and EB-343.
 - 0.2.7 (2026-11-20): folded EB-274 (proved: CB-616, charter.md read) (Expert CE).
