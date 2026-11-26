@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work decides where a kind of data lives or is read from — cbrain pages, the Supabase index, Project State, the world-graph and its mirror, repo files, Storage — or keeps, rebuilds or removes a copy of it"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:AGENT.md (Disambiguation rules)", "cbrain:concepts/stack-map.md (flow_nodes cbrain-pages, cbrain-index, project-state, world-graph, graph-mirror)", "cbrain:contracts/SCHEMA.md"]
-version: 0.1.5
+version: 0.1.6
 status: active
 ---
 
@@ -31,6 +31,7 @@ Which store holds each kind of data, where readers read it from, and how copies 
 13. Decisions: never changed once written, only superseded by a new one that points back with a reason. Not edited in place, because that loses the record of why [Charles · D-037; D-050]
 14. A status shown in two places: one place is named the record and the other a mirror (Project State is the record for harness blocks). Not two copies of equal standing, because the project instructions name Project State as the record [Claude · TH-001]
 15. Data that needs finer protection than the store offers: kept out of the graph, not protected inside it, because a one-user stack has no cell-level security [Claude · PP-011]
+16. Paid and investing sources: never a line in world-graph feeds.json, because the nightly export copies each saved article's full text into cbrain intake_items and nothing about investing goes into cbrain; such a source's row on the Sources page is a counts-only mirror of the subscription server's own record (last fetched, waiting, failed, needs sign-in, last read), written by a part that already holds cbrain's key, never a copy of text or titles [Charles · INV-001; CB-785, 2026-11-25; Claude: CB-790; CB-791; intake_items full_text column, read 2026-11-25; EB-396]
 
 ## Lens
 
@@ -48,6 +49,7 @@ Which store holds each kind of data, where readers read it from, and how copies 
 12. A naming scheme (group id, slug, separator) never run end to end, so it ships a value the store rejects [WG-052]
 13. ~ A copy's delete step that treats "could not find the source" as "the source is gone" (a check that failed to load, a lookup on the wrong path, a missing marker) deletes live data, and a recheck that uses the same lookup agrees with it; an unknown answer should keep the row [gbrain v0.60.511.0; gbrain v0.60.497.0; ~ cbrain rebuild.ts orphan sweep has this shape, no miss seen yet; EB-117]
 14. ~ A write that reaches its home through a queue or outbox counted as saved when its status stops at sent or pushed; it is done only when the home marks it applied, since the consumer may be gone or the commit stranded [gbrain v0.60.524.0 release notes; CB-543; EB-222]
+15. ~ A dormant second database, holding tables made from emails months ago with no Project State record behind it, taken as a home for a new source; it is a stale copy nothing updates, not a home [EB-396, read 2026-11-25]
 
 ## Procedure
 
@@ -85,6 +87,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.6 (2026-11-26): folded EB-396 (proved: INV-001 and CB-785, Charles; CB-790 and CB-791, the subscriptions design; new Our way 16, none replaced). Its finding of a dormant second database lands as ~ Lens 15, without the names or the project ref (Expert CE).
 - 0.1.5 (2026-11-22): folded EB-310 (proved: cbrain services/lib/upsert.ts read; Lens 9 rewritten in place) (Expert CE)
 - 0.1.4 (2026-11-15): folded EB-222 (Expert CE)
 - 0.1.3 (2026-11-10): origin mark on every Our way line (8 Charles, 7 Claude), from each line's existing sources. Build 77, BB-2026-11-09-expert-fold-rule (expert-brief 0.5.0).
