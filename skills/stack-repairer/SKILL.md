@@ -180,7 +180,8 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 ## Receiving chat
 The night runner, or the Stack Repairer itself if urgent.
 ## Scope
-In: <the fix>. Out: rules, skills, the stack map; anything past the failing dot.
+In: <the fix>; for an ongoing condition, also the check on the stack map that would have caught it (the dot's check block, with its threshold in the map, and its side-panel text). Out: rules, skills, other dots; anything past the failing dot.
+**Stack Flow:** <the check added or changed> | no change, because <why>.
 ## Directive
 <numbered steps>
 ## Acceptance
