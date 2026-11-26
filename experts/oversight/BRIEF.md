@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work adds, removes or re-routes a running part (where or how often it runs), or decides how one is checked, how its failure or a wait on Charles reaches him, or what each run leaves behind to show it ran"
 altitude: [plan: risks-only, implementation: full]
 reads: ["cbrain:concepts/stack-map.md (## Stack Flow; flow_nodes stack-inspector, stack-repairer, email-approval-gate; each dot's ops.check)", "agent-library:skills/stack-repairer/SKILL.md", "agent-library:references/thread-checkin.md"]
-version: 0.1.8
+version: 0.1.9
 status: active
 ---
 
@@ -32,6 +32,7 @@ How a running part is watched and how Charles hears about it: its Stack Flow dot
 14. Telling quiet from dead: a part writes a marker every run, even when it did nothing, and its dot checks the newest marker. The Stack Repairer also watches the Stack Inspector's own row and treats a stale one as a red dot [Claude · stack-repairer `_run` marker and step 1; Build 27 forks]
 15. Proving a new or changed check: run the checker in dry mode with a temporary test input that turns the dot red and then back. Do it right after a scheduled check so no real status row records the test. Dry mode refuses a call without the checker's secret as a bearer, so the proof needs a session that holds that secret, and the build brief says where the proof runs [Claude · Build 13.6 session log CB-567; CB-502 dry mode; stack_repairs 9de39d46; cbrain services/api/cron/stack-status.ts needsLogin, read 2026-11-15; EB-232]
 16. Where scheduled runs sit: in one place where Charles can keep track of them, mainly so he can see them together; not left wherever each was created, because he asked to move them where he can follow them [Charles · CB-755, 2026-11-17; EB-373; ~ the Stack Work Project as that place is the decision's title, not his words]
+17. Testing never left dangling: a build that is built does not hang open waiting to be tested or proven; its checks are settled inside the build, and a check it cannot show before it finishes (a first scheduled run, a first real email) is recorded not-checked with why and left to the running part's own dot and check; not a follow-up draft brief or a card waiting on him, because Charles said: "Build after build is hanging open because its completely built, but not 'tested' or 'proven' I know its best practice for doing tech work, but that needs to end. Testing like this can't be left danglin." [Charles · CB-784, 2026-11-25; CB-792; EB-390]
 
 ## Lens
 
@@ -96,6 +97,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.9 (2026-11-26): folded EB-390 (proved: CB-784, Charles 2026-11-25; CB-792 for not-checked with a reason and no follow-up brief; new Our way 17, none replaced) (Expert CE).
 - 0.1.8 (2026-11-25): folded EB-373 (proved: CB-755, Charles 2026-11-17; new Our way 16, none replaced) (Expert CE).
 - 0.1.7 (2026-11-22): folded EB-256 (proved: WG-213, skills/stack-repairer 0.5.0 read, Build 88; point 1 into Our way 4, whose origin mark moves to Charles; point 4 was already in Our way 7 since 0.1.6; point 3 is c-stack's Lens 12; point 2, a by-hand check value, is a stack-map change, not a brief line), EB-264 (proved: skills/stack-repairer 0.5.0 "Before any needs-you" read, Build 87; its gmail_id leftover was done in Build 88, CB-663), EB-320 (proved: stack_repairs 8e1f15a1, 71246041, 38996dfd and bb8cfc8e, CB-595; Lens 3 rewritten in place), EB-267 (proved: CB-663 test runs; new Lens 23), EB-321 (proved: skills/stack-repairer 0.5.2 read; new Lens 24), EB-286 (point 1 repeats Lens 22, confirmed by the stack-repairer read, so no line changes; point 3 is a case of Lens 7) (Expert CE).
 - 0.1.6 (2026-11-20): folded EB-268 (proved: CB-616, charter.md read), EB-269 (proved: CB-628), EB-259 (proved: CB-628, Build 88 plan 549b6749 succeeded) (Expert CE). Our way 10's origin mark moves to Charles from CB-628.
