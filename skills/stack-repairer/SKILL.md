@@ -74,7 +74,7 @@ A dot or open row that already has a `needs-you` or `watching` row (any day, sti
 - `dot_id`: the nearest dot on the stack map, or `_unmapped`.
 - `finding`: one plain line saying what is broken.
 - `action`: `reported`.
-- `detail`: `{"evidence": "...", "found_by": "<chat or run>", "recheck": "<a check anyone can run that passes once it is fixed>", "plan_id": "<optional, a plan that already covers it>"}`.
+- `detail`: `{"evidence": "...", "found_by": "<chat or run>", "recheck": "<a check anyone can run that passes once it is fixed; a count counts only records in their finished state (saved, filed, in the graph), never ones only fetched or tried>", "plan_id": "<optional, a plan that already covers it>"}`.
 
 **Open rows.** A row is open when it has no `graded` row pointing at it and it is either `reported`, or a `needs-you` or `watching` row whose `detail` carries `reported_by` (rows logged by hand before this action existed).
 
