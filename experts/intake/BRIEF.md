@@ -6,7 +6,7 @@ profiles: [harness]
 call_when: "the work brings outside content in (feeds, videos, email, shared posts, web pages or paid members sites) or changes how it is fetched, who reads it on which bill, or its size and cost limits"
 altitude: [plan: risks-only, implementation: full]
 reads: ["agent-library:references/charter.md", "cbrain:concepts/stack-map.md (flow_nodes: rss-feeds, youtube, yt-relay, shared-posts, post-reader, nightly-loader, collector, video-reader, email-watcher; the Members-site worker under github-mcp)", "agent-library:skills/post-reader/SKILL.md"]
-version: 0.1.7
+version: 0.1.8
 status: active
 ---
 
@@ -28,7 +28,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 10. A video inside a shared post: only the caption and preview image are read, and the article says so; not speech-to-text, because that step is not built [Claude · post-reader 2e; WG-189]
 11. Sharing from the phone: one share shortcut sends the link to the yt-relay receiver; YouTube links go to the video to-do list and X or Instagram posts to the shared-posts list, each with an optional steer; any other link is turned away [Claude · stack-map yt-relay "Phone receiver"; Build 60]
 12. Email: only mail Charles forwards to the go-between address, where the +word names the project, enters cbrain; reading his personal inbox on demand when a chat asks, through its own server locked to that one account, is a chat's reach, not intake; not his personal inbox as an intake source, because he chose to reach content at its source platform instead [Charles · TH-235, 2026-11-17; Claude: E-001; E-013; E-019; EB-253]
-13. Paid members sites: one subscription-content server with his saved logins and a slow queued worker; not one scraper per site and not browser-extension capture, because the login and fetch are shared across sites and capture would need him to open each page; the name is subscription-content, never "paywall" [Charles · P-001; P-011; P-038; stack-map Members-site worker]
+13. Paid members sites: one subscription-content server with his saved logins and a slow queued worker, covering the six sites he named under three fetchers (Substack, Attia, The DeFi Report), each site labelled for one of four uses: project, learnings, an expert, or personal library (stored and askable, no expert); not one scraper per site and not browser-extension capture, because the login and fetch are shared across sites and capture would need him to open each page; the name is subscription-content, never "paywall" [Charles · P-001; P-011; P-038; CB-785, 2026-11-25; EB-392; CB-791; stack-map Members-site worker; EB-394]
 14. Run size: each reader takes a fixed number of items per run and the rest wait for the next run; not unbounded runs, because a run cut off mid-batch leaves partial state [Charles · E-024; post-reader step 1; stack-map collector, email-watcher]
 15. Duplicates: an item's id comes from its URL; a never-seen link older than the age floor is marked seen and skipped; a second address for text the same source already saved is skipped and counted; an existing to-do entry is never overwritten, so sharing twice changes nothing; not URL alone, because a link move made years of old posts count as new and one article served at two addresses was collected twice [Claude · post-reader 2e; stack-map shared-posts; Build 66 directive 2; CB-585; CB-596]
 16. What a video yields: facts that are granular and technical, naming the mechanism the talk describes; not facts about the talk itself, history or headline features, because the Stack Advisor needs something to build on [Charles · Charles 2026-10-19, stated; ~ from memory, not in Project State]
@@ -56,6 +56,7 @@ The path from an outside source to a read item: how it is fetched, who reads it 
 15. A chat told Charles a video has no transcript because its own web fetch hit YouTube's bot wall, without checking world-graph data/transcripts or intake_items or queuing the video on yt-relay, where the PC relay fetches captions from a home address [Charles 2026-11-09: "Why does Claude keep telling me there's no transcript"; graph-engineering chat 2026-11-04; step-in lessons tagged pattern-cant-reach]
 16. ~ A reader's failure that never reaches the status the Sources page reads, so short failed transcripts showed as waiting while a hand-started to-do step held new ones back; Build 72 moved the step into the nightly run and carries the failure through [CB-591; CB-593; Build 72, plan 567842d5; EB-155]
 17. ~ A paid creator's library (an investing creator, or a paid channel on YouTube) labeled for one expert but taken in like any source: with no expert-only flag it reaches the Video Reader and the AI and tech graph, and investing content lands in cbrain; the seat's route for it is the subscription-content server into a store of its own [INV-001; EB-358]
+18. ~ A members site's saved login read as lasting weeks: the July one was a session cookie he pasted, and it lasted only the browser session; the planned route, a sign-in he does himself once per fetcher in a borrowed cloud browser with the server keeping the session scrambled, is untested until that build runs [P-032; P-043; CB-790; ~ the build was queued, not run, 2026-11-26; EB-394]
 
 ## Procedure
 
@@ -93,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.8 (2026-11-26): folded EB-394 (proved: CB-785, Charles 2026-11-25, the fourth use and the six sites; Our way 13 widened in place, origin mark stays Charles). Its sign-in half rests on a judgment call for a build still queued (CB-790), so it lands as ~ Lens 18, not as Our way; its outside-site facts are left in the note (Expert CE).
 - 0.1.7 (2026-11-25): folded EB-374 (proved: CB-757, Charles 2026-11-23; new Our way 20, none replaced) (Expert CE).
 - 0.1.6 (2026-11-24): folded EB-358 (proved: INV-001, Charles 2026-11-23, nothing about investing goes into cbrain; Our way 17 narrowed, origin mark stays Charles). The note's route (the subscription-content server into its own store) and its expert-only flag for paid creator libraries have no record behind them yet, so they land as ~ Lens 17, not as Our way (Expert CE).
 - 0.1.5 (2026-11-22): folded EB-253 (proved: TH-235, Charles 2026-11-17, which narrows E-013 and E-019 for on-demand reading only; Our way 12's origin mark moves to Charles), EB-315 (proved: stack_repairs 38996dfd, intake_items read) (Expert CE).
