@@ -71,7 +71,7 @@ actually gonna work and has more to do".)
 
 Chats: at the end of every turn, one call: Project State `checkin`.
 Jobs: when a run leaves something open (a hand-off, a stuck build, a needs-you
-note, a follow-up draft), one `checkin` for it; `close_thread` when the job
+note), one `checkin` for it; `close_thread` when the job
 itself clears it.
 
 - next_step: one or two sentences Charles can act on cold. Say what is next and,
