@@ -304,7 +304,47 @@ Tech used
 **Money:** none.
 
 ### 8. Squishy clicker game
-_(pending)_
+Chat 4e914afe-ab7c-436f-9b2e-609d4a54a6fa · 244 turns, all read · last updated 2026-11-25 · driven by a kid (Graham, by the account names in tests)
+
+**In plain words:** one very long chat that grew a 2D squishy-collecting clicker ("Squish Club") one kid request at a time. No game engine, no 3D models, no downloads for the game itself. Everything is drawn in code inside a single web page. Near the end it was packaged for the arcade with a 3D cabinet preview.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Game engine | None. One HTML file with hand-written JavaScript | Grew to more than 4,000 lines, 42+ boxes and about 360 squishies |
+| Art | SVG and canvas drawn in code: gradients, SVG lighting filters, canvas "squish" image warping | No image files or downloaded models |
+| Physics | Hand-coded gravity and bounce for box drops | No physics library |
+| Sound | WebAudio synth (compressor plus reverb bus); Spanish copy used the browser's built-in speech (es-MX) | Never heard in the sandbox, which has no audio |
+| Saves and accounts | Browser storage on each device, one save per player name | No real login, so accounts don't move between devices |
+| Testing | Playwright with headless Chromium, a local test web server, `node --check`, scripted data tests (for example 20,000 test box openings) | No graphics card, so frame-rate numbers are headless-only (7 → 40–50 fps after a fix) |
+| In-game AI | "Design a crate with Claude" uses the artifact `sample` capability, so Claude draws crate art and squishies from inside the game. Claude-made art is cleaned against an allowed-tag list | Works only when opened inside Claude. Each drawing uses Charles's Claude usage. A real AI drawing was never tested; only a hand-made stand-in was |
+| Admin mode | Hidden picture-frame login. The game stores only a scrambled version (hash) of the passcode. Glitch "hacked" look done in CSS and JS | All in the browser, so it isn't real security (Claude said so). The passcode was typed into the chat in plain text twice |
+| Arcade packaging (T230+) | Read the family-arcade kit (arcade-kit.js, cabinet3d.js, check-game.mjs, playtest.mjs, live-check.yml). `npm install three@0.160.0`, @fontsource fonts and pngjs. Fonts built into the file. 3D cabinet preview uses Three.js through an importmap | Tested against a pretend copy of the arcade site only |
+
+**Breaks and workarounds**
+- **The sandbox was wiped mid-chat (T236).** The source was recovered by reading the published artifact back. At T72 Claude had told the kid the only copy and its backups were in the sandbox. After the wipe, the artifact was the only surviving copy. No repo copy was made in this chat.
+- Up to 6 copies were kept in sync by hand: the main game, 4 per-kid copies and a Spanish copy. The Spanish copy fell behind.
+- Google Fonts didn't load in the test browser. Later the fonts were built into the file.
+- Heavy screens were slow, so live SVG effects were turned into bitmaps and the backyard was capped at 24 squishies.
+
+**Decisions and who made them**
+- **Kid:** every feature and its look, the fresh-start save wipes, fewer duplicates, the admin panel and its passcode, deleting brother Elliott's account and another account, and making the game ready for launch.
+- **Claude, on its own reading (T146–158):** deleted the 4 per-kid artifacts after "get rid of the other four things", without asking first. It restored them with new links, then deleted the new set when the kid asked for "one file".
+- **Claude:** added a delete-account button rather than deleting accounts itself (accounts live on the device). It suggested changing the passcode inside the game so it wouldn't appear in chat. It said plainly that it can't blur messages that were already sent.
+- **Kid asked for a $1 "Collin Box"** (T189). It was cancelled before anything was built. No real money was involved.
+
+**Money:** none spent. Each in-game crate drawing would count against Charles's Claude usage. Whether any drawing ever ran: Unchecked.
+
+**Claims checked**
+- Main game artifact S9nVWb7KaxHqqWgB1KyHsF exists, titled "Squish Club", private to the owner, last version 2026-11-25. **Verified** (get_artifact).
+- First set of kid copies deleted. **Verified** for LfMRyDqQEAXh4mxeBfA1Go (not found). The other 3 old ids and the 4 second-set ids: **Unchecked** (only partial ids were recorded).
+- "Squish Club Cabinet" 3D preview artifact C234FLuo5Sntz4KUE2YDXq exists. **Verified**. Its version is from about 2026-10-24, a month before the chat's last turn. That fits the chat running for weeks, but which turn made it is **Unchecked**.
+- A newer "Squish Box", "Squish Box Cabinet" (2026-11-27) and "Squish Pop" (2026-11-25) also exist. They come from later chats, not this one.
+- "The passcode isn't in the game file." **Unchecked** by me. I didn't download the HTML, and Claude's own grep said so.
+- Spanish copy and older "Club Squish" status: **Unchecked**.
+- "Ready for launch" / arcade files: not in scope (per Charles), **Unchecked**.
+
+**Safety note:** the plain-text passcodes are visible in this chat's history (T195 and T239). They are deliberately not repeated here.
 
 ### 9. Prankster game concept
 _(pending)_
