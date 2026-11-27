@@ -94,6 +94,7 @@ Speculate past what you read; pad to the cap; soften a blocker; advise outside y
 
 ## Changelog
 
+- 0.1.9 (2026-11-27): Our way 2 narrowed: paid subscriptions and investing sources stay in the subscription-content store and never go on the Collector's list (INV-001; Build 92, CB-811). `reads` names the new Subscriptions dot, which replaced the Members-site worker under github-mcp. Edit by Build 92 (BB-2026-11-25-subscription-fetchers, step 11).
 - 0.1.8 (2026-11-26): folded EB-394 (proved: CB-785, Charles 2026-11-25, the fourth use and the six sites; Our way 13 widened in place, origin mark stays Charles). Its sign-in half rests on a judgment call for a build still queued (CB-790), so it lands as ~ Lens 18, not as Our way; its outside-site facts are left in the note (Expert CE).
 - 0.1.7 (2026-11-25): folded EB-374 (proved: CB-757, Charles 2026-11-23; new Our way 20, none replaced) (Expert CE).
 - 0.1.6 (2026-11-24): folded EB-358 (proved: INV-001, Charles 2026-11-23, nothing about investing goes into cbrain; Our way 17 narrowed, origin mark stays Charles). The note's route (the subscription-content server into its own store) and its expert-only flag for paid creator libraries have no record behind them yet, so they land as ~ Lens 17, not as Our way (Expert CE).
