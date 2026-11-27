@@ -142,7 +142,40 @@ Chat 4dbe611c-9aaf-4909-8b5a-d5c787edaae4 · 11-26 to 11-27 · 22 turns, all rea
 - Sound quality, iPad smoothness with 12 babies: **Unchecked** (Claude said so itself).
 
 ### 4. Tesla Roadster jump game
-_(pending)_
+Chat 7ce8a7ea-9d7f-49fe-9006-4ccab18e5bf0 · 11-26 · 14 turns, all read (pages t0–t13).
+
+**Tech used**
+- Start-of-chat routine worked: memory file family-arcade.md, AGENT.md, references/charter.md, skills/game-maker/SKILL.md, Project doc claude/roblox-mind.md.
+- WebSearch for the twist (real Roadster thruster facts) and one-search "Roblox check" each round (Claude labelled it "one search, not a full sweep").
+- Kid supplied model links (a ChatGPT-written box): Roadster GLB from GitHub Vivekkk-1/3D-Models; semi truck from tevy.dev.
+- **tevy.dev was unreachable from the sandbox** (WebFetch and shell). Workaround: the arcade's existing `fetch-assets.yml` GitHub Action ("download robot") run with a URL list and `deploy:false`; it commits raw files to `assets-src/` in the private family-arcade repo; then Claude attached the repo (add_repo / register_repo_root) and git-pulled to get them. Worked three times (truck; tevy's full 1,655-model catalog + 30 city models; mech + props).
+- Model processing in the sandbox: Roadster cut from 26.7 MB / ~609k triangles to 4 MB; textures shrunk; roof height maps measured from the building meshes (18 KB); mesh simplification of apartments/trees.
+- Headless Chrome tests with a fast-forward hook ("runs the game logic at full speed") because the software renderer ran at a few frames per second. Soak tests (3-minute random driving, 35 runs, 2.9 km flight).
+- **Artifact host would not serve .glb files as page files.** Workaround: declare_capabilities to turn on assets, then upload_asset for each model, then republish the page pointing at assets. Worked (pages published); whether models actually load on the real page was never confirmed.
+- AskUserQuestion multiple-choice cards for the kids (3 rounds).
+- Project State checkin on one card for all three games.
+
+**What was built, and where it lives**
+- Highway Hop (hop between moving semis, air tank, low bridges) + cabinet → artifacts. Kids: "its not fun" → dropped.
+- Sky Derby proposed → kid: "nah".
+- Thrust City (free-roam 7×7-block city, 31 models, ~3 million triangles, stunt park) + cabinet → artifacts. Rated "okay".
+- Mech Breaker (ram glowing weak spots on walking 32 m mechs, waves) + cabinet → artifacts. Kid had no idea ("idk, something elser"), so Claude picked it.
+- Raw downloads in family-arcade `assets-src/highway-hop`, `assets-src/tevy`, `assets-src/thrust-city`, `assets-src/mech`. Game code itself: sandbox only (`/home/claude/game`, `/home/claude/city`, `/home/claude/mech`), not in any repo.
+
+**Decisions**
+- Twist "Highway Hop" chosen by Claude, accepted by kid; then dropped after "not fun". Claude reasoned the kids had said before that jump-and-run games aren't fun (from memory/Project context).
+- Mech Breaker idea picked by Claude when the kid had none.
+- Roadster credit put on the start screen (Claude: "free licence requires credit").
+
+**Money / credits:** none.
+
+**Claims checked**
+- Highway Hop, Thrust City, Mech Breaker, Mech Breaker Cabinet artifacts exist: **Verified** (get_artifact on YJLhVFi5…, CFFPmxQg…, 6Fu3kBxt…, 8yL3rYK2…).
+- Download-robot commits: **Verified** — family-arcade commits 21b971a (11-26 01:39), 5b5c292 and e190d11 (11-26 14:36–14:39), 15b63c1 (11-26 21:08), all "fetch assets [wip]" by arcade-fetch-robot; the four assets-src folders exist.
+- Project State card game-maker:highway-hop: **Verified** open, waiting on Charles, links Mech Breaker game/cabinet and Thrust City. It does not link Highway Hop or the Thrust City cabinet any more.
+- "The Roadster model's free licence requires credit": **Contradicted / not supported.** The Vivekkk-1 repo LICENSE is a Boost software licence, and its README says the owner does not own the models (collected from Sketchfab) and to "verify the license of each model". No per-model licence for the Roadster was found in the chat or the repo. Also a real brand (Tesla) and car design.
+- "Models load on the real Claude page": **Unchecked** (Claude flagged this itself every round; no kid report).
+- Jump distances, soak tests: **Unchecked** beyond Claude's own test logs (sandbox gone).
 
 ### 5. Pokémon-style card game
 _(pending)_
