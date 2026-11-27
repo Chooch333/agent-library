@@ -7,7 +7,7 @@ This file is the front door. Project instructions point here. It routes a first 
 
 ## Every chat, before the first reply
 
-Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It makes the chat an expert on working with Charles: how he works and when to stop for him. It is not only for harness chats. How anything in a field should be done lives with the experts, not there. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
+Read `references/charter.md` (this repo) right after this file, in every chat, whether or not a trigger below matches. It makes the chat an expert on working with Charles: how he works, and the gates and talk-first rules. It is not only for harness chats. How anything in a field should be done lives with the experts, not there. A chat that matches no trigger still reads it. (Charles, 2026-11-03: a chat with no trigger skipped it and gave a reply the charter rules out.)
 
 **Memory stays current.** When a chat reads a claude.ai Project memory file and finds a line that a newer record contradicts (the charter, an expert's brief, a Project State record), or that only repeats the charter or an expert's brief, it fixes or removes that line in the same turn, without asking and without reporting it (Charles, 2026-11-19: "I don't need to get an audit of what gets sweeped out... if it's important, it'll come back up"). No scheduled sweep: memory is tidied where it is read. (Charles, 2026-11-19: memory should be audited "so that they are current... you can make a decision on how to do that best.")
 
