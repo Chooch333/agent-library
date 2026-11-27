@@ -61,7 +61,7 @@ What this build talks to, in both directions.
 What the executor may touch and where it stops.
 - Exact repos, tables, services, and paths in scope (worker rule 2: touch only named paths).
 - Credentials needed and where they live (env vars, MCP auth). Missing credentials are a **gated item**, named before queueing — not discovered mid-build.
-- Hard gates restated per-build — and this is the **complete** list: (1) access/credentials only Charles can supply, (2) spending real money, (3) destroying or irreversibly changing data. Nothing else halts a build. Every other fork, ambiguity, or brief-versus-reality conflict is the orchestrator's to decide and log.
+- Hard gates restated per-build: the stops are the charter's "Gates Claude works within" and "Talk with him first" sections (`references/charter.md`), read live, never copied here. Nothing else halts a build. Every other fork, ambiguity, or brief-versus-reality conflict is the orchestrator's to decide and log.
 
 ### 8. Skills & tools
 What the executor loads before working.
