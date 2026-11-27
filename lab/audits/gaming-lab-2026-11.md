@@ -213,7 +213,34 @@ Chat cc30a93d-9915-4303-9f64-0b50c5eee47c · 11-25 to 11-26 · 93 turns, all rea
 - Game in the arcade repo: **Contradicted** — no `public/games/apex-summoners` folder in family-arcade.
 
 ### 6. Rage Bait Bots
-_(pending)_
+Chat 09019579-c925-4efb-876f-08a283cd289e (listed title "Minigame-based attack game design") · 11-25 to 11-26 · 24 turns, all read (pages t0–t23).
+
+**Tech used**
+- Start routine: memory, AGENT.md, charter.md, game-maker SKILL.md, kit README/template/cabinet.md, references/thread-checkin.md. add_repo + register_repo_root for family-arcade (used `tools/check-game.mjs` after every change).
+- Built from scratch in the sandbox (`/home/claude/rbb`: shell.html + game.js + a small `build.py` patcher that applies JSON find/replace lists). three.js from CDN; all graphics are code-drawn robots; Web Audio sounds.
+- Headless Chrome (Playwright, swiftshader) with a "robot player" script that plays every minigame and blocker, on phone and desktop sizes; screenshot contact sheets checked by eye.
+- Artifact save (localStorage key `arcade:rage-bait-bots`) for coins, pets, chat log, levels. Old-save migration written for each data change.
+- publish_files to the same artifact each round; Project State checkin each round.
+
+**What was built, and where it lives**
+- 4 published versions: (1) tap-to-annoy clicker with upgrades, pets, eggs; (2) every bait is a minigame (10, then 20), 6 "blockers", suspicion meter that ends in a BAN, login, fake stream chat; (3) chat log instead of stream, 14 bots, PC Base room with 20 shop items, bots answer what you said; (4) a new bot every level (generated from a seed), boss every 5th level, Claude at level 35, endless mode after, glitch sweep.
+- Lives in: artifact "Rage Bait Bots" + cabinet artifact. Source only in the sandbox. **Not in any repo.**
+
+**Decisions**
+- Kid asked for "bosses of major AIs": Claude used real product names as bosses — Siri, Alexa, Copilot, Gemini, Grok, ChatGPT, Claude — with its own robot designs ("not the real company logos"). Claude's call; not raised with Charles.
+- Kid: "no upgrades just… mini games" → upgrades removed; coins only buy eggs (later also base items).
+- Claude interpreted two vague asks and said how: "list of you messages" = saved chat log, not a stream; "new bots every level" = numbered levels with generated bots.
+- Login = a username and face saved on the device (not a real account).
+
+**Money / credits:** none.
+
+**Claims checked**
+- Artifact "Rage Bait Bots" exists, version 1795655936-ad08: **Verified**.
+- Cabinet artifact Xi2S2mWh5ndMQH6UFuLU1Y exists ("Rage Bait Bots — Cabinet"), version 1795644723 (round 1): **Verified**.
+- Project State card game-maker:rage-bait-bots: **Verified** open, waiting on Charles. Its next step was rewritten at 06:37 on 11-26, about 5 hours after this chat ended, with different wording ("Choose: Launch it and name whose arcade (recommended)…"). Something other than this chat changed it; not traced.
+- "All 20 minigames winnable, no errors": **Unchecked** beyond Claude's sandbox robot (sandbox gone).
+- Sound, full 35-level climb: **Unchecked** (Claude said so).
+- Game in the arcade repo: **Contradicted** — no `public/games/rage-bait-bots`.
 
 ### 7. Fun video game
 _(pending)_
