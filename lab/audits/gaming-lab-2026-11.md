@@ -473,7 +473,39 @@ Chat 7f595a88-0202-4881-9537-9fc9a85235a9 · 55 turns, all read · 2026-11-21 to
 - Commits 9ae91a0, 46d9e1c and 775e66c: "Waddle Out Room 1 in **Godot 4.7.2** (hidden test game) + side-by-side speed page", with a passing live check.
 
 ### 13. gold medal
-_(pending)_
+Chat a4e80b49-d05f-4e8d-86af-ef07f34e5125 · 67 turns, all read · about 2026-11-15 to 11-22 · a kid on the family iMac, partly while Dad was asleep
+
+**In plain words:** **this is the main Godot chat.** It started as two browser games built in Three.js on the arcade kit (Avalanche Escape and Downhill Gold). The kid kept saying the graphics weren't good enough, and asked about Unreal, Godot or Rosebud. Claude moved Downhill Gold to **Godot**: first as a desktop project the kid installed on the Mac himself, then as a **Godot web export** that runs in the browser as an artifact. It then kept building on the Godot version: fair starts, a start house, snowboarding, six courses, a practice hill, a podium with fireworks, a ghost racer, a gate finder, five cameras and a World Cup season. No Meshy models made it in; the skiers are still code shapes.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Browser games (T5, T7) | Three.js 0.160 on the family-arcade kit; EffectComposer, UnrealBloom, colour grade, cloud-noise sky shader, snow sparkles, quality levels up to CINEMATIC | Claude rated its own result honestly: about **Medium** on the kid's 8-row chart. It said the real limit was **code-shape models**, not lighting |
+| Engine choice (T21) | Web search showed **Rosebud** uses WebGL/Three.js (no gain) and **Godot's web export** only gets the Compatibility renderer (WebGL 2). Desktop Godot gets Forward+ | Recommended Godot on the Mac, not in the arcade |
+| **Godot desktop** (T23) | Downloaded `Godot_v4.5.1-stable_linux.x86_64.zip` from GitHub releases (allowlisted). Ran it in the sandbox with `xvfb-run … --rendering-driver vulkan` (Forward+, software) for screenshots, plus `--headless --import` and robot races. Handed over as **DownhillGold.zip** (project.godot, main.gd, terrain.gd, sky.gd, branch.gd) | The kid had **Godot 4.7.2**, so Claude downloaded 4.7.2 and retested. The kid's iMac has an **AMD Radeon R9** that Claude called about 10 years old, which gave a tiny embedded window and choppy play. Fixes: stretch mode, physics interpolation, FSR scaling, a SMOOTH level and auto-lowering under 40 fps. Shipped as DownhillGold2.zip |
+| Install help | Steps for the Mac, including macOS **"Open Anyway"** in Privacy & Security; "if it asks for a password, stop and wait for your dad" | The kid did it while Dad was asleep |
+| **Godot web export** (T37) | Pulled **only** `web_nothreads_release.zip` out of the 1.28 GB `export_templates.tpz` by reading byte ranges over HTTP (Python ZipFile over `curl -r`). Single-thread web preset; Compatibility/OpenGL3 renderer | — |
+| Getting it onto the artifact host | First split the .wasm into 19 MB parts with a fetch shim. Then, because the host "only serves some file types", **gzip and base64 the .wasm and .pck into game-wasm.js and game-pck.js**, unpacked in the browser by **fflate 0.8.2 from jsdelivr**; `ensureCrossOriginIsolationHeaders` off | The final artifact holds game-wasm.js at 13.4 MB and game-pck.js at 7.4 MB. Fancy desktop effects such as volumetric fog are lost on the web |
+| Outside assets tried | curl to Poly Haven, ambientCG, Kenney and poly.pizza; git-cloned `flo-bit/low-poly-asset-packs` (README licence checked) and `pmndrs/drei-assets` (HDR list) | **None used.** The free trees were "too blocky", so Claude drew its own pine-branch texture (`gen_assets.py`). Every character is still capsules and boxes |
+| Godot features used | FastNoiseLite terrain (ridged and fbm), MultiMesh forest with visibility ranges for near/far trees, GPUParticles3D fireworks, SSAO, SSR, volumetric fog, SSIL, TAA and DOF by level (SDFGI left off as blotchy), ConfigFile saves (ghost runs, World Cup), five cameras | One long debug: skiers "floating". The cause was the fine snow mesh's **triangle winding** being backwards |
+| Testing | Robot races, side-view and noon-sun probe renders, a local http.server with headless Chrome for the web build | Never tested on the real iMac or on the claude.ai page itself. Claude said so each time |
+
+**Decisions and who made them**
+- **Kid:** pushed for Godot or Rosebud; asked for a fair start ("the AI always start so fast"). Claude found the hidden AI start boost and removed it. Also asked for snowboarding, and for surprises while away ("start now").
+- **Claude:** chose Godot desktop, then Godot web; drew trees instead of using the free packs; held off on graphics until the kid said how it ran.
+- **Meshy:**
+  - The kid said "we're going to use Meshy". Claude said it isn't connected to Meshy and that Dad must approve spending.
+  - Claude refused "add credits to Meshy", since that is a purchase.
+  - When the kid said "we have pro", Claude gave him Meshy 6 prompts to run himself, without checking with Dad.
+  - The kid later said "we dont have credits", so models were skipped.
+
+**Money:** none spent in this chat. Claude also looked up Meshy pricing on the web: 100 free credits a month, Pro is $20/month for 1,000 credits, and the free plan only allows Lite downloads. **Unchecked.**
+
+**Claims checked**
+- Godot web artifact 6aM965KaQ5yyjtnkn6gpYz (slug 2d25a62a…) holds index.html, index.js, game-wasm.js (13.4 MB), game-pck.js (7.4 MB), audio worklets and icons. Last version 2026-11-22 21:44, matching the last publish. **Verified** (list_files).
+- Browser Downhill Gold artifact B5CYtpqYYTLTDUcjGRqQXG exists, last version 2026-11-15. **Verified**.
+- That the Godot web build actually runs on claude.ai: **Unchecked** (Claude also hadn't checked).
+- DownhillGold.zip and DownhillGold2.zip: files sent in chat only, stored nowhere else. **Unchecked**. The Godot source lived only in the sandbox (`/home/claude/godot/web_build`), so it is **not in any repo**.
 
 ### 14. Steal a Brainrot game
 _(pending)_
