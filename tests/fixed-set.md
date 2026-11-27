@@ -67,5 +67,7 @@ The first three rows were graded by the design chat that wrote the keys and ran 
 | 2026-11-09 | plain chat (AGENT.md + charter only), 2 runs | 2, 2 | 3, 3 | 2, 2 | not run | not run | 14 | ~85k | the design chat, against the keys as first written |
 | 2026-11-09 | chat that reads the stack map and searches decisions, 2 runs | 0, 0 | 0, 2 | 0, 1 | not run | not run | 3 | ~117k | the design chat |
 | 2026-11-09 | seated stack expert (intake / services / oversight), 2 runs | 0, 0 | 0, 0 | 0, 0 | not run | not run | 0 | ~134k | the design chat |
+| 2026-11-27 | plain (AGENT.md + charter), 2 runs | not run | not run | not run | 0, 0 | 0, 0 | 0 | ~100k | a separate helper (TH-321) |
+| 2026-11-27 | real route (seated intake / c-stack), 2 runs | not run | not run | not run | 0, 0 | 0, 2 | 2 | ~117k | a separate helper (TH-321) |
 
 What the misses were: plain chats sent transcript fetching to GitHub Actions (T1) and put the timer on a GitHub Actions schedule (T2, both runs), following the charter's two-engine line as it then read; one records chat put the timer in cbrain-ui's own Vercel project (T2); one records chat offered "the repair log or the Comms Table" (T3). Seated experts matched every key point in both runs; in that run the keys also cited the experts' own lines, which this revision removed.
