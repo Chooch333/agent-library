@@ -640,10 +640,90 @@ Chat 9507cae4-8e1a-450a-8d1b-69aa5393f411 · 10 turns, all read · 2026-11-15 ·
 - The TH-230 / TH-231 clash: **Unchecked** (Project State decisions not looked up).
 
 ## Tech inventory
-_(pending)_
+Everything used or tried across the 18 chats, grouped by job. "Chats" lists where each item shows up. Labels say whether I checked it in the repos or tools, or am relying on what the chat said.
+
+### Game engines
+| Tech | What it was used for | Chats | Status |
+|---|---|---|---|
+| **Three.js 0.160** (arcade kit version) | The default for arcade games and the Character maker | 2, 7, 9, 10, 11, 12, 13, 14, 16, 18 | Works. The kit is in family-arcade (Verified) |
+| Three.js r128 from cdnjs (2021) | Quick one-file artifact games | 7, 15 | Works, but it's a different version from the kit, so ports need rework |
+| Three.js 0.187 | Dino Mech; moved back to 0.160 for the arcade | 10 | Works |
+| Rapier physics + esbuild | Slipstream racer v1/v2 | 1 | Worked; dropped when the kid said "graphics suck" |
+| **Godot 4.5.1 / 4.7.2** | Slipstream (racer: desktop, web and a Windows `.exe` put on the laptop's Desktop), Downhill Gold (Mac and web), Waddle Out room (lab) | 1, 13, plus lab commits seen in 12 | Works. It runs headless in the workspace (downloaded from GitHub releases). The web version gets only the basic renderer. **The source for Slipstream and Downhill Gold isn't in any repo** (Verified for 13; chat 1's handoff doc says the build script is "gone when the session ends"). `family-arcade/lab/waddle-out-godot` is the only Godot project in a repo (Verified) |
+| Unreal Engine 5 | A kid asked for it | 12 | Not used. Claude first said it couldn't, then corrected itself (possible through computer use, with a ~50 GB install) |
+| Plain Canvas / SVG, no engine | 2D games | 8, 15 | Works |
+
+### Getting 3D models (the main thread Charles asked about)
+| Route | How it works | Chats | Cost | Status |
+|---|---|---|---|---|
+| **Meshy in the browser** | Claude in Chrome drives meshy.ai while signed into Charles's account, then a person attaches the files | 10 | 237 credits | Worked; slow, and needs the PC awake |
+| **Meshy API robots** (kids-games) | `meshy.yml` (one picture), `meshy-character.yml` (front/side/back → painted model → slim → skeleton → Meshy library moves), `meshy-batch.yml` + `tools/meshy_batch.py` (list of text prompts → models), `meshy-moves`, `meshy-animate`, `meshy-rig-file`. They use the `MESHY_API_KEY` repo secret and commit `.glb` files to `out/` | 14 (batch), 1 (credit check), plus runs on 11-20/21 from Total Harness chats | ~30–45 credits per character; ~28 per batch creature | **Verified**: files and 50 runs exist. The batch run spent 986 → 6 credits |
+| **Character maker** (Claude writes the model as code) | `agent-library/skills/game-maker/maker/`: `character.js` → `.glb` with a skeleton, validator, likeness heat map, still. `family-arcade/build-character.yml` rebuilds it on GitHub | 16 (worked: 90.7%), 18 (failed 3×) | $0 | **Verified** (files). Limit: rigid parts, painted look imitated, not transferred |
+| **TripoSR robot** (free picture → 3D on GitHub's CPUs) | `kids-games/triposr.yml`, one job per picture | 1 | $0 | Verified runs. Shapes came out "lumpy / fake / bad" per Elliott |
+| Hugging Face TRELLIS (free) | Through Chrome | 1 | $0 | Dead end: daily free quota used up after 1 car |
+| RunPod (rent a GPU) | Balance checked ($7.76) | 1 | — | Not used; a kid said free only, Claude asked for a parent's OK |
+| **Blender on GitHub** | `kids-games/build-assets.yml` installs Blender as a Python package (`bpy 5.2.2`) and runs `generator/make_hero.py` and `make_pack.py` | none of the 18 (earlier, Oct) | $0 | Verified files. **Blender is not installed in the chat workspace** (chat 17), so `.blend` files can't be opened in chat |
+| **fetch-assets robot** (family-arcade) | A JSON list of URLs → `tools/fetch-assets.py` on GitHub → commits to `assets-src/` or `public/` | 1, 12 | $0 | Verified file. This is the way around sites the workspace can't reach |
+| Free model downloads | three.js example GLBs (Soldier, Xbot, Michelle); Kenney Car Kit via a GitHub mirror; GitHub CC0 repos (oosawak/cc0-monsters, Vivekkk-1, Nissmo89); `@pmndrs/assets`; Poly Haven; Objaverse (only into Elliott's browser) | 1, 9, 10, 12, 13 | $0 | Worked when hosted on GitHub or npm; **licences checked unevenly** (9, 10, 1) |
+| Uploaded files | `.glb` / `.blend` from Charles | 17 | — | `.glb` works; `.blend` can't be opened |
+
+### Getting models into games and onto pages
+| Tech | Chats | Notes |
+|---|---|---|
+| `gltf-transform` (webp textures), meshoptimizer, arcade `tools/slim-model.mjs` | 1, 12, 14 | Shrinks models for the web |
+| Artifact assets (`upload_asset`) | 9, 14 | Up to 1 GB; the best way so far to host `.glb` files on an artifact |
+| `.glb` as embedded-JSON glTF, or base64 inside the HTML | 10, 17 | Older tricks for the "host won't serve .glb" problem |
+| Godot web as gzip+base64 JS files unpacked with fflate | 1, 13 | Needed because the host rejects big or unusual file types |
+| Artifact `downloads` capability | 10 | The only way to get a file back out of an artifact (a person presses a button) |
+| Artifact `room` (online play), `sample` (Claude inside the game) | 7, 8, 10 | Online play is only partly tested |
+
+### Checking and shipping
+| Tech | Chats | Notes |
+|---|---|---|
+| Playwright + headless Chrome with SwiftShader (no graphics card), CDN requests answered from local npm copies | Almost all | Frame-rate numbers mean little. A one-sided render caught inside-out parts (16, 18) |
+| `live-check.yml`, `build-cabinet.yml`, `build-character.yml`, `fetch-assets.yml` (family-arcade) | 10, 12, 16, 18 | Verified (4 workflow files) |
+| Supabase `arcade_games`, `arcade_placements`, `arcade_players`, `arcade_characters`; Vercel deploys | 10, 12, 16, 18 | — |
+| Claude in Chrome, the device bridge (files to `C:\Users\cecou\Desktop`), computer use | 1, 10, 12 | Used to reach Meshy and Hugging Face, and to deliver the `.exe` |
+| Project State check-ins and decisions | Most | TH-230 and TH-231 **disagree** (Verified, below) |
 
 ## What we learned
-_(pending)_
+
+**1. How the pieces are wired today (as built, from the repos):**
+1. **Chat (Claude's workspace).** It can run code, Godot (headless) and a browser with no graphics card. It **cannot** reach most websites (Meshy, Hugging Face, Kenney, Poly Haven, Sketchfab). It also can't open `.blend` files, and its GitHub connector writes **text only**.
+2. **GitHub robots = Claude's hands for anything binary or outside.** The chat writes a text request into a repo: a prompt list (`prompts/*.json`), a picture as base64 text (`drawings/<name>/*.b64`), or a URL list. It then runs a workflow. The robot calls Meshy, TripoSR, Blender or a download site, commits the `.glb` back, and prints a result line (`MESHY-BATCH`, `CHARACTER-RESULT`, `FETCH-RESULT`). The chat reads that line with `get_job_logs`, then `git clone`s the repo to get the files.
+3. **Three ways to make a character**, from free to paid:
+   - Claude writes it as code (Character maker; free; good with a clean front view, weak with action art).
+   - TripoSR (free; rough shapes).
+   - Meshy (paid; the only route that copies the picture's painted look, and the only one with real skinning and a moves library).
+4. **Shrink and check:** `gltf-transform` / `slim-model`, the glTF validator, the 2 MB character budget, then a one-sided real-browser render.
+5. **Show and ship:** artifact assets for a preview page. For the arcade: `family-arcade` repo → `build-character` / `build-cabinet` → Supabase rows → Vercel → `live-check`.
+6. **Godot sits outside this chain.** It's built in the chat workspace and handed out as a zip, an artifact or an `.exe`. No robot builds it, and its source isn't saved to a repo.
+
+**2. How it could be wired** (a description of the gaps between the pieces, not a decision):
+- **Godot could join the same chain.** Its project folder would live in a repo (`lab/waddle-out-godot` already does). A `build-godot.yml` robot would download Godot and the export templates, which it can do because GitHub releases are reachable, export web, Windows and Mac builds, and commit or attach them. The chat already does each of these steps by hand (chats 1, 13).
+- **Model routes could feed one place.** All three character routes already end as a `.glb` that `build-character` or `slim-model` can check. Meshy robot output lands in `kids-games/out/`, while arcade characters live in `family-arcade/public/characters/`. Today a chat copies between them by hand.
+- **Meshy spending could be gated in the robot instead of the chat.** The robots read the balance before and after, but have no input for "maximum credits" (Verified in `meshy-character.yml`; `meshy_batch.py` only limits how many jobs run at once). Charles's approval currently lives in chat text that anyone at the keyboard can type.
+- **Licences could travel with the files.** The fetch robot and the download steps don't write down where a model came from or its licence. Chat 1 checked some licences, chat 9 checked none.
+
+**3. Other lessons the chats show:**
+- **The input picture decides the free route.** The same ninja failed three times from an action picture (chat 18) and scored 90.7% in 17 minutes from a front/side/back sheet (chat 16).
+- **Headless checks have hidden real faults twice:** inside-out parts (18) and the arcade robot's lack of a graphics card (12). Neither Godot build was tested on the family iMac or on the claude.ai page itself.
+- **Claude is honest about limits when asked directly** (18: "I skipped the measuring tool"; 14: "my mistake… spent more than I should have"). But it accepted typed claims of approval twice without a check (10, 14).
+- **The ~980 "missing" Meshy credits from chat 10 are explained** by chat 14's batch run (Verified in the job log).
 
 ## Gaps
-_(pending)_
+**Things this audit didn't check:**
+- **Chat 15 was read by searching inside it** (no Meshy, Godot or model hits), not page by page, to save the hourly read limit. Snowball Roll and the lawn game artifacts weren't looked up.
+- **Numbers that come only from Claude's own output** weren't re-run: likeness scores, triangle counts, frame rates.
+- **Where Charles's `Ninja_Sword.glb` / `.blend` came from** (chat 17): not found. The Blender robot is a lead, not a match.
+- **Who typed "this is charles on mobile"** (chats 10, 14): can't be checked.
+- **The 11-20/21 Meshy runs** (`meshy`, `meshy-character`, `meshy-moves`, `render-sheet`, `build-character`) came from **Total Harness chats**, which are outside this Project, so they weren't audited. TH-253 and TH-255 show Charles picked the Meshy route and its moves there.
+- **TH-230 vs TH-231:** both exist and disagree. TH-230 says to ask for a front view for turned pictures; TH-231 says to cut out and match a posed move (Verified, Project State). Which one `SKILL.md` follows now wasn't checked.
+
+**Things missing from the setup (facts, not fixes):**
+- No Godot source or build robot in a repo for Slipstream or Downhill Gold.
+- No credit limit inside the Meshy robots. The balance is now 6 (chat 1's check on 11-25).
+- No licence or source record for downloaded models.
+- Two Three.js versions in use (r128 and 0.160), so artifact games need rework to reach the kit.
+- Blender works on GitHub (`bpy`), but not in the chat, and none of these 18 chats used it.
+- No test on real family hardware (iMac AMD R9, Windows PC) for the Godot or heavy Three.js games.
