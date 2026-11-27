@@ -413,7 +413,28 @@ Chat e2871c02-7313-4250-a93a-c179362171fe · 69 turns, all read · 2026-11-21 to
 - Stego, Spino and Ptera files: made in Meshy (Claude's report), never added to the game. **Unchecked** whether they still exist in Meshy or in Downloads.
 
 ### 11. Haunted house game design
-_(pending)_
+Chat c7e01b7a-4665-4a57-a3fb-5fc271bb0b8a · 8 turns, all read · 2026-11-24 · kid request ("Haunted House Flipper")
+
+**In plain words:** a cozy-spooky 3D house-flipping game built in two rounds. Every house, piece of furniture and ghost is made of shapes in code. There are no models, Meshy or downloads. The kid asked Claude to promise "the best graphics game you've ever made". Claude refused to promise that, because it can't compare against past chats, and promised to make the look the top priority instead, checking with its own screenshots.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Engine | Three.js 0.160.0, a single self-contained HTML page published as an artifact. No artifact type fits a game | Not built on the arcade kit |
+| Art | Furniture and ghosts built in code (rounded boxes, cylinders, spheres, cloth-colour and wood materials, candles); glow, shadows, dust | No outside assets |
+| Fonts | Google Fonts (Creepster, Fredoka) from fonts.googleapis.com | Didn't load in the sandbox test, so the look was **not** checked with the real font |
+| Saves | Browser storage. Round 2 kept round 1's save (money and flipped houses) | — |
+| Testing | Headless browser with no graphics card, a few fps, so the game clock was sped up. The full loop was played through and screenshotted | Smoothness on a real graphics card: **not checked** (Claude said so) |
+
+**Design decisions:** the kid picked Haunted House Flipper out of three pitches and asked for more houses, a longer game and a fix for getting stuck with too little cash. Claude chose the fixes: cleanup jobs that pay with no purchase needed, re-flips, stars, gems, 12 upgrades, and winning by flipping the castle.
+
+**Odd detail:** at T1 and T5 Claude read memory files from a **different project's** folder (`/projects/01a12d74-…/topics/games.md`, `…/areas/noodle-night-game.md`, `…/areas/deep-salvage.md`), and pitched "built on the Sell Fries feel". So this chat may have started in, or drawn from, another Project. **Unchecked.**
+
+**Money:** none.
+
+**Claims checked**
+- Artifact 6nJriDitRn66iwneXdCUnX ("Haunted House Flipper", slug 2ed12af2…, private) exists, last version 2026-11-24/25. **Verified**.
+- "All five houses play buy-to-sold with no errors" was in the test browser. **Unchecked** by me.
 
 ### 12. truck
 _(pending)_
