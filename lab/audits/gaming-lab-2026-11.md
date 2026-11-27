@@ -275,6 +275,34 @@ Chat 09019579-c925-4efb-876f-08a283cd289e (listed title "Minigame-based attack g
 - Fathom, Lumen, Gust, Steel Stack, Orbit Hop, Flock & Fence, Mistlake artifacts — **Unchecked** (no ids shown in the chat; not matched yet).
 - Side finding: repo has `public/games/dino-mech` and `skull-cove-lv` folders with no `arcade_games` row.
 
+**Turns 141–259 (Gaming Lab era; AGENT.md and game-maker skill read at turns 142 and 203)**
+
+Tech used
+| Tech | For | How | Worked? / broke / workaround |
+|---|---|---|---|
+| Three.js r128 (artifact) / 0.160 (arcade port) | Cubicle Clash v4→v18 | all characters built in code: painted canvas faces, fabric/hair textures, ink-outline shader, lathe shapes, spring-and-damper joints, skirt vertex sway, hair pivots | Worked; looked better each round, still "toy" style |
+| Three.js 0.160 as ES modules + add-ons (bloom, custom colour-boost shader, reflections from RoomEnvironment, instanced traffic, merged geometry) | Titan Clash (new game, turn 231 on) | same approach: every titan and map built from shapes in code | Worked; kid kept saying "blocky", "shape-like" |
+| npm copies of three@0.128 and three@0.160 in the sandbox, CDN requests routed to them inside Playwright | testing offline | local test harness | Worked (good trick) |
+| Artifact `room` capability (online play) | Titan Clash multiplayer | `window.claude.use('room')`; tested only with a fake room over BroadcastChannel in two windows of one test computer | Real two-computer play not tested by Claude |
+| WebSearch + curl | look for free CC0 rigged 3D models (Quaternius, OpenGameArt) | turn 252 | **Sandbox blocked from those sites.** Claude asked for someone to download .glb/.gltf files and attach them; kid said "just make them look better" — no models were ever brought in |
+| Paid AI 3D tool (not named) | custom realistic titans | proposed only | Not used; Claude said it needs "your dad's OK" |
+
+**Breaks / workarounds**
+- Turn 227: the sandbox working folder was wiped between messages (Cubicle Clash source and the arcade copy gone). Claude rebuilt from the live published page (v17), re-applied the round as one patch script, and rebuilt the test harness. Lesson: source lived only in the sandbox.
+- Claude stated a hard ceiling twice (turns 250, 252, 258): characters built from balls, tubes and boxes "still look like action-figure toys"; real-looking creatures need real 3D models.
+
+**Built**
+- Cubicle Clash v17 (hair, skirts, props) and v18 (black-cut spotlight win screen, springy motion, stage props) at `Gf5ydFped7SDkXaqxCGF4d`.
+- **Titan Clash** — new artifact `361Per6x6qqe8iN6jGfCPX` (slug 10e53ca2…): mecha vs kaiju, 16 original titans, 3 stadium-shaped maps, map vote with timer, online play. Kid's pictures were Godzilla / King Kong / Ultraman; Claude declined to copy them and invented its own (Claude's decision).
+
+**Claims checked**
+- Titan Clash exists — **Verified** (list_artifacts: "Titan Clash", last changed 2026-11-25 22:42).
+- "I saw in your game that another player joined you, so playing together worked for real" (turn 258) — **Unchecked**: the chat shows no tool call that read live room data, so the basis for this is unclear.
+- Smoothness on a real device — **Unchecked** (Claude said so every round; test browser has no graphics card).
+- Titan Clash or Cubicle Clash v18 in the arcade repo — not launched; Claude said the arcade copy was wiped and would be rebuilt on "Launch".
+
+**Money:** none.
+
 ### 8. Squishy clicker game
 _(pending)_
 
