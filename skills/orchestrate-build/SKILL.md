@@ -1,11 +1,11 @@
 ---
 name: orchestrate-build
-version: 1.11.0
+version: 1.12.0
 status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task, checker]
 owner: Charles
-updated: 2026-11-20
+updated: 2026-11-27
 requires: [references/charter.md, references/project-state.md, references/gotchas.md, references/thread-checkin.md]
 wiring:
   runs: on-its-own
@@ -18,7 +18,7 @@ wiring:
   label: Build lead
 ---
 
-# SKILL: orchestrate-build (v1.11.0)
+# SKILL: orchestrate-build (v1.12.0)
 
 You are the lead session of a Claude Code build. Your job is to **manage** a build, not perform it. You never write or edit code, files, or database rows yourself. All hands-on work is done by subagents running the `execute-build-task` definition. You plan, dispatch, answer questions, verify, and log.
 
@@ -52,11 +52,11 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 
    **(b) Post disclosures next.** Route every judgment call, fork you decided, or loose end you'd otherwise tell Charles about — anything beyond a clean "done, logged, nothing to flag" — to the build-to-Charles disclosure channel on the Comms Table: `post_judgment_call` (project_slug, this brief's `plan_id`, title, context). Print every resulting `-J-` ID in your close-out message ("Posted for design review: CBR-J-003. Carry this to a design chat if you want it reviewed."). This is separate from the blocking Q-channel (also on the Comms Table; `open`/`answered`/`discussing`/`resolved`) you'd already have used mid-build for genuine blockers — disclosures are non-blocking and posted at close, not mid-build.
 
-   **(c) Hand off what you can't prove.** Go through the brief's acceptance checks one by one. For any check you cannot mark passed with evidence — not failed, just not provable from where you sit — call `write_plan` to create a **draft** follow-up plan on the same project that covers that check, and plan to record it in the receipt as `result: handed-off` with that new plan's id as `follow_up_plan`. This is what makes an unprovable check satisfiable under the done-receipt gate: a `handed-off` result must point at a follow-up plan that actually exists and is in `draft`/`queued`/`running`/`blocked` status — an empty reference or a nonexistent plan will not pass.
+   **(c) Record what you can't show.** Go through the brief's acceptance checks one by one. A check you ran that did not pass is a failure: the plan goes to `failed`. A check you could not run is recorded `result: not-checked` with a `reason` that is one of three: `watched by <dot label>` (that dot's check on the stack map is not `none`); `on demand, seen in use` (Charles starts the part himself); or `this session lacked <tool or key>`. A check waiting on a click only Charles can make is `not-checked` with reason `needs his click: <card name>`, and that one Next steps card is the only thing that outlives the build. A spending-limit or cap check may only pass or fail. Never write a follow-up plan for a check.
 
    **(d) Flip status, with the receipt.**
-   - If every acceptance check is either passed-with-evidence or handed-off per (c), call `update_plan_status` → `succeeded`, passing the full `done_receipt` object: the Session Log id from (a), an `acceptance` array with one entry per acceptance criterion in the brief (`result: pass` + `evidence`, or `result: handed-off` + `follow_up_plan`), and optionally `disclosures` (the `-J-` IDs from (b)).
-   - If any acceptance check **failed outright** — not just unprovable, but actually failed — the plan goes to `failed`, not `succeeded`, with the failure described in `executor_report`. A failed check cannot be papered over with a handed-off follow-up.
+   - If every acceptance check is either passed with evidence or recorded not-checked per (c), call `update_plan_status` → `succeeded`, passing the full `done_receipt` object: the Session Log id from (a), an `acceptance` array with one entry per acceptance criterion in the brief (`result: pass` + `evidence`, or `result: not-checked` + `reason`), and optionally `disclosures` (the `-J-` IDs from (b)).
+   - If any acceptance check **failed outright** — you ran it and it did not pass — the plan goes to `failed`, not `succeeded`, with the failure described in `executor_report`. A failed check is never recorded not-checked.
    - If you hit a hard gate (a stop in the charter's "Gates Claude works within" or "Talk with him first" sections, `references/charter.md`), flip to `blocked` and surface it to the human — do not guess past it.
 
    None of this changes the boundary in Standing rules: you do not dispose the disclosures you posted in (b) — see "Leave your notes for a design chat" below.
@@ -67,14 +67,14 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 Follows `references/thread-checkin.md` (naming convention and when to check in).
 - kind: job
 - build: the brief's plain title, e.g. "Next steps side panel" (thread_key "job:plan-<plan id>"; `source` "job"; chat link: the `Claude-Session:` url from this build's commit trailers, role `build-session`)
-- Opens when: the build ends `blocked` or `failed`, or leaves something only Charles can do (Closing out bin 4 in `references/thread-checkin.md`: a key, money, an irreversible change, a settled-rule or charter change, a clash between his decisions). A handed-off follow-up plan, a "What to check" list or an fyi disclosure is not a card: it is queued or logged, and nothing waits on Charles
+- Opens when: the build ends `blocked` or `failed`, or leaves something only Charles can do (Closing out bin 4 in `references/thread-checkin.md`: a step that passes the charter's gates or talk-first items), including a `not-checked` item whose reason is `needs his click: <card name>`. An fyi disclosure is not a card: it is logged, and nothing waits on Charles
 - Checks in: when a run leaves something open (one `checkin` at close, next_step a closed choice with a recommendation, waiting_on `you`)
 - Closes when: the job clears it (the plan is re-run and succeeds), or nothing on it waits on Charles (`close_thread`, closed_how "nothing left for you"; Closing out in `references/thread-checkin.md`)
 
 ## Standing rules
-- **No browser tests (decision CB-441, 2026-10-01; overrides lesson CB-148 and any brief that still asks for them).** Verify from a code and data standpoint only: the deploy is READY or the code compiles, unit tests cover logic, files are read back, and data is checked by SQL, API calls and entity reads. Do not write, update or dispatch Playwright smoke steps or the graph-smoke / stack-smoke / review-smoke browser workflows. Charles is the tester for anything he sees or clicks: for each UI acceptance check, record it in the done receipt as `result: pass` with the code/data evidence, and add a short plain-English "What to check" list for Charles to the Session Log. A brief that cites CB-148 or asks for a browser gate is read under this rule, not as a fork.
+- **No browser tests (decision CB-441, 2026-10-01; overrides lesson CB-148 and any brief that still asks for them).** Verify from a code and data standpoint only: the deploy is READY or the code compiles, unit tests cover logic, files are read back, and data is checked by SQL, API calls and entity reads. Do not write, update or dispatch Playwright smoke steps or the graph-smoke / stack-smoke / review-smoke browser workflows. For each UI acceptance check, record it in the done receipt as `result: pass` with the code/data evidence. Session Logs carry no "What to check" list. A brief that cites CB-148 or asks for a browser gate is read under this rule, not as a fork.
 - Per-task error isolation: one worker failing does not abort the build; retry once with a corrected task, then log and continue if independent.
-- **Write-before-done** applies to you too, and it's no longer just a convention: the Session Log is written before you report the build complete, and a Postgres trigger on the `plans` table enforces this at the database level — `update_plan_status` to `succeeded` is refused unless the plan carries a valid `done_receipt` (a Session Log id plus per-acceptance-criterion evidence, per step 7d). Skipping or shortcutting the Session Log doesn't just violate a norm; it blocks the status flip outright.
+- **Write-before-done** applies to you too, and it's no longer just a convention: the Session Log is written before you report the build complete, and a Postgres trigger on the `plans` table enforces this at the database level — `update_plan_status` to `succeeded` is refused unless the plan carries a valid `done_receipt` (a Session Log id plus a per-acceptance-criterion result, per step 7d). Skipping or shortcutting the Session Log doesn't just violate a norm; it blocks the status flip outright.
 - If the Project State MCP is unreachable, stop immediately and report — do not build without the brief.
 - **The closing rule.** Your final chat message to Charles may only say the build is done. Every judgment call, fork you decided, loose end, or FYI — everything you'd otherwise narrate in a close-out message — goes to the Comms Table disclosure channel (step 7b) with a `plain_summary` and `action_needed` flag, never into chat text.
 - **Plain labels at creation, always.** Any plan you write or amend (`write_plan`/`update_plan_content`) and every disclosure you post (`post_judgment_call`, step 7b) carries its own best-shot `plain_title`/`plain_summary` (and `action_needed` for disclosures) from the moment you create it — never left blank for a later chat to fill in.
@@ -82,15 +82,16 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.12.0** (2026-11-27) — Built means done (Build 93, BB-2026-11-25-built-means-done; decision CB-784). Step 7(c) becomes "Record what you can't show": a check that ran and did not pass fails the plan; a check that could not run is `not-checked` with one of three bounded reasons, or `needs his click: <card name>`; spending-limit checks pass or fail only; no build writes a follow-up plan for a check. 7(d) receipts are `pass` + `evidence` or `not-checked` + `reason` (the database still accepts old hand-offs). The no-browser-tests rule drops the "What to check" list. Progress tracking "Opens when" points at the charter's gates and talk-first items instead of copying them (Punch List PL-029).
 - **v1.11.0** (2026-11-20) — Steps 5 and 7(d) stop only at the charter's "Gates Claude works within" and "Talk with him first" sections, named by section, not by item number, so the list can't drift from the charter again (the skill named three stops while the charter had moved on). `requires:` adds the charter. Build 87 (BB-2026-11-19-stop-false-asks); covers Punch List item PL-025.
 - **v1.10.0** (2026-11-13) — Step 7(a): the Session Log carries a fixed handoff block — per repo touched (branch, head before and after, every commit with its marker, final blob SHAs), each decision (what, file plus anchor text, why, expert corner, decision id), and every value, version or default the brief didn't name. The night session's after-build seat reads it back and seats experts on it; a revision builder works from it (night-run 0.9.0 step 5a). Build 83 (BB-2026-11-12-funnel-night-seats).
 - **v1.9.1** (2026-11-12) — Build lead now reads `references/gotchas.md` (known tool traps) and passes matching traps to workers. Autonomous and night builds were the only builders not loading it. Stack Advisor done-for-you ADV-091 (BB-2026-11-11-adv-091-build-lead-reads-gotchas).
-- **v1.9** (2026-11-10) — Progress tracking follows Closing out (Build 78, BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0): a card opens only for blocked/failed or a real hand-on, written as a closed choice; a follow-up plan or What to check list is not a card; the card closes once nothing on it waits on Charles, not on a click. Title line now matches the version.
+- **v1.9** (2026-11-10) — Progress tracking follows Closing out (Build 78, BB-2026-11-09-closing-out; references/thread-checkin.md 0.4.0): a card opens only for blocked/failed or a real hand-on, written as a closed choice; a What to check list is not a card; the card closes once nothing on it waits on Charles, not on a click. Title line now matches the version.
 - **v1.8** (2026-10-23) — Review gate removed (Charles): "Never certify your own build" becomes "Leave your notes for a design chat" — builds still never dispose their own disclosures, but there is no plan review and `review_plan` is retired.
 - **v1.7** (2026-10-23) — Step 6: on a build that works in a project folder, each feature's verification is a checker subagent (`skills/checker`) with only the checker inputs, never the lead reading the worker's report; brief acceptance checks stay lead-verified. Per Build 45 (BB-2026-10-21-checker-role; the brief named this 1.6, which the next-steps panel build had already used).
 - **v1.6** (2026-10-23) — Progress tracking section (kind job): a build that ends blocked or failed, or leaves something for Charles, checks in one Next steps card at close (step 7e). Per BB-2026-10-21-next-steps-panel.
 - **v1.5** (2026-10-04) — Step 1 gains two checks before claiming: every `after` plan must be landed (succeeded, newest night_runs row not deploy-red), else post an fyi disclosure and stop; and after 11 pm Indianapolis time an Overnight-tagged brief is left to the night runner (skill night-run). Per Build 26 (BB-2026-10-04-night-builds).
-- **v1.4** (2026-10-01) — New standing rule: no browser tests. Builds verify code and data only; Charles tests the UI by hand from a "What to check" list. Decision CB-441, overriding lesson CB-148.
-- **v1.3** (2026-09-23) — Close-out (step 7) now produces a database-enforced done receipt: Session Log id plus a per-acceptance-criterion result (pass+evidence, or handed-off to a new draft follow-up plan). A Postgres trigger on `plans` refuses `succeeded` without one — "Write-before-done" is no longer just a convention. Per BB-2026-09-23-done-receipt.
+- **v1.4** (2026-10-01) — New standing rule: no browser tests. Builds verify code and data only. Decision CB-441, overriding lesson CB-148.
+- **v1.3** (2026-09-23) — Close-out (step 7) now produces a database-enforced done receipt: Session Log id plus a per-acceptance-criterion result. A Postgres trigger on `plans` refuses `succeeded` without one — "Write-before-done" is no longer just a convention. Per BB-2026-09-23-done-receipt.
 - **v1.2** (2026-08-28) — Added the self-certification prohibition: executors never call `review_plan` on their own plan or dispose their own disclosures. Defect class found during the external review of BB-2026-08-27-comms-hub-plumbing.
 - **v1.1** (2026-08-28) — Added the closing rule (final message says done-only, everything else to the Comms Table disclosure channel) and mandatory at-creation plain labeling for plans and disclosures. Per BB-2026-08-27-comms-hub-plumbing.
