@@ -1,4 +1,4 @@
-# Operator mandate — template (0.1.0)
+# Operator mandate — template (0.2.0)
 
 An **Operator** is, in Charles's words: "a broader scale, long duration goal that is achieved by judging how to use varied skills to perform varied tasks over a longer time horizon" (2026-11-23; the definition, CB-759). The goal may be broad. It has no "one subject" limit and no stated time span.
 
@@ -6,6 +6,7 @@ A **mandate** is the essence of one Operator: what it is for, what it may do alo
 
 ## Rules for writing one
 - Under 60 lines. Tables, not prose. Sections in the order below, Authority first.
+- A new mandate lands `status: active`. It is not held as draft until proven; the build-day test (`skills/operator-setup` step 6) is its check.
 - No names of jobs, clients, people or companies: this repo is public. Say where the live list is read.
 - Point at skills; never restate their steps. Point at the stack map's lane row; never copy lane facts.
 - The Operator never checks its own goal. Name who does.
@@ -15,7 +16,7 @@ A **mandate** is the essence of one Operator: what it is for, what it may do alo
 
 ```
 # <Title> — mandate
-slug · version · status (draft | active) · owner · updated
+slug · version · status (active | deprecated) · owner · updated
 
 ## Authority
 | May, alone | Only on Charles's ask | Never |
@@ -51,4 +52,5 @@ The few things a fresh session must read so nothing depends on memory of the las
 ```
 
 ## Changelog
+- 0.2.0 (2026-11-27): a new mandate lands `status: active`; "draft until its proof count" is dropped and operator-run's Proof section is gone. Existing mandates are not flipped. Charles: "draft until proven" on new skills and Operators, "drop" (decision CB-784; Build 93, BB-2026-11-25-built-means-done).
 - 0.1.0 (2026-11-24): first version. Design chat on the Operator category; seats ai-system-design, c-stack, data-homes, lanes, oversight, skill-authoring (report CB-754). Charles's decisions CB-753, CB-759, CB-761.
