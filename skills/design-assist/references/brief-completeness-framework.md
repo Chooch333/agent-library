@@ -1,6 +1,7 @@
-# Build Brief Completeness Framework (draft v0.1)
+# Build Brief Completeness Framework (draft v0.2)
 *Design Assist reference — expands the 10-gate checklist in `build-brief-template.md`.*
 *Status: **draft** — designed 2026-07-10, dogfooding session. Owner: Charles.*
+*v0.2 (2026-11-27): acceptance checks are ones the build can show before it finishes, no "What to check" list, gates point at the charter (Build 93, BB-2026-11-25-built-means-done, decision CB-784; Punch List PL-028).*
 
 ## The one rule everything hangs on
 
