@@ -347,7 +347,31 @@ Chat 4e914afe-ab7c-436f-9b2e-609d4a54a6fa · 244 turns, all read · last updated
 **Safety note:** the plain-text passcodes are visible in this chat's history (T195 and T239). They are deliberately not repeated here.
 
 ### 9. Prankster game concept
-_(pending)_
+Chat 9dd08244-0780-47e0-8b20-44f7b037c86d · 4 turns, all read · 2026-11-25 · kid request ("Prank City: After Dark")
+
+**In plain words:** a nighttime 3D town game, built in two rounds. In round 1, everything was shapes drawn in code. In round 2, the people were swapped for free animated 3D characters taken from the Three.js example files, and rain, wet roads and easier tuning were added.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Engine | Three.js 0.160.0 loaded from cdn.jsdelivr.net through an importmap, with InstancedMesh for repeated objects | The family-arcade kit was read (kit README, template, cabinet.md), and the repo was cloned with `git clone --depth 1` |
+| 3D models (round 2) | Soldier.glb, Xbot.glb and Michelle.glb downloaded with curl from `raw.githubusercontent.com/mrdoob/three.js/r160/examples/models/gltf/` (GitHub is on the sandbox allowlist). They were inspected and slimmed with `@gltf-transform/cli` and the arcade's `tools/slim-model.mjs`, then reused as hero, cop and owner. Hats, a hood and a backpack were attached to the rig bones (mixamorig…) in code | **Licence for these three files was not checked in the chat.** The only licence check was on GitHub repo search results (Quaternius, KayKit, CC0), and none of those were used |
+| Model storage | 3 .glb files uploaded as artifact assets (artifact `assets` capability declared) | If the models fail to load, the game falls back to the code-drawn shapes |
+| Sound | WebAudio, including rain | Not heard in the sandbox |
+| Testing | Playwright headless with SwiftShader (no graphics card), an fps probe, a robot player | Claude said smoothness on a real computer was **not** checked. Round 2 was tested in Claude's copy, "but not yet in the copy you'll open" |
+| Tracking | Project State `checkin` on thread `game-maker:prank-city-after-dark-game` | — |
+
+Claude told the kid plainly that round 1 was code-made, not Meshy models.
+
+**Decisions:** the kid chose the theme, "more realistic, easier, more fun". Claude chose the model source (three.js examples) and all the tuning numbers (+40% time, slower cops, banana peels, hiding bushes, jackpot pranks).
+
+**Money:** none.
+
+**Claims checked**
+- Game artifact UviQ1SHA2DV3Qz2P5sGFEM ("Prank City: After Dark", private) exists. **Verified** (get_artifact).
+- Cabinet artifact XJQHcJM1skDzrzmSAixx9Y exists. **Verified**.
+- "Real 3D people uploaded": the artifact holds 3 model/gltf-binary assets (662 KB, 653 KB, 382 KB) uploaded 2026-11-25 18:32. **Verified** (list_assets). That they display in the published copy: **Unchecked**.
+- Licence and credit for the Soldier/Xbot/Michelle files: **Unchecked** (gap, see Gaps).
 
 ### 10. card
 _(pending)_
