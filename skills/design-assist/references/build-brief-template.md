@@ -15,7 +15,7 @@
 | 4 | Inputs verified-by-checking, or explicitly gated with named access | ⬜ |
 | 5 | Every needed skill/schema/prompt/config exists in draft, linked or inline | ⬜ |
 | 6 | Directive prescriptive, MCP-first — tool + parameters per step | ⬜ |
-| 7 | Acceptance criteria concrete and testable | ⬜ |
+| 7 | Acceptance checks are things the build itself can show before it finishes; none needs a later event | ⬜ |
 | 8 | Assumptions contain only genuinely unverifiable items | ⬜ |
 | 9 | Return contract — receiving chat, Session Log expectation, Brief ID | ⬜ |
 | 10 | Pasteable prompt written | ⬜ |
