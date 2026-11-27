@@ -29,7 +29,109 @@ Method: each chat read with read_conversation; claims checked against GitHub (fi
 
 ## Per-chat findings
 
-_(sections fill in as each chat is audited, newest first)_
+### 1. F1 car 3D game → "Slipstream" (Elliott)
+Link: https://claude.ai/chat/7b8edc6e-89b1-4e20-8609-39f683510558 · 165 turns, read in full · Nov 25–27
+
+**What it became:** a browser racing game that grew into a Godot (game engine) banger/supercar racer with many tracks, 37+ cars, replay, cockpit view, and a Windows app.
+
+**Tech used**
+| Tech | For | How | Worked? / broke / workaround |
+|---|---|---|---|
+| Three.js + Rapier physics + esbuild | v1/v2 browser racer | bundled into one script, published as artifact "Slipstream: Monza" | Worked; kid said "graphics suck" → abandoned for Godot |
+| @pmndrs/assets (Poly Haven sky, CC0) | sky/reflections in v2 | npm install, embedded | Worked; ambient-occlusion pass made streaks → switched off |
+| Godot 4.5.1 (desktop + web export) | main game from turn 11 on | headless Godot + xvfb software graphics in sandbox; web export packed as gzip+base64 JS pieces unzipped by fflate | Worked. Broke: artifact host refuses files >20 MiB → split into game-pck-1…12.js; browser cached old pieces → "invalid/literal" error → fixed by adding a build stamp (?v=) to every piece |
+| HTTP range requests into Godot's 1.3 GB templates file | get only the web / Windows export template | python range reader / remotezip | Worked (good trick) |
+| Claude in Chrome (Charles's real Chrome) | search Meshy account, run TRELLIS, read models from blocked sites, check the live game, debug in Elliott's tab | navigate/screenshot/JS injection | Worked; Chrome disconnected once, switched device with select_browser |
+| Meshy (via kids-games `meshy.yml` workflow) | credit check | run_workflow `credit-check` (run 45674834427) | Worked: 6 credits left; no Meshy spend in this chat |
+| Hugging Face TRELLIS (free picture-to-3D) | car models from Elliott's pictures | JS injected into the HF page in Chrome | Dead end: free daily GPU quota used up after 1 test car; sandbox can't reach huggingface.co |
+| RunPod | rent a GPU for TRELLIS | checked balance ($7.76) | Not used — Claude asked for a parent's OK (money gate respected); kid said free only |
+| TripoSR on GitHub Actions (CPU) | picture → 3D car, free | new workflow `kids-games/.github/workflows/triposr.yml`, one job per picture, bot commits `out/triposr/<car>/mesh.glb` | Worked after one fix (missing xatlas). One job hung → cancelled with `gh` CLI, added 12-min time limit |
+| trimesh + pymeshlab + photo projection (proc2.py, sandbox only) | clean up TripoSR meshes, paint Elliott's photo onto them | python | Worked technically but Elliott called results "lumpy / fake / bad" over several rounds → all photo cars deleted at his request |
+| Kenney Car Kit (CC0) via a third-party GitHub mirror | flying debris parts | git clone Arslan12216775/kenney_car-kit | Worked; kenney.nl not reachable from sandbox |
+| gltf-transform CLI, meshoptimizer | shrink downloaded car/track models | npm | Worked |
+| Free car models (GitHub Vivekkk-1/3D-Models, Nissmo89/Supercar-Vault-3D, three.js Ferrari, Sketchfab CC-BY via GitHub copies) | the garage cars | raw.githubusercontent downloads; git LFS | Worked. Licensing checked unevenly (see below) |
+| Objaverse (allenai) on Hugging Face | 21 more cars, Indy track scan | sandbox can't download → built "Add car files" bulk importer + drop box so Elliott loads files in his browser | Partly: those cars live only in Elliott's browser storage; a GitHub copy of the Indy scan (Amogha027/Car-Racing-Game, licence file checked) was baked into the game |
+| Device bridge + computer use on Charles's laptop | put Slipstream.exe and a shortcut on the Desktop; look at the screen | device_request_folder_access, device_commit_files to `C:\Users\cecou\Desktop` and `…\OneDrive\Desktop`; computer_screenshot | Files landed. The kid was actually on a different, unconnected computer; Claude never ran the .exe |
+| Project doc `claude/slipstream-godot-handoff.md` | handoff notes | project_write, rewritten ~10 times | Exists |
+
+**Built / where it lives now**
+- Live game artifact "Slipstream: Banger Racing" — https://claude.ai/artifact/2PntVtTizPezHZAHh5pZWC (slug 0b47c7f1…). **Verified**: get_artifact returns it, version 1795807858-de9d, private.
+- Older artifact "Slipstream: Monza" (Three.js) — https://claude.ai/artifact/Dq4HMafeWeuSZWEAMpAuR7. **Verified** exists.
+- Slipstream.zip and Slipstream.exe (225 MB, unsigned) — only as chat attachments and on Charles's laptop Desktop. **Unchecked**: can't see the laptop from here.
+- **The Godot source code is not saved in any repo.** It lived only in that chat's sandbox (`/home/claude/godot`) and inside the zip/artifact. The handoff doc itself says the build script is "gone when the session ends".
+- kids-games repo: `triposr.yml`, `drawings/bangers`, `bangers2`, `supercars`, `supercars_retry`, TripoSR outputs. **Verified**: files present; Claude commits 674427e, 789e615, 89e1786, b94faa6, 673a9c6 plus 4 bot commits; workflow runs 1 failed, 3 succeeded, 1 cancelled — matches the chat.
+- No family-arcade repo, Supabase or Project State work in this chat. **Verified** by reading every turn.
+
+**Claims checked**
+- "Handoff notes saved to claude/slipstream-handoff.md" (turn 3) — **Contradicted**: the Project only has `claude/slipstream-godot-handoff.md`.
+- "Cars sit on the road now" (turn 92) — **Contradicted by Elliott** ("you didn't fix it"); second fix tested on one car, one track.
+- "Replay works" (turn 88) — Elliott said it didn't; rewired in turn 90. **Unchecked** with a real player since.
+- "Glitching fixed" (turn 112) — Elliott meant the main screen; that glitch was never reproduced or fixed.
+- "Speedway Figure 8 matches your photo" (turn 163) — **Unchecked** on the laptop (Claude said so).
+- Every "checked on my computer" = headless software-render tests in the sandbox. Real-device feel, speed and sound were never tested; Claude said so each time.
+
+**Decisions**
+- Three.js instead of the Godot Elliott asked for (Claude) → back to Godot (Elliott: "still doesn't look good").
+- Wild crash physics kept as a feature (Elliott, reversing Claude's fix).
+- F1 → bangers → photo cars → supercars → "delete every car except the Ferrari" → garage of real models (all Elliott).
+- Copying the Wreckfest stadium refused twice (Claude). In the last turns Claude matched the stadium to "the empty figure-eight speedway picture" Elliott relayed, calling it generic — worth a look, since earlier turns said a Wreckfest screenshot would only be used "for ideas".
+- Unsigned .exe on the laptop: Claude asked for a grown-up's yes; the yes came typed by the kid ("the grown up said yes").
+- Many prompts were long specs written by another AI and pasted by the kid (one says "Attach this picture to your Slipstream chat in Claude, then paste…").
+
+**Money:** none spent. RunPod proposed and not used. Meshy credits unchanged. Paid/login model sites skipped.
+
+**Licences:** checked for the Sketchfab CC-BY cars, Porsche (CC BY-NC-SA), Indy scan (CC-BY), EB110 (no-edits → user-loaded). Not checked for the Vivekkk-1 cars ("your game is private, so that's fine for now" — an assumption) or the 21 Objaverse cars ("I didn't check the license").
+
+### 2. Needoh unboxing game
+_(pending)_
+
+### 3. Baby Claude rap game
+_(pending)_
+
+### 4. Tesla Roadster jump game
+_(pending)_
+
+### 5. Pokémon-style card game
+_(pending)_
+
+### 6. Rage Bait Bots
+_(pending)_
+
+### 7. Fun video game
+_(pending)_
+
+### 8. Squishy clicker game
+_(pending)_
+
+### 9. Prankster game concept
+_(pending)_
+
+### 10. card
+_(pending)_
+
+### 11. Haunted house game design
+_(pending)_
+
+### 12. truck
+_(pending)_
+
+### 13. gold medal
+_(pending)_
+
+### 14. Steal a Brainrot game
+_(pending)_
+
+### 15. jelly
+_(pending)_
+
+### 16. 3D character from image
+_(pending)_
+
+### 17. Ninja 3D viewer
+_(pending)_
+
+### 18. Ninja character sword redesign
+_(pending)_
 
 ## Tech inventory
 _(pending)_
