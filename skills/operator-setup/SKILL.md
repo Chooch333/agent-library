@@ -68,4 +68,5 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - A builder written from one example copies that example's quirks; the brief marks which tech items are the category and which were the first Operator's own, and the writer copies only the first kind. [operator-design Lens 3; TH-102]
 
 ## Changelog
+- **0.2.0** (2026-11-27): step 7, a new mandate lands `status: active`; no "draft until its proof count". The build-day test (step 6) stays; when no hidden test data exists the receipt says so. Charles: "draft until proven" on new skills and Operators, "drop" (decision CB-784; Build 93, BB-2026-11-25-built-means-done).
 - **0.1.0** (2026-11-24): first version, built inline in the Operator design chat. Charles: "I want to be able to say a trigger phrase like I just did for the expert, and then I want to walk through some steps to create the operator and I want the structure of the operator's tech items." Questions and tests live in experts/operator-design (EB-380, EB-381); writing is team-builder operator mode.
