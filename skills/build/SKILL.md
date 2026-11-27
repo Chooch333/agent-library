@@ -2,14 +2,14 @@
 name: build
 description: 'Use when the first message says "this is a build chat": work that produces deliverables, decisions or progress on a project, logged to Project State. Carries authority rules, Build Brief defaults, workflow and response format.'
 requires: [references/project-state.md, references/gotchas.md, references/thread-checkin.md]
-version: 1.4.0
+version: 1.5.0
 status: active
 triggers: ["this is a build chat (case-insensitive, very first message only)"]
 owner: Charles
-updated: 2026-10-23
+updated: 2026-11-27
 ---
 
-# SKILL: build (v1.2.0)
+# SKILL: build (v1.5.0)
 
 A **build chat** is work that produces deliverables, decisions, or progress on a project. Fetch every file the `requires:` header names before the first Project State action.
 
@@ -27,7 +27,7 @@ A **build chat** is work that produces deliverables, decisions, or progress on a
 
 - **Authority — two modes.** *Interactive chats* (Charles present): Charles decides what Closing out bin 4 names (`references/thread-checkin.md`). A fork the Brief didn't pre-answer that Claude can call is decided and logged; only a hand-on is surfaced in-chat, as a closed choice with a recommendation. *Autonomous execution* (builds run by the orchestration system, no human in the room): the orchestrator decides every fork itself — using the brief's design intent narrative, Project State decisions, and repo conventions — and records each fork and its answer in a fork log. Charles audits the completed build and its fork log afterward; he is never a mid-build tiebreaker. Full rules: `agent-library/skills/design-assist/references/brief-completeness-framework.md`.
 
-**The line between "designing" and "building" is the line for Charles's involvement — and it is firm.** Charles is in the loop during Design Assist and planning: that is where scope is set, forks are his to call, and direction is shaped. **Once a build brief is being executed, Charles is out of the loop until a hard gate.** A build chat executing a brief does not pause to ask Charles about forks, approach, wording, cleanup, ambiguity, or brief-versus-reality conflicts — it decides all of them itself, logs them, and moves forward. The only three things that stop an executing build and bring Charles in: (1) credentials or access only he can supply, (2) spending real money, (3) destroying or irreversibly changing data. Nothing else. This is not "in flux" or a direction being explored — it is the settled operating model. Asking Charles to approve something an executing build could decide for itself is itself a defect (it makes him the bottleneck the whole system exists to remove).
+**The line between "designing" and "building" is the line for Charles's involvement — and it is firm.** Charles is in the loop during Design Assist and planning: that is where scope is set, forks are his to call, and direction is shaped. **Once a build brief is being executed, Charles is out of the loop until a hard gate.** A build chat executing a brief does not pause to ask Charles about forks, approach, wording, cleanup, ambiguity, or brief-versus-reality conflicts — it decides all of them itself, logs them, and moves forward. The only things that stop an executing build and bring Charles in are the charter's "Gates Claude works within" and "Talk with him first" sections (`references/charter.md`: money, his passwords, keys and his-only clicks, deleting data that has no copy, sending something in his name, changing one of his rules or two of his decisions that clash; code and settings don't count). Read those sections live; nothing else stops a build. This is not "in flux" or a direction being explored — it is the settled operating model. Asking Charles to approve something an executing build could decide for itself is itself a defect: Claude is a trusted partner working unfettered and he reviews the results, and asking him to approve what a build can decide holds that back.
 
 **Automatic data intake follows the same rule.** The ingestion pipelines run on their own — ingesting, adding data, moving forward — without per-item approval. Charles course-corrects from what he observes in the accumulated data, not by approving each addition. "On and running with Charles watching the output" is the target state, not "paused pending Charles's review."
 
@@ -43,7 +43,7 @@ A **build chat** is work that produces deliverables, decisions, or progress on a
 - **The build number leads the handoff.** When the work belongs to a numbered build series (Build 8.4, Build 11.6, …), that number is what Charles orients by — not the Brief ID, plan id, or project slug. So it appears in two fixed places, every time: as the first line of the Handoff Reference block (`**Build:** 11.6`), and as the opening words of the pasteable prompt (`Build 11.6 — execute Build Brief BB-YYYY-MM-DD-slug. …`). It also leads the plan's `plain_title` ("Build 11.6 — …"), per the naming rule (`references/project-state.md`). All the other identifiers stay exactly as they are; the number sits in front of them. If a brief genuinely has no number in a series, the same first line reads `**Build:** unnumbered` rather than being dropped — Charles should never have to work out which it is. Assigning the number is the authoring chat's job, never Charles's.
 - **Builds build the workflow; they don't run it.** A brief that builds a workflow (a job Charles will start from a screen) proves it on a test job the build creates, presses the stop buttons and sends pins itself, and hides the test job afterwards. It never puts Charles's review stops, or a real job's start, inside the build. One-time setup only Charles can do (keys, links, a startup file) stays a hard gate. Charles's first real job is a normal job he starts later.
 - **Return contract.** The sub-chat closes with its own Session Log on the same project, referencing the Brief ID. The main chat reads results from the database like any other chat — no special ceremony.
-- **Done receipt gate.** Marking a plan succeeded requires a done receipt (Session Log id + every acceptance check passed with evidence or handed off to a new plan); the database refuses otherwise.
+- **Done receipt gate.** Marking a plan succeeded requires a done receipt: the Session Log id, and every acceptance check either passed with evidence or recorded not-checked with a one-line reason (`skills/orchestrate-build` step 7(c)). No check is handed off to a new plan. The database refuses otherwise.
 - **Advisor-origin closing hook.** A Build Chat executing an advisor-origin brief (its plan carries an `ADV-NNN` tag) closes by writing the **actual response** into `cbrain/docs/advisor/LEDGER.md` — what really landed, if different from the DA chat's intended response — and setting that row's status to `addressed`. This is part of "done," not a follow-up: the LEDGER response is the readable answer that lets the Stack Advisor stop inferring adoption from a `building` status. It rides the existing external-review gate (Reviewing a succeeded plan, below) — a self-certified response is a build defect, caught the same way a self-certified review is.
 
 Templates for the Session Log, Fix Ticket and Build Brief live in `references/project-state.md`.
@@ -65,7 +65,7 @@ Interactive handoff (pasting a prompt into a sub-chat) still works — but the p
 
 ## Reviewing a succeeded plan
 
-**Succeeded means done (no review gate).** A plan that reaches status `succeeded` is finished. There is no after-the-fact design review of finished builds — Charles removed that gate on 2026-10-23 as too much to manage. A build proves itself at close instead: the done-receipt check (Session Log plus evidence for every acceptance check) is enforced by the database before `succeeded` is accepted. Anything a build wants a human or a design chat to see still goes on the Comms Table as a disclosure; DA chats pull and dispose those at session start as before. The chat that executed a build never disposes its own disclosures. `review_plan` and the plan review fields are retired — do not call or fill them.
+**Succeeded means done (no review gate).** A plan that reaches status `succeeded` is finished. There is no after-the-fact design review of finished builds — Charles removed that gate on 2026-10-23 as too much to manage. A build proves itself at close instead: the done-receipt check (Session Log, plus for every acceptance check a pass with evidence or a not-checked with a one-line reason; no hand-off) is enforced by the database before `succeeded` is accepted. Nothing a build writes outlives it as a test to run later. Anything a build wants a human or a design chat to see still goes on the Comms Table as a disclosure; DA chats pull and dispose those at session start as before. The chat that executed a build never disposes its own disclosures. `review_plan` and the plan review fields are retired — do not call or fill them.
 
 ---
 
@@ -116,6 +116,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **1.5.0** (2026-11-27) — Built means done (Build 93, BB-2026-11-25-built-means-done; decision CB-784): the Done receipt gate and "Succeeded means done" say pass-with-evidence or not-checked-with-reason; no hand-off to a new plan. Authority and hard gates points at the charter's "Gates Claude works within" and "Talk with him first" sections instead of copying the old three-item list, and the "bottleneck" reason becomes the trusted-partner one (Punch List PL-027; CB-615, CB-616). Title line now matches the version.
 - **1.4.0** (2026-11-09) — Closing out (`references/thread-checkin.md` 0.4.0): Needs from you holds only hand-ons, judgment calls are logged not listed; interactive forks Claude can call are decided and logged; ticket caveats are sorted, not discussed in chat; the overnight tag is automatic. Charles, 2026-11-09, Design Assist chat. Edited inline at his direction.
 - **1.3.0** (2026-10-23) — Removed the finished-build review gate at Charles's direction ("too much to manage"). `succeeded` now means done; the database's done-receipt check is the proof. `review_plan` and the plan review fields are retired. Disclosures and the rule that a build never disposes its own still stand.
 - **1.2.0** (2026-10-23) — The Check in step becomes the Progress tracking section (build = the chat's own name for its work; project is Charles's, set on the Dev tab; no 5 am sweep). One-line pointer added to the workflow. Per BB-2026-10-21-next-steps-panel.
