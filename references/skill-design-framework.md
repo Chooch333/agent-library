@@ -1,4 +1,4 @@
-# Skill Design Framework (draft v0.1)
+# Skill Design Framework (draft v0.2)
 *agent-library reference — the method for designing a new skill or agent before its SKILL.md is written.*
 *Status: **draft** — designed 2026-09-21 in a Design Assist session, dogfooded on the Inspector and Repairer (BB-2026-09-21-inspector-repairer). Owner: Charles.*
 
@@ -36,10 +36,11 @@ Same three-state rule as the brief-completeness framework: each question is **An
 
 10. **Authority tiers.** Auto / needs a brief / the three hard gates (credentials only Charles can supply, real money, irreversible data change). Charles reads a trail, never a queue he must work.
 
-11. **Proof and lifecycle.** One known-answer test in the acceptance run; cost per run and per week (real money flagged). Status stays `draft` until the first live run; pitfalls come only from real traces; the first live trace is folded into Examples before `status: active`.
+11. **Proof and lifecycle.** One known-answer test in the acceptance run, shown by the build that creates the skill; cost per run and per week (real money flagged). A new skill lands `status: active` (same as experts); pitfalls come only from real traces and are folded into Examples as they happen. If the skill runs on its own, its status light is set on the stack map in the same build.
 
 12. **Registration and naming.** An AGENT.md routing row and a CONVENTIONS.md exclusive-writes row. The name must not collide with a locked term (trace: "auditor" is world-graph's fact-accuracy check, so the finder agent is the Inspector).
 
 ## Changelog
 
+- **0.2** (2026-11-27) — Q11: a new skill lands `status: active`; "draft until the first live run" is dropped, and a self-running skill gets its status light in the same build. Charles: "draft until proven" on new skills and Operators, "drop" (decision CB-784; Build 93, BB-2026-11-25-built-means-done). Existing skills marked draft are not flipped.
 - **0.1** (2026-09-21) — Initial draft, designed in the Design Assist session that scoped the Inspector and Repairer; each question traces to a real incident or Stack Advisor idea (ADV-016, 017, 019, 029, 031). To be exercised and refined by BB-2026-09-21-inspector-repairer.
