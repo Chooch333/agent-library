@@ -6,7 +6,7 @@
 
 A build agent picking this brief off the queue must never have to guess — and Charles must never be the tiebreaker. When a worker returns a fork, **the orchestrator decides it and moves forward, without escalation**. The brief's job is to make those decisions answerable: any domain the brief is silent on degrades the orchestrator's ability to decide well.
 
-The **only** escalation triggers are genuine hard gates: credentials or access only Charles can supply, spending real money, or destroying/irreversibly changing data. Everything else — including forks the brief didn't anticipate — the orchestrator resolves from the design intent narrative (domain 11) and logs. Charles reviews the completed build and the fork log afterward; he does not babysit the build.
+The **only** escalation triggers are the charter's "Gates Claude works within" and "Talk with him first" sections (`references/charter.md`; read them live: money, his passwords, keys and his-only clicks, deleting data that has no copy, sending in his name, his rules or two of his decisions that clash; code and settings don't count). Everything else — including forks the brief didn't anticipate — the orchestrator resolves from the design intent narrative (domain 11) and logs. Charles reviews the completed build and the fork log afterward; he does not babysit the build.
 
 Therefore: **every domain below must be in exactly one of three states before a brief is queue-ready.**
 
