@@ -135,7 +135,7 @@ None. This skill finishes in one run and leaves nothing open.
 | Skill / chat | kind | Closes when |
 |---|---|---|
 | design-assist | design-assist | brief shelved, or Charles parks it |
-| build (interactive) | build-chat | plan succeeded and its needs-charles items done |
+| build (interactive) | build-chat | the plan has succeeded |
 | tech-discovery | tech-discovery | Discovery Brief filed |
 | tech-review | tech-review | R&D Report filed (plus handoff on Adopt now) |
 | game-maker | game-maker | Launched |
