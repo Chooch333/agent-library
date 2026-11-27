@@ -1,7 +1,7 @@
 ---
 name: <skill-slug>
 version: 0.1.0
-status: draft
+status: active            # a new skill is committed active (same as experts; Build 93, CB-784)
 triggers:
   - <phrase or event 1>
   - <phrase or event 2>
