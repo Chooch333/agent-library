@@ -567,7 +567,30 @@ Chat e0ac1f96-37df-4d65-890a-45807e15fcb5 · 61 turns · 2026-11-09 to 11-21 · 
 - None of these games is in family-arcade `public/games/`. **Verified** (same listing as chat 14).
 
 ### 16. 3D character from image
-_(pending)_
+Chat afe94094-77ff-4a1a-a4ac-6d3785ad2aab · 4 turns, all read · 2026-11-20 · Charles (adult turns)
+
+**In plain words:** Charles uploaded a front, side and back drawing of a ninja. Claude used the Game Maker **Character maker** to write the ninja as 3D code and checked how close it was to the drawing with a scoring tool. It took 17 minutes. Charles asked why the shoulders looked like a doll's, and Claude rebuilt them. **No Meshy, no download, no outside model.** This is the "Claude builds it from code" route.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Character maker tool | `agent-library/skills/game-maker/maker/`, fetched raw into the workspace: `export.mjs` (code → `.glb` with a skeleton and idle/walk/jump), `validate.mjs` (Khronos glTF validator), `heatmap.py` (likeness score against the drawing on a 32×32 grid: shape, dark details, colour), `still.py`, `viewer.html` | Three.js **0.160.0**, the same version as the arcade kit. Python: numpy, scipy, opencv, scikit-image. No GPU needed. |
+| Model build | Claude hand-writes `character.js`: lathe and sphere shapes, colours painted per vertex, rigid parts on bones | The maker's limit: each part is attached rigidly to one bone, so cloth can't stretch. That is why the shoulders looked like a doll's. The fix was a two-step shoulder, not true skinning. |
+| Checking | Likeness 98.6% before the sword, 90.7% with it (target 80%). Headless Chrome with SwiftShader rendered 5 views and every move, to catch see-through parts (the earlier "hollow legs" failure) | Claude suggested making the browser check a standard step |
+| Size budget | 2 MB per character; finished at 1.99 MB, 53,688 triangles, after cutting segment counts | Right at the limit |
+| Output | Viewer artifact 7544cd75…; arcade copy at `family-arcade/public/characters/ninja/` (character.js, viewer.html, log.md); Project State thread `game-maker:ninja-character` | Committed straight to the live site repo as several "[wip]" commits |
+
+**Background found in the repos (leads for the inventory):** `kids-games/lab/claude-image-to-3d/` is an earlier (2026-10-21) bake-off of "Claude writes the character as code" against Meshy on the same drawing (Super Sweets). It has Fable 5.1 and Opus 5.5 runs, a Blender comparison script and heat-map runs. That is where the maker tool came from.
+
+**Decisions:** Charles chose the input picture and asked for the shoulder fix. Claude decided to build only the top of the three swords, and left the toolkit unchanged because "the toolkit's rules say not to change it during a character build." Claude asked about the name, owner and where it goes; there was no answer in this chat.
+
+**Money:** none.
+
+**Claims checked**
+- `family-arcade/public/characters/ninja/` exists, alongside `blue-ninja`, `shady` and `sweets-e`. **Verified** (directory listing).
+- Maker tool files exist in agent-library and its README matches what was run (Three.js 0.160.0, 2 MB warning, validator). **Verified**.
+- The kids-games lab folder exists with fable, opus and heatmap-runs. **Verified**.
+- Likeness scores, triangle count and file size: **Unchecked** (these come from Claude's own tool output in the chat; not re-run).
 
 ### 17. Ninja 3D viewer
 _(pending)_
