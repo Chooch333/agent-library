@@ -508,7 +508,27 @@ Chat a4e80b49-d05f-4e8d-86af-ef07f34e5125 · 67 turns, all read · about 2026-11
 - DownhillGold.zip and DownhillGold2.zip: files sent in chat only, stored nowhere else. **Unchecked**. The Godot source lived only in the sandbox (`/home/claude/godot/web_build`), so it is **not in any repo**.
 
 ### 14. Steal a Brainrot game
-_(pending)_
+Chat 7744b1f4-c72a-4cd8-8d87-28de8418f96f · 10 turns · **turns 0–7 read; turns 8–9 not yet read** (hourly read limit hit) · 2026-11-21 · kid request
+
+**In plain words:** a Roblox-style "steal a creature" game, renamed **Giggle Grab**. Everything is made of shapes in code, on the arcade kit, with no models or downloads. Over three rounds it gained a conveyor belt, 32 made-up creatures, base locks, pies, shiny variants, coin rain and a lucky belt.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Engine | Three.js 0.160 on the family-arcade kit (`tools/inline-kit.mjs` pastes the kit in; `check-game.mjs` passes) | Built inside a local clone at `public/games/giggle-grab/` but **not pushed** (that folder isn't in the repo) |
+| Getting the kit | Raw downloads with curl failed, then `gh api` failed, then `add_repo` and `git clone` worked | Same allowlist pattern as other chats |
+| Art | 8 hand-built creatures, then a generic "mash-up" builder (body shape + animal parts) for 24 more; gold, diamond and rainbow done as material swaps | All original creatures. Claude checked Roblox for the giggle-meter idea with one web search |
+| Kit features used | `A.slot()` for hero, guard and thief (swappable for real models later), `A.rig`, `A.save` and `A.load`, coins earned while away, touch controls | — |
+| Testing | Playwright with SwiftShader; three.js served from local node_modules | Claude listed what it didn't test: buying, locks, the snatcher, coin rain, lucky belt |
+
+**Decisions:** the kid asked for "steal a brainrot", a belt, more creatures, locks and "more fun". Claude used its own creatures, and **flagged to Dad that the game now plays a lot like Steal a Brainrot**, so it may break the arcade's no-copy rule. That call was left for Launch.
+
+**Money:** none. The belt uses game coins only.
+
+**Claims checked**
+- Artifact RA2hqWefB6k7Wd6QEHGurE ("Giggle Grab", slug c39e126a…, private) exists, last version 2026-11-21. **Verified**.
+- Not in family-arcade `public/games/`. **Verified** (directory listing).
+- Turns 8–9: **Unchecked** (not read yet).
 
 ### 15. jelly
 _(pending)_
