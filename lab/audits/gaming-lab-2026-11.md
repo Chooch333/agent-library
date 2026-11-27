@@ -178,7 +178,39 @@ Chat 7ce8a7ea-9d7f-49fe-9006-4ccab18e5bf0 · 11-26 · 14 turns, all read (pages 
 - Jump distances, soak tests: **Unchecked** beyond Claude's own test logs (sandbox gone).
 
 ### 5. Pokémon-style card game
-_(pending)_
+Chat cc30a93d-9915-4303-9f64-0b50c5eee47c · 11-25 to 11-26 · 93 turns, all read (pages t0–t92). Game name: **Apex Summoners**. Player named in records: Elliott.
+
+**Tech used**
+- Start routine: memory family-arcade.md, AGENT.md, charter.md, game-maker SKILL.md; conversation_search for the earlier card game ("Rift Packs") to avoid repeating its mistakes; TaskCreate/TaskUpdate task list.
+- family-arcade repo: `gh repo clone` did not work; add_repo + `git clone` did. Used kit, `tools/slim-model.mjs`, `tools/check-game.mjs`, `tools/fetch-assets.py` (read only).
+- Models: sandbox could reach raw.githubusercontent.com and api.github.com (curl tested). Downloaded from GitHub `oosawak/cc0-monsters` (catalog.json; Grab3D, OpenGameArt sources) and `511action/descent-3d-assets` (Quaternius). No paid tool used ("didn't use any of Dad's Meshy credits").
+- Model slimming in the sandbox: gltf-transform + meshoptimizer + sharp + draco3dgltf (Draco models needed a decoder added; then the Draco extension had to be removed before writing). First pass 16k triangles / 512 px textures; round 4 redid all 33 at 26k / 1024 px.
+- Playwright + headless Chrome (swiftshader) for contact sheets of every monster, scripted pack openings, battles, login, knockouts. Many tests needed fast-forward hooks or forced states because the software renderer was too slow to finish a full battle (Claude said so in round 5).
+- Artifact assets: declare_capabilities + upload_asset (26, then 7, then all 33 again, then 1); `modelmap.json` maps each model to its `/_blob/<id>` link baked into the page. Artifact "storage" (A.load/A.save) holds saves.
+- **Claude in Chrome (Charles's own Chrome)** used once in round 1 to open the published artifact and screenshot it, so "monsters loaded on the real page" was checked live. Rounds 2–6 were not opened on the real page (Claude said so each time).
+- Body animation done without rigs: vertex-shader bending of heads, jaws, legs, tails, wings, driven by measuring each model's points (feet clustering, snout finding). Web Audio for all sound (synth voices, compressor, reverb).
+- Project State checkin each round.
+
+**What was built, and where it lives**
+- Six published rounds of one game: packs with 10 rarities and foils, collection, market, evolutions, Normal/EX/MEGA/Shiny versions, spells and traps, deck battles where 7 knockouts win, levels unlocking 5 arenas, rival ladder, 2-player on one device, hologram view, stadium with crowd, local player profiles with optional 4-digit code ("log in"), Lucky Wheel, arena events.
+- Lives in: artifact "Apex Summoners" + cabinet artifact; source only in the sandbox (`/home/claude/apex/src/*.js`, build scripts). **Not in any repo.**
+- 7 extra monsters were added in round 5, then removed as "broken"; only Puff Drake kept.
+
+**Decisions**
+- Every feature came from the kid's message stream (about 45 asks); Claude built each. Kid reversed himself once: "squad of 5" was built, then replaced by "a deck… kill seven creatures to win".
+- Claude's own calls: mouths open only on long-snouted monsters (round 6); "log in" built as local profiles on the device, not real accounts; PIN stored as plain digits in the save.
+- "Restart me": Claude added a ↺ start-over on the profile card rather than wiping saves.
+
+**Money / credits:** none. Meshy credits explicitly not used.
+
+**Claims checked**
+- Artifact "Apex Summoners" exists, version 1795707485-7a3f: **Verified** (get_artifact).
+- Cabinet artifact 88AKakeYp7wRQMhuj7rvYg exists, last changed at version 1795632243 (round 1): **Verified**.
+- Project State card game-maker:apex-summoners: **Verified** open, next step matches round 6. Two oddities: `waiting_on` is "nobody" (set by Claude from round 4 on, though the game waits on the kids/Charles), and it now links only the game, not the cabinet.
+- Models are CC0: **Verified as claimed by the source** — oosawak/cc0-monsters README says every item was checked as CC0 at its origin page. Not checked origin by origin.
+- "Monsters loaded on the real game page" (round 1): **Verified at the time** by Claude in Charles's Chrome; not re-checkable now. Rounds 2–6 on the real page: **Unchecked**.
+- "No errors / no glitches": **Unchecked** (sandbox tests only; full battle never completed in test).
+- Game in the arcade repo: **Contradicted** — no `public/games/apex-summoners` folder in family-arcade.
 
 ### 6. Rage Bait Bots
 _(pending)_
