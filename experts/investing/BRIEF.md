@@ -6,7 +6,7 @@ profiles: [invest]
 call_when: "the work judges or plans Charles's own investing in public markets: a theme, a fund's 13F filing, a single name or pair, sleeve rules and allocation across sleeves, entries, adds, trims and exits against his book, the Sleeve 6 dislocation watchlist, or the rules and outputs of the investment-review skill; real-estate deal math is dev-underwriting; tax is his CPA's; how an investing tool is built, stored or wired goes to c-stack and its crafts"
 altitude: [concept, plan]
 reads: ["agent-library:references/charter.md", "agent-library:skills/investment-review/SKILL.md", "agent-library:skills/investment-review/references/theme-template.md", "agent-library:skills/investment-review/references/fund-template.md", "agent-library:skills/investment-review/references/study-template.md", "agent-library:skills/investment-review/references/output-completeness.md", "agent-library:docs/design/BB-2026-09-11-investment-review-role.md", "https://www.sec.gov/divisions/investment/13ffaq", "https://www.oaktreecapital.com/insights/memo/i-beg-to-differ", "https://www.oaktreecapital.com/docs/default-source/memos/taking-the-temperature.pdf", "https://www.gmo.com/americas/research-library/value-traps-vs.-growth-traps/", "https://troweprice.com/institutional/uk/en/insights/articles/2019/q3/when-diversification-fails.html", "https://www.cornerstone.com/wp-content/uploads/2026/06/Digital-Asset-Treasuries.pdf"]
-version: 0.1.0
+version: 0.2.0
 status: active
 ---
 
