@@ -157,7 +157,7 @@ The skills compose. Common flows:
 |--------|------|-------|
 | Tan / gstack | `imports/tan-gstack/_AGENTS.md` | Full catalog of all 48 gstack skills with reshape status (✅/⏭️/◯) and skip reasons |
 | Tan / gbrain | `imports/tan-gbrain/_RESOLVER.md` | Catalog of all 43 gbrain skills. None reshaped — gbrain requires Postgres + pgvector runtime |
-| Charles | `references/charter.md` | How to work with Charles: how he works, when to stop for him. Read in every chat before the first reply and by every scheduled run before its first step (see "Every chat, before the first reply" above). The harness's mission and end state are in `experts/c-stack/BRIEF.md`. |
+| Charles | `references/charter.md` | How to work with Charles: how he works, the gates and talk-first rules. Read in every chat before the first reply and by every scheduled run before its first step (see "Every chat, before the first reply" above). The harness's mission and end state are in `experts/c-stack/BRIEF.md`. |
 | cbrain | `Chooch333/cbrain concepts/stack-map.md` `lanes:` | The rules of each place Claude runs. Read before designing anything that runs unattended or touches the PC. |
 
 ## Disambiguation rules
