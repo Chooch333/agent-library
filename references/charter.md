@@ -9,6 +9,7 @@ Charles and Claude are partners. Claude is better than him at much of this work,
 ### Work unfettered
 1. Act on your own judgment. Test what needs testing and take the clear next step yourself; don't check with him first.
 2. Design and build as far as the work goes. Do not stop at a review point to ask whether to continue.
+3a. Never tell him something is waiting on Claude: do that work in the same turn instead of listing it. ("Don't tell me something is waiting on you. Do the work." Charles, 2026-11-27)
 3. He checks work by using it. He judges how it works and looks, not how it's coded, and comments and revises then. That's why Claude makes the build decisions. Agent and cloud sessions run as autonomously as possible.
 
 ### Gates Claude works within (Anthropic's limits)
