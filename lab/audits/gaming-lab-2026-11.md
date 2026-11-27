@@ -544,7 +544,27 @@ Chat 7744b1f4-c72a-4cd8-8d87-28de8418f96f · 10 turns · **turns 0–7 read; tur
 - Chat 10's open question about the missing ~980 credits: **resolved** by this run.
 
 ### 15. jelly
-_(pending)_
+Chat e0ac1f96-37df-4d65-890a-45807e15fcb5 · 61 turns · 2026-11-09 to 11-21 · **read method:** turns 0–5 read page by page; the rest was located by searching inside the chat (for Meshy, credits, Godot, Unity, engine, download, model, GitHub, repo, workflow, jelly), then reading the matching passages. Reading all 61 code-heavy turns one by one would have used up the hourly read budget needed for chats 16–18. Searches for Meshy, credits and Godot found nothing in this chat.
+
+**In plain words:** a long "surprise me" chat where one kid ran through several quick one-file games, all made from code with no models: **Snowball Roll** (2D canvas with emoji), **Jelly Sumo** (2D canvas, 2-player on one screen), a lawn-mowing game (2D canvas), **Floor Is Lava** (3D), and **Neon Siege** (3D arena survivor game with levels, a boss, a shop and unlockable heroes).
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| 2D games | Plain HTML5 Canvas, Web Audio for sound, localStorage for best scores | No library at all |
+| 3D games | Three.js **r128 from cdnjs** (an old 2021 version loaded from the web), shapes built in code, InstancedMesh for gems and coins | Not the arcade kit; a different, older Three.js than the kit's 0.160 |
+| Models / downloads | None | Every character is built from code shapes |
+| Testing | Syntax check with `node --check`; one CPU-vs-CPU run for Jelly Sumo; Claude said it hadn't played Snowball Roll itself | — |
+| Skills | `artifact-design`, Game Maker `SKILL.md` read from agent-library | — |
+
+**Decisions:** a kid picked each game ("snowball roll", "jelly sumo", "floor is lava", "idk u decide"). Claude chose Neon Siege for the "11–15 year old" ask itself.
+
+**Money:** none.
+
+**Claims checked**
+- Artifacts Jelly Sumo (5d09a373…, 11-09), Floor Is Lava (af170a9e…, 11-15) and Neon Siege (de60a162…, 11-21) exist. **Verified** (list_artifacts).
+- Snowball Roll and the lawn-mowing game: **Unchecked** (not looked up).
+- None of these games is in family-arcade `public/games/`. **Verified** (same listing as chat 14).
 
 ### 16. 3D character from image
 _(pending)_
