@@ -614,7 +614,30 @@ Chat cbb61f08-212d-40d0-a734-ecd1cb825405 · 4 turns, all read · 2026-11-15 · 
 - Where `Ninja_Sword.glb` / `.blend` were made: **Unchecked** (not stated in the chat). Lead: kids-games has `generator/` Blender scripts and a `build-character.yml` robot that runs Blender on GitHub; the 2026-10-13 `build-character` runs may be its source.
 
 ### 18. Ninja character sword redesign
-_(pending)_
+Chat 9507cae4-8e1a-450a-8d1b-69aa5393f411 · 10 turns, all read · 2026-11-15 · Charles
+
+**In plain words:** the first try at the "Blue Ninja" with the Character maker, working from a kid-picked action picture (turned sideways, mid-swing, painted style). Claude made three versions. Charles rejected all three ("generally poor", "horrible", "This isn't much better. I don't think you're capable of this. just stop now"). Claude stopped and saved a write-up for the R&D lab. Chat 16 (five days later) is the retry with a clean front, side and back drawing, which worked.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Character maker (same kit as chat 16) | `character.js` → `export.mjs` → `validate.mjs` → `heatmap.py`, `still.py` | v1 **skipped the heat map and the "ask for a front view" step**. Claude admitted this when Charles asked "Did you not use the tools you could have/should have?" |
+| Making an action picture usable | OpenCV GrabCut cutout (`cut.py`), a pose solved from points measured on the picture (`solve.mjs`), a `swing` move whose key frame matches the picture, heat map run with `--clip/--time/--yaw` | New method. Score 44 → 51% (target 80%) |
+| Real-browser check | Headless Chrome with SwiftShader, one-sided faces, plain light | Caught what `still.py` hid: inside-out legs and arms (0% of their faces pointed outward), eyes facing inward, a blade that turned black, feet sinking into the floor |
+| Arcade character robot | `family-arcade/.github/workflows/build-character.yml`: fetches the maker tools from agent-library, exports `character.glb` and `still.png` on GitHub, checks 0 errors, the idle/walk/jump moves and ≤ 2 MB, then commits | Ran after each version; passed |
+| Meshy | **Offered, not used**: "The skill doesn't allow paid services without your OK" | The money gate was respected here, unlike chats 10 and 14 |
+
+**Decisions:**
+- Charles stopped the build. Claude closed Project State thread `game-maker:blue-ninja-character` as "dropped".
+- Claude changed `skills/game-maker/SKILL.md` to 0.6.1 ("never skip the heat map; turned pictures via cutout + posed move") and logged TH-231. Its own write-up says this **clashes with TH-230**, which another chat wrote at the same time, and that **Charles hasn't picked one**.
+
+**Money:** none.
+
+**Claims checked**
+- `kids-games/lab/claude-image-to-3d/blue-ninja/` exists. **Verified** (directory listing).
+- `family-arcade/public/characters/blue-ninja/` exists. **Verified**.
+- The `build-character.yml` contents match the description. **Verified** (file read).
+- The TH-230 / TH-231 clash: **Unchecked** (Project State decisions not looked up).
 
 ## Tech inventory
 _(pending)_
