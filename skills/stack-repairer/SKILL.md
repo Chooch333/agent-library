@@ -187,7 +187,8 @@ In: <the fix>; for an ongoing condition, also the check on the stack map that wo
 ## Directive
 <numbered steps>
 ## Acceptance
-1. <the dot reads green on the next Stack Inspector check> 2. <...>
+1. <the fix is in place and read back> 2. <...>
+(A brief written to dig in has one acceptance check: the cause is named in the Session Log, or the fix is in place.)
 <n>. For an ongoing condition: the new check turns red on the failing state and green once fixed, proved in <the place this brief names where the checker can be run>.
 ## Pasteable prompt
 > Execute Build Brief BB-YYYY-MM-DD-stack-fix-<dot-id>. Pull the plan from Project State (plan_id <id>, project cbrain). Answer forks yourself; stop only at hard gates. Standing rules CB-185, CB-121, CB-103 apply.
