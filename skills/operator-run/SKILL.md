@@ -61,8 +61,6 @@ Read `references/charter.md` first when GitHub is reachable.
 
 **Something broken.** A table or list that will not read, or a copy plainly out of step with the screen Charles uses: one `reported` row in the stack fix log (`skills/stack-repairer/SKILL.md`, Reported problems), then carry on.
 
-**Proof.** When an Operator's `report` rows without `"test": true` reach six and no row for it carries `detail.proof_verdict`, insert one `reported` row in the stack fix log: finding "Count the <title> proof: six real runs are in its log", recheck `select exists (select 1 from operator_log where operator = '<slug>' and detail ? 'proof_verdict')`. The count is done by a separate build or chat, never this run: kinds of move chosen; waits a later run cleared without his reminder; log rows that restate status. Every run the same move, or no wait ever carried → it is a skill, and the verdict says so. When the mandate's Authority section names a keep-or-loosen choice, the chat that does the count brings Charles that one choice with the verdict.
-
 ## Progress tracking
 None. A run leaves nothing open on the Next steps list: what it waits on lives in its log and is re-checked next run; what waits on Charles is in the report.
 
