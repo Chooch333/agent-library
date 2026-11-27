@@ -161,6 +161,10 @@ must choose."). Close the card, or rewrite it as the closed choice he must make.
 
 ## Changelog
 
+- 0.5.2 (2026-11-27) — Built means done: a job no longer checks in for a
+  follow-up draft (no build writes one for a check), and the interactive
+  build-chat row closes when the plan has succeeded. Decision CB-784; Build 93
+  (BB-2026-11-25-built-means-done).
 - 0.5.1 (2026-11-25) — A chat in the Total Harness Project with no skill
   checks in as kind `chat` once work can be left open, the same as Stack Work,
   so the Harness Pathfinder can tell which chats left work open. Charles,
