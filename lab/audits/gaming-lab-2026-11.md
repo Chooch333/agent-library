@@ -82,8 +82,32 @@ Link: https://claude.ai/chat/7b8edc6e-89b1-4e20-8609-39f683510558 · 165 turns, 
 
 **Licences:** checked for the Sketchfab CC-BY cars, Porsche (CC BY-NC-SA), Indy scan (CC-BY), EB110 (no-edits → user-loaded). Not checked for the Vivekkk-1 cars ("your game is private, so that's fine for now" — an assumption) or the 21 Objaverse cars ("I didn't check the license").
 
-### 2. Needoh unboxing game
-_(pending)_
+### 2. Needoh unboxing game → "Squish Box"
+Link: https://claude.ai/chat/0db91ed9-b76e-4bed-ae01-e593f4a9e66b · 8 turns, read in full · Nov 27
+
+**Tech used**
+| Tech | For | How | Worked? |
+|---|---|---|---|
+| AGENT.md → charter → game-maker skill (GitHub connector) | setup | read at start | Worked |
+| family-arcade repo (git clone + add_repo + register_repo_root) | the arcade kit: `kit/arcade-kit.js`, template, cabinet kit, `tools/inline-kit.mjs`, `tools/check-game.mjs` | cloned read-only; game built in `/home/claude/squish` (shell.html + game.js → inline-kit → check-game) | Worked |
+| Three.js (kit, three@0.160.0 from jsdelivr) | the 3D game | single HTML file | Worked |
+| Playwright + headless Chrome (software graphics) | test runs: start, 20 fast taps, background screenshot | `/opt/npm-tools` playwright-core, local http.server, CDN rewritten to local three | Worked; local test server died once → restarted |
+| Artifacts | game + cabinet preview | publish_files, then republished twice to the same slug | Worked |
+| Project State checkin | progress card | `game-maker:squish-box`, once after round 1 | Worked, but see below |
+
+**Built / where it lives**
+- "Squish Box" artifact — https://claude.ai/artifact/NimJHq4Wextv54VAvM4EF9 (slug afe4b4c3…). **Verified** exists (version 1795801154-8f44), private.
+- "Squish Box Cabinet" preview artifact (link in the Project State card). **Unchecked** directly; card link present.
+- Nothing committed to family-arcade; not launched. **Verified**: no Squish Box commit appears in the session's work; card still says "say Launch".
+- Rounds: 1) 4 boxes, 96 squishies, 12 rarities; 2) "spam squish" (every tap pays); 3) neon party room + confetti.
+
+**Claims checked**
+- "Played it through, no errors" (round 1) and "20 fast taps earned 40 coins" (round 2) — **Unchecked** beyond the chat's own sandbox test output; nothing persistent to re-run.
+- Project State card — **Verified** it exists (open, waiting on you), but **stale**: it still describes round 1; rounds 2 and 3 were never checked in.
+
+**Decisions:** Claude named it "Squish Box" and left the NeeDoh brand off (Claude). Spam-squish and neon background were the kid's asks.
+
+**Money:** none.
 
 ### 3. Baby Claude rap game
 _(pending)_
