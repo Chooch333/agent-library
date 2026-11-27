@@ -94,7 +94,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 - build: what this chat is building, in 3-6 plain words, e.g. "Next steps side panel" (thread_key "build-chat:<build in lowercase words joined by hyphens>")
 - Opens when: the first turn of an interactive build chat (Charles present)
 - Checks in: end of every turn. Autonomous and overnight builds check in as jobs instead (skills `orchestrate-build` and `night-run`)
-- Closes when: the plan has succeeded and its needs-charles items are done (`close_thread`, closed_how "plan done")
+- Closes when: the plan has succeeded (`close_thread`, closed_how "plan done")
 
 ---
 
