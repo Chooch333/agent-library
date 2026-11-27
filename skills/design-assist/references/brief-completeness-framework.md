@@ -29,7 +29,7 @@ Why this is being built and who touches it.
 - **Goal behind the goal:** the one-liner from Phase A restate.
 
 ### 2. Acceptance criteria
-What proves it worked — concrete and testable ("a never-before-seen email produces a filed brief within 5 minutes"), not vibes ("works well"). Include the **verification run** itself: what the executor does to demonstrate done, and what that run needs to exist (lesson E-266: verification paths are dependencies too).
+What proves it worked — concrete and testable, not vibes ("works well"). Acceptance checks are things the build itself can show before it finishes (a file read back, a deploy READY, a query returning the row, the part's own test passing); none needs a later event (a first scheduled run, a next real email). A part that runs on its own gets its status light set on the stack map in the same build (its `check`, with `since: <build date>`), and that is the check. Include the **verification run** itself: what the executor does to demonstrate done, and what that run needs to exist (lesson E-266: verification paths are dependencies too).
 - **Verification is code and data only (Charles, 2026-10-01; retires lesson CB-148's browser gate).** Builds prove their work with code checks (it compiles / the deploy is READY, unit tests on logic, reading files back) and data checks (SQL, API responses, entity reads). Builds do **not** write or run automated browser tests (Playwright smoke steps) — they cost too much time and GitHub Actions usage. Charles is the tester for anything he sees or clicks: every UI brief ends with a short plain-English "What to check" list for him, and he reports anything missing or wrong.
 
 ### 3. Runtime & execution
