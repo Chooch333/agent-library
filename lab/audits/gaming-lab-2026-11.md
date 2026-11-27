@@ -243,7 +243,7 @@ Chat 09019579-c925-4efb-876f-08a283cd289e (listed title "Minigame-based attack g
 - Game in the arcade repo: **Contradicted** — no `public/games/rage-bait-bots`.
 
 ### 7. Fun video game
-`7bcba705-4708-4881-9408-2acc6098313e` · 259 turns · **PARTIAL: turns 1–140 read; 141–259 not yet read** (stopped by the hourly read limit on chat history).
+`7bcba705-4708-4881-9408-2acc6098313e` · 259 turns · read in full (turns 1–140 first, 141–259 after the hourly read limit reset). Turns 141–259 are summarised under "Turns 141–259" at the end of this section.
 
 **Who and where.** Turns 1–138 are a kid making games, outside the Gaming Lab project at first (Claude's own search said it could only see chats outside projects; at turns 96–110 it read memory from a different project, `01a12d74-…`, files `topics/games.md` and `areas/demo-day-game.md`). No AGENT.md routine, no Game Maker skill, no Project State cards in that stretch. At turn 139 Charles says he is bringing this chat into a new game chat and asks to launch Backroad Bonk.
 
