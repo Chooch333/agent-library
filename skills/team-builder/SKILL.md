@@ -97,7 +97,7 @@ scope; rule 4 builds each brief from main with only the in-scope notes' lines. W
 Loaded by `skills/operator-setup` at its Build step, pointed at an `operator-draft` note on Project State project `cbrain` (the confirmed walk-through answers, the operator-design seat's verdicts and the mandate text). It writes a new Operator's tech items and judges nothing: whether it should exist and what it may do were settled by the operator-design expert and Charles's confirmation. The tech-item list is the brief's, never this skill's memory: read `experts/operator-design/BRIEF.md` and complete every Our way line marked *category*; copy nothing it marks *first Operator's own*.
 
 Steps 1 to 7 above apply, with these writes at step 2 and these registrations at step 4:
-- **Mandate:** `operators/<slug>/MANDATE.md` from the note's mandate text, in `references/operator-mandate.md`'s shape, `status: draft`.
+- **Mandate:** `operators/<slug>/MANDATE.md` from the note's mandate text, in `references/operator-mandate.md`'s shape, `status: active`.
 - **Run registration:** one row in the Operator table in `skills/operator-run/SKILL.md` (title, start phrases, mandate path), a patch version bump and one changelog line there.
 - **Start phrases:** added to the AGENT.md Operators row; one Disambiguation line when the note says a phrase could fire another row.
 - **Bench pages:** each new move the note names becomes a section of a read-only reference page under the skill that owns the data's door, with that skill's pointer line, patch bump and changelog line. A move that needs a new skill, or one that writes, is not written here: stop and say it needs a Build Brief.
