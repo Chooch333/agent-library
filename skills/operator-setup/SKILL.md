@@ -1,6 +1,6 @@
 ---
 name: operator-setup
-version: 0.1.0
+version: 0.2.0
 status: draft
 triggers:
   - "I need an operator for <x>" / "I need an operator to <x>" (a message that starts with it, in any chat that can start helpers, mid-chat included)
