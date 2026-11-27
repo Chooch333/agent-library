@@ -374,7 +374,43 @@ Claude told the kid plainly that round 1 was code-made, not Meshy models.
 - Licence and credit for the Soldier/Xbot/Michelle files: **Unchecked** (gap, see Gaps).
 
 ### 10. card
-_(pending)_
+Chat e2871c02-7313-4250-a93a-c179362171fe · 69 turns, all read · 2026-11-21 to 11-25 · mostly a kid, with Charles at T28 and T44
+
+**In plain words:** this is the chat where Meshy was actually used. Claude drove Meshy's website in the family PC's Chrome to make 4 new dino models, about 237 credits' worth. It brought the Dino Mech game in from another chat and upgraded its stadium, local 2-player, online play and Tricera, then built three more games from code (Neon Rush, Dunk Brawl, Rift Packs). The kid turned down six pitches along the way: Trench, Rampage, Snowball Avalanche, Achoo Dragon, Sticky Bubble and Monster Card Shop.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Engine | Three.js. Dino Mech ran on **0.187.0**, and the arcade port was moved back to **0.160.0** (the kit's version), which has no `THREE.Timer` and no scene-wide `environmentIntensity`. Neon Rush, Dunk Brawl and Rift Packs were built on the arcade kit at 0.160 from the start | EffectComposer with UnrealBloom, ShaderMaterial light beams, PMREM reflections, an InstancedMesh crowd of about 5,200 |
+| Textures | npm `@pmndrs/assets` (normal maps stored as base64 in the package), installed through npm because npm is on the allowlist | Its README was grepped for a licence, but the result wasn't shown. **Licence not confirmed** |
+| **Meshy** (T29) | **Claude in Chrome on the Windows PC**, signed into Charles's Meshy account. Steps: text-to-image with the boys' stadium picture as reference (18 credits × 4), then image-to-3D with texture (35 each), then a free remesh to 30K triangles. To get the downloads, Claude hooked the page's link clicks with JavaScript and fetched the signed file links, read task data from Meshy's internal `/meshyd-api/web/v2/tasks/…` endpoint, and shrank textures to 2048 JPEG with a hand-written in-page GLB rewriter (18 MB → 5 MB) | The sandbox can't reach Meshy (curl check). One attempt to push the files straight into the family-arcade GitHub upload page by cross-window message **was stopped by a safety check**. The fallback was browser downloads to the PC, which a person then attached in chat |
+| Rigging | No Meshy or Mixamo rig. Claude **built a skeleton in code** from measured joint spots and region-based vertex weights (`rigGeneric`) | Only Tricera was rigged. Stego, Spino and Ptera files were never attached in this chat |
+| Model hosting | The artifact page won't serve .glb, so each model was converted to glTF .json with the data embedded in base64 and rebuilt into a .glb in the browser ("same trick as RX 90000") | RX model is 18.9 MB and Tricera 7.6 MB as JSON |
+| Getting a model out of an artifact | Claude can't copy files out of an artifact, so it added a hidden `#export` button using the artifact `downloads` capability | A person has to press the button and attach the file |
+| Online play | Artifact `room` capability, host-run, using presence (4 KiB limit) plus a lobby of open games | Tested with a local stand-in, then for real in 2 Chrome tabs on claude.ai. Moving and attacking online was **not** tested for real (the browser tool can't send keys into the game). Both computers must be signed in to Claude (Dad's account) |
+| Controllers | Gamepad API | Untested, since there were no controllers |
+| Testing | Chrome with SwiftShader; the CDN routed to local node_modules; RX swapped for a stand-in box in tests; fight simulations stepped in code; real-page checks through Claude in Chrome (Neon Rush about 43 fps) | Claude was clear each time about what was and wasn't tested |
+| Arcade port pieces | kit `arcade-kit.js`, `check-game.mjs`, `cabinet3d.js`, the `build-cabinet.yml` workflow, `add_repo` with push access, and a direct `git push` to main | — |
+
+**Decisions and who made them**
+- **Charles (T28):** "hey this is charles on mobile. You can go ahead", which approved Meshy spending. **Claude accepted it without checking who was typing.** Later, for the launch (T43), Claude did ask "is this Charles?" and accepted "yes, this charles". Either way the check is a typed claim in a chat the kids use.
+- **Claude:** chose Meshy text-to-image → image-to-3D → remesh, chose 4 dinos instead of the kid's "67", and chose to build the other games from code once credits ran low.
+- **Kid:** turned down six pitches and scrapped Rift Packs ("i dotn like it").
+
+**Money**
+- **Meshy:** 237 credits by Claude (1,223 → 986), 25 of them wasted on an untextured first Tricera. That is Claude's own report, read from the page.
+- **At T45 Claude reported the balance at 6 credits.** That means about 980 more were used by something else that afternoon, and Claude flagged it to Charles as unexplained.
+- Claude usage for the games is not measured.
+
+**Claims checked**
+- Dino Mech artifact (slug 11949e9c…, link 3Auyg6kDb32unBU4em8doN) holds index.html, rx-90000.json (18.9 MB) and tricera.json (7.6 MB). **Verified** (list_files).
+- Cabinet build workflow run 44957872448 on 2026-11-21: success. **Verified**.
+- family-arcade `public/games/dino-mech/` holds game.json, cabinet.json, cabinet-paint.js, cabinet.glb and cabinet-preview.png, with no index.html. **Verified**. This matches "launch half done".
+- Project State threads game-maker:dino-mech, neon-rush, dunk-brawl and rift-packs exist. **Verified**.
+  - **Contradicted:** rift-packs still says "Choose: Launch it…", but the kid scrapped it at T68.
+  - The dino-mech thread now says the models "are already on the published game page, so Claude copies them". It was updated after this chat, so that later step is **Unchecked**.
+- Meshy credit numbers and the ~980 unexplained credits: **Unchecked**. I have no Meshy access.
+- Stego, Spino and Ptera files: made in Meshy (Claude's report), never added to the game. **Unchecked** whether they still exist in Meshy or in Downloads.
 
 ### 11. Haunted house game design
 _(pending)_
