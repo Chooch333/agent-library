@@ -437,7 +437,40 @@ Chat c7e01b7a-4665-4a57-a3fb-5fc271bb0b8a · 8 turns, all read · 2026-11-24 · 
 - "All five houses play buy-to-sold with no errors" was in the test browser. **Unchecked** by me.
 
 ### 12. truck
-_(pending)_
+Chat 7f595a88-0202-4881-9537-9fc9a85235a9 · 55 turns, all read · 2026-11-21 to 11-22 · a kid (Elliott), with one "this is charles" message (T30)
+
+**In plain words:** three things happened in this chat. Claude built a Fortnite-look pirate game (Skull Cove Loot Rush), took it through four graphics passes and launched it to Elliott's arcade. It built Monster Truck Wreck/Tour, which was never launched. And it rebuilt Elliott's arcade room to match his own hand-drawn map, then pushed that to the live site. Everything was built from code shapes; this chat used no downloaded models. The kid pushed hard for **Unreal Engine**.
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Engine | Three.js 0.160 on the family-arcade kit; bloom, PBR materials, instanced grass, water reflections, textures painted in code; a LOW/MEDIUM/HIGH/EPIC menu built to match the kid's chart | No outside assets |
+| **Unreal Engine** (T10–23) | The kid asked for UE5. Claude first said it couldn't, then gave install steps (Epic launcher, about 50 GB, Dad signs in), then **corrected itself**: through Claude desktop computer use it *could* click inside Unreal. Two `get_device_info` calls found no connected computer | Nothing was built in Unreal. Claude noted that an Unreal game would only play on that PC, not on phones or in the arcade |
+| **The arcade's robot has no graphics card** | `live-check.yml` and `playtest.mjs` run in a software-drawing browser. Skull Cove failed the live check 4 times. Fixes: detect software drawing (`WEBGL_debug_renderer_info` showing SwiftShader or llvmpipe), drop to the lightest mode, skip shader warm-up, and draw at most a third of the time | It passed on the 5th run. Claude left a Project State note (project `total-harness`) suggesting the kit README warn that heavy 3D games must stay drawable in software. **It did not change the kit** |
+| Arcade site code | A git worktree of the Next.js site; edited `components/floor/scene.ts`, `zones.ts`, `textures.ts`, `lib/look.ts`; added `lib/floor-mega.ts` and `components/floor/mega.ts`; `tsc` and `npm test`; esbuild for a standalone preview artifact | Claude built about 18 mini-games inside the room (racing, skee-ball, Hoop Legends and others), then deleted them when the kid asked |
+| Launch plumbing | Direct `git push` to main; Supabase `arcade_games` insert, `arcade_place_game('elliott', …)` and an `arcade_players.look` update; Vercel deploy listing; `build-cabinet.yml` and `live-check.yml` | — |
+| Help asked | Windows screenshot paste (Win+Shift+S) | — |
+
+**Decisions and who made them**
+- **"this is charles, add this too elliotts arcade" (T30)** launched Skull Cove. Claude did not check who was typing.
+- **Kid "launch" (T53)** pushed site code (commit b54cd7d) and switched Elliott's room in the database. **Claude did not ask for Charles here.** The arcade rule elsewhere is that only Dad says Launch.
+- **Kid:** "delete every game except the ones I created". Claude **asked first**, saying deleting can't be undone, and the kid chose to remove all of Claude's machines.
+- **Claude:** rebuilt the room after the kid said it hadn't followed his map. Claude agreed it hadn't.
+
+**Money:** none.
+
+**Claims checked**
+- family-arcade commits for Skull Cove: f0965da (wip), d85ab5c (deploy), the fixes 468b50d, 2a22f45, 49a901d and 72e5b0c, and live check success at 7dd0ae1 after 4 failures. **Verified** (list_commits).
+- Mega room commit b54cd7d on 2026-11-22. **Verified**.
+- Supabase: Elliott's look is `{name: "ELLIOTT'S ARCADE", room: "mega", preset: "mega-neon"}` and his games are waddle-out (spot 2) and skull-cove-loot-rush (spot 1). The other players have no Skull Cove. **Verified** (read-only select).
+- Monster Truck Tour artifact (slug c22c5226…): **Unchecked**.
+- Test-room artifact EUbhSx7Cj3s69Xqx5N5jvb (slug 6d214473…): **Unchecked**.
+- "I haven't seen the live arcade with my own eyes": Claude said so itself.
+
+**Seen in the same commit list, from other chats (leads for the Tech inventory):**
+- Commits 4129399, 24ede27, 9263b90 and e3acd1f: a "fetch-assets robot" that pulls outside CC0 models, skies and textures (including a Poly Haven look-up), with a hidden Skull Cove level-up test that uses real CC0 models.
+- Commit 84806e2: the `slim-model` tool.
+- Commits 9ae91a0, 46d9e1c and 775e66c: "Waddle Out Room 1 in **Godot 4.7.2** (hidden test game) + side-by-side speed page", with a passing live check.
 
 ### 13. gold medal
 _(pending)_
