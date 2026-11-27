@@ -110,7 +110,36 @@ Link: https://claude.ai/chat/0db91ed9-b76e-4bed-ae01-e593f4a9e66b · 8 turns, re
 **Money:** none.
 
 ### 3. Baby Claude rap game
-_(pending)_
+Chat 4dbe611c-9aaf-4909-8b5a-d5c787edaae4 · 11-26 to 11-27 · 22 turns, all read (pages t0–t21).
+
+**Tech used**
+- Claude artifacts with capabilities (describe_capabilities / declare_capabilities): the game page calls the real Claude (`window.claude.use("sample")`), Claude voices (`tts`, 4 voices: glassy/buttery/rounded/airy) and dictation. Worked in Claude's test with a pretend Claude; never tested against the real one by Claude.
+- Web Audio (in-browser sound synthesis) for the beats (boom-bap, then trap with 808s), air horns, piano, effects. No audio files. Claude could not hear any of it.
+- Browser speech synthesis (device voice) as fallback "Tiny Baby" voice and hype-man ad-libs.
+- three.js 0.160 from jsdelivr CDN for the 3D room and town.
+- Local tools in the sandbox clone of family-arcade: `tools/check-game.mjs` after every change; Playwright + headless Chrome (swiftshader) with a mocked `window.claude` for screenshots and scripted tests.
+- Game-side "tools" Claude can call inside the game: start_rap, make_baby, remove_baby, build (3D thing from a fixed shape list, max 60 parts), set_world, give_power, go_play, buy_item, reset_room, draw_picture. Claude chose shape lists over letting the game run any code (stated reason: safety, can't break).
+- publish_files to the artifact after each round; Project State checkin after each round.
+
+**What was built, and where it lives**
+- Rounds 2–9 on one game: real beat + rapping, voice picker, Trap Party style, extra Baby Claudes (up to 12), "anything mode" (build/weather/gravity/powers), playground (Baby Maker, hoop, trampoline, floor piano, ball pit), Babyville town with 4 paid jobs, Baby Mart (4 → 22 items), progress reset + Start over button, then a fix so raps start even when Claude doesn't use the rap tool.
+- Lives in: the artifact only, plus the sandbox file `/home/claude/family-arcade/public/games/baby-claude/index.html` (gone when that sandbox ends).
+
+**Decisions**
+- Kid asked for a voice "like Travis Porter" → Claude refused (copying a real person's voice) and made a Trap Party style instead, with a prompt rule "never copy real songs or name real rappers". Claude's decision.
+- "Reset the game" → Claude chose a one-time wipe via a save-version number (RESET_GEN=2) plus a Start over button; it offered to undo features if that's what was meant. Claude's interpretation, not confirmed.
+- Open for Charles, raised every round: the arcade rulebook says "no chat"; this game is a talk-to-Claude game. Claude recommends allowing it. Not answered in the chat.
+- Rap fix (turn 21) was based on a guess about the cause; Claude said so.
+
+**Money / credits:** none seen. (Each kid question uses the real Claude through the artifact; cost of that is on the user's plan, not measured.)
+
+**Claims checked**
+- Artifact "Baby Claude" exists, latest version 1795797623-612b (newer than the last publish base 1795797503-e1d9, matches one more publish): **Verified** (get_artifact).
+- Cabinet artifact 1WYVu9iRYYwfX4D4T9AYxG exists ("Baby Claude Cabinet"), last changed at version 1795707209 (round 1, not updated since): **Verified**.
+- Project State card game-maker:baby-claude open, waiting on Charles, next step matches the turn-21 fix: **Verified**.
+- Game is in the family-arcade repo: **Contradicted**. `public/games/baby-claude` returns 404; the repo's games folder holds only backroad-bonk, dino-mech, skull-cove-loot-rush, skull-cove-lv, test-probe, waddle-out, waddle-out-godot.
+- "Raps work every time now": **Unchecked** (only tested with a pretend Claude and a stuck pretend voice; no report back from the kids in this chat).
+- Sound quality, iPad smoothness with 12 babies: **Unchecked** (Claude said so itself).
 
 ### 4. Tesla Roadster jump game
 _(pending)_
