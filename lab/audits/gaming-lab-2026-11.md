@@ -243,7 +243,37 @@ Chat 09019579-c925-4efb-876f-08a283cd289e (listed title "Minigame-based attack g
 - Game in the arcade repo: **Contradicted** — no `public/games/rage-bait-bots`.
 
 ### 7. Fun video game
-_(pending)_
+`7bcba705-4708-4881-9408-2acc6098313e` · 259 turns · **PARTIAL: turns 1–140 read; 141–259 not yet read** (stopped by the hourly read limit on chat history).
+
+**Who and where.** Turns 1–138 are a kid making games, outside the Gaming Lab project at first (Claude's own search said it could only see chats outside projects; at turns 96–110 it read memory from a different project, `01a12d74-…`, files `topics/games.md` and `areas/demo-day-game.md`). No AGENT.md routine, no Game Maker skill, no Project State cards in that stretch. At turn 139 Charles says he is bringing this chat into a new game chat and asks to launch Backroad Bonk.
+
+**Tech used**
+- Single-file HTML games written in the sandbox, published with the Artifact tool. Checks: `node --check` syntax only early on; later a headless Chromium (Playwright, software 3D via SwiftShader) robot that plays the game and takes screenshots Claude looked at. Worked.
+- Three.js r128 from cdnjs for 3D games (Backroad Bonk, Pinball Galaxy, Cubicle Clash), multi-file folders stitched by a `build.sh`.
+- Artifact capabilities `db` + `user` for cloud saves (Backroad Bonk, Pinball Galaxy) and `room` for online matchmaking (Cubicle Clash).
+- Breaks / workarounds: 9 assistant turns came back empty when the kid sent messages mid-build (31, 33, 35, 39, 85, 87, 90, 120, 122, 124, 130, 136); the work carried on in the next turn. Sound can't be heard in the sandbox and real-device speed can't be measured — Claude said so each time. A turkey animation crash froze Backroad Bonk ("laggy and glitchy"); fixed at turn 94 and the main loop wrapped so one bad frame can't freeze it.
+
+**What was built (all artifacts unless noted)**
+- Steel Stack, Orbit Hop, Flock & Fence, Lumen (puzzle generator tested: 200 → 540 generated puzzles all solvable), Mistlake → rebuilt as **Fathom** (deep-sea fishing, 57 species, phone apps), **Backroad Bonk** (truck/boat/plane, cabin hub, 26–27 hittable animals), Gust, Boomtown Pinball → replaced in place by **Pinball Galaxy** (`USzZMRWK2P4c9LQRWURND4`), **Cubicle Clash** office brawler v1–v3 (`Gf5ydFped7SDkXaqxCGF4d`, 22 fighters).
+- Turn 140: Backroad Bonk launched to the family arcade (`family-arcade` repo `public/games/backroad-bonk/`, Supabase `arcade_games`, live-check workflow, Project State `game-maker:backroad-bonk`). Login screen removed (arcade account instead); coins reset to 0; run length set from the parent panel.
+
+**Decisions and who made them**
+- Kid asked for a "driving in my car right after a beer" meme game running over deer with the real song. Claude (not Charles) dropped the song (copyright) and the beer, kept hitting cartoon deer for points.
+- Kid asked for logins; Claude chose local profiles with an optional 4-digit PIN stored as plain digits, and told the kid it "isn't real security."
+- Kid asked to "get rid of" Boomtown; Claude overwrote it at the same link with Pinball Galaxy.
+- Charles (turn 139): launch Backroad Bonk, skip the dev step.
+
+**Money:** none seen in turns 1–140.
+
+**Claims checked**
+- Pinball Galaxy published at `USzZMRWK2P4c9LQRWURND4` — **Verified** (exists, private to owner, version `1792089372-8488`).
+- Cubicle Clash "link is now set so anyone with it can open it" — **Verified**: artifact `read` is **public**. A kids' game with player names and online play is open to anyone with the link.
+- Backroad Bonk launched live — **Verified**: repo folder exists; `arcade_games` row `backroad-bonk` status `live`, version 1, launched 2026-10-22 00:10 UTC.
+- Project State `game-maker:backroad-bonk` closed — **Contradicted in part**: status is `done`, but its next step still says the robot check is running and it's waiting on Claude.
+- "Robot live check passed all 8 checks" — **Unchecked** (workflow run not looked up yet).
+- Online play in Cubicle Clash works — **Unchecked by Claude itself**: only tested with a simulated second player; Claude said so.
+- Fathom, Lumen, Gust, Steel Stack, Orbit Hop, Flock & Fence, Mistlake artifacts — **Unchecked** (no ids shown in the chat; not matched yet).
+- Side finding: repo has `public/games/dino-mech` and `skull-cove-lv` folders with no `arcade_games` row.
 
 ### 8. Squishy clicker game
 _(pending)_
