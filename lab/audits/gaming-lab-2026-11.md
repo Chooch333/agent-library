@@ -593,7 +593,25 @@ Chat afe94094-77ff-4a1a-a4ac-6d3785ad2aab · 4 turns, all read · 2026-11-20 · 
 - Likeness scores, triangle count and file size: **Unchecked** (these come from Claude's own tool output in the chat; not re-run).
 
 ### 17. Ninja 3D viewer
-_(pending)_
+Chat cbb61f08-212d-40d0-a734-ecd1cb825405 · 4 turns, all read · 2026-11-15 · Charles
+
+**In plain words:** Charles uploaded a ninja he already had as `Ninja_Sword.glb` and `Ninja_Sword.blend`, and asked to see it. Claude built a spin-around 3D viewer with front, side, back and top buttons and a "pull apart" button. **The chat doesn't say where the two files came from.**
+
+**Tech used**
+| What | How | Notes |
+|---|---|---|
+| Model in | An uploaded `.glb`. Claude read its parts list with plain Python (no 3D library). | — |
+| Blender file | **Blender isn't installed** in the workspace. Claude only read object names out of the raw `.blend` bytes to confirm it was the same ninja. It also tried `pip download bpy`; the chat doesn't show the result. | So `.blend` files can't be opened or exported here today |
+| Viewer | Three.js 0.160.0 from the jsdelivr CDN, GLTFLoader, OrbitControls. The whole `.glb` is **base64-embedded inside the HTML**, published as a one-file artifact. | A third way to get a model onto the artifact host (the others are embedded-JSON glTF in chat 10 and `upload_asset` in chat 14) |
+| Testing | Playwright with headless Chrome and SwiftShader; jsdelivr requests answered from a local npm copy, because the workspace can't reach the CDN | Same blocked-download pattern |
+
+**Decisions:** Claude chose to show the `.glb`, not the `.blend`, and said so when asked. It pointed to "Drop in:" for putting the ninja into the arcade.
+
+**Money:** none.
+
+**Claims checked**
+- Artifact "Ninja 3D Viewer" c74430ae… exists, 2026-11-15. **Verified**.
+- Where `Ninja_Sword.glb` / `.blend` were made: **Unchecked** (not stated in the chat). Lead: kids-games has `generator/` Blender scripts and a `build-character.yml` robot that runs Blender on GitHub; the 2026-10-13 `build-character` runs may be its source.
 
 ### 18. Ninja character sword redesign
 _(pending)_
