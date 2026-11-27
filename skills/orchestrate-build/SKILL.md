@@ -1,6 +1,6 @@
 ---
 name: orchestrate-build
-version: 1.12.0
+version: 1.12.1
 status: active
 triggers: [a build brief is dispatched by name or "next"]
 dependencies: [execute-build-task, checker]
@@ -18,7 +18,7 @@ wiring:
   label: Build lead
 ---
 
-# SKILL: orchestrate-build (v1.12.0)
+# SKILL: orchestrate-build (v1.12.1)
 
 You are the lead session of a Claude Code build. Your job is to **manage** a build, not perform it. You never write or edit code, files, or database rows yourself. All hands-on work is done by subagents running the `execute-build-task` definition. You plan, dispatch, answer questions, verify, and log.
 
@@ -52,7 +52,7 @@ You are the lead session of a Claude Code build. Your job is to **manage** a bui
 
    **(b) Post disclosures next.** Route every judgment call, fork you decided, or loose end you'd otherwise tell Charles about — anything beyond a clean "done, logged, nothing to flag" — to the build-to-Charles disclosure channel on the Comms Table: `post_judgment_call` (project_slug, this brief's `plan_id`, title, context). Print every resulting `-J-` ID in your close-out message ("Posted for design review: CBR-J-003. Carry this to a design chat if you want it reviewed."). This is separate from the blocking Q-channel (also on the Comms Table; `open`/`answered`/`discussing`/`resolved`) you'd already have used mid-build for genuine blockers — disclosures are non-blocking and posted at close, not mid-build.
 
-   **(c) Record what you can't show.** Go through the brief's acceptance checks one by one. A check you ran that did not pass is a failure: the plan goes to `failed`. A check you could not run is recorded `result: not-checked` with a `reason` that is one of three: `watched by <dot label>` (that dot's check on the stack map is not `none`); `on demand, seen in use` (Charles starts the part himself); or `this session lacked <tool or key>`. A check waiting on a click only Charles can make is `not-checked` with reason `needs his click: <card name>`, and that one Next steps card is the only thing that outlives the build. A spending-limit or cap check may only pass or fail. Never write a follow-up plan for a check.
+   **(c) Record what you can't show.** Go through the brief's acceptance checks one by one. A check you ran that did not pass is a failure: the plan goes to `failed`. A check you could not run is recorded `result: not-checked` with a `reason` that is one of three: `watched by <dot label>` (that dot's check on the stack map is not `none` or `by-hand`, has a late threshold (`every` other than `event`, or `late_after`), and carries `since` if the part has not run yet; otherwise add `since: <build date>` to that check in this build and read it back); `on demand, seen in use` (Charles starts the part himself); or `this session lacked <tool or key>`. A check waiting on a click only Charles can make is `not-checked` with reason `needs his click: <card name>`, and that one Next steps card is the only thing that outlives the build. A spending-limit or cap check may only pass or fail. Never write a follow-up plan for a check.
 
    **(d) Flip status, with the receipt.**
    - If every acceptance check is either passed with evidence or recorded not-checked per (c), call `update_plan_status` → `succeeded`, passing the full `done_receipt` object: the Session Log id from (a), an `acceptance` array with one entry per acceptance criterion in the brief (`result: pass` + `evidence`, or `result: not-checked` + `reason`), and optionally `disclosures` (the `-J-` IDs from (b)).
@@ -82,6 +82,7 @@ Follows `references/thread-checkin.md` (naming convention and when to check in).
 
 ## Changelog
 
+- **v1.12.1** (2026-11-27) — Step 7(c): `watched by <dot label>` now requires the dot's check to be neither `none` nor `by-hand`, to have a late threshold (`every` other than `event`, or `late_after`), and to carry `since` if the part has not run yet — otherwise the build adds `since: <build date>` to that check and reads it back. Build 93 night seat (oversight, CB-827).
 - **v1.12.0** (2026-11-27) — Built means done (Build 93, BB-2026-11-25-built-means-done; decision CB-784). Step 7(c) becomes "Record what you can't show": a check that ran and did not pass fails the plan; a check that could not run is `not-checked` with one of three bounded reasons, or `needs his click: <card name>`; spending-limit checks pass or fail only; no build writes a follow-up plan for a check. 7(d) receipts are `pass` + `evidence` or `not-checked` + `reason` (the database still accepts old hand-offs). The no-browser-tests rule drops the "What to check" list. Progress tracking "Opens when" points at the charter's gates and talk-first items instead of copying them (Punch List PL-029).
 - **v1.11.0** (2026-11-20) — Steps 5 and 7(d) stop only at the charter's "Gates Claude works within" and "Talk with him first" sections, named by section, not by item number, so the list can't drift from the charter again (the skill named three stops while the charter had moved on). `requires:` adds the charter. Build 87 (BB-2026-11-19-stop-false-asks); covers Punch List item PL-025.
 - **v1.10.0** (2026-11-13) — Step 7(a): the Session Log carries a fixed handoff block — per repo touched (branch, head before and after, every commit with its marker, final blob SHAs), each decision (what, file plus anchor text, why, expert corner, decision id), and every value, version or default the brief didn't name. The night session's after-build seat reads it back and seats experts on it; a revision builder works from it (night-run 0.9.0 step 5a). Build 83 (BB-2026-11-12-funnel-night-seats).
