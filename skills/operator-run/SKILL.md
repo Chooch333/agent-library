@@ -1,6 +1,6 @@
 ---
 name: operator-run
-version: 0.2.2
+version: 0.3.0
 status: draft
 triggers:
   - "PM: <job>" or "PM: what needs me" (a message that starts with it, in any chat, mid-chat included)
