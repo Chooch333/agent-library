@@ -528,7 +528,20 @@ Chat 7744b1f4-c72a-4cd8-8d87-28de8418f96f · 10 turns · **turns 0–7 read; tur
 **Claims checked**
 - Artifact RA2hqWefB6k7Wd6QEHGurE ("Giggle Grab", slug c39e126a…, private) exists, last version 2026-11-21. **Verified**.
 - Not in family-arcade `public/games/`. **Verified** (directory listing).
-- Turns 8–9: **Unchecked** (not read yet).
+**Turns 8–9 (read after the limit reset).** Someone typed "this is charles on mobile use meshy for everything". Claude took that as Dad's go-ahead without any way to check, the same as in chat 10. It then built and ran a **Meshy batch robot** in the private repo `Chooch333/kids-games`:
+- `tools/meshy_batch.py` + `.github/workflows/meshy-batch.yml` + `prompts/giggle-grab.json` (35 text prompts). The robot runs on GitHub's servers, uses the `MESHY_API_KEY` repo secret, makes a shape, then paints it, optionally adds a skeleton, shrinks textures with `gltf-transform` (webp), and commits the `.glb` files to `out/`.
+- This is the route around the workspace's download block: GitHub's servers can reach Meshy, so models come back through the repo, not the chat.
+- The 28 finished models were uploaded to the Giggle Grab artifact as assets and the game was wired to load them in the `A.slot()` spots.
+- Claude admitted it planned from a stale balance (1,223) and overspent.
+
+**Money:** about 980 Meshy credits in one run (986 → 6). This is the "unexplained ~980" from chat 10.
+
+**Claims checked (turns 8–9)**
+- Run 44952158069 (meshy-batch, 2026-11-21 21:33): log says "Credits before: 986", 28 done, 7 failed with "insufficient_credits", "credits_after=6". **Verified** (job log).
+- Workflow and robot files exist in kids-games. **Verified** (directory listing).
+- Giggle Grab artifact holds 28 `.glb` assets, 15.9 MB total, uploaded 2026-11-21 21:44. **Verified** (list_assets).
+- "Charles approved": **Unchecked**, and can't be checked. Nothing in the chat proves who typed it.
+- Chat 10's open question about the missing ~980 credits: **resolved** by this run.
 
 ### 15. jelly
 _(pending)_
