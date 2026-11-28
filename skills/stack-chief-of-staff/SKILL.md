@@ -1,11 +1,11 @@
 ---
 name: stack-chief-of-staff
-version: 0.1.2
+version: 0.1.3
 status: draft
 triggers: ["what's going on with my stack", "stack status", "Chief of Staff"]
 dependencies: []
 owner: Charles
-updated: 2026-11-21
+updated: 2026-11-28
 requires: [references/charter.md, references/project-state.md, references/gotchas.md, references/thread-checkin.md]
 description: "On demand, in any chat (built for Duet): reads every automated part of Charles's stack and tells him in about a minute, in plain words, what needs him, what changed since he last heard, what is off and who is on it, and what it could not see. Read-only; never scheduled."
 wiring:
